@@ -43,7 +43,7 @@
     <link href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-06-09T03:21:30.000Z</updated>
+    <updated>2017-06-09T04:50:13.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a></p>
@@ -73,7 +73,7 @@
     <link href="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/"/>
     <id>http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/</id>
     <published>2017-06-06T04:35:16.000Z</published>
-    <updated>2017-06-09T01:43:06.000Z</updated>
+    <updated>2017-06-09T05:05:58.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;span&gt;</div><div class="line">    Here is some text.</div><div class="line">    Here is some other text with a line break in it. &lt;br/&gt;And it should be divided into two lines.</div><div class="line">    This line, &lt;wbr /&gt;contains some word break opportunities, &lt;wbr /&gt;which should be ignored. &lt;wbr/&gt;And the output should be in one line.</div><div class="line">&lt;span/&gt;</div><div class="line">"""</div><div class="line"></div><div class="line">soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</div><div class="line">tag = soup.find(<span class="string">'span'</span>)</div><div class="line"></div><div class="line"><span class="comment"># remove &lt;wbr&gt; tags</span></div><div class="line"><span class="keyword">for</span> wbr <span class="keyword">in</span> soup.findAll(<span class="string">'wbr'</span>):</div><div class="line">    wbr_previous = wbr.previous_sibling</div><div class="line">    wbr_next = wbr.next_sibling</div><div class="line">    wbr_previous.string.replace_with(wbr_previous + wbr_next)</div><div class="line">    wbr.extract()</div><div class="line">    wbr_next.extract()</div><div class="line"></div><div class="line"><span class="comment"># reformat the text</span></div><div class="line">content = re.sub(<span class="string">r'\s*?\n+\s*'</span>, <span class="string">'\n'</span>, tag.get_text(<span class="string">'\n'</span>))</div><div class="line">print(content)</div></pre></td></tr></table></figure>
@@ -90,10 +90,12 @@
     
       <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
     
+      <category term="Scraper" scheme="http://luminoid.github.io/blog/categories/Web/Scraper/"/>
     
-      <category term="Scraper" scheme="http://luminoid.github.io/blog/tags/Scraper/"/>
     
       <category term="Python" scheme="http://luminoid.github.io/blog/tags/Python/"/>
+    
+      <category term="Beautiful Soup" scheme="http://luminoid.github.io/blog/tags/Beautiful-Soup/"/>
     
   </entry>
   
