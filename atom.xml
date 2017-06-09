@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-06-09T05:17:45.000Z</updated>
+  <updated>2017-06-09T05:48:07.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,19 +20,23 @@
     <link href="http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/"/>
     <id>http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
-    <updated>2017-06-09T05:17:45.000Z</updated>
+    <updated>2017-06-09T05:48:07.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
-<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but collected no post.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
+    <content type="html"><![CDATA[<!-- toc -->
+<a id="more"></a>
+<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;hexo-server-not-found&quot;&gt;&lt;a href=&quot;#hexo-server-not-found&quot; class=&quot;headerlink&quot; title=&quot;hexo server not found&quot;&gt;&lt;/a&gt;hexo server not found&lt;/
+      &lt;!-- toc --&gt;
     
     </summary>
     
       <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
+    
+      <category term="Static Site Generator" scheme="http://luminoid.github.io/blog/categories/Web/Static-Site-Generator/"/>
     
     
       <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
@@ -44,25 +48,27 @@
     <link href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-06-09T04:50:13.000Z</updated>
+    <updated>2017-06-09T05:46:16.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a></p>
+<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
 <h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Create a new article.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div></pre></td></tr></table></figure></p>
 <h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate -w</div></pre></td></tr></table></figure></p>
 <p>Start a local server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
 <h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Generate and deploy.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy -g</div></pre></td></tr></table></figure></p>
+<p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo algolia</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;!-- toc --&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Create&quot;&gt;&lt;a href=&quot;#Create&quot; class=&quot;headerlink&quot; t
+&lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-them
     
     </summary>
     
       <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
+    
+      <category term="Static Site Generator" scheme="http://luminoid.github.io/blog/categories/Web/Static-Site-Generator/"/>
     
     
       <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
@@ -74,18 +80,17 @@
     <link href="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/"/>
     <id>http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/</id>
     <published>2017-06-06T04:35:16.000Z</published>
-    <updated>2017-06-09T05:14:45.000Z</updated>
+    <updated>2017-06-09T05:36:58.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;span&gt;</div><div class="line">    Here is some text.</div><div class="line">    Here is some other text with a line break in it. &lt;br/&gt;And it should be divided into two lines.</div><div class="line">    This line, &lt;wbr /&gt;contains some word break opportunities, &lt;wbr /&gt;which should be ignored. &lt;wbr/&gt;And the output should be in one line.</div><div class="line">&lt;span/&gt;</div><div class="line">"""</div><div class="line"></div><div class="line">soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</div><div class="line">tag = soup.find(<span class="string">'span'</span>)</div><div class="line"></div><div class="line"><span class="comment"># remove &lt;wbr&gt; tags</span></div><div class="line"><span class="keyword">for</span> wbr <span class="keyword">in</span> soup.findAll(<span class="string">'wbr'</span>):</div><div class="line">    wbr_previous = wbr.previous_sibling</div><div class="line">    wbr_next = wbr.next_sibling</div><div class="line">    wbr_previous.string.replace_with(wbr_previous + wbr_next)</div><div class="line">    wbr.extract()</div><div class="line">    wbr_next.extract()</div><div class="line"></div><div class="line"><span class="comment"># reformat the text</span></div><div class="line">content = re.sub(<span class="string">r'\s*?\n+\s*'</span>, <span class="string">'\n'</span>, tag.get_text(<span class="string">'\n'</span>))</div><div class="line">print(content)</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;span&gt;</div><div class="line">    Here is some text.</div><div class="line">    Here is some other text with a line break in it. &lt;br/&gt;And it should be divided into two lines.</div><div class="line">    This line, &lt;wbr /&gt;contains some word break opportunities, &lt;wbr /&gt;which should be ignored. &lt;wbr/&gt;And the output should be in one line.</div><div class="line">&lt;span/&gt;</div><div class="line">"""</div><div class="line"></div><div class="line">soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</div><div class="line">tag = soup.find(<span class="string">'span'</span>)</div><div class="line"></div><div class="line"><span class="comment"># remove &lt;wbr&gt; tags</span></div><div class="line"><span class="keyword">for</span> wbr <span class="keyword">in</span> soup.findAll(<span class="string">'wbr'</span>):</div><div class="line">    wbr_previous = wbr.previous_sibling</div><div class="line">    wbr_next = wbr.next_sibling</div><div class="line">    wbr_previous.string.replace_with(wbr_previous + wbr_next)</div><div class="line">    wbr.extract()</div><div class="line">    wbr_next.extract()</div><div class="line"></div><div class="line"><span class="comment"># reformat the text</span></div><div class="line">content = re.sub(<span class="string">r'\s*?\n+\s*'</span>, <span class="string">'\n'</span>, tag.get_text(<span class="string">'\n'</span>))</div><div class="line">print(content)</div></pre></td></tr></table></figure>
 <p><strong>Result:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Here is some text.</div><div class="line">Here is some other text with a line break in it.</div><div class="line">And it should be divided into two lines.</div><div class="line">This line, contains some word break opportunities, which should be ignored. And the output should be in one line.</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;Goal&quot;&gt;&lt;a href=&quot;#Goal&quot; class=&quot;headerlink&quot; title=&quot;Goal&quot;&gt;&lt;/a&gt;Goal&lt;/h2&gt;&lt;p&gt;Get plain text from a Beautiful Soup object with &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; converted into line break and &lt;code&gt;&amp;lt;wbr /&amp;gt;&lt;/code&gt; ignored.&lt;/p&gt;
-&lt;h2 id=&quot;Code&quot;&gt;&lt;a href=&quot;#Code&quot; class=&quot;headerlink&quot; title=&quot;Code&quot;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; re&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; bs4 &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; BeautifulSoup&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;html = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;span&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Here is some text.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Here is some other text with a line break in it. &amp;lt;br/&amp;gt;And it should be divided into two lines.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    This line, &amp;lt;wbr /&amp;gt;contains some word break opportunities, &amp;lt;wbr /&amp;gt;which should be ignored. &amp;lt;wbr/&amp;gt;And the output should be in one line.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;span/&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&quot;&quot;&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;soup = BeautifulSoup(html, &lt;span class=&quot;string&quot;&gt;&#39;html.parser&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tag = soup.find(&lt;span class=&quot;string&quot;&gt;&#39;span&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# remove &amp;lt;wbr&amp;gt; tags&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; wbr &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; soup.findAll(&lt;span class=&quot;string&quot;&gt;&#39;wbr&#39;&lt;/span&gt;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wbr_previous = wbr.previous_sibling&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wbr_next = wbr.next_sibling&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wbr_previous.string.replace_with(wbr_previous + wbr_next)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wbr.extract()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    wbr_next.extract()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# reformat the text&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;content = re.sub(&lt;span class=&quot;string&quot;&gt;r&#39;\s*?\n+\s*&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;, tag.get_text(&lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(content)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
