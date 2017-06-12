@@ -260,6 +260,7 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
@@ -455,6 +456,7 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p></div>
@@ -529,7 +531,7 @@
         var algoliaIndex = algoliaClient.initIndex('hexo-blog');
     </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -541,7 +543,7 @@
   });
 </script>
 
-<script type="text/javascript" src="custom_mathjax_source">
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

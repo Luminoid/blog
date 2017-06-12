@@ -268,7 +268,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Insertion sort[^1]</td>
+<td style="text-align:left">Insertion sort<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></td>
 <td style="text-align:left">$\Theta(n^2)$</td>
 <td style="text-align:left">$\Theta(n^2)$</td>
 <td style="text-align:left">Yes</td>
@@ -317,7 +317,7 @@
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
-<td style="text-align:left">Radix sort[^2]</td>
+<td style="text-align:left">Radix sort<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></td>
 <td style="text-align:left">$\Theta(d(n+k))$</td>
 <td style="text-align:left">$\Theta(d(n+k))$</td>
 <td style="text-align:left">No</td>
@@ -339,9 +339,7 @@
 </tr>
 </tbody>
 </table>
-<p>[^1]: n: the number of items to sort.</p>
-<p>[^2]: For radix sort, each item is a d-digit number, where each digit takes on k possible values.</p>
-
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">n: the number of items to sort.</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">For radix sort, each item is a d-digit number, where each digit takes on k possible values.</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div>
                     
                         
                     
@@ -436,6 +434,7 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
@@ -676,6 +675,7 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p></div>
@@ -750,7 +750,7 @@
         var algoliaIndex = algoliaClient.initIndex('hexo-blog');
     </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -762,7 +762,7 @@
   });
 </script>
 
-<script type="text/javascript" src="custom_mathjax_source">
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

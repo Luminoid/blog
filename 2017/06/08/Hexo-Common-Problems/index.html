@@ -9,23 +9,23 @@
     <title>Hexo Common Problems - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,Hexo,server,Algolia">
+        <meta name="keywords" content="hexo,Hexo,server,Algolia,hexo-math">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="hexo server not found hexo algolia 0 posts indexed   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this problem.">
-<meta name="keywords" content="Hexo,server,Algolia">
+    <meta name="description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta name="keywords" content="Hexo,server,Algolia,hexo-math">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo Common Problems">
 <meta property="og:url" content="http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="hexo server not found hexo algolia 0 posts indexed   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this problem.">
-<meta property="og:updated_time" content="2017-06-12T10:25:30.000Z">
+<meta property="og:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta property="og:updated_time" content="2017-06-12T16:00:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Common Problems">
-<meta name="twitter:description" content="hexo server not found hexo algolia 0 posts indexed   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this problem.">
+<meta name="twitter:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
     
     
         
@@ -259,11 +259,13 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
 <a id="more"></a>
 <h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
+<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
 
             
         </div>
@@ -597,6 +599,7 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p></div>
@@ -673,7 +676,7 @@
         var algoliaIndex = algoliaClient.initIndex('hexo-blog');
     </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
 
 <script type="text/x-mathjax-config">
@@ -685,7 +688,7 @@
   });
 </script>
 
-<script type="text/javascript" src="custom_mathjax_source">
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
