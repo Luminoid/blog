@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-06-12T11:23:59.000Z</updated>
+  <updated>2017-06-12T11:26:23.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,71 +20,9 @@
     <link href="http://luminoid.github.io/blog/2017/06/12/Atom-Usage/"/>
     <id>http://luminoid.github.io/blog/2017/06/12/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
-    <updated>2017-06-12T11:23:59.000Z</updated>
+    <updated>2017-06-12T11:26:23.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-<ul>
-<li><a href="#shortcut">Shortcut</a></li>
-<li><a href="#packages">Packages</a><ul>
-<li><a href="#tool">Tool</a><ul>
-<li><a href="#platformio-ide-terminalhttpsatomiopackagesplatformio-ide-terminal">platformio-ide-terminal</a></li>
-<li><a href="#scripthttpsatomiopackagesscript">script</a></li>
-<li><a href="#linterhttpsatomiopackageslinter">linter</a></li>
-<li><a href="#hydrogenhttpsatomiopackageshydrogen">hydrogen</a></li>
-<li><a href="#atom-beautifyhttpsatomiopackagesatom-beautify">atom-beautify</a></li>
-<li><a href="#split-diffhttpsatomiopackagessplit-diff">split-diff</a></li>
-<li><a href="#color-pickerhttpsatomiopackagescolor-picker">color-picker</a></li>
-<li><a href="#busy-signalhttpsatomiopackagesbusy-signal">Busy Signal</a></li>
-<li><a href="#browser-plushttpsatomiopackagesbrowser-plus">browser-plus</a></li>
-</ul>
-</li>
-<li><a href="#ui">UI</a><ul>
-<li><a href="#minimaphttpsatomiopackagesminimap">minimap</a></li>
-<li><a href="#file-iconshttpsatomiopackagesfile-icons">file-icons</a></li>
-<li><a href="#highlight-selectedhttpsatomiopackageshighlight-selected">highlight-selected</a></li>
-<li><a href="#pigmentshttpsatomiopackagespigments">pigments</a></li>
-<li><a href="#qolorhttpsatomiopackagesqolor">qolor</a></li>
-<li><a href="#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected">minimap-highlight-selected</a></li>
-<li><a href="#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace">minimap-find-and-replace</a></li>
-<li><a href="#minimap-pigmentshttpsatomiopackagesminimap-pigments">minimap-pigments</a></li>
-<li><a href="#minimap-autohidehttpsatomiopackagesminimap-autohide">minimap-autohide</a></li>
-</ul>
-</li>
-<li><a href="#preview">Preview</a><ul>
-<li><a href="#previewhttpsatomiopackagespreview">preview</a></li>
-<li><a href="#markdown-preview-enhancedhttpsatomiopackagesmarkdown-preview-enhanced">markdown-preview-enhanced</a></li>
-<li><a href="#atom-html-previewhttpsatomiopackagesatom-html-preview">atom-html-preview</a></li>
-<li><a href="#pdf-viewhttpsatomiopackagespdf-view">pdf-view</a></li>
-<li><a href="#regex-railroad-diagramhttpsatomiopackagesregex-railroad-diagram">regex-railroad-diagram</a></li>
-<li><a href="#hexhttpsgithubcomabeestradaatom-hex">hex</a></li>
-</ul>
-</li>
-<li><a href="#language">Language</a><ul>
-<li><a href="#language-markdownhttpsatomiopackageslanguage-markdown">language-markdown</a></li>
-<li><a href="#language-babelhttpsatomiopackageslanguage-babel">language-babel</a></li>
-<li><a href="#autocomplete-pythonhttpsatomiopackagesautocomplete-python">autocomplete-python</a></li>
-<li><a href="#autocomplete-clanghttpsatomiopackagesautocomplete-clang">autocomplete-clang</a></li>
-<li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li>
-</ul>
-</li>
-<li><a href="#web">Web</a><ul>
-<li><a href="#emmethttpsatomiopackagesemmet">emmet</a></li>
-<li><a href="#atom-bootstrap4httpsatomiopackagesatom-bootstrap4">atom-bootstrap4</a></li>
-</ul>
-</li>
-<li><a href="#git">Git</a><ul>
-<li><a href="#gitignore-snippetshttpsatomiopackagesgitignore-snippets">gitignore-snippets</a></li>
-</ul>
-</li>
-<li><a href="#coding">Coding</a><ul>
-<li><a href="#base64httpsatomiopackagesbase64">base64</a></li>
-<li><a href="#url-encodehttpsatomiopackagesurl-encode">url-encode</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
+    <content type="html"><![CDATA[<!-- toc -->
 <h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p><code>cmd-shift-L</code>: Split selections into lines<br><code>ctrl-cmd-up</code>, <code>ctrl-cmd-down</code>: Move line up or down<br><code>cmd-d</code>: Duplicate lines<br><code>ctrl-shift-K</code>: Delete line<br><a id="more"></a><br><code>cmd-K-U</code>: Upper case the current word<br><code>cmd-K-L</code>: Lower case the current word<br><code>cmd-D</code>: Select the next word in the document that is the same as the currently selected word<br><code>cmd-shift-f</code>: Search the entire project<br><code>alt-cmd-[</code> and <code>alt-cmd-]</code>: Fold or unfold the code</p>
 <h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><h3 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h3><h4 id="platformio-ide-terminal"><a href="#platformio-ide-terminal" class="headerlink" title="platformio-ide-terminal"></a><a href="https://atom.io/packages/platformio-ide-terminal" target="_blank" rel="external">platformio-ide-terminal</a></h4><p>A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.</p>
 <h4 id="script"><a href="#script" class="headerlink" title="script"></a><a href="https://atom.io/packages/script" target="_blank" rel="external">script</a></h4><p>Run code in Atom</p>
@@ -124,69 +62,7 @@
     
     <summary type="html">
     
-      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#shortcut&quot;&gt;Shortcut&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#packages&quot;&gt;Packages&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#tool&quot;&gt;Tool&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#platformio-ide-terminalhttpsatomiopackagesplatformio-ide-terminal&quot;&gt;platformio-ide-terminal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#scripthttpsatomiopackagesscript&quot;&gt;script&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#linterhttpsatomiopackageslinter&quot;&gt;linter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hydrogenhttpsatomiopackageshydrogen&quot;&gt;hydrogen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#atom-beautifyhttpsatomiopackagesatom-beautify&quot;&gt;atom-beautify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#split-diffhttpsatomiopackagessplit-diff&quot;&gt;split-diff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#color-pickerhttpsatomiopackagescolor-picker&quot;&gt;color-picker&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#busy-signalhttpsatomiopackagesbusy-signal&quot;&gt;Busy Signal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#browser-plushttpsatomiopackagesbrowser-plus&quot;&gt;browser-plus&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#ui&quot;&gt;UI&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#minimaphttpsatomiopackagesminimap&quot;&gt;minimap&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#file-iconshttpsatomiopackagesfile-icons&quot;&gt;file-icons&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#highlight-selectedhttpsatomiopackageshighlight-selected&quot;&gt;highlight-selected&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#pigmentshttpsatomiopackagespigments&quot;&gt;pigments&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#qolorhttpsatomiopackagesqolor&quot;&gt;qolor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected&quot;&gt;minimap-highlight-selected&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace&quot;&gt;minimap-find-and-replace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#minimap-pigmentshttpsatomiopackagesminimap-pigments&quot;&gt;minimap-pigments&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#minimap-autohidehttpsatomiopackagesminimap-autohide&quot;&gt;minimap-autohide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#preview&quot;&gt;Preview&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#previewhttpsatomiopackagespreview&quot;&gt;preview&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#markdown-preview-enhancedhttpsatomiopackagesmarkdown-preview-enhanced&quot;&gt;markdown-preview-enhanced&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#atom-html-previewhttpsatomiopackagesatom-html-preview&quot;&gt;atom-html-preview&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#pdf-viewhttpsatomiopackagespdf-view&quot;&gt;pdf-view&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#regex-railroad-diagramhttpsatomiopackagesregex-railroad-diagram&quot;&gt;regex-railroad-diagram&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexhttpsgithubcomabeestradaatom-hex&quot;&gt;hex&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#language&quot;&gt;Language&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#language-markdownhttpsatomiopackageslanguage-markdown&quot;&gt;language-markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#language-babelhttpsatomiopackageslanguage-babel&quot;&gt;language-babel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#autocomplete-pythonhttpsatomiopackagesautocomplete-python&quot;&gt;autocomplete-python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#autocomplete-clanghttpsatomiopackagesautocomplete-clang&quot;&gt;autocomplete-clang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#atom-ternjshttpsatomiopackagesatom-ternjs&quot;&gt;atom-ternjs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#web&quot;&gt;Web&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#emmethttpsatomiopackagesemmet&quot;&gt;emmet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#atom-bootstrap4httpsatomiopackagesatom-bootstrap4&quot;&gt;atom-bootstrap4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#git&quot;&gt;Git&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#gitignore-snippetshttpsatomiopackagesgitignore-snippets&quot;&gt;gitignore-snippets&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#coding&quot;&gt;Coding&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#base64httpsatomiopackagesbase64&quot;&gt;base64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#url-encodehttpsatomiopackagesurl-encode&quot;&gt;url-encode&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- tocstop --&gt;
+      &lt;!-- toc --&gt;
 &lt;h2 id=&quot;Shortcut&quot;&gt;&lt;a href=&quot;#Shortcut&quot; class=&quot;headerlink&quot; title=&quot;Shortcut&quot;&gt;&lt;/a&gt;Shortcut&lt;/h2&gt;&lt;p&gt;&lt;code&gt;cmd-shift-L&lt;/code&gt;: Split selections into lines&lt;br&gt;&lt;code&gt;ctrl-cmd-up&lt;/code&gt;, &lt;code&gt;ctrl-cmd-down&lt;/code&gt;: Move line up or down&lt;br&gt;&lt;code&gt;cmd-d&lt;/code&gt;: Duplicate lines&lt;br&gt;&lt;code&gt;ctrl-shift-K&lt;/code&gt;: Delete line&lt;br&gt;
     
     </summary>
@@ -242,23 +118,26 @@
     <link href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-06-12T10:24:42.000Z</updated>
+    <updated>2017-06-12T11:35:52.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Create a new article.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div></pre></td></tr></table></figure></p>
+<h2 id="Quick-deploy"><a href="#Quick-deploy" class="headerlink" title="Quick deploy"></a>Quick deploy</h2><p>With Algolia<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
+<p>Without Algolia<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ hexo deploy -g</div></pre></td></tr></table></figure></p>
+<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Initializes a website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="string">"My New Website"</span></div></pre></td></tr></table></figure></p>
+<p>Create a new article.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div></pre></td></tr></table></figure></p>
 <h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate -w</div></pre></td></tr></table></figure></p>
 <p>Start a local server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Generate and deploy.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy -g</div></pre></td></tr></table></figure></p>
 <p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo algolia</div></pre></td></tr></table></figure></p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Deploys your website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;!-- toc --&gt;
 &lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-theme-tranquilpeak&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Create&quot;&gt;&lt;a href=&quot;#Create&quot; class=&quot;headerlink&quot; title=&quot;Create&quot;&gt;&lt;/a&gt;Create&lt;/h2&gt;&lt;p&gt;Create a new article.&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Article&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Quick-deploy&quot;&gt;&lt;a href=&quot;#Quick-deploy&quot; class=&quot;headerlink&quot; title=&quot;Quick deploy&quot;&gt;&lt;/a&gt;Quick deploy&lt;/h2&gt;&lt;p&gt;With Algolia&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Article&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo clean&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo algolia&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
