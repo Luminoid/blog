@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-06-12T11:26:23.000Z</updated>
+  <updated>2017-06-12T11:54:27.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,123 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Sorting Algorithm Analysis</title>
+    <link href="http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/"/>
+    <id>http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/</id>
+    <published>2017-06-12T11:51:09.000Z</published>
+    <updated>2017-06-12T11:54:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">Algorithm</th>
+<th style="text-align:left">Worst-case running time</th>
+<th style="text-align:left">Average-case / expected running time</th>
+<th style="text-align:left">In-place</th>
+<th style="text-align:left">Stable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Insertion sort[^1]</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Shell sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Selection sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Heapsort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Bubble sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Quicksort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(nlgn)$ (expected)</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Counting sort</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Radix sort[^2]</td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Bucket sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n)$ (average-case)</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Merge sort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>[^1]: n: the number of items to sort.</p>
+<p>[^2]: For radix sort, each item is a d-digit number, where each digit takes on k possible values.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Algorithm&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Worst-case running time&lt;/th&gt;
+&lt;th style=&quot;text-ali
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://luminoid.github.io/blog/categories/Algorithm/"/>
+    
+    
+      <category term="Sorting algorithm" scheme="http://luminoid.github.io/blog/tags/Sorting-algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Atom Usage</title>
     <link href="http://luminoid.github.io/blog/2017/06/12/Atom-Usage/"/>
     <id>http://luminoid.github.io/blog/2017/06/12/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
-    <updated>2017-06-12T11:26:23.000Z</updated>
+    <updated>2017-06-12T11:37:30.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p><code>cmd-shift-L</code>: Split selections into lines<br><code>ctrl-cmd-up</code>, <code>ctrl-cmd-down</code>: Move line up or down<br><code>cmd-d</code>: Duplicate lines<br><code>ctrl-shift-K</code>: Delete line<br><a id="more"></a><br><code>cmd-K-U</code>: Upper case the current word<br><code>cmd-K-L</code>: Lower case the current word<br><code>cmd-D</code>: Select the next word in the document that is the same as the currently selected word<br><code>cmd-shift-f</code>: Search the entire project<br><code>alt-cmd-[</code> and <code>alt-cmd-]</code>: Fold or unfold the code</p>
