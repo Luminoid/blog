@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-06-12T16:20:09.000Z</updated>
+  <updated>2017-06-12T16:22:06.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/"/>
     <id>http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/</id>
     <published>2017-06-12T11:51:09.000Z</published>
-    <updated>2017-06-12T16:20:09.000Z</updated>
+    <updated>2017-06-12T16:22:06.000Z</updated>
     
     <content type="html"><![CDATA[<table>
 <thead>
@@ -105,6 +105,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">n: the number of items to sort.</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">For radix sort, each item is a d-digit number, where each digit takes on k possible values.</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div>]]></content>
     
     <summary type="html">
@@ -114,7 +115,84 @@
 &lt;tr&gt;
 &lt;th style=&quot;text-align:left&quot;&gt;Algorithm&lt;/th&gt;
 &lt;th style=&quot;text-align:left&quot;&gt;Worst-case running time&lt;/th&gt;
-&lt;th style=&quot;text-ali
+&lt;th style=&quot;text-align:left&quot;&gt;Average-case / expected running time&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;In-place&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Stable&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Insertion sort&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Shell sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Selection sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Heapsort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bubble sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Quicksort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$ (expected)&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Counting sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Radix sort&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bucket sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n)$ (average-case)&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Merge sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
