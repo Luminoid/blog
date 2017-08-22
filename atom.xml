@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-21T14:05:09.000Z</updated>
+  <updated>2017-08-22T15:45:45.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Building Hexo Website with Docker</title>
+    <link href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/"/>
+    <id>http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/</id>
+    <published>2017-08-21T16:10:13.000Z</published>
+    <updated>2017-08-22T15:45:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="The-hexo-base-image"><a href="#The-hexo-base-image" class="headerlink" title="The hexo base image"></a>The hexo base image</h2><p>Create hexo Dockerfile<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure></p>
+<p>Dockerfile Content<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-22</div><div class="line"></div><div class="line">RUN apt -yqq update</div><div class="line">RUN apt -yqq install git-core curl</div><div class="line"><span class="comment"># Install Node.js Using a PPA</span></div><div class="line">RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -</div><div class="line">RUN apt -yqq install nodejs</div><div class="line">RUN apt -yqq install build-essential</div><div class="line">RUN npm install -g hexo-cli</div><div class="line"></div><div class="line">VOLUME /data</div><div class="line">VOLUME /var/www/html</div><div class="line">WORKDIR /data</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;The-hexo-base-image&quot;&gt;&lt;a href=&quot;#The-hexo-base-image&quot; class=&quot;headerlink&quot; title=&quot;The hexo base image&quot;&gt;&lt;/a&gt;The hexo base image&lt;/h2&gt;&lt;p&gt;Cr
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/categories/Docker/"/>
+    
+    
+      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac Development Config</title>
     <link href="http://luminoid.github.io/blog/2017/08/08/Mac-Development-Config/"/>
     <id>http://luminoid.github.io/blog/2017/08/08/Mac-Development-Config/</id>
     <published>2017-08-08T14:45:55.000Z</published>
-    <updated>2017-08-21T14:05:09.000Z</updated>
+    <updated>2017-08-21T16:12:15.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
@@ -93,7 +119,7 @@
 <h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
 ]]></content>
     
     <summary type="html">
@@ -160,6 +186,8 @@
     
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
       <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     

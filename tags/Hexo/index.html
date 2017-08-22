@@ -227,6 +227,55 @@
     <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2017/08/22/Building-Hexo-Website-with-Docker/">
+                            Building Hexo Website with Docker
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-08-22T00:10:13+08:00">
+	
+		    Aug 22, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/Docker/">Docker</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="The-hexo-base-image"><a href="#The-hexo-base-image" class="headerlink" title="The hexo base image"></a>The hexo base image</h2><p>Create hexo Dockerfile<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure></p>
+<p>Dockerfile Content<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-22</div><div class="line"></div><div class="line">RUN apt -yqq update</div><div class="line">RUN apt -yqq install git-core curl</div><div class="line"><span class="comment"># Install Node.js Using a PPA</span></div><div class="line">RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -</div><div class="line">RUN apt -yqq install nodejs</div><div class="line">RUN apt -yqq install build-essential</div><div class="line">RUN npm install -g hexo-cli</div><div class="line"></div><div class="line">VOLUME /data</div><div class="line">VOLUME /var/www/html</div><div class="line">WORKDIR /data</div></pre></td></tr></table></figure></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/blog/2017/08/22/Building-Hexo-Website-with-Docker/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -722,6 +771,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/">
+                            <h3 class="media-heading">Building Hexo Website with Docker</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Aug 22, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -729,7 +797,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                6 posts found
+                7 posts found
             </p>
         </div>
     </div>

@@ -9,20 +9,20 @@
     <title>Mac Development Config - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,Homebrew,Atom">
+        <meta name="keywords" content="hexo,Homebrew,Atom,Docker">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
     <meta name="description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
-<meta name="keywords" content="Homebrew,Atom">
+<meta name="keywords" content="Homebrew,Atom,Docker">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Mac Development Config">
 <meta property="og:url" content="http://luminoid.github.io/blog/2017/08/08/Mac-Development-Config/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
-<meta property="og:updated_time" content="2017-08-21T14:05:09.000Z">
+<meta property="og:updated_time" content="2017-08-21T16:12:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Development Config">
 <meta name="twitter:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
@@ -326,7 +326,7 @@
 <h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
 
             
         </div>
@@ -336,7 +336,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Atom/">Atom</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Homebrew/">Homebrew</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Atom/">Atom</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Docker/">Docker</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Homebrew/">Homebrew</a>
 
             </div>
         
@@ -346,7 +346,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/08/22/Building-Hexo-Website-with-Docker/"  data-tooltip="Building Hexo Website with Docker">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -436,7 +436,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/08/22/Building-Hexo-Website-with-Docker/"  data-tooltip="Building Hexo Website with Docker">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -926,6 +926,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/">
+                            <h3 class="media-heading">Building Hexo Website with Docker</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Aug 22, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -933,7 +952,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                6 posts found
+                7 posts found
             </p>
         </div>
     </div>
