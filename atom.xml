@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-22T15:45:45.000Z</updated>
+  <updated>2017-08-22T15:51:14.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,15 +20,17 @@
     <link href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/"/>
     <id>http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
-    <updated>2017-08-22T15:45:45.000Z</updated>
+    <updated>2017-08-22T15:51:14.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="The-hexo-base-image"><a href="#The-hexo-base-image" class="headerlink" title="The hexo base image"></a>The hexo base image</h2><p>Create hexo Dockerfile<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure></p>
 <p>Dockerfile Content<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-22</div><div class="line"></div><div class="line">RUN apt -yqq update</div><div class="line">RUN apt -yqq install git-core curl</div><div class="line"><span class="comment"># Install Node.js Using a PPA</span></div><div class="line">RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -</div><div class="line">RUN apt -yqq install nodejs</div><div class="line">RUN apt -yqq install build-essential</div><div class="line">RUN npm install -g hexo-cli</div><div class="line"></div><div class="line">VOLUME /data</div><div class="line">VOLUME /var/www/html</div><div class="line">WORKDIR /data</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;The-hexo-base-image&quot;&gt;&lt;a href=&quot;#The-hexo-base-image&quot; class=&quot;headerlink&quot; title=&quot;The hexo base image&quot;&gt;&lt;/a&gt;The hexo base image&lt;/h2&gt;&lt;p&gt;Cr
+      &lt;h2 id=&quot;The-hexo-base-image&quot;&gt;&lt;a href=&quot;#The-hexo-base-image&quot; class=&quot;headerlink&quot; title=&quot;The hexo base image&quot;&gt;&lt;/a&gt;The hexo base image&lt;/h2&gt;&lt;p&gt;Create hexo Dockerfile&lt;br&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ mkdir hexo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; hexo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ vim Dockerfile&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Dockerfile Content&lt;br&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;FROM ubuntu:14.04&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;MAINTAINER luminoid&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ENV REFRESHED_AT 2017-08-22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN apt -yqq update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN apt -yqq install git-core curl&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Install Node.js Using a PPA&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN apt -yqq install nodejs&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN apt -yqq install build-essential&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN npm install -g hexo-cli&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;VOLUME /data&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;VOLUME /var/www/html&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;WORKDIR /data&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -189,9 +191,9 @@
     
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
   </entry>
   
@@ -650,7 +652,7 @@
     <link href="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/"/>
     <id>http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/</id>
     <published>2017-06-06T04:35:16.000Z</published>
-    <updated>2017-06-12T10:24:07.000Z</updated>
+    <updated>2017-08-22T15:49:44.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a id="more"></a>
@@ -667,7 +669,7 @@
     
       <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
     
-      <category term="Scraper" scheme="http://luminoid.github.io/blog/categories/Web/Scraper/"/>
+      <category term="HTML" scheme="http://luminoid.github.io/blog/categories/Web/HTML/"/>
     
     
       <category term="Python" scheme="http://luminoid.github.io/blog/tags/Python/"/>

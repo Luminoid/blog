@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="GoalGet plain text from a Beautiful Soup object with &amp;lt;br /&amp;gt; converted into line break and &amp;lt;wbr /&amp;gt; ignored. Code">
-<meta property="og:updated_time" content="2017-06-12T10:24:07.000Z">
+<meta property="og:updated_time" content="2017-08-22T15:49:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Remove &lt;wbr&gt; tags from Beautiful Soup object">
 <meta name="twitter:description" content="GoalGet plain text from a Beautiful Soup object with &amp;lt;br /&amp;gt; converted into line break and &amp;lt;wbr /&amp;gt; ignored. Code">
@@ -244,7 +244,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Scraper/">Scraper</a>
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/HTML/">HTML</a>
 
 
     
@@ -871,7 +871,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="The-hexo-base-image"><a href="#The-hexo-base-image" class="headerlink" title="The hexo base image"></a>The hexo base image</h2><p>Create hexo Dockerfile<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure></p>
+<p>Dockerfile Content<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-22</div><div class="line"></div><div class="line">RUN apt -yqq update</div><div class="line">RUN apt -yqq install git-core curl</div><div class="line"><span class="comment"># Install Node.js Using a PPA</span></div><div class="line">RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -</div><div class="line">RUN apt -yqq install nodejs</div><div class="line">RUN apt -yqq install build-essential</div><div class="line">RUN npm install -g hexo-cli</div><div class="line"></div><div class="line">VOLUME /data</div><div class="line">VOLUME /var/www/html</div><div class="line">WORKDIR /data</div></pre></td></tr></table></figure></p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
