@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-27T12:49:12.000Z</updated>
+  <updated>2017-08-27T14:38:08.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -17,30 +17,30 @@
   
   <entry>
     <title>Using static site generator with Github Pages</title>
-    <link href="http://luminoid.github.io/blog/2017/08/27/Using-static-site-generator-with-Github-Pages/"/>
-    <id>http://luminoid.github.io/blog/2017/08/27/Using-static-site-generator-with-Github-Pages/</id>
+    <link href="http://luminoid.github.io/blog/2017/08/27/Using-Static-Site-Generator-with-Github-Pages/"/>
+    <id>http://luminoid.github.io/blog/2017/08/27/Using-Static-Site-Generator-with-Github-Pages/</id>
     <published>2017-08-27T12:02:59.000Z</published>
-    <updated>2017-08-27T12:49:12.000Z</updated>
+    <updated>2017-08-27T14:38:08.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
-<p>There are three ways to deploy static site on Github Pages. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using gh-pages branch</h2><p>Simply deploy website content on gh-pages branch and maintain code locally.</p>
+<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
+<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
 <h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because some static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
-<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the web content is maintained locally.<br><a id="more"></a></p>
-<h2 id="Using-master-brunch-and-gh-pages-branch"><a href="#Using-master-brunch-and-gh-pages-branch" class="headerlink" title="Using master brunch and gh-pages branch"></a>Using master brunch and gh-pages branch</h2><p>Deploy code on master brunch and website content on gh-pages branch.</p>
+<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br><a id="more"></a></p>
+<h2 id="Using-master-brunch-and-gh-pages-branch"><a href="#Using-master-brunch-and-gh-pages-branch" class="headerlink" title="Using master brunch and gh-pages branch"></a>Using <code>master</code> brunch and <code>gh-pages</code> branch</h2><p>Deploy code on <code>master</code> brunch and website content on <code>gh-pages</code> branch.</p>
 <h3 id="Advantage-1"><a href="#Advantage-1" class="headerlink" title="Advantage"></a>Advantage</h3><p>Both website content and code is under its own version control system.</p>
 <h3 id="Disadvantage-1"><a href="#Disadvantage-1" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Users have to run command of both static site generator and git every time after the modification.</p>
-<h2 id="Using-master-brunch-and-docs-folder"><a href="#Using-master-brunch-and-docs-folder" class="headerlink" title="Using master brunch and /docs folder"></a>Using master brunch and /docs folder</h2><h3 id="Advantage-2"><a href="#Advantage-2" class="headerlink" title="Advantage"></a>Advantage</h3><p>Users will only need to run command of git and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
+<h2 id="Using-master-brunch-and-docs-folder"><a href="#Using-master-brunch-and-docs-folder" class="headerlink" title="Using master brunch and /docs folder"></a>Using <code>master</code> brunch and <code>/docs</code> folder</h2><h3 id="Advantage-2"><a href="#Advantage-2" class="headerlink" title="Advantage"></a>Advantage</h3><p>Users will only need to run command of git, and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
 <h3 id="Disadvantage-2"><a href="#Disadvantage-2" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>In the field of version control, users can only have the benefit of git. The version control capability of the static site generator is ignored. I personally recommend this way because the version control capability of the static site generator is not that important in most circumstances.</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;!-- toc --&gt;
-&lt;p&gt;There are three ways to deploy static site on Github Pages. I tend to use the third scheme myself. The related Github documentation can be found &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Using-gh-pages-branch&quot;&gt;&lt;a href=&quot;#Using-gh-pages-branch&quot; class=&quot;headerlink&quot; title=&quot;Using gh-pages branch&quot;&gt;&lt;/a&gt;Using gh-pages branch&lt;/h2&gt;&lt;p&gt;Simply deploy website content on gh-pages branch and maintain code locally.&lt;/p&gt;
+&lt;p&gt;There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Using-gh-pages-branch&quot;&gt;&lt;a href=&quot;#Using-gh-pages-branch&quot; class=&quot;headerlink&quot; title=&quot;Using gh-pages branch&quot;&gt;&lt;/a&gt;Using &lt;code&gt;gh-pages&lt;/code&gt; branch&lt;/h2&gt;&lt;p&gt;Simply deploy website content on &lt;code&gt;gh-pages&lt;/code&gt; branch and maintain code locally.&lt;/p&gt;
 &lt;h3 id=&quot;Advantage&quot;&gt;&lt;a href=&quot;#Advantage&quot; class=&quot;headerlink&quot; title=&quot;Advantage&quot;&gt;&lt;/a&gt;Advantage&lt;/h3&gt;&lt;p&gt;This is the easiest way because some static site generators have build-in &lt;code&gt;deploy&lt;/code&gt; command. Users would only need to setup the deployment configuration once and run &lt;code&gt;deploy&lt;/code&gt; command every time after the modification.&lt;/p&gt;
-&lt;h3 id=&quot;Disadvantage&quot;&gt;&lt;a href=&quot;#Disadvantage&quot; class=&quot;headerlink&quot; title=&quot;Disadvantage&quot;&gt;&lt;/a&gt;Disadvantage&lt;/h3&gt;&lt;p&gt;Only website content is under the version control. The code that generates the web content is maintained locally.&lt;br&gt;
+&lt;h3 id=&quot;Disadvantage&quot;&gt;&lt;a href=&quot;#Disadvantage&quot; class=&quot;headerlink&quot; title=&quot;Disadvantage&quot;&gt;&lt;/a&gt;Disadvantage&lt;/h3&gt;&lt;p&gt;Only website content is under the version control. The code that generates the website content is maintained locally.&lt;br&gt;
     
     </summary>
     
@@ -231,9 +231,9 @@
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
@@ -657,10 +657,10 @@
     <link href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-08-27T10:55:50.000Z</updated>
+    <updated>2017-08-27T14:37:14.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
+<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
 <h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>With Algolia and hexo deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
@@ -677,7 +677,7 @@
     <summary type="html">
     
       &lt;!-- toc --&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-theme-tranquilpeak&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;Theme: &lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-theme-tranquilpeak&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Quick-deployment&quot;&gt;&lt;a href=&quot;#Quick-deployment&quot; class=&quot;headerlink&quot; title=&quot;Quick deployment&quot;&gt;&lt;/a&gt;Quick deployment&lt;/h2&gt;&lt;p&gt;With Algolia and git deployment&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Article&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ vim &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;/_posts/My-New-Article.md&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo clean&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo algolia&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git add -A&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git commit -m &amp;lt;msg&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git push&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>

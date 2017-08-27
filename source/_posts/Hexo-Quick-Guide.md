@@ -10,13 +10,14 @@ tags:
 keywords:
 - Hexo
 - guide
+- Algolia
 - Github
 ---
 
 <!-- toc -->
 
 [Hexo](https://hexo.io)
-[hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
+Theme: [hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
 
 ## Quick deployment
 With Algolia and git deployment
