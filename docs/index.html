@@ -226,6 +226,63 @@
                 <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2017/08/27/Using-static-site-generator-with-Github-Pages/">
+                            Using static site generator with Github Pages
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-08-27T20:02:59+08:00">
+	
+		    Aug 27, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-gh-pages-branch"><span class="toc-text">Using gh-pages branch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage"><span class="toc-text">Disadvantage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-master-brunch-and-gh-pages-branch"><span class="toc-text">Using master brunch and gh-pages branch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage-1"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage-1"><span class="toc-text">Disadvantage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-master-brunch-and-docs-folder"><span class="toc-text">Using master brunch and /docs folder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage-2"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage-2"><span class="toc-text">Disadvantage</span></a></li></ol></li></ol>
+<p>There are three ways to deploy static site on Github Pages. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
+<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using gh-pages branch</h2><p>Simply deploy website content on gh-pages branch and maintain code locally.</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because some static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
+<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the web content is maintained locally.</p>
+<h2 id="Using-master-brunch-and-gh-pages-branch"><a href="#Using-master-brunch-and-gh-pages-branch" class="headerlink" title="Using master brunch and gh-pages branch"></a>Using master brunch and gh-pages branch</h2><p>Deploy code on master brunch and website content on gh-pages branch.</p>
+<h3 id="Advantage-1"><a href="#Advantage-1" class="headerlink" title="Advantage"></a>Advantage</h3><p>Both website content and code is under its own version control system.</p>
+<h3 id="Disadvantage-1"><a href="#Disadvantage-1" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Users have to run command of both static site generator and git every time after the modification.</p>
+<h2 id="Using-master-brunch-and-docs-folder"><a href="#Using-master-brunch-and-docs-folder" class="headerlink" title="Using master brunch and /docs folder"></a>Using master brunch and /docs folder</h2><h3 id="Advantage-2"><a href="#Advantage-2" class="headerlink" title="Advantage"></a>Advantage</h3><p>Users will only need to run command of git and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
+<h3 id="Disadvantage-2"><a href="#Disadvantage-2" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>In the field of version control, users can only have the benefit of git. The version control capability of the static site generator is ignored. I personally recommend this way because the version control capability of the static site generator is not that important in most circumstances.</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/blog/2017/08/27/Using-static-site-generator-with-Github-Pages/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -1158,6 +1215,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/27/Using-static-site-generator-with-Github-Pages/">
+                            <h3 class="media-heading">Using static site generator with Github Pages</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Aug 27, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -1165,7 +1241,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                7 posts found
+                8 posts found
             </p>
         </div>
     </div>
