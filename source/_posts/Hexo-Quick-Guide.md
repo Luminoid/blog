@@ -6,9 +6,11 @@ categories:
 - Static Site Generator
 tags:
 - Hexo
+- Github
 keywords:
 - Hexo
 - guide
+- Github
 ---
 
 <!-- toc -->
@@ -16,8 +18,20 @@ keywords:
 [Hexo](https://hexo.io)
 [hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
 
-## Quick deploy
-With Algolia
+## Quick deployment
+With Algolia and git deployment
+``` bash
+$ hexo new "My New Article"
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ git add -A
+$ git commit -m <msg>
+$ git push
+```
+
+<!-- more -->
+With Algolia and hexo deployment
 ``` bash
 $ hexo new "My New Article"
 $ vim source/_posts/My-New-Article.md
@@ -25,7 +39,7 @@ $ hexo clean
 $ hexo algolia
 $ hexo deploy
 ```
-<!-- more -->
+
 Without Algolia
 ``` bash
 $ hexo new "My New Article"
@@ -62,3 +76,4 @@ Deploys your website.
 ``` bash
 $ hexo deploy
 ```
+Set the `public_dir` in `_config.yml` from `public` to `docs` if you want the GitHub Pages site built from the `/docs` folder in the master branch. More info [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).
