@@ -17,8 +17,8 @@
   
   <entry>
     <title>Using static site generator with Github Pages</title>
-    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages"/>
-    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages</id>
+    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/"/>
+    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/</id>
     <published>2017-08-27T12:02:59.000Z</published>
     <updated>2017-08-27T14:38:08.000Z</updated>
     
@@ -55,8 +55,8 @@
   
   <entry>
     <title>Building Hexo Website with Docker</title>
-    <link href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker"/>
-    <id>http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker</id>
+    <link href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/"/>
+    <id>http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
     <updated>2017-08-30T11:33:05.000Z</updated>
     
@@ -89,9 +89,9 @@
       <category term="Docker" scheme="http://luminoid.github.io/blog/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
-    
       <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
       <category term="Apache" scheme="http://luminoid.github.io/blog/tags/Apache/"/>
     
@@ -101,8 +101,8 @@
   
   <entry>
     <title>Mac Development Config</title>
-    <link href="http://luminoid.github.io/blog/Mac/Mac-Development-Config"/>
-    <id>http://luminoid.github.io/blog/Mac/Mac-Development-Config</id>
+    <link href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/"/>
+    <id>http://luminoid.github.io/blog/Mac/Mac-Development-Config/</id>
     <published>2017-08-08T14:45:55.000Z</published>
     <updated>2017-08-21T16:12:15.000Z</updated>
     
@@ -255,8 +255,8 @@
   
   <entry>
     <title>Sorting Algorithm Analysis</title>
-    <link href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis"/>
-    <id>http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis</id>
+    <link href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/"/>
+    <id>http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/</id>
     <published>2017-06-12T11:51:09.000Z</published>
     <updated>2017-06-12T16:22:06.000Z</updated>
     
@@ -443,8 +443,8 @@
   
   <entry>
     <title>Atom Usage</title>
-    <link href="http://luminoid.github.io/blog/Tool/Atom-Usage"/>
-    <id>http://luminoid.github.io/blog/Tool/Atom-Usage</id>
+    <link href="http://luminoid.github.io/blog/Tool/Atom-Usage/"/>
+    <id>http://luminoid.github.io/blog/Tool/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
     <updated>2017-08-08T16:09:41.000Z</updated>
     
@@ -626,8 +626,8 @@
   
   <entry>
     <title>Hexo Common Problems</title>
-    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems"/>
-    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems</id>
+    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/"/>
+    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
     <updated>2017-06-12T16:00:22.000Z</updated>
     
@@ -668,8 +668,8 @@
   
   <entry>
     <title>Hexo Quick Guide</title>
-    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide"/>
-    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide</id>
+    <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/"/>
+    <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
     <updated>2017-08-27T14:37:14.000Z</updated>
     
@@ -709,8 +709,8 @@
   
   <entry>
     <title>Remove &lt;wbr&gt; tags from Beautiful Soup object</title>
-    <link href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object"/>
-    <id>http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object</id>
+    <link href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/"/>
+    <id>http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/</id>
     <published>2017-06-06T04:35:16.000Z</published>
     <updated>2017-08-22T15:49:44.000Z</updated>
     

@@ -6,26 +6,26 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Using static site generator with Github Pages - Luminoid&#39;s Site</title>
+    <title>Hexo Common Problems - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,static site generator,Github Pages,master,gh-pages">
+        <meta name="keywords" content="hexo,Hexo,server,Algolia,hexo-math">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found here. Using gh-pages branchSimply deploy we">
-<meta name="keywords" content="static site generator,Github Pages,master,gh-pages">
+    <meta name="description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta name="keywords" content="Hexo,server,Algolia,hexo-math">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Using static site generator with Github Pages">
-<meta property="og:url" content="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+<meta property="og:title" content="Hexo Common Problems">
+<meta property="og:url" content="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found here. Using gh-pages branchSimply deploy we">
-<meta property="og:updated_time" content="2017-08-27T14:38:08.000Z">
+<meta property="og:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta property="og:updated_time" content="2017-06-12T16:00:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Using static site generator with Github Pages">
-<meta name="twitter:description" content="There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found here. Using gh-pages branchSimply deploy we">
+<meta name="twitter:title" content="Hexo Common Problems">
+<meta name="twitter:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
     
     
         
@@ -231,14 +231,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Using static site generator with Github Pages
+            Hexo Common Problems
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-08-27T20:02:59+08:00">
+    <time itemprop="datePublished" datetime="2017-06-08T20:25:08+08:00">
 	
-		    Aug 27, 2017
+		    Jun 08, 2017
     	
     </time>
     
@@ -255,16 +255,17 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-gh-pages-branch"><span class="toc-text">Using gh-pages branch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage"><span class="toc-text">Disadvantage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-master-brunch-and-gh-pages-branch"><span class="toc-text">Using master brunch and gh-pages branch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage-1"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage-1"><span class="toc-text">Disadvantage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-master-brunch-and-docs-folder"><span class="toc-text">Using master brunch and /docs folder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage-2"><span class="toc-text">Advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disadvantage-2"><span class="toc-text">Disadvantage</span></a></li></ol></li></ol>
-<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because some static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
-<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br><a id="more"></a></p>
-<h2 id="Using-master-brunch-and-gh-pages-branch"><a href="#Using-master-brunch-and-gh-pages-branch" class="headerlink" title="Using master brunch and gh-pages branch"></a>Using <code>master</code> brunch and <code>gh-pages</code> branch</h2><p>Deploy code on <code>master</code> brunch and website content on <code>gh-pages</code> branch.</p>
-<h3 id="Advantage-1"><a href="#Advantage-1" class="headerlink" title="Advantage"></a>Advantage</h3><p>Both website content and code is under its own version control system.</p>
-<h3 id="Disadvantage-1"><a href="#Disadvantage-1" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Users have to run command of both static site generator and git every time after the modification.</p>
-<h2 id="Using-master-brunch-and-docs-folder"><a href="#Using-master-brunch-and-docs-folder" class="headerlink" title="Using master brunch and /docs folder"></a>Using <code>master</code> brunch and <code>/docs</code> folder</h2><h3 id="Advantage-2"><a href="#Advantage-2" class="headerlink" title="Advantage"></a>Advantage</h3><p>Users will only need to run command of git, and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
-<h3 id="Disadvantage-2"><a href="#Disadvantage-2" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>In the field of version control, users can only have the benefit of git. The version control capability of the static site generator is ignored. I personally recommend this way because the version control capability of the static site generator is not that important in most circumstances.</p>
+            <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+<ul>
+<li><a href="#hexo-server-not-found">hexo server not found</a></li>
+<li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
+</ul>
+<!-- tocstop -->
+<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+<a id="more"></a>
+<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
+<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
 
             
         </div>
@@ -274,7 +275,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Github/">Github</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Hexo/">Hexo</a>
 
             </div>
         
@@ -284,7 +285,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage/"  data-tooltip="Atom Usage">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -292,7 +293,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Docker/Building-Hexo-Website-with-Docker" data-tooltip="Building Hexo Website with Docker">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/" data-tooltip="Hexo Quick Guide">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -310,7 +311,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -318,7 +319,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -326,7 +327,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -334,7 +335,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -342,7 +343,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -374,7 +375,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage/"  data-tooltip="Atom Usage">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -382,7 +383,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Docker/Building-Hexo-Website-with-Docker" data-tooltip="Building Hexo Website with Docker">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/" data-tooltip="Hexo Quick Guide">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -400,7 +401,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -408,7 +409,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -416,7 +417,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -424,7 +425,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -432,7 +433,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -449,7 +450,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -457,7 +458,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -465,7 +466,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -473,7 +474,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                     <i class="fa fa-weibo"></i><span>Share on Weibo</span>
                 </a>
             </li>
@@ -543,7 +544,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/">
                             <h3 class="media-heading">Remove &lt;wbr&gt; tags from Beautiful Soup object</h3>
                         </a>
                         <span class="media-meta">
@@ -563,7 +564,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/">
                             <h3 class="media-heading">Hexo Quick Guide</h3>
                         </a>
                         <span class="media-meta">
@@ -584,7 +585,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                             <h3 class="media-heading">Hexo Common Problems</h3>
                         </a>
                         <span class="media-meta">
@@ -610,7 +611,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage/">
                             <h3 class="media-heading">Atom Usage</h3>
                         </a>
                         <span class="media-meta">
@@ -691,7 +692,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/">
                             <h3 class="media-heading">Sorting Algorithm Analysis</h3>
                         </a>
                         <span class="media-meta">
@@ -792,7 +793,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                             <h3 class="media-heading">Mac Development Config</h3>
                         </a>
                         <span class="media-meta">
@@ -867,7 +868,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/">
                             <h3 class="media-heading">Building Hexo Website with Docker</h3>
                         </a>
                         <span class="media-meta">
@@ -889,7 +890,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/">
                             <h3 class="media-heading">Using static site generator with Github Pages</h3>
                         </a>
                         <span class="media-meta">

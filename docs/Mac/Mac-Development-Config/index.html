@@ -6,26 +6,26 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Hexo Common Problems - Luminoid&#39;s Site</title>
+    <title>Mac Development Config - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,Hexo,server,Algolia,hexo-math">
+        <meta name="keywords" content="hexo,Homebrew,Atom,Docker">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
-<meta name="keywords" content="Hexo,server,Algolia,hexo-math">
+    <meta name="description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
+<meta name="keywords" content="Homebrew,Atom,Docker">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hexo Common Problems">
-<meta property="og:url" content="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+<meta property="og:title" content="Mac Development Config">
+<meta property="og:url" content="http://luminoid.github.io/blog/Mac/Mac-Development-Config/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
-<meta property="og:updated_time" content="2017-06-12T16:00:22.000Z">
+<meta property="og:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
+<meta property="og:updated_time" content="2017-08-21T16:12:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Common Problems">
-<meta name="twitter:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta name="twitter:title" content="Mac Development Config">
+<meta name="twitter:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
     
     
         
@@ -231,20 +231,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Hexo Common Problems
+            Mac Development Config
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-06-08T20:25:08+08:00">
+    <time itemprop="datePublished" datetime="2017-08-08T22:45:55+08:00">
 	
-		    Jun 08, 2017
+		    Aug 08, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
+    <a class="category-link" href="/blog/categories/Mac/">Mac</a>
 
 
     
@@ -257,15 +257,76 @@
         <div class="main-content-wrap">
             <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
-<li><a href="#hexo-server-not-found">hexo server not found</a></li>
-<li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
-<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
+<li><a href="#package-manager">Package Manager</a><ul>
+<li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#formula">Formula</a><ul>
+<li><a href="#tighttpsjonasgithubiotig">tig</a></li>
+<li><a href="#tree">tree</a></li>
+<li><a href="#readlinehttpcnswwwcnscwrueduphpchetreadlinerltophtml">readline</a></li>
+<li><a href="#rlwraphttpsgithubcomhanslub42rlwrap">rlwrap</a></li>
+<li><a href="#pngquanthttpspngquantorg">pngquant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#homebrew-caskhttpscaskroomgithubio">Homebrew-Cask</a><ul>
+<li><a href="#install-1">Install</a></li>
+<li><a href="#usage-1">Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#terminal">Terminal</a><ul>
+<li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li>
+<li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul>
+<li><a href="#install-2">Install</a></li>
+<li><a href="#theme">Theme</a><ul>
+<li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#text-editor">Text Editor</a><ul>
+<li><a href="#atomhttpsatomio">Atom</a></li>
+</ul>
+</li>
+<li><a href="#ide">IDE</a><ul>
+<li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li>
+</ul>
+</li>
+<li><a href="#version-control">Version Control</a><ul>
+<li><a href="#git">Git</a></li>
+</ul>
+</li>
+<li><a href="#tool">Tool</a><ul>
+<li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
+<li><a href="#install-3">Install</a></li>
+<li><a href="#usage-2">Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <!-- tocstop -->
-<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
 <a id="more"></a>
-<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
-<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh" target="_blank" rel="external">Homebrew</a></h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
+<h4 id="Formula"><a href="#Formula" class="headerlink" title="Formula"></a>Formula</h4><h5 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/" target="_blank" rel="external">tig</a></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
+<h5 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h5><p>List contents of directories in a tree-like format.</p>
+<h5 id="readline"><a href="#readline" class="headerlink" title="readline"></a><a href="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" target="_blank" rel="external">readline</a></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
+<h5 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap" target="_blank" rel="external">rlwrap</a></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
+<h5 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org" target="_blank" rel="external">pngquant</a></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
+<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
+<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
 
             
         </div>
@@ -275,7 +336,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Hexo/">Hexo</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Atom/">Atom</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Docker/">Docker</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Homebrew/">Homebrew</a>
 
             </div>
         
@@ -285,7 +346,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage"  data-tooltip="Atom Usage">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Docker/Building-Hexo-Website-with-Docker/"  data-tooltip="Building Hexo Website with Docker">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -293,7 +354,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide" data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Algorithm/Sorting-Algorithm-Analysis/" data-tooltip="Sorting Algorithm Analysis">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -311,7 +372,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -319,7 +380,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -327,7 +388,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -335,7 +396,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -375,7 +436,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage"  data-tooltip="Atom Usage">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Docker/Building-Hexo-Website-with-Docker/"  data-tooltip="Building Hexo Website with Docker">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -383,7 +444,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide" data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Algorithm/Sorting-Algorithm-Analysis/" data-tooltip="Sorting Algorithm Analysis">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -401,7 +462,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -409,7 +470,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -417,7 +478,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -425,7 +486,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -450,7 +511,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -458,7 +519,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -466,7 +527,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -474,7 +535,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                     <i class="fa fa-weibo"></i><span>Share on Weibo</span>
                 </a>
             </li>
@@ -544,7 +605,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/">
                             <h3 class="media-heading">Remove &lt;wbr&gt; tags from Beautiful Soup object</h3>
                         </a>
                         <span class="media-meta">
@@ -564,7 +625,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/">
                             <h3 class="media-heading">Hexo Quick Guide</h3>
                         </a>
                         <span class="media-meta">
@@ -585,7 +646,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
                             <h3 class="media-heading">Hexo Common Problems</h3>
                         </a>
                         <span class="media-meta">
@@ -611,7 +672,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage/">
                             <h3 class="media-heading">Atom Usage</h3>
                         </a>
                         <span class="media-meta">
@@ -692,7 +753,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/">
                             <h3 class="media-heading">Sorting Algorithm Analysis</h3>
                         </a>
                         <span class="media-meta">
@@ -793,7 +854,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/">
                             <h3 class="media-heading">Mac Development Config</h3>
                         </a>
                         <span class="media-meta">
@@ -868,7 +929,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/">
                             <h3 class="media-heading">Building Hexo Website with Docker</h3>
                         </a>
                         <span class="media-meta">
@@ -890,7 +951,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/">
                             <h3 class="media-heading">Using static site generator with Github Pages</h3>
                         </a>
                         <span class="media-meta">
