@@ -3,15 +3,19 @@ title: Building Hexo Website with Docker
 date: 2017-08-22 00:10:13
 categories: Docker
 tags:
-- Hexo
 - Docker
+- Hexo
+- Apache
+- Ubuntu
 keywords:
-- Hexo
 - Docker
+- Hexo
+- Apache
+- Ubuntu
 ---
 
 <!-- TOC -->
-
+This is a portable and generic way to build Hexo Website with Docker.
 ## The Hexo base image
 ### Creating Hexo Dockerfile
 ``` sh
@@ -26,21 +30,30 @@ FROM ubuntu:14.04
 MAINTAINER luminoid
 ENV REFRESHED_AT 2017-08-28
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install git-core curl
-# Install Node.js Using a PPA
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
-RUN apt-get -yqq install nodejs
-RUN apt-get -yqq install build-essential
-# Set config to avoid permission issues
-RUN npm config set user 0
-RUN npm config set unsafe-perm true
-RUN npm install -g hexo-cli
+# Install Hexo
+RUN apt-get update -yqq \
+  && apt-get install -yqq curl git-core \
+  # Install Node.js Using a PPA
+  && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  && apt-get install -yqq nodejs build-essential \
+  # Set config to avoid permission issues
+  && npm config set user 0 \
+  && npm config set unsafe-perm true \
+  && npm install -g hexo-cli
 
-VOLUME [ "/data/", "/var/www/html" ]
+# Clone blog
 WORKDIR /data
+RUN git clone https://github.com/Luminoid/blog.git
 
-ENTRYPOINT [ "hexo", "generate" ]
+# Install blog dependencies
+WORKDIR /data/blog
+RUN npm install \
+  && npm install prompt --save \
+  && npm install jquery --save
+
+RUN mkdir -p /var/www/html/ \
+  && cp -r /data/blog/docs/* /var/www/html/
+VOLUME [ "/data/blog", "/var/www/html" ]
 ```
 <!-- more -->
 
@@ -63,8 +76,8 @@ FROM ubuntu:14.04
 MAINTAINER luminoid
 ENV REFRESHED_AT 2017-08-28
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install apache2
+RUN apt-get update -yqq \
+  && apt-get install -yqq apache2
 
 VOLUME [ "/var/www/html" ]
 WORKDIR /var/www/html
@@ -93,14 +106,13 @@ $ docker images # list images
 ## Launching hexo site
 ### Creating a Hexo container
 ``` sh
-$ cd ~/Documents
-$ git clone https://github.com/Luminoid/blog.git
-$ docker run -v ~/Documents/blog:/data/ --name luminoid_blog luminoid/hexo
+$ docker run --name luminoid_blog luminoid/hexo
 ```
 
 ### Creating an Apache container
 ``` sh
-$ docker run -d -P --volumes-from luminoid_blog luminoid/apache
+$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache
+APACHE_CONTAINER_ID
 ```
 
 ### Resolving the Apache container’s port
@@ -110,4 +122,14 @@ $ docker port APACHE_CONTAINER_ID 80
 ```
 
 ### Hexo website
-The Website can be viewed at `localhost:32768`
+The Website can be viewed at `http://localhost:32768`
+
+### Updating Hexo website
+Restart the Hexo container and the website will be updated.
+``` sh
+docker start luminoid_blog
+```
+### Backing up the Hexo volume
+``` sh
+docker run --rm --volumes-from luminoid_blog -v $(pwd):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html
+```
