@@ -6,26 +6,26 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Hexo Common Problems - Luminoid&#39;s Site</title>
+    <title>Sorting Algorithm Analysis - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,Hexo,server,Algolia,hexo-math">
+        <meta name="keywords" content="hexo,Sorting algorithm,time complexity">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
-<meta name="keywords" content="Hexo,server,Algolia,hexo-math">
+    <meta name="description" content="Algorithm Worst-case running time Average-case / expected running time In-place Stable     Insertion sort1 $\Theta(n^2)$ $\Theta(n^2)$ Yes Yes   Shell sort $\Theta(n^2)$  Yes No   Selection sort $\">
+<meta name="keywords" content="Sorting algorithm,time complexity">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hexo Common Problems">
-<meta property="og:url" content="http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/index.html">
+<meta property="og:title" content="Sorting Algorithm Analysis">
+<meta property="og:url" content="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
-<meta property="og:updated_time" content="2017-06-12T16:00:22.000Z">
+<meta property="og:description" content="Algorithm Worst-case running time Average-case / expected running time In-place Stable     Insertion sort1 $\Theta(n^2)$ $\Theta(n^2)$ Yes Yes   Shell sort $\Theta(n^2)$  Yes No   Selection sort $\">
+<meta property="og:updated_time" content="2017-06-12T16:22:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Common Problems">
-<meta name="twitter:description" content="hexo server not found hexo algolia 0 posts indexed hexo-math not working   hexo server not foundProblem: Can’t find hexo server command.Solution: Extra plugins line in _config.yml may cause this pro">
+<meta name="twitter:title" content="Sorting Algorithm Analysis">
+<meta name="twitter:description" content="Algorithm Worst-case running time Average-case / expected running time In-place Stable     Insertion sort1 $\Theta(n^2)$ $\Theta(n^2)$ Yes Yes   Shell sort $\Theta(n^2)$  Yes No   Selection sort $\">
     
     
         
@@ -231,20 +231,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Hexo Common Problems
+            Sorting Algorithm Analysis
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-06-08T20:25:08+08:00">
+    <time itemprop="datePublished" datetime="2017-06-12T19:51:09+08:00">
 	
-		    Jun 08, 2017
+		    Jun 12, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
+    <a class="category-link" href="/blog/categories/Algorithm/">Algorithm</a>
 
 
     
@@ -255,18 +255,91 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-<ul>
-<li><a href="#hexo-server-not-found">hexo server not found</a></li>
-<li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
-<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
-</ul>
-<!-- tocstop -->
-<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+            <table>
+<thead>
+<tr>
+<th style="text-align:left">Algorithm</th>
+<th style="text-align:left">Worst-case running time</th>
+<th style="text-align:left">Average-case / expected running time</th>
+<th style="text-align:left">In-place</th>
+<th style="text-align:left">Stable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Insertion sort<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Shell sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Selection sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Heapsort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Bubble sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Quicksort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(nlgn)$ (expected)</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Counting sort</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Radix sort<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Bucket sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n)$ (average-case)</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Merge sort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
-<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo algolia 0 posts indexed"></a>hexo algolia 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
-<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
-
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">n: the number of items to sort.</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">For radix sort, each item is a d-digit number, where each digit takes on k possible values.</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div>
             
         </div>
     </div>
@@ -275,7 +348,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Hexo/">Hexo</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Sorting-algorithm/">Sorting algorithm</a>
 
             </div>
         
@@ -285,7 +358,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/12/Atom-Usage/"  data-tooltip="Atom Usage">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Mac/Mac-Development-Config"  data-tooltip="Mac Development Config">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -293,7 +366,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/08/Hexo-Quick-Guide/" data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage" data-tooltip="Atom Usage">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -311,7 +384,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -319,7 +392,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -327,7 +400,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -335,7 +408,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -375,7 +448,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/12/Atom-Usage/"  data-tooltip="Atom Usage">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Mac/Mac-Development-Config"  data-tooltip="Mac Development Config">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -383,7 +456,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/08/Hexo-Quick-Guide/" data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Tool/Atom-Usage" data-tooltip="Atom Usage">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -401,7 +474,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -409,7 +482,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -417,7 +490,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -425,7 +498,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -450,7 +523,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -458,7 +531,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -466,7 +539,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -474,7 +547,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                     <i class="fa fa-weibo"></i><span>Share on Weibo</span>
                 </a>
             </li>
@@ -544,7 +617,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object">
                             <h3 class="media-heading">Remove &lt;wbr&gt; tags from Beautiful Soup object</h3>
                         </a>
                         <span class="media-meta">
@@ -564,7 +637,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide">
                             <h3 class="media-heading">Hexo Quick Guide</h3>
                         </a>
                         <span class="media-meta">
@@ -585,7 +658,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
                             <h3 class="media-heading">Hexo Common Problems</h3>
                         </a>
                         <span class="media-meta">
@@ -611,7 +684,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/12/Atom-Usage/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage">
                             <h3 class="media-heading">Atom Usage</h3>
                         </a>
                         <span class="media-meta">
@@ -692,7 +765,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                             <h3 class="media-heading">Sorting Algorithm Analysis</h3>
                         </a>
                         <span class="media-meta">
@@ -793,7 +866,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/08/Mac-Development-Config/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config">
                             <h3 class="media-heading">Mac Development Config</h3>
                         </a>
                         <span class="media-meta">
@@ -868,7 +941,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                             <h3 class="media-heading">Building Hexo Website with Docker</h3>
                         </a>
                         <span class="media-meta">
@@ -890,7 +963,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/27/Using-Static-Site-Generator-with-Github-Pages/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
                             <h3 class="media-heading">Using static site generator with Github Pages</h3>
                         </a>
                         <span class="media-meta">

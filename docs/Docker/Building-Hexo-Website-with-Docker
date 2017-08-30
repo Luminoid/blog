@@ -6,26 +6,26 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Remove &lt;wbr&gt; tags from Beautiful Soup object - Luminoid&#39;s Site</title>
+    <title>Building Hexo Website with Docker - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,Beautiful Soup,wbr">
+        <meta name="keywords" content="hexo,Docker,Hexo,Apache,Ubuntu">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="GoalGet plain text from a Beautiful Soup object with &amp;lt;br /&amp;gt; converted into line break and &amp;lt;wbr /&amp;gt; ignored. Code">
-<meta name="keywords" content="Beautiful Soup,wbr">
+    <meta name="description" content="This is a portable and generic way to build Hexo Website with Docker. The Hexo base imageCreating Hexo Dockerfile123$ mkdir hexo$ cd hexo$ vim Dockerfile Hexo Dockerfile Content1234567891011121314151">
+<meta name="keywords" content="Docker,Hexo,Apache,Ubuntu">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Remove &lt;wbr&gt; tags from Beautiful Soup object">
-<meta property="og:url" content="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/index.html">
+<meta property="og:title" content="Building Hexo Website with Docker">
+<meta property="og:url" content="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="GoalGet plain text from a Beautiful Soup object with &amp;lt;br /&amp;gt; converted into line break and &amp;lt;wbr /&amp;gt; ignored. Code">
-<meta property="og:updated_time" content="2017-08-22T15:49:44.000Z">
+<meta property="og:description" content="This is a portable and generic way to build Hexo Website with Docker. The Hexo base imageCreating Hexo Dockerfile123$ mkdir hexo$ cd hexo$ vim Dockerfile Hexo Dockerfile Content1234567891011121314151">
+<meta property="og:updated_time" content="2017-08-30T11:33:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Remove &lt;wbr&gt; tags from Beautiful Soup object">
-<meta name="twitter:description" content="GoalGet plain text from a Beautiful Soup object with &amp;lt;br /&amp;gt; converted into line break and &amp;lt;wbr /&amp;gt; ignored. Code">
+<meta name="twitter:title" content="Building Hexo Website with Docker">
+<meta name="twitter:description" content="This is a portable and generic way to build Hexo Website with Docker. The Hexo base imageCreating Hexo Dockerfile123$ mkdir hexo$ cd hexo$ vim Dockerfile Hexo Dockerfile Content1234567891011121314151">
     
     
         
@@ -231,20 +231,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Remove &lt;wbr&gt; tags from Beautiful Soup object
+            Building Hexo Website with Docker
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-06-06T12:35:16+08:00">
+    <time itemprop="datePublished" datetime="2017-08-22T00:10:13+08:00">
 	
-		    Jun 06, 2017
+		    Aug 22, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/HTML/">HTML</a>
+    <a class="category-link" href="/blog/categories/Docker/">Docker</a>
 
 
     
@@ -255,10 +255,21 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;span&gt;</div><div class="line">    Here is some text.</div><div class="line">    Here is some other text with a line break in it. &lt;br/&gt;And it should be divided into two lines.</div><div class="line">    This line, &lt;wbr /&gt;contains some word break opportunities, &lt;wbr /&gt;which should be ignored. &lt;wbr/&gt;And the output should be in one line.</div><div class="line">&lt;span/&gt;</div><div class="line">"""</div><div class="line"></div><div class="line">soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</div><div class="line">tag = soup.find(<span class="string">'span'</span>)</div><div class="line"></div><div class="line"><span class="comment"># remove &lt;wbr&gt; tags</span></div><div class="line"><span class="keyword">for</span> wbr <span class="keyword">in</span> soup.findAll(<span class="string">'wbr'</span>):</div><div class="line">    wbr_previous = wbr.previous_sibling</div><div class="line">    wbr_next = wbr.next_sibling</div><div class="line">    wbr_previous.string.replace_with(wbr_previous + wbr_next)</div><div class="line">    wbr.extract()</div><div class="line">    wbr_next.extract()</div><div class="line"></div><div class="line"><span class="comment"># reformat the text</span></div><div class="line">content = re.sub(<span class="string">r'\s*?\n+\s*'</span>, <span class="string">'\n'</span>, tag.get_text(<span class="string">'\n'</span>).strip())</div><div class="line">print(content)</div></pre></td></tr></table></figure>
-<p><strong>Result:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Here is some text.</div><div class="line">Here is some other text with a line break in it.</div><div class="line">And it should be divided into two lines.</div><div class="line">This line, contains some word break opportunities, which should be ignored. And the output should be in one line.</div></pre></td></tr></table></figure></p>
+            <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Hexo-base-image"><span class="toc-text">The Hexo base image</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Hexo-Dockerfile"><span class="toc-text">Creating Hexo Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-Dockerfile-Content"><span class="toc-text">Hexo Dockerfile Content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-Hexo-base-image"><span class="toc-text">Building Hexo base image</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Apache-image"><span class="toc-text">The Apache image</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Apache-Dockerfile"><span class="toc-text">Creating Apache Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-Dockerfile-Content"><span class="toc-text">Apache Dockerfile Content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-Apache-image"><span class="toc-text">Building Apache image</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Launching-hexo-site"><span class="toc-text">Launching hexo site</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-a-Hexo-container"><span class="toc-text">Creating a Hexo container</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-an-Apache-container"><span class="toc-text">Creating an Apache container</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Resolving-the-Apache-container’s-port"><span class="toc-text">Resolving the Apache container’s port</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-website"><span class="toc-text">Hexo website</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Updating-Hexo-website"><span class="toc-text">Updating Hexo website</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Backing-up-the-Hexo-volume"><span class="toc-text">Backing up the Hexo volume</span></a></li></ol></li></ol>
+<p>This is a portable and generic way to build Hexo Website with Docker.</p>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Building-Hexo-base-image"><a href="#Building-Hexo-base-image" class="headerlink" title="Building Hexo base image"></a>Building Hexo base image</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/hexo .</div></pre></td></tr></table></figure>
+<h2 id="The-Apache-image"><a href="#The-Apache-image" class="headerlink" title="The Apache image"></a>The Apache image</h2><h3 id="Creating-Apache-Dockerfile"><a href="#Creating-Apache-Dockerfile" class="headerlink" title="Creating Apache Dockerfile"></a>Creating Apache Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir apache</div><div class="line">$ <span class="built_in">cd</span> apache</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
+<h3 id="Apache-Dockerfile-Content"><a href="#Apache-Dockerfile-Content" class="headerlink" title="Apache Dockerfile Content"></a>Apache Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq apache2</div><div class="line"></div><div class="line">VOLUME [ <span class="string">"/var/www/html"</span> ]</div><div class="line">WORKDIR /var/www/html</div><div class="line"></div><div class="line">ENV APACHE_RUN_USER www-data</div><div class="line">ENV APACHE_RUN_GROUP www-data</div><div class="line">ENV APACHE_LOG_DIR /var/<span class="built_in">log</span>/apache2</div><div class="line">ENV APACHE_PID_FILE /var/run/apache2.pid</div><div class="line">ENV APACHE_RUN_DIR /var/run/apache2</div><div class="line">ENV APACHE_LOCK_DIR /var/lock/apache2</div><div class="line"></div><div class="line">RUN mkdir -p <span class="variable">$APACHE_RUN_DIR</span> <span class="variable">$APACHE_LOCK_DIR</span> <span class="variable">$APACHE_LOG_DIR</span></div><div class="line"></div><div class="line">EXPOSE 80</div><div class="line"></div><div class="line">ENTRYPOINT [ <span class="string">"/usr/sbin/apache2"</span> ]</div><div class="line">CMD [<span class="string">"-D"</span>, <span class="string">"FOREGROUND"</span>]</div></pre></td></tr></table></figure>
+<h3 id="Building-Apache-image"><a href="#Building-Apache-image" class="headerlink" title="Building Apache image"></a>Building Apache image</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/apache .</div><div class="line">$ docker images <span class="comment"># list images</span></div></pre></td></tr></table></figure>
+<h2 id="Launching-hexo-site"><a href="#Launching-hexo-site" class="headerlink" title="Launching hexo site"></a>Launching hexo site</h2><h3 id="Creating-a-Hexo-container"><a href="#Creating-a-Hexo-container" class="headerlink" title="Creating a Hexo container"></a>Creating a Hexo container</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run --name luminoid_blog luminoid/hexo</div></pre></td></tr></table></figure>
+<h3 id="Creating-an-Apache-container"><a href="#Creating-an-Apache-container" class="headerlink" title="Creating an Apache container"></a>Creating an Apache container</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache</div><div class="line">APACHE_CONTAINER_ID</div></pre></td></tr></table></figure>
+<h3 id="Resolving-the-Apache-container’s-port"><a href="#Resolving-the-Apache-container’s-port" class="headerlink" title="Resolving the Apache container’s port"></a>Resolving the Apache container’s port</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker port APACHE_CONTAINER_ID 80</div><div class="line">0.0.0.0:32768</div></pre></td></tr></table></figure>
+<h3 id="Hexo-website"><a href="#Hexo-website" class="headerlink" title="Hexo website"></a>Hexo website</h3><p>The Website can be viewed at <code>http://localhost:32768</code></p>
+<h3 id="Updating-Hexo-website"><a href="#Updating-Hexo-website" class="headerlink" title="Updating Hexo website"></a>Updating Hexo website</h3><p>Restart the Hexo container and the website will be updated.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start luminoid_blog</div></pre></td></tr></table></figure></p>
+<h3 id="Backing-up-the-Hexo-volume"><a href="#Backing-up-the-Hexo-volume" class="headerlink" title="Backing up the Hexo volume"></a>Backing up the Hexo volume</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --volumes-from luminoid_blog -v $(<span class="built_in">pwd</span>):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html</div></pre></td></tr></table></figure>
 
             
         </div>
@@ -268,7 +279,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Beautiful-Soup/">Beautiful Soup</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Python/">Python</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Apache/">Apache</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Docker/">Docker</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Hexo/">Hexo</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Ubuntu/">Ubuntu</a>
 
             </div>
         
@@ -278,7 +289,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/08/Hexo-Quick-Guide/"  data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages"  data-tooltip="Using static site generator with Github Pages">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -286,7 +297,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Mac/Mac-Development-Config" data-tooltip="Mac Development Config">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -304,7 +315,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -312,7 +323,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -320,7 +331,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -328,7 +339,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -336,7 +347,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -368,7 +379,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2017/06/08/Hexo-Quick-Guide/"  data-tooltip="Hexo Quick Guide">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages"  data-tooltip="Using static site generator with Github Pages">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -376,7 +387,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Mac/Mac-Development-Config" data-tooltip="Mac Development Config">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -394,7 +405,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -402,7 +413,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -410,7 +421,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -418,7 +429,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-weibo"></i>
                 </a>
             </li>
@@ -426,7 +437,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -443,7 +454,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -451,7 +462,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-twitter"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -459,7 +470,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-google-plus"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -467,7 +478,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                     <i class="fa fa-weibo"></i><span>Share on Weibo</span>
                 </a>
             </li>
@@ -537,7 +548,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/06/Remove-wbr-tags-from-Beautiful-Soup-object/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object">
                             <h3 class="media-heading">Remove &lt;wbr&gt; tags from Beautiful Soup object</h3>
                         </a>
                         <span class="media-meta">
@@ -557,7 +568,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/08/Hexo-Quick-Guide/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide">
                             <h3 class="media-heading">Hexo Quick Guide</h3>
                         </a>
                         <span class="media-meta">
@@ -578,7 +589,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/08/Hexo-Common-Problems/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems">
                             <h3 class="media-heading">Hexo Common Problems</h3>
                         </a>
                         <span class="media-meta">
@@ -604,7 +615,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/12/Atom-Usage/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Tool/Atom-Usage">
                             <h3 class="media-heading">Atom Usage</h3>
                         </a>
                         <span class="media-meta">
@@ -685,7 +696,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/06/12/Sorting-Algorithm-Analysis/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis">
                             <h3 class="media-heading">Sorting Algorithm Analysis</h3>
                         </a>
                         <span class="media-meta">
@@ -786,7 +797,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/08/Mac-Development-Config/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Mac/Mac-Development-Config">
                             <h3 class="media-heading">Mac Development Config</h3>
                         </a>
                         <span class="media-meta">
@@ -861,7 +872,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/22/Building-Hexo-Website-with-Docker/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker">
                             <h3 class="media-heading">Building Hexo Website with Docker</h3>
                         </a>
                         <span class="media-meta">
@@ -883,7 +894,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/2017/08/27/Using-Static-Site-Generator-with-Github-Pages/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages">
                             <h3 class="media-heading">Using static site generator with Github Pages</h3>
                         </a>
                         <span class="media-meta">
