@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-27T14:38:08.000Z</updated>
+  <updated>2017-08-31T00:20:47.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/</id>
     <published>2017-08-27T12:02:59.000Z</published>
-    <updated>2017-08-27T14:38:08.000Z</updated>
+    <updated>2017-08-31T00:20:47.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
@@ -58,7 +58,7 @@
     <link href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/"/>
     <id>http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
-    <updated>2017-08-30T11:33:05.000Z</updated>
+    <updated>2017-08-31T00:19:36.000Z</updated>
     
     <content type="html"><![CDATA[<!-- TOC -->
 <p>This is a portable and generic way to build Hexo Website with Docker.</p>
@@ -89,9 +89,9 @@
       <category term="Docker" scheme="http://luminoid.github.io/blog/categories/Docker/"/>
     
     
-      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
     
       <category term="Apache" scheme="http://luminoid.github.io/blog/tags/Apache/"/>
     
@@ -104,7 +104,7 @@
     <link href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/"/>
     <id>http://luminoid.github.io/blog/Mac/Mac-Development-Config/</id>
     <published>2017-08-08T14:45:55.000Z</published>
-    <updated>2017-08-21T16:12:15.000Z</updated>
+    <updated>2017-08-31T00:20:15.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
@@ -245,9 +245,9 @@
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
@@ -258,7 +258,7 @@
     <link href="http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/"/>
     <id>http://luminoid.github.io/blog/Algorithm/Sorting-Algorithm-Analysis/</id>
     <published>2017-06-12T11:51:09.000Z</published>
-    <updated>2017-06-12T16:22:06.000Z</updated>
+    <updated>2017-08-31T00:20:37.000Z</updated>
     
     <content type="html"><![CDATA[<table>
 <thead>
@@ -446,7 +446,7 @@
     <link href="http://luminoid.github.io/blog/Tool/Atom-Usage/"/>
     <id>http://luminoid.github.io/blog/Tool/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
-    <updated>2017-08-08T16:09:41.000Z</updated>
+    <updated>2017-08-31T00:19:19.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
@@ -629,7 +629,7 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
-    <updated>2017-06-12T16:00:22.000Z</updated>
+    <updated>2017-08-31T00:20:58.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
@@ -671,7 +671,7 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-08-27T14:37:14.000Z</updated>
+    <updated>2017-08-31T00:20:04.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
@@ -712,7 +712,7 @@
     <link href="http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/"/>
     <id>http://luminoid.github.io/blog/Web/HTML/Remove-wbr-tags-from-Beautiful-Soup-object/</id>
     <published>2017-06-06T04:35:16.000Z</published>
-    <updated>2017-08-22T15:49:44.000Z</updated>
+    <updated>2017-08-31T00:20:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a id="more"></a>

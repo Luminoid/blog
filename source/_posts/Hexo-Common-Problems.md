@@ -1,16 +1,17 @@
 ---
 title: Hexo Common Problems
 date: 2017-06-08 20:25:08
+updated:
 categories:
-- Web
-- Static Site Generator
+  - Web
+  - Static Site Generator
 tags:
-- Hexo
+  - Hexo
 keywords:
-- Hexo
-- server
-- Algolia
-- hexo-math
+  - Hexo
+  - server
+  - Algolia
+  - hexo-math
 ---
 
 <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->

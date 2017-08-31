@@ -1,11 +1,12 @@
 ---
 title: Atom Usage
 date: 2017-06-12 18:04:00
+updated:
 categories: Tool
 tags: Atom
 keywords:
-- Atom
-- package
+  - Atom
+  - package
 ---
 
 <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->

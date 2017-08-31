@@ -1,17 +1,18 @@
 ---
 title: Building Hexo Website with Docker
 date: 2017-08-22 00:10:13
+updated:
 categories: Docker
 tags:
-- Docker
-- Hexo
-- Apache
-- Ubuntu
+  - Docker
+  - Hexo
+  - Apache
+  - Ubuntu
 keywords:
-- Docker
-- Hexo
-- Apache
-- Ubuntu
+  - Docker
+  - Hexo
+  - Apache
+  - Ubuntu
 ---
 
 <!-- TOC -->

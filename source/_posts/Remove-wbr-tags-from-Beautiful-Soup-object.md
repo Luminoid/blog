@@ -1,15 +1,16 @@
 ---
 title: Remove <wbr> tags from Beautiful Soup object
 date: 2017-06-06 12:35:16
+updated:
 categories:
-- Web
-- HTML
+  - Web
+  - HTML
 tags:
-- Python
-- Beautiful Soup
+  - Python
+  - Beautiful Soup
 keywords:
-- Beautiful Soup
-- wbr
+  - Beautiful Soup
+  - wbr
 ---
 
 ## Goal

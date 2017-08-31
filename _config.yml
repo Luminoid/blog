@@ -79,13 +79,13 @@ exclude:
 
 # RSS feed
 feed:
-    type: atom
-    path: atom.xml # Default: atom.xml/rss2.xml
-    limit: 20 # Use 0 or false to show all posts
+  type: atom
+  path: atom.xml # Default: atom.xml/rss2.xml
+  limit: 20 # Use 0 or false to show all posts
 
 # Define global keywords for search engines
 keywords:
-- hexo
+  - hexo
 
 # search
 algolia:

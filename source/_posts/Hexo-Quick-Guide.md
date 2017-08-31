@@ -1,17 +1,18 @@
 ---
 title: Hexo Quick Guide
 date: 2017-06-08 11:06:48
+updated:
 categories:
-- Web
-- Static Site Generator
+  - Web
+  - Static Site Generator
 tags:
-- Hexo
-- Github
+  - Hexo
+  - Github
 keywords:
-- Hexo
-- guide
-- Algolia
-- Github
+  - Hexo
+  - guide
+  - Algolia
+  - Github
 ---
 
 <!-- toc -->

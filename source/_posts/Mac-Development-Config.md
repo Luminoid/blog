@@ -1,15 +1,16 @@
 ---
 title: Mac Development Config
 date: 2017-08-08 22:45:55
+updated:
 categories: Mac
 tags:
-- Homebrew
-- Atom
-- Docker
+  - Homebrew
+  - Atom
+  - Docker
 keywords:
-- Homebrew
-- Atom
-- Docker
+  - Homebrew
+  - Atom
+  - Docker
 ---
 
 <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
