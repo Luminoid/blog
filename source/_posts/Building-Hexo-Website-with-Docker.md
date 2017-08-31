@@ -15,7 +15,7 @@ keywords:
   - Ubuntu
 ---
 
-<!-- toc -->
+<!-- TOC -->
 
 This is a portable and generic solution to build Hexo website with Docker.
 ## The Hexo base image

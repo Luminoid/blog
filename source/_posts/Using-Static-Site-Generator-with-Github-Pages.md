@@ -14,7 +14,19 @@ keywords:
   - gh-pages
 ---
 
-<!-- toc -->
+<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+
+* [Using `gh-pages` branch](#using-gh-pages-branch)
+    * [Advantage](#advantage)
+    * [Disadvantage](#disadvantage)
+* [Using `master` brunch and `gh-pages` branch](#using-master-brunch-and-gh-pages-branch)
+    * [Advantage](#advantage-1)
+    * [Disadvantage](#disadvantage-1)
+* [Using `master` brunch and `/docs` folder](#using-master-brunch-and-docs-folder)
+    * [Advantage](#advantage-2)
+    * [Disadvantage](#disadvantage-2)
+
+<!-- tocstop -->
 
 There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).
 

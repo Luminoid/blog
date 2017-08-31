@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-31T15:59:39.000Z</updated>
+  <updated>2017-08-31T16:40:25.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/</id>
     <published>2017-08-27T12:02:59.000Z</published>
-    <updated>2017-08-31T15:59:39.000Z</updated>
+    <updated>2017-08-31T16:40:25.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
+    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
 <li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul>
 <li><a href="#advantage">Advantage</a></li>
@@ -42,19 +42,19 @@
 </ul>
 <!-- tocstop -->
 <p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
-<h2><span id="using-gh-pages-branch">Using <code>gh-pages</code> branch</span></h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3><span id="advantage">Advantage</span></h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
-<h3><span id="disadvantage">Disadvantage</span></h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br><a id="more"></a></p>
-<h2><span id="using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</span></h2><p>Deploy code on <code>master</code> brunch and website content on <code>gh-pages</code> branch.</p>
-<h3><span id="advantage">Advantage</span></h3><p>Both website content and code is under its own version control system.</p>
-<h3><span id="disadvantage">Disadvantage</span></h3><p>Users have to run command of both static site generator and git every time after the modification.</p>
-<h2><span id="using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</span></h2><h3><span id="advantage">Advantage</span></h3><p>Users will only need to run command of git, and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
-<h3><span id="disadvantage">Disadvantage</span></h3><p>In the field of version control, users can only have the benefit of git. The version control capability of the static site generator is ignored. I personally recommend this way because the version control capability of the static site generator is not that important in most circumstances.</p>
+<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
+<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br><a id="more"></a></p>
+<h2 id="Using-master-brunch-and-gh-pages-branch"><a href="#Using-master-brunch-and-gh-pages-branch" class="headerlink" title="Using master brunch and gh-pages branch"></a>Using <code>master</code> brunch and <code>gh-pages</code> branch</h2><p>Deploy code on <code>master</code> brunch and website content on <code>gh-pages</code> branch.</p>
+<h3 id="Advantage-1"><a href="#Advantage-1" class="headerlink" title="Advantage"></a>Advantage</h3><p>Both website content and code is under its own version control system.</p>
+<h3 id="Disadvantage-1"><a href="#Disadvantage-1" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Users have to run command of both static site generator and git every time after the modification.</p>
+<h2 id="Using-master-brunch-and-docs-folder"><a href="#Using-master-brunch-and-docs-folder" class="headerlink" title="Using master brunch and /docs folder"></a>Using <code>master</code> brunch and <code>/docs</code> folder</h2><h3 id="Advantage-2"><a href="#Advantage-2" class="headerlink" title="Advantage"></a>Advantage</h3><p>Users will only need to run command of git, and GitHub Pages will automatically read everything under the <code>docs/</code> folder to publish the site.</p>
+<h3 id="Disadvantage-2"><a href="#Disadvantage-2" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>In the field of version control, users can only have the benefit of git. The version control capability of the static site generator is ignored. I personally recommend this way because the version control capability of the static site generator is not that important in most circumstances.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
+      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#using-gh-pages-branch&quot;&gt;Using &lt;code&gt;gh-pages&lt;/code&gt; branch&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#advantage&quot;&gt;Advantage&lt;/a&gt;&lt;/li&gt;
@@ -94,76 +94,28 @@
     <link href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/"/>
     <id>http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
-    <updated>2017-08-31T15:57:02.000Z</updated>
+    <updated>2017-08-31T16:39:09.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
-<ul>
-<li><a href="#the-hexo-base-image">The Hexo base image</a><ul>
-<li><a href="#creating-hexo-dockerfile">Creating Hexo Dockerfile</a></li>
-<li><a href="#hexo-dockerfile-content">Hexo Dockerfile Content</a></li>
-<li><a href="#building-hexo-base-image">Building Hexo base image</a></li>
-</ul>
-</li>
-<li><a href="#the-apache-image">The Apache image</a><ul>
-<li><a href="#creating-apache-dockerfile">Creating Apache Dockerfile</a></li>
-<li><a href="#apache-dockerfile-content">Apache Dockerfile Content</a></li>
-<li><a href="#building-apache-image">Building Apache image</a></li>
-</ul>
-</li>
-<li><a href="#launching-hexo-site">Launching hexo site</a><ul>
-<li><a href="#creating-a-hexo-container">Creating a Hexo container</a></li>
-<li><a href="#creating-an-apache-container">Creating an Apache container</a></li>
-<li><a href="#resolving-the-apache-containers-port">Resolving the Apache container’s port</a></li>
-<li><a href="#hexo-website">Hexo website</a></li>
-<li><a href="#updating-hexo-website">Updating Hexo website</a></li>
-<li><a href="#backing-up-hexo-volume">Backing up Hexo volume</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
+    <content type="html"><![CDATA[<!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
-<h2><span id="the-hexo-base-image">The Hexo base image</span></h2><h3><span id="creating-hexo-dockerfile">Creating Hexo Dockerfile</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3><span id="hexo-dockerfile-content">Hexo Dockerfile Content</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3><span id="building-hexo-base-image">Building Hexo base image</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/hexo .</div></pre></td></tr></table></figure>
-<h2><span id="the-apache-image">The Apache image</span></h2><h3><span id="creating-apache-dockerfile">Creating Apache Dockerfile</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir apache</div><div class="line">$ <span class="built_in">cd</span> apache</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3><span id="apache-dockerfile-content">Apache Dockerfile Content</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq apache2</div><div class="line"></div><div class="line">VOLUME [ <span class="string">"/var/www/html"</span> ]</div><div class="line">WORKDIR /var/www/html</div><div class="line"></div><div class="line">ENV APACHE_RUN_USER www-data</div><div class="line">ENV APACHE_RUN_GROUP www-data</div><div class="line">ENV APACHE_LOG_DIR /var/<span class="built_in">log</span>/apache2</div><div class="line">ENV APACHE_PID_FILE /var/run/apache2.pid</div><div class="line">ENV APACHE_RUN_DIR /var/run/apache2</div><div class="line">ENV APACHE_LOCK_DIR /var/lock/apache2</div><div class="line"></div><div class="line">RUN mkdir -p <span class="variable">$APACHE_RUN_DIR</span> <span class="variable">$APACHE_LOCK_DIR</span> <span class="variable">$APACHE_LOG_DIR</span></div><div class="line"></div><div class="line">EXPOSE 80</div><div class="line"></div><div class="line">ENTRYPOINT [ <span class="string">"/usr/sbin/apache2"</span> ]</div><div class="line">CMD [<span class="string">"-D"</span>, <span class="string">"FOREGROUND"</span>]</div></pre></td></tr></table></figure>
-<h3><span id="building-apache-image">Building Apache image</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/apache .</div><div class="line">$ docker images <span class="comment"># list images</span></div></pre></td></tr></table></figure>
-<h2><span id="launching-hexo-site">Launching hexo site</span></h2><h3><span id="creating-a-hexo-container">Creating a Hexo container</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run --name luminoid_blog luminoid/hexo</div></pre></td></tr></table></figure>
-<h3><span id="creating-an-apache-container">Creating an Apache container</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache</div><div class="line">APACHE_CONTAINER_ID</div></pre></td></tr></table></figure>
-<h3><span id="resolving-the-apache-containers-port">Resolving the Apache container’s port</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker port APACHE_CONTAINER_ID 80</div><div class="line">0.0.0.0:32768</div></pre></td></tr></table></figure>
-<h3><span id="hexo-website">Hexo website</span></h3><p>The website can be viewed at <code>http://localhost:32768</code></p>
-<h3><span id="updating-hexo-website">Updating Hexo website</span></h3><p>Restart the Hexo container and the website will be updated.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start luminoid_blog</div></pre></td></tr></table></figure></p>
-<h3><span id="backing-up-hexo-volume">Backing up Hexo volume</span></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --volumes-from luminoid_blog -v $(<span class="built_in">pwd</span>):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html</div></pre></td></tr></table></figure>
+<h3 id="Building-Hexo-base-image"><a href="#Building-Hexo-base-image" class="headerlink" title="Building Hexo base image"></a>Building Hexo base image</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/hexo .</div></pre></td></tr></table></figure>
+<h2 id="The-Apache-image"><a href="#The-Apache-image" class="headerlink" title="The Apache image"></a>The Apache image</h2><h3 id="Creating-Apache-Dockerfile"><a href="#Creating-Apache-Dockerfile" class="headerlink" title="Creating Apache Dockerfile"></a>Creating Apache Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir apache</div><div class="line">$ <span class="built_in">cd</span> apache</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
+<h3 id="Apache-Dockerfile-Content"><a href="#Apache-Dockerfile-Content" class="headerlink" title="Apache Dockerfile Content"></a>Apache Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq apache2</div><div class="line"></div><div class="line">VOLUME [ <span class="string">"/var/www/html"</span> ]</div><div class="line">WORKDIR /var/www/html</div><div class="line"></div><div class="line">ENV APACHE_RUN_USER www-data</div><div class="line">ENV APACHE_RUN_GROUP www-data</div><div class="line">ENV APACHE_LOG_DIR /var/<span class="built_in">log</span>/apache2</div><div class="line">ENV APACHE_PID_FILE /var/run/apache2.pid</div><div class="line">ENV APACHE_RUN_DIR /var/run/apache2</div><div class="line">ENV APACHE_LOCK_DIR /var/lock/apache2</div><div class="line"></div><div class="line">RUN mkdir -p <span class="variable">$APACHE_RUN_DIR</span> <span class="variable">$APACHE_LOCK_DIR</span> <span class="variable">$APACHE_LOG_DIR</span></div><div class="line"></div><div class="line">EXPOSE 80</div><div class="line"></div><div class="line">ENTRYPOINT [ <span class="string">"/usr/sbin/apache2"</span> ]</div><div class="line">CMD [<span class="string">"-D"</span>, <span class="string">"FOREGROUND"</span>]</div></pre></td></tr></table></figure>
+<h3 id="Building-Apache-image"><a href="#Building-Apache-image" class="headerlink" title="Building Apache image"></a>Building Apache image</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker build -t luminoid/apache .</div><div class="line">$ docker images <span class="comment"># list images</span></div></pre></td></tr></table></figure>
+<h2 id="Launching-hexo-site"><a href="#Launching-hexo-site" class="headerlink" title="Launching hexo site"></a>Launching hexo site</h2><h3 id="Creating-a-Hexo-container"><a href="#Creating-a-Hexo-container" class="headerlink" title="Creating a Hexo container"></a>Creating a Hexo container</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run --name luminoid_blog luminoid/hexo</div></pre></td></tr></table></figure>
+<h3 id="Creating-an-Apache-container"><a href="#Creating-an-Apache-container" class="headerlink" title="Creating an Apache container"></a>Creating an Apache container</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache</div><div class="line">APACHE_CONTAINER_ID</div></pre></td></tr></table></figure>
+<h3 id="Resolving-the-Apache-container’s-port"><a href="#Resolving-the-Apache-container’s-port" class="headerlink" title="Resolving the Apache container’s port"></a>Resolving the Apache container’s port</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker port APACHE_CONTAINER_ID 80</div><div class="line">0.0.0.0:32768</div></pre></td></tr></table></figure>
+<h3 id="Hexo-website"><a href="#Hexo-website" class="headerlink" title="Hexo website"></a>Hexo website</h3><p>The website can be viewed at <code>http://localhost:32768</code></p>
+<h3 id="Updating-Hexo-website"><a href="#Updating-Hexo-website" class="headerlink" title="Updating Hexo website"></a>Updating Hexo website</h3><p>Restart the Hexo container and the website will be updated.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start luminoid_blog</div></pre></td></tr></table></figure></p>
+<h3 id="Backing-up-Hexo-volume"><a href="#Backing-up-Hexo-volume" class="headerlink" title="Backing up Hexo volume"></a>Backing up Hexo volume</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --volumes-from luminoid_blog -v $(<span class="built_in">pwd</span>):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#the-hexo-base-image&quot;&gt;The Hexo base image&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#creating-hexo-dockerfile&quot;&gt;Creating Hexo Dockerfile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-dockerfile-content&quot;&gt;Hexo Dockerfile Content&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#building-hexo-base-image&quot;&gt;Building Hexo base image&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#the-apache-image&quot;&gt;The Apache image&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#creating-apache-dockerfile&quot;&gt;Creating Apache Dockerfile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#apache-dockerfile-content&quot;&gt;Apache Dockerfile Content&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#building-apache-image&quot;&gt;Building Apache image&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#launching-hexo-site&quot;&gt;Launching hexo site&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#creating-a-hexo-container&quot;&gt;Creating a Hexo container&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#creating-an-apache-container&quot;&gt;Creating an Apache container&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#resolving-the-apache-containers-port&quot;&gt;Resolving the Apache container’s port&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-website&quot;&gt;Hexo website&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#updating-hexo-website&quot;&gt;Updating Hexo website&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#backing-up-hexo-volume&quot;&gt;Backing up Hexo volume&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- tocstop --&gt;
+      &lt;!-- TOC --&gt;
 &lt;p&gt;This is a portable and generic solution to build Hexo website with Docker.&lt;/p&gt;
 &lt;h2 id=&quot;The-Hexo-base-image&quot;&gt;&lt;a href=&quot;#The-Hexo-base-image&quot; class=&quot;headerlink&quot; title=&quot;The Hexo base image&quot;&gt;&lt;/a&gt;The Hexo base image&lt;/h2&gt;&lt;h3 id=&quot;Creating-Hexo-Dockerfile&quot;&gt;&lt;a href=&quot;#Creating-Hexo-Dockerfile&quot; class=&quot;headerlink&quot; title=&quot;Creating Hexo Dockerfile&quot;&gt;&lt;/a&gt;Creating Hexo Dockerfile&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ mkdir hexo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; hexo&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ vim Dockerfile&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;Hexo-Dockerfile-Content&quot;&gt;&lt;a href=&quot;#Hexo-Dockerfile-Content&quot; class=&quot;headerlink&quot; title=&quot;Hexo Dockerfile Content&quot;&gt;&lt;/a&gt;Hexo Dockerfile Content&lt;/h3&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;FROM ubuntu:14.04&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;MAINTAINER luminoid&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ENV REFRESHED_AT 2017-08-28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Install Hexo&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN apt-get update -yqq \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; apt-get install -yqq curl git-core \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# Install Node.js Using a PPA&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; apt-get install -yqq nodejs build-essential \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# Set config to avoid permission issues&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; npm config &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; user 0 \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; npm config &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; unsafe-perm &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt; \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; npm install -g hexo-cli&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Clone blog&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;WORKDIR /data&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/Luminoid/blog.git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Install blog dependencies&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;WORKDIR /data/blog&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN npm install \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; npm install prompt --save \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; npm install jquery --save&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RUN mkdir -p /var/www/html/ \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;amp;&amp;amp; cp -r /data/blog/docs/* /var/www/html/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;VOLUME [ &lt;span class=&quot;string&quot;&gt;&quot;/data/blog&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;/var/www/html&quot;&lt;/span&gt; ]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -188,9 +140,9 @@
     <link href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/"/>
     <id>http://luminoid.github.io/blog/Mac/Mac-Development-Config/</id>
     <published>2017-08-08T14:45:55.000Z</published>
-    <updated>2017-08-31T15:58:42.000Z</updated>
+    <updated>2017-08-31T16:40:03.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
+    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
@@ -248,25 +200,25 @@
 </ul>
 <!-- tocstop -->
 <a id="more"></a>
-<h2><span id="package-manager">Package Manager</span></h2><h3><span id="homebrew"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
-<h4><span id="usage">Usage</span></h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
-<h4><span id="formula">Formula</span></h4><h5><span id="tig"></span></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
-<h5><span id="tree">tree</span></h5><p>List contents of directories in a tree-like format.</p>
-<h5><span id="readline"></span></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
-<h5><span id="rlwrap"></span></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
-<h5><span id="pngquant"></span></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
-<h3><span id="homebrew-cask"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
-<h4><span id="usage">Usage</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
-<h2><span id="terminal">Terminal</span></h2><h3><span id="iterm2"></span></h3><h3><span id="oh-my-zsh"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
-<h4><span id="theme">Theme</span></h4><h5><span id="agnoster"></span></h5><h2><span id="text-editor">Text Editor</span></h2><h3><span id="atom"></span></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
-<h2><span id="ide">IDE</span></h2><h3><span id="xcode"></span></h3><h2><span id="version-control">Version Control</span></h2><h3><span id="git">Git</span></h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
-<h2><span id="tool">Tool</span></h2><h3><span id="docker"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4><span id="usage">Usage</span></h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh" target="_blank" rel="external">Homebrew</a></h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
+<h4 id="Formula"><a href="#Formula" class="headerlink" title="Formula"></a>Formula</h4><h5 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/" target="_blank" rel="external">tig</a></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
+<h5 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h5><p>List contents of directories in a tree-like format.</p>
+<h5 id="readline"><a href="#readline" class="headerlink" title="readline"></a><a href="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" target="_blank" rel="external">readline</a></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
+<h5 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap" target="_blank" rel="external">rlwrap</a></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
+<h5 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org" target="_blank" rel="external">pngquant</a></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
+<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
+<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
+      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#package-manager&quot;&gt;Package Manager&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#homebrewhttpsbrewsh&quot;&gt;Homebrew&lt;/a&gt;&lt;ul&gt;
@@ -329,9 +281,9 @@
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
@@ -530,9 +482,9 @@
     <link href="http://luminoid.github.io/blog/Tool/Atom-Usage/"/>
     <id>http://luminoid.github.io/blog/Tool/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
-    <updated>2017-08-31T15:56:54.000Z</updated>
+    <updated>2017-08-31T16:38:54.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
+    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
 <li><a href="#shortcut">Shortcut</a></li>
 <li><a href="#packages">Packages</a><ul>
@@ -596,46 +548,46 @@
 </ul>
 <!-- tocstop -->
 <a id="more"></a>
-<h2><span id="shortcut">Shortcut</span></h2><p><code>cmd-shift-L</code>: Split selections into lines<br><code>ctrl-cmd-up</code>, <code>ctrl-cmd-down</code>: Move line up or down<br><code>cmd-d</code>: Duplicate lines<br><code>ctrl-shift-K</code>: Delete line<br><code>cmd-K-U</code>: Upper case the current word<br><code>cmd-K-L</code>: Lower case the current word<br><code>cmd-D</code>: Select the next word in the document that is the same as the currently selected word<br><code>cmd-shift-f</code>: Search the entire project<br><code>alt-cmd-[</code> and <code>alt-cmd-]</code>: Fold or unfold the code</p>
-<h2><span id="packages">Packages</span></h2><h3><span id="tool">Tool</span></h3><h4><span id="platformio-ide-terminal"></span></h4><p>A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.</p>
-<h4><span id="script"></span></h4><p>Run code in Atom</p>
-<h4><span id="linter"></span></h4><p>A Base Linter with Cow Powers</p>
-<h4><span id="hydrogen"></span></h4><p>Run code and get results inline using Jupyter kernels like IPython, IJulia, and iTorch</p>
-<h4><span id="atom-beautify"></span></h4><p>Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom</p>
-<h4><span id="split-diff"></span></h4><p>A split pane diff tool.</p>
-<h4><span id="color-picker"></span></h4><p>Right click or press CMD-SHIFT-C/CTRL-ALT-C to open it.</p>
-<h4><span id="busy-signal"></span></h4><p>A package that provides an easy to use API to show your package is performing a task.</p>
-<h4><span id="browser-plus"></span></h4><p>Real Browser in ATOM</p>
-<h3><span id="ui">UI</span></h3><h4><span id="minimap"></span></h4><p>A preview of the full source code.</p>
-<h4><span id="file-icons"></span></h4><p>Assign file extension icons and colours for improved visual grepping</p>
-<h4><span id="highlight-selected"></span></h4><p>Highlights the current word selected when double clicking</p>
-<h4><span id="pigments"></span></h4><p>A package to display colors in project and files.</p>
-<h4><span id="qolor"></span></h4><p>An atom package to color your SQL queries!</p>
-<h4><span id="minimap-highlight-selected"></span></h4><p>A minimap binding for the highlight-selected package</p>
-<h4><span id="minimap-find-and-replace"></span></h4><p>Minimap bindings for the find and replace package</p>
-<h4><span id="minimap-pigments"></span></h4><p>An Atom plugin to display pigments colors in the Minimap.</p>
-<h4><span id="minimap-autohide"></span></h4><p>Automatically hide the minimap when you aren’t using it.</p>
-<h3><span id="preview">Preview</span></h3><h4><span id="preview"></span></h4><p>Ultimate previewer of source code in Atom.</p>
-<h4><span id="markdown-preview-enhanced"></span></h4><p>The ‘BEST’ Markdown Preview you need for Atom Editor!</p>
-<h4><span id="atom-html-preview"></span></h4><p>A live preview tool for Atom Editor.</p>
-<h4><span id="pdf-view"></span></h4><p>Atom PDF viewer based on PDF.js</p>
-<h4><span id="regex-railroad-diagram"></span></h4><p>Display railroad diagram of regex under cursor.</p>
-<h4><span id="hex"></span></h4><p>View the hex dump of any file</p>
-<h3><span id="language">Language</span></h3><h4><span id="language-markdown"></span></h4><p>Adds grammar support for Markdown</p>
-<h4><span id="language-babel"></span></h4><p>JavaScript ES201x, React JSX, Flow and GraphQL Grammar. Babel Transpiler</p>
-<h4><span id="autocomplete-python"></span></h4><p>Python completions for packages, variables, methods, functions, with their arguments. Powered by your choice of Jedi or Kite.</p>
-<h4><span id="autocomplete-clang"></span></h4><p>autocomplete for C/C++/ObjC using clang</p>
-<h4><span id="atom-ternjs"></span></h4><p>JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (JavaScript 2015), Node.js, jQuery &amp; Angular.</p>
-<h3><span id="web">Web</span></h3><h4><span id="emmet"></span></h4><p>Emmet – the essential tool for web developers</p>
-<h4><span id="atom-bootstrap4"></span></h4><p>Bootstrap4 Support with snippets and autocompletion.</p>
-<h3><span id="git">Git</span></h3><h4><span id="gitignore-snippets"></span></h4><p>Quickly create .gitignore files with templates from GitHub.</p>
-<h3><span id="coding">Coding</span></h3><h4><span id="base64"></span></h4><p>A Base64 encoder and decoder</p>
-<h4><span id="url-encode"></span></h4><p>URL encode or decode the selected text.</p>
+<h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p><code>cmd-shift-L</code>: Split selections into lines<br><code>ctrl-cmd-up</code>, <code>ctrl-cmd-down</code>: Move line up or down<br><code>cmd-d</code>: Duplicate lines<br><code>ctrl-shift-K</code>: Delete line<br><code>cmd-K-U</code>: Upper case the current word<br><code>cmd-K-L</code>: Lower case the current word<br><code>cmd-D</code>: Select the next word in the document that is the same as the currently selected word<br><code>cmd-shift-f</code>: Search the entire project<br><code>alt-cmd-[</code> and <code>alt-cmd-]</code>: Fold or unfold the code</p>
+<h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><h3 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h3><h4 id="platformio-ide-terminal"><a href="#platformio-ide-terminal" class="headerlink" title="platformio-ide-terminal"></a><a href="https://atom.io/packages/platformio-ide-terminal" target="_blank" rel="external">platformio-ide-terminal</a></h4><p>A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.</p>
+<h4 id="script"><a href="#script" class="headerlink" title="script"></a><a href="https://atom.io/packages/script" target="_blank" rel="external">script</a></h4><p>Run code in Atom</p>
+<h4 id="linter"><a href="#linter" class="headerlink" title="linter"></a><a href="https://atom.io/packages/linter" target="_blank" rel="external">linter</a></h4><p>A Base Linter with Cow Powers</p>
+<h4 id="hydrogen"><a href="#hydrogen" class="headerlink" title="hydrogen"></a><a href="https://atom.io/packages/Hydrogen" target="_blank" rel="external">hydrogen</a></h4><p>Run code and get results inline using Jupyter kernels like IPython, IJulia, and iTorch</p>
+<h4 id="atom-beautify"><a href="#atom-beautify" class="headerlink" title="atom-beautify"></a><a href="https://atom.io/packages/atom-beautify" target="_blank" rel="external">atom-beautify</a></h4><p>Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom</p>
+<h4 id="split-diff"><a href="#split-diff" class="headerlink" title="split-diff"></a><a href="https://atom.io/packages/split-diff" target="_blank" rel="external">split-diff</a></h4><p>A split pane diff tool.</p>
+<h4 id="color-picker"><a href="#color-picker" class="headerlink" title="color-picker"></a><a href="https://atom.io/packages/color-picker" target="_blank" rel="external">color-picker</a></h4><p>Right click or press CMD-SHIFT-C/CTRL-ALT-C to open it.</p>
+<h4 id="Busy-Signal"><a href="#Busy-Signal" class="headerlink" title="Busy Signal"></a><a href="https://atom.io/packages/busy-signal" target="_blank" rel="external">Busy Signal</a></h4><p>A package that provides an easy to use API to show your package is performing a task.</p>
+<h4 id="browser-plus"><a href="#browser-plus" class="headerlink" title="browser-plus"></a><a href="https://atom.io/packages/browser-plus" target="_blank" rel="external">browser-plus</a></h4><p>Real Browser in ATOM</p>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><h4 id="minimap"><a href="#minimap" class="headerlink" title="minimap"></a><a href="https://atom.io/packages/minimap" target="_blank" rel="external">minimap</a></h4><p>A preview of the full source code.</p>
+<h4 id="file-icons"><a href="#file-icons" class="headerlink" title="file-icons"></a><a href="https://atom.io/packages/file-icons" target="_blank" rel="external">file-icons</a></h4><p>Assign file extension icons and colours for improved visual grepping</p>
+<h4 id="highlight-selected"><a href="#highlight-selected" class="headerlink" title="highlight-selected"></a><a href="https://atom.io/packages/highlight-selected" target="_blank" rel="external">highlight-selected</a></h4><p>Highlights the current word selected when double clicking</p>
+<h4 id="pigments"><a href="#pigments" class="headerlink" title="pigments"></a><a href="https://atom.io/packages/pigments" target="_blank" rel="external">pigments</a></h4><p>A package to display colors in project and files.</p>
+<h4 id="qolor"><a href="#qolor" class="headerlink" title="qolor"></a><a href="https://atom.io/packages/qolor" target="_blank" rel="external">qolor</a></h4><p>An atom package to color your SQL queries!</p>
+<h4 id="minimap-highlight-selected"><a href="#minimap-highlight-selected" class="headerlink" title="minimap-highlight-selected"></a><a href="https://atom.io/packages/minimap-highlight-selected" target="_blank" rel="external">minimap-highlight-selected</a></h4><p>A minimap binding for the highlight-selected package</p>
+<h4 id="minimap-find-and-replace"><a href="#minimap-find-and-replace" class="headerlink" title="minimap-find-and-replace"></a><a href="https://atom.io/packages/minimap-find-and-replace" target="_blank" rel="external">minimap-find-and-replace</a></h4><p>Minimap bindings for the find and replace package</p>
+<h4 id="minimap-pigments"><a href="#minimap-pigments" class="headerlink" title="minimap-pigments"></a><a href="https://atom.io/packages/minimap-pigments" target="_blank" rel="external">minimap-pigments</a></h4><p>An Atom plugin to display pigments colors in the Minimap.</p>
+<h4 id="minimap-autohide"><a href="#minimap-autohide" class="headerlink" title="minimap-autohide"></a><a href="https://atom.io/packages/minimap-autohide" target="_blank" rel="external">minimap-autohide</a></h4><p>Automatically hide the minimap when you aren’t using it.</p>
+<h3 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h3><h4 id="preview"><a href="#preview" class="headerlink" title="preview"></a><a href="https://atom.io/packages/preview" target="_blank" rel="external">preview</a></h4><p>Ultimate previewer of source code in Atom.</p>
+<h4 id="markdown-preview-enhanced"><a href="#markdown-preview-enhanced" class="headerlink" title="markdown-preview-enhanced"></a><a href="https://atom.io/packages/markdown-preview-enhanced" target="_blank" rel="external">markdown-preview-enhanced</a></h4><p>The ‘BEST’ Markdown Preview you need for Atom Editor!</p>
+<h4 id="atom-html-preview"><a href="#atom-html-preview" class="headerlink" title="atom-html-preview"></a><a href="https://atom.io/packages/atom-html-preview" target="_blank" rel="external">atom-html-preview</a></h4><p>A live preview tool for Atom Editor.</p>
+<h4 id="pdf-view"><a href="#pdf-view" class="headerlink" title="pdf-view"></a><a href="https://atom.io/packages/pdf-view" target="_blank" rel="external">pdf-view</a></h4><p>Atom PDF viewer based on PDF.js</p>
+<h4 id="regex-railroad-diagram"><a href="#regex-railroad-diagram" class="headerlink" title="regex-railroad-diagram"></a><a href="https://atom.io/packages/regex-railroad-diagram" target="_blank" rel="external">regex-railroad-diagram</a></h4><p>Display railroad diagram of regex under cursor.</p>
+<h4 id="hex"><a href="#hex" class="headerlink" title="hex"></a><a href="https://github.com/AbeEstrada/atom-hex" target="_blank" rel="external">hex</a></h4><p>View the hex dump of any file</p>
+<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><h4 id="language-markdown"><a href="#language-markdown" class="headerlink" title="language-markdown"></a><a href="https://atom.io/packages/language-markdown" target="_blank" rel="external">language-markdown</a></h4><p>Adds grammar support for Markdown</p>
+<h4 id="language-babel"><a href="#language-babel" class="headerlink" title="language-babel"></a><a href="https://atom.io/packages/language-babel" target="_blank" rel="external">language-babel</a></h4><p>JavaScript ES201x, React JSX, Flow and GraphQL Grammar. Babel Transpiler</p>
+<h4 id="autocomplete-python"><a href="#autocomplete-python" class="headerlink" title="autocomplete-python"></a><a href="https://atom.io/packages/autocomplete-python" target="_blank" rel="external">autocomplete-python</a></h4><p>Python completions for packages, variables, methods, functions, with their arguments. Powered by your choice of Jedi or Kite.</p>
+<h4 id="autocomplete-clang"><a href="#autocomplete-clang" class="headerlink" title="autocomplete-clang"></a><a href="https://atom.io/packages/autocomplete-clang" target="_blank" rel="external">autocomplete-clang</a></h4><p>autocomplete for C/C++/ObjC using clang</p>
+<h4 id="atom-ternjs"><a href="#atom-ternjs" class="headerlink" title="atom-ternjs"></a><a href="https://atom.io/packages/atom-ternjs" target="_blank" rel="external">atom-ternjs</a></h4><p>JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (JavaScript 2015), Node.js, jQuery &amp; Angular.</p>
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><h4 id="emmet"><a href="#emmet" class="headerlink" title="emmet"></a><a href="https://atom.io/packages/emmet" target="_blank" rel="external">emmet</a></h4><p>Emmet – the essential tool for web developers</p>
+<h4 id="atom-bootstrap4"><a href="#atom-bootstrap4" class="headerlink" title="atom-bootstrap4"></a><a href="https://atom.io/packages/atom-bootstrap4" target="_blank" rel="external">atom-bootstrap4</a></h4><p>Bootstrap4 Support with snippets and autocompletion.</p>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="gitignore-snippets"><a href="#gitignore-snippets" class="headerlink" title="gitignore-snippets"></a><a href="https://atom.io/packages/gitignore-snippets" target="_blank" rel="external">gitignore-snippets</a></h4><p>Quickly create .gitignore files with templates from GitHub.</p>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a><a href="https://atom.io/packages/base64" target="_blank" rel="external">base64</a></h4><p>A Base64 encoder and decoder</p>
+<h4 id="url-encode"><a href="#url-encode" class="headerlink" title="url-encode"></a><a href="https://atom.io/packages/url-encode" target="_blank" rel="external">url-encode</a></h4><p>URL encode or decode the selected text.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
+      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#shortcut&quot;&gt;Shortcut&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#packages&quot;&gt;Packages&lt;/a&gt;&lt;ul&gt;
@@ -713,18 +665,34 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
-    <updated>2017-08-31T16:18:16.000Z</updated>
+    <updated>2017-08-31T16:39:36.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
+    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+<ul>
+<li><a href="#hexo-server-not-found">hexo server not found</a></li>
+<li><a href="#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed">hexo-algolia 0 posts indexed</a></li>
+<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
+<li><a href="#hexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
+</ul>
 <!-- tocstop -->
-<p>` is inserted<br><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
+<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+<a id="more"></a>
+<h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo-algolia 0 posts indexed"></a><a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a> 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
+<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
+<h2 id="hexo-toc-generates-two-tocs"><a href="#hexo-toc-generates-two-tocs" class="headerlink" title="hexo-toc generates two tocs"></a>hexo-toc generates two tocs</h2><p><strong>Problem</strong>: Two tocs are generated in one post when only one <code>&lt;!-- toc --&gt;</code> is inserted<br><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
+      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-server-not-found&quot;&gt;hexo server not found&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed&quot;&gt;hexo-algolia 0 posts indexed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-math-not-working&quot;&gt;hexo-math not working&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-toc-generates-two-tocs&quot;&gt;hexo-toc generates two tocs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!-- tocstop --&gt;
-&lt;p&gt;` is inserted&lt;br&gt;&lt;strong&gt;Solution&lt;/strong&gt;: Some themes have their own toc generator and can detect toc ann
+&lt;h2 id=&quot;hexo-server-not-found&quot;&gt;&lt;a href=&quot;#hexo-server-not-found&quot; class=&quot;headerlink&quot; title=&quot;hexo server not found&quot;&gt;&lt;/a&gt;hexo server not found&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Can’t find &lt;code&gt;hexo server&lt;/code&gt; command.&lt;br&gt;&lt;strong&gt;Solution&lt;/strong&gt;: Extra plugins line in &lt;code&gt;_config.yml&lt;/code&gt; may cause this problem.&lt;/p&gt;
     
     </summary>
     
@@ -742,40 +710,26 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/</id>
     <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2017-08-31T15:57:36.000Z</updated>
+    <updated>2017-08-31T16:39:50.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc -->
-<ul>
-<li><a href="#quick-deployment">Quick deployment</a></li>
-<li><a href="#create">Create</a></li>
-<li><a href="#develop">Develop</a></li>
-<li><a href="#deploy">Deploy</a></li>
-</ul>
-<!-- tocstop -->
+    <content type="html"><![CDATA[<!-- TOC -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2><span id="quick-deployment">Quick deployment</span></h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
+<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>With Algolia and hexo deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
 <p>Without Algolia<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo deploy -g</div></pre></td></tr></table></figure></p>
-<h2><span id="create">Create</span></h2><p>Initializes a website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="string">"My New Website"</span></div></pre></td></tr></table></figure></p>
+<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Initializes a website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="string">"My New Website"</span></div></pre></td></tr></table></figure></p>
 <p>Create a new article.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div></pre></td></tr></table></figure></p>
-<h2><span id="develop">Develop</span></h2><p>Generate static files and watch file changes.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate -w</div></pre></td></tr></table></figure></p>
+<h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate -w</div></pre></td></tr></table></figure></p>
 <p>Start a local server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
 <p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo algolia</div></pre></td></tr></table></figure></p>
-<h2><span id="deploy">Deploy</span></h2><p>Deploys your website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Deploys your website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
 <p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#quick-deployment&quot;&gt;Quick deployment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#create&quot;&gt;Create&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#develop&quot;&gt;Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#deploy&quot;&gt;Deploy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- tocstop --&gt;
+      &lt;!-- TOC --&gt;
 &lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;Theme: &lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-theme-tranquilpeak&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Quick-deployment&quot;&gt;&lt;a href=&quot;#Quick-deployment&quot; class=&quot;headerlink&quot; title=&quot;Quick deployment&quot;&gt;&lt;/a&gt;Quick deployment&lt;/h2&gt;&lt;p&gt;With Algolia and git deployment&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Article&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ vim &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;/_posts/My-New-Article.md&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo clean&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo algolia&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git add -A&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git commit -m &amp;lt;msg&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ git push&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
@@ -799,8 +753,8 @@
     <published>2017-06-06T04:35:16.000Z</published>
     <updated>2017-08-31T00:20:30.000Z</updated>
     
-    <content type="html"><![CDATA[<h2><span id="goal">Goal</span></h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
-<h2><span id="code">Code</span></h2><a id="more"></a>
+    <content type="html"><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;span&gt;</div><div class="line">    Here is some text.</div><div class="line">    Here is some other text with a line break in it. &lt;br/&gt;And it should be divided into two lines.</div><div class="line">    This line, &lt;wbr /&gt;contains some word break opportunities, &lt;wbr /&gt;which should be ignored. &lt;wbr/&gt;And the output should be in one line.</div><div class="line">&lt;span/&gt;</div><div class="line">"""</div><div class="line"></div><div class="line">soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</div><div class="line">tag = soup.find(<span class="string">'span'</span>)</div><div class="line"></div><div class="line"><span class="comment"># remove &lt;wbr&gt; tags</span></div><div class="line"><span class="keyword">for</span> wbr <span class="keyword">in</span> soup.findAll(<span class="string">'wbr'</span>):</div><div class="line">    wbr_previous = wbr.previous_sibling</div><div class="line">    wbr_next = wbr.next_sibling</div><div class="line">    wbr_previous.string.replace_with(wbr_previous + wbr_next)</div><div class="line">    wbr.extract()</div><div class="line">    wbr_next.extract()</div><div class="line"></div><div class="line"><span class="comment"># reformat the text</span></div><div class="line">content = re.sub(<span class="string">r'\s*?\n+\s*'</span>, <span class="string">'\n'</span>, tag.get_text(<span class="string">'\n'</span>).strip())</div><div class="line">print(content)</div></pre></td></tr></table></figure>
 <p><strong>Result:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Here is some text.</div><div class="line">Here is some other text with a line break in it.</div><div class="line">And it should be divided into two lines.</div><div class="line">This line, contains some word break opportunities, which should be ignored. And the output should be in one line.</div></pre></td></tr></table></figure></p>
 ]]></content>

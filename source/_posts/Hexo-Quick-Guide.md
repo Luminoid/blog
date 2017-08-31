@@ -15,7 +15,7 @@ keywords:
   - Github
 ---
 
-<!-- toc -->
+<!-- TOC -->
 
 [Hexo](https://hexo.io)
 Theme: [hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
