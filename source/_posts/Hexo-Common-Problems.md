@@ -14,13 +14,7 @@ keywords:
   - hexo-math
 ---
 
-<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-
-* [hexo server not found](#hexo-server-not-found)
-* [hexo algolia 0 posts indexed](#hexo-algolia-0-posts-indexed)
-* [hexo-math not working](#hexo-math-not-working)
-
-<!-- tocstop -->
+<!-- toc -->
 
 ## hexo server not found
 **Problem**: Can't find `hexo server` command.

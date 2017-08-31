@@ -256,7 +256,7 @@
             </div>
             
                 <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                    <!-- toc -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
@@ -436,6 +436,13 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#quick-deployment">Quick deployment</a></li>
+<li><a href="#create">Create</a></li>
+<li><a href="#develop">Develop</a></li>
+<li><a href="#deploy">Deploy</a></li>
+</ul>
+<!-- tocstop -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
 <h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p></div>
                     </div>
@@ -456,7 +463,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
@@ -482,7 +489,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#shortcut">Shortcut</a></li>
 <li><a href="#packages">Packages</a><ul>
@@ -664,7 +671,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
@@ -739,8 +746,32 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- TOC -->
-<p>This is a portable and generic way to build Hexo Website with Docker.</p>
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#the-hexo-base-image">The Hexo base image</a><ul>
+<li><a href="#creating-hexo-dockerfile">Creating Hexo Dockerfile</a></li>
+<li><a href="#hexo-dockerfile-content">Hexo Dockerfile Content</a></li>
+<li><a href="#building-hexo-base-image">Building Hexo base image</a></li>
+</ul>
+</li>
+<li><a href="#the-apache-image">The Apache image</a><ul>
+<li><a href="#creating-apache-dockerfile">Creating Apache Dockerfile</a></li>
+<li><a href="#apache-dockerfile-content">Apache Dockerfile Content</a></li>
+<li><a href="#building-apache-image">Building Apache image</a></li>
+</ul>
+</li>
+<li><a href="#launching-hexo-site">Launching hexo site</a><ul>
+<li><a href="#creating-a-hexo-container">Creating a Hexo container</a></li>
+<li><a href="#creating-an-apache-container">Creating an Apache container</a></li>
+<li><a href="#resolving-the-apache-containers-port">Resolving the Apache container’s port</a></li>
+<li><a href="#hexo-website">Hexo website</a></li>
+<li><a href="#updating-hexo-website">Updating Hexo website</a></li>
+<li><a href="#backing-up-hexo-volume">Backing up Hexo volume</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<p>This is a portable and generic solution to build Hexo website with Docker.</p>
 <h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
 <h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure></div>
                     </div>
@@ -762,9 +793,27 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage">Advantage</a></li>
+<li><a href="#disadvantage">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage-1">Advantage</a></li>
+<li><a href="#disadvantage-1">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</a><ul>
+<li><a href="#advantage-2">Advantage</a></li>
+<li><a href="#disadvantage-2">Disadvantage</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
 <h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because some static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
 <h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br></div>
                     </div>
                     <div style="clear:both;"></div>

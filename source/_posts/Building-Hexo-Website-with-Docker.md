@@ -15,8 +15,9 @@ keywords:
   - Ubuntu
 ---
 
-<!-- TOC -->
-This is a portable and generic way to build Hexo Website with Docker.
+<!-- toc -->
+
+This is a portable and generic solution to build Hexo website with Docker.
 ## The Hexo base image
 ### Creating Hexo Dockerfile
 ``` sh
@@ -123,14 +124,14 @@ $ docker port APACHE_CONTAINER_ID 80
 ```
 
 ### Hexo website
-The Website can be viewed at `http://localhost:32768`
+The website can be viewed at `http://localhost:32768`
 
 ### Updating Hexo website
 Restart the Hexo container and the website will be updated.
 ``` sh
 docker start luminoid_blog
 ```
-### Backing up the Hexo volume
+### Backing up Hexo volume
 ``` sh
 docker run --rm --volumes-from luminoid_blog -v $(pwd):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html
 ```

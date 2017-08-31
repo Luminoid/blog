@@ -13,39 +13,7 @@ keywords:
   - Docker
 ---
 
-<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-
-* [Package Manager](#package-manager)
-    * [Homebrew](#homebrewhttpsbrewsh)
-        * [Install](#install)
-        * [Usage](#usage)
-        * [Formula](#formula)
-            * [tig](#tighttpsjonasgithubiotig)
-            * [tree](#tree)
-            * [readline](#readlinehttpcnswwwcnscwrueduphpchetreadlinerltophtml)
-            * [rlwrap](#rlwraphttpsgithubcomhanslub42rlwrap)
-            * [pngquant](#pngquanthttpspngquantorg)
-    * [Homebrew-Cask](#homebrew-caskhttpscaskroomgithubio)
-        * [Install](#install-1)
-        * [Usage](#usage-1)
-* [Terminal](#terminal)
-    * [iTerm2](#iterm2httpswwwiterm2com)
-    * [oh-my-zsh](#oh-my-zshhttpohmyzsh)
-        * [Install](#install-2)
-        * [Theme](#theme)
-            * [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
-* [Text Editor](#text-editor)
-    * [Atom](#atomhttpsatomio)
-* [IDE](#ide)
-    * [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
-* [Version Control](#version-control)
-    * [Git](#git)
-* [Tool](#tool)
-    * [Docker](#dockerhttpswwwdockercom)
-        * [Install](#install-3)
-        * [Usage](#usage-2)
-
-<!-- tocstop -->
+<!-- toc -->
 
 <!-- more -->
 

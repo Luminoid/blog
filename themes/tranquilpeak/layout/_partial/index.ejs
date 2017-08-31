@@ -18,15 +18,15 @@
         }
 
         // Generate and insert table of contents in post content
-        if (!post.excerpt && (/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
-            if (__('post.toc_title')) {
-                tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
-            } else {
-                tableOfContents = '<span id="table-of-contents"></span>';
-            }
-            tableOfContents += toc(postContent, {list_number: false})
-            postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
-        }
+//        if (!post.excerpt && (/<!--(\s*)[t|T][o|O][c|C](\s*)-->/).test(postContent)) {
+//            if (__('post.toc_title')) {
+//                tableOfContents = '<h1 id=\"table-of-contents\">' + __('post.toc') + '</h1>';
+//            } else {
+//                tableOfContents = '<span id="table-of-contents"></span>';
+//            }
+//            tableOfContents += toc(postContent, {list_number: false})
+//            postContent = postContent.replace(/<!--(\s*)[t|T][o|O][c|C](\s*)-->/, tableOfContents)
+//        }
     %>
     <article class="postShorten postShorten--thumbnailimg-<%= thumbnailImagePosition %>" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">

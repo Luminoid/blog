@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://luminoid.github.io/blog/Mac/Mac-Development-Config/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
-<meta property="og:updated_time" content="2017-08-31T00:20:15.000Z">
+<meta property="og:updated_time" content="2017-08-31T15:58:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Development Config">
 <meta name="twitter:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom   IDE Xco">
@@ -255,7 +255,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+            <!-- toc -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
@@ -313,20 +313,20 @@
 </ul>
 <!-- tocstop -->
 <a id="more"></a>
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh" target="_blank" rel="external">Homebrew</a></h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
-<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
-<h4 id="Formula"><a href="#Formula" class="headerlink" title="Formula"></a>Formula</h4><h5 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/" target="_blank" rel="external">tig</a></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
-<h5 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h5><p>List contents of directories in a tree-like format.</p>
-<h5 id="readline"><a href="#readline" class="headerlink" title="readline"></a><a href="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" target="_blank" rel="external">readline</a></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
-<h5 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap" target="_blank" rel="external">rlwrap</a></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
-<h5 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org" target="_blank" rel="external">pngquant</a></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
-<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
-<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
-<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
-<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
-<h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
+<h2><span id="package-manager">Package Manager</span></h2><h3><span id="homebrew"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<h4><span id="usage">Usage</span></h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
+<h4><span id="formula">Formula</span></h4><h5><span id="tig"></span></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
+<h5><span id="tree">tree</span></h5><p>List contents of directories in a tree-like format.</p>
+<h5><span id="readline"></span></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
+<h5><span id="rlwrap"></span></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
+<h5><span id="pngquant"></span></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
+<h3><span id="homebrew-cask"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
+<h4><span id="usage">Usage</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
+<h2><span id="terminal">Terminal</span></h2><h3><span id="iterm2"></span></h3><h3><span id="oh-my-zsh"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
+<h4><span id="theme">Theme</span></h4><h5><span id="agnoster"></span></h5><h2><span id="text-editor">Text Editor</span></h2><h3><span id="atom"></span></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
+<h2><span id="ide">IDE</span></h2><h3><span id="xcode"></span></h3><h2><span id="version-control">Version Control</span></h2><h3><span id="git">Git</span></h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h2><span id="tool">Tool</span></h2><h3><span id="docker"></span></h3><h4><span id="install">Install</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
+<h4><span id="usage">Usage</span></h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
 
             
         </div>
@@ -404,7 +404,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -494,7 +494,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -636,6 +636,13 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#quick-deployment">Quick deployment</a></li>
+<li><a href="#create">Create</a></li>
+<li><a href="#develop">Develop</a></li>
+<li><a href="#deploy">Deploy</a></li>
+</ul>
+<!-- tocstop -->
 <p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
 <h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p></div>
                     </div>
@@ -656,7 +663,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
@@ -682,7 +689,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#shortcut">Shortcut</a></li>
 <li><a href="#packages">Packages</a><ul>
@@ -864,7 +871,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
@@ -939,8 +946,32 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- TOC -->
-<p>This is a portable and generic way to build Hexo Website with Docker.</p>
+                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#the-hexo-base-image">The Hexo base image</a><ul>
+<li><a href="#creating-hexo-dockerfile">Creating Hexo Dockerfile</a></li>
+<li><a href="#hexo-dockerfile-content">Hexo Dockerfile Content</a></li>
+<li><a href="#building-hexo-base-image">Building Hexo base image</a></li>
+</ul>
+</li>
+<li><a href="#the-apache-image">The Apache image</a><ul>
+<li><a href="#creating-apache-dockerfile">Creating Apache Dockerfile</a></li>
+<li><a href="#apache-dockerfile-content">Apache Dockerfile Content</a></li>
+<li><a href="#building-apache-image">Building Apache image</a></li>
+</ul>
+</li>
+<li><a href="#launching-hexo-site">Launching hexo site</a><ul>
+<li><a href="#creating-a-hexo-container">Creating a Hexo container</a></li>
+<li><a href="#creating-an-apache-container">Creating an Apache container</a></li>
+<li><a href="#resolving-the-apache-containers-port">Resolving the Apache container’s port</a></li>
+<li><a href="#hexo-website">Hexo website</a></li>
+<li><a href="#updating-hexo-website">Updating Hexo website</a></li>
+<li><a href="#backing-up-hexo-volume">Backing up Hexo volume</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<p>This is a portable and generic solution to build Hexo website with Docker.</p>
 <h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
 <h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure></div>
                     </div>
@@ -962,9 +993,27 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- toc -->
+<ul>
+<li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage">Advantage</a></li>
+<li><a href="#disadvantage">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage-1">Advantage</a></li>
+<li><a href="#disadvantage-1">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</a><ul>
+<li><a href="#advantage-2">Advantage</a></li>
+<li><a href="#disadvantage-2">Disadvantage</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
 <h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because some static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
 <h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br></div>
                     </div>
                     <div style="clear:both;"></div>

@@ -21,7 +21,7 @@ There are three ways to deploy static site on Github Pages as follows. I tend to
 ## Using `gh-pages` branch
 Simply deploy website content on `gh-pages` branch and maintain code locally.
 ### Advantage
-This is the easiest way because some static site generators have build-in `deploy` command. Users would only need to setup the deployment configuration once and run `deploy` command every time after the modification.
+This is the easiest way because many static site generators have build-in `deploy` command. Users would only need to setup the deployment configuration once and run `deploy` command every time after the modification.
 ### Disadvantage
 Only website content is under the version control. The code that generates the website content is maintained locally.
 <!--more-->
