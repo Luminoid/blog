@@ -173,9 +173,9 @@
       <category term="Docker" scheme="http://luminoid.github.io/blog/categories/Docker/"/>
     
     
-      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
     
       <category term="Apache" scheme="http://luminoid.github.io/blog/tags/Apache/"/>
     
@@ -713,31 +713,18 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
-    <updated>2017-08-31T15:57:29.000Z</updated>
+    <updated>2017-08-31T16:18:16.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
-<ul>
-<li><a href="#hexo-server-not-found">hexo server not found</a></li>
-<li><a href="#hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</a></li>
-<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
-</ul>
 <!-- tocstop -->
-<h2><span id="hexo-server-not-found">hexo server not found</span></h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
-<a id="more"></a>
-<h2><span id="hexo-algolia-0-posts-indexed">hexo algolia 0 posts indexed</span></h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
-<h2><span id="hexo-math-not-working">hexo-math not working</span></h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
+<p>` is inserted<br><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-server-not-found&quot;&gt;hexo server not found&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-algolia-0-posts-indexed&quot;&gt;hexo algolia 0 posts indexed&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-math-not-working&quot;&gt;hexo-math not working&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- tocstop --&gt;
-&lt;h2 id=&quot;hexo-server-not-found&quot;&gt;&lt;a href=&quot;#hexo-server-not-found&quot; class=&quot;headerlink&quot; title=&quot;hexo server not found&quot;&gt;&lt;/a&gt;hexo server not found&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Can’t find &lt;code&gt;hexo server&lt;/code&gt; command.&lt;br&gt;&lt;strong&gt;Solution&lt;/strong&gt;: Extra plugins line in &lt;code&gt;_config.yml&lt;/code&gt; may cause this problem.&lt;/p&gt;
+&lt;p&gt;` is inserted&lt;br&gt;&lt;strong&gt;Solution&lt;/strong&gt;: Some themes have their own toc generator and can detect toc ann
     
     </summary>
     

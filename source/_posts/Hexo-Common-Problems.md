@@ -11,7 +11,9 @@ keywords:
   - Hexo
   - server
   - Algolia
+  - hexo-algolia
   - hexo-math
+  - hexo-toc
 ---
 
 <!-- toc -->
@@ -21,10 +23,14 @@ keywords:
 **Solution**: Extra plugins line in `_config.yml` may cause this problem.
 
 <!-- more -->
-## hexo algolia 0 posts indexed
+## [hexo-algolia](https://github.com/oncletom/hexo-algolia) 0 posts indexed
 **Problem**: Run `hexo algolia` but no post collected.
 **Solution**: Run `hexo algolia` without `hexo generate`. If already generated, run `hexo clean` to clean generated files.
 
-## hexo-math not working
+## [hexo-math](https://github.com/hexojs/hexo-math) not working
 **Problem**: MathJax is not rendered
 **Solution**: Package hexo-math works by default. Nothing needs to be added in `_config.yml` file. Remove the `math` configuration may solve this problem.
+
+## [hexo-toc](https://github.com/bubkoo/hexo-toc) generates two tocs
+**Problem**: Two tocs are generated in one post when only one `<!-- toc -->` is inserted
+**Solution**: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.
