@@ -44,7 +44,7 @@ keywords:
 * [Tool](#tool)
     * [Docker](#dockerhttpswwwdockercom)
         * [Install](#install-3)
-        * [Cheat Sheet](#cheat-sheet)
+        * [Usage](#usage-3)
 
 <!-- tocstop -->
 
@@ -122,5 +122,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 brew cask install docker
 ```
 
-#### Cheat Sheet
-https://luminoid.github.io/blog/Tool/Docker-Cheat-Sheet/
+#### Usage
+[Docker Cheat Sheet](https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/)
