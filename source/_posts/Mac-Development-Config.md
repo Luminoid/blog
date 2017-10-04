@@ -36,6 +36,7 @@ keywords:
             * [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
 * [Text Editor](#text-editor)
     * [Atom](#atomhttpsatomio)
+        * [Usage](#usage-2)
 * [IDE](#ide)
     * [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
 * [Version Control](#version-control)
@@ -43,7 +44,7 @@ keywords:
 * [Tool](#tool)
     * [Docker](#dockerhttpswwwdockercom)
         * [Install](#install-3)
-        * [Usage](#usage-2)
+        * [Cheat Sheet](#cheat-sheet)
 
 <!-- tocstop -->
 
@@ -104,7 +105,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 ## Text Editor
 ### [Atom](https://atom.io)
-[Atom Usage](https://luminoid.github.io/blog/2017/06/12/Atom-Usage/)
+#### Usage
+[Atom Usage](https://luminoid.github.io/blog/Tool/Atom-Usage/)
 
 ## IDE
 ### [Xcode](https://developer.apple.com/cn/xcode/)
@@ -120,9 +122,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 brew cask install docker
 ```
 
-#### Usage
-`docker run --name my_container -i -t ubuntu /bin/bash`: Run a command in a new container.
-`docker start -i my_container`: Start stopped containers.
-`docker build -t="luminoid/my_image"`: Build an image from a Dockerfile
-`docker ps -a`: List all containers
-
+#### Cheat Sheet
+https://luminoid.github.io/blog/Tool/Docker-Cheat-Sheet/

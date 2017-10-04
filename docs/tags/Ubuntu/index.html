@@ -233,7 +233,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/Docker/Building-Hexo-Website-with-Docker/">
+                        <a class="link-unstyled" href="/blog/Service/Building-Hexo-Website-with-Docker/">
                             Building Hexo Website with Docker
                         </a>
                     
@@ -247,7 +247,7 @@
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Docker/">Docker</a>
+    <a class="category-link" href="/blog/categories/Service/">Service</a>
 
 
     
@@ -261,7 +261,7 @@
 <h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
 <h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure>
                     
-                        <a href="/blog/Docker/Building-Hexo-Website-with-Docker/" class="postShorten-excerpt_link link">
+                        <a href="/blog/Service/Building-Hexo-Website-with-Docker/" class="postShorten-excerpt_link link">
                             Continue reading
                         </a>
                         
@@ -407,8 +407,8 @@
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed">hexo-algolia 0 posts indexed</a></li>
-<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
-<li><a href="#hexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
+<li><a href="#hexo-mathhttpsgithubcomhexojshexo-math-not-working">hexo-math not working</a></li>
+<li><a href="#hexo-tochttpsgithubcombubkoohexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p></div>
@@ -648,7 +648,10 @@
 </ul>
 </li>
 <li><a href="#text-editor">Text Editor</a><ul>
-<li><a href="#atomhttpsatomio">Atom</a></li>
+<li><a href="#atomhttpsatomio">Atom</a><ul>
+<li><a href="#usage-2">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#ide">IDE</a><ul>
@@ -662,7 +665,7 @@
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
 <li><a href="#install-3">Install</a></li>
-<li><a href="#usage-2">Usage</a></li>
+<li><a href="#cheat-sheet">Cheat Sheet</a></li>
 </ul>
 </li>
 </ul>
@@ -677,7 +680,7 @@
                 <div class="media">
                     
                     <div class="media-body">
-                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Service/Building-Hexo-Website-with-Docker/">
                             <h3 class="media-heading">Building Hexo Website with Docker</h3>
                         </a>
                         <span class="media-meta">
@@ -737,6 +740,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/">
+                            <h3 class="media-heading">Docker Cheat Sheet</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 4, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -744,7 +766,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                8 posts found
+                9 posts found
             </p>
         </div>
     </div>

@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-08-31T16:40:25.000Z</updated>
+  <updated>2017-10-04T08:58:06.000Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker Cheat Sheet</title>
+    <link href="http://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/"/>
+    <id>http://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/</id>
+    <published>2017-10-04T03:49:21.000Z</published>
+    <updated>2017-10-04T08:58:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></div><div class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></div><div class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></div><div class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></div><div class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></div><div class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></div><div class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></div><div class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></div><div class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></div><div class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></div><div class="line">docker images -a                                                                           <span class="comment"># Show all images</span></div><div class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></div><div class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Containers&quot;&gt;&lt;a href=&quot;#Containers&quot; class=&quot;headerlink&quot; title=&quot;Containers&quot;&gt;&lt;/a&gt;Containers&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
+    
+    </summary>
+    
+      <category term="Service" scheme="http://luminoid.github.io/blog/categories/Service/"/>
+    
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Using static site generator with Github Pages</title>
@@ -91,10 +114,10 @@
   
   <entry>
     <title>Building Hexo Website with Docker</title>
-    <link href="http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/"/>
-    <id>http://luminoid.github.io/blog/Docker/Building-Hexo-Website-with-Docker/</id>
+    <link href="http://luminoid.github.io/blog/Service/Building-Hexo-Website-with-Docker/"/>
+    <id>http://luminoid.github.io/blog/Service/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
-    <updated>2017-08-31T16:39:09.000Z</updated>
+    <updated>2017-10-04T03:54:41.000Z</updated>
     
     <content type="html"><![CDATA[<!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
@@ -122,7 +145,7 @@
     
     </summary>
     
-      <category term="Docker" scheme="http://luminoid.github.io/blog/categories/Docker/"/>
+      <category term="Service" scheme="http://luminoid.github.io/blog/categories/Service/"/>
     
     
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
@@ -140,7 +163,7 @@
     <link href="http://luminoid.github.io/blog/Mac/Mac-Development-Config/"/>
     <id>http://luminoid.github.io/blog/Mac/Mac-Development-Config/</id>
     <published>2017-08-08T14:45:55.000Z</published>
-    <updated>2017-08-31T16:40:03.000Z</updated>
+    <updated>2017-10-04T03:57:01.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
@@ -178,7 +201,10 @@
 </ul>
 </li>
 <li><a href="#text-editor">Text Editor</a><ul>
-<li><a href="#atomhttpsatomio">Atom</a></li>
+<li><a href="#atomhttpsatomio">Atom</a><ul>
+<li><a href="#usage-2">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#ide">IDE</a><ul>
@@ -192,7 +218,7 @@
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
 <li><a href="#install-3">Install</a></li>
-<li><a href="#usage-2">Usage</a></li>
+<li><a href="#cheat-sheet">Cheat Sheet</a></li>
 </ul>
 </li>
 </ul>
@@ -210,10 +236,10 @@
 <h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
 <h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
 <h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
-<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><p><a href="https://luminoid.github.io/blog/2017/06/12/Atom-Usage/">Atom Usage</a></p>
+<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><a href="https://luminoid.github.io/blog/Tool/Atom-Usage/">Atom Usage</a></p>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><code>docker run --name my_container -i -t ubuntu /bin/bash</code>: Run a command in a new container.<br><code>docker start -i my_container</code>: Start stopped containers.<br><code>docker build -t=&quot;luminoid/my_image&quot;</code>: Build an image from a Dockerfile<br><code>docker ps -a</code>: List all containers</p>
+<h4 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h4><p><a href="https://luminoid.github.io/blog/Tool/Docker-Cheat-Sheet/">https://luminoid.github.io/blog/Tool/Docker-Cheat-Sheet/</a></p>
 ]]></content>
     
     <summary type="html">
@@ -254,7 +280,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#text-editor&quot;&gt;Text Editor&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#atomhttpsatomio&quot;&gt;Atom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#atomhttpsatomio&quot;&gt;Atom&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#usage-2&quot;&gt;Usage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#ide&quot;&gt;IDE&lt;/a&gt;&lt;ul&gt;
@@ -268,7 +297,7 @@
 &lt;li&gt;&lt;a href=&quot;#tool&quot;&gt;Tool&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#dockerhttpswwwdockercom&quot;&gt;Docker&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#install-3&quot;&gt;Install&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#usage-2&quot;&gt;Usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#cheat-sheet&quot;&gt;Cheat Sheet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -283,9 +312,9 @@
     
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
   </entry>
   
@@ -665,21 +694,21 @@
     <link href="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/"/>
     <id>http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Common-Problems/</id>
     <published>2017-06-08T12:25:08.000Z</published>
-    <updated>2017-08-31T16:39:36.000Z</updated>
+    <updated>2017-08-31T16:49:54.000Z</updated>
     
     <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
 <ul>
 <li><a href="#hexo-server-not-found">hexo server not found</a></li>
 <li><a href="#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed">hexo-algolia 0 posts indexed</a></li>
-<li><a href="#hexo-math-not-working">hexo-math not working</a></li>
-<li><a href="#hexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
+<li><a href="#hexo-mathhttpsgithubcomhexojshexo-math-not-working">hexo-math not working</a></li>
+<li><a href="#hexo-tochttpsgithubcombubkoohexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
 </ul>
 <!-- tocstop -->
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
 <a id="more"></a>
 <h2 id="hexo-algolia-0-posts-indexed"><a href="#hexo-algolia-0-posts-indexed" class="headerlink" title="hexo-algolia 0 posts indexed"></a><a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="external">hexo-algolia</a> 0 posts indexed</h2><p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.<br><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
-<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a>hexo-math not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
-<h2 id="hexo-toc-generates-two-tocs"><a href="#hexo-toc-generates-two-tocs" class="headerlink" title="hexo-toc generates two tocs"></a>hexo-toc generates two tocs</h2><p><strong>Problem</strong>: Two tocs are generated in one post when only one <code>&lt;!-- toc --&gt;</code> is inserted<br><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
+<h2 id="hexo-math-not-working"><a href="#hexo-math-not-working" class="headerlink" title="hexo-math not working"></a><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="external">hexo-math</a> not working</h2><p><strong>Problem</strong>: MathJax is not rendered<br><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
+<h2 id="hexo-toc-generates-two-tocs"><a href="#hexo-toc-generates-two-tocs" class="headerlink" title="hexo-toc generates two tocs"></a><a href="https://github.com/bubkoo/hexo-toc" target="_blank" rel="external">hexo-toc</a> generates two tocs</h2><p><strong>Problem</strong>: Two tocs are generated in one post when only one <code>&lt;!-- toc --&gt;</code> is inserted<br><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
 ]]></content>
     
     <summary type="html">
@@ -688,8 +717,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#hexo-server-not-found&quot;&gt;hexo server not found&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed&quot;&gt;hexo-algolia 0 posts indexed&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-math-not-working&quot;&gt;hexo-math not working&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#hexo-toc-generates-two-tocs&quot;&gt;hexo-toc generates two tocs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-mathhttpsgithubcomhexojshexo-math-not-working&quot;&gt;hexo-math not working&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#hexo-tochttpsgithubcombubkoohexo-toc-generates-two-tocs&quot;&gt;hexo-toc generates two tocs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- tocstop --&gt;
 &lt;h2 id=&quot;hexo-server-not-found&quot;&gt;&lt;a href=&quot;#hexo-server-not-found&quot; class=&quot;headerlink&quot; title=&quot;hexo server not found&quot;&gt;&lt;/a&gt;hexo server not found&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Can’t find &lt;code&gt;hexo server&lt;/code&gt; command.&lt;br&gt;&lt;strong&gt;Solution&lt;/strong&gt;: Extra plugins line in &lt;code&gt;_config.yml&lt;/code&gt; may cause this problem.&lt;/p&gt;

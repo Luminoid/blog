@@ -2,7 +2,7 @@
 title: Building Hexo Website with Docker
 date: 2017-08-22 00:10:13
 updated:
-categories: Docker
+categories: Service
 tags:
   - Docker
   - Hexo
