@@ -7,4 +7,4 @@ tags: UIView
 keywords: UIView
 ---
 
-![UIViewClassDiagram](UIView-Inheritance-Relationships/UIViewClassDiagram.png)
+{% asset_img UIViewClassDiagram.png UIViewClassDiagram %}
