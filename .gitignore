@@ -1,6 +1,12 @@
-.DS_Store
+# Hexo
 Thumbs.db
 db.json
 *.log
 node_modules/
 .deploy*/
+
+# Mac
+.DS_Store
+
+# StarUML
+*.mdj
