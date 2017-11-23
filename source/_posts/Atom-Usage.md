@@ -143,6 +143,13 @@ Emmet – the essential tool for web developers
 #### [atom-bootstrap4](https://atom.io/packages/atom-bootstrap4)
 Bootstrap4 Support with snippets and autocompletion.
 
+### Edit
+#### [sublime-style-column-selection](https://atom.io/packages/sublime-style-column-selection)
+Enable Sublime style 'Column Selection'. Just hold 'alt' while you select, or select using your middle mouse button. Also similar to Texmate's 'Multiple Carets', or BBEdit's 'Block Select'
+
+#### [scroll-through-time](https://atom.io/packages/scroll-through-time)
+Two fingers scroll moves through time instead of space
+
 ### Git
 #### [gitignore-snippets](https://atom.io/packages/gitignore-snippets)
 Quickly create .gitignore files with templates from GitHub.
