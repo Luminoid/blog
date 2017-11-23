@@ -172,9 +172,9 @@
       <category term="Service" scheme="http://luminoid.github.io/blog/categories/Service/"/>
     
     
-      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
-    
       <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
       <category term="Apache" scheme="http://luminoid.github.io/blog/tags/Apache/"/>
     
@@ -535,9 +535,10 @@
     <link href="http://luminoid.github.io/blog/Tool/Atom-Usage/"/>
     <id>http://luminoid.github.io/blog/Tool/Atom-Usage/</id>
     <published>2017-06-12T10:04:00.000Z</published>
-    <updated>2017-11-23T08:03:04.973Z</updated>
+    <updated>2017-11-23T08:11:04.602Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+    <content type="html"><![CDATA[<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
 <li><a href="#shortcut">Shortcut</a></li>
 <li><a href="#packages">Packages</a><ul>
@@ -587,6 +588,11 @@
 <li><a href="#atom-bootstrap4httpsatomiopackagesatom-bootstrap4">atom-bootstrap4</a></li>
 </ul>
 </li>
+<li><a href="#edit">Edit</a><ul>
+<li><a href="#sublime-style-column-selectionhttpsatomiopackagessublime-style-column-selection">sublime-style-column-selection</a></li>
+<li><a href="#scroll-through-timehttpsatomiopackagesscroll-through-time">scroll-through-time</a></li>
+</ul>
+</li>
 <li><a href="#git">Git</a><ul>
 <li><a href="#gitignore-snippetshttpsatomiopackagesgitignore-snippets">gitignore-snippets</a></li>
 </ul>
@@ -599,7 +605,7 @@
 </ul>
 </li>
 </ul>
-<!-- tocstop -->
+<!-- /code_chunk_output -->
 <a id="more"></a>
 <h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p><code>cmd-shift-L</code>: Split selections into lines<br><code>ctrl-cmd-up</code>, <code>ctrl-cmd-down</code>: Move line up or down<br><code>cmd-d</code>: Duplicate lines<br><code>ctrl-shift-K</code>: Delete line<br><code>cmd-K-U</code>: Upper case the current word<br><code>cmd-K-L</code>: Lower case the current word<br><code>cmd-D</code>: Select the next word in the document that is the same as the currently selected word<br><code>cmd-shift-f</code>: Search the entire project<br><code>alt-cmd-[</code> and <code>alt-cmd-]</code>: Fold or unfold the code</p>
 <h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><h3 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h3><h4 id="platformio-ide-terminal"><a href="#platformio-ide-terminal" class="headerlink" title="platformio-ide-terminal"></a><a href="https://atom.io/packages/platformio-ide-terminal" target="_blank" rel="external">platformio-ide-terminal</a></h4><p>A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.</p>
@@ -642,7 +648,8 @@
     
     <summary type="html">
     
-      &lt;!-- toc orderedList:0 depthFrom:1 depthTo:6 --&gt;
+      &lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=false} --&gt;
+&lt;!-- code_chunk_output --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#shortcut&quot;&gt;Shortcut&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#packages&quot;&gt;Packages&lt;/a&gt;&lt;ul&gt;
@@ -692,6 +699,11 @@
 &lt;li&gt;&lt;a href=&quot;#atom-bootstrap4httpsatomiopackagesatom-bootstrap4&quot;&gt;atom-bootstrap4&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#edit&quot;&gt;Edit&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sublime-style-column-selectionhttpsatomiopackagessublime-style-column-selection&quot;&gt;sublime-style-column-selection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#scroll-through-timehttpsatomiopackagesscroll-through-time&quot;&gt;scroll-through-time&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#git&quot;&gt;Git&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#gitignore-snippetshttpsatomiopackagesgitignore-snippets&quot;&gt;gitignore-snippets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -704,7 +716,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- tocstop --&gt;
+&lt;!-- /code_chunk_output --&gt;
     
     </summary>
     
