@@ -15,17 +15,17 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom Usage">
+    <meta name="description" content="Package Manager Homebrew Install Usage   Homebrew-Cask Install Usage   Node Install     Terminal iTerm2 oh-my-zsh Install Theme agnoster   .zshrc     Text Editor Atom Usage     IDE Xcode   Version">
 <meta name="keywords" content="Homebrew,Atom,Docker">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Mac Development Config">
 <meta property="og:url" content="http://luminoid.github.io/blog/Mac/Mac-Development-Config/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom Usage">
-<meta property="og:updated_time" content="2017-10-04T09:16:48.000Z">
+<meta property="og:description" content="Package Manager Homebrew Install Usage   Homebrew-Cask Install Usage   Node Install     Terminal iTerm2 oh-my-zsh Install Theme agnoster   .zshrc     Text Editor Atom Usage     IDE Xcode   Version">
+<meta property="og:updated_time" content="2017-12-04T17:17:08.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Development Config">
-<meta name="twitter:description" content="Package Manager Homebrew Install Usage Formula tig tree readline rlwrap pngquant     Homebrew-Cask Install Usage     Terminal iTerm2 oh-my-zsh Install Theme agnoster       Text Editor Atom Usage">
+<meta name="twitter:description" content="Package Manager Homebrew Install Usage   Homebrew-Cask Install Usage   Node Install     Terminal iTerm2 oh-my-zsh Install Theme agnoster   .zshrc     Text Editor Atom Usage     IDE Xcode   Version">
     
     
         
@@ -255,20 +255,13 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+            <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
 <li><a href="#install">Install</a></li>
 <li><a href="#usage">Usage</a></li>
-<li><a href="#formula">Formula</a><ul>
-<li><a href="#tighttpsjonasgithubiotig">tig</a></li>
-<li><a href="#tree">tree</a></li>
-<li><a href="#readlinehttpcnswwwcnscwrueduphpchetreadlinerltophtml">readline</a></li>
-<li><a href="#rlwraphttpsgithubcomhanslub42rlwrap">rlwrap</a></li>
-<li><a href="#pngquanthttpspngquantorg">pngquant</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#homebrew-caskhttpscaskroomgithubio">Homebrew-Cask</a><ul>
@@ -276,16 +269,21 @@
 <li><a href="#usage-1">Usage</a></li>
 </ul>
 </li>
+<li><a href="#nodehttpsnodejsorg">Node</a><ul>
+<li><a href="#install-2">Install</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#terminal">Terminal</a><ul>
 <li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li>
 <li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul>
-<li><a href="#install-2">Install</a></li>
+<li><a href="#install-3">Install</a></li>
 <li><a href="#theme">Theme</a><ul>
 <li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li>
 </ul>
 </li>
+<li><a href="#zshrc">.zshrc</a></li>
 </ul>
 </li>
 </ul>
@@ -302,34 +300,41 @@
 </ul>
 </li>
 <li><a href="#version-control">Version Control</a><ul>
-<li><a href="#git">Git</a></li>
+<li><a href="#git">Git</a><ul>
+<li><a href="#ssh">SSH</a></li>
+<li><a href="#git-gui">Git GUI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
-<li><a href="#install-3">Install</a></li>
+<li><a href="#install-4">Install</a></li>
 <li><a href="#usage-3">Usage</a></li>
 </ul>
 </li>
+<li><a href="#vimwwwvimorg">vim</a><ul>
+<li><a href="#vimrc">.vimrc</a></li>
 </ul>
 </li>
 </ul>
-<!-- tocstop -->
+</li>
+</ul>
+<!-- /code_chunk_output -->
 <a id="more"></a>
 <h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh" target="_blank" rel="external">Homebrew</a></h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
-<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p><code>brew install wget</code>: Install formula.<br><code>brew leaves</code>: Show installed formulae that are  not  dependencies  of  another installed formula.</p>
-<h4 id="Formula"><a href="#Formula" class="headerlink" title="Formula"></a>Formula</h4><h5 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/" target="_blank" rel="external">tig</a></h5><p>Tig is an ncurses-based text-mode interface for git.</p>
-<h5 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h5><p>List contents of directories in a tree-like format.</p>
-<h5 id="readline"><a href="#readline" class="headerlink" title="readline"></a><a href="http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" target="_blank" rel="external">readline</a></h5><p>The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.</p>
-<h5 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap" target="_blank" rel="external">rlwrap</a></h5><p>rlwrap is a ‘readline wrapper’, a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.</p>
-<h5 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org" target="_blank" rel="external">pngquant</a></h5><p>pngquant is a command-line utility and a library for lossy compression of PNG images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pngquant --ext .png --force 256 *.png */*.png</div></pre></td></tr></table></figure></p>
-<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
-<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
-<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><a href="https://luminoid.github.io/blog/Tool/Atom-Usage/">Atom Usage</a></p>
-<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
-<h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p><a href="https://luminoid.github.io/blog/Tool/Homebrew-Usage/">Homebrew Usage</a></p>
+<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/cask</div></pre></td></tr></table></figure>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install google-chrome</div></pre></td></tr></table></figure>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a><a href="https://nodejs.org/" target="_blank" rel="external">Node</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="external">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></div></pre></td></tr></table></figure>
+<h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="external">agnoster</a></h5><h4 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></div><div class="line"><span class="built_in">export</span> ZSH=<span class="variable">$HOME</span>/.oh-my-zsh</div><div class="line"></div><div class="line">DEFAULT_USER=<span class="string">"Luminoid"</span></div><div class="line"></div><div class="line"><span class="comment"># Theme           ~/.oh-my-zsh/themes/</span></div><div class="line">ZSH_THEME=<span class="string">"agnoster"</span></div><div class="line"></div><div class="line"><span class="comment"># Plugins         ~/.oh-my-zsh/plugins/</span></div><div class="line"><span class="comment"># Custom plugins  ~/.oh-my-zsh/custom/plugins/</span></div><div class="line">plugins=(git brew node npm osx colored-man-pages zsh-syntax-highlighting)</div><div class="line"></div><div class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</div><div class="line"></div><div class="line"><span class="comment"># User configuration</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span></div><div class="line"></div><div class="line"><span class="comment"># LSCOLORS</span></div><div class="line"><span class="built_in">export</span> LSCOLORS=<span class="string">"exfxcxdxbxexexabagacad"</span></div><div class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -hG'</span></div><div class="line"></div><div class="line"><span class="comment"># This source command must be at the end of ~/.zshrc</span></div><div class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</div></pre></td></tr></table></figure>
+<h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><p><a href="https://luminoid.github.io/blog/Tool/Atom-Usage/">Atom Usage</a></p>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com" target="_blank" rel="external">SourceTree</a></p>
+<h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-4"><a href="#Install-4" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
 <h4 id="Usage-3"><a href="#Usage-3" class="headerlink" title="Usage"></a>Usage</h4><p><a href="https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/">Docker Cheat Sheet</a></p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a><a href="www.vim.org/">vim</a></h3><h4 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">" Vundle</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> nocompatible              <span class="comment">" be iMproved, required</span></div><div class="line"><span class="keyword">filetype</span> off                  <span class="comment">" required</span></div><div class="line"></div><div class="line"><span class="comment">" set the runtime path to include Vundle and initialize</span></div><div class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></div><div class="line"><span class="keyword">call</span> vundle#begin()</div><div class="line"><span class="comment">" alternatively, pass a path where Vundle should install plugins</span></div><div class="line"><span class="comment">"call vundle#begin('~/some/path/here')</span></div><div class="line"></div><div class="line"><span class="comment">" let Vundle manage Vundle, required</span></div><div class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></div><div class="line"></div><div class="line">Plugin <span class="string">'tpope/vim-fugitive'</span></div><div class="line"><span class="comment">" vim-airline</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line">Plugin <span class="string">'vim-airline/vim-airline'</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span>=<span class="string">"molokai"</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#buffer_nr_show = <span class="number">1</span></div><div class="line"></div><div class="line">Plugin <span class="string">'vim-airline/vim-airline-themes'</span></div><div class="line">Plugin <span class="string">'vim-syntastic/syntastic'</span></div><div class="line"></div><div class="line"><span class="comment">" All of your Plugins must be added before the following line</span></div><div class="line"><span class="keyword">call</span> vundle#end()            <span class="comment">" required</span></div><div class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>    <span class="comment">" required</span></div><div class="line"></div><div class="line"><span class="comment">" VIM user interface</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> <span class="keyword">number</span> <span class="comment">"Always show line number</span></div><div class="line"><span class="keyword">set</span> ruler  <span class="comment">"Always show current position</span></div><div class="line"></div><div class="line"><span class="comment">" Color Scheme</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">syntax</span> enable</div><div class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#use_256color = <span class="number">1</span> <span class="comment">" default: 0</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#terminal_transparent = <span class="number">1</span> <span class="comment">" default: 0</span></div><div class="line"><span class="keyword">colorscheme</span> neodark</div><div class="line"></div><div class="line"><span class="comment">" Mouth</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> mouse=<span class="keyword">a</span></div><div class="line"></div><div class="line"><span class="comment">" Tab</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> expandtab <span class="comment">"Use spaces instead of tabs</span></div><div class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span> <span class="comment">"1 tab == 4 spaces</span></div><div class="line"><span class="keyword">set</span> softtabstop=<span class="number">4</span></div><div class="line"><span class="keyword">set</span> smartindent <span class="built_in">shiftwidth</span>=<span class="number">4</span> <span class="comment">"Auto indent</span></div></pre></td></tr></table></figure>
 
             
         </div>
@@ -704,12 +709,16 @@
 </ul>
 </li>
 <li><a href="#ui">UI</a><ul>
+<li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li>
 <li><a href="#minimaphttpsatomiopackagesminimap">minimap</a></li>
 <li><a href="#file-iconshttpsatomiopackagesfile-icons">file-icons</a></li>
 <li><a href="#highlight-selectedhttpsatomiopackageshighlight-selected">highlight-selected</a></li>
 <li><a href="#pigmentshttpsatomiopackagespigments">pigments</a></li>
 <li><a href="#qolorhttpsatomiopackagesqolor">qolor</a></li>
 <li><a href="#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected">minimap-highlight-selected</a></li>
+<li><a href="#minimap-cursorlinehttpsatomiopackagesminimap-cursorline">minimap-cursorline</a></li>
+<li><a href="#minimap-selectionhttpsatomiopackagesminimap-selection">minimap-selection</a></li>
+<li><a href="#minimap-bookmarkshttpsatomiopackagesminimap-bookmarks">minimap-bookmarks</a></li>
 <li><a href="#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace">minimap-find-and-replace</a></li>
 <li><a href="#minimap-pigmentshttpsatomiopackagesminimap-pigments">minimap-pigments</a></li>
 <li><a href="#minimap-autohidehttpsatomiopackagesminimap-autohide">minimap-autohide</a></li>
@@ -727,9 +736,11 @@
 <li><a href="#language">Language</a><ul>
 <li><a href="#language-markdownhttpsatomiopackageslanguage-markdown">language-markdown</a></li>
 <li><a href="#language-babelhttpsatomiopackageslanguage-babel">language-babel</a></li>
+<li><a href="#atom-typescripthttpsatomiopackagesatom-typescript">atom-typescript</a></li>
+<li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li>
 <li><a href="#autocomplete-pythonhttpsatomiopackagesautocomplete-python">autocomplete-python</a></li>
 <li><a href="#autocomplete-clanghttpsatomiopackagesautocomplete-clang">autocomplete-clang</a></li>
-<li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li>
+<li><a href="#docblockrhttpsatomiopackagesdocblockr">docblockr</a></li>
 </ul>
 </li>
 <li><a href="#web">Web</a><ul>
@@ -874,20 +885,13 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+                        <div class="media-content hide-xs font-merryweather"><!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
 <li><a href="#package-manager">Package Manager</a><ul>
 <li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul>
 <li><a href="#install">Install</a></li>
 <li><a href="#usage">Usage</a></li>
-<li><a href="#formula">Formula</a><ul>
-<li><a href="#tighttpsjonasgithubiotig">tig</a></li>
-<li><a href="#tree">tree</a></li>
-<li><a href="#readlinehttpcnswwwcnscwrueduphpchetreadlinerltophtml">readline</a></li>
-<li><a href="#rlwraphttpsgithubcomhanslub42rlwrap">rlwrap</a></li>
-<li><a href="#pngquanthttpspngquantorg">pngquant</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#homebrew-caskhttpscaskroomgithubio">Homebrew-Cask</a><ul>
@@ -895,16 +899,21 @@
 <li><a href="#usage-1">Usage</a></li>
 </ul>
 </li>
+<li><a href="#nodehttpsnodejsorg">Node</a><ul>
+<li><a href="#install-2">Install</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#terminal">Terminal</a><ul>
 <li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li>
 <li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul>
-<li><a href="#install-2">Install</a></li>
+<li><a href="#install-3">Install</a></li>
 <li><a href="#theme">Theme</a><ul>
 <li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li>
 </ul>
 </li>
+<li><a href="#zshrc">.zshrc</a></li>
 </ul>
 </li>
 </ul>
@@ -921,19 +930,27 @@
 </ul>
 </li>
 <li><a href="#version-control">Version Control</a><ul>
-<li><a href="#git">Git</a></li>
+<li><a href="#git">Git</a><ul>
+<li><a href="#ssh">SSH</a></li>
+<li><a href="#git-gui">Git GUI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
-<li><a href="#install-3">Install</a></li>
+<li><a href="#install-4">Install</a></li>
 <li><a href="#usage-3">Usage</a></li>
 </ul>
 </li>
+<li><a href="#vimwwwvimorg">vim</a><ul>
+<li><a href="#vimrc">.vimrc</a></li>
 </ul>
 </li>
 </ul>
-<!-- tocstop --></div>
+</li>
+</ul>
+<!-- /code_chunk_output --></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -1047,7 +1064,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                10 posts found
+                11 posts found
             </p>
         </div>
     </div>

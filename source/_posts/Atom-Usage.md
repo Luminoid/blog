@@ -25,12 +25,16 @@ keywords:
 		* [Busy Signal](#busy-signalhttpsatomiopackagesbusy-signal)
 		* [browser-plus](#browser-plushttpsatomiopackagesbrowser-plus)
 	* [UI](#ui)
+		* [atom-ide-ui](#atom-ide-uihttpsatomiopackagesatom-ide-ui)
 		* [minimap](#minimaphttpsatomiopackagesminimap)
 		* [file-icons](#file-iconshttpsatomiopackagesfile-icons)
 		* [highlight-selected](#highlight-selectedhttpsatomiopackageshighlight-selected)
 		* [pigments](#pigmentshttpsatomiopackagespigments)
 		* [qolor](#qolorhttpsatomiopackagesqolor)
 		* [minimap-highlight-selected](#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected)
+		* [minimap-cursorline](#minimap-cursorlinehttpsatomiopackagesminimap-cursorline)
+		* [minimap-selection](#minimap-selectionhttpsatomiopackagesminimap-selection)
+		* [minimap-bookmarks](#minimap-bookmarkshttpsatomiopackagesminimap-bookmarks)
 		* [minimap-find-and-replace](#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace)
 		* [minimap-pigments](#minimap-pigmentshttpsatomiopackagesminimap-pigments)
 		* [minimap-autohide](#minimap-autohidehttpsatomiopackagesminimap-autohide)
@@ -44,9 +48,11 @@ keywords:
 	* [Language](#language)
 		* [language-markdown](#language-markdownhttpsatomiopackageslanguage-markdown)
 		* [language-babel](#language-babelhttpsatomiopackageslanguage-babel)
+		* [atom-typescript](#atom-typescripthttpsatomiopackagesatom-typescript)
+		* [atom-ternjs](#atom-ternjshttpsatomiopackagesatom-ternjs)
 		* [autocomplete-python](#autocomplete-pythonhttpsatomiopackagesautocomplete-python)
 		* [autocomplete-clang](#autocomplete-clanghttpsatomiopackagesautocomplete-clang)
-		* [atom-ternjs](#atom-ternjshttpsatomiopackagesatom-ternjs)
+		* [docblockr](#docblockrhttpsatomiopackagesdocblockr)
 	* [Web](#web)
 		* [emmet](#emmethttpsatomiopackagesemmet)
 		* [atom-bootstrap4](#atom-bootstrap4httpsatomiopackagesatom-bootstrap4)
@@ -96,6 +102,8 @@ A package that provides an easy to use API to show your package is performing a 
 Real Browser in ATOM
 
 ### UI
+#### [atom-ide-ui](https://atom.io/packages/atom-ide-ui)
+A collection of Atom UIs to support language services.
 #### [minimap](https://atom.io/packages/minimap)
 A preview of the full source code.
 #### [file-icons](https://atom.io/packages/file-icons)
@@ -108,6 +116,12 @@ A package to display colors in project and files.
 An atom package to color your SQL queries!
 #### [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected)
 A minimap binding for the highlight-selected package
+#### [minimap-cursorline](https://atom.io/packages/minimap-cursorline)
+Displays Atom cursorline in the minimap
+#### [minimap-selection](https://atom.io/packages/minimap-selection)
+Display the buffer's selections on the minimap
+#### [minimap-bookmarks](https://atom.io/packages/minimap-bookmarks)
+Displays Atom bookmarks in the minimap
 #### [minimap-find-and-replace](https://atom.io/packages/minimap-find-and-replace)
 Minimap bindings for the find and replace package
 #### [minimap-pigments](https://atom.io/packages/minimap-pigments)
@@ -134,12 +148,16 @@ View the hex dump of any file
 Adds grammar support for Markdown
 #### [language-babel](https://atom.io/packages/language-babel)
 JavaScript ES201x, React JSX, Flow and GraphQL Grammar. Babel Transpiler
+#### [atom-typescript](https://atom.io/packages/atom-typescript)
+The only TypeScript plugin you will ever need.
+#### [atom-ternjs](https://atom.io/packages/atom-ternjs)
+JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (JavaScript 2015), Node.js, jQuery & Angular.
 #### [autocomplete-python](https://atom.io/packages/autocomplete-python)
 Python completions for packages, variables, methods, functions, with their arguments. Powered by your choice of Jedi or Kite.
 #### [autocomplete-clang](https://atom.io/packages/autocomplete-clang)
 autocomplete for C/C++/ObjC using clang
-#### [atom-ternjs](https://atom.io/packages/atom-ternjs)
-JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (JavaScript 2015), Node.js, jQuery & Angular.
+#### [docblockr](https://atom.io/packages/docblockr)
+A helper package for writing documentation
 
 ### Web
 #### [emmet](https://atom.io/packages/emmet)

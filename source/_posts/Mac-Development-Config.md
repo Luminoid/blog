@@ -13,40 +13,43 @@ keywords:
   - Docker
 ---
 
-<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
 * [Package Manager](#package-manager)
-    * [Homebrew](#homebrewhttpsbrewsh)
-        * [Install](#install)
-        * [Usage](#usage)
-        * [Formula](#formula)
-            * [tig](#tighttpsjonasgithubiotig)
-            * [tree](#tree)
-            * [readline](#readlinehttpcnswwwcnscwrueduphpchetreadlinerltophtml)
-            * [rlwrap](#rlwraphttpsgithubcomhanslub42rlwrap)
-            * [pngquant](#pngquanthttpspngquantorg)
-    * [Homebrew-Cask](#homebrew-caskhttpscaskroomgithubio)
-        * [Install](#install-1)
-        * [Usage](#usage-1)
+	* [Homebrew](#homebrewhttpsbrewsh)
+		* [Install](#install)
+		* [Usage](#usage)
+	* [Homebrew-Cask](#homebrew-caskhttpscaskroomgithubio)
+		* [Install](#install-1)
+		* [Usage](#usage-1)
+	* [Node](#nodehttpsnodejsorg)
+		* [Install](#install-2)
 * [Terminal](#terminal)
-    * [iTerm2](#iterm2httpswwwiterm2com)
-    * [oh-my-zsh](#oh-my-zshhttpohmyzsh)
-        * [Install](#install-2)
-        * [Theme](#theme)
-            * [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
+	* [iTerm2](#iterm2httpswwwiterm2com)
+	* [oh-my-zsh](#oh-my-zshhttpohmyzsh)
+		* [Install](#install-3)
+		* [Theme](#theme)
+			* [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
+		* [.zshrc](#zshrc)
 * [Text Editor](#text-editor)
-    * [Atom](#atomhttpsatomio)
-        * [Usage](#usage-2)
+	* [Atom](#atomhttpsatomio)
+		* [Usage](#usage-2)
 * [IDE](#ide)
-    * [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
+	* [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
 * [Version Control](#version-control)
-    * [Git](#git)
+	* [Git](#git)
+		* [SSH](#ssh)
+		* [Git GUI](#git-gui)
 * [Tool](#tool)
-    * [Docker](#dockerhttpswwwdockercom)
-        * [Install](#install-3)
-        * [Usage](#usage-3)
+	* [Docker](#dockerhttpswwwdockercom)
+		* [Install](#install-4)
+		* [Usage](#usage-3)
+	* [vim](#vimwwwvimorg)
+		* [.vimrc](#vimrc)
 
-<!-- tocstop -->
+<!-- /code_chunk_output -->
 
 <!-- more -->
 
@@ -58,37 +61,23 @@ keywords:
 ```
 
 #### Usage
-`brew install wget`: Install formula.
-`brew leaves`: Show installed formulae that are  not  dependencies  of  another installed formula.
-
-#### Formula
-##### [tig](https://jonas.github.io/tig/)
-Tig is an ncurses-based text-mode interface for git.
-
-##### tree
-List contents of directories in a tree-like format.
-
-##### [readline](http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html)
-The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in.
-
-##### [rlwrap](https://github.com/hanslub42/rlwrap)
-rlwrap is a 'readline wrapper', a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.
-
-##### [pngquant](https://pngquant.org)
-pngquant is a command-line utility and a library for lossy compression of PNG images.
-``` bash
-pngquant --ext .png --force 256 *.png */*.png
-```
+[Homebrew Usage](https://luminoid.github.io/blog/Tool/Homebrew-Usage/)
 
 ### [Homebrew-Cask](https://caskroom.github.io)
 #### Install
-``` bash
+``` sh
 brew tap caskroom/cask
 ```
 
 #### Usage
-``` bash
+``` sh
 brew cask install google-chrome
+```
+
+### [Node](https://nodejs.org/)
+#### Install
+``` sh
+brew install node
 ```
 
 ## Terminal
@@ -103,6 +92,33 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 #### Theme
 ##### [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
+#### .zshrc
+``` sh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+DEFAULT_USER="Luminoid"
+
+# Theme           ~/.oh-my-zsh/themes/
+ZSH_THEME="agnoster"
+
+# Plugins         ~/.oh-my-zsh/plugins/
+# Custom plugins  ~/.oh-my-zsh/custom/plugins/
+plugins=(git brew node npm osx colored-man-pages zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# LSCOLORS
+export LSCOLORS="exfxcxdxbxexexabagacad"
+alias ls='ls -hG'
+
+# This source command must be at the end of ~/.zshrc
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
+
 ## Text Editor
 ### [Atom](https://atom.io)
 #### Usage
@@ -113,7 +129,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 ## Version Control
 ### Git
+#### SSH
 [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+#### Git GUI
+[SourceTree](https://www.sourcetreeapp.com)
 
 ## Tool
 ### [Docker](https://www.docker.com)
@@ -124,3 +143,60 @@ brew cask install docker
 
 #### Usage
 [Docker Cheat Sheet](https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/)
+
+### [vim](www.vim.org/)
+#### .vimrc
+``` vim
+" Vundle
+" ---------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+" vim-airline
+" ---------------------------------------------------------------
+Plugin 'vim-airline/vim-airline'
+let g:airline_theme="molokai"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-syntastic/syntastic'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" VIM user interface
+" ---------------------------------------------------------------
+set number "Always show line number
+set ruler  "Always show current position
+
+" Color Scheme
+" ---------------------------------------------------------------
+syntax enable
+let g:neodark#use_256color = 1 " default: 0
+let g:neodark#terminal_transparent = 1 " default: 0
+colorscheme neodark
+
+" Mouth
+" ---------------------------------------------------------------
+set mouse=a
+
+" Tab
+" ---------------------------------------------------------------
+set expandtab "Use spaces instead of tabs
+set tabstop=4 "1 tab == 4 spaces
+set softtabstop=4
+set smartindent shiftwidth=4 "Auto indent
+```
