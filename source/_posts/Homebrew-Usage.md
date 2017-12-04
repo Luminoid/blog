@@ -2,7 +2,7 @@
 title: Homebrew Usage
 date: 2017-12-04 23:55:06
 updated:
-categories: Tool
+categories: Mac
 tags: Homebrew
 keywords: Homebrew
 ---
@@ -37,7 +37,7 @@ keywords: Homebrew
 
 ## Formula
 ### [vim](www.vim.org/)
-Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient. 
+Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient.
 
 ### [mysql](https://www.mysql.com)
 MySQL is the world's most popular open source database.

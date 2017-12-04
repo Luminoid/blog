@@ -36,6 +36,8 @@ keywords:
 * [Text Editor](#text-editor)
 	* [Atom](#atomhttpsatomio)
 		* [Usage](#usage-2)
+	* [vim](#vimwwwvimorg)
+		* [.vimrc](#vimrc)
 * [IDE](#ide)
 	* [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
 * [Version Control](#version-control)
@@ -46,8 +48,6 @@ keywords:
 	* [Docker](#dockerhttpswwwdockercom)
 		* [Install](#install-4)
 		* [Usage](#usage-3)
-	* [vim](#vimwwwvimorg)
-		* [.vimrc](#vimrc)
 
 <!-- /code_chunk_output -->
 
@@ -124,26 +124,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #### Usage
 [Atom Usage](https://luminoid.github.io/blog/Tool/Atom-Usage/)
 
-## IDE
-### [Xcode](https://developer.apple.com/cn/xcode/)
-
-## Version Control
-### Git
-#### SSH
-[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-#### Git GUI
-[SourceTree](https://www.sourcetreeapp.com)
-
-## Tool
-### [Docker](https://www.docker.com)
-#### Install
-``` bash
-brew cask install docker
-```
-
-#### Usage
-[Docker Cheat Sheet](https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/)
-
 ### [vim](www.vim.org/)
 #### .vimrc
 ``` vim
@@ -200,3 +180,23 @@ set tabstop=4 "1 tab == 4 spaces
 set softtabstop=4
 set smartindent shiftwidth=4 "Auto indent
 ```
+
+## IDE
+### [Xcode](https://developer.apple.com/cn/xcode/)
+
+## Version Control
+### Git
+#### SSH
+[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+#### Git GUI
+[SourceTree](https://www.sourcetreeapp.com)
+
+## Tool
+### [Docker](https://www.docker.com)
+#### Install
+``` bash
+brew cask install docker
+```
+
+#### Usage
+[Docker Cheat Sheet](https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/)
