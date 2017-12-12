@@ -25,9 +25,9 @@ keywords:
 		* [Busy Signal](#busy-signalhttpsatomiopackagesbusy-signal)
 		* [browser-plus](#browser-plushttpsatomiopackagesbrowser-plus)
 	* [UI](#ui)
-		* [atom-ide-ui](#atom-ide-uihttpsatomiopackagesatom-ide-ui)
 		* [minimap](#minimaphttpsatomiopackagesminimap)
 		* [file-icons](#file-iconshttpsatomiopackagesfile-icons)
+		* [tool-bar](#tool-barhttpsatomiopackagestool-bar)
 		* [highlight-selected](#highlight-selectedhttpsatomiopackageshighlight-selected)
 		* [pigments](#pigmentshttpsatomiopackagespigments)
 		* [qolor](#qolorhttpsatomiopackagesqolor)
@@ -45,6 +45,9 @@ keywords:
 		* [pdf-view](#pdf-viewhttpsatomiopackagespdf-view)
 		* [regex-railroad-diagram](#regex-railroad-diagramhttpsatomiopackagesregex-railroad-diagram)
 		* [hex](#hexhttpsgithubcomabeestradaatom-hex)
+	* [IDE](#ide)
+		* [atom-ide-ui](#atom-ide-uihttpsatomiopackagesatom-ide-ui)
+		* [Nuclide](#nuclidehttpsnuclideio)
 	* [Language](#language)
 		* [language-markdown](#language-markdownhttpsatomiopackageslanguage-markdown)
 		* [language-babel](#language-babelhttpsatomiopackageslanguage-babel)
@@ -52,6 +55,7 @@ keywords:
 		* [atom-ternjs](#atom-ternjshttpsatomiopackagesatom-ternjs)
 		* [autocomplete-python](#autocomplete-pythonhttpsatomiopackagesautocomplete-python)
 		* [autocomplete-clang](#autocomplete-clanghttpsatomiopackagesautocomplete-clang)
+		* [linter-eslint](#linter-eslinthttpsatomiopackageslinter-eslint)
 		* [docblockr](#docblockrhttpsatomiopackagesdocblockr)
 	* [Web](#web)
 		* [emmet](#emmethttpsatomiopackagesemmet)
@@ -102,12 +106,12 @@ A package that provides an easy to use API to show your package is performing a 
 Real Browser in ATOM
 
 ### UI
-#### [atom-ide-ui](https://atom.io/packages/atom-ide-ui)
-A collection of Atom UIs to support language services.
 #### [minimap](https://atom.io/packages/minimap)
 A preview of the full source code.
 #### [file-icons](https://atom.io/packages/file-icons)
 Assign file extension icons and colours for improved visual grepping
+#### [tool-bar](https://atom.io/packages/tool-bar)
+Package providing customisable tool bar
 #### [highlight-selected](https://atom.io/packages/highlight-selected)
 Highlights the current word selected when double clicking
 #### [pigments](https://atom.io/packages/pigments)
@@ -143,6 +147,12 @@ Display railroad diagram of regex under cursor.
 #### [hex](https://github.com/AbeEstrada/atom-hex)
 View the hex dump of any file
 
+### IDE
+#### [atom-ide-ui](https://atom.io/packages/atom-ide-ui)
+A collection of Atom UIs to support language services.
+#### [Nuclide](https://nuclide.io)
+Nuclide is a collection of features for Atom to provide IDE-like functionality for a variety of programming languages and technologies.
+
 ### Language
 #### [language-markdown](https://atom.io/packages/language-markdown)
 Adds grammar support for Markdown
@@ -156,6 +166,8 @@ JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (Java
 Python completions for packages, variables, methods, functions, with their arguments. Powered by your choice of Jedi or Kite.
 #### [autocomplete-clang](https://atom.io/packages/autocomplete-clang)
 autocomplete for C/C++/ObjC using clang
+#### [linter-eslint](https://atom.io/packages/linter-eslint)
+Lint JavaScript on the fly, using ESLint
 #### [docblockr](https://atom.io/packages/docblockr)
 A helper package for writing documentation
 

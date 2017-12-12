@@ -6,7 +6,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Category: Static Site Generator - Luminoid&#39;s Site</title>
+    <title>Tag: Yarn - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
         <meta name="keywords" content="hexo,">
@@ -19,7 +19,7 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Luminoid&#39;s Site">
-<meta property="og:url" content="http://luminoid.github.io/blog/categories/Web/Static-Site-Generator/index.html">
+<meta property="og:url" content="http://luminoid.github.io/blog/tags/Yarn/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="A personal blog">
 <meta name="twitter:card" content="summary">
@@ -227,27 +227,27 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/">
-                            Using static site generator with Github Pages
+                        <a class="link-unstyled" href="/blog/Web/JavaScript/Yarn-Usage/">
+                            Yarn Usage
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-08-27T20:02:59+08:00">
+    <time itemprop="datePublished" datetime="2017-12-13T00:36:44+08:00">
 	
-		    Aug 27, 2017
+		    Dec 13, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/JavaScript/">JavaScript</a>
 
 
     
@@ -255,131 +255,18 @@
 
             </div>
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-<ul>
-<li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul>
-<li><a href="#advantage">Advantage</a></li>
-<li><a href="#disadvantage">Disadvantage</a></li>
-</ul>
-</li>
-<li><a href="#using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</a><ul>
-<li><a href="#advantage-1">Advantage</a></li>
-<li><a href="#disadvantage-1">Disadvantage</a></li>
-</ul>
-</li>
-<li><a href="#using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</a><ul>
-<li><a href="#advantage-2">Advantage</a></li>
-<li><a href="#disadvantage-2">Disadvantage</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
-<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br>
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yarn add &lt;package...&gt; <span class="comment"># Add a package to use in your current package.</span></div><div class="line">yarn init  <span class="comment"># Initialize the development of a package.</span></div><div class="line">yarn install  <span class="comment"># Install all the dependencies defined in a package.json file.</span></div><div class="line">yarn list  <span class="comment"># List installed packages.</span></div><div class="line">yarn remove &lt;package...&gt;  <span class="comment"># Remove an unused package from your current package.</span></div></pre></td></tr></table></figure>
+
                     
-                        <a href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
                         
                     
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/Web/Static-Site-Generator/Hexo-Common-Problems/">
-                            Hexo Common Problems
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-08T20:25:08+08:00">
-	
-		    Jun 08, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-<ul>
-<li><a href="#hexo-server-not-found">hexo server not found</a></li>
-<li><a href="#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed">hexo-algolia 0 posts indexed</a></li>
-<li><a href="#hexo-mathhttpsgithubcomhexojshexo-math-not-working">hexo-math not working</a></li>
-<li><a href="#hexo-tochttpsgithubcombubkoohexo-toc-generates-two-tocs">hexo-toc generates two tocs</a></li>
-</ul>
-<!-- tocstop -->
-<h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
-                    
-                        <a href="/blog/Web/Static-Site-Generator/Hexo-Common-Problems/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/">
-                            Hexo Quick Guide
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-08T11:06:48+08:00">
-	
-		    Jun 08, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- TOC -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
-                    
-                        <a href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
+                        <p>
+                            <a href="/blog/Web/JavaScript/Yarn-Usage/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
                     
                 </div>
             
@@ -396,7 +283,6 @@
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">

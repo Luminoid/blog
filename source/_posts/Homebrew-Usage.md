@@ -33,7 +33,7 @@ keywords: Homebrew
 
 ## Command
 `brew install wget`: Install formula.
-`brew leaves`: Show installed formulae that are  not  dependencies  of  another installed formula.
+`brew leaves`: Show installed formulae that are not  dependencies of another installed formula.
 
 ## Formula
 ### [vim](www.vim.org/)

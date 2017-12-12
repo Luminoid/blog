@@ -5,14 +5,15 @@ updated:
 categories: Mac
 tags:
   - Homebrew
+  - zsh
   - Atom
   - Docker
 keywords:
   - Homebrew
+  - zsh
   - Atom
   - Docker
 ---
-
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -26,28 +27,34 @@ keywords:
 		* [Usage](#usage-1)
 	* [Node](#nodehttpsnodejsorg)
 		* [Install](#install-2)
+	* [Yarn](#yarnhttpsyarnpkgcom)
+		* [Install](#install-3)
+		* [Usage](#usage-2)
 * [Terminal](#terminal)
 	* [iTerm2](#iterm2httpswwwiterm2com)
 	* [oh-my-zsh](#oh-my-zshhttpohmyzsh)
-		* [Install](#install-3)
+		* [Install](#install-4)
 		* [Theme](#theme)
 			* [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
 		* [.zshrc](#zshrc)
-* [Text Editor](#text-editor)
-	* [Atom](#atomhttpsatomio)
-		* [Usage](#usage-2)
-	* [vim](#vimwwwvimorg)
-		* [.vimrc](#vimrc)
-* [IDE](#ide)
-	* [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
 * [Version Control](#version-control)
 	* [Git](#git)
 		* [SSH](#ssh)
 		* [Git GUI](#git-gui)
+* [Language](#language)
+	* [Python3](#python3httpswwwpythonorg)
+		* [Install](#install-5)
+* [Text Editor](#text-editor)
+	* [Atom](#atomhttpsatomio)
+		* [Usage](#usage-3)
+	* [Vim](#vimwwwvimorg)
+		* [.vimrc](#vimrc)
+* [IDE](#ide)
+	* [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
 * [Tool](#tool)
 	* [Docker](#dockerhttpswwwdockercom)
-		* [Install](#install-4)
-		* [Usage](#usage-3)
+		* [Install](#install-6)
+		* [Usage](#usage-4)
 
 <!-- /code_chunk_output -->
 
@@ -61,7 +68,7 @@ keywords:
 ```
 
 #### Usage
-[Homebrew Usage](https://luminoid.github.io/blog/Tool/Homebrew-Usage/)
+{% post_link Homebrew-Usage %}
 
 ### [Homebrew-Cask](https://caskroom.github.io)
 #### Install
@@ -79,6 +86,16 @@ brew cask install google-chrome
 ``` sh
 brew install node
 ```
+
+### [Yarn](https://yarnpkg.com/)
+#### Install
+``` sh
+brew install yarn
+```
+
+#### Usage
+{% post_link Yarn-Usage %}
+
 
 ## Terminal
 ### [iTerm2](https://www.iterm2.com)
@@ -119,12 +136,26 @@ alias ls='ls -hG'
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
+## Version Control
+### Git
+#### SSH
+[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+#### Git GUI
+[SourceTree](https://www.sourcetreeapp.com)
+
+## Language
+### [Python3](https://www.python.org)
+#### Install
+``` sh
+brew install python3
+```
+
 ## Text Editor
 ### [Atom](https://atom.io)
 #### Usage
-[Atom Usage](https://luminoid.github.io/blog/Tool/Atom-Usage/)
+{% post_link Atom-Usage %}
 
-### [vim](www.vim.org/)
+### [Vim](www.vim.org/)
 #### .vimrc
 ``` vim
 " Vundle
@@ -184,13 +215,6 @@ set smartindent shiftwidth=4 "Auto indent
 ## IDE
 ### [Xcode](https://developer.apple.com/cn/xcode/)
 
-## Version Control
-### Git
-#### SSH
-[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-#### Git GUI
-[SourceTree](https://www.sourcetreeapp.com)
-
 ## Tool
 ### [Docker](https://www.docker.com)
 #### Install
@@ -199,4 +223,4 @@ brew cask install docker
 ```
 
 #### Usage
-[Docker Cheat Sheet](https://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/)
+{% post_link Docker-Cheat-Sheet %}

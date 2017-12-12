@@ -227,6 +227,54 @@
     <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/Web/JavaScript/Yarn-Usage/">
+                            Yarn Usage
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-12-13T00:36:44+08:00">
+	
+		    Dec 13, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/JavaScript/">JavaScript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yarn add &lt;package...&gt; <span class="comment"># Add a package to use in your current package.</span></div><div class="line">yarn init  <span class="comment"># Initialize the development of a package.</span></div><div class="line">yarn install  <span class="comment"># Install all the dependencies defined in a package.json file.</span></div><div class="line">yarn list  <span class="comment"># List installed packages.</span></div><div class="line">yarn remove &lt;package...&gt;  <span class="comment"># Remove an unused package from your current package.</span></div></pre></td></tr></table></figure>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/blog/Web/JavaScript/Yarn-Usage/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -545,12 +593,17 @@
 <li><a href="#install-2">Install</a></li>
 </ul>
 </li>
+<li><a href="#yarnhttpsyarnpkgcom">Yarn</a><ul>
+<li><a href="#install-3">Install</a></li>
+<li><a href="#usage-2">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#terminal">Terminal</a><ul>
 <li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li>
 <li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul>
-<li><a href="#install-3">Install</a></li>
+<li><a href="#install-4">Install</a></li>
 <li><a href="#theme">Theme</a><ul>
 <li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li>
 </ul>
@@ -558,21 +611,6 @@
 <li><a href="#zshrc">.zshrc</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#text-editor">Text Editor</a><ul>
-<li><a href="#atomhttpsatomio">Atom</a><ul>
-<li><a href="#usage-2">Usage</a></li>
-</ul>
-</li>
-<li><a href="#vimwwwvimorg">vim</a><ul>
-<li><a href="#vimrc">.vimrc</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#ide">IDE</a><ul>
-<li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li>
 </ul>
 </li>
 <li><a href="#version-control">Version Control</a><ul>
@@ -583,10 +621,32 @@
 </li>
 </ul>
 </li>
+<li><a href="#language">Language</a><ul>
+<li><a href="#python3httpswwwpythonorg">Python3</a><ul>
+<li><a href="#install-5">Install</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#text-editor">Text Editor</a><ul>
+<li><a href="#atomhttpsatomio">Atom</a><ul>
+<li><a href="#usage-3">Usage</a></li>
+</ul>
+</li>
+<li><a href="#vimwwwvimorg">Vim</a><ul>
+<li><a href="#vimrc">.vimrc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ide">IDE</a><ul>
+<li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li>
+</ul>
+</li>
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
-<li><a href="#install-4">Install</a></li>
-<li><a href="#usage-3">Usage</a></li>
+<li><a href="#install-6">Install</a></li>
+<li><a href="#usage-4">Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -778,9 +838,9 @@
 </ul>
 </li>
 <li><a href="#ui">UI</a><ul>
-<li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li>
 <li><a href="#minimaphttpsatomiopackagesminimap">minimap</a></li>
 <li><a href="#file-iconshttpsatomiopackagesfile-icons">file-icons</a></li>
+<li><a href="#tool-barhttpsatomiopackagestool-bar">tool-bar</a></li>
 <li><a href="#highlight-selectedhttpsatomiopackageshighlight-selected">highlight-selected</a></li>
 <li><a href="#pigmentshttpsatomiopackagespigments">pigments</a></li>
 <li><a href="#qolorhttpsatomiopackagesqolor">qolor</a></li>
@@ -802,6 +862,11 @@
 <li><a href="#hexhttpsgithubcomabeestradaatom-hex">hex</a></li>
 </ul>
 </li>
+<li><a href="#ide">IDE</a><ul>
+<li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li>
+<li><a href="#nuclidehttpsnuclideio">Nuclide</a></li>
+</ul>
+</li>
 <li><a href="#language">Language</a><ul>
 <li><a href="#language-markdownhttpsatomiopackageslanguage-markdown">language-markdown</a></li>
 <li><a href="#language-babelhttpsatomiopackageslanguage-babel">language-babel</a></li>
@@ -809,6 +874,7 @@
 <li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li>
 <li><a href="#autocomplete-pythonhttpsatomiopackagesautocomplete-python">autocomplete-python</a></li>
 <li><a href="#autocomplete-clanghttpsatomiopackagesautocomplete-clang">autocomplete-clang</a></li>
+<li><a href="#linter-eslinthttpsatomiopackageslinter-eslint">linter-eslint</a></li>
 <li><a href="#docblockrhttpsatomiopackagesdocblockr">docblockr</a></li>
 </ul>
 </li>
@@ -888,51 +954,6 @@
 <h2 id="hexo-server-not-found"><a href="#hexo-server-not-found" class="headerlink" title="hexo server not found"></a>hexo server not found</h2><p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.<br><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
                     
                         <a href="/blog/Web/Static-Site-Generator/Hexo-Common-Problems/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/">
-                            Hexo Quick Guide
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-08T11:06:48+08:00">
-	
-		    Jun 08, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- TOC -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
-                    
-                        <a href="/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/" class="postShorten-excerpt_link link">
                             Continue reading
                         </a>
                         
@@ -1127,9 +1148,9 @@
 </ul>
 </li>
 <li><a href="#ui">UI</a><ul>
-<li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li>
 <li><a href="#minimaphttpsatomiopackagesminimap">minimap</a></li>
 <li><a href="#file-iconshttpsatomiopackagesfile-icons">file-icons</a></li>
+<li><a href="#tool-barhttpsatomiopackagestool-bar">tool-bar</a></li>
 <li><a href="#highlight-selectedhttpsatomiopackageshighlight-selected">highlight-selected</a></li>
 <li><a href="#pigmentshttpsatomiopackagespigments">pigments</a></li>
 <li><a href="#qolorhttpsatomiopackagesqolor">qolor</a></li>
@@ -1151,6 +1172,11 @@
 <li><a href="#hexhttpsgithubcomabeestradaatom-hex">hex</a></li>
 </ul>
 </li>
+<li><a href="#ide">IDE</a><ul>
+<li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li>
+<li><a href="#nuclidehttpsnuclideio">Nuclide</a></li>
+</ul>
+</li>
 <li><a href="#language">Language</a><ul>
 <li><a href="#language-markdownhttpsatomiopackageslanguage-markdown">language-markdown</a></li>
 <li><a href="#language-babelhttpsatomiopackageslanguage-babel">language-babel</a></li>
@@ -1158,6 +1184,7 @@
 <li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li>
 <li><a href="#autocomplete-pythonhttpsatomiopackagesautocomplete-python">autocomplete-python</a></li>
 <li><a href="#autocomplete-clanghttpsatomiopackagesautocomplete-clang">autocomplete-clang</a></li>
+<li><a href="#linter-eslinthttpsatomiopackageslinter-eslint">linter-eslint</a></li>
 <li><a href="#docblockrhttpsatomiopackagesdocblockr">docblockr</a></li>
 </ul>
 </li>
@@ -1321,12 +1348,17 @@
 <li><a href="#install-2">Install</a></li>
 </ul>
 </li>
+<li><a href="#yarnhttpsyarnpkgcom">Yarn</a><ul>
+<li><a href="#install-3">Install</a></li>
+<li><a href="#usage-2">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#terminal">Terminal</a><ul>
 <li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li>
 <li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul>
-<li><a href="#install-3">Install</a></li>
+<li><a href="#install-4">Install</a></li>
 <li><a href="#theme">Theme</a><ul>
 <li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li>
 </ul>
@@ -1334,21 +1366,6 @@
 <li><a href="#zshrc">.zshrc</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#text-editor">Text Editor</a><ul>
-<li><a href="#atomhttpsatomio">Atom</a><ul>
-<li><a href="#usage-2">Usage</a></li>
-</ul>
-</li>
-<li><a href="#vimwwwvimorg">vim</a><ul>
-<li><a href="#vimrc">.vimrc</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#ide">IDE</a><ul>
-<li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li>
 </ul>
 </li>
 <li><a href="#version-control">Version Control</a><ul>
@@ -1359,10 +1376,32 @@
 </li>
 </ul>
 </li>
+<li><a href="#language">Language</a><ul>
+<li><a href="#python3httpswwwpythonorg">Python3</a><ul>
+<li><a href="#install-5">Install</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#text-editor">Text Editor</a><ul>
+<li><a href="#atomhttpsatomio">Atom</a><ul>
+<li><a href="#usage-3">Usage</a></li>
+</ul>
+</li>
+<li><a href="#vimwwwvimorg">Vim</a><ul>
+<li><a href="#vimrc">.vimrc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ide">IDE</a><ul>
+<li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li>
+</ul>
+</li>
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
-<li><a href="#install-4">Install</a></li>
-<li><a href="#usage-3">Usage</a></li>
+<li><a href="#install-6">Install</a></li>
+<li><a href="#usage-4">Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -1482,7 +1521,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                11 posts found
+                12 posts found
             </p>
         </div>
     </div>
