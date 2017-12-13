@@ -2,7 +2,7 @@
 title: Docker Cheat Sheet
 date: 2017-10-04 11:49:21
 updated:
-categories: Service
+categories: Container
 tags: Docker
 keywords:
 - Docker

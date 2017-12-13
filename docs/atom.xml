@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-12-12T16:52:19.259Z</updated>
+  <updated>2017-12-13T00:42:35.988Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React Native Development Environment Config</title>
+    <link href="http://luminoid.github.io/blog/Web/JavaScript/React-Native-Development-Environment-Config/"/>
+    <id>http://luminoid.github.io/blog/Web/JavaScript/React-Native-Development-Environment-Config/</id>
+    <published>2017-12-12T17:38:00.000Z</published>
+    <updated>2017-12-13T00:42:35.988Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Official-Site"><a href="#Official-Site" class="headerlink" title="Official Site"></a>Official Site</h2><p><a href="http://facebook.github.io/react-native/" target="_blank" rel="external">React Native</a><br><a href="https://reactjs.org" target="_blank" rel="external">React</a></p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><ul>
+<li>Yarn: <code>brew install yarn</code></li>
+<li>Node: <code>brew install node</code></li>
+<li>Watchman: <code>brew install watchman</code></li>
+<li>React Native CLI: <code>npm install -g react-native-cli</code></li>
+<li>Create React Native App: <code>npm install -g create-react-native-app</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Official-Site&quot;&gt;&lt;a href=&quot;#Official-Site&quot; class=&quot;headerlink&quot; title=&quot;Official Site&quot;&gt;&lt;/a&gt;Official Site&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://facebook.g
+    
+    </summary>
+    
+      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
+    
+      <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
+    
+    
+      <category term="React Native" scheme="http://luminoid.github.io/blog/tags/React-Native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VS Code Usage</title>
+    <link href="http://luminoid.github.io/blog/Tool/VS-Code-Usage/"/>
+    <id>http://luminoid.github.io/blog/Tool/VS-Code-Usage/</id>
+    <published>2017-12-12T17:12:03.000Z</published>
+    <updated>2017-12-13T00:47:44.930Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Official-Site"><a href="#Official-Site" class="headerlink" title="Official Site"></a>Official Site</h2><p><a href="https://code.visualstudio.com" target="_blank" rel="external">https://code.visualstudio.com</a></p>
+<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><h3 id="Debuggers"><a href="#Debuggers" class="headerlink" title="Debuggers"></a>Debuggers</h3><h4 id="Debugger-for-Chrome"><a href="#Debugger-for-Chrome" class="headerlink" title="Debugger for Chrome"></a><a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" rel="external">Debugger for Chrome</a></h4><p>Debug your JavaScript code in the Chrome browser, or any other target that supports the Chrome Debugger protocol.</p>
+<h4 id="React-Native-Tools"><a href="#React-Native-Tools" class="headerlink" title="React Native Tools"></a><a href="https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native" target="_blank" rel="external">React Native Tools</a></h4><p>Code-hinting, debugging and integrated commands for React Native.</p>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><h4 id="Code-Runner"><a href="#Code-Runner" class="headerlink" title="Code Runner"></a><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="external">Code Runner</a></h4><p>Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Objective-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D.</p>
+<h4 id="Beautify"><a href="#Beautify" class="headerlink" title="Beautify"></a><a href="https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify" target="_blank" rel="external">Beautify</a></h4><p>Beautify code in place for VS Code.</p>
+<h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script" target="_blank" rel="external">npm</a></h4><p>npm support for VS Code.</p>
+<h4 id="Auto-Close-Tag"><a href="#Auto-Close-Tag" class="headerlink" title="Auto Close Tag"></a><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" target="_blank" rel="external">Auto Close Tag</a></h4><p>Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text.</p>
+<h4 id="Auto-Rename-Tag"><a href="#Auto-Rename-Tag" class="headerlink" title="Auto Rename Tag"></a><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" rel="external">Auto Rename Tag</a></h4><p>Auto rename paired HTML/XML tag.</p>
+<h4 id="Document-this"><a href="#Document-this" class="headerlink" title="Document this"></a><a href="https://marketplace.visualstudio.com/items?itemName=joelday.docthis" target="_blank" rel="external">Document this</a></h4><p>Automatically generates detailed JSDoc comments in TypeScript and JavaScript files.</p>
+<h3 id="Snippets"><a href="#Snippets" class="headerlink" title="Snippets"></a>Snippets</h3><h4 id="HTML-Snippets"><a href="#HTML-Snippets" class="headerlink" title="HTML Snippets"></a><a href="https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets" target="_blank" rel="external">HTML Snippets</a></h4><p>Full HTML tags including HTML5 Snippets.</p>
+<h4 id="JavaScript-ES6-code-snippets"><a href="#JavaScript-ES6-code-snippets" class="headerlink" title="JavaScript (ES6) code snippets"></a><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets" target="_blank" rel="external">JavaScript (ES6) code snippets</a></h4><p>Code snippets for JavaScript in ES6 syntax.</p>
+<h4 id="Reactjs-code-snippets"><a href="#Reactjs-code-snippets" class="headerlink" title="Reactjs code snippets"></a><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets" target="_blank" rel="external">Reactjs code snippets</a></h4><p>Code snippets for Reactjs development in ES6 syntax.</p>
+<h3 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h3><h4 id="vscode-icons"><a href="#vscode-icons" class="headerlink" title="vscode-icons"></a><a href="https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons" target="_blank" rel="external">vscode-icons</a></h4><p>Icons for Visual Studio Code.</p>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><h4 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager"></a><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager" target="_blank" rel="external">Project Manager</a></h4><p>Easily switch between projects.</p>
+<h4 id="Path-Intellisense"><a href="#Path-Intellisense" class="headerlink" title="Path Intellisense"></a><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="external">Path Intellisense</a></h4><p>Visual Studio Code plugin that autocompletes filenames.</p>
+<h4 id="npm-Intellisense"><a href="#npm-Intellisense" class="headerlink" title="npm Intellisense"></a><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense" target="_blank" rel="external">npm Intellisense</a></h4><p>Visual Studio Code plugin that autocompletes npm modules in import statements.</p>
+<h4 id="Color-Picker"><a href="#Color-Picker" class="headerlink" title="Color Picker"></a><a href="https://marketplace.visualstudio.com/items?itemName=anseki.vscode-color" target="_blank" rel="external">Color Picker</a></h4><p>Helper with GUI to generate color codes such as CSS color notations.</p>
+<h4 id="Auto-Import"><a href="#Auto-Import" class="headerlink" title="Auto Import"></a><a href="https://marketplace.visualstudio.com/items?itemName=steoates.autoimport" target="_blank" rel="external">Auto Import</a></h4><p>Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX.</p>
+<h4 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" target="_blank" rel="external">Markdown All in One</a></h4><p>All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more).</p>
+<h4 id="Color-Highlight"><a href="#Color-Highlight" class="headerlink" title="Color Highlight"></a><a href="https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight" target="_blank" rel="external">Color Highlight</a></h4><p>Highlight web colors in your editor.</p>
+<h4 id="filesize"><a href="#filesize" class="headerlink" title="filesize"></a><a href="https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize" target="_blank" rel="external">filesize</a></h4><p>Show the current file size in the status bar.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Official-Site&quot;&gt;&lt;a href=&quot;#Official-Site&quot; class=&quot;headerlink&quot; title=&quot;Official Site&quot;&gt;&lt;/a&gt;Official Site&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://code.visu
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
+    
+    
+      <category term="VS Code" scheme="http://luminoid.github.io/blog/tags/VS-Code/"/>
+    
+  </entry>
   
   <entry>
     <title>Yarn Usage</title>
@@ -146,10 +221,10 @@
   
   <entry>
     <title>Docker Cheat Sheet</title>
-    <link href="http://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/"/>
-    <id>http://luminoid.github.io/blog/Service/Docker-Cheat-Sheet/</id>
+    <link href="http://luminoid.github.io/blog/Container/Docker-Cheat-Sheet/"/>
+    <id>http://luminoid.github.io/blog/Container/Docker-Cheat-Sheet/</id>
     <published>2017-10-04T03:49:21.000Z</published>
-    <updated>2017-10-04T08:58:06.000Z</updated>
+    <updated>2017-12-12T17:27:51.112Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></div><div class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></div><div class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></div><div class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></div><div class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></div><div class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></div><div class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></div><div class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></div><div class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></div><div class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></div><div class="line">docker images -a                                                                           <span class="comment"># Show all images</span></div><div class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></div><div class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></div></pre></td></tr></table></figure>
 ]]></content>
@@ -160,7 +235,7 @@
     
     </summary>
     
-      <category term="Service" scheme="http://luminoid.github.io/blog/categories/Service/"/>
+      <category term="Container" scheme="http://luminoid.github.io/blog/categories/Container/"/>
     
     
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
@@ -243,10 +318,10 @@
   
   <entry>
     <title>Building Hexo Website with Docker</title>
-    <link href="http://luminoid.github.io/blog/Service/Building-Hexo-Website-with-Docker/"/>
-    <id>http://luminoid.github.io/blog/Service/Building-Hexo-Website-with-Docker/</id>
+    <link href="http://luminoid.github.io/blog/Container/Building-Hexo-Website-with-Docker/"/>
+    <id>http://luminoid.github.io/blog/Container/Building-Hexo-Website-with-Docker/</id>
     <published>2017-08-21T16:10:13.000Z</published>
-    <updated>2017-10-04T03:54:41.000Z</updated>
+    <updated>2017-12-12T17:28:00.574Z</updated>
     
     <content type="html"><![CDATA[<!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
@@ -274,12 +349,12 @@
     
     </summary>
     
-      <category term="Service" scheme="http://luminoid.github.io/blog/categories/Service/"/>
+      <category term="Container" scheme="http://luminoid.github.io/blog/categories/Container/"/>
     
-    
-      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
     
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
     
       <category term="Apache" scheme="http://luminoid.github.io/blog/tags/Apache/"/>
     
@@ -388,7 +463,7 @@
 <h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="external">Atom</a></h3><h4 id="Usage-3"><a href="#Usage-3" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Tool/Atom-Usage/" title="Atom Usage">Atom Usage</a>
 <h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="www.vim.org/">Vim</a></h3><h4 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">" Vundle</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> nocompatible              <span class="comment">" be iMproved, required</span></div><div class="line"><span class="keyword">filetype</span> off                  <span class="comment">" required</span></div><div class="line"></div><div class="line"><span class="comment">" set the runtime path to include Vundle and initialize</span></div><div class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></div><div class="line"><span class="keyword">call</span> vundle#begin()</div><div class="line"><span class="comment">" alternatively, pass a path where Vundle should install plugins</span></div><div class="line"><span class="comment">"call vundle#begin('~/some/path/here')</span></div><div class="line"></div><div class="line"><span class="comment">" let Vundle manage Vundle, required</span></div><div class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></div><div class="line"></div><div class="line">Plugin <span class="string">'tpope/vim-fugitive'</span></div><div class="line"><span class="comment">" vim-airline</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line">Plugin <span class="string">'vim-airline/vim-airline'</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span>=<span class="string">"molokai"</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled = <span class="number">1</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#buffer_nr_show = <span class="number">1</span></div><div class="line"></div><div class="line">Plugin <span class="string">'vim-airline/vim-airline-themes'</span></div><div class="line">Plugin <span class="string">'vim-syntastic/syntastic'</span></div><div class="line"></div><div class="line"><span class="comment">" All of your Plugins must be added before the following line</span></div><div class="line"><span class="keyword">call</span> vundle#end()            <span class="comment">" required</span></div><div class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>    <span class="comment">" required</span></div><div class="line"></div><div class="line"><span class="comment">" VIM user interface</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> <span class="keyword">number</span> <span class="comment">"Always show line number</span></div><div class="line"><span class="keyword">set</span> ruler  <span class="comment">"Always show current position</span></div><div class="line"></div><div class="line"><span class="comment">" Color Scheme</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">syntax</span> enable</div><div class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#use_256color = <span class="number">1</span> <span class="comment">" default: 0</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#terminal_transparent = <span class="number">1</span> <span class="comment">" default: 0</span></div><div class="line"><span class="keyword">colorscheme</span> neodark</div><div class="line"></div><div class="line"><span class="comment">" Mouth</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> mouse=<span class="keyword">a</span></div><div class="line"></div><div class="line"><span class="comment">" Tab</span></div><div class="line"><span class="comment">" ---------------------------------------------------------------</span></div><div class="line"><span class="keyword">set</span> expandtab <span class="comment">"Use spaces instead of tabs</span></div><div class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span> <span class="comment">"1 tab == 4 spaces</span></div><div class="line"><span class="keyword">set</span> softtabstop=<span class="number">4</span></div><div class="line"><span class="keyword">set</span> smartindent <span class="built_in">shiftwidth</span>=<span class="number">4</span> <span class="comment">"Auto indent</span></div></pre></td></tr></table></figure>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="external">Xcode</a></h3><h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><h4 id="Install-6"><a href="#Install-6" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure>
-<h4 id="Usage-4"><a href="#Usage-4" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Service/Docker-Cheat-Sheet/" title="Docker Cheat Sheet">Docker Cheat Sheet</a>
+<h4 id="Usage-4"><a href="#Usage-4" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Container/Docker-Cheat-Sheet/" title="Docker Cheat Sheet">Docker Cheat Sheet</a>
 ]]></content>
     
     <summary type="html">
@@ -477,9 +552,9 @@
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
