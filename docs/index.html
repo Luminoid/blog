@@ -226,6 +226,53 @@
                 <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/Web/JavaScript/React-Docs-Key-Point/">
+                            React Docs Key Point
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-12-14T13:21:07+08:00">
+	
+		    Dec 14, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/JavaScript/">JavaScript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <!-- TOC -->
+<p><a href="https://reactjs.org/docs/" target="_blank" rel="external">React Docs</a></p>
+<h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><p>Component: <code>func: props -&gt; JSX</code></p>
+<h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p><strong>Use <code>setState()</code> to modify state</strong><br><strong>State updates may be asynchronous</strong><br><code>this.props</code> and <code>this.state</code> may be updated asynchronously, pass a function to <code>setState()</code> for calculating the next state.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState, props</span>) =&gt;</span> (&#123;</div><div class="line">  <span class="attr">counter</span>: prevState.counter + props.increment</div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
+<p><strong>State updates are merged</strong><br><strong>The data flows down</strong><br>State is encapsulated. It is not accessible to any component other than the one that owns and sets it. A component may choose to pass its state down as props to its child components.</p>
+                    
+                        <a href="/blog/Web/JavaScript/React-Docs-Key-Point/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -777,131 +824,6 @@
 <!-- /code_chunk_output -->
                     
                         <a href="/blog/Mac/Mac-Development-Config/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/Algorithm/Sorting-Algorithm-Analysis/">
-                            Sorting Algorithm Analysis
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-12T19:51:09+08:00">
-	
-		    Jun 12, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/blog/categories/Algorithm/">Algorithm</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <table>
-<thead>
-<tr>
-<th style="text-align:left">Algorithm</th>
-<th style="text-align:left">Worst-case running time</th>
-<th style="text-align:left">Average-case / expected running time</th>
-<th style="text-align:left">In-place</th>
-<th style="text-align:left">Stable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Insertion sort<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Shell sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Selection sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Heapsort</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Bubble sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Quicksort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(nlgn)$ (expected)</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Counting sort</td>
-<td style="text-align:left">$\Theta(k+n)$</td>
-<td style="text-align:left">$\Theta(k+n)$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Radix sort<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></td>
-<td style="text-align:left">$\Theta(d(n+k))$</td>
-<td style="text-align:left">$\Theta(d(n+k))$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Bucket sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n)$ (average-case)</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Merge sort</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-</tbody>
-</table>
-                    
-                        <a href="/blog/Algorithm/Sorting-Algorithm-Analysis/" class="postShorten-excerpt_link link">
                             Continue reading
                         </a>
                         
@@ -1468,7 +1390,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                14 posts found
+                15 posts found
             </p>
         </div>
     </div>
