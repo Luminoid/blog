@@ -11,9 +11,9 @@ keywords:
 - React
 ---
 
-<!-- TOC -->
-
 [React Docs](https://reactjs.org/docs/)
+
+<!-- TOC -->
 
 ## Component
 Component: `func: props -> JSX`

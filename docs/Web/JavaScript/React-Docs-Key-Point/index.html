@@ -15,17 +15,17 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="React Docs ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
+    <meta name="description" content="React Docs  ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
 <meta name="keywords" content="React">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="React Docs Key Point">
 <meta property="og:url" content="http://luminoid.github.io/blog/Web/JavaScript/React-Docs-Key-Point/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="React Docs ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
-<meta property="og:updated_time" content="2017-12-14T05:46:07.786Z">
+<meta property="og:description" content="React Docs  ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
+<meta property="og:updated_time" content="2017-12-14T05:54:40.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Docs Key Point">
-<meta name="twitter:description" content="React Docs ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
+<meta name="twitter:description" content="React Docs  ComponentComponent: func: props -&amp;gt; JSX StateUse setState() to modify stateState updates may be asynchronousthis.props and this.state may be updated asynchronously, pass a function to se">
     
     
         
@@ -255,8 +255,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Component"><span class="toc-text">Component</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State"><span class="toc-text">State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composition"><span class="toc-text">Composition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thinking-in-React"><span class="toc-text">Thinking in React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handling-Events"><span class="toc-text">Handling Events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Life-Cycle-Demo-Clock"><span class="toc-text">Life Cycle Demo: Clock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifting-State-Up-Demo-Calculator"><span class="toc-text">Lifting State Up Demo: Calculator</span></a></li></ol>
-<p><a href="https://reactjs.org/docs/" target="_blank" rel="external">React Docs</a></p>
+            <p><a href="https://reactjs.org/docs/" target="_blank" rel="external">React Docs</a></p>
+<h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Component"><span class="toc-text">Component</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State"><span class="toc-text">State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composition"><span class="toc-text">Composition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thinking-in-React"><span class="toc-text">Thinking in React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handling-Events"><span class="toc-text">Handling Events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-text">List</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Life-Cycle-Demo-Clock"><span class="toc-text">Life Cycle Demo: Clock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifting-State-Up-Demo-Calculator"><span class="toc-text">Lifting State Up Demo: Calculator</span></a></li></ol>
 <h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><p>Component: <code>func: props -&gt; JSX</code></p>
 <h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p><strong>Use <code>setState()</code> to modify state</strong><br><strong>State updates may be asynchronous</strong><br><code>this.props</code> and <code>this.state</code> may be updated asynchronously, pass a function to <code>setState()</code> for calculating the next state.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState, props</span>) =&gt;</span> (&#123;</div><div class="line">  <span class="attr">counter</span>: prevState.counter + props.increment</div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
 <p><strong>State updates are merged</strong><br><strong>The data flows down</strong><br>State is encapsulated. It is not accessible to any component other than the one that owns and sets it. A component may choose to pass its state down as props to its child components.</p>
