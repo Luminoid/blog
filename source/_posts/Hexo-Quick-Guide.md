@@ -79,3 +79,10 @@ Deploys your website.
 $ hexo deploy
 ```
 Set the `public_dir` in `_config.yml` from `public` to `docs` if you want the GitHub Pages site built from the `/docs` folder in the master branch. More info [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).
+
+## Theme
+Theme files to modify for custom configuration, take [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/) theme as an example: 
+```
+_config.yml
+languages/
+```
