@@ -7,6 +7,7 @@ categories:
 - JavaScript
 tags:
 - React
+- Note
 keywords:
 - React
 ---

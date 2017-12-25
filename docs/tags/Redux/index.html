@@ -6,7 +6,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Archives: 2017/10 - Luminoid&#39;s Site</title>
+    <title>Tag: Redux - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
         <meta name="keywords" content="hexo,">
@@ -19,7 +19,7 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Luminoid&#39;s Site">
-<meta property="og:url" content="http://luminoid.github.io/blog/archives/2017/10/index.html">
+<meta property="og:url" content="http://luminoid.github.io/blog/tags/Redux/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="A personal blog">
 <meta name="twitter:card" content="summary">
@@ -227,27 +227,27 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/Container/Docker-Cheat-Sheet/">
-                            Docker Cheat Sheet
+                        <a class="link-unstyled" href="/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                            Redux Docs Key Point
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-10-04T11:49:21+08:00">
+    <time itemprop="datePublished" datetime="2017-12-25T20:41:46+08:00">
 	
-		    Oct 04, 2017
+		    Dec 25, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Container/">Container</a>
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/JavaScript/">JavaScript</a>
 
 
     
@@ -255,18 +255,17 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></div><div class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></div><div class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></div><div class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></div><div class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></div><div class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></div><div class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></div><div class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></div><div class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></div><div class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></div><div class="line">docker images -a                                                                           <span class="comment"># Show all images</span></div><div class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></div><div class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></div></pre></td></tr></table></figure>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p><a href="https://redux.js.org" target="_blank" rel="external">Redux Docs</a></p>
+<!-- TOC -->
+<h2 id="Three-Principles"><a href="#Three-Principles" class="headerlink" title="Three Principles"></a>Three Principles</h2><h3 id="Single-source-of-truth"><a href="#Single-source-of-truth" class="headerlink" title="Single source of truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="external">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="external">store</a>.</p>
+<h3 id="State-is-read-only"><a href="#State-is-read-only" class="headerlink" title="State is read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="external">action</a>, an object describing what happened.</p>
+<h3 id="Changes-are-made-with-pure-functions"><a href="#Changes-are-made-with-pure-functions" class="headerlink" title="Changes are made with pure functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="external">reducers</a>.</p>
                     
+                        <a href="/blog/Web/JavaScript/Redux-Docs-Key-Point/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/blog/Container/Docker-Cheat-Sheet/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -283,7 +282,6 @@
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">

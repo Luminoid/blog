@@ -6,25 +6,26 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Luminoid&#39;s Site">
-    <title>Archives: 2017/10 - Luminoid&#39;s Site</title>
+    <title>Redux Docs Key Point - Luminoid&#39;s Site</title>
     <meta name="author" content="Luminoid">
     
-        <meta name="keywords" content="hexo,">
+        <meta name="keywords" content="hexo,Redux">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="A personal blog">
-<meta name="keywords" content="hexo">
+    <meta name="description" content="Redux Docs  Three PrinciplesSingle source of truthThe state of your whole application is stored in an object tree within a single store. State is read-onlyThe only way to change the state is to emit a">
+<meta name="keywords" content="Redux">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Luminoid&#39;s Site">
-<meta property="og:url" content="http://luminoid.github.io/blog/archives/2017/10/index.html">
+<meta property="og:title" content="Redux Docs Key Point">
+<meta property="og:url" content="http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="A personal blog">
+<meta property="og:description" content="Redux Docs  Three PrinciplesSingle source of truthThe state of your whole application is stored in an object tree within a single store. State is read-onlyThe only way to change the state is to emit a">
+<meta property="og:updated_time" content="2017-12-25T12:50:35.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luminoid&#39;s Site">
-<meta name="twitter:description" content="A personal blog">
+<meta name="twitter:title" content="Redux Docs Key Point">
+<meta name="twitter:description" content="Redux Docs  Three PrinciplesSingle source of truthThe state of your whole application is stored in an object tree within a single store. State is read-onlyThe only way to change the state is to emit a">
     
     
         
@@ -53,7 +54,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/blog/ ">Luminoid&#39;s Site</a>
@@ -77,7 +78,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -219,70 +220,199 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/Container/Docker-Cheat-Sheet/">
-                            Docker Cheat Sheet
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-10-04T11:49:21+08:00">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Redux Docs Key Point
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-12-25T20:41:46+08:00">
 	
-		    Oct 04, 2017
+		    Dec 25, 2017
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/blog/categories/Container/">Container</a>
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/JavaScript/">JavaScript</a>
 
 
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></div><div class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></div><div class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></div><div class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></div><div class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></div><div class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></div><div class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></div><div class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></div><div class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></div><div class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></div><div class="line">docker images -a                                                                           <span class="comment"># Show all images</span></div><div class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></div><div class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></div></pre></td></tr></table></figure>
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><a href="https://redux.js.org" target="_blank" rel="external">Redux Docs</a></p>
+<h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-Principles"><span class="toc-text">Three Principles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Single-source-of-truth"><span class="toc-text">Single source of truth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State-is-read-only"><span class="toc-text">State is read-only</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Changes-are-made-with-pure-functions"><span class="toc-text">Changes are made with pure functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action"><span class="toc-text">Action</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-creator"><span class="toc-text">Action creator</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reducers"><span class="toc-text">Reducers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Handling-Actions"><span class="toc-text">Handling Actions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splitting-Reducers"><span class="toc-text">Splitting Reducers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Store"><span class="toc-text">Store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Flow"><span class="toc-text">Data Flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-with-React"><span class="toc-text">Usage with React</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Presentational-and-Container-Components"><span class="toc-text">Presentational and Container Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Presentational-Components"><span class="toc-text">Presentational Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Components"><span class="toc-text">Container Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Passing-the-Store"><span class="toc-text">Passing the Store</span></a></li></ol></li></ol>
+<h2 id="Three-Principles"><a href="#Three-Principles" class="headerlink" title="Three Principles"></a>Three Principles</h2><h3 id="Single-source-of-truth"><a href="#Single-source-of-truth" class="headerlink" title="Single source of truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="external">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="external">store</a>.</p>
+<h3 id="State-is-read-only"><a href="#State-is-read-only" class="headerlink" title="State is read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="external">action</a>, an object describing what happened.</p>
+<h3 id="Changes-are-made-with-pure-functions"><a href="#Changes-are-made-with-pure-functions" class="headerlink" title="Changes are made with pure functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="external">reducers</a>.</p>
+<a id="more"></a>
+<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><h3 id="Action-creator"><a href="#Action-creator" class="headerlink" title="Action creator"></a>Action creator</h3><p>Action creator: function that returns an action.</p>
+<h2 id="Reducers"><a href="#Reducers" class="headerlink" title="Reducers"></a>Reducers</h2><h3 id="Handling-Actions"><a href="#Handling-Actions" class="headerlink" title="Handling Actions"></a>Handling Actions</h3><ul>
+<li>Don’t mutate the <code>state</code>, create a copy with <code>Object.assign({}, state, newState)</code>.</li>
+<li>Return the previous <code>state</code> in the <code>default</code> case.</li>
+</ul>
+<h3 id="Splitting-Reducers"><a href="#Splitting-Reducers" class="headerlink" title="Splitting Reducers"></a>Splitting Reducers</h3><p>Reducer composition: Each of reducers is managing its own part of the global state. The <code>state</code> parameter is different for every reducer, and corresponds to the part of the state it manages.<br>Redux provides a utility called <a href="https://redux.js.org/docs/api/combineReducers.html" target="_blank" rel="external"><code>combineReducers()</code></a> to generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.</p>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>The store has the following responsibilities:</p>
+<ul>
+<li>Holds application state;</li>
+<li>Allows access to state via <a href="https://redux.js.org/docs/api/Store.html#getState" target="_blank" rel="external"><code>getState()</code></a>;</li>
+<li>Allows state to be updated via <a href="https://redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>dispatch(action)</code></a>;</li>
+<li>Registers listeners via <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>;</li>
+<li>Handles unregistering of listeners via the function returned by <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>.</li>
+</ul>
+<h2 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h2><p>Redux architecture revolves around a strict unidirectional data flow.<br>The data lifecycle in any Redux app follows these 4 steps:</p>
+<ol>
+<li>You call <code>store.dispatch(action)</code>.</li>
+<li>The Redux store calls the reducer function you gave it.</li>
+<li>The root reducer may combine the output of multiple reducers into a single state tree.</li>
+<li>The Redux store saves the complete state tree returned by the root reducer.<br>Every listener registered with <code>store.subscribe(listener)</code> will now be invoked; listeners may call <code>store.getState()</code> to get the current state.</li>
+</ol>
+<h2 id="Usage-with-React"><a href="#Usage-with-React" class="headerlink" title="Usage with React"></a>Usage with React</h2><h3 id="Presentational-and-Container-Components"><a href="#Presentational-and-Container-Components" class="headerlink" title="Presentational and Container Components"></a>Presentational and Container Components</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Presentational Components</th>
+<th>Container Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>How things look (markup, styles)</td>
+<td>How things work (data fetching, state updates)</td>
+</tr>
+<tr>
+<td>Aware of Redux</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>To read data</td>
+<td>Read data from props</td>
+<td>Subscribe to Redux state</td>
+</tr>
+<tr>
+<td>To change data</td>
+<td>Invoke callbacks from props</td>
+<td>Dispatch Redux actions</td>
+</tr>
+<tr>
+<td>Are written</td>
+<td>By hand</td>
+<td>Usually generated by React Redux</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Presentational-Components"><a href="#Presentational-Components" class="headerlink" title="Presentational Components"></a>Presentational Components</h3><p>Write functional stateless components unless you need to use local state or the lifecycle methods.</p>
+<h3 id="Container-Components"><a href="#Container-Components" class="headerlink" title="Container Components"></a>Container Components</h3><p>Use React Redux library’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="external"><code>connect()</code></a> function to generate container components.<br>To use <code>connect()</code>, you need to define a special function called <code>mapStateToProps()</code> that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.<br>In a similar fashion, you can define a function called <code>mapDispatchToProps()</code> that receives the <code>dispatch()</code> method and returns callback props that you want to inject into the presentational component.</p>
+<h3 id="Passing-the-Store"><a href="#Passing-the-Store" class="headerlink" title="Passing the Store"></a>Passing the Store</h3><p>Use a special React Redux component called <code>&lt;Provider&gt;</code> to magically make the store available to all container components in the application without passing it explicitly.</p>
 
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/blog/Container/Docker-Cheat-Sheet/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Note/">Note</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Redux/">Redux</a>
+
+            </div>
         
         
-        <li class="pagination-number">page 1 of 1</li>
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/JavaScript/React-Docs-Key-Point/" data-tooltip="React Docs Key Point">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+        
+            
+        
+    </div>
+</article>
 
 
 
@@ -293,6 +423,120 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/Web/JavaScript/React-Docs-Key-Point/" data-tooltip="React Docs Key Point">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/">
+                    <i class="fa fa-weibo"></i><span>Share on Weibo</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
             
         </div>
         
@@ -835,6 +1079,8 @@
         <!--SCRIPTS-->
 <script src="/blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>

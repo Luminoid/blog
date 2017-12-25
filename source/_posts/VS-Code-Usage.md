@@ -57,7 +57,7 @@ https://code.visualstudio.com
 
 ## Setup
 ### Launch VS Code from the Command Line
-Open the Command Palette (⇧⌘P) and type `Shell Command: Install 'code' command in PATH` to toggle.
+Open the Command Palette (⇧⌘P) and type `Shell Command: Install 'code' command in PATH` to install.
 
 ## Shortcut
 `Shift+Command+P`: Toggle Command Palette

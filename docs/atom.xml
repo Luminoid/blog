@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2017-12-14T05:54:40.325Z</updated>
+  <updated>2017-12-25T12:50:35.965Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,107 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Redux Docs Key Point</title>
+    <link href="http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/"/>
+    <id>http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/</id>
+    <published>2017-12-25T12:41:46.000Z</published>
+    <updated>2017-12-25T12:50:35.965Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://redux.js.org" target="_blank" rel="external">Redux Docs</a></p>
+<!-- TOC -->
+<h2 id="Three-Principles"><a href="#Three-Principles" class="headerlink" title="Three Principles"></a>Three Principles</h2><h3 id="Single-source-of-truth"><a href="#Single-source-of-truth" class="headerlink" title="Single source of truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="external">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="external">store</a>.</p>
+<h3 id="State-is-read-only"><a href="#State-is-read-only" class="headerlink" title="State is read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="external">action</a>, an object describing what happened.</p>
+<h3 id="Changes-are-made-with-pure-functions"><a href="#Changes-are-made-with-pure-functions" class="headerlink" title="Changes are made with pure functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="external">reducers</a>.</p>
+<a id="more"></a>
+<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><h3 id="Action-creator"><a href="#Action-creator" class="headerlink" title="Action creator"></a>Action creator</h3><p>Action creator: function that returns an action.</p>
+<h2 id="Reducers"><a href="#Reducers" class="headerlink" title="Reducers"></a>Reducers</h2><h3 id="Handling-Actions"><a href="#Handling-Actions" class="headerlink" title="Handling Actions"></a>Handling Actions</h3><ul>
+<li>Don’t mutate the <code>state</code>, create a copy with <code>Object.assign({}, state, newState)</code>.</li>
+<li>Return the previous <code>state</code> in the <code>default</code> case.</li>
+</ul>
+<h3 id="Splitting-Reducers"><a href="#Splitting-Reducers" class="headerlink" title="Splitting Reducers"></a>Splitting Reducers</h3><p>Reducer composition: Each of reducers is managing its own part of the global state. The <code>state</code> parameter is different for every reducer, and corresponds to the part of the state it manages.<br>Redux provides a utility called <a href="https://redux.js.org/docs/api/combineReducers.html" target="_blank" rel="external"><code>combineReducers()</code></a> to generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.</p>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>The store has the following responsibilities:</p>
+<ul>
+<li>Holds application state;</li>
+<li>Allows access to state via <a href="https://redux.js.org/docs/api/Store.html#getState" target="_blank" rel="external"><code>getState()</code></a>;</li>
+<li>Allows state to be updated via <a href="https://redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>dispatch(action)</code></a>;</li>
+<li>Registers listeners via <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>;</li>
+<li>Handles unregistering of listeners via the function returned by <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>.</li>
+</ul>
+<h2 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h2><p>Redux architecture revolves around a strict unidirectional data flow.<br>The data lifecycle in any Redux app follows these 4 steps:</p>
+<ol>
+<li>You call <code>store.dispatch(action)</code>.</li>
+<li>The Redux store calls the reducer function you gave it.</li>
+<li>The root reducer may combine the output of multiple reducers into a single state tree.</li>
+<li>The Redux store saves the complete state tree returned by the root reducer.<br>Every listener registered with <code>store.subscribe(listener)</code> will now be invoked; listeners may call <code>store.getState()</code> to get the current state.</li>
+</ol>
+<h2 id="Usage-with-React"><a href="#Usage-with-React" class="headerlink" title="Usage with React"></a>Usage with React</h2><h3 id="Presentational-and-Container-Components"><a href="#Presentational-and-Container-Components" class="headerlink" title="Presentational and Container Components"></a>Presentational and Container Components</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Presentational Components</th>
+<th>Container Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>How things look (markup, styles)</td>
+<td>How things work (data fetching, state updates)</td>
+</tr>
+<tr>
+<td>Aware of Redux</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>To read data</td>
+<td>Read data from props</td>
+<td>Subscribe to Redux state</td>
+</tr>
+<tr>
+<td>To change data</td>
+<td>Invoke callbacks from props</td>
+<td>Dispatch Redux actions</td>
+</tr>
+<tr>
+<td>Are written</td>
+<td>By hand</td>
+<td>Usually generated by React Redux</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Presentational-Components"><a href="#Presentational-Components" class="headerlink" title="Presentational Components"></a>Presentational Components</h3><p>Write functional stateless components unless you need to use local state or the lifecycle methods.</p>
+<h3 id="Container-Components"><a href="#Container-Components" class="headerlink" title="Container Components"></a>Container Components</h3><p>Use React Redux library’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="external"><code>connect()</code></a> function to generate container components.<br>To use <code>connect()</code>, you need to define a special function called <code>mapStateToProps()</code> that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.<br>In a similar fashion, you can define a function called <code>mapDispatchToProps()</code> that receives the <code>dispatch()</code> method and returns callback props that you want to inject into the presentational component.</p>
+<h3 id="Passing-the-Store"><a href="#Passing-the-Store" class="headerlink" title="Passing the Store"></a>Passing the Store</h3><p>Use a special React Redux component called <code>&lt;Provider&gt;</code> to magically make the store available to all container components in the application without passing it explicitly.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://redux.js.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Redux Docs&lt;/a&gt;&lt;/p&gt;
+&lt;!-- TOC --&gt;
+&lt;h2 id=&quot;Three-Principles&quot;&gt;&lt;a href=&quot;#Three-Principles&quot; class=&quot;headerlink&quot; title=&quot;Three Principles&quot;&gt;&lt;/a&gt;Three Principles&lt;/h2&gt;&lt;h3 id=&quot;Single-source-of-truth&quot;&gt;&lt;a href=&quot;#Single-source-of-truth&quot; class=&quot;headerlink&quot; title=&quot;Single source of truth&quot;&gt;&lt;/a&gt;Single source of truth&lt;/h3&gt;&lt;p&gt;The &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#state&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;state&lt;/a&gt; of your whole application is stored in an object tree within a single &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#store&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;store&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;State-is-read-only&quot;&gt;&lt;a href=&quot;#State-is-read-only&quot; class=&quot;headerlink&quot; title=&quot;State is read-only&quot;&gt;&lt;/a&gt;State is read-only&lt;/h3&gt;&lt;p&gt;The only way to change the state is to emit an &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#action&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;action&lt;/a&gt;, an object describing what happened.&lt;/p&gt;
+&lt;h3 id=&quot;Changes-are-made-with-pure-functions&quot;&gt;&lt;a href=&quot;#Changes-are-made-with-pure-functions&quot; class=&quot;headerlink&quot; title=&quot;Changes are made with pure functions&quot;&gt;&lt;/a&gt;Changes are made with pure functions&lt;/h3&gt;&lt;p&gt;To specify how the state tree is transformed by actions, you write pure &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#reducer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reducers&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
+    
+      <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
+    
+    
+      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
+    
+      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React Docs Key Point</title>
     <link href="http://luminoid.github.io/blog/Web/JavaScript/React-Docs-Key-Point/"/>
     <id>http://luminoid.github.io/blog/Web/JavaScript/React-Docs-Key-Point/</id>
     <published>2017-12-14T05:21:07.000Z</published>
-    <updated>2017-12-14T05:54:40.325Z</updated>
+    <updated>2017-12-25T12:43:19.989Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://reactjs.org/docs/" target="_blank" rel="external">React Docs</a></p>
 <!-- TOC -->
@@ -73,6 +169,8 @@
     
       <category term="React" scheme="http://luminoid.github.io/blog/tags/React/"/>
     
+      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
+    
   </entry>
   
   <entry>
@@ -115,7 +213,7 @@
     <link href="http://luminoid.github.io/blog/Tool/VS-Code-Usage/"/>
     <id>http://luminoid.github.io/blog/Tool/VS-Code-Usage/</id>
     <published>2017-12-12T17:12:03.000Z</published>
-    <updated>2017-12-14T17:23:57.168Z</updated>
+    <updated>2017-12-24T08:50:14.183Z</updated>
     
     <content type="html"><![CDATA[<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -174,7 +272,7 @@
 <!-- /code_chunk_output -->
 <a id="more"></a>
 <h2 id="Official-Site"><a href="#Official-Site" class="headerlink" title="Official Site"></a>Official Site</h2><p><a href="https://code.visualstudio.com" target="_blank" rel="external">https://code.visualstudio.com</a></p>
-<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><h3 id="Launch-VS-Code-from-the-Command-Line"><a href="#Launch-VS-Code-from-the-Command-Line" class="headerlink" title="Launch VS Code from the Command Line"></a>Launch VS Code from the Command Line</h3><p>Open the Command Palette (⇧⌘P) and type <code>Shell Command: Install &#39;code&#39; command in PATH</code> to toggle.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><h3 id="Launch-VS-Code-from-the-Command-Line"><a href="#Launch-VS-Code-from-the-Command-Line" class="headerlink" title="Launch VS Code from the Command Line"></a>Launch VS Code from the Command Line</h3><p>Open the Command Palette (⇧⌘P) and type <code>Shell Command: Install &#39;code&#39; command in PATH</code> to install.</p>
 <h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p><code>Shift+Command+P</code>: Toggle Command Palette<br><code>Control+T</code>: Toggle Terminal<br><code>Control+S</code>: Toggle Sidebar<br><code>Command+,</code>: Open User Settings<br><code>Alt+Click</code>: Multi-cursor selection<br><code>Shift+Alt+Drag</code>: Column selection<br><code>Command+D</code>: Duplicate lines down<br><code>Command+X</code>: Cut current line<br><code>Alt+↓</code>: Move Line Down<br><code>Alt+↑</code>: Move Line Up<br><code>Command+F</code>: Find<br><code>Shift+Command+F</code>: Search across files<br><code>Command+G</code>: Find next match<br><code>Shift+Command+G</code>: Find previous match<br><code>Command+R</code>: Find and Replace</p>
 <h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><h3 id="Debuggers"><a href="#Debuggers" class="headerlink" title="Debuggers"></a>Debuggers</h3><h4 id="Debugger-for-Chrome"><a href="#Debugger-for-Chrome" class="headerlink" title="Debugger for Chrome"></a><a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" rel="external">Debugger for Chrome</a></h4><p>Debug your JavaScript code in the Chrome browser, or any other target that supports the Chrome Debugger protocol.</p>
 <h4 id="React-Native-Tools"><a href="#React-Native-Tools" class="headerlink" title="React Native Tools"></a><a href="https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native" target="_blank" rel="external">React Native Tools</a></h4><p>Code-hinting, debugging and integrated commands for React Native.</p>
