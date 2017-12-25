@@ -1,5 +1,5 @@
 # Tranquilpeak
-# Version : 1.10.0
+# Version : 1.11.0
 # Author : Louis Barranqueiro
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
@@ -17,7 +17,10 @@
 image_dir: assets/images
 
 
+# ---------------------
 # Sidebar Configuration
+# ---------------------
+
 #    You can add groups of links and links much as you want
 #    You just have to respect the indentation : `groups of links` -> `link` -> `title, link, icon`
 #    E.g:
@@ -66,6 +69,10 @@ sidebar:
             title: global.zhihu
             url: https://www.zhihu.com/people/Luminoid
             icon: link
+        mail:
+            title: global.mail
+            url: mailto:14302010006@fudan.edu.cn
+            icon: envelope-o
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
@@ -86,10 +93,6 @@ sidebar:
         #     title: global.linkedin
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
-        mail:
-            title: global.mail
-            url: mailto:14302010006@fudan.edu.cn
-            icon: envelope-o
     rss:
         rss:
             title: global.rss
@@ -97,7 +100,10 @@ sidebar:
             icon: rss
 
 
+# --------------------
 # Header configuration
+# --------------------
+
 # The link at the right of the header is customizable
 # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
 # By default, author's gravatar or author's picture is displayed if `icon` is empty
@@ -113,7 +119,10 @@ header:
         class:
 
 
+# ------
 # Author
+# ------
+
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
     email: 14302010006@fudan.edu.cn
@@ -133,7 +142,10 @@ author:
     google_plus_business:
 
 
+# -------------
 # Customization
+# -------------
+
 # Define the behavior of the sidebar
 # 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
 # medium sidebar on medium screen and header bar on small screen and
@@ -178,14 +190,30 @@ archive_pagination: true
 category_pagination: true
 tag_pagination: true
 
+# ---------------
+# Comment systems
+# ---------------
 
-# Integrated services
-# You can't use Disqus and Duoshuo together
-# then fill the right shortname
 # Your Disqus shortname
 disqus_shortname:
-# Your Duoshuo shortname
-duoshuo_shortname:
+# Your Gitment information
+# Read https://github.com/imsun/gitment#get-started to setup Gitment
+gitment:
+    # Switch
+    enable: true
+    # Your Github ID (Github username):
+    github_id: Luminoid
+    # The repo to store comments:
+    repo: blog-comment
+    # Your client ID:
+    client_id: e9eb4812f3595a5dafac
+    # Your client secret:
+    client_secret: e8d6bf05f4ae52c3c2241e6602c83e7fc2644457
+
+# -------------------
+# Integrated services
+# -------------------
+
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
@@ -198,7 +226,10 @@ fb_admin_ids:
 fb_app_id:
 
 
+# ---------------
 # Sharing options
+# ---------------
+
 # Comment and uncomment to enable or disable sharing options
 # If you wanna add a sharing option, read user documentation :
 # Tranquilpeak configuration > Theme configuration > sharing-options

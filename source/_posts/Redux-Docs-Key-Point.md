@@ -78,4 +78,3 @@ In a similar fashion, you can define a function called `mapDispatchToProps()` th
 
 ### Passing the Store
 Use a special React Redux component called `<Provider>` to magically make the store available to all container components in the application without passing it explicitly.
-

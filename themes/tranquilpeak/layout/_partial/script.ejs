@@ -1,5 +1,5 @@
 <!--SCRIPTS-->
-<%- js('assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js') %>
+<%- js('assets/js/script-peofhqjkzcghmndknakluequy1y6owxdwpaqyju9ntl9zxnk7rdolb3rjjoj.min.js') %>
 <!--SCRIPTS END-->
 <% if (post.comments) { %>
     <% if (theme.disqus_shortname) { %>
@@ -21,18 +21,35 @@
                 (d.head || d.body).appendChild(s);
             })();
         </script>
-    <% } else if (theme.duoshuo_shortname) { %>
+    <% } else if (theme.gitment.enable) { %>
         <script type="text/javascript">
-            var duoshuoQuery = {short_name:'<%= theme.duoshuo_shortname %>'};
             (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0]
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
+                function render() {
+                    new Gitment({
+                        id: '<%= post.permalink %>',
+                        owner: '<%- theme.gitment.github_id %>',
+                        repo: '<%- theme.gitment.repo %>',
+                        oauth: {
+                            client_id: '<%- theme.gitment.client_id %>',
+                            client_secret: '<%- theme.gitment.client_secret %>',
+                        }
+                    }).render('gitment');
+                }
+                var gc = document.createElement('script');
+                gc.type = 'text/javascript';
+                gc.src = '//imsun.github.io/gitment/dist/gitment.browser.js';
+                gc.charset = 'UTF-8';
+                gc.onload = render;
+                gc.async = true;
+                document.querySelector('body').appendChild(gc);
+                var gcs = document.createElement('link');
+                gcs.href = '//imsun.github.io/gitment/style/default.css';
+                gcs.type = 'text/css';
+                gcs.rel = 'stylesheet';
+                gcs.media = 'screen,print';
+                document.querySelector('head').appendChild(gcs);
             })();
-        </script>
+	    </script>
     <% } %>
 <% } %>
 <% if (config.algolia && config.algolia.appId && config.algolia.apiKey && config.algolia.indexName) { %>
