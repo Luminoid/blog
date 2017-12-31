@@ -41,3 +41,10 @@ keywords:
 ## [hexo-toc](https://github.com/bubkoo/hexo-toc) generates two tocs
 **Problem**: Two tocs are generated in one post when only one `<!-- toc -->` is inserted
 **Solution**: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.
+
+## Syntax Highlighting
+### [highlight.js](https://github.com/isagalaev/highlight.js)
+**Problem**: [React JSX support? #494](https://github.com/isagalaev/highlight.js/issues/494)
+
+### [prism](https://github.com/PrismJS/prism)
+**Problem**: [Line numbers not the same height as code #1231](https://github.com/PrismJS/prism/issues/1231)
