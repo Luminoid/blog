@@ -44,7 +44,10 @@ keywords:
 
 ## Syntax Highlighting
 ### [highlight.js](https://github.com/isagalaev/highlight.js)
-**Problem**: [React JSX support? #494](https://github.com/isagalaev/highlight.js/issues/494)
+**Problem**:
+[React JSX support? #494](https://github.com/isagalaev/highlight.js/issues/494)
 
 ### [prism](https://github.com/PrismJS/prism)
-**Problem**: [Line numbers not the same height as code #1231](https://github.com/PrismJS/prism/issues/1231)
+**Problem**:
+[Line numbers not the same height as code #1231](https://github.com/PrismJS/prism/issues/1231)
+[Line number may be misplaced when additional themes is used #24](https://github.com/ele828/hexo-prism-plugin/issues/24)

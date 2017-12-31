@@ -68,7 +68,7 @@ rlwrap is a 'readline wrapper', a small utility that uses the GNU readline libra
 
 ### [pngquant](https://pngquant.org)
 pngquant is a command-line utility and a library for lossy compression of PNG images.
-``` sh
+``` bash
 pngquant --ext .png --force 256 *.png */*.png
 ```
 
