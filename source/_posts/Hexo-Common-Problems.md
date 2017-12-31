@@ -16,20 +16,28 @@ keywords:
   - hexo-toc
 ---
 
-<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
 * [hexo server not found](#hexo-server-not-found)
 * [hexo-algolia 0 posts indexed](#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed)
 * [hexo-math not working](#hexo-mathhttpsgithubcomhexojshexo-math-not-working)
 * [hexo-toc generates two tocs](#hexo-tochttpsgithubcombubkoohexo-toc-generates-two-tocs)
+* [Syntax Highlighting](#syntax-highlighting)
+	* [highlight.js](#highlightjshttpsgithubcomisagalaevhighlightjs)
+	* [prism](#prismhttpsgithubcomprismjsprism)
 
-<!-- tocstop -->
+<!-- /code_chunk_output -->
+
+<!-- excerpt -->
+
+<!-- TOC -->
 
 ## hexo server not found
 **Problem**: Can't find `hexo server` command.
 **Solution**: Extra plugins line in `_config.yml` may cause this problem.
 
-<!-- more -->
 ## [hexo-algolia](https://github.com/oncletom/hexo-algolia) 0 posts indexed
 **Problem**: Run `hexo algolia` but no post collected.
 **Solution**: Run `hexo algolia` without `hexo generate`. If already generated, run `hexo clean` to clean generated files.
