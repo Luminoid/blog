@@ -22,6 +22,7 @@
 <meta property="og:url" content="http://luminoid.github.io/blog/categories/Container/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="A personal blog">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Luminoid&#39;s Site">
 <meta name="twitter:description" content="A personal blog">
@@ -37,11 +38,11 @@
     
     <!--STYLES-->
     <link rel="stylesheet" href="/blog/assets/css/style-pz4cc6y13wt2trzqa8l3n9v0yykr0sstdaheem7qj628nhjmhp9pfawvqawz.min.css">
-    <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!--STYLES END-->
     
 
     
-</head>
+<link rel="stylesheet" href="/blog/css/prism-coy.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
     <body>
         <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
@@ -264,7 +265,20 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></div><div class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></div><div class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></div><div class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></div><div class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></div><div class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></div><div class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></div><div class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></div><div class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></div><div class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></div><div class="line">docker images -a                                                                           <span class="comment"># Show all images</span></div><div class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></div><div class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></div></pre></td></tr></table></figure>
+                    <h2 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h2><pre class=" language-bash"><code class="language-bash">docker build -t<span class="token operator">=</span><span class="token string">"luminoid/my_image"</span> <span class="token keyword">.</span>                   <span class="token comment" spellcheck="true"># Build an image from current directory's Dockerfile</span>
+docker run username/repository:tag                                            <span class="token comment" spellcheck="true"># Run an image from a registry</span>
+docker run -p 12345:80 <span class="token operator">&lt;</span>image_name<span class="token operator">></span>                                  <span class="token comment" spellcheck="true"># Run an image mapping port 12345 to 80</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -i -t ubuntu /bin/bash                 <span class="token comment" spellcheck="true"># Run a command in a new container</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">pwd</span><span class="token variable">)</span></span>"</span>:/data -i -t ubuntu /bin/bash  <span class="token comment" spellcheck="true"># Run a container with a volume</span>
+docker start -i <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                    <span class="token comment" spellcheck="true"># Start stopped containers interactively</span>
+docker stop <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                       <span class="token comment" spellcheck="true"># Stop running containers</span>
+docker <span class="token function">ps</span> -a                                            <span class="token comment" spellcheck="true"># Show all containers (include the ones not running)</span>
+docker <span class="token function">rm</span> <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                      <span class="token comment" spellcheck="true"># Remove specified container</span>
+docker <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -a -q<span class="token variable">)</span></span>                                                         <span class="token comment" spellcheck="true"># Remove all containers</span>
+docker images -a                                                                           <span class="token comment" spellcheck="true"># Show all images</span>
+docker rmi <span class="token operator">&lt;</span>hash<span class="token operator">></span>                                                                   <span class="token comment" spellcheck="true"># Remove specified image</span>
+docker rmi <span class="token variable"><span class="token variable">$(</span>docker images -q<span class="token variable">)</span></span>                                                           <span class="token comment" spellcheck="true"># Remove all images</span>
+</code></pre>
 
                     
                         
@@ -315,8 +329,39 @@
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
-<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><pre><code class="sh">$ mkdir hexo
+$ cd hexo
+$ vim Dockerfile
+</code></pre>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><pre><code class="sh">FROM ubuntu:14.04
+MAINTAINER luminoid
+ENV REFRESHED_AT 2017-08-28
+
+# Install Hexo
+RUN apt-get update -yqq \
+  &amp;&amp; apt-get install -yqq curl git-core \
+  # Install Node.js Using a PPA
+  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  &amp;&amp; apt-get install -yqq nodejs build-essential \
+  # Set config to avoid permission issues
+  &amp;&amp; npm config set user 0 \
+  &amp;&amp; npm config set unsafe-perm true \
+  &amp;&amp; npm install -g hexo-cli
+
+# Clone blog
+WORKDIR /data
+RUN git clone https://github.com/Luminoid/blog.git
+
+# Install blog dependencies
+WORKDIR /data/blog
+RUN npm install \
+  &amp;&amp; npm install prompt --save \
+  &amp;&amp; npm install jquery --save
+
+RUN mkdir -p /var/www/html/ \
+  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
+VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
+</code></pre>
                     
                         <a href="/blog/Container/Building-Hexo-Website-with-Docker/" class="postShorten-excerpt_link link">
                             Continue reading
@@ -442,8 +487,16 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p></div>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p>
+<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment</p>
+<pre><code class="bash">$ hexo new &quot;My New Article&quot;
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ git add -A
+$ git commit -m &lt;msg&gt;
+$ git push
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -787,8 +840,39 @@
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
-<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure></div>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><pre><code class="sh">$ mkdir hexo
+$ cd hexo
+$ vim Dockerfile
+</code></pre>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><pre><code class="sh">FROM ubuntu:14.04
+MAINTAINER luminoid
+ENV REFRESHED_AT 2017-08-28
+
+# Install Hexo
+RUN apt-get update -yqq \
+  &amp;&amp; apt-get install -yqq curl git-core \
+  # Install Node.js Using a PPA
+  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  &amp;&amp; apt-get install -yqq nodejs build-essential \
+  # Set config to avoid permission issues
+  &amp;&amp; npm config set user 0 \
+  &amp;&amp; npm config set unsafe-perm true \
+  &amp;&amp; npm install -g hexo-cli
+
+# Clone blog
+WORKDIR /data
+RUN git clone https://github.com/Luminoid/blog.git
+
+# Install blog dependencies
+WORKDIR /data/blog
+RUN npm install \
+  &amp;&amp; npm install prompt --save \
+  &amp;&amp; npm install jquery --save
+
+RUN mkdir -p /var/www/html/ \
+  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
+VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -826,7 +910,7 @@
 </li>
 </ul>
 <!-- tocstop -->
-<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
+<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
 <h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
 <h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
 <h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br></div>
@@ -913,7 +997,7 @@
   });
 </script>
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

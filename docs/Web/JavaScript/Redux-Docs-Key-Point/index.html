@@ -22,6 +22,7 @@
 <meta property="og:url" content="http://luminoid.github.io/blog/Web/JavaScript/Redux-Docs-Key-Point/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Redux Docs  Three PrinciplesSingle source of truthThe state of your whole application is stored in an object tree within a single store. State is read-onlyThe only way to change the state is to emit a">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-12-25T14:12:46.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux Docs Key Point">
@@ -38,11 +39,11 @@
     
     <!--STYLES-->
     <link rel="stylesheet" href="/blog/assets/css/style-pz4cc6y13wt2trzqa8l3n9v0yykr0sstdaheem7qj628nhjmhp9pfawvqawz.min.css">
-    <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!--STYLES END-->
     
 
     
-</head>
+<link rel="stylesheet" href="/blog/css/prism-coy.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
     <body>
         <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
@@ -263,25 +264,25 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="https://redux.js.org" target="_blank" rel="external">Redux Docs</a></p>
+            <p><a href="https://redux.js.org" target="_blank" rel="noopener">Redux Docs</a></p>
 <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-Principles"><span class="toc-text">Three Principles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Single-source-of-truth"><span class="toc-text">Single source of truth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State-is-read-only"><span class="toc-text">State is read-only</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Changes-are-made-with-pure-functions"><span class="toc-text">Changes are made with pure functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action"><span class="toc-text">Action</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-creator"><span class="toc-text">Action creator</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reducers"><span class="toc-text">Reducers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Handling-Actions"><span class="toc-text">Handling Actions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splitting-Reducers"><span class="toc-text">Splitting Reducers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Store"><span class="toc-text">Store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Flow"><span class="toc-text">Data Flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-with-React"><span class="toc-text">Usage with React</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Presentational-and-Container-Components"><span class="toc-text">Presentational and Container Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Presentational-Components"><span class="toc-text">Presentational Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Components"><span class="toc-text">Container Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Passing-the-Store"><span class="toc-text">Passing the Store</span></a></li></ol></li></ol>
-<h2 id="Three-Principles"><a href="#Three-Principles" class="headerlink" title="Three Principles"></a>Three Principles</h2><h3 id="Single-source-of-truth"><a href="#Single-source-of-truth" class="headerlink" title="Single source of truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="external">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="external">store</a>.</p>
-<h3 id="State-is-read-only"><a href="#State-is-read-only" class="headerlink" title="State is read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="external">action</a>, an object describing what happened.</p>
-<h3 id="Changes-are-made-with-pure-functions"><a href="#Changes-are-made-with-pure-functions" class="headerlink" title="Changes are made with pure functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="external">reducers</a>.</p>
+<h2 id="Three-Principles"><a href="#Three-Principles" class="headerlink" title="Three Principles"></a>Three Principles</h2><h3 id="Single-source-of-truth"><a href="#Single-source-of-truth" class="headerlink" title="Single source of truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="noopener">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="noopener">store</a>.</p>
+<h3 id="State-is-read-only"><a href="#State-is-read-only" class="headerlink" title="State is read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="noopener">action</a>, an object describing what happened.</p>
+<h3 id="Changes-are-made-with-pure-functions"><a href="#Changes-are-made-with-pure-functions" class="headerlink" title="Changes are made with pure functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="noopener">reducers</a>.</p>
 <a id="more"></a>
 <h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><h3 id="Action-creator"><a href="#Action-creator" class="headerlink" title="Action creator"></a>Action creator</h3><p>Action creator: function that returns an action.</p>
 <h2 id="Reducers"><a href="#Reducers" class="headerlink" title="Reducers"></a>Reducers</h2><h3 id="Handling-Actions"><a href="#Handling-Actions" class="headerlink" title="Handling Actions"></a>Handling Actions</h3><ul>
 <li>Don’t mutate the <code>state</code>, create a copy with <code>Object.assign({}, state, newState)</code>.</li>
 <li>Return the previous <code>state</code> in the <code>default</code> case.</li>
 </ul>
-<h3 id="Splitting-Reducers"><a href="#Splitting-Reducers" class="headerlink" title="Splitting Reducers"></a>Splitting Reducers</h3><p>Reducer composition: Each of reducers is managing its own part of the global state. The <code>state</code> parameter is different for every reducer, and corresponds to the part of the state it manages.<br>Redux provides a utility called <a href="https://redux.js.org/docs/api/combineReducers.html" target="_blank" rel="external"><code>combineReducers()</code></a> to generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.</p>
+<h3 id="Splitting-Reducers"><a href="#Splitting-Reducers" class="headerlink" title="Splitting Reducers"></a>Splitting Reducers</h3><p>Reducer composition: Each of reducers is managing its own part of the global state. The <code>state</code> parameter is different for every reducer, and corresponds to the part of the state it manages.<br>Redux provides a utility called <a href="https://redux.js.org/docs/api/combineReducers.html" target="_blank" rel="noopener"><code>combineReducers()</code></a> to generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.</p>
 <h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>The store has the following responsibilities:</p>
 <ul>
 <li>Holds application state;</li>
-<li>Allows access to state via <a href="https://redux.js.org/docs/api/Store.html#getState" target="_blank" rel="external"><code>getState()</code></a>;</li>
-<li>Allows state to be updated via <a href="https://redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="external"><code>dispatch(action)</code></a>;</li>
-<li>Registers listeners via <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>;</li>
-<li>Handles unregistering of listeners via the function returned by <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="external"><code>subscribe(listener)</code></a>.</li>
+<li>Allows access to state via <a href="https://redux.js.org/docs/api/Store.html#getState" target="_blank" rel="noopener"><code>getState()</code></a>;</li>
+<li>Allows state to be updated via <a href="https://redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="noopener"><code>dispatch(action)</code></a>;</li>
+<li>Registers listeners via <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="noopener"><code>subscribe(listener)</code></a>;</li>
+<li>Handles unregistering of listeners via the function returned by <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="noopener"><code>subscribe(listener)</code></a>.</li>
 </ul>
 <h2 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h2><p>Redux architecture revolves around a strict unidirectional data flow.<br>The data lifecycle in any Redux app follows these 4 steps:</p>
 <ol>
@@ -327,7 +328,7 @@
 </tbody>
 </table>
 <h3 id="Presentational-Components"><a href="#Presentational-Components" class="headerlink" title="Presentational Components"></a>Presentational Components</h3><p>Write functional stateless components unless you need to use local state or the lifecycle methods.</p>
-<h3 id="Container-Components"><a href="#Container-Components" class="headerlink" title="Container Components"></a>Container Components</h3><p>Use React Redux library’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="external"><code>connect()</code></a> function to generate container components.<br>To use <code>connect()</code>, you need to define a special function called <code>mapStateToProps()</code> that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.<br>In a similar fashion, you can define a function called <code>mapDispatchToProps()</code> that receives the <code>dispatch()</code> method and returns callback props that you want to inject into the presentational component.</p>
+<h3 id="Container-Components"><a href="#Container-Components" class="headerlink" title="Container Components"></a>Container Components</h3><p>Use React Redux library’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="noopener"><code>connect()</code></a> function to generate container components.<br>To use <code>connect()</code>, you need to define a special function called <code>mapStateToProps()</code> that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.<br>In a similar fashion, you can define a function called <code>mapDispatchToProps()</code> that receives the <code>dispatch()</code> method and returns callback props that you want to inject into the presentational component.</p>
 <h3 id="Passing-the-Store"><a href="#Passing-the-Store" class="headerlink" title="Passing the Store"></a>Passing the Store</h3><p>Use a special React Redux component called <code>&lt;Provider&gt;</code> to magically make the store available to all container components in the application without passing it explicitly.</p>
 
             
@@ -662,8 +663,16 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p></div>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p>
+<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment</p>
+<pre><code class="bash">$ hexo new &quot;My New Article&quot;
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ git add -A
+$ git commit -m &lt;msg&gt;
+$ git push
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -1007,8 +1016,39 @@
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
-<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure></div>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><pre><code class="sh">$ mkdir hexo
+$ cd hexo
+$ vim Dockerfile
+</code></pre>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><pre><code class="sh">FROM ubuntu:14.04
+MAINTAINER luminoid
+ENV REFRESHED_AT 2017-08-28
+
+# Install Hexo
+RUN apt-get update -yqq \
+  &amp;&amp; apt-get install -yqq curl git-core \
+  # Install Node.js Using a PPA
+  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  &amp;&amp; apt-get install -yqq nodejs build-essential \
+  # Set config to avoid permission issues
+  &amp;&amp; npm config set user 0 \
+  &amp;&amp; npm config set unsafe-perm true \
+  &amp;&amp; npm install -g hexo-cli
+
+# Clone blog
+WORKDIR /data
+RUN git clone https://github.com/Luminoid/blog.git
+
+# Install blog dependencies
+WORKDIR /data/blog
+RUN npm install \
+  &amp;&amp; npm install prompt --save \
+  &amp;&amp; npm install jquery --save
+
+RUN mkdir -p /var/www/html/ \
+  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
+VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -1046,7 +1086,7 @@
 </li>
 </ul>
 <!-- tocstop -->
-<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
+<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
 <h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
 <h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
 <h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br></div>
@@ -1164,7 +1204,7 @@
   });
 </script>
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

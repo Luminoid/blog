@@ -10,7 +10,7 @@ keywords: Yarn
 ---
 
 ## Command
-``` sh
+``` bash
 yarn add <package...> # Add a package to use in your current package.
 yarn init  # Initialize the development of a package.
 yarn install  # Install all the dependencies defined in a package.json file.

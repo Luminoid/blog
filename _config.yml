@@ -37,11 +37,6 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace:
 
 # Category & Tag
 default_category: uncategorized
@@ -102,3 +97,14 @@ algolia:
     - categories
     - excerpt
     - excerpt:strip
+
+highlight:
+  enable: false         # disable the default code highlight plugin
+  # line_number: true
+  # auto_detect: false
+  # tab_replace:
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'coy'
+  line_number: false     # default false

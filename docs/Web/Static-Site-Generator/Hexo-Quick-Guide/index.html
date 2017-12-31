@@ -15,17 +15,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment1234567$ hexo new &quot;My New Article&quot;$ vim source/_posts/My-New-Article.md$ hexo clean$ hexo algolia$ git add -A$ git co">
+    <meta name="description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment $ hexo new &amp;quot;My New Article&amp;quot; $ vim source/_posts/My-New-Article.md $ hexo clean $ hexo algolia $ git add -A">
 <meta name="keywords" content="Hexo,guide,Algolia,Github">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo Quick Guide">
 <meta property="og:url" content="http://luminoid.github.io/blog/Web/Static-Site-Generator/Hexo-Quick-Guide/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment1234567$ hexo new &quot;My New Article&quot;$ vim source/_posts/My-New-Article.md$ hexo clean$ hexo algolia$ git add -A$ git co">
+<meta property="og:description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment $ hexo new &amp;quot;My New Article&amp;quot; $ vim source/_posts/My-New-Article.md $ hexo clean $ hexo algolia $ git add -A">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-12-25T16:50:40.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Quick Guide">
-<meta name="twitter:description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment1234567$ hexo new &quot;My New Article&quot;$ vim source/_posts/My-New-Article.md$ hexo clean$ hexo algolia$ git add -A$ git co">
+<meta name="twitter:description" content="HexoTheme: hexo-theme-tranquilpeak Quick deploymentWith Algolia and git deployment $ hexo new &amp;quot;My New Article&amp;quot; $ vim source/_posts/My-New-Article.md $ hexo clean $ hexo algolia $ git add -A">
     
     
         
@@ -38,11 +39,11 @@
     
     <!--STYLES-->
     <link rel="stylesheet" href="/blog/assets/css/style-pz4cc6y13wt2trzqa8l3n9v0yykr0sstdaheem7qj628nhjmhp9pfawvqawz.min.css">
-    <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!--STYLES END-->
     
 
     
-</head>
+<link rel="stylesheet" href="/blog/css/prism-coy.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
     <body>
         <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
@@ -264,20 +265,52 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-deployment"><span class="toc-text">Quick deployment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create"><span class="toc-text">Create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Develop"><span class="toc-text">Develop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deploy"><span class="toc-text">Deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme"><span class="toc-text">Theme</span></a></li></ol>
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p>
+<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ <span class="token function">git</span> add -A
+$ <span class="token function">git</span> commit -m <span class="token operator">&lt;</span>msg<span class="token operator">></span>
+$ <span class="token function">git</span> push
+</code></pre>
 <a id="more"></a>
-<p>With Algolia and hexo deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>Without Algolia<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo deploy -g</div></pre></td></tr></table></figure></p>
-<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Initializes a website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="string">"My New Website"</span></div></pre></td></tr></table></figure></p>
-<p>Create a new article.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div></pre></td></tr></table></figure></p>
-<h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate -w</div></pre></td></tr></table></figure></p>
-<p>Start a local server.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo algolia</div></pre></td></tr></table></figure></p>
-<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Deploys your website.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>Theme files to modify for custom configuration, take <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/" target="_blank" rel="external">tranquilpeak</a> theme as an example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_config.yml</div><div class="line">languages/</div></pre></td></tr></table></figure></p>
-
+<p>With Algolia and hexo deployment</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ hexo deploy
+</code></pre>
+<p>Without Algolia</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ vim source/_posts/My-New-Article.md
+$ hexo deploy -g
+</code></pre>
+<h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Initializes a website.</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo init <span class="token string">"My New Website"</span>
+</code></pre>
+<p>Create a new article.</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+</code></pre>
+<h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo generate -w
+</code></pre>
+<p>Start a local server.</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo server
+</code></pre>
+<p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo algolia
+</code></pre>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Deploys your website.</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo deploy
+</code></pre>
+<p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>Theme files to modify for custom configuration, take <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/" target="_blank" rel="noopener">tranquilpeak</a> theme as an example: </p>
+<pre><code>_config.yml
+languages/
+</code></pre>
             
 
         </div>
@@ -610,8 +643,16 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
-<p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">hexo-theme-tranquilpeak</a></p>
-<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Article"</span></div><div class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</div><div class="line">$ hexo clean</div><div class="line">$ hexo algolia</div><div class="line">$ git add -A</div><div class="line">$ git commit -m &lt;msg&gt;</div><div class="line">$ git push</div></pre></td></tr></table></figure></p></div>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p>
+<h2 id="Quick-deployment"><a href="#Quick-deployment" class="headerlink" title="Quick deployment"></a>Quick deployment</h2><p>With Algolia and git deployment</p>
+<pre><code class="bash">$ hexo new &quot;My New Article&quot;
+$ vim source/_posts/My-New-Article.md
+$ hexo clean
+$ hexo algolia
+$ git add -A
+$ git commit -m &lt;msg&gt;
+$ git push
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -955,8 +996,39 @@
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- TOC -->
 <p>This is a portable and generic solution to build Hexo website with Docker.</p>
-<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir hexo</div><div class="line">$ <span class="built_in">cd</span> hexo</div><div class="line">$ vim Dockerfile</div></pre></td></tr></table></figure>
-<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">FROM ubuntu:14.04</div><div class="line">MAINTAINER luminoid</div><div class="line">ENV REFRESHED_AT 2017-08-28</div><div class="line"></div><div class="line"><span class="comment"># Install Hexo</span></div><div class="line">RUN apt-get update -yqq \</div><div class="line">  &amp;&amp; apt-get install -yqq curl git-core \</div><div class="line">  <span class="comment"># Install Node.js Using a PPA</span></div><div class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</div><div class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</div><div class="line">  <span class="comment"># Set config to avoid permission issues</span></div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</div><div class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</div><div class="line">  &amp;&amp; npm install -g hexo-cli</div><div class="line"></div><div class="line"><span class="comment"># Clone blog</span></div><div class="line">WORKDIR /data</div><div class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</div><div class="line"></div><div class="line"><span class="comment"># Install blog dependencies</span></div><div class="line">WORKDIR /data/blog</div><div class="line">RUN npm install \</div><div class="line">  &amp;&amp; npm install prompt --save \</div><div class="line">  &amp;&amp; npm install jquery --save</div><div class="line"></div><div class="line">RUN mkdir -p /var/www/html/ \</div><div class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</div><div class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</div></pre></td></tr></table></figure></div>
+<h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><pre><code class="sh">$ mkdir hexo
+$ cd hexo
+$ vim Dockerfile
+</code></pre>
+<h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><pre><code class="sh">FROM ubuntu:14.04
+MAINTAINER luminoid
+ENV REFRESHED_AT 2017-08-28
+
+# Install Hexo
+RUN apt-get update -yqq \
+  &amp;&amp; apt-get install -yqq curl git-core \
+  # Install Node.js Using a PPA
+  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  &amp;&amp; apt-get install -yqq nodejs build-essential \
+  # Set config to avoid permission issues
+  &amp;&amp; npm config set user 0 \
+  &amp;&amp; npm config set unsafe-perm true \
+  &amp;&amp; npm install -g hexo-cli
+
+# Clone blog
+WORKDIR /data
+RUN git clone https://github.com/Luminoid/blog.git
+
+# Install blog dependencies
+WORKDIR /data/blog
+RUN npm install \
+  &amp;&amp; npm install prompt --save \
+  &amp;&amp; npm install jquery --save
+
+RUN mkdir -p /var/www/html/ \
+  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
+VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
+</code></pre></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -994,7 +1066,7 @@
 </li>
 </ul>
 <!-- tocstop -->
-<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="external">here</a>.</p>
+<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
 <h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
 <h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
 <h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br></div>
@@ -1112,7 +1184,7 @@
   });
 </script>
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

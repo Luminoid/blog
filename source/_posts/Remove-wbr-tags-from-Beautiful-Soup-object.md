@@ -18,7 +18,7 @@ Get plain text from a Beautiful Soup object with `<br />` converted into line br
 
 ## Code
 <!-- more -->
-``` Python
+``` python
 import re
 from bs4 import BeautifulSoup
 
