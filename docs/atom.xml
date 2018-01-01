@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-01-01T10:55:07.349Z</updated>
+  <updated>2018-01-01T11:02:42.232Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://luminoid.github.io/blog/Tool/Safari-Enhancement/"/>
     <id>http://luminoid.github.io/blog/Tool/Safari-Enhancement/</id>
     <published>2018-01-01T10:39:12.000Z</published>
-    <updated>2018-01-01T10:55:07.349Z</updated>
+    <updated>2018-01-01T11:02:42.232Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a><a href="https://safari-extensions.apple.com" target="_blank" rel="noopener">Extensions</a></h2><h3 id="Adblock-Plus"><a href="#Adblock-Plus" class="headerlink" title="Adblock Plus"></a><a href="https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A" target="_blank" rel="noopener">Adblock Plus</a></h3><p>Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.</p><h3 id="Ghostery"><a href="#Ghostery" class="headerlink" title="Ghostery"></a><a href="https://safari-extensions.apple.com/details/?id=com.betteradvertising.ghostery-HPY23A294X" target="_blank" rel="noopener">Ghostery</a></h3><p>Helps you enjoy a faster, safer, and cleaner browsing experience by giving you the control to make informed decisions about the personal data you share with the tags on the sites you visit.</p><h3 id="Tampermonkey"><a href="#Tampermonkey" class="headerlink" title="Tampermonkey"></a><a href="http://tampermonkey.net/?ext=dhdg&amp;browser=safari" target="_blank" rel="noopener">Tampermonkey</a></h3><p>Tampermonkey is the most popular userscript manager.</p><h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><h3 id="百度网盘直接下载助手"><a href="#百度网盘直接下载助手" class="headerlink" title="百度网盘直接下载助手"></a><a href="https://greasyfork.org/zh-CN/scripts/23635-百度网盘直接下载助手" target="_blank" rel="noopener">百度网盘直接下载助手</a></h3><p>直接下载百度网盘和百度网盘分享的文件,避免下载文件时调用百度网盘客户端,获取网盘文件的直接下载地址</p><h3 id="解决百度云大文件下载限制"><a href="#解决百度云大文件下载限制" class="headerlink" title="解决百度云大文件下载限制"></a><a href="https://greasyfork.org/zh-CN/scripts/17800-解决百度云大文件下载限制" target="_blank" rel="noopener">解决百度云大文件下载限制</a></h3><p>一行代码，解决百度云大文件下载限制</p><h3 id="破解VIP会员视频集合"><a href="#破解VIP会员视频集合" class="headerlink" title="破解VIP会员视频集合"></a><a href="https://greasyfork.org/zh-CN/scripts/27530-破解vip会员视频集合" target="_blank" rel="noopener">破解VIP会员视频集合</a></h3><p>一键破解[优酷|腾讯|乐视|爱奇艺|芒果|AB站|音悦台]等VIP或会员视频</p><h3 id="跳过网站等待、验证码及登录"><a href="#跳过网站等待、验证码及登录" class="headerlink" title="跳过网站等待、验证码及登录"></a><a href="https://greasyfork.org/zh-CN/scripts/2600-跳过网站等待-验证码及登录" target="_blank" rel="noopener">跳过网站等待、验证码及登录</a></h3><p>移除各类网站验证码、登录、倒计时及更多!</p><h3 id="网页限制解除"><a href="#网页限制解除" class="headerlink" title="网页限制解除"></a><a href="https://greasyfork.org/zh-CN/scripts/14146-网页限制解除" target="_blank" rel="noopener">网页限制解除</a></h3><p>通杀大部分网站，可以解除禁止复制、剪切、选择文本、右键菜单的限制。</p><h3 id="Douban-Download-Search"><a href="#Douban-Download-Search" class="headerlink" title="Douban Download Search"></a><a href="https://greasyfork.org/zh-CN/scripts/36067-douban-download-search-支持https" target="_blank" rel="noopener">Douban Download Search</a></h3><p>增加豆瓣电影、图书，音乐的下载搜索链接</p>]]></content>
+    <content type="html"><![CDATA[<!-- TOC --><h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a><a href="https://safari-extensions.apple.com" target="_blank" rel="noopener">Extensions</a></h2><h3 id="Adblock-Plus"><a href="#Adblock-Plus" class="headerlink" title="Adblock Plus"></a><a href="https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A" target="_blank" rel="noopener">Adblock Plus</a></h3><p>Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.</p><h3 id="Ghostery"><a href="#Ghostery" class="headerlink" title="Ghostery"></a><a href="https://safari-extensions.apple.com/details/?id=com.betteradvertising.ghostery-HPY23A294X" target="_blank" rel="noopener">Ghostery</a></h3><p>Helps you enjoy a faster, safer, and cleaner browsing experience by giving you the control to make informed decisions about the personal data you share with the tags on the sites you visit.</p><h3 id="Tampermonkey"><a href="#Tampermonkey" class="headerlink" title="Tampermonkey"></a><a href="http://tampermonkey.net/?ext=dhdg&amp;browser=safari" target="_blank" rel="noopener">Tampermonkey</a></h3><p>Tampermonkey is the most popular userscript manager.</p><a id="more"></a><h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><h3 id="百度网盘直接下载助手"><a href="#百度网盘直接下载助手" class="headerlink" title="百度网盘直接下载助手"></a><a href="https://greasyfork.org/zh-CN/scripts/23635-百度网盘直接下载助手" target="_blank" rel="noopener">百度网盘直接下载助手</a></h3><p>直接下载百度网盘和百度网盘分享的文件,避免下载文件时调用百度网盘客户端,获取网盘文件的直接下载地址</p><h3 id="解决百度云大文件下载限制"><a href="#解决百度云大文件下载限制" class="headerlink" title="解决百度云大文件下载限制"></a><a href="https://greasyfork.org/zh-CN/scripts/17800-解决百度云大文件下载限制" target="_blank" rel="noopener">解决百度云大文件下载限制</a></h3><p>一行代码，解决百度云大文件下载限制</p><h3 id="破解VIP会员视频集合"><a href="#破解VIP会员视频集合" class="headerlink" title="破解VIP会员视频集合"></a><a href="https://greasyfork.org/zh-CN/scripts/27530-破解vip会员视频集合" target="_blank" rel="noopener">破解VIP会员视频集合</a></h3><p>一键破解[优酷|腾讯|乐视|爱奇艺|芒果|AB站|音悦台]等VIP或会员视频</p><h3 id="跳过网站等待、验证码及登录"><a href="#跳过网站等待、验证码及登录" class="headerlink" title="跳过网站等待、验证码及登录"></a><a href="https://greasyfork.org/zh-CN/scripts/2600-跳过网站等待-验证码及登录" target="_blank" rel="noopener">跳过网站等待、验证码及登录</a></h3><p>移除各类网站验证码、登录、倒计时及更多!</p><h3 id="网页限制解除"><a href="#网页限制解除" class="headerlink" title="网页限制解除"></a><a href="https://greasyfork.org/zh-CN/scripts/14146-网页限制解除" target="_blank" rel="noopener">网页限制解除</a></h3><p>通杀大部分网站，可以解除禁止复制、剪切、选择文本、右键菜单的限制。</p><h3 id="Douban-Download-Search"><a href="#Douban-Download-Search" class="headerlink" title="Douban Download Search"></a><a href="https://greasyfork.org/zh-CN/scripts/36067-douban-download-search-支持https" target="_blank" rel="noopener">Douban Download Search</a></h3><p>增加豆瓣电影、图书，音乐的下载搜索链接</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;Extensions&quot;&gt;&lt;a href=&quot;#Extensions&quot; class=&quot;headerlink&quot; title=&quot;Extensions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://safari-extensions.apple.com&quot; target=&quot;_b
-      
+      &lt;!-- TOC --&gt;
+&lt;h2 id=&quot;Extensions&quot;&gt;&lt;a href=&quot;#Extensions&quot; class=&quot;headerlink&quot; title=&quot;Extensions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://safari-extensions.apple.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Extensions&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;Adblock-Plus&quot;&gt;&lt;a href=&quot;#Adblock-Plus&quot; class=&quot;headerlink&quot; title=&quot;Adblock Plus&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Adblock Plus&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.&lt;/p&gt;
+&lt;h3 id=&quot;Ghostery&quot;&gt;&lt;a href=&quot;#Ghostery&quot; class=&quot;headerlink&quot; title=&quot;Ghostery&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://safari-extensions.apple.com/details/?id=com.betteradvertising.ghostery-HPY23A294X&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ghostery&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Helps you enjoy a faster, safer, and cleaner browsing experience by giving you the control to make informed decisions about the personal data you share with the tags on the sites you visit.&lt;/p&gt;
+&lt;h3 id=&quot;Tampermonkey&quot;&gt;&lt;a href=&quot;#Tampermonkey&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://tampermonkey.net/?ext=dhdg&amp;amp;browser=safari&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Tampermonkey&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tampermonkey is the most popular userscript manager.&lt;/p&gt;
     
     </summary>
     
@@ -90,9 +90,9 @@
       <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
     
     
-      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
-    
       <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
+    
+      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
     
   </entry>
   
@@ -124,9 +124,9 @@
       <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
     
     
-      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
-    
       <category term="React" scheme="http://luminoid.github.io/blog/tags/React/"/>
+    
+      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
     
   </entry>
   
@@ -566,9 +566,9 @@ VOLUME [ &amp;quot;/data/blog&amp;quot;, &amp;quot;/var/www/html&amp;quot; ]
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
-    
       <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
+    
+      <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     

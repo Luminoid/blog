@@ -7,6 +7,8 @@ tags: Safari
 keywords: Safari
 ---
 
+<!-- TOC -->
+
 ## [Extensions](https://safari-extensions.apple.com)
 ### [Adblock Plus](https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A)
 Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.
@@ -16,6 +18,8 @@ Helps you enjoy a faster, safer, and cleaner browsing experience by giving you t
 
 ### [Tampermonkey](http://tampermonkey.net/?ext=dhdg&browser=safari)
 Tampermonkey is the most popular userscript manager.
+
+<!-- more -->
 
 ## Script
 ### [百度网盘直接下载助手](https://greasyfork.org/zh-CN/scripts/23635-百度网盘直接下载助手)
