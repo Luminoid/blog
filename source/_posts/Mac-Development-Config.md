@@ -47,6 +47,8 @@ keywords:
 * [Text Editor](#text-editor)
 	* [Atom](#atomhttpsatomio)
 		* [Usage](#usage-3)
+	* [VSCode](#vscodehttpscodevisualstudiocom)
+		* [Usage](#usage-4)
 	* [Vim](#vimwwwvimorg)
 		* [.vimrc](#vimrc)
 * [IDE](#ide)
@@ -54,11 +56,15 @@ keywords:
 * [Tool](#tool)
 	* [Docker](#dockerhttpswwwdockercom)
 		* [Install](#install-6)
-		* [Usage](#usage-4)
+		* [Usage](#usage-5)
+* [Browser](#browser)
+	* [Safari](#safari)
 
 <!-- /code_chunk_output -->
 
-<!-- more -->
+<!-- excerpt -->
+
+<!-- TOC -->
 
 ## Package Manager
 ### [Homebrew](https://brew.sh)
@@ -72,24 +78,24 @@ keywords:
 
 ### [Homebrew-Cask](https://caskroom.github.io)
 #### Install
-``` sh
+``` bash
 brew tap caskroom/cask
 ```
 
 #### Usage
-``` sh
+``` bash
 brew cask install google-chrome
 ```
 
 ### [Node](https://nodejs.org/)
 #### Install
-``` sh
+``` bash
 brew install node
 ```
 
 ### [Yarn](https://yarnpkg.com/)
 #### Install
-``` sh
+``` bash
 brew install yarn
 ```
 
@@ -110,7 +116,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ##### [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
 #### .zshrc
-``` sh
+``` bash
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -146,7 +152,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## Language
 ### [Python3](https://www.python.org)
 #### Install
-``` sh
+``` bash
 brew install python3
 ```
 
@@ -154,6 +160,10 @@ brew install python3
 ### [Atom](https://atom.io)
 #### Usage
 {% post_link Atom-Usage %}
+
+### [VSCode](https://code.visualstudio.com)
+#### Usage
+{% post_link VS-Code-Usage %}
 
 ### [Vim](www.vim.org/)
 #### .vimrc
@@ -224,3 +234,7 @@ brew cask install docker
 
 #### Usage
 {% post_link Docker-Cheat-Sheet %}
+
+## Browser
+### Safari
+{% post_link Safari-Enhancement %}

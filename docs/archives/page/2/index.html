@@ -242,6 +242,71 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/">
+                            Using static site generator with Github Pages
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-08-27T20:02:59+08:00">
+	
+		    Aug 27, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/Web/">Web</a>, <a class="category-link" href="/blog/categories/Web/Static-Site-Generator/">Static Site Generator</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+<ul>
+<li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage">Advantage</a></li>
+<li><a href="#disadvantage">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</a><ul>
+<li><a href="#advantage-1">Advantage</a></li>
+<li><a href="#disadvantage-1">Disadvantage</a></li>
+</ul>
+</li>
+<li><a href="#using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</a><ul>
+<li><a href="#advantage-2">Advantage</a></li>
+<li><a href="#disadvantage-2">Disadvantage</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<p>There are three ways to deploy static site on Github Pages as follows. I tend to use the third scheme myself. The related Github documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="Using-gh-pages-branch"><a href="#Using-gh-pages-branch" class="headerlink" title="Using gh-pages branch"></a>Using <code>gh-pages</code> branch</h2><p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification.</p>
+<h3 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h3><p>Only website content is under the version control. The code that generates the website content is maintained locally.<br>
+                    
+                        <a href="/blog/Web/Static-Site-Generator/Using-Static-Site-Generator-with-Github-Pages/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/Container/Building-Hexo-Website-with-Docker/">
                             Building Hexo Website with Docker
                         </a>
@@ -400,6 +465,10 @@ VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
 <li><a href="#usage-3">Usage</a></li>
 </ul>
 </li>
+<li><a href="#vscodehttpscodevisualstudiocom">VSCode</a><ul>
+<li><a href="#usage-4">Usage</a></li>
+</ul>
+</li>
 <li><a href="#vimwwwvimorg">Vim</a><ul>
 <li><a href="#vimrc">.vimrc</a></li>
 </ul>
@@ -413,9 +482,13 @@ VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
 <li><a href="#install-6">Install</a></li>
-<li><a href="#usage-4">Usage</a></li>
+<li><a href="#usage-5">Usage</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#browser">Browser</a><ul>
+<li><a href="#safari">Safari</a></li>
 </ul>
 </li>
 </ul>
@@ -1271,6 +1344,10 @@ $ git push
 <li><a href="#usage-3">Usage</a></li>
 </ul>
 </li>
+<li><a href="#vscodehttpscodevisualstudiocom">VSCode</a><ul>
+<li><a href="#usage-4">Usage</a></li>
+</ul>
+</li>
 <li><a href="#vimwwwvimorg">Vim</a><ul>
 <li><a href="#vimrc">.vimrc</a></li>
 </ul>
@@ -1284,9 +1361,13 @@ $ git push
 <li><a href="#tool">Tool</a><ul>
 <li><a href="#dockerhttpswwwdockercom">Docker</a><ul>
 <li><a href="#install-6">Install</a></li>
-<li><a href="#usage-4">Usage</a></li>
+<li><a href="#usage-5">Usage</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#browser">Browser</a><ul>
+<li><a href="#safari">Safari</a></li>
 </ul>
 </li>
 </ul>
@@ -1435,7 +1516,7 @@ VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                17 posts found
+                18 posts found
             </p>
         </div>
     </div>
