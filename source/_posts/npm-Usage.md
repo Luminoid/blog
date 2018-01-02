@@ -17,8 +17,8 @@ npm ls                              # List packages installed in the current pro
 npm list -g --depth=0               # List globally installed packages
 npm search                          # Search for packages; aliases: npm s
 npm install                         # Install all modules listed as dependencies in package.json
-npm install <package>               # Install a local package; alias: npm i
-npm install <package> --save-dev    # Add an entry to your package.json's devDependencies; alias: npm i -D
+npm install <package>               # Install a local package, and the package will appear in your dependencies by default; alias: npm i
+npm install <package> --save-dev    # Package will appear in your devDependencies; alias: npm i -D
 npm install -g <package>            # Install a global package
 npm update                          # Update local packages to the latest version (specified by the tag config)
 npm update -g <package>             # Update a global package
