@@ -15,18 +15,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="Commandyarn add &amp;lt;package...&amp;gt; # Add a package to use in your current package. yarn init  # Initialize the development of a package. yarn install  # Install all the dependencies defined in a package.">
+    <meta name="description" content="Commandyarn list                           # List installed packages yarn install                        # Install all the dependencies of project; alias: yarn yarn add &amp;lt;package...&amp;gt;">
 <meta name="keywords" content="Yarn">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Yarn Usage">
 <meta property="og:url" content="http://luminoid.github.io/blog/Web/JavaScript/Yarn-Usage/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Commandyarn add &amp;lt;package...&amp;gt; # Add a package to use in your current package. yarn init  # Initialize the development of a package. yarn install  # Install all the dependencies defined in a package.">
+<meta property="og:description" content="Commandyarn list                           # List installed packages yarn install                        # Install all the dependencies of project; alias: yarn yarn add &amp;lt;package...&amp;gt;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-30T18:37:29.022Z">
+<meta property="og:updated_time" content="2018-01-02T15:43:51.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn Usage">
-<meta name="twitter:description" content="Commandyarn add &amp;lt;package...&amp;gt; # Add a package to use in your current package. yarn init  # Initialize the development of a package. yarn install  # Install all the dependencies defined in a package.">
+<meta name="twitter:description" content="Commandyarn list                           # List installed packages yarn install                        # Install all the dependencies of project; alias: yarn yarn add &amp;lt;package...&amp;gt;">
     
     
         
@@ -264,12 +264,68 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><pre class=" language-bash"><code class="language-bash">yarn add <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span> <span class="token comment" spellcheck="true"># Add a package to use in your current package.</span>
-yarn init  <span class="token comment" spellcheck="true"># Initialize the development of a package.</span>
-yarn <span class="token function">install</span>  <span class="token comment" spellcheck="true"># Install all the dependencies defined in a package.json file.</span>
-yarn list  <span class="token comment" spellcheck="true"># List installed packages.</span>
-yarn remove <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span>  <span class="token comment" spellcheck="true"># Remove an unused package from your current package.</span>
+            <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Command"><span class="toc-text">Command</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLI-Commands-Comparison"><span class="toc-text">CLI Commands Comparison</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json"><span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn-lock"><span class="toc-text">yarn.lock</span></a></li></ol></li></ol>
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><pre class=" language-bash"><code class="language-bash">yarn list                           <span class="token comment" spellcheck="true"># List installed packages</span>
+yarn <span class="token function">install</span>                        <span class="token comment" spellcheck="true"># Install all the dependencies of project; alias: yarn</span>
+yarn add <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span>               <span class="token comment" spellcheck="true"># Install packages in your dependencies</span>
+yarn add <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span> <span class="token punctuation">[</span>--dev/-D<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># Install packages in your devDependencies</span>
+yarn global add <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span>        <span class="token comment" spellcheck="true"># Install packages globally</span>
+yarn upgrade <span class="token punctuation">[</span>package<span class="token punctuation">]</span>              <span class="token comment" spellcheck="true"># Upgrade a package</span>
+yarn outdated                       <span class="token comment" spellcheck="true"># Checks for outdated package dependencies</span>
+yarn remove <span class="token operator">&lt;</span>package<span class="token punctuation">..</span>.<span class="token operator">></span>            <span class="token comment" spellcheck="true"># Remove packages</span>
+yarn run <span class="token punctuation">[</span>script<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>args<span class="token operator">></span><span class="token punctuation">]</span>          <span class="token comment" spellcheck="true"># Run a defined package script</span>
+yarn init                           <span class="token comment" spellcheck="true"># Interactively create or update a package.json file</span>
+yarn                                <span class="token comment" spellcheck="true"># Try Yarn out on your existing npm project</span>
 </code></pre>
+<a id="more"></a>
+<h2 id="CLI-Commands-Comparison"><a href="#CLI-Commands-Comparison" class="headerlink" title="CLI Commands Comparison"></a>CLI Commands Comparison</h2><table>
+<thead>
+<tr>
+<th>npm (v5)</th>
+<th>Yarn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> <code>npm install</code></td>
+<td><code>yarn install</code></td>
+</tr>
+<tr>
+<td> <code>npm install [package]</code></td>
+<td><code>yarn add [package]</code></td>
+</tr>
+<tr>
+<td> <code>npm install [package] --save-dev</code></td>
+<td><code>yarn add [package] --dev</code></td>
+</tr>
+<tr>
+<td> <code>npm install [package] --global</code></td>
+<td><code>yarn global add [package]</code></td>
+</tr>
+<tr>
+<td> <code>npm update --global</code></td>
+<td><code>yarn global upgrade</code></td>
+</tr>
+<tr>
+<td> <code>npm rebuild</code></td>
+<td><code>yarn install --force</code></td>
+</tr>
+<tr>
+<td> <code>npm uninstall [package]</code></td>
+<td><code>yarn remove [package]</code></td>
+</tr>
+<tr>
+<td> <code>rm -rf node_modules &amp;&amp; npm install</code></td>
+<td><code>yarn upgrade</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a><code>package.json</code></h3><ul>
+<li>List the packages that your project depends on</li>
+<li>Allow you to specify the versions of a package that your project can use using <a href="https://yarnpkg.com/en/docs/dependency-versions" target="_blank" rel="noopener">semantic versioning rules</a></li>
+<li>Make your build reproducible, and therefore much easier to share with other developers</li>
+</ul>
+<h3 id="yarn-lock"><a href="#yarn-lock" class="headerlink" title="yarn.lock"></a><code>yarn.lock</code></h3><p>Store exactly which versions of each dependency were installed.</p>
 
             
 
@@ -358,7 +414,7 @@ yarn remove <span class="token operator">&lt;</span>package<span class="token pu
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -460,7 +516,7 @@ yarn remove <span class="token operator">&lt;</span>package<span class="token pu
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>

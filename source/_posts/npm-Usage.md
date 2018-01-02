@@ -16,6 +16,7 @@ keywords: npm
 npm ls                              # List packages installed in the current project
 npm list -g --depth=0               # List globally installed packages
 npm search                          # Search for packages; aliases: npm s
+npm install                         # Install all modules listed as dependencies in package.json
 npm install <package>               # Install a local package; alias: npm i
 npm install <package> --save        # Add an entry to your package.json's dependencies
 npm install <package> --save-dev    # Add an entry to your package.json's devDependencies; alias: npm i -D
