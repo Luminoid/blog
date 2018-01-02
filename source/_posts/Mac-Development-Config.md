@@ -27,9 +27,10 @@ keywords:
 		* [Usage](#usage-1)
 	* [Node](#nodehttpsnodejsorg)
 		* [Install](#install-2)
+		* [Usage](#usage-2)
 	* [Yarn](#yarnhttpsyarnpkgcom)
 		* [Install](#install-3)
-		* [Usage](#usage-2)
+		* [Usage](#usage-3)
 * [Terminal](#terminal)
 	* [iTerm2](#iterm2httpswwwiterm2com)
 	* [oh-my-zsh](#oh-my-zshhttpohmyzsh)
@@ -46,9 +47,9 @@ keywords:
 		* [Install](#install-5)
 * [Text Editor](#text-editor)
 	* [Atom](#atomhttpsatomio)
-		* [Usage](#usage-3)
-	* [VSCode](#vscodehttpscodevisualstudiocom)
 		* [Usage](#usage-4)
+	* [VSCode](#vscodehttpscodevisualstudiocom)
+		* [Usage](#usage-5)
 	* [Vim](#vimwwwvimorg)
 		* [.vimrc](#vimrc)
 * [IDE](#ide)
@@ -56,7 +57,7 @@ keywords:
 * [Tool](#tool)
 	* [Docker](#dockerhttpswwwdockercom)
 		* [Install](#install-6)
-		* [Usage](#usage-5)
+		* [Usage](#usage-6)
 * [Browser](#browser)
 	* [Safari](#safari)
 
@@ -93,6 +94,9 @@ brew cask install google-chrome
 brew install node
 ```
 
+#### Usage
+{% post_link npm-Usage %}
+
 ### [Yarn](https://yarnpkg.com/)
 #### Install
 ``` bash
@@ -101,7 +105,6 @@ brew install yarn
 
 #### Usage
 {% post_link Yarn-Usage %}
-
 
 ## Terminal
 ### [iTerm2](https://www.iterm2.com)
