@@ -29,7 +29,7 @@ npm uninstall <package>             # Remove a local package
 npm uninstall <package> --save      # Remove a package from the dependencies in package.json
 npm uninstall -g <package>          # Remove a global package
 npm docs                            # Docs for a package in a web browser maybe
-npm run [-- <args>...]              # Run arbitrary package scripts
+npm run <command> [-- <args>...]    # Run arbitrary package scripts
 npm start [-- <args>...]            # Start a package
 npm shrinkwrap                      # Lock down dependency versions for publication
 npm doctor                          # Check your environments

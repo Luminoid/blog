@@ -9,6 +9,8 @@ tags: Yarn
 keywords: Yarn
 ---
 
+[Official Site](https://yarnpkg.com/en/)
+
 <!-- TOC -->
 
 ## Command
@@ -41,10 +43,10 @@ yarn                                # Try Yarn out on your existing npm project
  `rm -rf node_modules && npm install` | `yarn upgrade`
 
 ## Configuration
-### `package.json`
+### package.json
 - List the packages that your project depends on
 - Allow you to specify the versions of a package that your project can use using [semantic versioning rules](https://yarnpkg.com/en/docs/dependency-versions)
 - Make your build reproducible, and therefore much easier to share with other developers
 
-### `yarn.lock`
+### yarn.lock
 Store exactly which versions of each dependency were installed.
