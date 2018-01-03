@@ -14,7 +14,7 @@ Collecting from *Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS 
 ## Minimize importing other header files in header
 - Foward declare classes in a header and import their corresponding headers in an implementation
 - Move the protocol-conformance declaration to the class-continuation category if possible
-### `@class` vs. `#import`
+### @class vs. #import
 Using forward declaring(`@class`) has following advantages:
 - Defer the import to where it is required (implementation file), and decrease compile time
 - Alleviate the problem of both classes refferring to each other

@@ -268,7 +268,7 @@
 <!-- TOC -->
 <h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul>
 <li>Foward declare classes in a header and import their corresponding headers in an implementation</li>
-<li>Move the protocol-conformance declaration to the class-continuation category if possible<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a><code>@class</code> vs. <code>#import</code></h3>Using forward declaring(<code>@class</code>) has following advantages:</li>
+<li>Move the protocol-conformance declaration to the class-continuation category if possible<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a>@class vs. #import</h3>Using forward declaring(<code>@class</code>) has following advantages:</li>
 <li>Defer the import to where it is required (implementation file), and decrease compile time</li>
 <li>Alleviate the problem of both classes refferring to each other</li>
 </ul>
