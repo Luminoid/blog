@@ -236,6 +236,56 @@
     <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/iOS/Objective-C-Best-Practice/">
+                            Objective-C Best Practice
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-01-03T23:58:17+08:00">
+	
+		    Jan 03, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/blog/categories/iOS/">iOS</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>Collecting from <em>Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs</em></p>
+<!-- TOC -->
+<h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul>
+<li>Foward declare classes in a header and import their corresponding headers in an implementation</li>
+<li>Move the protocol-conformance declaration to the class-continuation category if possible<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a><code>@class</code> vs. <code>#import</code></h3>Using forward declaring(<code>@class</code>) has following advantages:</li>
+<li>Defer the import to where it is required (implementation file), and decrease compile time</li>
+<li>Alleviate the problem of both classes refferring to each other</li>
+</ul>
+                    
+                        <a href="/blog/iOS/Objective-C-Best-Practice/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
@@ -888,7 +938,7 @@ VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                19 posts found
+                20 posts found
             </p>
         </div>
     </div>

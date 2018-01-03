@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-01-02T16:37:39.141Z</updated>
+  <updated>2018-01-03T15:59:20.602Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Objective-C Best Practice</title>
+    <link href="http://luminoid.github.io/blog/iOS/Objective-C-Best-Practice/"/>
+    <id>http://luminoid.github.io/blog/iOS/Objective-C-Best-Practice/</id>
+    <published>2018-01-03T15:58:17.000Z</published>
+    <updated>2018-01-03T15:59:20.602Z</updated>
+    
+    <content type="html"><![CDATA[<p>Collecting from <em>Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs</em></p><!-- TOC --><h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul><li>Foward declare classes in a header and import their corresponding headers in an implementation</li><li>Move the protocol-conformance declaration to the class-continuation category if possible<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a><code>@class</code> vs. <code>#import</code></h3>Using forward declaring(<code>@class</code>) has following advantages:</li><li>Defer the import to where it is required (implementation file), and decrease compile time</li><li>Alleviate the problem of both classes refferring to each other</li></ul><a id="more"></a><h2 id="Use-Literal-Syntax-over-the-equivalent-methods"><a href="#Use-Literal-Syntax-over-the-equivalent-methods" class="headerlink" title="Use Literal Syntax over the equivalent methods"></a>Use Literal Syntax over the equivalent methods</h2><p>Good Ways</p><pre class=" language-objectivec"><code class="language-objectivec">NSNumber <span class="token operator">*</span>intNum <span class="token operator">=</span> <span class="token operator">@</span><span class="token number">1</span><span class="token punctuation">;</span>NSNumber <span class="token operator">*</span>floatNum <span class="token operator">=</span> <span class="token operator">@</span><span class="token number">1.2f</span><span class="token punctuation">;</span>NSNumber <span class="token operator">*</span>doubleNum <span class="token operator">=</span> <span class="token operator">@</span><span class="token number">1.23</span><span class="token punctuation">;</span>NSArray <span class="token operator">*</span>arr <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">[</span><span class="token string">@"a"</span><span class="token punctuation">,</span> <span class="token string">@"bb"</span><span class="token punctuation">,</span> <span class="token string">@"ccc"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>NSString <span class="token operator">*</span>item <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>NSDictionary <span class="token operator">*</span>dict <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">{</span><span class="token string">@"Name"</span> <span class="token punctuation">:</span> <span class="token string">@"Tom"</span><span class="token punctuation">,</span>                       <span class="token string">@"Age"</span> <span class="token punctuation">:</span> <span class="token operator">@</span><span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">;</span>NSString <span class="token operator">*</span>name <span class="token operator">=</span> dict<span class="token punctuation">[</span><span class="token string">@"Name"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><p>Bad Ways</p><pre class=" language-objectivec"><code class="language-objectivec">NSNumber <span class="token operator">*</span>num <span class="token operator">=</span> <span class="token punctuation">[</span>NSNumber numberWithInt<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>NSArray <span class="token operator">*</span>arr <span class="token operator">=</span> <span class="token punctuation">[</span>NSArray arrayWithObjects<span class="token punctuation">:</span><span class="token string">@"a"</span><span class="token punctuation">,</span> <span class="token string">@"bb"</span><span class="token punctuation">,</span> <span class="token string">@"ccc"</span><span class="token punctuation">,</span> nil<span class="token punctuation">]</span><span class="token punctuation">;</span>NSString <span class="token operator">*</span>item <span class="token operator">=</span> <span class="token punctuation">[</span>arr objectAtIndex<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>NSDictionary <span class="token operator">*</span>dict <span class="token operator">=</span> <span class="token punctuation">[</span>NSDictionary dictionaryWithObjectsAndKeys<span class="token punctuation">:</span>                          <span class="token string">@"Tom"</span><span class="token punctuation">,</span> <span class="token string">@"Name"</span><span class="token punctuation">,</span>                          <span class="token operator">@</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">@"Age"</span><span class="token punctuation">,</span>                          nil<span class="token punctuation">]</span><span class="token punctuation">;</span>NSString <span class="token operator">*</span>name <span class="token operator">=</span> <span class="token punctuation">[</span>dict objectForKey<span class="token punctuation">:</span><span class="token string">@"Name"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Collecting from &lt;em&gt;Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs&lt;/em&gt;&lt;/p&gt;
+&lt;!-- TOC --&gt;
+&lt;h2 id=&quot;Minimize-importing-other-header-files-in-header&quot;&gt;&lt;a href=&quot;#Minimize-importing-other-header-files-in-header&quot; class=&quot;headerlink&quot; title=&quot;Minimize importing other header files in header&quot;&gt;&lt;/a&gt;Minimize importing other header files in header&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Foward declare classes in a header and import their corresponding headers in an implementation&lt;/li&gt;
+&lt;li&gt;Move the protocol-conformance declaration to the class-continuation category if possible&lt;h3 id=&quot;class-vs-import&quot;&gt;&lt;a href=&quot;#class-vs-import&quot; class=&quot;headerlink&quot; title=&quot;@class vs. #import&quot;&gt;&lt;/a&gt;&lt;code&gt;@class&lt;/code&gt; vs. &lt;code&gt;#import&lt;/code&gt;&lt;/h3&gt;Using forward declaring(&lt;code&gt;@class&lt;/code&gt;) has following advantages:&lt;/li&gt;
+&lt;li&gt;Defer the import to where it is required (implementation file), and decrease compile time&lt;/li&gt;
+&lt;li&gt;Alleviate the problem of both classes refferring to each other&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
+    
+    
+      <category term="Objective-C" scheme="http://luminoid.github.io/blog/tags/Objective-C/"/>
+    
+  </entry>
   
   <entry>
     <title>npm Usage</title>
