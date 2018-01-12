@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Minimize importing other header files in header Foward declare classes in a header and import their co">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-03T16:03:08.361Z">
+<meta property="og:updated_time" content="2018-01-12T15:05:26.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C Best Practice">
 <meta name="twitter:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Minimize importing other header files in header Foward declare classes in a header and import their co">
@@ -265,10 +265,13 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>Collecting from <em>Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs</em></p>
-<h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimize-importing-other-header-files-in-header"><span class="toc-text">Minimize importing other header files in header</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#class-vs-import"><span class="toc-text">@class vs. #import</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Literal-Syntax-over-the-equivalent-methods"><span class="toc-text">Use Literal Syntax over the equivalent methods</span></a></li></ol>
+<h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimize-importing-other-header-files-in-header"><span class="toc-text">Minimize importing other header files in header</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#class-vs-import"><span class="toc-text">@class vs. #import</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Literal-Syntax-over-the-equivalent-methods"><span class="toc-text">Use Literal Syntax over the equivalent methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Typed-Constants-over-Preprocessor-define"><span class="toc-text">Use Typed Constants over Preprocessor #define</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation-unit-Constant"><span class="toc-text">Translation-unit Constant</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Constant"><span class="toc-text">Global Constant</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Enumerations-for-States-Options-and-Status-Code"><span class="toc-text">Use Enumerations for States, Options and Status Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Enumeration-type"><span class="toc-text">Normal Enumeration type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enumeration-for-options"><span class="toc-text">Enumeration for options</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Property"><span class="toc-text">Property</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Declared-property"><span class="toc-text">Declared property</span></a></li></ol></li></ol>
 <h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul>
 <li>Foward declare classes in a header and import their corresponding headers in an implementation</li>
-<li>Move the protocol-conformance declaration to the class-continuation category if possible<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a>@class vs. #import</h3>Using forward declaring(<code>@class</code>) has following advantages:</li>
+<li>Move the protocol-conformance declaration to the class-continuation category if possible</li>
+</ul>
+<h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a>@class vs. #import</h3><p>Using forward declaring(<code>@class</code>) has following advantages:</p>
+<ul>
 <li>Defer the import to where it is required (implementation file), and decrease compile time</li>
 <li>Alleviate the problem of both classes refferring to each other</li>
 </ul>
@@ -292,6 +295,34 @@ NSDictionary <span class="token operator">*</span>dict <span class="token operat
                           <span class="token operator">@</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">@"Age"</span><span class="token punctuation">,</span>
                           nil<span class="token punctuation">]</span><span class="token punctuation">;</span>
 NSString <span class="token operator">*</span>name <span class="token operator">=</span> <span class="token punctuation">[</span>dict objectForKey<span class="token punctuation">:</span><span class="token string">@"Name"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="Use-Typed-Constants-over-Preprocessor-define"><a href="#Use-Typed-Constants-over-Preprocessor-define" class="headerlink" title="Use Typed Constants over Preprocessor #define"></a>Use Typed Constants over Preprocessor #define</h2><h3 id="Translation-unit-Constant"><a href="#Translation-unit-Constant" class="headerlink" title="Translation-unit Constant"></a>Translation-unit Constant</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token comment" spellcheck="true">// .m</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> NSTimeInterval kAnimationDuration <span class="token operator">=</span> <span class="token number">0.3</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>static</code>: The constant will not be exposed in the global symbol table.</p>
+<h3 id="Global-Constant"><a href="#Global-Constant" class="headerlink" title="Global Constant"></a>Global Constant</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token comment" spellcheck="true">// .h</span>
+<span class="token keyword">extern</span> <span class="token keyword">const</span> NSTimeInterval ClassNamePrefixAnimationDuration<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// .m</span>
+<span class="token keyword">const</span> NSTimeInterval ClassNamePrefixAnimationDuration <span class="token operator">=</span> <span class="token number">0.3</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="Use-Enumerations-for-States-Options-and-Status-Code"><a href="#Use-Enumerations-for-States-Options-and-Status-Code" class="headerlink" title="Use Enumerations for States, Options and Status Code"></a>Use Enumerations for States, Options and Status Code</h2><h3 id="Normal-Enumeration-type"><a href="#Normal-Enumeration-type" class="headerlink" title="Normal Enumeration type"></a>Normal Enumeration type</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token keyword">typedef</span> <span class="token function">NS_ENUM</span><span class="token punctuation">(</span>NSUInteger<span class="token punctuation">,</span> ConnectionState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ConnectionStateDisconnected<span class="token punctuation">,</span>
+    ConnectionStateConnecting<span class="token punctuation">,</span>
+    ConnectionStateConnected<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="Enumeration-for-options"><a href="#Enumeration-for-options" class="headerlink" title="Enumeration for options"></a>Enumeration for options</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token keyword">typedef</span> <span class="token function">NS_OPTIONS</span><span class="token punctuation">(</span>NSUInteger<span class="token punctuation">,</span> PermittedDirection<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    PermittedDirectionUp    <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    PermittedDirectionDown  <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    PermittedDirectionLeft  <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    PermittedDirectionRight <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h2><h3 id="Declared-property"><a href="#Declared-property" class="headerlink" title="Declared property"></a>Declared property</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token comment" spellcheck="true">// .h</span>
+<span class="token keyword">@property</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>#attributes#<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">&lt;</span>#type#<span class="token operator">></span> <span class="token operator">&lt;</span>#name#<span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Declare Property</span>
+<span class="token comment" spellcheck="true">// .m</span>
+<span class="token keyword">@synthesize</span> <span class="token comment" spellcheck="true">// Create implementations that match the specification you gave in the property declaration</span>
+<span class="token keyword">@dynamic</span>    <span class="token comment" spellcheck="true">// Suppress a warning if the compiler can’t find an implementation of accessor methods</span>
 </code></pre>
 
             
