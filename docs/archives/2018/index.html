@@ -269,13 +269,13 @@
 <!-- TOC -->
 <p><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank" rel="noopener">Objective-C</a><br><a href="http://clang.llvm.org/docs/" target="_blank" rel="noopener">Clang</a></p>
 <h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul>
-<li>Foward declare classes in a header and import their corresponding headers in an implementation</li>
+<li>Forward declare classes in a header and import their corresponding headers in an implementation</li>
 <li>Move the protocol-conformance declaration to the class-continuation category if possible</li>
 </ul>
 <h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a>@class vs. #import</h3><p>Using forward declaring(<code>@class</code>) has following advantages:</p>
 <ul>
 <li>Defer the import to where it is required (implementation file), and decrease compile time</li>
-<li>Alleviate the problem of both classes refferring to each other</li>
+<li>Alleviate the problem of both classes referring to each other</li>
 </ul>
                     
                         <a href="/blog/iOS/Objective-C-Best-Practice/" class="postShorten-excerpt_link link">

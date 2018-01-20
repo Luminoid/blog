@@ -15,13 +15,13 @@ Collecting from *Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS 
 [Clang](http://clang.llvm.org/docs/)
 
 ## Minimize importing other header files in header
-- Foward declare classes in a header and import their corresponding headers in an implementation
+- Forward declare classes in a header and import their corresponding headers in an implementation
 - Move the protocol-conformance declaration to the class-continuation category if possible
 
 ### @class vs. #import
 Using forward declaring(`@class`) has following advantages:
 - Defer the import to where it is required (implementation file), and decrease compile time
-- Alleviate the problem of both classes refferring to each other
+- Alleviate the problem of both classes referring to each other
 
 <!-- more -->
 
@@ -103,14 +103,14 @@ Autosynthesis: Clang provides default synthesis of declared properties not decla
 #### Memory-Management Semantic
 **assign**: The setter is a simple assign operation used for scalar types, such as `CGFloat` or `NSInteger`.
 **strong**: This designates that the property defines an owning relationship. When a new value is set, it is first retained, the old value is released, and then the value is set.
-**weak**: This designates that the property defines a nonowning relationship. When a new value is set, it is not retained; nor is the old value released. This is similiar to what `assign` does, but the value is also nilled out when the object pointed to by the property at any time is destroyed.
+**weak**: This designates that the property defines a nonowning relationship. When a new value is set, it is not retained; nor is the old value released. This is similar to what `assign` does, but the value is also nilled out when the object pointed to by the property at any time is destroyed.
 **unsafe_unretained**: This has the same semantics as `assign` but is used where the type is an object type to indicate a nonowning relationship (unretained) that is not nilled out (unsafe) when the target is destroyed, unlike `weak`.
 **copy**: This designates on owning relationship similar to `strong`; however, instead of retaining the value, it is copied.
 
 ## Access Instance Variables
-- Read data directly through instance varibles internally; Write data through properties internally
+- Read data directly through instance variables internally; Write data through properties internally
 - Read and write data directly through instance variables within initializers and `dealloc`
-- Read data through properties when that data is being lazily intialized
+- Read data through properties when that data is being lazily initialized
 
 ## Class Cluster
 ``` objectivec
@@ -120,7 +120,7 @@ Autosynthesis: Clang provides default synthesis of declared properties not decla
 - There is no init family method defined in the interface
 
 ## Associated Object
-Associated Object can attach custom data to existing classes, but it should be used only when other approachs are not possible, since it can cause retain cycles.
+Associated Object can attach custom data to existing classes, but it should be used only when other approaches are not possible, since it can cause retain cycles.
 ``` objectivec
 #import <objc/runtime.h>
 static void *AlertViewKey = "AlertViewKey";

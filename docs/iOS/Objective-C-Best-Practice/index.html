@@ -15,18 +15,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Foward declare classes in a header an">
+    <meta name="description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Forward declare classes in a header a">
 <meta name="keywords" content="Objective-C">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Objective-C Best Practice">
 <meta property="og:url" content="http://luminoid.github.io/blog/iOS/Objective-C-Best-Practice/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Foward declare classes in a header an">
+<meta property="og:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Forward declare classes in a header a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-20T16:32:13.692Z">
+<meta property="og:updated_time" content="2018-01-20T16:34:41.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C Best Practice">
-<meta name="twitter:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Foward declare classes in a header an">
+<meta name="twitter:description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs  Objective-CClang Minimize importing other header files in header Forward declare classes in a header a">
     
     
         
@@ -268,13 +268,13 @@
 <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimize-importing-other-header-files-in-header"><span class="toc-text">Minimize importing other header files in header</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#class-vs-import"><span class="toc-text">@class vs. #import</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Literal-Syntax-over-the-equivalent-methods"><span class="toc-text">Use Literal Syntax over the equivalent methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Typed-Constants-over-Preprocessor-define"><span class="toc-text">Use Typed Constants over Preprocessor #define</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation-unit-Constant"><span class="toc-text">Translation-unit Constant</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Constant"><span class="toc-text">Global Constant</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Enumerations-for-States-Options-and-Status-Code"><span class="toc-text">Use Enumerations for States, Options and Status Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal-Enumeration-type"><span class="toc-text">Normal Enumeration type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enumeration-for-options"><span class="toc-text">Enumeration for options</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Property"><span class="toc-text">Property</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Declared-property"><span class="toc-text">Declared property</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Property-Attribute"><span class="toc-text">Property Attribute</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Memory-Management-Semantic"><span class="toc-text">Memory-Management Semantic</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Access-Instance-Variables"><span class="toc-text">Access Instance Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Cluster"><span class="toc-text">Class Cluster</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Associated-Object"><span class="toc-text">Associated Object</span></a></li></ol>
 <p><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank" rel="noopener">Objective-C</a><br><a href="http://clang.llvm.org/docs/" target="_blank" rel="noopener">Clang</a></p>
 <h2 id="Minimize-importing-other-header-files-in-header"><a href="#Minimize-importing-other-header-files-in-header" class="headerlink" title="Minimize importing other header files in header"></a>Minimize importing other header files in header</h2><ul>
-<li>Foward declare classes in a header and import their corresponding headers in an implementation</li>
+<li>Forward declare classes in a header and import their corresponding headers in an implementation</li>
 <li>Move the protocol-conformance declaration to the class-continuation category if possible</li>
 </ul>
 <h3 id="class-vs-import"><a href="#class-vs-import" class="headerlink" title="@class vs. #import"></a>@class vs. #import</h3><p>Using forward declaring(<code>@class</code>) has following advantages:</p>
 <ul>
 <li>Defer the import to where it is required (implementation file), and decrease compile time</li>
-<li>Alleviate the problem of both classes refferring to each other</li>
+<li>Alleviate the problem of both classes referring to each other</li>
 </ul>
 <a id="more"></a>
 <h2 id="Use-Literal-Syntax-over-the-equivalent-methods"><a href="#Use-Literal-Syntax-over-the-equivalent-methods" class="headerlink" title="Use Literal Syntax over the equivalent methods"></a>Use Literal Syntax over the equivalent methods</h2><p>Good Ways</p>
@@ -328,11 +328,11 @@ NSString <span class="token operator">*</span>name <span class="token operator">
 <p>Autosynthesis: Clang provides default synthesis of declared properties not declared @dynamic and not having user provided backing getter and setter methods.</p>
 <h3 id="Property-Attribute"><a href="#Property-Attribute" class="headerlink" title="Property Attribute"></a>Property Attribute</h3><pre class=" language-objectivec"><code class="language-objectivec"><span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span> readwrite<span class="token punctuation">,</span> copy<span class="token punctuation">)</span> NSString <span class="token operator">*</span>name<span class="token punctuation">;</span>
 </code></pre>
-<h4 id="Memory-Management-Semantic"><a href="#Memory-Management-Semantic" class="headerlink" title="Memory-Management Semantic"></a>Memory-Management Semantic</h4><p><strong>assign</strong>: The setter is a simple assign operation used for scalar types, such as <code>CGFloat</code> or <code>NSInteger</code>.<br><strong>strong</strong>: This designates that the property defines an owning relationship. When a new value is set, it is first retained, the old value is released, and then the value is set.<br><strong>weak</strong>: This designates that the property defines a nonowning relationship. When a new value is set, it is not retained; nor is the old value released. This is similiar to what <code>assign</code> does, but the value is also nilled out when the object pointed to by the property at any time is destroyed.<br><strong>unsafe_unretained</strong>: This has the same semantics as <code>assign</code> but is used where the type is an object type to indicate a nonowning relationship (unretained) that is not nilled out (unsafe) when the target is destroyed, unlike <code>weak</code>.<br><strong>copy</strong>: This designates on owning relationship similar to <code>strong</code>; however, instead of retaining the value, it is copied.</p>
+<h4 id="Memory-Management-Semantic"><a href="#Memory-Management-Semantic" class="headerlink" title="Memory-Management Semantic"></a>Memory-Management Semantic</h4><p><strong>assign</strong>: The setter is a simple assign operation used for scalar types, such as <code>CGFloat</code> or <code>NSInteger</code>.<br><strong>strong</strong>: This designates that the property defines an owning relationship. When a new value is set, it is first retained, the old value is released, and then the value is set.<br><strong>weak</strong>: This designates that the property defines a nonowning relationship. When a new value is set, it is not retained; nor is the old value released. This is similar to what <code>assign</code> does, but the value is also nilled out when the object pointed to by the property at any time is destroyed.<br><strong>unsafe_unretained</strong>: This has the same semantics as <code>assign</code> but is used where the type is an object type to indicate a nonowning relationship (unretained) that is not nilled out (unsafe) when the target is destroyed, unlike <code>weak</code>.<br><strong>copy</strong>: This designates on owning relationship similar to <code>strong</code>; however, instead of retaining the value, it is copied.</p>
 <h2 id="Access-Instance-Variables"><a href="#Access-Instance-Variables" class="headerlink" title="Access Instance Variables"></a>Access Instance Variables</h2><ul>
-<li>Read data directly through instance varibles internally; Write data through properties internally</li>
+<li>Read data directly through instance variables internally; Write data through properties internally</li>
 <li>Read and write data directly through instance variables within initializers and <code>dealloc</code></li>
-<li>Read data through properties when that data is being lazily intialized</li>
+<li>Read data through properties when that data is being lazily initialized</li>
 </ul>
 <h2 id="Class-Cluster"><a href="#Class-Cluster" class="headerlink" title="Class Cluster"></a>Class Cluster</h2><pre class=" language-objectivec"><code class="language-objectivec"><span class="token operator">+</span> <span class="token punctuation">(</span>UIButton<span class="token punctuation">)</span>buttonWithType<span class="token punctuation">:</span><span class="token punctuation">(</span>UIButtonType<span class="token punctuation">)</span>buttonType<span class="token punctuation">;</span>
 </code></pre>
@@ -340,7 +340,7 @@ NSString <span class="token operator">*</span>name <span class="token operator">
 <li>The Class Cluster pattern can be used to hide implementation detail behind an abstract base class.</li>
 <li>There is no init family method defined in the interface</li>
 </ul>
-<h2 id="Associated-Object"><a href="#Associated-Object" class="headerlink" title="Associated Object"></a>Associated Object</h2><p>Associated Object can attach custom data to existing classes, but it should be used only when other approachs are not possible, since it can cause retain cycles.</p>
+<h2 id="Associated-Object"><a href="#Associated-Object" class="headerlink" title="Associated Object"></a>Associated Object</h2><p>Associated Object can attach custom data to existing classes, but it should be used only when other approaches are not possible, since it can cause retain cycles.</p>
 <pre class=" language-objectivec"><code class="language-objectivec"><span class="token macro property">#<span class="token directive keyword">import</span> &lt;objc/runtime.h></span>
 <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token operator">*</span>AlertViewKey <span class="token operator">=</span> <span class="token string">"AlertViewKey"</span><span class="token punctuation">;</span>
 <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>popUpAlert <span class="token punctuation">{</span>
