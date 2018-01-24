@@ -40,3 +40,13 @@ npm edit <package>                  # Edit an installed package
 npm config list                     # Show all the config settings
 npm config set key value            # Sets the config key to the value
 ```
+
+## Package
+### [npm-check](https://github.com/dylang/npm-check)
+Check for outdated, incorrect, and unused dependencies.
+#### command
+``` bash
+npm-check         # See what can be updated, what isn't being used.
+npm-check ../foo  # Check another path.
+npm-check -gu     # Update globally installed modules by picking which ones to upgrade.
+```
