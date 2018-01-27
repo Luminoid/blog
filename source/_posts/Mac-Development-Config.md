@@ -59,7 +59,6 @@ keywords:
 		* [Install](#install-6)
 		* [Usage](#usage-6)
 * [Browser](#browser)
-	* [Safari](#safari)
 
 <!-- /code_chunk_output -->
 
@@ -239,5 +238,4 @@ brew cask install docker
 {% post_link Docker-Cheat-Sheet %}
 
 ## Browser
-### Safari
-{% post_link Safari-Enhancement %}
+{% post_link Browser-Enhancement %}
