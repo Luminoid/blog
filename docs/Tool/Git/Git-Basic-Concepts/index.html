@@ -15,22 +15,22 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data s">
+    <meta name="description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Git: Basic Concepts">
 <meta property="og:url" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data s">
+<meta property="og:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/InitialState.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/EditFiles.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/StageFiles.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/CommitFiles.png">
-<meta property="og:updated_time" content="2018-02-06T02:51:51.254Z">
+<meta property="og:updated_time" content="2018-02-06T04:51:20.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: Basic Concepts">
-<meta name="twitter:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data s">
+<meta name="twitter:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data">
 <meta name="twitter:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/InitialState.png">
     
     
@@ -269,7 +269,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.<br>The <strong>index</strong> is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.<br>The <strong>Git object store</strong> is organized and implemented as a content-addressable storage system(SHA1 hash value =&gt; object).</p>
+            <h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Repository"><span class="toc-text">Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Object-Types"><span class="toc-text">Git Object Types</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Blob"><span class="toc-text">Blob</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree"><span class="toc-text">Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commit"><span class="toc-text">Commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tag"><span class="toc-text">Tag</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-File-Classifications"><span class="toc-text">Git File Classifications</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tracked"><span class="toc-text">Tracked</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ignored"><span class="toc-text">Ignored</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Untracked"><span class="toc-text">Untracked</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Database-Comparison"><span class="toc-text">Database Comparison</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Command"><span class="toc-text">Command</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Common"><span class="toc-text">Common</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Remove"><span class="toc-text">Remove</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Concepts-at-Work"><span class="toc-text">Git Concepts at Work</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Initialize-Git-repository"><span class="toc-text">Initialize Git repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-Initial-Commit"><span class="toc-text">Create Initial Commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-Files"><span class="toc-text">Edit Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-Files"><span class="toc-text">Stage Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commit-Files"><span class="toc-text">Commit Files</span></a></li></ol></li></ol>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.<br>The <strong>index</strong> is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.<br>The <strong>Git object store</strong> is organized and implemented as a content-addressable storage system(SHA1 hash value =&gt; object).</p>
+<a id="more"></a>
 <h2 id="Git-Object-Types"><a href="#Git-Object-Types" class="headerlink" title="Git Object Types"></a>Git Object Types</h2><h3 id="Blob"><a href="#Blob" class="headerlink" title="Blob"></a>Blob</h3><p>Binary large object. Each version of a file is represented as a blob.</p>
 <h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><p>A tree object represents one level of directory information. It records blob identifiers, path names, and a bit of metadata for all the files in one directory.</p>
 <h3 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h3><p>A commit object holds metadata for each change introduced into the repository, including the author, committer, commit date, and log message. Each commit points to a tree object that captures, in one complete snapshot, the state of the repository at the time the commit was performed.</p>
@@ -663,7 +665,7 @@ nothing to commit, working tree clean
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -764,7 +766,7 @@ nothing to commit, working tree clean
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
