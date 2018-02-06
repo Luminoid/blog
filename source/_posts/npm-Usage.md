@@ -46,7 +46,9 @@ npm config set key value            # Sets the config key to the value
 Check for outdated, incorrect, and unused dependencies.
 #### command
 ``` bash
-npm-check         # See what can be updated, what isn't being used.
-npm-check ../foo  # Check another path.
-npm-check -gu     # Update globally installed modules by picking which ones to upgrade.
+npm-check           # See what can be updated, what isn't being used
+npm-check ../foo    # Check another path
+npm-check -u        # Interactive update
+npm-check -g        # Look at global modules
+npm-check -gu       # Update globally installed modules by picking which ones to upgrade
 ```

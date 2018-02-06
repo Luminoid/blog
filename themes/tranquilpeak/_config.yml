@@ -201,6 +201,7 @@ disqus_shortname:
 gitment:
     # Switch
     enable: true
+    id: window.location.pathname
     # Your Github ID (Github username):
     github_id: Luminoid
     # The repo to store comments:

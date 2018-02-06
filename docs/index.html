@@ -390,9 +390,11 @@
 <span class="token function">npm</span> config <span class="token keyword">set</span> key value            <span class="token comment" spellcheck="true"># Sets the config key to the value</span>
 </code></pre>
 <h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="npm-check"><a href="#npm-check" class="headerlink" title="npm-check"></a><a href="https://github.com/dylang/npm-check" target="_blank" rel="noopener">npm-check</a></h3><p>Check for outdated, incorrect, and unused dependencies.</p>
-<h4 id="command"><a href="#command" class="headerlink" title="command"></a>command</h4><pre class=" language-bash"><code class="language-bash">npm-check         <span class="token comment" spellcheck="true"># See what can be updated, what isn't being used.</span>
-npm-check <span class="token punctuation">..</span>/foo  <span class="token comment" spellcheck="true"># Check another path.</span>
-npm-check -gu     <span class="token comment" spellcheck="true"># Update globally installed modules by picking which ones to upgrade.</span>
+<h4 id="command"><a href="#command" class="headerlink" title="command"></a>command</h4><pre class=" language-bash"><code class="language-bash">npm-check           <span class="token comment" spellcheck="true"># See what can be updated, what isn't being used</span>
+npm-check <span class="token punctuation">..</span>/foo    <span class="token comment" spellcheck="true"># Check another path</span>
+npm-check -u        <span class="token comment" spellcheck="true"># Interactive update</span>
+npm-check -g        <span class="token comment" spellcheck="true"># Look at global modules</span>
+npm-check -gu       <span class="token comment" spellcheck="true"># Update globally installed modules by picking which ones to upgrade</span>
 </code></pre>
 
                     
