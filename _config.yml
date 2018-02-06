@@ -108,44 +108,26 @@ highlight:
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'coy'
-  line_number: false     # default false
+  line_number: false    # default false
 
 # hexo-all-minifier
 ## Docs: https://github.com/chenzhutian/hexo-all-minifier
 all_minifier: true
 
-js_concator:
-  enable: false
-  bundle_path: '/js/bundle.js'
-  front: false
-  silent: false
-
 html_minifier:
-  enable: true
-  ignore_error: false
   silent: true
-  exclude:
 
 css_minifier:
-  enable: true
   silent: true
-  exclude:
-    - '*.min.css'
 
 js_minifier:
-  enable: true
-  mangle: true
   silent: true
-  output:
-  compress:
-  exclude:
-    - '*.min.js'
 
 image_minifier:
   enable: true
-  interlaced: false
-  multipass: false
-  optimizationLevel: 2
-  pngquant: true
-  progressive: false
-  silent: true
+  interlaced: false     # Interlace gif for progressive rendering
+  multipass: false      # Optimize svg multiple times until it’s fully optimized
+  optimizationLevel: 2  # Select an optimization level between 0 and 7
+  pngquant: true        # Enable imagemin-pngquant plugin
+  progressive: false    # Lossless conversion to progressive
+  silent: true          # Disable logging optimize informations
