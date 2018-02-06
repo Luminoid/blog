@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/InitialState.png">
-<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/EditFiles.png">
-<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/StageFiles.png">
-<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/CommitFiles.png">
-<meta property="og:updated_time" content="2018-02-06T04:51:20.195Z">
+<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/InitialState.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/EditFiles.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/StageFiles.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/CommitFiles.png">
+<meta property="og:updated_time" content="2018-02-06T04:55:48.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: Basic Concepts">
 <meta name="twitter:description" content="RepositoryA Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data">
-<meta name="twitter:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/Git-Basic-Concepts/InitialState.png">
+<meta name="twitter:image" content="http://luminoid.github.io/blog/Tool/Git/Git-Basic-Concepts/InitialState.png">
     
     
         
@@ -426,7 +426,7 @@ nothing to commit, working tree clean
 │   └── file2.txt
 └── file1.txt
 </code></pre>
-<p>Git’s Object Model and Files<br><img src="Git-Basic-Concepts/InitialState.png" alt="Initial State"></p>
+<p>Git’s Object Model and Files<br><img src="/blog/Tool/Git/Git-Basic-Concepts/InitialState.png" title="Initial State"></p>
 <h3 id="Edit-Files"><a href="#Edit-Files" class="headerlink" title="Edit Files"></a>Edit Files</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token keyword">echo</span> <span class="token string">"Another line in file1"</span> <span class="token operator">>></span> file1.txt
 </code></pre>
 <p>Git status</p>
@@ -440,7 +440,7 @@ Changes not staged <span class="token keyword">for</span> commit:
 
 no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
 </code></pre>
-<p>Git’s Object Model and Files<br><img src="Git-Basic-Concepts/EditFiles.png" alt="Edit Files"></p>
+<p>Git’s Object Model and Files<br><img src="/blog/Tool/Git/Git-Basic-Concepts/EditFiles.png" title="Edit Files"></p>
 <h3 id="Stage-Files"><a href="#Stage-Files" class="headerlink" title="Stage Files"></a>Stage Files</h3><p><code>git add</code>: Add file contents to the object store and let the index refer to it.</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add file1.txt
 </code></pre>
@@ -512,7 +512,7 @@ Another line <span class="token keyword">in</span> file1
 100644 095ee29baa1adc16134c723b6971f7cf68dfaf1e 0    dir1/file2.txt
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0    file1.txt
 </code></pre>
-<p>Git’s Object Model and Files<br><img src="Git-Basic-Concepts/StageFiles.png" alt="Stage Files"></p>
+<p>Git’s Object Model and Files<br><img src="/blog/Tool/Git/Git-Basic-Concepts/StageFiles.png" title="Stage Files"></p>
 <h3 id="Commit-Files"><a href="#Commit-Files" class="headerlink" title="Commit Files"></a>Commit Files</h3><p><code>git-commit</code>: Record changes to the repository</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">"update file1"</span>
 <span class="token punctuation">[</span>master a123b84<span class="token punctuation">]</span> update file1
@@ -577,7 +577,7 @@ nothing to commit, working tree clean
 │   └── file2.txt
 └── file1.txt
 </code></pre>
-<p>Git’s Object Model and Files<br><img src="Git-Basic-Concepts/CommitFiles.png" alt="Commit Files"></p>
+<p>Git’s Object Model and Files<br><img src="/blog/Tool/Git/Git-Basic-Concepts/CommitFiles.png" title="Commit Files"></p>
 
             
 

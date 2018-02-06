@@ -186,7 +186,7 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-![Initial State](Git-Basic-Concepts/InitialState.png)
+{% asset_img InitialState.png Initial State %}
 
 ### Edit Files
 ``` bash
@@ -205,7 +205,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Git’s Object Model and Files
-![Edit Files](Git-Basic-Concepts/EditFiles.png)
+{% asset_img EditFiles.png Edit Files %}
 
 ### Stage Files
 `git add`: Add file contents to the object store and let the index refer to it.
@@ -286,7 +286,7 @@ $ git ls-files --stage
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
 ```
 Git’s Object Model and Files
-![Stage Files](Git-Basic-Concepts/StageFiles.png)
+{% asset_img StageFiles.png Stage Files %}
 
 ### Commit Files
 `git-commit`: Record changes to the repository
@@ -357,4 +357,4 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-![Commit Files](Git-Basic-Concepts/CommitFiles.png)
+{% asset_img CommitFiles.png Commit Files %}
