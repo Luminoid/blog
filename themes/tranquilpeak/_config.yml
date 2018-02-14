@@ -206,9 +206,9 @@ gitment:
     # The repo to store comments:
     repo: blog-comment
     # Your client ID:
-    client_id: e9eb4812f3595a5dafac
+    client_id: 2af44d047d41142c0369
     # Your client secret:
-    client_secret: e8d6bf05f4ae52c3c2241e6602c83e7fc2644457
+    client_secret: fe8dcbe07f66008ace5b0fcdb887e4edc4f01f89
 
 # -------------------
 # Integrated services

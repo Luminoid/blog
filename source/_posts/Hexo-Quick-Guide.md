@@ -20,7 +20,7 @@ keywords:
 [Hexo](https://hexo.io)
 Theme: [hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
 
-## Quick deployment
+## Quick Deployment
 With Algolia and git deployment
 ``` bash
 $ hexo new "My New Article"
@@ -49,9 +49,16 @@ $ vim source/_posts/My-New-Article.md
 $ hexo deploy -g
 ```
 
-## Maintain
+## Maintenance
 Update outdated npm packages regularly to avoid security vulnerability:
 Run `npm-check -u` under both blog directory (`./`) and theme directory (`themes/<your_theme>`).
+
+## Theme
+The following are the theme files to be modified for custom configuration, take [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/) theme as an example:
+```
+_config.yml
+languages/
+```
 
 ## Create
 Initializes a website.
@@ -83,10 +90,3 @@ Deploys your website.
 $ hexo deploy
 ```
 Set the `public_dir` in `_config.yml` from `public` to `docs` if you want the GitHub Pages site built from the `/docs` folder in the master branch. More info [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).
-
-## Theme
-Theme files to modify for custom configuration, take [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/) theme as an example:
-```
-_config.yml
-languages/
-```
