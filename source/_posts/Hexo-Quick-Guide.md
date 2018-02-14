@@ -60,6 +60,14 @@ _config.yml
 languages/
 ```
 
+## Grammar
+### Tag Plugins
+Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.
+``` js
+{% asset_img example.jpg This is an example image %}
+{% asset_img "spaced asset.jpg" "spaced title" %}
+```
+
 ## Create
 Initializes a website.
 ``` bash
