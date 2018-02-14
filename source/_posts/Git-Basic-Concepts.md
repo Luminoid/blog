@@ -43,6 +43,16 @@ Git considers the entire set of files in your working directory and subtracts bo
  Unix file system | Directories (/path/to/file) | Blocks of data
  Git | .git/objects/hash, tree object contents | Blob objects, tree objects
 
+## Identifying Commit
+`HEAD`: a symref refers to the most recent commit on the current branch
+**Absolute Commit Name**: hash identifier
+**Relative Commit Name**:
+- `^`: Select a different parent within a single generation
+- `~`: Go back before an ancestral parent and select a preceding generation
+
+<img src="/blog/Tool/Git/Git-Basic-Concepts/RelativeCommitName.png" alt="Relative Commit Name">
+
+
 ## Command
 ### Common
 Move or rename a file, directory or symlink.
@@ -117,6 +127,10 @@ $ tree -a
         ├── heads
         └── tags
 ```
+`refs/`: refs
+`refs/heads/ref`: local branches
+`refs/remotes/ref`: remote tracking branches
+`refs/tags/ref`: tags
 
 ### Create Initial Commit
 ``` bash
