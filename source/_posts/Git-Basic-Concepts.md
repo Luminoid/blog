@@ -44,20 +44,37 @@ Git considers the entire set of files in your working directory and subtracts bo
  Git | .git/objects/hash, tree object contents | Blob objects, tree objects
 
 ## Identifying Commit
-`HEAD`: a symref refers to the most recent commit on the current branch
-**Absolute Commit Name**: hash identifier
-**Relative Commit Name**:
-- `^`: Select a different parent within a single generation
-- `~`: Go back before an ancestral parent and select a preceding generation
+Git implements the history of commits within a repository as a DAG(Directed Acyclic Graph).
+- `HEAD`: a symref refers to the most recent commit on the current branch
+- **Absolute Commit Name**: hash identifier
+- **Relative Commit Name**:
+    - `^`: Select a different parent within a single generation
+    - `~`: Go back before an ancestral parent and select a preceding generation
 
-<img src="/blog/Tool/Git/Git-Basic-Concepts/RelativeCommitName.png" alt="Relative Commit Name">
-
+    - <img src="/blog/Tool/Git/Git-Basic-Concepts/RelativeCommitName.png" height="200px" alt="Relative Commit Name">
 
 ## Command
 ### Common
 Move or rename a file, directory or symlink.
 ``` bash
 git mv <source> <destination>
+```
+
+### Commit
+Print the log message associated with every commit in your history that is reachable from `<commit>`
+``` bash
+git log <commit>
+```
+
+Show the commits from `start` to `end` (`start` not included).
+`start..end`: the set of commits reachable from `end` that are not reachable from `start`
+``` bash
+git log start..end
+```
+
+Show what revision and author last modified each line of a file
+``` bash
+git blame [-L <range>] <file>
 ```
 
 ### Remove
