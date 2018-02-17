@@ -77,6 +77,38 @@ Show what revision and author last modified each line of a file
 git blame [-L <range>] <file>
 ```
 
+### Branch
+Create branches
+``` bash
+git branch <branchname> [<start-point>]
+```
+List branch names(`-r`: remote; `-a`: local & remote)
+``` bash
+git branch [-r | -a]
+```
+Show branches and their commits
+``` bash
+git show-branch [-r | -a]
+```
+Check out branches
+``` bash
+git checkout <branch>
+```
+Create and check out a new branch
+``` bash
+git checkout -b <new_branch> [<start-point>]
+```
+Figure out if you are on a detached `HEAD`
+```
+$ git branch
+* (no branch)
+  master
+```
+Delete branches
+``` bash
+git branch -d <branchname>
+```
+
 ### Remove
 Remove files from the index
 ``` bash
