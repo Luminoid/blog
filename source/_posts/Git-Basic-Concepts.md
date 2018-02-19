@@ -11,6 +11,8 @@ keywords: Git
 
 <!-- TOC -->
 
+Collecting from *Version Control with Git*
+
 ## Repository
 A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.
 The **index** is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.
@@ -58,6 +60,17 @@ Git implements the history of commits within a repository as a DAG(Directed Acyc
     - `~`: Go back before an ancestral parent and select a preceding generation
 
     - <img src="/blog/Tool/Git/Git-Basic-Concepts/RelativeCommitName.png" height="200px" alt="Relative Commit Name">
+
+## Merge Strategies
+All branches are created equal.
+### Degenerate Merges
+- **Already up-to-date**: All the commits from the other branch (its HEAD) are already present in your target branch (eg. perform a merge and immediately follow it with the exact same merge request)
+- **Fast-forward**: Your branch HEAD is already fully present and represented in the other branch. This is the inverse of the Already up-to-date case.
+
+### Normal Merges
+- **Resolve**: The resolve strategy operates on only two branches, locating the common ancestor as the merge basis and performing a direct three-way merge by applying the changes from the merge base to the tip of the other branch HEAD onto the current branch.
+- **Recursive**(default): The recursive strategy also operates on two branches. However, it is designed to handle the scenario where there is more than one merge base between the two branches. In these cases, Git forms a temporary merge of all of the common merge bases and then uses that as the base from which to derive the resulting merge of the two given branches via a normal three-way merge algorithm.
+- **Octopus**: The octopus strategy is specifically designed to merge together more than two branches simultaneously. It calls the recursive merge strategy multiple times, once for each branch you are merging.
 
 ## Command
 ### Common
@@ -129,7 +142,7 @@ Create and check out a new branch
 git checkout -b <new_branch> [<start-point>]
 ```
 Figure out if you are on a detached `HEAD`
-```
+``` bash
 $ git branch
 * (no branch)
   master
@@ -137,6 +150,38 @@ $ git branch
 Delete branches
 ``` bash
 git branch -d <branchname>
+```
+
+### Merge
+Merge the `<branch>` into the current branch
+``` bash
+git merge <branch>
+```
+Locate Conflicted Files
+``` bash
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   hello
+
+no changes added to commit (use "git add" and/or "git commit -a")it status
+```
+
+Three-way merge marker lines
+``` bash
+Here are lines that are either unchanged from the common ancestor, or cleanly resolved because only one side changed.
+<<<<<<< yours:sample.txt
+Text A
+=======
+Text B
+>>>>>>> theirs:sample.txt
+And here is another line that is cleanly resolved or unmodified.
 ```
 
 ### Remove
