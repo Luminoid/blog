@@ -43,6 +43,12 @@ Git considers the entire set of files in your working directory and subtracts bo
  Unix file system | Directories (/path/to/file) | Blocks of data
  Git | .git/objects/hash, tree object contents | Blob objects, tree objects
 
+## VCS Comparison
+ System | Diff
+--|--
+ SVN | track revisions and store changes
+ Git | each commit contains an independent tree
+
 ## Identifying Commit
 Git implements the history of commits within a repository as a DAG(Directed Acyclic Graph).
 - `HEAD`: a symref refers to the most recent commit on the current branch
@@ -63,19 +69,43 @@ git mv <source> <destination>
 ### Commit
 Print the log message associated with every commit in your history that is reachable from `<commit>`
 ``` bash
-git log <commit>
+git log <commit> [<path>...]
 ```
-
 Show the commits from `start` to `end` (`start` not included).
 `start..end`: the set of commits reachable from `end` that are not reachable from `start`
 ``` bash
-git log start..end
+git log start..end [<path>...]
 ```
-
+Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. (Pickaxe)
+``` bash
+git log -S<string> <commit> [<path>...]
+```
 Show what revision and author last modified each line of a file
 ``` bash
 git blame [-L <range>] <file>
 ```
+
+### Diff
+`git diff` operates on two different end points; `git log` operates on a set of commits.
+
+Differences between the working directory and the index
+``` bash
+git diff [<path>...]
+```
+Differences between the working directory and the given `<commit>`
+``` bash
+git diff <commit> [<path>...]
+```
+Differences between the index and the given `<commit>`
+``` bash
+git diff --cached <commit> [<path>...]
+```
+Differences between the two commits
+``` bash
+git diff <commit1> <commit2> [<path>...]
+```
+
+`--stat`: Generate a diffstat
 
 ### Branch
 Create branches
