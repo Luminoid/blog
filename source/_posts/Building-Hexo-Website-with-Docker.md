@@ -57,6 +57,7 @@ RUN mkdir -p /var/www/html/ \
   && cp -r /data/blog/docs/* /var/www/html/
 VOLUME [ "/data/blog", "/var/www/html" ]
 ```
+
 <!-- more -->
 
 ### Building Hexo base image

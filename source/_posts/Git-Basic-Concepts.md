@@ -98,6 +98,14 @@ Show what revision and author last modified each line of a file
 git blame [-L <range>] <file>
 ```
 
+### Altering Commits
+`git reset`: Reset current HEAD to the specified state
+ Option | HEAD | Index | Working directory
+--|---|---|--
+ `--soft` | Yes | No | No
+ `--mixed` | Yes | Yes | No
+ `--hard` | Yes | Yes | Yes
+
 ### Diff
 `git diff` operates on two different end points; `git log` operates on a set of commits.
 
@@ -184,7 +192,7 @@ Text B
 And here is another line that is cleanly resolved or unmodified.
 ```
 
-### Remove
+### Remove Files
 Remove files from the index
 ``` bash
 git rm --cached <file>

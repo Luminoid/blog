@@ -9,7 +9,6 @@ keywords:
 - VS Code
 ---
 
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
@@ -50,7 +49,9 @@ keywords:
 
 <!-- /code_chunk_output -->
 
-<!-- more -->
+<!-- excerpt -->
+
+<!-- TOC -->
 
 ## Official Site
 https://code.visualstudio.com

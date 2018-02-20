@@ -33,6 +33,7 @@ $ git push
 ```
 
 <!-- more -->
+
 With Algolia and hexo deployment
 ``` bash
 $ hexo new "My New Article"

@@ -41,6 +41,8 @@ npm config list                     # Show all the config settings
 npm config set key value            # Sets the config key to the value
 ```
 
+<!-- more -->
+
 ## Package
 ### [npm-check](https://github.com/dylang/npm-check)
 Check for outdated, incorrect, and unused dependencies.

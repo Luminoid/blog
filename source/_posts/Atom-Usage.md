@@ -71,7 +71,9 @@ keywords:
 
 <!-- /code_chunk_output -->
 
-<!-- more -->
+<!-- excerpt -->
+
+<!-- TOC -->
 
 ## Shortcut
 `cmd-shift-L`: Split selections into lines
