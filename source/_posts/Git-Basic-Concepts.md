@@ -59,7 +59,7 @@ Git implements the history of commits within a repository as a DAG(Directed Acyc
     - `^`: Select a different parent within a single generation
     - `~`: Go back before an ancestral parent and select a preceding generation
 
-    - <img src="/blog/Tool/Git/Git-Basic-Concepts/RelativeCommitName.png" height="200px" alt="Relative Commit Name">
+    - <img src="/blog/Git-Basic-Concepts/RelativeCommitName.png" height="200px" alt="Relative Commit Name">
 
 ## Merge Strategies
 All branches are created equal.
@@ -73,10 +73,34 @@ All branches are created equal.
 - **Octopus**: The octopus strategy is specifically designed to merge together more than two branches simultaneously. It calls the recursive merge strategy multiple times, once for each branch you are merging.
 
 ## Command
-### Common
+<img src="/blog/Git-Basic-Concepts/CommonCommands.png" height="400px" alt="Relative Commit Name">
+### File
 Move or rename a file, directory or symlink.
 ``` bash
 git mv <source> <destination>
+```
+
+#### Removing Files
+Remove files from the index
+``` bash
+git rm --cached <file>
+```
+Remove files from both the index and the working directory
+``` bash
+git rm <file>
+```
+Remove committed files
+``` bash
+git rm [--cached] <file>
+git commit
+```
+Removes files even if you have altered it since your last commit
+``` bash
+git rm -f <file>
+```
+Recover old versions of files
+``` bash
+git checkout HEAD -- <file>
 ```
 
 ### Commit
@@ -98,13 +122,55 @@ Show what revision and author last modified each line of a file
 git blame [-L <range>] <file>
 ```
 
-### Altering Commits
-`git reset`: Reset current HEAD to the specified state
+#### Altering Commits
+##### `git reset`
+Reset current HEAD to the specified state
+``` bash
+git reset [<option>] <commit>
+```
  Option | HEAD | Index | Working directory
 --|---|---|--
  `--soft` | Yes | No | No
  `--mixed` | Yes | Yes | No
  `--hard` | Yes | Yes | Yes
+
+Unstage files
+``` bash
+git reset HEAD <file>...
+```
+Eliminate the topmost commit
+``` bash
+git reset HEAD^
+```
+Adjust the commit message
+``` bash
+git reset --soft HEAD^
+git commit
+```
+
+##### `git cherry-pick`
+Apply the changes introduced by some existing commits
+``` bash
+git cherry-pick <commit>...
+```
+
+##### `git revert`
+Revert some existing commits: record some new commits to reverse the effect of some earlier commits (often only a faulty one)
+``` bash
+git revert <commit>...
+```
+
+##### Changing the Top Commit
+``` bash
+git commit --amend
+```
+
+##### Comparison
+ Command | Usage Scenario |
+--|--
+ `git checkout` | Switch branches; Check out files from a particular commit
+ `git reset` | Reset the current branch’s HEAD reference
+ `git revert` | Work on commits (without altering history)
 
 ### Diff
 `git diff` operates on two different end points; `git log` operates on a set of commits.
@@ -139,7 +205,7 @@ git branch [-r | -a]
 ```
 Show branches and their commits
 ``` bash
-git show-branch [-r | -a]
+git show-branch [-r | -a] [--more=<n>]
 ```
 Check out branches
 ``` bash
@@ -160,7 +226,7 @@ Delete branches
 git branch -d <branchname>
 ```
 
-### Merge
+#### Merge
 Merge the `<branch>` into the current branch
 ``` bash
 git merge <branch>
@@ -192,27 +258,18 @@ Text B
 And here is another line that is cleanly resolved or unmodified.
 ```
 
-### Remove Files
-Remove files from the index
+#### Rebase
+Reapply commits on top of another base tip
 ``` bash
-git rm --cached <file>
+git rebase <branch>
 ```
-Remove files from both the index and the working directory
+Edit the list of the commits before rebasing (pick, reword, edit, squash, etc.)
 ``` bash
-git rm <file>
+git rebase -i <branch>
 ```
-Remove committed files
+eg.
 ``` bash
-git rm [--cached] <file>
-git commit
-```
-Removes files even if you have altered it since your last commit
-``` bash
-git rm -f <file>
-```
-Recover old versions of files
-``` bash
-git checkout HEAD -- <file>
+git rebase -i master~3
 ```
 
 ## Git Concepts at Work
@@ -332,7 +389,7 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Tool/Git/Git-Basic-Concepts/InitialState.png" height="600px" alt="Initial State">
+<img src="/blog/Git-Basic-Concepts/InitialState.png" height="600px" alt="Initial State">
 
 ### Edit Files
 ``` bash
@@ -351,7 +408,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Git’s Object Model and Files
-<img src="/blog/Tool/Git/Git-Basic-Concepts/EditFiles.png" height="600px" alt="Edit Files">
+<img src="/blog/Git-Basic-Concepts/EditFiles.png" height="600px" alt="Edit Files">
 
 ### Stage Files
 `git add`: Add file contents to the object store and let the index refer to it.
@@ -432,7 +489,7 @@ $ git ls-files --stage
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Tool/Git/Git-Basic-Concepts/StageFiles.png" height="600px" alt="Stage Files">
+<img src="/blog/Git-Basic-Concepts/StageFiles.png" height="600px" alt="Stage Files">
 
 ### Commit Files
 `git-commit`: Record changes to the repository
@@ -503,4 +560,4 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Tool/Git/Git-Basic-Concepts/CommitFiles.png" height="600px" alt="Commit Files">
+<img src="/blog/Git-Basic-Concepts/CommitFiles.png" height="600px" alt="Commit Files">
