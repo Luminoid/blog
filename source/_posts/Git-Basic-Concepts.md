@@ -489,7 +489,7 @@ $ git ls-files --stage
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/StageFiles.png" alt="Stage Files" style="width:300px;">
+<img src="/blog/Git-Basic-Concepts/StageFiles.png" alt="Stage Files" style="width:400px;">
 
 ### Commit Files
 `git-commit`: Record changes to the repository
@@ -560,4 +560,4 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/CommitFiles.png" alt="Commit Files" style="width:300px;">
+<img src="/blog/Git-Basic-Concepts/CommitFiles.png" alt="Commit Files" style="width:400px;">
