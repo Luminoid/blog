@@ -86,13 +86,34 @@ $ git checkout main.c
 $ git checkout -- main.c
 ```
 
+### Start
+Clone a repository into a new directory
+``` bash
+git clone <repository>
+```
+Create an empty Git repository or reinitialize an existing one
+``` bash
+git init
+```
+
 ### File
+#### git add
+Add file contents to the index
+``` bash
+git add <file>...
+```
+Add, modify, and remove index entries to match the working tree
+``` bash
+git add -A
+```
+
+#### git mv
 Move or rename a file, directory or symlink.
 ``` bash
 git mv <source> <destination>
 ```
 
-#### Removing Files
+#### git rm
 Remove files from the index
 ``` bash
 git rm --cached <file>
@@ -116,6 +137,7 @@ git checkout HEAD -- <file>
 ```
 
 ### Commit
+#### Examining the History
 Print the log message associated with every commit in your history that is reachable from `<commit>`
 ``` bash
 git log <commit> [<path>...]
@@ -134,8 +156,18 @@ Show what revision and author last modified each line of a file
 git blame [-L <range>] <file>
 ```
 
+#### Examining the State
+Show various types of objects
+``` bash
+git show <object>
+```
+Show the working tree status
+``` bash
+git status
+```
+
 #### Altering Commits
-##### `git reset`
+##### git reset
 Reset current HEAD to the specified state
 ``` bash
 git reset [<option>] <commit>
@@ -160,13 +192,13 @@ git reset --soft HEAD^
 git commit
 ```
 
-##### `git cherry-pick`
+##### git cherry-pick
 Apply the changes introduced by some existing commits
 ``` bash
 git cherry-pick <commit>...
 ```
 
-##### `git revert`
+##### git revert
 Revert some existing commits: record some new commits to reverse the effect of some earlier commits (often only a faulty one)
 ``` bash
 git revert <commit>...
