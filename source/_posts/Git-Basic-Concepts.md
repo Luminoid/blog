@@ -74,6 +74,18 @@ All branches are created equal.
 
 ## Command
 <img src="/blog/Git-Basic-Concepts/CommonCommands.png" alt="Common Commands" style="width:800px;">
+
+### Basic
+`--`: Double dash can be used to contrast the control portion of the command line from a list of operands, such as filenames.
+You may need to use the double dash to separate and explicitly identify filenames if they might otherwise be mistaken for another part of the command. For example, if you happened to have both a file and a tag named `main.c`, then you will get different behavior:
+``` bash
+# Checkout the tag named "main.c"
+$ git checkout main.c
+
+# Checkout the file named "main.c"
+$ git checkout -- main.c
+```
+
 ### File
 Move or rename a file, directory or symlink.
 ``` bash
@@ -316,10 +328,6 @@ $ tree -a
         ├── heads
         └── tags
 ```
-`refs/`: refs
-`refs/heads/ref`: local branches
-`refs/remotes/ref`: remote tracking branches
-`refs/tags/ref`: tags
 
 ### Create Initial Commit
 ``` bash
@@ -388,6 +396,14 @@ $ tree -a
 │   └── file2.txt
 └── file1.txt
 ```
+`config`: repository-specific configuration settings
+`index`: index
+`objects/`: Git’s objects
+`refs/`: refs
+`refs/heads/ref`: local branches
+`refs/remotes/ref`: remote tracking branches
+`refs/tags/ref`: tags
+
 Git’s Object Model and Files
 <img src="/blog/Git-Basic-Concepts/InitialState.png" alt="Initial State" style="width:300px;">
 
