@@ -96,6 +96,16 @@ Create an empty Git repository or reinitialize an existing one
 git init
 ```
 
+### State
+Show various types of objects
+``` bash
+git show <object>
+```
+Show the working tree status
+``` bash
+git status
+```
+
 ### File
 #### git add
 Add file contents to the index
@@ -156,16 +166,6 @@ Show what revision and author last modified each line of a file
 git blame [-L <range>] <file>
 ```
 
-#### Examining the State
-Show various types of objects
-``` bash
-git show <object>
-```
-Show the working tree status
-``` bash
-git status
-```
-
 #### Altering Commits
 ##### git reset
 Reset current HEAD to the specified state
@@ -216,7 +216,7 @@ git commit --amend
  `git reset` | Reset the current branch’s HEAD reference
  `git revert` | Work on commits (without altering history)
 
-### Diff
+#### Diff
 `git diff` operates on two different end points; `git log` operates on a set of commits.
 
 Differences between the working directory and the index
