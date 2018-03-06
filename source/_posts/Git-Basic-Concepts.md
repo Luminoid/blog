@@ -13,6 +13,9 @@ keywords: Git
 
 Collecting from *Version Control with Git*
 
+## Git
+Git is a distributed version control system (DVCS).
+
 ## Repository
 A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.
 The **index** is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.

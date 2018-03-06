@@ -7,34 +7,19 @@ tags: Homebrew
 keywords: Homebrew
 ---
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-
-* [Command](#command)
-* [Formula](#formula)
-	* [vim](#vimwwwvimorg)
-	* [mysql](#mysqlhttpswwwmysqlcom)
-	* [wget](#wgethttpswwwgnuorgsoftwarewget)
-	* [automake](#automakehttpswwwgnuorgsoftwareautomake)
-	* [autoconf](#autoconfhttpswwwgnuorgsoftwareautoconfautoconfhtml)
-	* [tig](#tighttpsjonasgithubiotig)
-	* [tree](#treehttpbrewformulasorgtree)
-	* [imagemagick](#imagemagickhttpswwwimagemagickorg)
-	* [readline](#readlinehttpstiswwwcaseeduphpchetreadlinerltophtml)
-	* [rlwrap](#rlwraphttpsgithubcomhanslub42rlwrap)
-	* [pngquant](#pngquanthttpspngquantorg)
-	* [ffmpeg](#ffmpeghttpswwwffmpegorg)
-	* [launchrocket](#launchrockethttpsgithubcomjimbojsblaunchrocket)
-
-<!-- /code_chunk_output -->
-
-<!-- excerpt -->
+[Official Site](https://brew.sh)
 
 <!-- TOC -->
 
 ## Command
-`brew install wget`: Install formula.
-`brew leaves`: Show installed formulae that are not  dependencies of another installed formula.
+``` bash
+brew install <formula>  # Install formula
+brew update             # Update Homebrew
+brew upgrade            # Upgrade all outdated, unpinned packages
+brew leaves             # Show installed formulae that are not dependencies of another installed formula
+```
+
+<!-- more -->
 
 ## Formula
 ### [vim](www.vim.org/)
