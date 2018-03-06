@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-02-24T17:10:22.153Z</updated>
+  <updated>2018-03-06T17:26:59.770Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac Common Commands</title>
+    <link href="http://luminoid.github.io/blog/Mac-Common-Commands/"/>
+    <id>http://luminoid.github.io/blog/Mac-Common-Commands/</id>
+    <published>2018-03-06T16:56:07.000Z</published>
+    <updated>2018-03-06T17:26:59.770Z</updated>
+    
+    <content type="html"><![CDATA[<!-- TOC --><h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><h3 id="Open-Apps-From-the-Unidentified-Developers"><a href="#Open-Apps-From-the-Unidentified-Developers" class="headerlink" title="Open Apps From the Unidentified Developers"></a>Open Apps From the Unidentified Developers</h3><p>Location: System Preferences -&gt; Security &amp; Privacy -&gt; General -&gt; Choose “Anywhere”</p><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> spctl --master-disable</code></pre><h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><p>Escape the <code>^</code> in command like <code>git reset HEAD^</code> in zsh.</p><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset HEAD\^</code></pre><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>View the following file to check the git-related <code>alias</code></p><pre class=" language-bash"><code class="language-bash">vim ~/.oh-my-zsh/plugins/git/git.plugin.zsh</code></pre><p>Some common <code>alias</code></p><pre class=" language-bash"><code class="language-bash"><span class="token function">alias</span> g<span class="token operator">=</span><span class="token string">'git'</span><span class="token function">alias</span> gsb<span class="token operator">=</span><span class="token string">'git status -sb'</span><span class="token function">alias</span> ga<span class="token operator">=</span><span class="token string">'git add'</span><span class="token function">alias</span> gaa<span class="token operator">=</span><span class="token string">'git add --all'</span><span class="token function">alias</span> gc<span class="token operator">=</span><span class="token string">'git commit -v'</span><span class="token function">alias</span> gc<span class="token operator">!=</span><span class="token string">'git commit -v --amend'</span><span class="token function">alias</span> gca<span class="token operator">=</span><span class="token string">'git commit -v -a'</span><span class="token function">alias</span> gcam<span class="token operator">=</span><span class="token string">'git commit -a -m'</span><span class="token function">alias</span> gcmsg<span class="token operator">=</span><span class="token string">'git commit -m'</span><span class="token function">alias</span> gp<span class="token operator">=</span><span class="token string">'git push'</span><span class="token function">alias</span> gl<span class="token operator">=</span><span class="token string">'git pull'</span><span class="token function">alias</span> glg<span class="token operator">=</span><span class="token string">'git log --stat'</span><span class="token function">alias</span> glgg<span class="token operator">=</span><span class="token string">'git log --graph'</span><span class="token function">alias</span> glo<span class="token operator">=</span><span class="token string">'git log --oneline --decorate'</span><span class="token function">alias</span> glola<span class="token operator">=</span><span class="token string">"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an>%Creset' --abbrev-commit --all"</span><span class="token function">alias</span> gloga<span class="token operator">=</span><span class="token string">'git log --oneline --decorate --graph --all'</span><span class="token function">alias</span> grh<span class="token operator">=</span><span class="token string">'git reset HEAD'</span><span class="token function">alias</span> grhh<span class="token operator">=</span><span class="token string">'git reset HEAD --hard'</span><span class="token function">alias</span> gb<span class="token operator">=</span><span class="token string">'git branch'</span><span class="token function">alias</span> gco<span class="token operator">=</span><span class="token string">'git checkout'</span><span class="token function">alias</span> gcb<span class="token operator">=</span><span class="token string">'git checkout -b'</span><span class="token function">alias</span> gm<span class="token operator">=</span><span class="token string">'git merge'</span><span class="token function">alias</span> grb<span class="token operator">=</span><span class="token string">'git rebase'</span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- TOC --&gt;&lt;h2 id=&quot;System&quot;&gt;&lt;a href=&quot;#System&quot; class=&quot;headerlink&quot; title=&quot;System&quot;&gt;&lt;/a&gt;System&lt;/h2&gt;&lt;h3 id=&quot;Open-Apps-From-the-Unidentified-Devel
+      
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
+    
+    
+      <category term="bash" scheme="http://luminoid.github.io/blog/tags/bash/"/>
+    
+  </entry>
   
   <entry>
     <title>Git: Basic Concepts</title>
@@ -545,39 +570,6 @@ VOLUME [ &amp;quot;/data/blog&amp;quot;, &amp;quot;/var/www/html&amp;quot; ]
     
     
       <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Quick Guide</title>
-    <link href="http://luminoid.github.io/blog/Hexo-Quick-Guide/"/>
-    <id>http://luminoid.github.io/blog/Hexo-Quick-Guide/</id>
-    <published>2017-06-08T03:06:48.000Z</published>
-    <updated>2018-02-23T17:49:28.352Z</updated>
-    
-    <content type="html"><![CDATA[<!-- TOC --><p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p><h2 id="Quick-Deployment"><a href="#Quick-Deployment" class="headerlink" title="Quick Deployment"></a>Quick Deployment</h2><p>With Algolia and git deployment</p><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>$ vim source/_posts/My-New-Article.md$ hexo clean$ hexo algolia$ <span class="token function">git</span> add -A$ <span class="token function">git</span> commit -m <span class="token operator">&lt;</span>msg<span class="token operator">></span>$ <span class="token function">git</span> push</code></pre><a id="more"></a><p>With Algolia and hexo deployment</p><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>$ vim source/_posts/My-New-Article.md$ hexo clean$ hexo algolia$ hexo deploy</code></pre><p>Without Algolia</p><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>$ vim source/_posts/My-New-Article.md$ hexo deploy -g</code></pre><h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages regularly to avoid security vulnerability:<br>Run <code>npm-check -u</code> under both blog directory (<code>./</code>) and theme directory (<code>themes/&lt;your_theme&gt;</code>).</p><h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>The following are the theme files to be modified for custom configuration, take <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/" target="_blank" rel="noopener">tranquilpeak</a> theme as an example:</p><pre><code>_config.ymllanguages/</code></pre><h2 id="Grammar"><a href="#Grammar" class="headerlink" title="Grammar"></a>Grammar</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a>Tag Plugins</h3><p>Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.</p><pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span><span class="token operator">%</span> asset_img example<span class="token punctuation">.</span>jpg This is an example image <span class="token operator">%</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token operator">%</span> asset_img <span class="token string">"spaced asset.jpg"</span> <span class="token string">"spaced title"</span> <span class="token operator">%</span><span class="token punctuation">}</span></code></pre><h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><p>Initializes a website.</p><pre class=" language-bash"><code class="language-bash">$ hexo init <span class="token string">"My New Website"</span></code></pre><p>Create a new article.</p><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span></code></pre><h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>Generate static files and watch file changes.</p><pre class=" language-bash"><code class="language-bash">$ hexo generate -w</code></pre><p>Start a local server.</p><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)</p><pre class=" language-bash"><code class="language-bash">$ hexo algolia</code></pre><h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Deploys your website.</p><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- TOC --&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;&lt;br&gt;Theme: &lt;a href=&quot;https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo-theme-tranquilpeak&lt;/a&gt;&lt;/p&gt;&lt;h2 id=&quot;Quick-Deployment&quot;&gt;&lt;a href=&quot;#Quick-Deployment&quot; class=&quot;headerlink&quot; title=&quot;Quick Deployment&quot;&gt;&lt;/a&gt;Quick Deployment&lt;/h2&gt;&lt;p&gt;With Algolia and git deployment&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo new &amp;quot;My New Article&amp;quot;
-$ vim source/_posts/My-New-Article.md
-$ hexo clean
-$ hexo algolia
-$ git add -A
-$ git commit -m &amp;lt;msg&amp;gt;
-$ git push
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
-    
-      <category term="Static Site Generator" scheme="http://luminoid.github.io/blog/categories/Web/Static-Site-Generator/"/>
-    
-    
-      <category term="Hexo" scheme="http://luminoid.github.io/blog/tags/Hexo/"/>
-    
-      <category term="Github" scheme="http://luminoid.github.io/blog/tags/Github/"/>
     
   </entry>
   
