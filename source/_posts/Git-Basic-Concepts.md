@@ -11,69 +11,106 @@ keywords: Git
 
 <!-- TOC -->
 
-Collecting from *Version Control with Git*
+Collecting from *Version Control with Git* & *Git Manual*
 
-## Git
+## Concept
+### Git
 Git is a distributed version control system (DVCS).
 
-## Repository
+### Repository
 A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.
 The **index** is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.
 The **Git object store** is organized and implemented as a content-addressable storage system(SHA1 hash value => object).
 
 <!-- more -->
+#### Remote Repository
+##### origin
+The default upstream repository.
 
-## Git Object Types
-### Blob
+##### refspec
+The mapping between remote ref and local ref.
+
+#### Bare Repository
+A bare repository is normally an appropriately named directory with a `.git` suffix that does not have a locally checked-out copy of any of the files under revision control.
+
+### Git Object Types
+#### Blob
 Binary large object. Each version of a file is represented as a blob.
-### Tree
+#### Tree
 A tree object represents one level of directory information. It records blob identifiers, path names, and a bit of metadata for all the files in one directory.
-### Commit
+#### Commit
 A commit object holds metadata for each change introduced into the repository, including the author, committer, commit date, and log message. Each commit points to a tree object that captures, in one complete snapshot, the state of the repository at the time the commit was performed.
-### Tag
+#### Tag
 A tag object assigns an arbitrary yet presumably human readable name to a specific object, usually a commit.
 
-## Git File Classifications
-### Tracked
+### Git File Classifications
+#### Tracked
 A tracked file is any file already in the repository or any file that is staged in the index. To add a new file `somefile` to this group, run `git add somefile`.
-### Ignored
+#### Ignored
 An ignored file must be explicitly declared invisible or ignored in the repository.
-### Untracked
+#### Untracked
 Git considers the entire set of files in your working directory and subtracts both the tracked files and the ignored files to yield what is untracked.
 
-## Database Comparison
+### Database Comparison
  System | Index mechanism | Data store
 --|--|--
  Traditional database | Indexed Sequential Access Method (ISAM) | Data records
  Unix file system | Directories (/path/to/file) | Blocks of data
  Git | .git/objects/hash, tree object contents | Blob objects, tree objects
 
-## VCS Comparison
+### VCS Comparison
  System | Diff
 --|--
  SVN | track revisions and store changes
  Git | each commit contains an independent tree
 
-## Identifying Commit
+### Working tree
+The tree of actual checked out files. The working tree normally contains the contents of the HEAD commit's tree, plus any local changes that you have made but not yet committed.
+#### Clean
+A working tree is clean, if it corresponds to the revision referenced by the current head.
+
+### Identifying Commit
 Git implements the history of commits within a repository as a DAG(Directed Acyclic Graph).
-- `HEAD`: a symref refers to the most recent commit on the current branch
 - **Absolute Commit Name**: hash identifier
 - **Relative Commit Name**:
+    - symref: Symbolic reference in the format like `refs/some/thing`
     - `^`: Select a different parent within a single generation
     - `~`: Go back before an ancestral parent and select a preceding generation
 
     - <img src="/blog/Git-Basic-Concepts/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
+- `HEAD`: a symref refers to the most recent commit on the current branch
+- `detached HEAD`: a ref to an arbitrary commit that isn't the tip of any particular branch
 
-## Merge Strategies
+### Branch
+A branch is an active line of development.
+
+#### master
+The default development branch.
+
+#### remote-tracking branch
+A ref that is used to follow changes from another repository.
+
+#### Upstream Branch
+The default branch that is merged into the branch in question.
+
+### Merge Strategies
 All branches are created equal.
-### Degenerate Merges
+#### Degenerate Merges
 - **Already up-to-date**: All the commits from the other branch (its HEAD) are already present in your target branch (eg. perform a merge and immediately follow it with the exact same merge request)
 - **Fast-forward**: Your branch HEAD is already fully present and represented in the other branch. This is the inverse of the Already up-to-date case.
 
-### Normal Merges
+#### Normal Merges
 - **Resolve**: The resolve strategy operates on only two branches, locating the common ancestor as the merge basis and performing a direct three-way merge by applying the changes from the merge base to the tip of the other branch HEAD onto the current branch.
 - **Recursive**(default): The recursive strategy also operates on two branches. However, it is designed to handle the scenario where there is more than one merge base between the two branches. In these cases, Git forms a temporary merge of all of the common merge bases and then uses that as the base from which to derive the resulting merge of the two given branches via a normal three-way merge algorithm.
 - **Octopus**: The octopus strategy is specifically designed to merge together more than two branches simultaneously. It calls the recursive merge strategy multiple times, once for each branch you are merging.
+
+### Action
+#### Checkout
+Updating all or part of the working tree with a tree object or blob from the object database, and updating the index and HEAD if the whole working tree has been pointed at a new branch.
+#### Fetch
+Fetching a branch means to get the branch's head ref from a remote repository, to find out which objects are missing from the local object database, and to get them, too.
+#### Merge
+Bringing the contents of another branch into the current branch.
 
 ## Command
 <img src="/blog/Git-Basic-Concepts/CommonCommands.png" alt="Common Commands" style="width:800px;">
@@ -107,6 +144,15 @@ git show <object>
 Show the working tree status
 ``` bash
 git status
+```
+Pick out and massage parameters
+``` bash
+git rev-parse <args>
+```
+Manage reflog information (including cloning, pushing, making new commits, changing or creating branches, rebase operations, reset operations)
+eg. `HEAD@{1}` references the previous commit for the branch
+``` bash
+git reflog [<ref>]
 ```
 
 ### File
@@ -319,6 +365,29 @@ eg.
 git rebase -i master~3
 ```
 
+### Stash & Patch
+#### Stash
+Stash the changes in a dirty working directory away
+``` bash
+git stash [save [<message>]]
+```
+The ignored files and the untracked files are also stashed and cleaned
+``` bash
+git stash save -a [<message>]
+```
+List the stashes that you currently have
+``` bash
+git stash list
+```
+Show the changes recorded in the stash as a diff between the stashed state and its original parent
+``` bash
+git stash show [<stash>]
+```
+Remove a single stashed state from the stash list and apply it on top of the current working tree state
+``` bash
+git stash pop [<stash>]  # pop = apply + drop
+```
+
 ## Git Concepts at Work
 ### Initialize Git repository
 ``` bash
@@ -433,11 +502,13 @@ $ tree -a
 ```
 `config`: repository-specific configuration settings
 `index`: index
+`logs`: reflogs
 `objects/`: Git’s objects
 `refs/`: refs
 `refs/heads/ref`: local branches
 `refs/remotes/ref`: remote tracking branches
 `refs/tags/ref`: tags
+`refs/stash`: stash
 
 Git’s Object Model and Files
 <img src="/blog/Git-Basic-Concepts/InitialState.png" alt="Initial State" style="width:300px;">
