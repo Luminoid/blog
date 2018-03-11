@@ -1,5 +1,5 @@
 ---
-title: 'Git: Basic Concepts'
+title: 'Git: Amateur Guide'
 date: 2018-01-25 00:27:11
 updated:
 categories:
