@@ -30,8 +30,9 @@ The default upstream repository.
 ##### refspec
 The mapping between remote ref and local ref.
 Syntax: `[+]source:destination`
+
  Operation | Source | Destination | eg.
--- | -- | -- | --
+ --------- | ------ | ----------- | ---
  push | Local ref being pushed | Remote ref being updated | `+refs/heads/*:refs/heads/*`
  fetch | Remote ref being fetched | Local ref being updated | `+refs/heads/*:refs/remotes/remote/*`
 
