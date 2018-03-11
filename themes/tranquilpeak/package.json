@@ -54,9 +54,9 @@
     "hexo-util": "^0.6.3",
     "jquery": "^3.3.1",
     "jsdom": "^8.1.0",
-    "marked": "^0.3.15",
+    "marked": "^0.3.17",
     "mkdirp": "^0.5.1",
-    "moment": "^2.13.0",
+    "moment": "^2.21.0",
     "prompt": "^1.0.0",
     "strip-indent": "^1.0.1"
   }
