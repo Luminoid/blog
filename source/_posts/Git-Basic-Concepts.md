@@ -29,9 +29,14 @@ The default upstream repository.
 
 ##### refspec
 The mapping between remote ref and local ref.
+Syntax: `[+]source:destination`
+ Operation | Source | Destination | eg.
+--|---|---|--
+ push | Local ref being pushed | Remote ref being updated | `+refs/heads/*:refs/heads/*`
+ fetch | Remote ref being fetched | Local ref being updated | `+refs/heads/*:refs/remotes/remote/*`
 
 #### Bare Repository
-A bare repository is normally an appropriately named directory with a `.git` suffix that does not have a locally checked-out copy of any of the files under revision control.
+A bare repository is normally an appropriately named directory with a `.git` suffix that does not have a locally checked-out copy of any of the files under revision control. A published repository should be bare.
 
 ### Git Object Types
 #### Blob
@@ -87,8 +92,9 @@ A branch is an active line of development.
 #### master
 The default development branch.
 
-#### remote-tracking branch
+#### Remote-tracking branch
 A ref that is used to follow changes from another repository.
+During a clone operation, Git creates a remote-tracking branch in the clone for each topic branch in the upstream repository. The local repository uses its remote-tracking branches to follow or track changes made in the remote repository.
 
 #### Upstream Branch
 The default branch that is merged into the branch in question.
@@ -126,7 +132,7 @@ $ git checkout main.c
 $ git checkout -- main.c
 ```
 
-### Start
+### Init
 Clone a repository into a new directory
 ``` bash
 git clone <repository>
@@ -137,22 +143,50 @@ git init
 ```
 
 ### State
+#### git show
 Show various types of objects
 ``` bash
 git show <object>
 ```
-Show the working tree status
-``` bash
-git status
-```
+
+#### git rev-parse
 Pick out and massage parameters
 ``` bash
 git rev-parse <args>
 ```
+
+#### git blame
+Show what revision and author last modified each line of a file
+``` bash
+git blame [-L <range>] <file>
+```
+
+#### git status
+Show the working tree status
+``` bash
+git status
+```
+
+#### git reflog
 Manage reflog information (including cloning, pushing, making new commits, changing or creating branches, rebase operations, reset operations)
 eg. `HEAD@{1}` references the previous commit for the branch
 ``` bash
 git reflog [<ref>]
+```
+
+#### git log
+Print the log message associated with every commit in your history that is reachable from `<commit>`
+``` bash
+git log <commit> [<path>...]
+```
+Show the commits from `start` to `end` (`start` not included).
+`start..end`: the set of commits reachable from `end` that are not reachable from `start`
+``` bash
+git log start..end [<path>...]
+```
+Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. (Pickaxe)
+``` bash
+git log -S<string> <commit> [<path>...]
 ```
 
 ### File
@@ -196,25 +230,6 @@ git checkout HEAD -- <file>
 ```
 
 ### Commit
-#### Examining the History
-Print the log message associated with every commit in your history that is reachable from `<commit>`
-``` bash
-git log <commit> [<path>...]
-```
-Show the commits from `start` to `end` (`start` not included).
-`start..end`: the set of commits reachable from `end` that are not reachable from `start`
-``` bash
-git log start..end [<path>...]
-```
-Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. (Pickaxe)
-``` bash
-git log -S<string> <commit> [<path>...]
-```
-Show what revision and author last modified each line of a file
-``` bash
-git blame [-L <range>] <file>
-```
-
 #### Altering Commits
 ##### git reset
 Reset current HEAD to the specified state
@@ -386,6 +401,32 @@ git stash show [<stash>]
 Remove a single stashed state from the stash list and apply it on top of the current working tree state
 ``` bash
 git stash pop [<stash>]  # pop = apply + drop
+```
+
+### Remote Repository
+Manage set of tracked repositories
+``` bash
+git remote
+```
+Download objects and refs from another repository
+``` bash
+git fetch
+```
+Fetch from and integrate with another repository or a local branch
+``` bash
+git pull
+```
+Update remote refs along with associated objects
+``` bash
+git push
+```
+List references in a local repository
+``` bash
+git show-ref
+```
+List references in a remote repository
+``` bash
+git ls-remote
 ```
 
 ## Git Concepts at Work
