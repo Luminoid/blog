@@ -40,6 +40,7 @@ keywords:
 		* [.zshrc](#zshrc)
 * [Version Control](#version-control)
 	* [Git](#git)
+		* [Usage](#usage-4)
 		* [SSH](#ssh)
 		* [Git GUI](#git-gui)
 * [Language](#language)
@@ -47,9 +48,9 @@ keywords:
 		* [Install](#install-5)
 * [Text Editor](#text-editor)
 	* [Atom](#atomhttpsatomio)
-		* [Usage](#usage-4)
-	* [VSCode](#vscodehttpscodevisualstudiocom)
 		* [Usage](#usage-5)
+	* [VSCode](#vscodehttpscodevisualstudiocom)
+		* [Usage](#usage-6)
 	* [Vim](#vimwwwvimorg)
 		* [.vimrc](#vimrc)
 * [IDE](#ide)
@@ -57,7 +58,7 @@ keywords:
 * [Tool](#tool)
 	* [Docker](#dockerhttpswwwdockercom)
 		* [Install](#install-6)
-		* [Usage](#usage-6)
+		* [Usage](#usage-7)
 * [Browser](#browser)
 
 <!-- /code_chunk_output -->
@@ -106,6 +107,7 @@ brew install yarn
 {% post_link Yarn-Usage %}
 
 ## Terminal
+{% post_link Mac-Common-Commands %}
 ### [iTerm2](https://www.iterm2.com)
 
 ### [oh-my-zsh](http://ohmyz.sh)
@@ -139,6 +141,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # LSCOLORS
 export LSCOLORS="exfxcxdxbxexexabagacad"
 alias ls='ls -hG'
+alias l='ls -ahlF'
 
 # This source command must be at the end of ~/.zshrc
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -146,6 +149,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Version Control
 ### Git
+#### Usage
+{% post_link Git-Amateur-Guide %}
+
 #### SSH
 [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 #### Git GUI

@@ -405,29 +405,45 @@ git stash pop [<stash>]  # pop = apply + drop
 ```
 
 ### Remote Repository
+#### git remote
 Manage set of tracked repositories
 ``` bash
 git remote
 ```
+#### git fetch
 Download objects and refs from another repository
 ``` bash
 git fetch
 ```
+#### git pull
 Fetch from and integrate with another repository or a local branch
 ``` bash
-git pull
+git pull  # pull = fetch + merge
 ```
+#### git push
 Update remote refs along with associated objects
 ``` bash
 git push
 ```
+Find a ref that matches master in the source repository (most likely, it would find `refs/heads/master`), and update the same ref(e.g. `refs/heads/master`) in origin repository with it.
+``` bash
+git push origin master
+```
+#### List Refs
 List references in a local repository
 ``` bash
-git show-ref
+$ git show-ref
+cedd6e664b57501f0eb651362b3536ee32ab5849 refs/heads/master
+8288f0030af78bc08304371f1d8cf5af539c9934 refs/remotes/origin/gh-pages
+cedd6e664b57501f0eb651362b3536ee32ab5849 refs/remotes/origin/master
 ```
 List references in a remote repository
 ``` bash
-git ls-remote
+$ git ls-remote
+From git@github.com:Luminoid/blog.git
+cedd6e664b57501f0eb651362b3536ee32ab5849	HEAD
+8288f0030af78bc08304371f1d8cf5af539c9934	refs/heads/gh-pages
+cedd6e664b57501f0eb651362b3536ee32ab5849	refs/heads/master
 ```
 
 ## Git Concepts at Work
