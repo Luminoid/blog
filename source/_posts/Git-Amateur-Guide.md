@@ -51,7 +51,7 @@ A tag object assigns an arbitrary yet presumably human readable name to a specif
 
 ### Git File Classifications
 #### Tracked
-A tracked file is any file already in the repository or any file that is staged in the index. To add a new file `somefile` to this group, run `git add somefile`.
+A tracked file is any file already in the repository or any file that is staged in the index. To add a new file `<file>` to this group, run `git add <file>`.
 #### Ignored
 An ignored file must be explicitly declared invisible or ignored in the repository.
 #### Untracked
@@ -134,13 +134,19 @@ $ git checkout -- main.c
 ```
 
 ### Init
+#### git clone
 Clone a repository into a new directory
 ``` bash
 git clone <repository>
 ```
+#### git init
 Create an empty Git repository or reinitialize an existing one
 ``` bash
 git init
+```
+Run as if git was started in `<path>` instead of the current working directory
+``` bash
+git --git-dir <path> init
 ```
 
 ### State
@@ -409,6 +415,22 @@ git stash pop [<stash>]  # pop = apply + drop
 Manage set of tracked repositories
 ``` bash
 git remote
+```
+Adds a remote named `<name>` for the repository at `<url>`.
+``` bash
+git remote add <name> <url>
+```
+Gives some information about the remote `<name>`.
+``` bash
+git remote show <name>...
+```
+Fetch updates for a named set of remotes in the repository as defined by remotes.
+``` bash
+git remote update
+```
+Deletes all stale remote-tracking branches under `<name>`.
+``` bash
+git remote prune <name>...
 ```
 #### git fetch
 Download objects and refs from another repository
