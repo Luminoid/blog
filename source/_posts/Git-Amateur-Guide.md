@@ -306,8 +306,29 @@ Differences between the two commits
 ``` bash
 git diff <commit1> <commit2> [<path>...]
 ```
-
 `--stat`: Generate a diffstat
+
+#### Stash
+Stash the changes in a dirty working directory away
+``` bash
+git stash [save [<message>]]
+```
+The ignored files and the untracked files are also stashed and cleaned
+``` bash
+git stash save -a [<message>]
+```
+List the stashes that you currently have
+``` bash
+git stash list
+```
+Show the changes recorded in the stash as a diff between the stashed state and its original parent
+``` bash
+git stash show [<stash>]
+```
+Remove a single stashed state from the stash list and apply it on top of the current working tree state
+``` bash
+git stash pop [<stash>]  # pop = apply + drop
+```
 
 ### Branch
 Create branches
@@ -387,30 +408,16 @@ eg.
 git rebase -i master~3
 ```
 
-### Stash & Patch
-#### Stash
-Stash the changes in a dirty working directory away
-``` bash
-git stash [save [<message>]]
-```
-The ignored files and the untracked files are also stashed and cleaned
-``` bash
-git stash save -a [<message>]
-```
-List the stashes that you currently have
-``` bash
-git stash list
-```
-Show the changes recorded in the stash as a diff between the stashed state and its original parent
-``` bash
-git stash show [<stash>]
-```
-Remove a single stashed state from the stash list and apply it on top of the current working tree state
-``` bash
-git stash pop [<stash>]  # pop = apply + drop
-```
-
 ### Remote Repository
+Mechanisms for exchanging commits and keeping distributed repositories synchronized:
+- Git-native protocol
+    - the Git-native protocol can be tunneled over Secure Shell(SSH) for secure, authenticated connections
+- HTTP protocol
+- Git patch
+    - `git format-patch`: Prepare patches for e-mail submission
+    - `git send-email`: Send a collection of patches as emails
+    - `git am`: Apply a series of patches from a mailbox
+
 #### git remote
 Manage set of tracked repositories
 ``` bash
@@ -450,6 +457,10 @@ git push
 Find a ref that matches master in the source repository (most likely, it would find `refs/heads/master`), and update the same ref(e.g. `refs/heads/master`) in origin repository with it.
 ``` bash
 git push origin master
+```
+Push the current branch and set the remote as upstream
+``` bash
+git push --set-upstream <repository> <refspec>
 ```
 #### List Refs
 List references in a local repository
