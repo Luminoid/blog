@@ -119,6 +119,12 @@ Fetching a branch means to get the branch's head ref from a remote repository, t
 #### Merge
 Bringing the contents of another branch into the current branch.
 
+### Hooks
+Hooks are programs you can place in a hooks directory to trigger actions at certain points in git's execution.
+``` bash
+git help hooks
+```
+
 ## Command
 <img src="/blog/Git-Basic-Concepts/CommonCommands.png" alt="Common Commands" style="width:800px;">
 
@@ -154,6 +160,14 @@ git --git-dir <path> init
 Show various types of objects
 ``` bash
 git show <object>
+```
+Get old version of a file
+``` bash
+git show <commit>:<path> [> <output>]
+```
+Reconnect a lost file
+``` bash
+git show <blob_SHA1> > <file>
 ```
 
 #### git rev-parse
@@ -205,6 +219,10 @@ git add <file>...
 Add, modify, and remove index entries to match the working tree
 ``` bash
 git add -A
+```
+Stage hunks of patch interactively
+``` bash
+git add -p
 ```
 
 #### git mv
@@ -478,6 +496,32 @@ cedd6e664b57501f0eb651362b3536ee32ab5849	HEAD
 8288f0030af78bc08304371f1d8cf5af539c9934	refs/heads/gh-pages
 cedd6e664b57501f0eb651362b3536ee32ab5849	refs/heads/master
 ```
+
+### Advanced
+#### git filter-branch
+`git filter-branch`: Rewrite Git revision history by rewriting the branches, applying custom filters on each revision.
+
+Remove a file from all commits
+``` bash
+git filter-branch --tree-filter 'rm -f <file>' master
+```
+Rewrite the commit messages
+``` bash
+git filter-branch --msg-filter 'sed <command>' master
+```
+Faster version of removing a file, translating any tag refs from a prefiltered state into the new postfiltered repository, operating on all branches
+``` bash
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch <file>' \
+--tag-name-filter cat \
+-- --all
+```
+
+#### git fsck
+Verify the connectivity and validity of the objects in the database (File System ChecK)
+``` bash
+git fsck
+```
+`--no-reflogs`: Do not consider commits that are referenced only by an entry in a reflog to be reachable
 
 ## Git Concepts at Work
 ### Initialize Git repository

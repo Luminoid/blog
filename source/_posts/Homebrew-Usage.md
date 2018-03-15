@@ -17,6 +17,7 @@ brew install <formula>  # Install formula
 brew update             # Update Homebrew
 brew upgrade            # Upgrade all outdated, unpinned packages
 brew leaves             # Show installed formulae that are not dependencies of another installed formula
+brew doctor             # Check your system for potential problems
 ```
 
 <!-- more -->
