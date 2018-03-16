@@ -119,6 +119,21 @@ Fetching a branch means to get the branch's head ref from a remote repository, t
 #### Merge
 Bringing the contents of another branch into the current branch.
 
+### Garbage Collection
+`git gc`:
+1. perform periodic garbage collection (cleaning up dangling objects)
+2. optimize the size of the repository by locating unpacked objects (loose objects) and creating pack files for them
+
+#### Automatic Garbage Collection Situation
+- too many loose objects in the repository
+- pushing to a remote repository
+- using some commands that might introduce many loose objects
+- requesting explicitly using commands such as `git reflog expire`
+
+#### Manually Garbage Collection Situation
+- running `git filter-branch`
+- using some commands that might introduce many loose objects, like a large rebase effort
+
 ### Hooks
 Hooks are programs you can place in a hooks directory to trigger actions at certain points in git's execution.
 ``` bash
@@ -200,6 +215,8 @@ Print the log message associated with every commit in your history that is reach
 ``` bash
 git log <commit> [<path>...]
 ```
+`--follow`: Continue listing the history of a file beyond renames
+
 Show the commits from `start` to `end` (`start` not included).
 `start..end`: the set of commits reachable from `end` that are not reachable from `start`
 ``` bash
@@ -209,6 +226,8 @@ Look for differences that change the number of occurrences of the specified stri
 ``` bash
 git log -S<string> <commit> [<path>...]
 ```
+
+`pickaxe` can be used to search a series of commit differences; whereas `git grep` can be used to search the repository tree at a specific point in that history
 
 ### File
 #### git add
@@ -515,6 +534,10 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch <file>' \
 --tag-name-filter cat \
 -- --all
 ```
+Turn a subdirectory into a repository of its own
+``` bash
+git filter-branch --subdirectory-filter <directory> -- --all
+```
 
 #### git fsck
 Verify the connectivity and validity of the objects in the database (File System ChecK)
@@ -522,6 +545,9 @@ Verify the connectivity and validity of the objects in the database (File System
 git fsck
 ```
 `--no-reflogs`: Do not consider commits that are referenced only by an entry in a reflog to be reachable
+
+#### git rerere
+`git rerere`: Reuse recorded resolution of conflicted merges
 
 ## Git Concepts at Work
 ### Initialize Git repository
