@@ -130,7 +130,7 @@ Bringing the contents of another branch into the current branch.
 - using some commands that might introduce many loose objects
 - requesting explicitly using commands such as `git reflog expire`
 
-#### Manually Garbage Collection Situation
+#### Manual Garbage Collection Situation
 - running `git filter-branch`
 - using some commands that might introduce many loose objects, like a large rebase effort
 

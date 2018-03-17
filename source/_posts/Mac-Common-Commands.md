@@ -18,6 +18,8 @@ Location: System Preferences -> Security & Privacy -> General -> Choose “Anywh
 $ sudo spctl --master-disable
 ```
 
+<!-- more -->
+
 ## oh-my-zsh
 Escape the `^` in command like `git reset HEAD^` in zsh.
 ``` bash
@@ -35,6 +37,12 @@ alias g='git'
 
 alias gsb='git status -sb'
 
+alias glg='git log --stat'
+alias glgg='git log --graph'
+alias glo='git log --oneline --decorate'
+alias glola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias gloga='git log --oneline --decorate --graph --all'
+
 alias ga='git add'
 alias gaa='git add --all'
 
@@ -44,18 +52,10 @@ alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
 alias gcmsg='git commit -m'
 
-alias gp='git push'
-
-alias gl='git pull'
-
-alias glg='git log --stat'
-alias glgg='git log --graph'
-alias glo='git log --oneline --decorate'
-alias glola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
-alias gloga='git log --oneline --decorate --graph --all'
-
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
+
+alias gd='git diff'
 
 alias gb='git branch'
 
@@ -65,4 +65,12 @@ alias gcb='git checkout -b'
 alias gm='git merge'
 
 alias grb='git rebase'
+
+alias gf='git fetch'
+alias gfa='git fetch --all --prune'
+
+alias gl='git pull'
+
+alias gp='git push'
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
 ```
