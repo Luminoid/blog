@@ -2,7 +2,9 @@
 title: VS Code Usage
 date: 2017-12-13 01:12:03
 updated:
-categories: Tool
+categories:
+- Tool
+- Editor
 tags:
 - VS Code
 keywords:
@@ -15,7 +17,7 @@ keywords:
 * [Official Site](#official-site)
 * [Setup](#setup)
 	* [Launch VS Code from the Command Line](#launch-vs-code-from-the-command-line)
-* [Shortcut](#shortcut)
+* [Keymaps](#keymaps)
 * [Extension](#extension)
 	* [Debuggers](#debuggers)
 		* [Debugger for Chrome](#debugger-for-chromehttpsmarketplacevisualstudiocomitemsitemnamemsjsdiagdebugger-for-chrome)
@@ -60,22 +62,8 @@ https://code.visualstudio.com
 ### Launch VS Code from the Command Line
 Open the Command Palette (⇧⌘P) and type `Shell Command: Install 'code' command in PATH` to install.
 
-## Shortcut
-`Shift+Command+P`: Toggle Command Palette
-`Control+T`: Toggle Terminal
-`Control+S`: Toggle Sidebar
-`Command+,`: Open User Settings
-`Alt+Click`: Multi-cursor selection
-`Shift+Alt+Drag`: Column selection
-`Command+D`: Duplicate lines down
-`Command+X`: Cut current line
-`Alt+↓`: Move Line Down
-`Alt+↑`: Move Line Up
-`Command+F`: Find
-`Shift+Command+F`: Search across files
-`Command+G`: Find next match
-`Shift+Command+G`: Find previous match
-`Command+R`: Find and Replace
+## Keymaps
+{% post_link Universal-Editor-Keymaps %}
 
 ## Extension
 ### Debuggers

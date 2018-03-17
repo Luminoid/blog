@@ -2,17 +2,20 @@
 title: Atom Usage
 date: 2017-06-12 18:04:00
 updated:
-categories: Tool
+categories:
+- Tool
+- Editor
 tags: Atom
 keywords:
-  - Atom
-  - package
+- Atom
+- package
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [Shortcut](#shortcut)
+* [Official Site](#official-site)
+* [Keymaps](#keymaps)
 * [Packages](#packages)
 	* [Tool](#tool)
 		* [platformio-ide-terminal](#platformio-ide-terminalhttpsatomiopackagesplatformio-ide-terminal)
@@ -75,16 +78,11 @@ keywords:
 
 <!-- TOC -->
 
-## Shortcut
-`cmd-shift-L`: Split selections into lines
-`ctrl-cmd-up`, `ctrl-cmd-down`: Move line up or down
-`cmd-d`: Duplicate lines
-`ctrl-shift-K`: Delete line
-`cmd-K-U`: Upper case the current word
-`cmd-K-L`: Lower case the current word
-`cmd-D`: Select the next word in the document that is the same as the currently selected word
-`cmd-shift-f`: Search the entire project
-`alt-cmd-[` and `alt-cmd-]`: Fold or unfold the code
+## Official Site
+https://atom.io
+
+## Keymaps
+{% post_link Universal-Editor-Keymaps %}
 
 ## Packages
 ### Tool

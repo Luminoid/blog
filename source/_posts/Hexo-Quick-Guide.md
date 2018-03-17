@@ -69,6 +69,9 @@ Use tag plugins to reference images or other assets by relative paths instead of
 {% asset_img "spaced asset.jpg" "spaced title" %}
 ```
 
+### Syntax Highlighting
+http://prismjs.com/#languages-list
+
 ## Create
 Initializes a website.
 ``` bash
