@@ -83,7 +83,7 @@ Git implements the history of commits within a repository as a DAG(Directed Acyc
     - `^`: Select a different parent within a single generation
     - `~`: Go back before an ancestral parent and select a preceding generation
 
-    - <img src="/blog/Git-Basic-Concepts/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
+    - <img src="/blog/Git-Amateur-Guide/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
 - `HEAD`: a symref refers to the most recent commit on the current branch
 - `detached HEAD`: a ref to an arbitrary commit that isn't the tip of any particular branch
 
@@ -141,7 +141,7 @@ git help hooks
 ```
 
 ## Command
-<img src="/blog/Git-Basic-Concepts/CommonCommands.png" alt="Common Commands" style="width:800px;">
+<img src="/blog/Git-Amateur-Guide/CommonCommands.png" alt="Common Commands" style="width:800px;">
 
 ### Basic
 `--`: Double dash can be used to contrast the control portion of the command line from a list of operands, such as filenames.
@@ -153,6 +153,8 @@ $ git checkout main.c
 # Checkout the file named "main.c"
 $ git checkout -- main.c
 ```
+
+`git <command> --dry-run`: Don't actually execute the command, just show what the command would do
 
 ### Init
 #### git clone
@@ -399,6 +401,22 @@ Delete branches
 git branch -d <branchname>
 ```
 
+Check out remote branch
+``` bash
+git fetch origin
+git checkout -b <local_branch> origin/<remote_branch>
+```
+Check out remote branch (With Git versions ≥ 1.6.6)
+``` bash
+git fetch
+git checkout <branch>
+```
+Push a new local branch to a remote repository
+``` bash
+git checkout -b <branch>
+git push -u origin <branch>
+```
+
 #### Merge
 Merge the `<branch>` into the current branch
 ``` bash
@@ -498,22 +516,6 @@ git push origin master
 Push the current branch and set the remote as upstream
 ``` bash
 git push --set-upstream <repository> <refspec>
-```
-#### List Refs
-List references in a local repository
-``` bash
-$ git show-ref
-cedd6e664b57501f0eb651362b3536ee32ab5849 refs/heads/master
-8288f0030af78bc08304371f1d8cf5af539c9934 refs/remotes/origin/gh-pages
-cedd6e664b57501f0eb651362b3536ee32ab5849 refs/remotes/origin/master
-```
-List references in a remote repository
-``` bash
-$ git ls-remote
-From git@github.com:Luminoid/blog.git
-cedd6e664b57501f0eb651362b3536ee32ab5849	HEAD
-8288f0030af78bc08304371f1d8cf5af539c9934	refs/heads/gh-pages
-cedd6e664b57501f0eb651362b3536ee32ab5849	refs/heads/master
 ```
 
 ### Advanced
@@ -672,7 +674,7 @@ $ tree -a
 `refs/stash`: stash
 
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/InitialState.png" alt="Initial State" style="width:300px;">
+<img src="/blog/Git-Amateur-Guide/InitialState.png" alt="Initial State" style="width:300px;">
 
 ### Edit Files
 ``` bash
@@ -691,7 +693,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/EditFiles.png"  alt="Edit Files" style="width:300px;">
+<img src="/blog/Git-Amateur-Guide/EditFiles.png"  alt="Edit Files" style="width:300px;">
 
 ### Stage Files
 `git add`: Add file contents to the object store and let the index refer to it.
@@ -772,7 +774,7 @@ $ git ls-files --stage
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/StageFiles.png" alt="Stage Files" style="width:400px;">
+<img src="/blog/Git-Amateur-Guide/StageFiles.png" alt="Stage Files" style="width:400px;">
 
 ### Commit Files
 `git-commit`: Record changes to the repository
@@ -843,4 +845,4 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Basic-Concepts/CommitFiles.png" alt="Commit Files" style="width:400px;">
+<img src="/blog/Git-Amateur-Guide/CommitFiles.png" alt="Commit Files" style="width:400px;">
