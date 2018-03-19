@@ -14,10 +14,13 @@ keywords: Homebrew
 ## Command
 ``` bash
 brew install <formula>  # Install formula
-brew update             # Update Homebrew
+brew update             # Fetch latest version of Homebrew and all formulae
 brew upgrade            # Upgrade all outdated, unpinned packages
 brew leaves             # Show installed formulae that are not dependencies of another installed formula
-brew doctor             # Check your system for potential problems
+brew tap                # Tap a new formula repository from GitHub, or list existing taps
+brew doctor             # Audit your installation for common issues
+brew cleanup            # Uninstall unused and old versions of packages
+brew prune              # Remove dead links
 ```
 
 <!-- more -->
