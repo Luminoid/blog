@@ -17,23 +17,22 @@ This post intended to provide a universal keymaps across different editors and I
 
 ## Keymaps
 ``` bash
+'shift-cmd-u'       Upper case current text
+'shift-cmd-l'       Lower case current text
+
 'cmd-d'             Duplicate lines
 'cmd-x'             Cut current line; Cut current text
 'cmd-/'             Comment line
-
-'shift-cmd-u'       Upper case current text
-'shift-cmd-l'       Lower case current text
+'alt-shift-up'      Move line up (VSCode)
+'alt-shift-down'    Move line down (VSCode)
+'ctrl-cmd-up'       Move line up (Atom)
+'ctrl-cmd-down'     Move line down (Atom)
 
 'alt-click'         Multi-cursor selection (VSCode)
 'cmd-click'         Multi-cursor selection (Atom)
 'alt-drag'          Column selection (Atom)
 'alt-up'            Cursor column select up
 'alt-down'          Cursor column select down
-
-'alt-shift-up'      Move line up (VSCode)
-'alt-shift-down'    Move line down (VSCode)
-'ctrl-cmd-up'       Move line up (Atom)
-'ctrl-cmd-down'     Move line down (Atom)
 
 'cmd-f'             Search current file
 'shift-cmd-f'       Search the entire project
@@ -44,7 +43,11 @@ This post intended to provide a universal keymaps across different editors and I
 'shift-cmd-p'       Toggle Command Palette
 'ctrl-`'            Toggle Terminal
 'cmd-\ '            Toggle Sidebar
-'cmd+,'             Open User Settings
+'cmd-,'             Open User Settings
+
+'cmd-t'             Open new tab
+'shift-cmd-['       Switch to the previous tab
+'shift-cmd-]'       Switch to the next tab
 
 'alt-enter'         Toggle Markdown Preview Enhanced
 ```
@@ -59,19 +62,14 @@ This post intended to provide a universal keymaps across different editors and I
 'atom-workspace atom-text-editor:not([mini])':
   'cmd-d': 'editor:duplicate-lines'
   'alt-enter': 'markdown-preview-enhanced:toggle'
+
+'body':
+  'cmd-t': 'application:new-file'
 ```
 
 ### VSCode
 ``` json
 [
-    {
-        "key": "cmd+\\",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "cmd+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    },
     {
         "key": "cmd+d",
         "command": "editor.action.copyLinesDownAction",
@@ -166,6 +164,22 @@ This post intended to provide a universal keymaps across different editors and I
         "key": "cmd+k v",
         "command": "-markdown-preview-enhanced.openPreview",
         "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
 ```
