@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-03-21T06:36:55.016Z</updated>
+  <updated>2018-03-26T15:45:06.615Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub Pages</title>
+    <link href="http://luminoid.github.io/blog/GitHub-Pages/"/>
+    <id>http://luminoid.github.io/blog/GitHub-Pages/</id>
+    <published>2018-03-26T11:43:48.000Z</published>
+    <updated>2018-03-26T15:45:06.615Z</updated>
+    
+    <content type="html"><![CDATA[<!-- TOC --><h2 id="Deploy-React-App-on-GitHub-Pages-from-the-Scratch"><a href="#Deploy-React-App-on-GitHub-Pages-from-the-Scratch" class="headerlink" title="Deploy React App on GitHub Pages from the Scratch"></a>Deploy React App on GitHub Pages from the Scratch</h2><h3 id="Environment-Configuration"><a href="#Environment-Configuration" class="headerlink" title="Environment Configuration"></a>Environment Configuration</h3><pre class=" language-bash"><code class="language-bash">$ yarn global add create-react-app</code></pre><h3 id="Initialize-a-React-App"><a href="#Initialize-a-React-App" class="headerlink" title="Initialize a React App"></a>Initialize a React App</h3><pre class=" language-bash"><code class="language-bash">$ create-react-app <span class="token operator">&lt;</span>project-name<span class="token operator">></span>$ <span class="token function">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">></span><span class="token comment" spellcheck="true"># Edit...</span></code></pre><a id="more"></a><h3 id="WebStorm-Configuration"><a href="#WebStorm-Configuration" class="headerlink" title="WebStorm Configuration"></a>WebStorm Configuration</h3><pre class=" language-bash"><code class="language-bash">$ yarn add react-scripts</code></pre><h3 id="Local-Configuration"><a href="#Local-Configuration" class="headerlink" title="Local Configuration"></a>Local Configuration</h3><p><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages" target="_blank" rel="noopener">Guide</a></p><p>Deploy the app on a GitHub Project Site</p><p><strong>Step 1: Add <code>homepage</code> to <code>package.json</code></strong><br>In <code>package.json</code>:</p><pre class=" language-bash"><code class="language-bash"><span class="token string">"homepage"</span><span class="token keyword">:</span> <span class="token string">"https://username.github.io/reponame"</span>,</code></pre><p><strong>Step 2: Install <code>gh-pages</code></strong></p><pre class=" language-bash"><code class="language-bash">$ yarn add gh-pages</code></pre><p>Add <code>predeploy</code> and <code>deploy</code> scripts to <code>package.json</code><br>In <code>package.json</code>:</p><pre class=" language-bash"><code class="language-bash"><span class="token string">"scripts"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>  <span class="token string">"predeploy"</span><span class="token keyword">:</span> <span class="token string">"npm run build"</span>,  <span class="token string">"deploy"</span><span class="token keyword">:</span> <span class="token string">"gh-pages -d build"</span>,  <span class="token string">"start"</span><span class="token keyword">:</span> <span class="token string">"react-scripts start"</span>,  <span class="token punctuation">..</span>.<span class="token punctuation">}</span></code></pre><p><strong>Step 3: Deploy the site</strong><br>Run <code>deploy</code> script to deploy the site every time</p><pre class=" language-bash"><code class="language-bash">yarn run deploy</code></pre><h3 id="Git-Repo-Configuration"><a href="#Git-Repo-Configuration" class="headerlink" title="Git Repo Configuration"></a>Git Repo Configuration</h3><p><strong>Step 1: Create a new repository</strong></p><p><strong>Step 2: Push the local App to the Git repo</strong></p><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> init<span class="token function">git</span> add -A<span class="token function">git</span> commit -m <span class="token string">"Initial commit"</span><span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>git_url<span class="token operator">></span><span class="token function">git</span> push -u origin master</code></pre><p><strong>Step 3: Use <code>gh-pages</code> branch to build the GitHub Pages</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- TOC --&gt;&lt;h2 id=&quot;Deploy-React-App-on-GitHub-Pages-from-the-Scratch&quot;&gt;&lt;a href=&quot;#Deploy-React-App-on-GitHub-Pages-from-the-Scratch&quot; class=&quot;headerlink&quot; title=&quot;Deploy React App on GitHub Pages from the Scratch&quot;&gt;&lt;/a&gt;Deploy React App on GitHub Pages from the Scratch&lt;/h2&gt;&lt;h3 id=&quot;Environment-Configuration&quot;&gt;&lt;a href=&quot;#Environment-Configuration&quot; class=&quot;headerlink&quot; title=&quot;Environment Configuration&quot;&gt;&lt;/a&gt;Environment Configuration&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ yarn global add create-react-app
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Initialize-a-React-App&quot;&gt;&lt;a href=&quot;#Initialize-a-React-App&quot; class=&quot;headerlink&quot; title=&quot;Initialize a React App&quot;&gt;&lt;/a&gt;Initialize a React App&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ create-react-app &amp;lt;project-name&amp;gt;
+$ cd &amp;lt;project-name&amp;gt;
+# Edit...
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
+    
+    
+      <category term="GitHub" scheme="http://luminoid.github.io/blog/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Git Hooks</title>
@@ -206,11 +232,11 @@ npm config set key value            # Sets the config key to the value
   </entry>
   
   <entry>
-    <title>Github Tools</title>
-    <link href="http://luminoid.github.io/blog/Github-Tools/"/>
-    <id>http://luminoid.github.io/blog/Github-Tools/</id>
+    <title>GitHub Tools</title>
+    <link href="http://luminoid.github.io/blog/GitHub-Tools/"/>
+    <id>http://luminoid.github.io/blog/GitHub-Tools/</id>
     <published>2017-12-25T16:57:10.000Z</published>
-    <updated>2018-02-23T17:40:36.235Z</updated>
+    <updated>2018-03-26T14:14:32.307Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p><a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">Gitment</a>: A comment system based on GitHub Issues.</p>]]></content>
     
@@ -226,7 +252,7 @@ npm config set key value            # Sets the config key to the value
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
     
-      <category term="Github" scheme="http://luminoid.github.io/blog/tags/Github/"/>
+      <category term="GitHub" scheme="http://luminoid.github.io/blog/tags/GitHub/"/>
     
   </entry>
   
@@ -559,28 +585,6 @@ VOLUME [ &amp;quot;/data/blog&amp;quot;, &amp;quot;/var/www/html&amp;quot; ]
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
       <category term="zsh" scheme="http://luminoid.github.io/blog/tags/zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sorting Algorithm Analysis</title>
-    <link href="http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/"/>
-    <id>http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/</id>
-    <published>2017-06-12T11:51:09.000Z</published>
-    <updated>2018-02-23T17:27:42.971Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:left">Algorithm</th><th style="text-align:left">Worst-case running time</th><th style="text-align:left">Average-case / expected running time</th><th style="text-align:left">In-place</th><th style="text-align:left">Stable</th></tr></thead><tbody><tr><td style="text-align:left">Insertion sort<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Shell sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left"></td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Selection sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Heapsort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Bubble sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Quicksort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(nlgn)$ (expected)</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Counting sort</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Radix sort<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Bucket sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n)$ (average-case)</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Merge sort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr></tbody></table><a id="more"></a><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none;padding-left:0"><li id="fn:1"><span style="display:inline-block;vertical-align:top;padding-right:10px">1.</span><span style="display:inline-block;vertical-align:top">n: the number of items to sort.</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display:inline-block;vertical-align:top;padding-right:10px">2.</span><span style="display:inline-block;vertical-align:top">For radix sort, each item is a d-digit number, where each digit takes on k possible values.</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align:left&quot;&gt;Algorithm&lt;/th&gt;&lt;th style=&quot;text-align:left&quot;&gt;Worst-case running time&lt;/th&gt;&lt;th style=&quot;text-align:left&quot;&gt;Average-case / expected running time&lt;/th&gt;&lt;th style=&quot;text-align:left&quot;&gt;In-place&lt;/th&gt;&lt;th style=&quot;text-align:left&quot;&gt;Stable&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Insertion sort&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Shell sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Selection sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Heapsort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Bubble sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Quicksort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$ (expected)&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Counting sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Radix sort&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Bucket sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n)$ (average-case)&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Merge sort&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://luminoid.github.io/blog/categories/Algorithm/"/>
-    
-    
-      <category term="Sorting algorithm" scheme="http://luminoid.github.io/blog/tags/Sorting-algorithm/"/>
     
   </entry>
   
