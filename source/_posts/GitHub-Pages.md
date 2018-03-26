@@ -76,3 +76,11 @@ git push -u origin master
 ```
 
 **Step 3: Use `gh-pages` branch to build the GitHub Pages**
+
+### App Deployment
+``` bash
+yarn run deploy
+git add -A
+git commit -m <msg>
+git push
+```
