@@ -42,7 +42,7 @@ This is the easiest way because many static site generators have build-in `deplo
 Only website content is under the version control. The code that generates the website content is maintained locally.
 
 ## Using `master` brunch and `gh-pages` branch
-Deploy code on `master` brunch and website content on `gh-pages` branch.
+Deploy code on `master` brunch and website content on `gh-pages` branch. An npm package [gh-pages](https://www.npmjs.com/package/gh-pages) helps doing this.
 ### Advantage
 Both website content and code is under its own version control system.
 ### Disadvantage
