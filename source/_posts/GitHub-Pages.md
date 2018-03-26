@@ -12,6 +12,9 @@ keywords:
 <!-- TOC -->
 
 ## Deploy React App on GitHub Pages from the Scratch
+[create-react-app Doc](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
+[GitHub Pages Doc](https://pages.github.com)
+
 ### Environment Configuration
 ``` bash
 $ yarn global add create-react-app
@@ -32,8 +35,6 @@ $ yarn add react-scripts
 ```
 
 ### Local Configuration
-[Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages)
-
 Deploy the app on a GitHub Project Site
 
 **Step 1: Add `homepage` to `package.json`**
