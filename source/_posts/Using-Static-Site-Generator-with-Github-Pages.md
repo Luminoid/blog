@@ -1,15 +1,15 @@
 ---
-title: Using static site generator with Github Pages
+title: Using static site generator with GitHub Pages
 date: 2017-08-27 20:02:59
 updated:
 categories:
   - Web
   - Static Site Generator
 tags:
-  - Github
+  - GitHub
 keywords:
   - static site generator
-  - Github Pages
+  - GitHub Pages
   - master
   - gh-pages
 ---

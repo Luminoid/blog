@@ -7,12 +7,10 @@ categories:
   - Static Site Generator
 tags:
   - Hexo
-  - Github
 keywords:
   - Hexo
   - guide
   - Algolia
-  - Github
 ---
 
 <!-- TOC -->

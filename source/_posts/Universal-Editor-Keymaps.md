@@ -17,14 +17,14 @@ This post intended to provide a universal keymaps across different editors and I
 
 ## Keymaps
 
-| Command | Universal Key | VSCode | Atom | XCode | JetBrains |
+| Command | Universal Key | VSCode | Atom | Xcode | JetBrains |
 | ------- | ------------- | ---- | ------ | ----- | --------- |
 | **Edit Text** | | | | | |
 | Upper case current text               | `shift-cmd-u`     |   |                   | | |
 | Lower case current text               | `shift-cmd-l`     |   |                   | | |
 | **Edit Lines**                        |                   |   |                   | | |
 | Duplicate lines                       | `cmd-d`           |   |                   | | |
-| Cut current line; Cut current text    | `cmd-x`           |   |                   | | |
+| Cut current line; Cut current text    | `cmd-x`           |   |                   | / | |
 | Comment line                          | `cmd-/`           |   |                   | | |
 | Move line up                          | `alt-shift-up`    |   | `ctrl-cmd-up`     | | |
 | Move line down                        | `alt-shift-down`  |   | `ctrl-cmd-down`   | | |
@@ -197,4 +197,13 @@ This post intended to provide a universal keymaps across different editors and I
         "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
+```
+
+### Xcode
+``` xml
+<key>Custom</key>
+<dict>
+    <key>Duplicate Lines</key>
+    <string>selectLine:, copy:, moveToBeginningOfLine:, paste:<string>
+</dict>
 ```
