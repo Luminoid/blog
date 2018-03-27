@@ -11,49 +11,52 @@ keywords:
 - Keymaps
 ---
 
-This post intended to provide a universal keymaps across different editors and IDEs.
+This post intended to provide a universal keymaps across different editors and IDEs on Mac.
 
 <!-- more -->
 
 ## Keymaps
-``` bash
-'shift-cmd-u'       Upper case current text
-'shift-cmd-l'       Lower case current text
 
-'cmd-d'             Duplicate lines
-'cmd-x'             Cut current line; Cut current text
-'cmd-/'             Comment line
-'alt-shift-up'      Move line up (VSCode)
-'alt-shift-down'    Move line down (VSCode)
-'ctrl-cmd-up'       Move line up (Atom)
-'ctrl-cmd-down'     Move line down (Atom)
-
-'alt-click'         Multi-cursor selection (VSCode)
-'cmd-click'         Multi-cursor selection (Atom)
-'alt-drag'          Column selection (Atom)
-'alt-up'            Cursor column select up
-'alt-down'          Cursor column select down
-
-'cmd-f'             Search current file
-'shift-cmd-f'       Search the entire project
-'cmd-r'             Find and replace (VSCode)
-'cmd-g'             Find next match
-'shift-cmd-g'       Find previous match
-
-'shift-cmd-p'       Toggle Command Palette
-'ctrl-`'            Toggle Terminal
-'cmd-\ '            Toggle Sidebar
-'cmd-,'             Open User Settings
-
-'cmd-t'             Open new tab
-'shift-cmd-['       Switch to the previous tab
-'shift-cmd-]'       Switch to the next tab
-
-'alt-enter'         Toggle Markdown Preview Enhanced
-```
+| Command | Universal Key | VSCode | Atom | XCode | JetBrains |
+| ------- | ------------- | ---- | ------ | ----- | --------- |
+| **Edit Text** | | | | | |
+| Upper case current text               | `shift-cmd-u`     |   |                   | | |
+| Lower case current text               | `shift-cmd-l`     |   |                   | | |
+| **Edit Lines**                        |                   |   |                   | | |
+| Duplicate lines                       | `cmd-d`           |   |                   | | |
+| Cut current line; Cut current text    | `cmd-x`           |   |                   | | |
+| Comment line                          | `cmd-/`           |   |                   | | |
+| Move line up                          | `alt-shift-up`    |   | `ctrl-cmd-up`     | | |
+| Move line down                        | `alt-shift-down`  |   | `ctrl-cmd-down`   | | |
+| **Selection**                         |                   |   |                   | | |
+| Multi-cursor selection                | `alt-click`       |   | `cmd-alt-click`   | | |
+| Column selection                      | `alt-drag`        | / |                   | | |
+| Cursor column select up               | `alt-up`          |   |                   | | |
+| Cursor column select down             | `alt-down`        |   |                   | | |
+| **Navigation**                        |                   |   |                   | | |
+| Go to Definition                      | `cmd-click`       |   | /                 | | |
+| Reveal in Project View                | `shift-cmd-j`     |   |                   | | |
+| **Find**                              |                   |   |                   | | |
+| Find in the current file              | `cmd-f`           |   |                   | | |
+| Find in the entire project            | `shift-cmd-f`     |   |                   | | |
+| Find and replace                      | `cmd-r`           |   | `cmd-f`           | | |
+| Find next match                       | `cmd-g`           |   |                   | | |
+| Find previous match                   | `shift-cmd-g`     |   |                   | | |
+| **View**                              |                   |   |                   | | |
+| Toggle Command Palette                | `shift-cmd-p`     |   |                   | | |
+| Toggle Terminal                       | `` ctrl-` ``      |   |                   | | |
+| Toggle Sidebar                        | `cmd-\ `          |   |                   | | |
+| Open User Settings                    | `cmd-,`           |   |                   | | |
+| **Tab**                               |                   |   |                   | | |
+| Open new tab                          | `cmd-t`           |   |                   | | |
+| Switch to the previous tab            | `shift-cmd-[`     |   |                   | | |
+| Switch to the next tab                | `shift-cmd-]`     |   |                   | | |
+| **Plugin**                            |                   |   |                   | | |
+| Toggle Markdown Preview Enhanced      | `alt-enter`       |   |                   | | |
 
 ## Config File
 ### Atom
+**keymap file**: `~/.atom/keymap.cson`
 ``` yaml
 'atom-text-editor':
   'shift-cmd-u': 'editor:upper-case'
@@ -65,9 +68,17 @@ This post intended to provide a universal keymaps across different editors and I
 
 'body':
   'cmd-t': 'application:new-file'
+
+'.platform-darwin atom-text-editor':
+  'shift-cmd-j': 'tree-view:reveal-active-file'
 ```
+**plugin**:
+- [Hyperclick](https://atom.io/packages/hyperclick)
+- [sublime-style-column-selection](https://atom.io/packages/Sublime-Style-Column-Selection)
+- [multi-cursor](https://atom.io/packages/multi-cursor)
 
 ### VSCode
+**keymap file**: `~/Library/Application Support/Code/User/keybindings.json`
 ``` json
 [
     {
@@ -180,6 +191,10 @@ This post intended to provide a universal keymaps across different editors and I
     {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
 ```
