@@ -551,6 +551,14 @@ git fsck
 #### git rerere
 `git rerere`: Reuse recorded resolution of conflicted merges
 
+### Config
+`git config`: Get and set repository or global options
+
+Set `ignoreCase` to `false`
+``` bash
+git config core.ignorecase false
+```
+
 ## Git Concepts at Work
 ### Initialize Git repository
 ``` bash
