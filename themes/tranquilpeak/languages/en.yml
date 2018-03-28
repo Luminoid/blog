@@ -12,6 +12,7 @@ global:
     about: "About"
     author_picture: "Author's picture"
     github: "GitHub"
+    color_splash: "Color Splash"
     zhihu: "Zhihu"
     stack_overflow: "Stack Overflow"
     twitter: "Twitter"
