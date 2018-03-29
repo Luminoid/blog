@@ -50,7 +50,7 @@ $ hexo deploy -g
 
 ## Maintenance
 Update outdated npm packages regularly to avoid security vulnerability:
-Run `npm-check -u` under both blog directory (`./`) and theme directory (`themes/<your_theme>`).
+Run `npm-check -u` under blog directory (`./`).
 
 ## Theme
 The following are the theme files to be modified for custom configuration, take [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/) theme as an example:

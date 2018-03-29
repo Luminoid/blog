@@ -16,6 +16,24 @@ keywords:
 
 <!-- TOC -->
 
+## JSX
+Babel compiles JSX down to `React.createElement()` calls.
+``` jsx
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+``` jsx
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
 ## Component
 Component: `func: props -> JSX`
 
