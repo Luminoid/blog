@@ -35,7 +35,26 @@ const element = React.createElement(
 ```
 
 ## Component
-Component: `func: props -> JSX`
+Functional Component
+``` jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+Class Component
+``` jsx
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+```
+Always start component names with a capital letter.
+
+<!-- more -->
+
+## Prop
+Props are read-only.
 
 ## State
 **Use `setState()` to modify state**
@@ -49,22 +68,6 @@ this.setState((prevState, props) => ({
 **State updates are merged**
 **The data flows down**
 State is encapsulated. It is not accessible to any component other than the one that owns and sets it. A component may choose to pass its state down as props to its child components.
-
-<!-- more -->
-
-## Composition
-Use composition instead of inheritance to reuse code between components.
-
-## Thinking in React
-1. Start With A Mock
-2. Break The UI Into A Component Hierarchy: single responsibility principle
-3. Build A Static Version in React: don’t use state to build static version
-4. Identify The Minimal (but complete) Representation Of UI State: DRY(Don’t Repeat Yourself)
-    1. Is it passed in from a parent via props? If so, it probably isn’t state.
-    2. Does it remain unchanged over time? If so, it probably isn’t state.
-    3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
-5. Identify Where Your State Should Live
-6. Add Inverse Data Flow
 
 ## Handling Events
 ``` jsx
@@ -85,7 +88,33 @@ class LoggingButton extends React.Component {
 }
 ```
 
-## List
+### Passing Arguments to Event Handlers
+``` jsx
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+```
+
+## Conditional Rendering
+### Inline If with Logical && Operator
+``` jsx
+<div>
+    <h1>Hello!</h1>
+    {unreadMessages.length > 0 &&
+        <h2>
+            You have {unreadMessages.length} unread messages.
+        </h2>
+    }
+</div>
+```
+`true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+
+### Inline If-Else with Conditional Operator
+``` jsx
+<div>
+    The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+</div>
+```
+
+## List and Keys
 ``` jsx
 function ListItem(props) {
   return <li>{props.value}</li>;
@@ -95,7 +124,6 @@ function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
     // Key should be specified inside the array
-    // Keys serve as a hint to React but they don’t get passed to your components.
     <ListItem key={number.toString()}
               value={number} />
   );
@@ -112,8 +140,73 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+1. Keys must only be unique among siblings
+2. Keys serve as a hint to React but they don’t get passed to your components.
 
-## Life Cycle Demo: Clock
+
+## Composition
+Use composition instead of inheritance to reuse code between components.
+
+### Containment
+``` jsx
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        Welcome
+      </h1>
+      <p className="Dialog-message">
+        Thank you for visiting our spacecraft!
+      </p>
+    </FancyBorder>
+  );
+}
+```
+
+### Specialization
+``` jsx
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+    </FancyBorder>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" />
+  );
+}
+```
+
+## Thinking in React
+1. Start with a mock
+2. Break the UI into a component hierarchy: ssingle responsibility principle
+3. Build a static version in react: don’t use state to build this static version
+4. Identify the minimal (but complete) representation of UI state: DRY(Don’t Repeat Yourself)
+    1. Is it passed in from a parent via props? If so, it probably isn’t state.
+    2. Does it remain unchanged over time? If so, it probably isn’t state.
+    3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
+5. Identify where your state should live
+6. Add inverse data flow
+
+## Lifecycle Demo: Clock
 ``` jsx
 class Clock extends React.Component {
   constructor(props) {

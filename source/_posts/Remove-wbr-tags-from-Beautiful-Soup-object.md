@@ -1,5 +1,5 @@
 ---
-title: Remove <wbr> tags from Beautiful Soup object
+title: Remove wbr tags from Beautiful Soup object
 date: 2017-06-06 12:35:16
 updated:
 categories:
