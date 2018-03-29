@@ -22,7 +22,6 @@
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.3.1",
-    "prismjs": "^1.13.0"
+    "hexo-server": "^0.3.1"
   }
 }

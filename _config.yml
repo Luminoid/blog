@@ -108,7 +108,7 @@ highlight:
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'coy'
-  line_number: false    # default false
+  line_number: true     # default false
 
 # hexo-all-minifier
 ## Docs: https://github.com/chenzhutian/hexo-all-minifier
