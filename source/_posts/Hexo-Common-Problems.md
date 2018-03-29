@@ -89,8 +89,8 @@ new Gitment({
 ### [prism](https://github.com/PrismJS/prism)
 **Problem**: [Line number may be misplaced when additional theme is used #24](https://github.com/ele828/hexo-prism-plugin/issues/24)
 
-**Solution**: Remove the following attributes in the theme `style-<hash>.min.css` file may solve this problem.
+**Solution**: The css selector `.tag` is used in both prismjs and tranquilpeak css files. Remove the `.tag` in the theme `style-<hash>.min.css` file may solve this problem. Let the `a.tag` do the selection.
 In file `themes/tranquilpeak/source/assets/css/style-1udptkpril81ozu8ifd8zpujn7ipu7lefxsiu5gxx0dpnzntdx6dusvki3ao.min.css`:
 ``` css
-display:inline-block;background:#fff;
+.tag,a.tag{display:inline-block;background:#fff;
 ```
