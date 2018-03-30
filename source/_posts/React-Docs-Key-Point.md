@@ -206,6 +206,31 @@ function WelcomeDialog() {
 5. Identify where your state should live
 6. Add inverse data flow
 
+## Typechecking With PropTypes
+`PropTypes` exports a range of validators that can be used to make sure the data you receive is valid. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. For performance reasons, `propTypes` is only checked in development mode.
+``` jsx
+import PropTypes from 'prop-types';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string
+};
+```
+
+## Static Type Checking
+Use [Flow](https://flow.org) or [TypeScript](https://www.typescriptlang.org) as static type checkers.
+
+### Using TypeScript with Create React App
+- [react-scripts-ts](https://www.npmjs.com/package/react-scripts-ts)
+- [TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter)
+
 ## Lifecycle Demo: Clock
 ``` jsx
 class Clock extends React.Component {
