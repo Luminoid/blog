@@ -197,7 +197,7 @@ function WelcomeDialog() {
 
 ## Thinking in React
 1. Start with a mock
-2. Break the UI into a component hierarchy: ssingle responsibility principle
+2. Break the UI into a component hierarchy: single responsibility principle
 3. Build a static version in react: don’t use state to build this static version
 4. Identify the minimal (but complete) representation of UI state: DRY(Don’t Repeat Yourself)
     1. Is it passed in from a parent via props? If so, it probably isn’t state.
@@ -230,6 +230,61 @@ Use [Flow](https://flow.org) or [TypeScript](https://www.typescriptlang.org) as 
 ### Using TypeScript with Create React App
 - [react-scripts-ts](https://www.npmjs.com/package/react-scripts-ts)
 - [TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter)
+
+## Refs and the DOM
+The ref attribute can't be used on functional components because they don’t have instances.
+
+### Adding a Ref to a DOM Element
+``` jsx
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.focusTextInput = this.focusTextInput.bind(this);
+  }
+
+  focusTextInput() {
+    // Explicitly focus the text input using the raw DOM API
+    this.textInput.focus();
+  }
+
+  render() {
+    // Use the `ref` callback to store a reference to the text input DOM
+    // element in an instance field (for example, this.textInput).
+    return (
+      <div>
+        <input
+          type="text"
+          ref={(input) => { this.textInput = input; }} />
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
+      </div>
+    );
+  }
+}
+```
+
+### Adding a Ref to a Class Component
+``` jsx
+class AutoFocusTextInput extends React.Component {
+  componentDidMount() {
+    this.textInput.focusTextInput();
+  }
+
+  render() {
+    return (
+      <CustomTextInput
+        ref={(input) => { this.textInput = input; }} />
+    );
+  }
+}
+
+class CustomTextInput extends React.Component {
+  // ...
+}
+```
 
 ## Lifecycle Demo: Clock
 ``` jsx
