@@ -11,6 +11,12 @@ echo "$ hexo clean"
 hexo clean
 echo "$ hexo algolia"
 hexo algolia
+
+if [ ! -d "docs" ]; then
+    echo "Error! No docs/ folder generated"
+    exit 2
+fi
+
 echo "$ git add"
 git add -A
 echo "$ git commit"

@@ -593,9 +593,9 @@ VOLUME [ &amp;quot;/data/blog&amp;quot;, &amp;quot;/var/www/html&amp;quot; ]
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
     
-      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
-    
       <category term="Atom" scheme="http://luminoid.github.io/blog/tags/Atom/"/>
+    
+      <category term="Docker" scheme="http://luminoid.github.io/blog/tags/Docker/"/>
     
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
