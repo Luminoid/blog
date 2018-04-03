@@ -25,7 +25,7 @@ keywords:
 	* [Homebrew-Cask](#homebrew-caskhttpscaskroomgithubio)
 		* [Install](#install-1)
 		* [Usage](#usage-1)
-	* [Node](#nodehttpsnodejsorg)
+	* [npm](#npmhttpswwwnpmjscom)
 		* [Install](#install-2)
 		* [Usage](#usage-2)
 	* [Yarn](#yarnhttpsyarnpkgcom)
@@ -46,6 +46,7 @@ keywords:
 * [Language](#language)
 	* [Python3](#python3httpswwwpythonorg)
 		* [Install](#install-5)
+	* [JavaScript](#javascript)
 * [Text Editor](#text-editor)
 	* [Atom](#atomhttpsatomio)
 		* [Usage](#usage-5)
@@ -88,7 +89,7 @@ brew tap caskroom/cask
 brew cask install google-chrome
 ```
 
-### [Node](https://nodejs.org/)
+### [npm](https://www.npmjs.com)
 #### Install
 ``` bash
 brew install node
@@ -163,6 +164,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ``` bash
 brew install python3
 ```
+
+### JavaScript
+Run `node` to toggle ES6 REPL.
 
 ## Text Editor
 ### [Atom](https://atom.io)

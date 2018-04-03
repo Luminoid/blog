@@ -382,6 +382,18 @@ Show branches and their commits
 ``` bash
 git show-branch [-r | -a] [--more=<n>]
 ```
+Delete branches
+``` bash
+git branch -d <branchname>
+```
+Figure out if you are on a detached `HEAD`
+``` bash
+$ git branch
+* (no branch)
+  master
+```
+
+#### Checkout
 Check out branches
 ``` bash
 git checkout <branch>
@@ -390,17 +402,6 @@ Create and check out a new branch
 ``` bash
 git checkout -b <new_branch> [<start-point>]
 ```
-Figure out if you are on a detached `HEAD`
-``` bash
-$ git branch
-* (no branch)
-  master
-```
-Delete branches
-``` bash
-git branch -d <branchname>
-```
-
 Check out remote branch
 ``` bash
 git fetch origin

@@ -34,7 +34,9 @@ unset GIT_DIR  # important
 
 cd path/to/work
 echo '==> Building project'
-npm run build
+if ! npm run build; then
+    echo "==> Error: npm run build failed"
+    exit 1
+fi
 git add dist
 ```
-
