@@ -10,6 +10,8 @@ keywords:
 - ES6
 ---
 
+<!-- TOC -->
+
 Docs:
 - [Babel](https://babeljs.io/learn-es2015)
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -53,6 +55,8 @@ function colorWhite(){
     }
 }
 ```
+
+<!-- more -->
 
 ## String
 ### Unicode
