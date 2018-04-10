@@ -166,7 +166,8 @@ brew install python3
 ```
 
 ### JavaScript
-Run `node` to toggle ES6 REPL.
+Run `node` to toggle ES REPL.
+Run `node --v8-options | grep harmony` to check current supported ES6 features.
 
 ## Text Editor
 ### [Atom](https://atom.io)
