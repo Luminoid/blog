@@ -6,6 +6,10 @@ categories:
 - Tool
 - Editor
 tags:
+- VS Code
+- Atom
+- Xcode
+- JetBrains
 keywords:
 - Editor
 - Keymaps
@@ -19,7 +23,7 @@ This post intended to provide a universal keymaps across different editors and I
 
 ## Keymaps
 
-| Command | Universal Key | VSCode | Atom | Xcode | JetBrains |
+| Command | Universal Key | VS Code | Atom | Xcode | JetBrains |
 | ------- | ------------- | ---- | ------ | ----- | --------- |
 | **Edit Text** | | | | | |
 | Upper case current text               | `shift-cmd-u`     |   |                   |   | `shift-cmd-u` |

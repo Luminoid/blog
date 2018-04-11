@@ -11,22 +11,27 @@ keywords:
 
 <!-- TOC -->
 
-## System
-### Open Apps From the Unidentified Developers
+## Preferences
+### Manage Login Items
+System Preferences -> Users & Groups -> Login Items
+
+<!-- more -->
+
+## Commands
+### System
+#### Open Apps From the Unidentified Developers
 Location: System Preferences -> Security & Privacy -> General -> Choose “Anywhere”
 ``` bash
 $ sudo spctl --master-disable
 ```
 
-<!-- more -->
-
-## oh-my-zsh
+### oh-my-zsh
 Escape the `^` in command like `git reset HEAD^` in zsh.
 ``` bash
 git reset HEAD\^
 ```
 
-### Git
+#### Git
 View the following file to check the git-related `alias`
 ``` bash
 vim ~/.oh-my-zsh/plugins/git/git.plugin.zsh
@@ -74,3 +79,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gpsup='git push --set-upstream origin $(git_current_branch)'
 ```
+
+## Directories
+### Xcode
+Simulator devices data: `~/Library/Developer/CoreSimulator/Devices`
