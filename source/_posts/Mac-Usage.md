@@ -1,5 +1,5 @@
 ---
-title: Mac Common Commands
+title: Mac Usage
 date: 2018-03-07 00:56:07
 updated:
 categories: Mac
