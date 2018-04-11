@@ -18,6 +18,7 @@ keywords:
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
+* [Mac Usage](#mac-usage)
 * [Package Manager](#package-manager)
 	* [Homebrew](#homebrewhttpsbrewsh)
 		* [Install](#install)
@@ -68,6 +69,7 @@ keywords:
 
 <!-- TOC -->
 
+## Mac Usage
 {% post_link Mac-Usage %}
 
 ## Package Manager

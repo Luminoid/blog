@@ -336,9 +336,9 @@ npm config set key value            # Sets the config key to the value
       <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
     
     
-      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
-    
       <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
+    
+      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
     
   </entry>
   
@@ -380,9 +380,9 @@ npm config set key value            # Sets the config key to the value
       <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
     
     
-      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
-    
       <category term="React" scheme="http://luminoid.github.io/blog/tags/React/"/>
+    
+      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
     
   </entry>
   
