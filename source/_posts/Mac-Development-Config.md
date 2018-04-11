@@ -68,6 +68,8 @@ keywords:
 
 <!-- TOC -->
 
+{% post_link Mac-Usage %}
+
 ## Package Manager
 ### [Homebrew](https://brew.sh)
 #### Install
@@ -108,7 +110,6 @@ brew install yarn
 {% post_link Yarn-Usage %}
 
 ## Terminal
-{% post_link Mac-Common-Commands %}
 ### [iTerm2](https://www.iterm2.com)
 
 ### [oh-my-zsh](http://ohmyz.sh)

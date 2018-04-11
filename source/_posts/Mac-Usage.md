@@ -6,6 +6,7 @@ categories: Mac
 tags:
   - bash
 keywords:
+  - Preferences
   - bash
 ---
 
