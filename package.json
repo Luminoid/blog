@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.0"
+    "version": "3.7.1"
   },
   "dependencies": {
-    "hexo": "^3.7.0",
-    "hexo-algolia": "^1.1.0",
+    "hexo": "^3.7.1",
+    "hexo-algolia": "^1.2.5",
     "hexo-algoliasearch": "^0.3.0",
     "hexo-all-minifier": "^0.5.2",
     "hexo-footnotes": "^1.0.2",
