@@ -44,7 +44,7 @@ npm config set key value            # Sets the config key to the value
 <!-- more -->
 
 ## Package
-### [npm-check](https://github.com/dylang/npm-check)
+### [npm-check](https://www.npmjs.com/package/npm-check)
 Check for outdated, incorrect, and unused dependencies.
 #### command
 ``` bash
@@ -53,4 +53,13 @@ npm-check ../foo    # Check another path
 npm-check -u        # Interactive update
 npm-check -g        # Look at global modules
 npm-check -gu       # Update globally installed modules by picking which ones to upgrade
+```
+
+### [lorem-ipsum](https://www.npmjs.com/package/lorem-ipsum)
+A Node.js and Component.js module for generating lorem ipsum placeholder text.
+#### command
+``` bash
+lorem-ipsum 100 word                    # Generate 100 words
+lorem-ipsum 15 sentences --copy         # Generate 15 sentences & Copy the output to the system clipboard
+lorem-ipsum 5 paragraphs --format html  # Generate 5 paragraphs in html text format
 ```
