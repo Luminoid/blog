@@ -212,7 +212,7 @@ tail; // [ 2, 3, 4, 5 ]
 // Array.from(): create a new Array instance from an array-like or iterable object.
 Array.from({length: 5}, (v, i) => i * i); // [ 0, 1, 4, 9, 16 ]
 
-// Array.of(): create a new Array instance with a variable number of arguments,
+// Array.of(): create a new Array instance with a variable number of arguments.
 Array.of(3);        // [ 3 ]
 Array.of(1, 2, 3);  // [ 1, 2, 3 ]
 
@@ -242,10 +242,31 @@ for (let [index, elem] of ['a', 'b'].entries()) {
 var x = 0, y = 0;
 const obj = { x, y }; // equals to: obj = { x: x, y: y };
 
-// Object.is()
+// Object.is(): determines whether two values are the same value.
 +0 === -0;
 NaN !== NaN;
 Object.is(+0, -0) === false;
 Object.is(NaN, NaN) === true;
 
+// Merge objects
+var dest = { a: 0 };
+var src1 = { b: 1, c: 2 };
+var src2 = { b: 3, d: 4 };
+Object.assign(dest, src1, src2);
+dest; // { a: 0, b: 3, c: 2, d: 4 }
+
+// Deep clone
+obj1 = {a: 1, b: {c: 2}};
+obj2 = Object.assign({}, obj1);
+obj3 = JSON.parse(JSON.stringify(obj1));
+obj2.b === obj1.b
+obj3.b !== obj1.b
 ```
+
+| Method | enumerable property | non-enumerable property | Symbol | own | prototype chain |
+| ------ | ------------------- | ----------------------- | ------ | --- | --------------- |
+| `Object.keys()` | Yes | No | No | Yes | No |
+| `Object.getOwnPropertyNames()` | Yes | Yes | No | Yes | No |
+| `Object.getOwnPropertySymbols()` | No | No | Yes | Yes | No |
+| `for...in` | Yes | No | No | Yes | Yes |
+| `Reflect.ownKeys()` | Yes | Yes | Yes | Yes | No |
