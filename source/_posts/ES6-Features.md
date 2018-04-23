@@ -16,6 +16,10 @@ Docs:
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Babel](https://babeljs.io/learn-es2015)
 
+## Data structures
+- Primitive: Boolean, null, undefined, Number, String, Symbol
+- Object
+
 ## Let & Const
 Block-scoped binding constructs.
 ``` js
@@ -263,6 +267,7 @@ obj2.b === obj1.b
 obj3.b !== obj1.b
 ```
 
+### Enumeration
 | Method | enumerable property | non-enumerable property | Symbol | own | prototype chain |
 | ------ | ------------------- | ----------------------- | ------ | --- | --------------- |
 | `Object.keys()` | Yes | No | No | Yes | No |
@@ -270,3 +275,21 @@ obj3.b !== obj1.b
 | `Object.getOwnPropertySymbols()` | No | No | Yes | Yes | No |
 | `for...in` | Yes | No | No | Yes | Yes |
 | `Reflect.ownKeys()` | Yes | Yes | Yes | Yes | No |
+
+## Symbol
+``` js
+Symbol("foo") !== Symbol("foo")
+Symbol.for("bar") === Symbol.for("bar")
+
+// Symbol as an identifier for object properties
+const foo = Symbol("foo");
+let obj = {};
+obj[foo] = "hello";
+obj; // { [Symbol(foo)]: 'hello' }
+
+// Symbol as a const value
+const shapeType = {
+  triangle: Symbol()
+  rectangle: Symbol()
+};
+```
