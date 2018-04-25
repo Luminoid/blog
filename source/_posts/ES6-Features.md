@@ -165,7 +165,7 @@ add(2) === 3;
 // Rest
 function add(...values) {
   let sum = 0;
-  for (var val of values) {
+  for (let val of values) {
     sum += val;
   }
   return sum;
@@ -174,9 +174,9 @@ add(1, 2, 3) === 6;
 
 // Arrow function
 // Arrow functions share the same lexical this as their surrounding code.
-var sum = (num1, num2) => num1 + num2;
+let sum = (num1, num2) => num1 + num2;
 sum(1, 2) === 3;
-var result = [3, 2, 1].sort((a, b) => a - b); // [ 1, 2, 3 ]
+let result = [3, 2, 1].sort((a, b) => a - b); // [ 1, 2, 3 ]
 
 // Tail Recursion
 function tailFactorial(n, acc) {
@@ -243,7 +243,7 @@ for (let [index, elem] of ['a', 'b'].entries()) {
 ## Object
 ``` js
 // Property shorthand
-var x = 0, y = 0;
+let x = 0, y = 0;
 const obj = { x, y }; // equals to: obj = { x: x, y: y };
 
 // Object.is(): determines whether two values are the same value.
@@ -253,9 +253,9 @@ Object.is(+0, -0) === false;
 Object.is(NaN, NaN) === true;
 
 // Merge objects
-var dest = { a: 0 };
-var src1 = { b: 1, c: 2 };
-var src2 = { b: 3, d: 4 };
+let dest = { a: 0 };
+let src1 = { b: 1, c: 2 };
+let src2 = { b: 3, d: 4 };
 Object.assign(dest, src1, src2);
 dest; // { a: 0, b: 3, c: 2, d: 4 }
 
@@ -293,3 +293,48 @@ const shapeType = {
   rectangle: Symbol()
 };
 ```
+
+## Set & Map
+``` js
+// Set
+let s = new Set(["a"]);
+s.add("b").add("a");
+s; // Set { 'a', 'b' }
+s.size === 2;
+s.has("a") === true;
+
+// Remove duplicated elements in an array
+let arr = [1, 2, 1, 3];
+[...new Set(arr)]; // [ 1, 2, 3 ]
+
+// Union, Intersect & Difference
+let a = new Set([1, 2, 3]);
+let b = new Set([2, 3, 4]);
+let union = new Set([...a, ...b]);                          // Set { 1, 2, 3, 4 }
+let intersect = new Set([...a].filter(x => b.has(x)));      // Set { 2, 3 }
+let difference = new Set([...a].filter(x => !b.has(x)));    // Set { 1 }
+
+// Map
+let m = new Map();
+let s = Symbol();
+m.set("foo", 1);
+m.set(s, 2);
+m.get(s) === 2;
+m.size === 2;
+
+// Weak Sets & Weak Maps
+// WeakSet: collection of objects only and not of arbitrary values of any type.
+// - References to objects in the collection are held weakly.
+// - WeakSets are not enumerable.
+const obj = {foo: 1};
+let ws = new WeakSet();
+ws.add(obj); // WeakSet {}
+ws.has(obj) === true;
+
+let wm = new WeakMap();
+wm.set(obj, 123); // WeakMap {}
+wm.get(obj) === 123;
+```
+
+## Proxy
+
