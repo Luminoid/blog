@@ -194,7 +194,7 @@ factorial(5) === 120;
 ``` js
 // Spread
 function add(a, b, c, d) {
-  return a + b + c + d;
+    return a + b + c + d;
 }
 add(1, ...[2, 3, 4]) === 10;
 Math.max(...[12, 34, 5]) === 34;
@@ -222,19 +222,19 @@ Array.of(1, 2, 3);  // [ 1, 2, 3 ]
 
 // Array Iterator
 for (let index of ['a', 'b'].keys()) {
-  console.log(index);
+    console.log(index);
 }
 // 0
 // 1
 
 for (let elem of ['a', 'b'].values()) {
-  console.log(elem);
+    console.log(elem);
 }
 // 'a'
 // 'b'
 
 for (let [index, elem] of ['a', 'b'].entries()) {
-  console.log(index, elem);
+    console.log(index, elem);
 }
 // 0 'a'
 // 1 'b'
@@ -289,8 +289,8 @@ obj; // { [Symbol(foo)]: 'hello' }
 
 // Symbol as a const value
 const shapeType = {
-  triangle: Symbol()
-  rectangle: Symbol()
+    triangle: Symbol()
+    rectangle: Symbol()
 };
 ```
 
@@ -336,5 +336,30 @@ wm.set(obj, 123); // WeakMap {}
 wm.get(obj) === 123;
 ```
 
-## Proxy
+## Meta-Programming
+### Proxy
+The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
+``` js
+let target = {};
+let handler = {
+    get: function (obj, prop) {
+        return `Hello, ${prop}!`;
+    }
+};
+let p = new Proxy(target, handler);
+p.world === "Hello, world!";
+```
 
+### Reflect
+Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers.
+``` js
+// Reflect.defineProperty(): Similar to Object.defineProperty(). Returns a Boolean.
+// Reflect.construct(): The new operator as a function. Equivalent to calling new target(...args).
+// Reflect.deleteProperty(): The delete operator as a function. Equivalent to calling delete target[name].
+// Reflect.has(): The in operator as function.
+
+let obj = { a: 1 };
+Reflect.defineProperty(obj, "b", { value: 2 });
+obj[Symbol("c")] = 3;
+Reflect.ownKeys(obj); // [ 'a', 'b', Symbol(c) ]
+```
