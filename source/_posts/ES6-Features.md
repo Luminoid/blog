@@ -363,3 +363,94 @@ Reflect.defineProperty(obj, "b", { value: 2 });
 obj[Symbol("c")] = 3;
 Reflect.ownKeys(obj); // [ 'a', 'b', Symbol(c) ]
 ```
+
+## Promise
+A Promise is in one of these states:
+- pending: initial state, neither fulfilled nor rejected.
+- fulfilled: meaning that the operation completed successfully.
+- rejected: meaning that the operation failed.
+
+**Simple Example**
+``` js
+let promise = new Promise(function(resolve, reject) {
+    console.log('Promise task');
+    resolve();
+});
+
+promise.then(function() {
+    console.log('Promise task resolved.');
+}).catch(function(error) {
+    console.log('Promise task rejected.');
+});
+
+console.log('Next task');
+
+// Promise task
+// Next task
+// Promise resolved.
+```
+
+**Load image asynchronously**
+``` js
+function loadImageAsync(url) {
+    return new Promise(function(resolve, reject) {
+        const image = new Image();
+
+        image.src = url;
+        image.onload = function() {
+            resolve(image);
+        };
+        image.onerror = function() {
+            reject(new Error('Failed to load image at ' + url));
+        };
+    });
+}
+```
+
+`Promise.all(iterable)`: returns a single Promise that resolves when all of the promises in the iterable argument have resolved or when the iterable argument contains no promises. It rejects with the reason of the first promise that rejects.
+
+`Promise.race(iterable)`: returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
+
+## Iterator & for...of
+**Iterator**
+``` js
+let fibonacci = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}
+
+for (let n of fibonacci) {
+  if (n > 1000)
+    break;
+  console.log(n);
+}
+```
+**for...in & for...of**
+``` js
+let arr = ['a', 'b', 'c'];
+for (let index in arr) {
+  console.log(index);
+}
+// 0
+// 1
+// 2
+for (let value of arr) {
+  console.log(value);
+}
+// a
+// b
+// c
+for (let pair of arr.entries()) {
+  console.log(pair);
+}
+// [ 0, 'a' ]
+// [ 1, 'b' ]
+// [ 2, 'c' ]
+```
