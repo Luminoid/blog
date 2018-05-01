@@ -12,9 +12,11 @@ keywords:
 
 <!-- TOC -->
 
-Docs:
+References:
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Babel](https://babeljs.io/learn-es2015)
+- [rse/es6-features](http://es6-features.org)
+- [ruanyf/es6tutorial](http://es6.ruanyifeng.com/)
+- [Babel ES2015](https://babeljs.io/learn-es2015)
 
 ## Data structures
 - Primitive: Boolean, null, undefined, Number, String, Symbol
@@ -41,7 +43,7 @@ b === 2;
 
 // Default arguments
 function add({a, b, c = 3, d = 4}) {
-    return a + b + c + d;
+  return a + b + c + d;
 }
 add({a:1, b:2}) === 10;
 
@@ -52,15 +54,35 @@ let y = 2;
 
 // Multiple return values
 function colorWhite(){
-    return {
-        red: 255,
-        green: 255,
-        blue: 255,
-    }
+  return {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }
 }
 ```
 
 <!-- more -->
+
+## Number
+``` js
+// Binary and Octal Literals
+0b101 === 5;
+0o101 === 65;
+
+// Number method
+Number.parseInt('12.34') === 12;
+Number.parseFloat('12.34') === 12.34;
+
+// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1
+Number.EPSILON === Math.pow(2, -52);
+
+0.1 + 0.2 - 0.3 !== 0;
+0.1 + 0.2 - 0.3 < Number.EPSILON;
+
+// Exponentiation operator
+2 ** 3 === 8;
+```
 
 ## String
 ### Unicode
@@ -134,110 +156,22 @@ regTwice.test('abc!abc') === true;
 regTwice.test('abc!ab') === false;
 ```
 
-## Number
+## Symbol
 ``` js
-// Binary and Octal Literals
-0b101 === 5;
-0o101 === 65;
+Symbol("foo") !== Symbol("foo")
+Symbol.for("bar") === Symbol.for("bar")
 
-// Number method
-Number.parseInt('12.34') === 12;
-Number.parseFloat('12.34') === 12.34;
+// Symbol as an identifier for object properties
+const foo = Symbol("foo");
+let obj = {};
+obj[foo] = "hello";
+obj; // { [Symbol(foo)]: 'hello' }
 
-// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1
-Number.EPSILON === Math.pow(2, -52);
-
-0.1 + 0.2 - 0.3 !== 0;
-0.1 + 0.2 - 0.3 < Number.EPSILON;
-
-// Exponentiation operator
-2 ** 3 === 8;
-```
-
-## Function
-``` js
-// Default parameter values
-function add(x, y = 1) {
-  return x + y;
-}
-add(2) === 3;
-
-// Rest
-function add(...values) {
-  let sum = 0;
-  for (let val of values) {
-    sum += val;
-  }
-  return sum;
-}
-add(1, 2, 3) === 6;
-
-// Arrow function
-// Arrow functions share the same lexical this as their surrounding code.
-let sum = (num1, num2) => num1 + num2;
-sum(1, 2) === 3;
-let result = [3, 2, 1].sort((a, b) => a - b); // [ 1, 2, 3 ]
-
-// Tail Recursion
-function tailFactorial(n, acc) {
-    "use strict";
-    if (n === 1) return acc;
-    return tailFactorial(n - 1, n * acc);
-}
-function factorial(n) {
-    return tailFactorial(n, 1);
-}
-factorial(5) === 120;
-```
-
-## Array
-``` js
-// Spread
-function add(a, b, c, d) {
-    return a + b + c + d;
-}
-add(1, ...[2, 3, 4]) === 10;
-Math.max(...[12, 34, 5]) === 34;
-
-// Copy an array
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1]; // one level deep copy
-arr1 !== arr2;
-
-// Concatenate arrays
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr = [...arr1, ...arr2]; // [ 1, 2, 3, 4, 5, 6 ]
-
-// Destructuring
-const [head, ...tail] = [1, 2, 3, 4, 5];
-tail; // [ 2, 3, 4, 5 ]
-
-// Array.from(): create a new Array instance from an array-like or iterable object.
-Array.from({length: 5}, (v, i) => i * i); // [ 0, 1, 4, 9, 16 ]
-
-// Array.of(): create a new Array instance with a variable number of arguments.
-Array.of(3);        // [ 3 ]
-Array.of(1, 2, 3);  // [ 1, 2, 3 ]
-
-// Array Iterator
-for (let index of ['a', 'b'].keys()) {
-    console.log(index);
-}
-// 0
-// 1
-
-for (let elem of ['a', 'b'].values()) {
-    console.log(elem);
-}
-// 'a'
-// 'b'
-
-for (let [index, elem] of ['a', 'b'].entries()) {
-    console.log(index, elem);
-}
-// 0 'a'
-// 1 'b'
+// Symbol as a const value
+const shapeType = {
+  triangle: Symbol()
+  rectangle: Symbol()
+};
 ```
 
 ## Object
@@ -276,22 +210,90 @@ obj3.b !== obj1.b
 | `for...in` | Yes | No | No | Yes | Yes |
 | `Reflect.ownKeys()` | Yes | Yes | Yes | Yes | No |
 
-## Symbol
+## Function
 ``` js
-Symbol("foo") !== Symbol("foo")
-Symbol.for("bar") === Symbol.for("bar")
+// Default parameter values
+function add(x, y = 1) {
+  return x + y;
+}
+add(2) === 3;
 
-// Symbol as an identifier for object properties
-const foo = Symbol("foo");
-let obj = {};
-obj[foo] = "hello";
-obj; // { [Symbol(foo)]: 'hello' }
+// Rest
+function add(...values) {
+  let sum = 0;
+  for (let val of values) {
+    sum += val;
+  }
+  return sum;
+}
+add(1, 2, 3) === 6;
 
-// Symbol as a const value
-const shapeType = {
-    triangle: Symbol()
-    rectangle: Symbol()
-};
+// Arrow function
+// Arrow functions share the same lexical this as their surrounding code.
+let sum = (num1, num2) => num1 + num2;
+sum(1, 2) === 3;
+let result = [3, 2, 1].sort((a, b) => a - b); // [ 1, 2, 3 ]
+
+// Tail Recursion
+function tailFactorial(n, acc) {
+  "use strict";
+  if (n === 1) return acc;
+  return tailFactorial(n - 1, n * acc);
+}
+function factorial(n) {
+  return tailFactorial(n, 1);
+}
+factorial(5) === 120;
+```
+
+## Array
+``` js
+// Spread
+function add(a, b, c, d) {
+  return a + b + c + d;
+}
+add(1, ...[2, 3, 4]) === 10;
+Math.max(...[12, 34, 5]) === 34;
+
+// Copy an array
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1]; // one level deep copy
+arr1 !== arr2;
+
+// Concatenate arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr = [...arr1, ...arr2]; // [ 1, 2, 3, 4, 5, 6 ]
+
+// Destructuring
+const [head, ...tail] = [1, 2, 3, 4, 5];
+tail; // [ 2, 3, 4, 5 ]
+
+// Array.from(): create a new Array instance from an array-like or iterable object.
+Array.from({length: 5}, (v, i) => i * i); // [ 0, 1, 4, 9, 16 ]
+
+// Array.of(): create a new Array instance with a variable number of arguments.
+Array.of(3);        // [ 3 ]
+Array.of(1, 2, 3);  // [ 1, 2, 3 ]
+
+// Array Iterator
+for (let index of ['a', 'b'].keys()) {
+  console.log(index);
+}
+// 0
+// 1
+
+for (let elem of ['a', 'b'].values()) {
+  console.log(elem);
+}
+// 'a'
+// 'b'
+
+for (let [index, elem] of ['a', 'b'].entries()) {
+  console.log(index, elem);
+}
+// 0 'a'
+// 1 'b'
 ```
 
 ## Set & Map
@@ -336,15 +338,60 @@ wm.set(obj, 123); // WeakMap {}
 wm.get(obj) === 123;
 ```
 
+## Iterator & for...of
+**Iterator**
+``` js
+let fibonacci = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}
+
+for (let n of fibonacci) {
+  if (n > 1000)
+    break;
+  console.log(n);
+}
+```
+
+**for...in & for...of**
+``` js
+let arr = ['a', 'b', 'c'];
+for (let index in arr) {
+  console.log(index);
+}
+// 0
+// 1
+// 2
+for (let value of arr) {
+  console.log(value);
+}
+// a
+// b
+// c
+for (let pair of arr.entries()) {
+  console.log(pair);
+}
+// [ 0, 'a' ]
+// [ 1, 'b' ]
+// [ 2, 'c' ]
+```
+
 ## Meta-Programming
 ### Proxy
 The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
 ``` js
 let target = {};
 let handler = {
-    get: function (obj, prop) {
-        return `Hello, ${prop}!`;
-    }
+  get: function (obj, prop) {
+    return `Hello, ${prop}!`;
+  }
 };
 let p = new Proxy(target, handler);
 p.world === "Hello, world!";
@@ -373,14 +420,14 @@ A Promise is in one of these states:
 **Simple Example**
 ``` js
 let promise = new Promise(function(resolve, reject) {
-    console.log('Promise task');
-    resolve();
+  console.log('Promise task');
+  resolve();
 });
 
 promise.then(function() {
-    console.log('Promise task resolved.');
+  console.log('Promise task resolved.');
 }).catch(function(error) {
-    console.log('Promise task rejected.');
+  console.log('Promise task rejected.');
 });
 
 console.log('Next task');
@@ -393,17 +440,17 @@ console.log('Next task');
 **Load image asynchronously**
 ``` js
 function loadImageAsync(url) {
-    return new Promise(function(resolve, reject) {
-        const image = new Image();
+  return new Promise(function(resolve, reject) {
+    const image = new Image();
 
-        image.src = url;
-        image.onload = function() {
-            resolve(image);
-        };
-        image.onerror = function() {
-            reject(new Error('Failed to load image at ' + url));
-        };
-    });
+    image.src = url;
+    image.onload = function() {
+      resolve(image);
+    };
+    image.onerror = function() {
+      reject(new Error('Failed to load image at ' + url));
+    };
+  });
 }
 ```
 
@@ -411,46 +458,99 @@ function loadImageAsync(url) {
 
 `Promise.race(iterable)`: returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
 
-## Iterator & for...of
+## Generator
+`yield` provides implementation of semi-coroutine in Javascript
 **Iterator**
 ``` js
 let fibonacci = {
-  [Symbol.iterator]() {
-    let pre = 0, cur = 1;
-    return {
-      next() {
-        [pre, cur] = [cur, pre + cur];
-        return { done: false, value: cur }
-      }
+  * [Symbol.iterator]() {
+    let pre = 0, cur = 1
+    for (;;) {
+      [ pre, cur ] = [ cur, pre + cur ]
+      yield cur
     }
   }
 }
 
 for (let n of fibonacci) {
   if (n > 1000)
-    break;
-  console.log(n);
+    break
+  console.log(n)
 }
 ```
-**for...in & for...of**
+
+**Method**
 ``` js
-let arr = ['a', 'b', 'c'];
-for (let index in arr) {
-  console.log(index);
+function* gen() {
+  while(true) {
+    var value = yield null;
+    console.log(value);
+  }
 }
-// 0
-// 1
-// 2
-for (let value of arr) {
-  console.log(value);
+var g = gen();
+```
+
+`next()`
+``` js
+> g.next();
+{ value: null, done: false }
+> g.next();
+undefined
+{ value: null, done: false }
+> g.next();
+undefined
+{ value: null, done: false }
+```
+
+`next(value)`: `value` will be the return value of the previous `yield` expression
+``` js
+> g.next(1);
+{ value: null, done: false }
+> g.next(2);
+2
+{ value: null, done: false }
+> g.next(3);
+3
+{ value: null, done: false }
+```
+
+`throw()`
+``` js
+> g.throw(new Error('Error throwed!'));
+Error: Error throwed!
+> g.next();
+{ value: undefined, done: true }
+```
+
+`return()`
+``` js
+> gen.return(3);
+{ value: 3, done: true }
+> gen.next();
+{ value: undefined, done: true }
+```
+
+**`yield*` expression**
+``` js
+function* traverseArray(arr) {
+  if (Array.isArray(arr)) {
+    for(let i = 0; i < arr.length; i++) {
+      yield* traverseArray(arr[i]);
+    }
+  } else {
+    yield arr;
+  }
 }
+
+const arr = ['a', ['b'], ['c', ['d', 'e']]];
+
+for(let t of traverseArray(arr)) {
+  console.log(t);
+}
+
 // a
 // b
 // c
-for (let pair of arr.entries()) {
-  console.log(pair);
-}
-// [ 0, 'a' ]
-// [ 1, 'b' ]
-// [ 2, 'c' ]
+// d
+// e
 ```
