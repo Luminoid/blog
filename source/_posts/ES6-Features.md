@@ -411,7 +411,22 @@ obj[Symbol("c")] = 3;
 Reflect.ownKeys(obj); // [ 'a', 'b', Symbol(c) ]
 ```
 
-## Promise
+## Asynchronization
+### Callback
+``` bash
+echo 123 > tmp.txt
+```
+``` js
+fs.readFile('./tmp.txt', 'utf-8', function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+console.log('456');
+// 456
+// 123
+```
+
+### Promise
 A Promise is in one of these states:
 - pending: initial state, neither fulfilled nor rejected.
 - fulfilled: meaning that the operation completed successfully.
@@ -458,8 +473,9 @@ function loadImageAsync(url) {
 
 `Promise.race(iterable)`: returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
 
-## Generator
+### Generator
 `yield` provides implementation of semi-coroutine in Javascript
+
 **Iterator**
 ``` js
 let fibonacci = {
@@ -476,6 +492,20 @@ for (let n of fibonacci) {
   if (n > 1000)
     break
   console.log(n)
+}
+```
+
+**Direct Use**
+``` js
+function* range (start, end, step) {
+  while (start < end) {
+    yield start
+    start += step
+  }
+}
+
+for (let i of range(0, 10, 2)) {
+  console.log(i) // 0, 2, 4, 6, 8
 }
 ```
 
@@ -553,4 +583,35 @@ for(let t of traverseArray(arr)) {
 // c
 // d
 // e
+```
+
+### thunkify
+Turn a regular node function into one which returns a thunk.
+``` js
+const thunkify = require('thunkify');
+const fs = require('fs');
+
+const read = thunkify(fs.readFile);
+
+read('tmp.txt', 'utf8')(function(err, data){
+  if (err) throw err;
+  console.log(data);
+});
+```
+
+### co
+Generator based control flow goodness for nodejs and the browser, using promises.
+``` js
+const co = require('co');
+
+const gen = function* () {
+  const result = yield Promise.resolve(true);
+  return result;
+};
+
+co(gen).then(function (value) {
+  console.log(value);
+}, function (err) {
+  console.error(err.stack);
+});
 ```
