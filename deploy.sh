@@ -12,7 +12,7 @@ hexo clean --config source/_data/next.yml
 
 echo "$ hexo generate"
 if ! hexo generate --config source/_data/next.yml; then
-    echo "Error! Algolia failed"
+    echo "Error! hexo generate failed"
     exit 2
 fi
 

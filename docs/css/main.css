@@ -1344,6 +1344,14 @@ pre .javascript .function {
   font-weight: bold;
   line-height: 1;
 }
+.post-body a:not([class]) {
+  color: #039be5;
+  text-decoration: underline;
+  border-bottom: none;
+}
+.post-body a:not([class]):hover {
+  color: #0277bd;
+}
 .post-sticky-flag {
   display: inline-block;
   font-size: 16px;
@@ -1932,7 +1940,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a6635b;
+  background: #4d4fd2;
 }
 .links-of-blogroll {
   font-size: 13px;

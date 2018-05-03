@@ -39,10 +39,11 @@ $ hexo algolia
 $ hexo deploy
 ```
 
-Without Algolia
+Without Algolia and hexo deployment
 ``` bash
 $ hexo new "My New Article"
 $ vim source/_posts/My-New-Article.md
+$ hexo clean
 $ hexo deploy -g
 ```
 
