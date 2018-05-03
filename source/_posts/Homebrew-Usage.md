@@ -9,8 +9,6 @@ keywords: Homebrew
 
 [Official Site](https://brew.sh)
 
-<!-- TOC -->
-
 ## Command
 ``` bash
 brew install <formula>  # Install formula

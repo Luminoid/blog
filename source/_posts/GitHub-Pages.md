@@ -9,8 +9,6 @@ keywords:
 - React
 ---
 
-<!-- TOC -->
-
 ## Deploy React App on GitHub Pages from the Scratch
 [create-react-app Doc](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 [GitHub Pages Doc](https://pages.github.com)

@@ -14,8 +14,6 @@ keywords:
 
 [React Docs](https://reactjs.org/docs/)
 
-<!-- TOC -->
-
 ## JSX
 Babel compiles JSX down to `React.createElement()` calls.
 ``` jsx

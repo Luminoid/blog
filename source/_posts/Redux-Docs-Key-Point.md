@@ -14,8 +14,6 @@ keywords:
 
 [Redux Docs](https://redux.js.org)
 
-<!-- TOC -->
-
 ## Three Principles
 ### Single source of truth
 The [state](https://redux.js.org/docs/Glossary.html#state) of your whole application is stored in an object tree within a single [store](https://redux.js.org/docs/Glossary.html#store).

@@ -1,124 +1,1521 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Luminoid&#39;s Site"><title>Mac Development Config - Luminoid&#39;s Site</title><meta name="author" content="Luminoid"><meta name="keywords" content="hexo,Homebrew,zsh,Atom,Docker"><link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml"><script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Luminoid","sameAs":["https://github.com/Luminoid","http://luminoid.github.io/color-splash","https://www.zhihu.com/people/Luminoid","mailto:14302010006@fudan.edu.cn"],"image":"portrait.jpg"},"articleBody":"Mac UsageMac UsagePackage ManagerHomebrewInstall/usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"\nUsageHomebrew UsageHomebrew-CaskInstallbrew tap caskroom/cask\nUsagebrew cask install google-chrome\nnpmInstallbrew install node\nUsagenpm UsageYarnInstallbrew install yarn\nUsageYarn UsageTerminaliTerm2oh-my-zshInstallsh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"\nThemeagnoster.zshrc# Path to your oh-my-zsh installation.\nexport ZSH=$HOME/.oh-my-zsh\n\nDEFAULT_USER=\"Luminoid\"\n\n# Theme           ~/.oh-my-zsh/themes/\nZSH_THEME=\"agnoster\"\n\n# Plugins         ~/.oh-my-zsh/plugins/\n# Custom plugins  ~/.oh-my-zsh/custom/plugins/\nplugins=(git brew node npm osx colored-man-pages zsh-syntax-highlighting)\n\nsource $ZSH/oh-my-zsh.sh\n\n# User configuration\nexport PATH=\"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin\"\n\n# LSCOLORS\nexport LSCOLORS=\"exfxcxdxbxexexabagacad\"\nalias ls='ls -hG'\nalias l='ls -ahlF'\n\n# This source command must be at the end of ~/.zshrc\nsource /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\nVersion ControlGitUsageGit: Amateur GuideSSHGenerating a new SSH key and adding it to the ssh-agentGit GUISourceTreeLanguagePython3Installbrew install python3\nJavaScriptRun node to toggle ES REPL.Run node --v8-options | grep harmony to check current supported ES6 features.Text EditorAtomUsageAtom UsageVSCodeUsageVS Code UsageVim.vimrc\" Vundle\n\" ---------------------------------------------------------------\nset nocompatible              \" be iMproved, required\nfiletype off                  \" required\n\n\" set the runtime path to include Vundle and initialize\nset rtp+=~/.vim/bundle/Vundle.vim\ncall vundle#begin()\n\" alternatively, pass a path where Vundle should install plugins\n\"call vundle#begin('~/some/path/here')\n\n\" let Vundle manage Vundle, required\nPlugin 'VundleVim/Vundle.vim'\n\nPlugin 'tpope/vim-fugitive'\n\" vim-airline\n\" ---------------------------------------------------------------\nPlugin 'vim-airline/vim-airline'\nlet g:airline_theme=\"molokai\"\nlet g:airline_powerline_fonts = 1\nlet g:airline#extensions#tabline#enabled = 1\nlet g:airline#extensions#tabline#buffer_nr_show = 1\n\nPlugin 'vim-airline/vim-airline-themes'\nPlugin 'vim-syntastic/syntastic'\n\n\" All of your Plugins must be added before the following line\ncall vundle#end()            \" required\nfiletype plugin indent on    \" required\n\n\" VIM user interface\n\" ---------------------------------------------------------------\nset number \"Always show line number\nset ruler  \"Always show current position\n\n\" Color Scheme\n\" ---------------------------------------------------------------\nsyntax enable\nlet g:neodark#use_256color = 1 \" default: 0\nlet g:neodark#terminal_transparent = 1 \" default: 0\ncolorscheme neodark\n\n\" Mouth\n\" ---------------------------------------------------------------\nset mouse=a\n\n\" Tab\n\" ---------------------------------------------------------------\nset expandtab \"Use spaces instead of tabs\nset tabstop=4 \"1 tab == 4 spaces\nset softtabstop=4\nset smartindent shiftwidth=4 \"Auto indent\nIDEXcodeToolDockerInstallbrew cask install docker\nUsageDocker Cheat SheetBrowserBrowser Enhancement","dateCreated":"2017-08-08T22:45:55+08:00","dateModified":"2018-04-12T00:10:27+08:00","datePublished":"2017-08-08T22:45:55+08:00","description":"Mac UsagePackage ManagerHomebrewInstallUsageHomebrew-CaskInstallUsagenpmInstallUsageYarnInstallUsageTerminaliTerm2oh-my-zshInstallThemeagnoster.zshrcVersion ControlGitUsageSSHGit GUILanguagePython3InstallJavaScriptText EditorAtomUsageVSCodeUsageVim.vimrcIDEXcodeToolDockerInstallUsageBrowser","headline":"Mac Development Config","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://luminoid.github.io/blog/Mac-Development-Config/"},"publisher":{"@type":"Organization","name":"Luminoid","sameAs":["https://github.com/Luminoid","http://luminoid.github.io/color-splash","https://www.zhihu.com/people/Luminoid","mailto:14302010006@fudan.edu.cn"],"image":"portrait.jpg","logo":{"@type":"ImageObject","url":"portrait.jpg"}},"url":"http://luminoid.github.io/blog/Mac-Development-Config/","keywords":"Docker, Homebrew, zsh, Atom"}</script><meta name="description" content="Mac UsagePackage ManagerHomebrewInstallUsageHomebrew-CaskInstallUsagenpmInstallUsageYarnInstallUsageTerminaliTerm2oh-my-zshInstallThemeagnoster.zshrcVersion ControlGitUsageSSHGit GUILanguagePython3Ins"><meta name="keywords" content="Homebrew,zsh,Atom,Docker"><meta property="og:type" content="blog"><meta property="og:title" content="Mac Development Config"><meta property="og:url" content="http://luminoid.github.io/blog/Mac-Development-Config/index.html"><meta property="og:site_name" content="Luminoid&#39;s Site"><meta property="og:description" content="Mac UsagePackage ManagerHomebrewInstallUsageHomebrew-CaskInstallUsagenpmInstallUsageYarnInstallUsageTerminaliTerm2oh-my-zshInstallThemeagnoster.zshrcVersion ControlGitUsageSSHGit GUILanguagePython3Ins"><meta property="og:locale" content="en"><meta property="og:updated_time" content="2018-04-11T16:10:27.723Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Mac Development Config"><meta name="twitter:description" content="Mac UsagePackage ManagerHomebrewInstallUsageHomebrew-CaskInstallUsagenpmInstallUsageYarnInstallUsageTerminaliTerm2oh-my-zshInstallThemeagnoster.zshrcVersion ControlGitUsageSSHGit GUILanguagePython3Ins"><meta property="og:image" content="http://luminoid.github.io/blog/assets/images/portrait.jpg"><link rel="stylesheet" href="/blog/assets/css/style-1udptkpril81ozu8ifd8zpujn7ipu7lefxsiu5gxx0dpnzntdx6dusvki3ao.min.css"><link rel="stylesheet" href="/blog/css/prism-coy.css" type="text/css"><link rel="stylesheet" href="/blog/css/prism-line-numbers.css" type="text/css"><link rel="stylesheet" href="/blog/css/prism-coy.css" type="text/css">
-<link rel="stylesheet" href="/blog/css/prism-line-numbers.css" type="text/css"></head><body><div id="blog"><header id="header" data-behavior="4"><i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i><div class="header-title"><a class="header-title-link" href="/blog/">Luminoid&#39;s Site</a></div><a class="header-right-picture" href="#about"><img class="header-picture" src="/blog/assets/images/portrait.jpg" alt="Author&#39;s picture"></a></header><nav id="sidebar" data-behavior="4"><div class="sidebar-container"><div class="sidebar-profile"><a href="/blog/#about"><img class="sidebar-profile-picture" src="/blog/assets/images/portrait.jpg" alt="Author&#39;s picture"></a><h4 class="sidebar-profile-name">Luminoid</h4><h5 class="sidebar-profile-bio"><p>Fudan University / Software Engineering<br>dianping.com / iOS Engineer<br>iOS / Front-end<br>movie goer</p></h5></div><ul class="sidebar-buttons"><li class="sidebar-button"><a class="sidebar-button-link" href="/blog/" title="Home"><i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i> <span class="sidebar-button-desc">Home</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="/blog/all-categories" title="Categories"><i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i> <span class="sidebar-button-desc">Categories</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="/blog/all-tags" title="Tags"><i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i> <span class="sidebar-button-desc">Tags</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="/blog/all-archives" title="Archives"><i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i> <span class="sidebar-button-desc">Archives</span></a></li><li class="sidebar-button"><a class="sidebar-button-link open-algolia-search" href="#search" title="Search"><i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i> <span class="sidebar-button-desc">Search</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="#about" title="About"><i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i> <span class="sidebar-button-desc">About</span></a></li></ul><ul class="sidebar-buttons"><li class="sidebar-button"><a class="sidebar-button-link" href="https://github.com/Luminoid" target="_blank" rel="noopener" title="GitHub"><i class="sidebar-button-icon fa fa-lg fa-github" aria-hidden="true"></i> <span class="sidebar-button-desc">GitHub</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="http://luminoid.github.io/color-splash" target="_blank" rel="noopener" title="Color Splash"><i class="sidebar-button-icon fa fa-lg fa-tint" aria-hidden="true"></i> <span class="sidebar-button-desc">Color Splash</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="https://www.zhihu.com/people/Luminoid" target="_blank" rel="noopener" title="Zhihu"><i class="sidebar-button-icon fa fa-lg fa-link" aria-hidden="true"></i> <span class="sidebar-button-desc">Zhihu</span></a></li><li class="sidebar-button"><a class="sidebar-button-link" href="mailto:14302010006@fudan.edu.cn" target="_blank" rel="noopener" title="Mail"><i class="sidebar-button-icon fa fa-lg fa-envelope-o" aria-hidden="true"></i> <span class="sidebar-button-desc">Mail</span></a></li></ul><ul class="sidebar-buttons"><li class="sidebar-button"><a class="sidebar-button-link" href="/blog/atom.xml" title="RSS"><i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i> <span class="sidebar-button-desc">RSS</span></a></li></ul></div></nav><div id="main" data-behavior="4" class="hasCoverMetaIn"><article class="post"><div class="post-header main-content-wrap text-left"><h1 class="post-title">Mac Development Config</h1><div class="post-meta"><time datetime="2017-08-08T22:45:55+08:00">Aug 08, 2017 </time><span>in </span><a class="category-link" href="/blog/categories/Mac/">Mac</a></div></div><div class="post-content markdown"><div class="main-content-wrap"><!-- excerpt --><h1 id="table-of-contents">Catalogue</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-Usage"><span class="toc-text">Mac Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package-Manager"><span class="toc-text">Package Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Homebrew"><span class="toc-text">Homebrew</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Homebrew-Cask"><span class="toc-text">Homebrew-Cask</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-1"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-1"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-2"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-2"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Yarn"><span class="toc-text">Yarn</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-3"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-3"><span class="toc-text">Usage</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Terminal"><span class="toc-text">Terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iTerm2"><span class="toc-text">iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#oh-my-zsh"><span class="toc-text">oh-my-zsh</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-4"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Theme"><span class="toc-text">Theme</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#agnoster"><span class="toc-text">agnoster</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zshrc"><span class="toc-text">.zshrc</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Version-Control"><span class="toc-text">Version Control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-4"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH"><span class="toc-text">SSH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-GUI"><span class="toc-text">Git GUI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Language"><span class="toc-text">Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python3"><span class="toc-text">Python3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-5"><span class="toc-text">Install</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript"><span class="toc-text">JavaScript</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Text-Editor"><span class="toc-text">Text Editor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Atom"><span class="toc-text">Atom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-5"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VSCode"><span class="toc-text">VSCode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-6"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim"><span class="toc-text">Vim</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vimrc"><span class="toc-text">.vimrc</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode"><span class="toc-text">Xcode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tool"><span class="toc-text">Tool</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-6"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-7"><span class="toc-text">Usage</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Browser"><span class="toc-text">Browser</span></a></li></ol><h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a><h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a><h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3><h4 id="Install-1"><a href="#Install-1" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">brew tap caskroom/cask
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash"><code class="language-bash">brew cask <span class="token function">install</span> google-chrome
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3><h4 id="Install-2"><a href="#Install-2" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> node
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a><h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a></h3><h4 id="Install-3"><a href="#Install-3" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> yarn
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Usage-3"><a href="#Usage-3" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Yarn-Usage/" title="Yarn Usage">Yarn Usage</a><h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="noopener">iTerm2</a></h3><h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="noopener">oh-my-zsh</a></h3><h4 id="Install-4"><a href="#Install-4" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">sh -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span>curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h4><h5 id="agnoster"><a href="#agnoster" class="headerlink" title="agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="noopener">agnoster</a></h5><h4 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Path to your oh-my-zsh installation.</span>
-<span class="token function">export</span> ZSH<span class="token operator">=</span><span class="token variable">$HOME</span>/.oh-my-zsh
+<!DOCTYPE html>
 
-DEFAULT_USER<span class="token operator">=</span><span class="token string">"Luminoid"</span>
 
-<span class="token comment" spellcheck="true"># Theme           ~/.oh-my-zsh/themes/</span>
-ZSH_THEME<span class="token operator">=</span><span class="token string">"agnoster"</span>
 
-<span class="token comment" spellcheck="true"># Plugins         ~/.oh-my-zsh/plugins/</span>
-<span class="token comment" spellcheck="true"># Custom plugins  ~/.oh-my-zsh/custom/plugins/</span>
-plugins<span class="token operator">=</span><span class="token punctuation">(</span>git brew node <span class="token function">npm</span> osx colored-man-pages zsh-syntax-highlighting<span class="token punctuation">)</span>
 
-<span class="token function">source</span> <span class="token variable">$ZSH</span>/oh-my-zsh.sh
 
-<span class="token comment" spellcheck="true"># User configuration</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span>
 
-<span class="token comment" spellcheck="true"># LSCOLORS</span>
-<span class="token function">export</span> LSCOLORS<span class="token operator">=</span><span class="token string">"exfxcxdxbxexexabagacad"</span>
-<span class="token function">alias</span> ls<span class="token operator">=</span><span class="token string">'ls -hG'</span>
-<span class="token function">alias</span> l<span class="token operator">=</span><span class="token string">'ls -ahlF'</span>
+  
 
-<span class="token comment" spellcheck="true"># This source command must be at the end of ~/.zshrc</span>
-<span class="token function">source</span> /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="Usage-4"><a href="#Usage-4" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Git-Amateur-Guide/" title="Git: Amateur Guide">Git: Amateur Guide</a><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></p><h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com" target="_blank" rel="noopener">SourceTree</a></p><h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a href="https://www.python.org" target="_blank" rel="noopener">Python3</a></h3><h4 id="Install-5"><a href="#Install-5" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> python3
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Run <code>node</code> to toggle ES REPL.<br>Run <code>node --v8-options | grep harmony</code> to check current supported ES6 features.</p><h2 id="Text-Editor"><a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2><h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a><a href="https://atom.io" target="_blank" rel="noopener">Atom</a></h3><h4 id="Usage-5"><a href="#Usage-5" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Atom-Usage/" title="Atom Usage">Atom Usage</a><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com" target="_blank" rel="noopener">VSCode</a></h3><h4 id="Usage-6"><a href="#Usage-6" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/VS-Code-Usage/" title="VS Code Usage">VS Code Usage</a><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="www.vim.org/">Vim</a></h3><h4 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h4><pre class="line-numbers language-vim"><code class="language-vim"><span class="token comment" spellcheck="true">" Vundle</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-<span class="token keyword">set</span> <span class="token builtin">nocompatible</span>              <span class="token comment" spellcheck="true">" be iMproved, required</span>
-<span class="token keyword">filetype</span> off                  <span class="token comment" spellcheck="true">" required</span>
 
-<span class="token comment" spellcheck="true">" set the runtime path to include Vundle and initialize</span>
-<span class="token keyword">set</span> <span class="token builtin">rtp</span><span class="token operator">+=</span>~<span class="token operator">/</span><span class="token operator">.</span><span class="token keyword">vim</span><span class="token operator">/</span>bundle<span class="token operator">/</span>Vundle<span class="token operator">.</span><span class="token keyword">vim</span>
-<span class="token keyword">call</span> vundle#<span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">" alternatively, pass a path where Vundle should install plugins</span>
-<span class="token comment" spellcheck="true">"call vundle#begin(</span><span class="token string">'~/some/path/here'</span><span class="token punctuation">)</span>
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
 
-<span class="token comment" spellcheck="true">" let Vundle manage Vundle, required</span>
-Plugin <span class="token string">'VundleVim/Vundle.vim'</span>
 
-Plugin <span class="token string">'tpope/vim-fugitive'</span>
-<span class="token comment" spellcheck="true">" vim-airline</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-Plugin <span class="token string">'vim-airline/vim-airline'</span>
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline_theme<span class="token operator">=</span><span class="token string">"molokai"</span>
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline_powerline_fonts <span class="token operator">=</span> <span class="token number">1</span>
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline#extensions#<span class="token builtin">tabline</span>#enabled <span class="token operator">=</span> <span class="token number">1</span>
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline#extensions#<span class="token builtin">tabline</span>#buffer_nr_show <span class="token operator">=</span> <span class="token number">1</span>
 
-Plugin <span class="token string">'vim-airline/vim-airline-themes'</span>
-Plugin <span class="token string">'vim-syntastic/syntastic'</span>
+  
+  
+  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
 
-<span class="token comment" spellcheck="true">" All of your Plugins must be added before the following line</span>
-<span class="token keyword">call</span> vundle#<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">" required</span>
-<span class="token keyword">filetype</span> plugin indent <span class="token keyword">on</span>    <span class="token comment" spellcheck="true">" required</span>
 
-<span class="token comment" spellcheck="true">" VIM user interface</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-<span class="token keyword">set</span> <span class="token keyword">number</span> <span class="token comment" spellcheck="true">"Always show line number</span>
-<span class="token keyword">set</span> <span class="token builtin">ruler</span>  <span class="token comment" spellcheck="true">"Always show current position</span>
 
-<span class="token comment" spellcheck="true">" Color Scheme</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-<span class="token builtin">syntax</span> enable
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>neodark#use_256color <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true">" default: 0</span>
-<span class="token keyword">let</span> g<span class="token punctuation">:</span>neodark#terminal_transparent <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true">" default: 0</span>
-<span class="token keyword">colorscheme</span> neodark
 
-<span class="token comment" spellcheck="true">" Mouth</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-<span class="token keyword">set</span> <span class="token builtin">mouse</span><span class="token operator">=</span>a
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
 
-<span class="token comment" spellcheck="true">" Tab</span>
-<span class="token comment" spellcheck="true">" ---------------------------------------------------------------</span>
-<span class="token keyword">set</span> <span class="token builtin">expandtab</span> <span class="token comment" spellcheck="true">"Use spaces instead of tabs</span>
-<span class="token keyword">set</span> <span class="token builtin">tabstop</span><span class="token operator">=</span><span class="token number">4</span> <span class="token comment" spellcheck="true">"1 tab == 4 spaces</span>
-<span class="token keyword">set</span> <span class="token builtin">softtabstop</span><span class="token operator">=</span><span class="token number">4</span>
-<span class="token keyword">set</span> <span class="token builtin">smartindent</span> <span class="token builtin">shiftwidth</span><span class="token operator">=</span><span class="token number">4</span> <span class="token comment" spellcheck="true">"Auto indent</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="noopener">Xcode</a></h3><h2 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a></h3><h4 id="Install-6"><a href="#Install-6" class="headerlink" title="Install"></a>Install</h4><pre class="line-numbers language-bash"><code class="language-bash">brew cask <span class="token function">install</span> docker
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="Usage-7"><a href="#Usage-7" class="headerlink" title="Usage"></a>Usage</h4><a href="/blog/Docker-Cheat-Sheet/" title="Docker Cheat Sheet">Docker Cheat Sheet</a><h2 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h2><a href="/blog/Browser-Enhancement/" title="Browser Enhancement">Browser Enhancement</a></div></div><div id="post-footer" class="post-footer main-content-wrap"><div class="post-footer-tags"><span class="text-color-light text-small">TAGGED IN</span><br><a class="tag tag--primary tag--small t-link" href="/blog/tags/Atom/">Atom</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Docker/">Docker</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Homebrew/">Homebrew</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/zsh/">zsh</a></div><div class="post-actions-wrap"><nav><ul class="post-actions post-action-nav"><li class="post-action"><a class="post-action-btn btn btn--default tooltip--top" href="/blog/Building-Hexo-Website-with-Docker/" data-tooltip="Building Hexo Website with Docker" aria-label="PREVIOUS: Building Hexo Website with Docker"><i class="fa fa-angle-left" aria-hidden="true"></i> <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span></a></li><li class="post-action"><a class="post-action-btn btn btn--default tooltip--top" href="/blog/Sorting-Algorithm-Analysis/" data-tooltip="Sorting Algorithm Analysis" aria-label="NEXT: Sorting Algorithm Analysis"><span class="hide-xs hide-sm text-small icon-mr">NEXT</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></li></ul></nav><ul class="post-actions post-action-share"><li class="post-action hide-lg hide-md hide-sm"><a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li class="post-action"><a class="post-action-btn btn btn--default" href="#gitment"><i class="fa fa-comment-o"></i></a></li><li class="post-action"><a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue"><i class="fa fa-list" aria-hidden="true"></i></a></li></ul></div><div id="gitment"></div></div></article><footer id="footer" class="main-content-wrap"><span class="copyrights">Copyrights &copy; 2018 Luminoid. All Rights Reserved.</span></footer></div><div id="bottom-bar" class="post-bottom-bar" data-behavior="4"><div class="post-actions-wrap"><nav><ul class="post-actions post-action-nav"><li class="post-action"><a class="post-action-btn btn btn--default tooltip--top" href="/blog/Building-Hexo-Website-with-Docker/" data-tooltip="Building Hexo Website with Docker" aria-label="PREVIOUS: Building Hexo Website with Docker"><i class="fa fa-angle-left" aria-hidden="true"></i> <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span></a></li><li class="post-action"><a class="post-action-btn btn btn--default tooltip--top" href="/blog/Sorting-Algorithm-Analysis/" data-tooltip="Sorting Algorithm Analysis" aria-label="NEXT: Sorting Algorithm Analysis"><span class="hide-xs hide-sm text-small icon-mr">NEXT</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></li></ul></nav><ul class="post-actions post-action-share"><li class="post-action hide-lg hide-md hide-sm"><a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li class="post-action hide-xs"><a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac-Development-Config/" title="Share on Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li><li class="post-action"><a class="post-action-btn btn btn--default" href="#gitment"><i class="fa fa-comment-o"></i></a></li><li class="post-action"><a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Catalogue"><i class="fa fa-list" aria-hidden="true"></i></a></li></ul></div></div><div id="share-options-bar" class="share-options-bar" data-behavior="4"><i id="btn-close-shareoptions" class="fa fa-close"></i><ul class="share-options"><li class="share-option"><a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://luminoid.github.io/blog/Mac-Development-Config/"><i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span></a></li><li class="share-option"><a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://luminoid.github.io/blog/Mac-Development-Config/"><i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span></a></li><li class="share-option"><a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://luminoid.github.io/blog/Mac-Development-Config/"><i class="fa fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span></a></li></ul></div></div><div id="about"><div id="about-card"><div id="about-btn-close"><i class="fa fa-remove"></i></div><img id="about-card-picture" src="/blog/assets/images/portrait.jpg" alt="Author&#39;s picture"><h4 id="about-card-name">Luminoid</h4><div id="about-card-bio"><p>Fudan University / Software Engineering<br>dianping.com / iOS Engineer<br>iOS / Front-end<br>movie goer</p></div><div id="about-card-job"><i class="fa fa-briefcase"></i><br><p>Software developer</p></div><div id="about-card-location"><i class="fa fa-map-marker"></i><br>Shanghai</div></div></div><div id="algolia-search-modal" class="modal-container"><div class="modal"><div class="modal-header"><span class="close-button"><i class="fa fa-close"></i></span> <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled"><span class="searchby-algolia-text text-color-light text-small">by</span> <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg"> </a><i class="search-icon fa fa-search"></i><form id="algolia-search-form"><input type="text" id="algolia-search-input" name="search" class="form-control input--large search-input" placeholder="Search "></form></div><div class="modal-body"><div class="no-result text-color-light text-center">no post found</div><div class="results"><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Remove-wbr-tags-from-Beautiful-Soup-object/"><h3 class="media-heading">Remove wbr tags from Beautiful Soup object</h3></a><span class="media-meta"><span class="media-date text-small">Jun 6, 2017</span></span><div class="media-content hide-xs font-merryweather"><h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Hexo-Quick-Guide/"><h3 class="media-heading">Hexo Quick Guide</h3></a><span class="media-meta"><span class="media-date text-small">Jun 8, 2017</span></span><div class="media-content hide-xs font-merryweather"><!-- TOC --><p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>Theme: <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">hexo-theme-tranquilpeak</a></p><h2 id="Quick-Deployment"><a href="#Quick-Deployment" class="headerlink" title="Quick Deployment"></a>Quick Deployment</h2><p>With Algolia and git deployment</p><pre><code class="bash">$ hexo new &quot;My New Article&quot;
-$ vim source/_posts/My-New-Article.md
-$ hexo clean
-$ hexo algolia
-$ git add -A
-$ git commit -m &lt;msg&gt;
-$ git push
-</code></pre></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Hexo-Common-Problems/"><h3 class="media-heading">Hexo Common Problems</h3></a><span class="media-meta"><span class="media-date text-small">Jun 8, 2017</span></span><div class="media-content hide-xs font-merryweather"><ul><li><a href="#command">Command</a><ul><li><a href="#hexo-server-not-found">hexo server not found</a></li></ul></li><li><a href="#plugin">Plugin</a><ul><li><a href="#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed">hexo-algolia 0 posts indexed</a></li><li><a href="#hexo-mathhttpsgithubcomhexojshexo-math-not-working">hexo-math not working</a></li><li><a href="#hexo-tochttpsgithubcombubkoohexo-toc-generating-two-tocs">hexo-toc generating two tocs</a></li><li><a href="#hexo-all-minifierhttpsgithubcomchenzhutianhexo-all-minifier-removing-useful-html-annotation">hexo-all-minifier removing useful html annotation</a></li></ul></li><li><a href="#tool">Tool</a><ul><li><a href="#gitmenthttpsgithubcomimsungitment-validation-failed">Gitment validation failed</a></li></ul></li><li><a href="#syntax-highlighting">Syntax Highlighting</a><ul><li><a href="#highlightjshttpsgithubcomisagalaevhighlightjs">highlight.js</a></li><li><a href="#prismhttpsgithubcomprismjsprism">prism</a></li></ul></li></ul></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Atom-Usage/"><h3 class="media-heading">Atom Usage</h3></a><span class="media-meta"><span class="media-date text-small">Jun 12, 2017</span></span><div class="media-content hide-xs font-merryweather"><ul><li><a href="#official-site">Official Site</a></li><li><a href="#keymaps">Keymaps</a></li><li><a href="#packages">Packages</a><ul><li><a href="#tool">Tool</a><ul><li><a href="#platformio-ide-terminalhttpsatomiopackagesplatformio-ide-terminal">platformio-ide-terminal</a></li><li><a href="#scripthttpsatomiopackagesscript">script</a></li><li><a href="#linterhttpsatomiopackageslinter">linter</a></li><li><a href="#hydrogenhttpsatomiopackageshydrogen">hydrogen</a></li><li><a href="#atom-beautifyhttpsatomiopackagesatom-beautify">atom-beautify</a></li><li><a href="#split-diffhttpsatomiopackagessplit-diff">split-diff</a></li><li><a href="#color-pickerhttpsatomiopackagescolor-picker">color-picker</a></li><li><a href="#busy-signalhttpsatomiopackagesbusy-signal">Busy Signal</a></li><li><a href="#browser-plushttpsatomiopackagesbrowser-plus">browser-plus</a></li></ul></li><li><a href="#ui">UI</a><ul><li><a href="#minimaphttpsatomiopackagesminimap">minimap</a></li><li><a href="#file-iconshttpsatomiopackagesfile-icons">file-icons</a></li><li><a href="#tool-barhttpsatomiopackagestool-bar">tool-bar</a></li><li><a href="#highlight-selectedhttpsatomiopackageshighlight-selected">highlight-selected</a></li><li><a href="#pigmentshttpsatomiopackagespigments">pigments</a></li><li><a href="#qolorhttpsatomiopackagesqolor">qolor</a></li><li><a href="#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected">minimap-highlight-selected</a></li><li><a href="#minimap-cursorlinehttpsatomiopackagesminimap-cursorline">minimap-cursorline</a></li><li><a href="#minimap-selectionhttpsatomiopackagesminimap-selection">minimap-selection</a></li><li><a href="#minimap-bookmarkshttpsatomiopackagesminimap-bookmarks">minimap-bookmarks</a></li><li><a href="#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace">minimap-find-and-replace</a></li><li><a href="#minimap-pigmentshttpsatomiopackagesminimap-pigments">minimap-pigments</a></li><li><a href="#minimap-autohidehttpsatomiopackagesminimap-autohide">minimap-autohide</a></li></ul></li><li><a href="#preview">Preview</a><ul><li><a href="#previewhttpsatomiopackagespreview">preview</a></li><li><a href="#markdown-preview-enhancedhttpsatomiopackagesmarkdown-preview-enhanced">markdown-preview-enhanced</a></li><li><a href="#atom-html-previewhttpsatomiopackagesatom-html-preview">atom-html-preview</a></li><li><a href="#pdf-viewhttpsatomiopackagespdf-view">pdf-view</a></li><li><a href="#regex-railroad-diagramhttpsatomiopackagesregex-railroad-diagram">regex-railroad-diagram</a></li><li><a href="#hexhttpsgithubcomabeestradaatom-hex">hex</a></li></ul></li><li><a href="#ide">IDE</a><ul><li><a href="#atom-ide-uihttpsatomiopackagesatom-ide-ui">atom-ide-ui</a></li><li><a href="#nuclidehttpsnuclideio">Nuclide</a></li></ul></li><li><a href="#language">Language</a><ul><li><a href="#language-markdownhttpsatomiopackageslanguage-markdown">language-markdown</a></li><li><a href="#language-babelhttpsatomiopackageslanguage-babel">language-babel</a></li><li><a href="#atom-typescripthttpsatomiopackagesatom-typescript">atom-typescript</a></li><li><a href="#atom-ternjshttpsatomiopackagesatom-ternjs">atom-ternjs</a></li><li><a href="#autocomplete-pythonhttpsatomiopackagesautocomplete-python">autocomplete-python</a></li><li><a href="#autocomplete-clanghttpsatomiopackagesautocomplete-clang">autocomplete-clang</a></li><li><a href="#linter-eslinthttpsatomiopackageslinter-eslint">linter-eslint</a></li><li><a href="#docblockrhttpsatomiopackagesdocblockr">docblockr</a></li></ul></li><li><a href="#web">Web</a><ul><li><a href="#emmethttpsatomiopackagesemmet">emmet</a></li><li><a href="#atom-bootstrap4httpsatomiopackagesatom-bootstrap4">atom-bootstrap4</a></li></ul></li><li><a href="#edit">Edit</a><ul><li><a href="#sublime-style-column-selectionhttpsatomiopackagessublime-style-column-selection">sublime-style-column-selection</a></li><li><a href="#scroll-through-timehttpsatomiopackagesscroll-through-time">scroll-through-time</a></li></ul></li><li><a href="#git">Git</a><ul><li><a href="#gitignore-snippetshttpsatomiopackagesgitignore-snippets">gitignore-snippets</a></li></ul></li><li><a href="#coding">Coding</a><ul><li><a href="#base64httpsatomiopackagesbase64">base64</a></li><li><a href="#url-encodehttpsatomiopackagesurl-encode">url-encode</a></li></ul></li></ul></li></ul></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/"><h3 class="media-heading">Sorting Algorithm Analysis</h3></a><span class="media-meta"><span class="media-date text-small">Jun 12, 2017</span></span><div class="media-content hide-xs font-merryweather"><table><thead><tr><th style="text-align:left">Algorithm</th><th style="text-align:left">Worst-case running time</th><th style="text-align:left">Average-case / expected running time</th><th style="text-align:left">In-place</th><th style="text-align:left">Stable</th></tr></thead><tbody><tr><td style="text-align:left">Insertion sort<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Shell sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left"></td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Selection sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Heapsort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Bubble sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Quicksort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(nlgn)$ (expected)</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Counting sort</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Radix sort<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Bucket sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n)$ (average-case)</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Merge sort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr></tbody></table></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Mac-Development-Config/"><h3 class="media-heading">Mac Development Config</h3></a><span class="media-meta"><span class="media-date text-small">Aug 8, 2017</span></span><div class="media-content hide-xs font-merryweather"><ul><li><a href="#mac-usage">Mac Usage</a></li><li><a href="#package-manager">Package Manager</a><ul><li><a href="#homebrewhttpsbrewsh">Homebrew</a><ul><li><a href="#install">Install</a></li><li><a href="#usage">Usage</a></li></ul></li><li><a href="#homebrew-caskhttpscaskroomgithubio">Homebrew-Cask</a><ul><li><a href="#install-1">Install</a></li><li><a href="#usage-1">Usage</a></li></ul></li><li><a href="#npmhttpswwwnpmjscom">npm</a><ul><li><a href="#install-2">Install</a></li><li><a href="#usage-2">Usage</a></li></ul></li><li><a href="#yarnhttpsyarnpkgcom">Yarn</a><ul><li><a href="#install-3">Install</a></li><li><a href="#usage-3">Usage</a></li></ul></li></ul></li><li><a href="#terminal">Terminal</a><ul><li><a href="#iterm2httpswwwiterm2com">iTerm2</a></li><li><a href="#oh-my-zshhttpohmyzsh">oh-my-zsh</a><ul><li><a href="#install-4">Install</a></li><li><a href="#theme">Theme</a><ul><li><a href="#agnosterhttpsgithubcomagnosteragnoster-zsh-theme">agnoster</a></li></ul></li><li><a href="#zshrc">.zshrc</a></li></ul></li></ul></li><li><a href="#version-control">Version Control</a><ul><li><a href="#git">Git</a><ul><li><a href="#usage-4">Usage</a></li><li><a href="#ssh">SSH</a></li><li><a href="#git-gui">Git GUI</a></li></ul></li></ul></li><li><a href="#language">Language</a><ul><li><a href="#python3httpswwwpythonorg">Python3</a><ul><li><a href="#install-5">Install</a></li></ul></li><li><a href="#javascript">JavaScript</a></li></ul></li><li><a href="#text-editor">Text Editor</a><ul><li><a href="#atomhttpsatomio">Atom</a><ul><li><a href="#usage-5">Usage</a></li></ul></li><li><a href="#vscodehttpscodevisualstudiocom">VSCode</a><ul><li><a href="#usage-6">Usage</a></li></ul></li><li><a href="#vimwwwvimorg">Vim</a><ul><li><a href="#vimrc">.vimrc</a></li></ul></li></ul></li><li><a href="#ide">IDE</a><ul><li><a href="#xcodehttpsdeveloperapplecomcnxcode">Xcode</a></li></ul></li><li><a href="#tool">Tool</a><ul><li><a href="#dockerhttpswwwdockercom">Docker</a><ul><li><a href="#install-6">Install</a></li><li><a href="#usage-7">Usage</a></li></ul></li></ul></li><li><a href="#browser">Browser</a></li></ul></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Building-Hexo-Website-with-Docker/"><h3 class="media-heading">Building Hexo Website with Docker</h3></a><span class="media-meta"><span class="media-date text-small">Aug 22, 2017</span></span><div class="media-content hide-xs font-merryweather"><!-- TOC --><p>This is a portable and generic solution to build Hexo website with Docker.</p><h2 id="The-Hexo-base-image"><a href="#The-Hexo-base-image" class="headerlink" title="The Hexo base image"></a>The Hexo base image</h2><h3 id="Creating-Hexo-Dockerfile"><a href="#Creating-Hexo-Dockerfile" class="headerlink" title="Creating Hexo Dockerfile"></a>Creating Hexo Dockerfile</h3><pre><code class="sh">$ mkdir hexo
-$ cd hexo
-$ vim Dockerfile
-</code></pre><h3 id="Hexo-Dockerfile-Content"><a href="#Hexo-Dockerfile-Content" class="headerlink" title="Hexo Dockerfile Content"></a>Hexo Dockerfile Content</h3><pre><code class="sh">FROM ubuntu:14.04
-MAINTAINER luminoid
-ENV REFRESHED_AT 2017-08-28
 
-# Install Hexo
-RUN apt-get update -yqq \
-  &amp;&amp; apt-get install -yqq curl git-core \
-  # Install Node.js Using a PPA
-  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
-  &amp;&amp; apt-get install -yqq nodejs build-essential \
-  # Set config to avoid permission issues
-  &amp;&amp; npm config set user 0 \
-  &amp;&amp; npm config set unsafe-perm true \
-  &amp;&amp; npm install -g hexo-cli
 
-# Clone blog
-WORKDIR /data
-RUN git clone https://github.com/Luminoid/blog.git
 
-# Install blog dependencies
-WORKDIR /data/blog
-RUN npm install \
-  &amp;&amp; npm install prompt --save \
-  &amp;&amp; npm install jquery --save
 
-RUN mkdir -p /var/www/html/ \
-  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
-VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
-</code></pre></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Using-Static-Site-Generator-with-GitHub-Pages/"><h3 class="media-heading">Using static site generator with GitHub Pages</h3></a><span class="media-meta"><span class="media-date text-small">Aug 27, 2017</span></span><div class="media-content hide-xs font-merryweather"><ul><li><a href="#using-gh-pages-branch">Using <code>gh-pages</code> branch</a><ul><li><a href="#advantage">Advantage</a></li><li><a href="#disadvantage">Disadvantage</a></li></ul></li><li><a href="#using-master-brunch-and-gh-pages-branch">Using <code>master</code> brunch and <code>gh-pages</code> branch</a><ul><li><a href="#advantage-1">Advantage</a></li><li><a href="#disadvantage-1">Disadvantage</a></li></ul></li><li><a href="#using-master-brunch-and-docs-folder">Using <code>master</code> brunch and <code>/docs</code> folder</a><ul><li><a href="#advantage-2">Advantage</a></li><li><a href="#disadvantage-2">Disadvantage</a></li></ul></li></ul></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/"><h3 class="media-heading">Docker Cheat Sheet</h3></a><span class="media-meta"><span class="media-date text-small">Oct 4, 2017</span></span><div class="media-content hide-xs font-merryweather"></div></div><div style="clear:both"></div><hr></div><div class="media"><div class="media-body"><a class="link-unstyled" href="http://luminoid.github.io/blog/UIView-Inheritance-Relationships/"><h3 class="media-heading">UIView Inheritance Relationships</h3></a><span class="media-meta"><span class="media-date text-small">Nov 8, 2017</span></span><div class="media-content hide-xs font-merryweather"></div></div><div style="clear:both"></div><hr></div></div></div><div class="modal-footer"><p class="results-count text-medium" data-message-zero="no post found" data-message-one="1 post found" data-message-other="{n} posts found">26 posts found</p></div></div></div><div id="cover" style="background-image:url(/blog/assets/images/cover.png)"></div><script src="/blog/assets/js/script-yhuo2grt8r7qkqumzgjoglkfbicl1thukjgmla6jopu56zpcowfedi5zjcor.min.js"></script><script type="text/javascript">!function(){var e=document.createElement("script");e.type="text/javascript",e.src="//imsun.github.io/gitment/dist/gitment.browser.js",e.charset="UTF-8",e.onload=function(){new Gitment({id:"Mac Development Config",owner:"Luminoid",repo:"blog-comment",oauth:{client_id:"2af44d047d41142c0369",client_secret:"fe8dcbe07f66008ace5b0fcdb887e4edc4f01f89"}}).render("gitment")},e.async=!0,document.querySelector("body").appendChild(e);var t=document.createElement("link");t.href="//imsun.github.io/gitment/style/default.css",t.type="text/css",t.rel="stylesheet",t.media="screen,print",document.querySelector("head").appendChild(t)}()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script><script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script><script>var algoliaClient=algoliasearch("14QPLHN7KB","8944ed7d5c334aa391b7c56e64618d20"),algoliaIndex=algoliaClient.initIndex("hexo-blog")</script></body></html>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Mac Usage Mac Usage Package Manager Homebrew Install 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; Usage Homebrew Usage Homebrew-Cask Install 1bre">
+<meta name="keywords" content="Homebrew,zsh,Atom,Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac Development Config">
+<meta property="og:url" content="http://luminoid.github.io/blog/Mac-Development-Config/index.html">
+<meta property="og:site_name" content="Luminoid&#39;s Site">
+<meta property="og:description" content="Mac Usage Mac Usage Package Manager Homebrew Install 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; Usage Homebrew Usage Homebrew-Cask Install 1bre">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-03T13:22:23.348Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac Development Config">
+<meta name="twitter:description" content="Mac Usage Mac Usage Package Manager Homebrew Install 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; Usage Homebrew Usage Homebrew-Cask Install 1bre">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://luminoid.github.io/blog/Mac-Development-Config/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Mac Development Config | Luminoid's Site</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luminoid's Site</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">OK Computer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">25</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/blog/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories<span class="badge">11</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/blog/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">26</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/blog/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/Luminoid" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mac Development Config
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-03 21:22:23" itemprop="dateModified" datetime="2018-05-03T21:22:23+08:00">2018-05-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">3.3k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="mac-usage"><a class="header-anchor" href="#mac-usage"></a>Mac Usage</h2>
+<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<h2 id="package-manager"><a class="header-anchor" href="#package-manager"></a>Package Manager</h2>
+<h3 id="homebrew"><a class="header-anchor" href="#homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
+<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="usage"><a class="header-anchor" href="#usage"></a>Usage</h4>
+<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
+<h3 id="homebrew-cask"><a class="header-anchor" href="#homebrew-cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
+<h4 id="install-v2"><a class="header-anchor" href="#install-v2"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v2"><a class="header-anchor" href="#usage-v2"></a>Usage</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
+<h4 id="install-v3"><a class="header-anchor" href="#install-v3"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
+<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
+<h3 id="yarn"><a class="header-anchor" href="#yarn"></a><a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a></h3>
+<h4 id="install-v4"><a class="header-anchor" href="#install-v4"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v4"><a class="header-anchor" href="#usage-v4"></a>Usage</h4>
+<a href="/blog/Yarn-Usage/" title="Yarn Usage">Yarn Usage</a>
+<a id="more"></a>
+<h2 id="terminal"><a class="header-anchor" href="#terminal"></a>Terminal</h2>
+<h3 id="iterm2"><a class="header-anchor" href="#iterm2"></a><a href="https://www.iterm2.com" target="_blank" rel="noopener">iTerm2</a></h3>
+<h3 id="oh-my-zsh"><a class="header-anchor" href="#oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="noopener">oh-my-zsh</a></h3>
+<h4 id="install-v5"><a class="header-anchor" href="#install-v5"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="theme"><a class="header-anchor" href="#theme"></a>Theme</h4>
+<h5 id="agnoster"><a class="header-anchor" href="#agnoster"></a><a href="https://github.com/agnoster/agnoster-zsh-theme" target="_blank" rel="noopener">agnoster</a></h5>
+<h4 id="zshrc"><a class="header-anchor" href="#zshrc"></a>.zshrc</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="variable">$HOME</span>/.oh-my-zsh</span><br><span class="line"></span><br><span class="line">DEFAULT_USER=<span class="string">"Luminoid"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Theme           ~/.oh-my-zsh/themes/</span></span><br><span class="line">ZSH_THEME=<span class="string">"agnoster"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Plugins         ~/.oh-my-zsh/plugins/</span></span><br><span class="line"><span class="comment"># Custom plugins  ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line">plugins=(git brew node npm osx colored-man-pages zsh-syntax-highlighting)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># User configuration</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LSCOLORS</span></span><br><span class="line"><span class="built_in">export</span> LSCOLORS=<span class="string">"exfxcxdxbxexexabagacad"</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -hG'</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -ahlF'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This source command must be at the end of ~/.zshrc</span></span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure>
+<h2 id="version-control"><a class="header-anchor" href="#version-control"></a>Version Control</h2>
+<h3 id="git"><a class="header-anchor" href="#git"></a>Git</h3>
+<h4 id="usage-v5"><a class="header-anchor" href="#usage-v5"></a>Usage</h4>
+<a href="/blog/Git-Amateur-Guide/" title="Git: Amateur Guide">Git: Amateur Guide</a>
+<h4 id="ssh"><a class="header-anchor" href="#ssh"></a>SSH</h4>
+<p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h4 id="git-gui"><a class="header-anchor" href="#git-gui"></a>Git GUI</h4>
+<p><a href="https://www.sourcetreeapp.com" target="_blank" rel="noopener">SourceTree</a></p>
+<h2 id="language"><a class="header-anchor" href="#language"></a>Language</h2>
+<h3 id="python3"><a class="header-anchor" href="#python3"></a><a href="https://www.python.org" target="_blank" rel="noopener">Python3</a></h3>
+<h4 id="install-v6"><a class="header-anchor" href="#install-v6"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
+<h3 id="javascript"><a class="header-anchor" href="#javascript"></a>JavaScript</h3>
+<p>Run <code>node</code> to toggle ES REPL.<br>
+Run <code>node --v8-options | grep harmony</code> to check current supported ES6 features.</p>
+<h2 id="text-editor"><a class="header-anchor" href="#text-editor"></a>Text Editor</h2>
+<h3 id="atom"><a class="header-anchor" href="#atom"></a><a href="https://atom.io" target="_blank" rel="noopener">Atom</a></h3>
+<h4 id="usage-v6"><a class="header-anchor" href="#usage-v6"></a>Usage</h4>
+<a href="/blog/Atom-Usage/" title="Atom Usage">Atom Usage</a>
+<h3 id="vscode"><a class="header-anchor" href="#vscode"></a><a href="https://code.visualstudio.com" target="_blank" rel="noopener">VSCode</a></h3>
+<h4 id="usage-v7"><a class="header-anchor" href="#usage-v7"></a>Usage</h4>
+<a href="/blog/VS-Code-Usage/" title="VS Code Usage">VS Code Usage</a>
+<h3 id="vim"><a class="header-anchor" href="#vim"></a><a href="www.vim.org/">Vim</a></h3>
+<h4 id="vimrc"><a class="header-anchor" href="#vimrc"></a>.vimrc</h4>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" Vundle</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">set</span> nocompatible              <span class="comment">" be iMproved, required</span></span><br><span class="line"><span class="keyword">filetype</span> off                  <span class="comment">" required</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" set the runtime path to include Vundle and initialize</span></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></span><br><span class="line"><span class="keyword">call</span> vundle#begin()</span><br><span class="line"><span class="comment">" alternatively, pass a path where Vundle should install plugins</span></span><br><span class="line"><span class="comment">"call vundle#begin('~/some/path/here')</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" let Vundle manage Vundle, required</span></span><br><span class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></span><br><span class="line"></span><br><span class="line">Plugin <span class="string">'tpope/vim-fugitive'</span></span><br><span class="line"><span class="comment">" vim-airline</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line">Plugin <span class="string">'vim-airline/vim-airline'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span>=<span class="string">"molokai"</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#enabled = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline</span>#extensions#tabline#buffer_nr_show = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">Plugin <span class="string">'vim-airline/vim-airline-themes'</span></span><br><span class="line">Plugin <span class="string">'vim-syntastic/syntastic'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" All of your Plugins must be added before the following line</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()            <span class="comment">" required</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>    <span class="comment">" required</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" VIM user interface</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span> <span class="comment">"Always show line number</span></span><br><span class="line"><span class="keyword">set</span> ruler  <span class="comment">"Always show current position</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" Color Scheme</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">syntax</span> enable</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#use_256color = <span class="number">1</span> <span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:neodark</span>#terminal_transparent = <span class="number">1</span> <span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">colorscheme</span> neodark</span><br><span class="line"></span><br><span class="line"><span class="comment">" Mouth</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">set</span> mouse=<span class="keyword">a</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" Tab</span></span><br><span class="line"><span class="comment">" ---------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">set</span> expandtab <span class="comment">"Use spaces instead of tabs</span></span><br><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span> <span class="comment">"1 tab == 4 spaces</span></span><br><span class="line"><span class="keyword">set</span> softtabstop=<span class="number">4</span></span><br><span class="line"><span class="keyword">set</span> smartindent <span class="built_in">shiftwidth</span>=<span class="number">4</span> <span class="comment">"Auto indent</span></span><br></pre></td></tr></table></figure>
+<h2 id="ide"><a class="header-anchor" href="#ide"></a>IDE</h2>
+<h3 id="xcode"><a class="header-anchor" href="#xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="noopener">Xcode</a></h3>
+<h2 id="tool"><a class="header-anchor" href="#tool"></a>Tool</h2>
+<h3 id="docker"><a class="header-anchor" href="#docker"></a><a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a></h3>
+<h4 id="install-v7"><a class="header-anchor" href="#install-v7"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install docker</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v8"><a class="header-anchor" href="#usage-v8"></a>Usage</h4>
+<a href="/blog/Docker-Cheat-Sheet/" title="Docker Cheat Sheet">Docker Cheat Sheet</a>
+<h2 id="browser"><a class="header-anchor" href="#browser"></a>Browser</h2>
+<a href="/blog/Browser-Enhancement/" title="Browser Enhancement">Browser Enhancement</a>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Atom/" rel="tag"># Atom</a>
+          
+            <a href="/blog/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/blog/tags/Homebrew/" rel="tag"># Homebrew</a>
+          
+            <a href="/blog/tags/zsh/" rel="tag"># zsh</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/Sorting-Algorithm-Analysis/" rel="next" title="Sorting Algorithm Analysis">
+                <i class="fa fa-chevron-left"></i> Sorting Algorithm Analysis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/Building-Hexo-Website-with-Docker/" rel="prev" title="Building Hexo Website with Docker">
+                Building Hexo Website with Docker <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/blog/images/avatar.png"
+                alt="Luminoid" />
+            
+              <p class="site-author-name" itemprop="name">Luminoid</p>
+              <p class="site-description motion-element" itemprop="description">A blog about programming</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Luminoid" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.douban.com/people/173394996" target="_blank" title="Douban"><i class="fa fa-fw fa-leaf"></i>Douban</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:14302010006@fudan.edu.cn" target="_blank" title="Email"><i class="fa fa-fw fa-envelope"></i>Email</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://luminoid.github.io/note/" title="Note Blog" target="_blank">Note Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://luminoid.github.io/color-splash/" title="Color Splash" target="_blank">Color Splash</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mac-usage"><span class="nav-number">1.</span> <span class="nav-text">Mac Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-manager"><span class="nav-number">2.</span> <span class="nav-text">Package Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install"><span class="nav-number">2.1.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage"><span class="nav-number">2.1.2.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#homebrew-cask"><span class="nav-number">2.2.</span> <span class="nav-text">Homebrew-Cask</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v2"><span class="nav-number">2.2.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v2"><span class="nav-number">2.2.2.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">2.3.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v3"><span class="nav-number">2.3.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v3"><span class="nav-number">2.3.2.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yarn"><span class="nav-number">2.4.</span> <span class="nav-text">Yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v4"><span class="nav-number">2.4.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v4"><span class="nav-number">2.4.2.</span> <span class="nav-text">Usage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#terminal"><span class="nav-number">3.</span> <span class="nav-text">Terminal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iterm2"><span class="nav-number">3.1.</span> <span class="nav-text">iTerm2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oh-my-zsh"><span class="nav-number">3.2.</span> <span class="nav-text">oh-my-zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v5"><span class="nav-number">3.2.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#theme"><span class="nav-number">3.2.2.</span> <span class="nav-text">Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#agnoster"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">agnoster</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zshrc"><span class="nav-number">3.2.3.</span> <span class="nav-text">.zshrc</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-control"><span class="nav-number">4.</span> <span class="nav-text">Version Control</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">4.1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v5"><span class="nav-number">4.1.1.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh"><span class="nav-number">4.1.2.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-gui"><span class="nav-number">4.1.3.</span> <span class="nav-text">Git GUI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#language"><span class="nav-number">5.</span> <span class="nav-text">Language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python3"><span class="nav-number">5.1.</span> <span class="nav-text">Python3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v6"><span class="nav-number">5.1.1.</span> <span class="nav-text">Install</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript"><span class="nav-number">5.2.</span> <span class="nav-text">JavaScript</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#text-editor"><span class="nav-number">6.</span> <span class="nav-text">Text Editor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#atom"><span class="nav-number">6.1.</span> <span class="nav-text">Atom</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v6"><span class="nav-number">6.1.1.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode"><span class="nav-number">6.2.</span> <span class="nav-text">VSCode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v7"><span class="nav-number">6.2.1.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-number">6.3.</span> <span class="nav-text">Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vimrc"><span class="nav-number">6.3.1.</span> <span class="nav-text">.vimrc</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ide"><span class="nav-number">7.</span> <span class="nav-text">IDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xcode"><span class="nav-number">7.1.</span> <span class="nav-text">Xcode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tool"><span class="nav-number">8.</span> <span class="nav-text">Tool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker"><span class="nav-number">8.1.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#install-v7"><span class="nav-number">8.1.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-v8"><span class="nav-number">8.1.2.</span> <span class="nav-text">Usage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#browser"><span class="nav-number">9.</span> <span class="nav-text">Browser</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luminoid</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">118k</span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('3');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+  
+  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Douban,Wechat,Weibo,Facebook,Twitter,Linkedin,Evernote";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
+
+</body>
+</html>

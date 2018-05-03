@@ -9,8 +9,6 @@ tags: Git
 keywords: Git
 ---
 
-<!-- TOC -->
-
 Collecting from *Version Control with Git* & *Git Manual*
 
 ## Concept
@@ -23,6 +21,7 @@ The **index** is a temporary and dynamic binary file that describes the director
 The **Git object store** is organized and implemented as a content-addressable storage system(SHA1 hash value => object).
 
 <!-- more -->
+
 #### Remote Repository
 ##### origin
 The default upstream repository.

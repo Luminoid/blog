@@ -7,6 +7,7 @@ tags: Sorting algorithm
 keywords:
   - Sorting algorithm
   - time complexity
+mathjax: true
 ---
 
 |Algorithm | Worst-case running time | Average-case / expected running time | In-place | Stable |
@@ -23,5 +24,6 @@ keywords:
 | Merge sort | $\Theta(nlgn)$ | $\Theta(nlgn)$ | No | Yes |
 
 <!-- more -->
+
 [^1]: n: the number of items to sort.
 [^2]: For radix sort, each item is a d-digit number, where each digit takes on k possible values.

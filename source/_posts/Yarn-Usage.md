@@ -11,8 +11,6 @@ keywords: Yarn
 
 [Official Site](https://yarnpkg.com/en/)
 
-<!-- TOC -->
-
 ## Command
 ``` bash
 yarn list                           # List installed packages

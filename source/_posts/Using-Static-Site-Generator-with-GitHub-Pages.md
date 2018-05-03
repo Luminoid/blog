@@ -14,24 +14,6 @@ keywords:
   - gh-pages
 ---
 
-<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
-
-* [Using `gh-pages` branch](#using-gh-pages-branch)
-    * [Advantage](#advantage)
-    * [Disadvantage](#disadvantage)
-* [Using `master` brunch and `gh-pages` branch](#using-master-brunch-and-gh-pages-branch)
-    * [Advantage](#advantage-1)
-    * [Disadvantage](#disadvantage-1)
-* [Using `master` brunch and `/docs` folder](#using-master-brunch-and-docs-folder)
-    * [Advantage](#advantage-2)
-    * [Disadvantage](#disadvantage-2)
-
-<!-- tocstop -->
-
-<!-- excerpt -->
-
-<!-- TOC -->
-
 There are three ways to deploy static site on GitHub Pages as follows. I tend to use the third scheme myself. The related GitHub documentation can be found [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).
 
 ## Using `gh-pages` branch
@@ -40,6 +22,8 @@ Simply deploy website content on `gh-pages` branch and maintain code locally.
 This is the easiest way because many static site generators have build-in `deploy` command. Users would only need to setup the deployment configuration once and run `deploy` command every time after the modification. An npm package [gh-pages](https://www.npmjs.com/package/gh-pages) helps doing this, if there is no built-in `deploy` command.
 ### Disadvantage
 Only website content is under the version control. The code that generates the website content is maintained locally.
+
+<!-- more -->
 
 ## Using `master` brunch and `gh-pages` branch
 Deploy code on `master` brunch and website content on `gh-pages` branch.

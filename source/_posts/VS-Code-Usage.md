@@ -11,50 +11,6 @@ keywords:
 - VS Code
 ---
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-
-* [Official Site](#official-site)
-* [Setup](#setup)
-	* [Launch VS Code from the Command Line](#launch-vs-code-from-the-command-line)
-* [Keymaps](#keymaps)
-* [Extension](#extension)
-	* [Debuggers](#debuggers)
-		* [Debugger for Chrome](#debugger-for-chromehttpsmarketplacevisualstudiocomitemsitemnamemsjsdiagdebugger-for-chrome)
-		* [React Native Tools](#react-native-toolshttpsmarketplacevisualstudiocomitemsitemnamevsmobilevscode-react-native)
-	* [Languages](#languages)
-		* [Code Runner](#code-runnerhttpsmarketplacevisualstudiocomitemsitemnameformulahendrycode-runner)
-		* [npm](#npmhttpsmarketplacevisualstudiocomitemsitemnameeg2vscode-npm-script)
-		* [Auto Close Tag](#auto-close-taghttpsmarketplacevisualstudiocomitemsitemnameformulahendryauto-close-tag)
-		* [Auto Rename Tag](#auto-rename-taghttpsmarketplacevisualstudiocomitemsitemnameformulahendryauto-rename-tag)
-		* [IntelliSense for CSS class names](#intellisense-for-css-class-nameshttpsmarketplacevisualstudiocomitemsitemnamezigndhtml-css-class-completion)
-		* [Document this](#document-thishttpsmarketplacevisualstudiocomitemsitemnamejoeldaydocthis)
-	* [Snippets](#snippets)
-		* [HTML Snippets](#html-snippetshttpsmarketplacevisualstudiocomitemsitemnameabusaidmhtml-snippets)
-		* [JavaScript (ES6) code snippets](#javascript-es6-code-snippetshttpsmarketplacevisualstudiocomitemsitemnamexabikosjavascriptsnippets)
-		* [Reactjs code snippets](#reactjs-code-snippetshttpsmarketplacevisualstudiocomitemsitemnamexabikosreactsnippets)
-		* [React-Native/React/Redux snippets for es6/es7](#react-nativereactredux-snippets-for-es6es7httpsmarketplacevisualstudiocomitemsitemnameequimperreact-native-react-redux)
-	* [Formatters](#formatters)
-		* [Beautify](#beautifyhttpsmarketplacevisualstudiocomitemsitemnamehookyqrbeautify)
-		* [Prettier - Code formatter](#prettier-code-formatterhttpsmarketplacevisualstudiocomitemsitemnameesbenpprettier-vscode)
-	* [Themes](#themes)
-		* [vscode-icons](#vscode-iconshttpsmarketplacevisualstudiocomitemsitemnamerobertohuertasmvscode-icons)
-	* [Other](#other)
-		* [Markdown Preview Enhanced](#markdown-preview-enhancedhttpsmarketplacevisualstudiocomitemsitemnameshd101wyymarkdown-preview-enhanced)
-		* [Project Manager](#project-managerhttpsmarketplacevisualstudiocomitemsitemnamealefragnaniproject-manager)
-		* [Path Intellisense](#path-intellisensehttpsmarketplacevisualstudiocomitemsitemnamechristian-kohlerpath-intellisense)
-		* [npm Intellisense](#npm-intellisensehttpsmarketplacevisualstudiocomitemsitemnamechristian-kohlernpm-intellisense)
-		* [Auto Import](#auto-importhttpsmarketplacevisualstudiocomitemsitemnamesteoatesautoimport)
-		* [Color Picker](#color-pickerhttpsmarketplacevisualstudiocomitemsitemnameansekivscode-color)
-		* [Color Highlight](#color-highlighthttpsmarketplacevisualstudiocomitemsitemnamenaumovscolor-highlight)
-		* [filesize](#filesizehttpsmarketplacevisualstudiocomitemsitemnamemkxmlvscode-filesize)
-
-<!-- /code_chunk_output -->
-
-<!-- excerpt -->
-
-<!-- TOC -->
-
 ## Official Site
 https://code.visualstudio.com
 
@@ -64,6 +20,8 @@ Open the Command Palette (⇧⌘P) and type `Shell Command: Install 'code' comma
 
 ## Keymaps
 {% post_link Universal-Editor-Keymaps %}
+
+<!-- more -->
 
 ## Extension
 ### Debuggers

@@ -11,8 +11,6 @@ keywords:
 - Chrome
 ---
 
-<!-- TOC -->
-
 ## Safari
 ### [Extensions](https://safari-extensions.apple.com)
 #### [Adblock Plus](https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A)

@@ -8,10 +8,10 @@ fi
 commit_message=$1
 
 echo "$ hexo clean"
-hexo clean
+hexo clean --config source/_data/next.yml
 
-echo "$ hexo algolia"
-if ! hexo algolia; then
+echo "$ hexo generate"
+if ! hexo generate --config source/_data/next.yml; then
     echo "Error! Algolia failed"
     exit 2
 fi

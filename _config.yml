@@ -3,23 +3,24 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Luminoid's Site
-subtitle: OK Computer
-description: A personal blog
-author: Luminoid
-language: en
+title: Hexo
+subtitle:
+description:
+keywords:
+author: John Doe
+language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://luminoid.github.io/blog
-root: /blog/
-permalink: :title/
+url: http://yoursite.com
+root: /
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: docs # Github will generate gh-pages with docs/ folder
+public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -34,10 +35,15 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
-
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -45,8 +51,8 @@ future: true
 index_generator:
   path: ''
   per_page: 10
-  order_by: -updated
-
+  order_by: -date
+  
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -67,79 +73,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: tranquilpeak
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#   type: git
-#   repo: git@github.com:Luminoid/blog.git
-#   branch: gh-pages
-#   message:
-
-# Include & Exclude
-exclude:
-  - .DS_Store
-
-# RSS feed
-feed:
-  type: atom
-  path: atom.xml # Default: atom.xml/rss2.xml
-  limit: 20 # Use 0 or false to show all posts
-
-# Define global keywords for search engines
-keywords:
-  - hexo
-
-# Search
-algolia:
-  appId: "14QPLHN7KB"
-  apiKey: "8944ed7d5c334aa391b7c56e64618d20"
-  chunkSize: 5000
-  indexName: "hexo-blog"
-  fields:
-    - title
-    - date
-    - permalink
-    - thumbnailImageUrl
-    - tags
-    - categories
-    - excerpt
-    - excerpt:strip
-
-# Highlighting
-highlight:
-  enable: false         # disable the default code highlight plugin
-  # line_number: true
-  # auto_detect: false
-  # tab_replace:
-
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'coy'
-  line_number: true     # default false
-
-# hexo-all-minifier
-## Docs: https://github.com/chenzhutian/hexo-all-minifier
-all_minifier: true
-
-js_concator:
-  enable: false
-
-html_minifier:
-  silent: true
-
-css_minifier:
-  silent: true
-
-js_minifier:
-  silent: true
-
-image_minifier:
-  enable: true
-  interlaced: false     # Interlace gif for progressive rendering
-  multipass: false      # Optimize svg multiple times until it’s fully optimized
-  optimizationLevel: 2  # Select an optimization level between 0 and 7
-  pngquant: true        # Enable imagemin-pngquant plugin
-  progressive: false    # Lossless conversion to progressive
-  silent: true          # Disable logging optimize informations
+deploy:
+  type:

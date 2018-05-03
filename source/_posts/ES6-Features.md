@@ -10,8 +10,6 @@ keywords:
 - ES6
 ---
 
-<!-- TOC -->
-
 References:
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [rse/es6-features](http://es6-features.org)
@@ -584,6 +582,9 @@ for(let t of traverseArray(arr)) {
 // d
 // e
 ```
+
+### async
+
 
 ### thunkify
 Turn a regular node function into one which returns a thunk.

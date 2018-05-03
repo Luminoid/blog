@@ -15,8 +15,6 @@ keywords:
 - Keymaps
 ---
 
-<!-- TOC -->
-
 This post intended to provide a universal keymaps across different editors and IDEs on Mac.
 
 <!-- more -->

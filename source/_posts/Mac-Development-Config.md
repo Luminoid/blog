@@ -15,60 +15,6 @@ keywords:
   - Docker
 ---
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-
-* [Mac Usage](#mac-usage)
-* [Package Manager](#package-manager)
-	* [Homebrew](#homebrewhttpsbrewsh)
-		* [Install](#install)
-		* [Usage](#usage)
-	* [Homebrew-Cask](#homebrew-caskhttpscaskroomgithubio)
-		* [Install](#install-1)
-		* [Usage](#usage-1)
-	* [npm](#npmhttpswwwnpmjscom)
-		* [Install](#install-2)
-		* [Usage](#usage-2)
-	* [Yarn](#yarnhttpsyarnpkgcom)
-		* [Install](#install-3)
-		* [Usage](#usage-3)
-* [Terminal](#terminal)
-	* [iTerm2](#iterm2httpswwwiterm2com)
-	* [oh-my-zsh](#oh-my-zshhttpohmyzsh)
-		* [Install](#install-4)
-		* [Theme](#theme)
-			* [agnoster](#agnosterhttpsgithubcomagnosteragnoster-zsh-theme)
-		* [.zshrc](#zshrc)
-* [Version Control](#version-control)
-	* [Git](#git)
-		* [Usage](#usage-4)
-		* [SSH](#ssh)
-		* [Git GUI](#git-gui)
-* [Language](#language)
-	* [Python3](#python3httpswwwpythonorg)
-		* [Install](#install-5)
-	* [JavaScript](#javascript)
-* [Text Editor](#text-editor)
-	* [Atom](#atomhttpsatomio)
-		* [Usage](#usage-5)
-	* [VSCode](#vscodehttpscodevisualstudiocom)
-		* [Usage](#usage-6)
-	* [Vim](#vimwwwvimorg)
-		* [.vimrc](#vimrc)
-* [IDE](#ide)
-	* [Xcode](#xcodehttpsdeveloperapplecomcnxcode)
-* [Tool](#tool)
-	* [Docker](#dockerhttpswwwdockercom)
-		* [Install](#install-6)
-		* [Usage](#usage-7)
-* [Browser](#browser)
-
-<!-- /code_chunk_output -->
-
-<!-- excerpt -->
-
-<!-- TOC -->
-
 ## Mac Usage
 {% post_link Mac-Usage %}
 
@@ -110,6 +56,8 @@ brew install yarn
 
 #### Usage
 {% post_link Yarn-Usage %}
+
+<!-- more -->
 
 ## Terminal
 ### [iTerm2](https://www.iterm2.com)

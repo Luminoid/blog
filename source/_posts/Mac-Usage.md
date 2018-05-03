@@ -10,8 +10,6 @@ keywords:
   - bash
 ---
 
-<!-- TOC -->
-
 ## Preferences
 ### Manage Login Items
 System Preferences -> Users & Groups -> Login Items

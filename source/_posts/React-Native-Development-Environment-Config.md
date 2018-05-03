@@ -11,8 +11,6 @@ keywords:
 - React Native
 ---
 
-<!-- TOC -->
-
 ## Official Site
 [React Native](http://facebook.github.io/react-native/)
 [React](https://reactjs.org)

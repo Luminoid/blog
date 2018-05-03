@@ -11,73 +11,6 @@ keywords:
 - package
 ---
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-
-* [Official Site](#official-site)
-* [Keymaps](#keymaps)
-* [Packages](#packages)
-	* [Tool](#tool)
-		* [platformio-ide-terminal](#platformio-ide-terminalhttpsatomiopackagesplatformio-ide-terminal)
-		* [script](#scripthttpsatomiopackagesscript)
-		* [linter](#linterhttpsatomiopackageslinter)
-		* [hydrogen](#hydrogenhttpsatomiopackageshydrogen)
-		* [atom-beautify](#atom-beautifyhttpsatomiopackagesatom-beautify)
-		* [split-diff](#split-diffhttpsatomiopackagessplit-diff)
-		* [color-picker](#color-pickerhttpsatomiopackagescolor-picker)
-		* [Busy Signal](#busy-signalhttpsatomiopackagesbusy-signal)
-		* [browser-plus](#browser-plushttpsatomiopackagesbrowser-plus)
-	* [UI](#ui)
-		* [minimap](#minimaphttpsatomiopackagesminimap)
-		* [file-icons](#file-iconshttpsatomiopackagesfile-icons)
-		* [tool-bar](#tool-barhttpsatomiopackagestool-bar)
-		* [highlight-selected](#highlight-selectedhttpsatomiopackageshighlight-selected)
-		* [pigments](#pigmentshttpsatomiopackagespigments)
-		* [qolor](#qolorhttpsatomiopackagesqolor)
-		* [minimap-highlight-selected](#minimap-highlight-selectedhttpsatomiopackagesminimap-highlight-selected)
-		* [minimap-cursorline](#minimap-cursorlinehttpsatomiopackagesminimap-cursorline)
-		* [minimap-selection](#minimap-selectionhttpsatomiopackagesminimap-selection)
-		* [minimap-bookmarks](#minimap-bookmarkshttpsatomiopackagesminimap-bookmarks)
-		* [minimap-find-and-replace](#minimap-find-and-replacehttpsatomiopackagesminimap-find-and-replace)
-		* [minimap-pigments](#minimap-pigmentshttpsatomiopackagesminimap-pigments)
-		* [minimap-autohide](#minimap-autohidehttpsatomiopackagesminimap-autohide)
-	* [Preview](#preview)
-		* [preview](#previewhttpsatomiopackagespreview)
-		* [markdown-preview-enhanced](#markdown-preview-enhancedhttpsatomiopackagesmarkdown-preview-enhanced)
-		* [atom-html-preview](#atom-html-previewhttpsatomiopackagesatom-html-preview)
-		* [pdf-view](#pdf-viewhttpsatomiopackagespdf-view)
-		* [regex-railroad-diagram](#regex-railroad-diagramhttpsatomiopackagesregex-railroad-diagram)
-		* [hex](#hexhttpsgithubcomabeestradaatom-hex)
-	* [IDE](#ide)
-		* [atom-ide-ui](#atom-ide-uihttpsatomiopackagesatom-ide-ui)
-		* [Nuclide](#nuclidehttpsnuclideio)
-	* [Language](#language)
-		* [language-markdown](#language-markdownhttpsatomiopackageslanguage-markdown)
-		* [language-babel](#language-babelhttpsatomiopackageslanguage-babel)
-		* [atom-typescript](#atom-typescripthttpsatomiopackagesatom-typescript)
-		* [atom-ternjs](#atom-ternjshttpsatomiopackagesatom-ternjs)
-		* [autocomplete-python](#autocomplete-pythonhttpsatomiopackagesautocomplete-python)
-		* [autocomplete-clang](#autocomplete-clanghttpsatomiopackagesautocomplete-clang)
-		* [linter-eslint](#linter-eslinthttpsatomiopackageslinter-eslint)
-		* [docblockr](#docblockrhttpsatomiopackagesdocblockr)
-	* [Web](#web)
-		* [emmet](#emmethttpsatomiopackagesemmet)
-		* [atom-bootstrap4](#atom-bootstrap4httpsatomiopackagesatom-bootstrap4)
-	* [Edit](#edit)
-		* [sublime-style-column-selection](#sublime-style-column-selectionhttpsatomiopackagessublime-style-column-selection)
-		* [scroll-through-time](#scroll-through-timehttpsatomiopackagesscroll-through-time)
-	* [Git](#git)
-		* [gitignore-snippets](#gitignore-snippetshttpsatomiopackagesgitignore-snippets)
-	* [Coding](#coding)
-		* [base64](#base64httpsatomiopackagesbase64)
-		* [url-encode](#url-encodehttpsatomiopackagesurl-encode)
-
-<!-- /code_chunk_output -->
-
-<!-- excerpt -->
-
-<!-- TOC -->
-
 ## Official Site
 https://atom.io
 
@@ -104,6 +37,8 @@ Right click or press CMD-SHIFT-C/CTRL-ALT-C to open it.
 A package that provides an easy to use API to show your package is performing a task.
 #### [browser-plus](https://atom.io/packages/browser-plus)
 Real Browser in ATOM
+
+<!-- more -->
 
 ### UI
 #### [minimap](https://atom.io/packages/minimap)

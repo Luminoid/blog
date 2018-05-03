@@ -16,28 +16,6 @@ keywords:
   - hexo-toc
 ---
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-
-* [Command](#command)
-	* [hexo server not found](#hexo-server-not-found)
-* [Plugin](#plugin)
-	* [hexo-algolia 0 posts indexed](#hexo-algoliahttpsgithubcomoncletomhexo-algolia-0-posts-indexed)
-	* [hexo-math not working](#hexo-mathhttpsgithubcomhexojshexo-math-not-working)
-	* [hexo-toc generating two tocs](#hexo-tochttpsgithubcombubkoohexo-toc-generating-two-tocs)
-	* [hexo-all-minifier removing useful html annotation](#hexo-all-minifierhttpsgithubcomchenzhutianhexo-all-minifier-removing-useful-html-annotation)
-* [Tool](#tool)
-	* [Gitment validation failed](#gitmenthttpsgithubcomimsungitment-validation-failed)
-* [Syntax Highlighting](#syntax-highlighting)
-	* [highlight.js](#highlightjshttpsgithubcomisagalaevhighlightjs)
-	* [prism](#prismhttpsgithubcomprismjsprism)
-
-<!-- /code_chunk_output -->
-
-<!-- excerpt -->
-
-<!-- TOC -->
-
 This article mainly focuses on the problems encountered in theme [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak).
 
 ## Command
@@ -45,6 +23,8 @@ This article mainly focuses on the problems encountered in theme [tranquilpeak](
 **Problem**: Can't find `hexo server` command.
 
 **Solution**: Extra plugins line in `_config.yml` may cause this problem.
+
+<!-- more -->
 
 ## Plugin
 ### [hexo-algolia](https://github.com/oncletom/hexo-algolia) 0 posts indexed

@@ -9,8 +9,6 @@ keywords: Objective-C
 
 Collecting from *Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs*
 
-<!-- TOC -->
-
 [Objective-C](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
 [Clang](http://clang.llvm.org/docs/)
 
