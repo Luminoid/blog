@@ -127,7 +127,7 @@
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/EditFiles.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/StageFiles.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/CommitFiles.png">
-<meta property="og:updated_time" content="2018-05-03T13:20:45.526Z">
+<meta property="og:updated_time" content="2018-05-04T07:02:39.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: Amateur Guide">
 <meta name="twitter:description" content="Collecting from Version Control with Git &amp;amp; Git Manual Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the informatio">
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-03 21:20:45" itemprop="dateModified" datetime="2018-05-03T21:20:45+08:00">2018-05-03</time>
+                <time title="Modified: 2018-05-04 15:02:39" itemprop="dateModified" datetime="2018-05-04T15:02:39+08:00">2018-05-04</time>
               
             
           </span>
@@ -485,7 +485,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">22k</span>
+                <span title="Symbols count in article">23k</span>
               
 
               
@@ -936,6 +936,8 @@ eg. <code>HEAD@{1}</code> references the previous commit for the branch</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --tree-filter <span class="string">'rm -f &lt;file&gt;'</span> master</span><br></pre></td></tr></table></figure>
 <p>Rewrite the commit messages</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --msg-filter <span class="string">'sed &lt;command&gt;'</span> master</span><br></pre></td></tr></table></figure>
+<p>Remove one line in file from all commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --tree-filter <span class="string">"test -f &lt;file&gt; &amp;&amp; sed -i '' \"/&lt;content&gt;/ d\" &lt;file&gt; || echo skip"</span> -- --all</span><br></pre></td></tr></table></figure>
 <p>Faster version of removing a file, translating any tag refs from a prefiltered state into the new postfiltered repository, operating on all branches</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --index-filter <span class="string">'git rm --cached --ignore-unmatch &lt;file&gt;'</span> \</span><br><span class="line">--tag-name-filter cat \</span><br><span class="line">-- --all</span><br></pre></td></tr></table></figure>
 <p>Turn a subdirectory into a repository of its own</p>

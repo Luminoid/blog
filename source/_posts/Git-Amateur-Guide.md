@@ -530,6 +530,10 @@ Rewrite the commit messages
 ``` bash
 git filter-branch --msg-filter 'sed <command>' master
 ```
+Remove one line in file from all commits
+``` bash
+git filter-branch --tree-filter "test -f <file> && sed -i '' \"/<content>/ d\" <file> || echo skip" -- --all
+```
 Faster version of removing a file, translating any tag refs from a prefiltered state into the new postfiltered repository, operating on all branches
 ``` bash
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <file>' \
