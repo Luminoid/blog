@@ -14,7 +14,7 @@ keywords:
 ---
 
 [Hexo](https://hexo.io)
-Theme: [hexo-theme-tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak)
+Theme: [hexo-theme-next](https://github.com/theme-next/hexo-theme-next)
 
 ## Quick Deployment
 With Algolia and git deployment

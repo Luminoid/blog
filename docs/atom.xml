@@ -356,34 +356,6 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
   </entry>
   
   <entry>
-    <title>React Native Development Environment Config</title>
-    <link href="http://luminoid.github.io/blog/React-Native-Development-Environment-Config/"/>
-    <id>http://luminoid.github.io/blog/React-Native-Development-Environment-Config/</id>
-    <published>2017-12-12T17:38:00.000Z</published>
-    <updated>2018-05-03T08:34:47.698Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="official-site"><a class="header-anchor" href="#official-site"></a>Official Site</h2><p><a href="http://facebook.github.io/react-native/" target="_blank" rel="noopener">React Native</a><br><a href="https://reactjs.org" target="_blank" rel="noopener">React</a></p><h2 id="install"><a class="header-anchor" href="#install"></a>Install</h2><ul><li>Yarn: <code>brew install yarn</code></li><li>Node: <code>brew install node</code></li><li>Watchman: <code>brew install watchman</code></li><li>React Native CLI: <code>npm install -g react-native-cli</code></li><li>Create React Native App: <code>npm install -g create-react-native-app</code></li></ul><h2 id="editor"><a class="header-anchor" href="#editor"></a>Editor</h2><h3 id="vscode"><a class="header-anchor" href="#vscode"></a>VSCode</h3><a href="/blog/VS-Code-Usage/" title="VS Code Usage">VS Code Usage</a>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;official-site&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#official-site&quot;&gt;&lt;/a&gt;Official Site&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://facebook.github.io/react-nat
-      
-    
-    </summary>
-    
-      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
-    
-      <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
-    
-    
-      <category term="React Native" scheme="http://luminoid.github.io/blog/tags/React-Native/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VS Code Usage</title>
     <link href="http://luminoid.github.io/blog/VS-Code-Usage/"/>
     <id>http://luminoid.github.io/blog/VS-Code-Usage/</id>
@@ -625,6 +597,110 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
       <category term="Homebrew" scheme="http://luminoid.github.io/blog/tags/Homebrew/"/>
     
       <category term="zsh" scheme="http://luminoid.github.io/blog/tags/zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sorting Algorithm Analysis</title>
+    <link href="http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/"/>
+    <id>http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/</id>
+    <published>2017-06-12T11:51:09.000Z</published>
+    <updated>2018-05-03T08:29:32.824Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:left">Algorithm</th><th style="text-align:left">Worst-case running time</th><th style="text-align:left">Average-case / expected running time</th><th style="text-align:left">In-place</th><th style="text-align:left">Stable</th></tr></thead><tbody><tr><td style="text-align:left">Insertion sort<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Shell sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left"></td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Selection sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Heapsort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Bubble sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Quicksort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(nlgn)$ (expected)</td><td style="text-align:left">Yes</td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Counting sort</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">$\Theta(k+n)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Radix sort<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">$\Theta(d(n+k))$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Bucket sort</td><td style="text-align:left">$\Theta(n^2)$</td><td style="text-align:left">$\Theta(n)$ (average-case)</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Merge sort</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">$\Theta(nlgn)$</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td></tr></tbody></table><a id="more"></a><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>n: the number of items to sort. <a href="#fnref1" class="footnote-backref">↩</a></p></li><li id="fn2" class="footnote-item"><p>For radix sort, each item is a d-digit number, where each digit takes on k possible values. <a href="#fnref2" class="footnote-backref">↩</a></p></li></ol></section>]]></content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Algorithm&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Worst-case running time&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Average-case / expected running time&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;In-place&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Stable&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Insertion sort&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Shell sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Selection sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Heapsort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bubble sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Quicksort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$ (expected)&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Counting sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(k+n)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Radix sort&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(d(n+k))$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bucket sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n^2)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(n)$ (average-case)&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Merge sort&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;$\Theta(nlgn)$&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;No&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://luminoid.github.io/blog/categories/Algorithm/"/>
+    
+    
+      <category term="Sorting algorithm" scheme="http://luminoid.github.io/blog/tags/Sorting-algorithm/"/>
     
   </entry>
   

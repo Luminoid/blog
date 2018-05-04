@@ -11,8 +11,7 @@ keywords:
 - package
 ---
 
-## Official Site
-https://atom.io
+Official Site: https://atom.io
 
 ## Keymaps
 {% post_link Universal-Editor-Keymaps %}

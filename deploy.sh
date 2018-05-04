@@ -1,10 +1,19 @@
 #!/bin/bash
 
 if [ $# -ne 1 ]; then
-    echo "Error! Usage: sh deploy.sh <commit_message>"
+    echo "Error! Usage: sh deploy.sh <commit_message> or sh deploy.sh compress"
     exit 1
 fi
 
+# Compress image
+if [ $1 = "compress" ]; then
+    cd source/_posts
+    pngquant --ext .png --force 256 */*.png
+    echo "PNG images under source/_posts have been compressed."
+    exit 0
+fi
+
+# Generate & deploy
 commit_message=$1
 
 echo "$ hexo clean"
