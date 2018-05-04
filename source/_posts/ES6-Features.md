@@ -337,7 +337,7 @@ wm.get(obj) === 123;
 ```
 
 ## Iterator & for...of
-**Iterator**
+### Iterator
 ``` js
 let fibonacci = {
   [Symbol.iterator]() {
@@ -358,7 +358,7 @@ for (let n of fibonacci) {
 }
 ```
 
-**for...in & for...of**
+### for...in & for...of
 ``` js
 let arr = ['a', 'b', 'c'];
 for (let index in arr) {
@@ -430,7 +430,7 @@ A Promise is in one of these states:
 - fulfilled: meaning that the operation completed successfully.
 - rejected: meaning that the operation failed.
 
-**Simple Example**
+#### Simple Example
 ``` js
 let promise = new Promise(function(resolve, reject) {
   console.log('Promise task');
@@ -450,7 +450,7 @@ console.log('Next task');
 // Promise resolved.
 ```
 
-**Load image asynchronously**
+#### Load image asynchronously
 ``` js
 function loadImageAsync(url) {
   return new Promise(function(resolve, reject) {
@@ -474,7 +474,7 @@ function loadImageAsync(url) {
 ### Generator
 `yield` provides implementation of semi-coroutine in Javascript
 
-**Iterator**
+#### Iterator
 ``` js
 let fibonacci = {
   * [Symbol.iterator]() {
@@ -493,7 +493,7 @@ for (let n of fibonacci) {
 }
 ```
 
-**Direct Use**
+#### Direct Use
 ``` js
 function* range (start, end, step) {
   while (start < end) {
@@ -507,7 +507,7 @@ for (let i of range(0, 10, 2)) {
 }
 ```
 
-**Method**
+#### Method
 ``` js
 function* gen() {
   while(true) {
@@ -558,7 +558,7 @@ Error: Error throwed!
 { value: undefined, done: true }
 ```
 
-**`yield*` expression**
+#### `yield*` expression
 ``` js
 function* traverseArray(arr) {
   if (Array.isArray(arr)) {
@@ -583,10 +583,7 @@ for(let t of traverseArray(arr)) {
 // e
 ```
 
-### async
-
-
-### thunkify
+#### thunkify
 Turn a regular node function into one which returns a thunk.
 ``` js
 const thunkify = require('thunkify');
@@ -600,7 +597,7 @@ read('tmp.txt', 'utf8')(function(err, data){
 });
 ```
 
-### co
+#### co
 Generator based control flow goodness for nodejs and the browser, using promises.
 ``` js
 const co = require('co');
@@ -615,4 +612,96 @@ co(gen).then(function (value) {
 }, function (err) {
   console.error(err.stack);
 });
+```
+
+### async
+``` js
+function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function add1(x) {
+  const a = await resolveAfter2Seconds(20);
+  const b = await resolveAfter2Seconds(30);
+  return x + a + b;
+}
+
+add1(10).then(v => {
+  console.log(v);  // prints 60 after 4 seconds.
+});
+
+async function add2(x) {
+  let [p_a, p_b] = await Promise.all([resolveAfter2Seconds(20), resolveAfter2Seconds(30)]);
+  return x + p_a + p_b;
+}
+
+add2(10).then(v => {
+  console.log(v);  // prints 60 after 2 seconds.
+});
+```
+
+#### Perform Animations
+``` js
+async function chainAnimationsAsync(elem, animations) {
+  let ret = null;
+  try {
+    for(let anim of animations) {
+      ret = await anim(elem);
+    }
+  } catch(e) {
+    console.log(e);
+  }
+  return ret;
+}
+```
+
+#### Perform Asynchronous Tasks in Order
+``` js
+async function logInOrder(urls) {
+  // Fetch urls concurrently
+  const textPromises = urls.map(async url => {
+    const response = await fetch(url);
+    return response.text();
+  });
+
+  // log in order
+  for (const textPromise of textPromises) {
+    console.log(await textPromise);
+  }
+}
+```
+
+#### for await...of
+Iterate through async iterator
+``` js
+async function f() {
+  for await (const x of createAsyncIterable(['a', 'b'])) {
+    console.log(x);
+  }
+}
+```
+
+#### Async generator
+``` js
+async function* readLines(path) {
+  let file = await fileOpen(path);
+
+  try {
+    while (!file.EOF) {
+      yield await file.readLine();
+    }
+  } finally {
+    await file.close();
+  }
+}
+
+(async function () {
+  for await (const line of readLines(filePath)) {
+    console.log(line);
+  }
+})()
 ```
