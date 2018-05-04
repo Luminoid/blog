@@ -7,7 +7,7 @@ tags: Homebrew
 keywords: Homebrew
 ---
 
-[Official Site](https://brew.sh)
+Official Site: https://brew.sh
 
 ## Command
 ``` bash

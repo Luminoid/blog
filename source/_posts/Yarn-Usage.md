@@ -9,7 +9,7 @@ tags: Yarn
 keywords: Yarn
 ---
 
-[Official Site](https://yarnpkg.com/en/)
+Official Site: https://yarnpkg.com/en/
 
 ## Command
 ``` bash

@@ -9,7 +9,7 @@ tags: npm
 keywords: npm
 ---
 
-[Official Site](https://www.npmjs.com)
+Official Site: https://www.npmjs.com
 
 ## Command
 ``` bash

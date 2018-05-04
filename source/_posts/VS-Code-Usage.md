@@ -11,8 +11,7 @@ keywords:
 - VS Code
 ---
 
-## Official Site
-https://code.visualstudio.com
+Official Site: https://code.visualstudio.com
 
 ## Setup
 ### Launch VS Code from the Command Line
