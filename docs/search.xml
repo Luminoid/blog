@@ -169,7 +169,7 @@
   <entry>
     <title><![CDATA[UIView Inheritance Relationships]]></title>
     <url>%2Fblog%2FUIView-Inheritance-Relationships%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[+: Class method -: Instance method]]></content>
       <categories>
         <category>iOS</category>
       </categories>

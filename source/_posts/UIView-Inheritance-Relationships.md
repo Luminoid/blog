@@ -7,4 +7,7 @@ tags: UIView
 keywords: UIView
 ---
 
+`+`: Class method
+`-`: Instance method
+
 {% asset_img UIViewClassDiagram.png UIViewClassDiagram %}

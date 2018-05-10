@@ -439,16 +439,17 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
     <link href="http://luminoid.github.io/blog/UIView-Inheritance-Relationships/"/>
     <id>http://luminoid.github.io/blog/UIView-Inheritance-Relationships/</id>
     <published>2017-11-07T16:51:51.000Z</published>
-    <updated>2018-02-23T17:40:19.071Z</updated>
+    <updated>2018-05-10T09:27:17.202Z</updated>
     
-    <content type="html"><![CDATA[<img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" title="UIViewClassDiagram">]]></content>
+    <content type="html"><![CDATA[<p><code>+</code>: Class method<br><code>-</code>: Instance method</p><img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" title="UIViewClassDiagram">]]></content>
     
     <summary type="html">
     
       
       
-        &lt;img src=&quot;/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png&quot; title=&quot;UIViewClassDiagram&quot;&gt;
-
+        &lt;p&gt;&lt;code&gt;+&lt;/code&gt;: Class method&lt;br&gt;
+&lt;code&gt;-&lt;/code&gt;: Instance method&lt;/p&gt;
+&lt;img src=&quot;/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.
       
     
     </summary>
