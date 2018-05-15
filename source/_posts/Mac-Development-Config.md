@@ -59,6 +59,15 @@ brew install yarn
 
 <!-- more -->
 
+### [CocoaPods](https://cocoapods.org)
+#### Install
+``` bash
+sudo gem install cocoapods
+```
+
+#### Usage
+{% post_link CocoaPods-Usage %}
+
 ## Terminal
 ### [iTerm2](https://www.iterm2.com)
 
@@ -201,3 +210,13 @@ brew cask install docker
 
 ## Browser
 {% post_link Browser-Enhancement %}
+
+## Maintenance
+``` bash
+$ brew update
+$ brew upgrade
+$ brew cleanup
+$ brew prune
+$ brew doctor
+$ npm-check -gu
+```
