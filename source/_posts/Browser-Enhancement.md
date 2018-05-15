@@ -24,7 +24,7 @@ Helps you enjoy a faster, safer, and cleaner browsing experience by giving you t
 ## Chrome
 ### [Extensions](https://chrome.google.com/webstore/category/extensions)
 
-[Installed extensions](chrome://extensions/)
+List [Installed extensions](chrome://extensions/)
 
 #### Productivity
 ##### [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb)
@@ -37,6 +37,9 @@ Helps you enjoy a faster, safer, and cleaner browsing experience by giving you t
 Muzli is a new-tab Chrome extension that instantly delivers relevant design stories and inspiration.
 
 #### Web Development
+##### [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
+Extension to show code tree for GitHub.
+
 ##### [EditThisCookie](http://www.editthiscookie.com/)
 EditThisCookie is a cookie manager. You can add, delete, edit, search, protect, and block cookies!
 
