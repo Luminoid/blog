@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[CocoaPods Usage]]></title>
     <url>%2Fblog%2FCocoaPods-Usage%2F</url>
-    <content type="text"><![CDATA[Official Site: https://cocoapods.org Adding Pods to an Xcode project Create a Podfile 1$ pod init or 1$ touch Podfile Podfile 12345678platform :ios, '9.0'use_frameworks!target 'MyApp' do pod 'AFNetworking', '~&gt; 2.6' pod 'ORStackView', '~&gt; 3.0' pod 'SwiftyJSON', '~&gt; 2.3'end Install project dependencies 1$ pod install Open MyApp.xcworkspace to work Command 12345pod list # List podspod install # Install project dependencies according to versions from a Podfile.lockpod outdated # Show outdated project dependenciespod update # Update outdated project dependencies and create new Podfile.lockpod search # Search for pods Updating CocoaPods 1gem install cocoapods]]></content>
+    <content type="text"><![CDATA[Official Site: https://cocoapods.org Adding Pods to an Xcode project Create a Podfile 1$ pod init or 1$ touch Podfile Podfile 12345678platform :ios, '9.0'use_frameworks!target 'MyApp' do pod 'AFNetworking', '~&gt; 2.6' pod 'ORStackView', '~&gt; 3.0' pod 'SwiftyJSON', '~&gt; 2.3'end Install project dependencies 1$ pod install Open MyApp.xcworkspace to work Command 12345cat Podfile.lock # List installed podspod install # Install project dependencies according to versions from a Podfile.lockpod outdated # Show outdated project dependenciespod update # Update outdated project dependencies and create new Podfile.lockpod search # Search for pods Updating CocoaPods 1gem install cocoapods]]></content>
       <categories>
         <category>iOS</category>
       </categories>

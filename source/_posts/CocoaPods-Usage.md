@@ -45,11 +45,11 @@ $ pod install
 
 ## Command
 ``` bash
-pod list        # List pods
-pod install     # Install project dependencies according to versions from a Podfile.lock
-pod outdated    # Show outdated project dependencies
-pod update      # Update outdated project dependencies and create new Podfile.lock
-pod search      # Search for pods
+cat Podfile.lock    # List installed pods
+pod install         # Install project dependencies according to versions from a Podfile.lock
+pod outdated        # Show outdated project dependencies
+pod update          # Update outdated project dependencies and create new Podfile.lock
+pod search          # Search for pods
 ```
 
 ## Updating CocoaPods
