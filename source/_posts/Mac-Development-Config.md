@@ -210,13 +210,3 @@ brew cask install docker
 
 ## Browser
 {% post_link Browser-Enhancement %}
-
-## Maintenance
-``` bash
-$ brew update
-$ brew upgrade
-$ brew cleanup
-$ brew prune
-$ brew doctor
-$ npm-check -gu
-```

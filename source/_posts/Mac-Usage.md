@@ -79,6 +79,23 @@ alias gp='git push'
 alias gpsup='git push --set-upstream origin $(git_current_branch)'
 ```
 
+## Maintenance
+``` bash
+$ brew update
+$ brew upgrade
+$ brew cleanup
+$ brew prune
+$ brew doctor
+$ npm-check -gu
+```
+
 ## Directories
 ### Xcode
 Simulator devices data: `~/Library/Developer/CoreSimulator/Devices`
+
+## Disk Cleanup
+### Xcode
+``` bash
+~/Library/Developer/Xcode/iOS DeviceSupport
+~/Library/Developer/CoreSimulator/Devices
+```
