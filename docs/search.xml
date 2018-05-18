@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TabBar-Navigation-TableView MVC Structure]]></title>
+    <url>%2Fblog%2FTabBar-Navigation-TableView-MVC-Structure%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>MVC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CocoaPods Usage]]></title>
     <url>%2Fblog%2FCocoaPods-Usage%2F</url>
     <content type="text"><![CDATA[Official Site: https://cocoapods.org Adding Pods to an Xcode project Create a Podfile 1$ pod init or 1$ touch Podfile Podfile 12345678platform :ios, '9.0'use_frameworks!target 'MyApp' do pod 'AFNetworking', '~&gt; 2.6' pod 'ORStackView', '~&gt; 3.0' pod 'SwiftyJSON', '~&gt; 2.3'end Install project dependencies 1$ pod install Open MyApp.xcworkspace to work Command 12345cat Podfile.lock # List installed podspod install # Install project dependencies according to versions from a Podfile.lockpod outdated # Show outdated project dependenciespod update # Update outdated project dependencies and create new Podfile.lockpod search # Search for pods Updating CocoaPods 1gem install cocoapods]]></content>
@@ -233,8 +244,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Atom</tag>
         <tag>Docker</tag>
+        <tag>Atom</tag>
         <tag>Homebrew</tag>
         <tag>zsh</tag>
       </tags>
