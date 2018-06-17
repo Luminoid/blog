@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iOS Basic Concepts]]></title>
+    <url>%2Fblog%2FiOS-Basic-Concepts%2F</url>
+    <content type="text"><![CDATA[Responder Chain]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[TabBar-Navigation-TableView MVC Structure]]></title>
     <url>%2Fblog%2FTabBar-Navigation-TableView-MVC-Structure%2F</url>
     <content type="text"><![CDATA[]]></content>
