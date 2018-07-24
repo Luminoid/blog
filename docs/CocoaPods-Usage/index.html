@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Official Site: https://cocoapods.org Adding Pods to an Xcode project Create a Podfile 1$ pod init or 1$ touch Podfile Podfile 12345678platform :ios, &apos;9.0&apos;use_frameworks!target &apos;MyApp&apos; do  pod &apos;AFNetwo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-15T15:39:50.503Z">
+<meta property="og:updated_time" content="2018-07-24T01:43:35.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods Usage">
 <meta name="twitter:description" content="Official Site: https://cocoapods.org Adding Pods to an Xcode project Create a Podfile 1$ pod init or 1$ touch Podfile Podfile 12345678platform :ios, &apos;9.0&apos;use_frameworks!target &apos;MyApp&apos; do  pod &apos;AFNetwo">
@@ -408,12 +408,24 @@
                 
               
 
-              <time title="Created: 2018-05-15 00:08:05 / Modified: 23:39:50" itemprop="dateCreated datePublished" datetime="2018-05-15T00:08:05+08:00">2018-05-15</time>
+              <time title="Created: 2018-05-15 00:08:05" itemprop="dateCreated datePublished" datetime="2018-05-15T00:08:05+08:00">2018-05-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-24 09:43:35" itemprop="dateModified" datetime="2018-07-24T09:43:35+08:00">2018-07-24</time>
               
             
           </span>
@@ -466,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">730</span>
+                <span title="Symbols count in article">1.2k</span>
               
 
               
@@ -504,6 +516,8 @@
 <a id="more"></a>
 <h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat Podfile.lock    <span class="comment"># List installed pods</span></span><br><span class="line">pod install         <span class="comment"># Install project dependencies according to versions from a Podfile.lock</span></span><br><span class="line">pod outdated        <span class="comment"># Show outdated project dependencies</span></span><br><span class="line">pod update          <span class="comment"># Update outdated project dependencies and create new Podfile.lock</span></span><br><span class="line">pod search          <span class="comment"># Search for pods</span></span><br></pre></td></tr></table></figure>
+<h2 id="podfile"><a class="header-anchor" href="#podfile"></a>Podfile</h2>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'Texture'</span>             <span class="comment"># Use the latest version of a Pod</span></span><br><span class="line">pod <span class="string">'Texture'</span>, <span class="string">'0.1'</span>      <span class="comment"># Freeze to a specific version of a Pod</span></span><br><span class="line">pod <span class="string">'Texture'</span>, <span class="string">'&gt;= 0.1'</span>   <span class="comment"># Version 0.1 and any higher version</span></span><br><span class="line">pod <span class="string">'Texture'</span>, <span class="string">'~&gt; 0.1'</span>   <span class="comment"># Version 0.1 and the versions up to 1.0, not including 1.0 and higher</span></span><br><span class="line">pod <span class="string">'Texture'</span>, <span class="string">'~&gt; 0.1.2'</span> <span class="comment"># Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher</span></span><br><span class="line"></span><br><span class="line">pod <span class="string">'Alamofire'</span>, <span class="symbol">:path</span> =&gt; <span class="string">'~/Documents/Alamofire'</span> <span class="comment"># Use the Pod from a local folder</span></span><br></pre></td></tr></table></figure>
 <h2 id="updating-cocoapods"><a class="header-anchor" href="#updating-cocoapods"></a>Updating CocoaPods</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods</span><br></pre></td></tr></table></figure>
 
@@ -813,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#adding-pods-to-an-xcode-project"><span class="nav-number">1.</span> <span class="nav-text">Adding Pods to an Xcode project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updating-cocoapods"><span class="nav-number">3.</span> <span class="nav-text">Updating CocoaPods</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#adding-pods-to-an-xcode-project"><span class="nav-number">1.</span> <span class="nav-text">Adding Pods to an Xcode project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#podfile"><span class="nav-number">3.</span> <span class="nav-text">Podfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updating-cocoapods"><span class="nav-number">4.</span> <span class="nav-text">Updating CocoaPods</span></a></li></ol></div>
             
 
           </div>

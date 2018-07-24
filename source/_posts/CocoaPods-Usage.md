@@ -52,6 +52,17 @@ pod update          # Update outdated project dependencies and create new Podfil
 pod search          # Search for pods
 ```
 
+## Podfile
+``` ruby
+pod 'Texture'             # Use the latest version of a Pod
+pod 'Texture', '0.1'      # Freeze to a specific version of a Pod
+pod 'Texture', '>= 0.1'   # Version 0.1 and any higher version
+pod 'Texture', '~> 0.1'   # Version 0.1 and the versions up to 1.0, not including 1.0 and higher
+pod 'Texture', '~> 0.1.2' # Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher
+
+pod 'Alamofire', :path => '~/Documents/Alamofire' # Use the Pod from a local folder
+```
+
 ## Updating CocoaPods
 ``` bash
 gem install cocoapods
