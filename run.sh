@@ -7,10 +7,10 @@ check_commit_msg(){
         commit_message="post: new post generated"
     elif [ "$*" = "-u" ]; then
         commit_message="post: original post updated"
-    elif [[ "$*" =~ ^(post|theme|config):\ .+$ ]]; then
+    elif [[ "$*" =~ ^(post|theme|config|chore):\ .+$ ]]; then
         commit_message="$*"
     else
-        echo "Error! Usage: sh run.sh deploy \"[post|theme|config]: <content>\""
+        echo "Error! Usage: sh run.sh deploy \"[post|theme|config|chore]: <content>\""
         exit 2
     fi
 }
@@ -49,7 +49,7 @@ e=$(tput sgr0) # end
 if [ $# -eq 1 ] && ([ $1 = "help" ] || [ $1 = "h" ]); then
     echo "run.sh [compress|c]                   Compress PNG images under ${b}source/_posts/*/${e}"
     echo "run.sh [deploy|d] <commit_message>    Generate & deploy site, the format of ${b}<commit_message>${e} is:"
-    echo "                                           ${b}[post|theme|config]: <content>${e}"
+    echo "                                           ${b}[post|theme|config|chore]: <content>${e}"
     echo "run.sh deploy -n                      alias for ${b}run.sh deploy \"post: new post generated\"${e}"
     echo "run.sh deploy -u                      alias for ${b}run.sh deploy \"post: original post updated\"${e}"
     echo "run.sh [help|h]                       Display help information"
