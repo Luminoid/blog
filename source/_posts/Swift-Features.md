@@ -38,6 +38,8 @@ for i in 0..<count {
 // Person 4 is called Jack
 ```
 
+<!-- more -->
+
 ### One-Sided Ranges
 ``` swift
 for name in names[2...] {

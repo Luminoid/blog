@@ -80,6 +80,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 #### Theme
 ##### [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
+#### Custom Plugin
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions/)
+
 #### .zshrc
 ``` bash
 # Path to your oh-my-zsh installation.
@@ -92,7 +96,7 @@ ZSH_THEME="agnoster"
 
 # Plugins         ~/.oh-my-zsh/plugins/
 # Custom plugins  ~/.oh-my-zsh/custom/plugins/
-plugins=(git brew node npm osx colored-man-pages zsh-syntax-highlighting)
+plugins=(colored-man-pages extract autojump git npm brew pod zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

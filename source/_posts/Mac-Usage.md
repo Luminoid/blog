@@ -30,6 +30,20 @@ Escape the `^` in command like `git reset HEAD^` in zsh.
 git reset HEAD\^
 ```
 
+[Plugins Overview](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)
+
+#### extract
+Extract archive files
+``` bash
+extract <filename>
+```
+
+#### autojump
+A faster way to navigate your filesystem
+``` bash
+j foo
+```
+
 #### Git
 View the following file to check the git-related `alias`
 ``` bash

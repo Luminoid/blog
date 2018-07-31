@@ -363,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Swift-Features/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luminoid">
@@ -382,8 +382,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/Swift-Features/" itemprop="url">
-                  Swift Features
+                <a class="post-title-link" href="/blog/Mac-Development-Config/" itemprop="url">
+                  Mac Development Config
                 </a>
               
             
@@ -409,12 +409,24 @@
                 
               
 
-              <time title="Created: 2018-07-31 09:15:40 / Modified: 22:21:34" itemprop="dateCreated datePublished" datetime="2018-07-31T09:15:40+08:00">2018-07-31</time>
+              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-01 00:07:18" itemprop="dateModified" datetime="2018-08-01T00:07:18+08:00">2018-08-01</time>
               
             
           </span>
@@ -431,7 +443,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
 
                 
                 
@@ -459,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">3.7k</span>
+                <span title="Symbols count in article">3.5k</span>
               
 
               
@@ -484,42 +496,424 @@
 
       
         
-          
-            <p>References:</p>
-<ul>
-<li><a href="https://docs.swift.org/swift-book/" target="_blank" rel="noopener">The Swift Programming Language</a></li>
-</ul>
-<p>This post is based on Swift 4.2</p>
-<h2 id="operators"><a class="header-anchor" href="#operators"></a>Operators</h2>
-<h3 id="closed-range-operator"><a class="header-anchor" href="#closed-range-operator"></a>Closed Range Operator</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(i) times 5 is \(i * 5)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 times 5 is 5</span></span><br><span class="line"><span class="comment">// 2 times 5 is 10</span></span><br><span class="line"><span class="comment">// 3 times 5 is 15</span></span><br><span class="line"><span class="comment">// 4 times 5 is 20</span></span><br><span class="line"><span class="comment">// 5 times 5 is 25</span></span><br></pre></td></tr></table></figure>
-<h3 id="half-open-range-operator"><a class="header-anchor" href="#half-open-range-operator"></a>Half-Open Range Operator</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">count</span> = names.<span class="built_in">count</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Person \(i + 1) is called \(names[i])"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Person 1 is called Anna</span></span><br><span class="line"><span class="comment">// Person 2 is called Alex</span></span><br><span class="line"><span class="comment">// Person 3 is called Brian</span></span><br><span class="line"><span class="comment">// Person 4 is called Jack</span></span><br></pre></td></tr></table></figure>
-<h3 id="one-sided-ranges"><a class="header-anchor" href="#one-sided-ranges"></a>One-Sided Ranges</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names[<span class="number">2</span>...] &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Brian</span></span><br><span class="line"><span class="comment">// Jack</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names[...<span class="number">2</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Anna</span></span><br><span class="line"><span class="comment">// Alex</span></span><br><span class="line"><span class="comment">// Brian</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> range = ..&lt;<span class="number">5</span></span><br><span class="line">range.<span class="built_in">contains</span>(<span class="number">7</span>)   <span class="comment">// false</span></span><br><span class="line">range.<span class="built_in">contains</span>(<span class="number">5</span>)   <span class="comment">// false</span></span><br><span class="line">range.<span class="built_in">contains</span>(<span class="number">4</span>)   <span class="comment">// true</span></span><br><span class="line">range.<span class="built_in">contains</span>(-<span class="number">1</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h2 id="string"><a class="header-anchor" href="#string"></a>String</h2>
-<h3 id="string-indices"><a class="header-anchor" href="#string-indices"></a>String Indices</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = <span class="string">"Hello!"</span></span><br><span class="line"><span class="keyword">let</span> index = greeting.index(greeting.startIndex, offsetBy: <span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(greeting[greeting.startIndex])"</span>) <span class="comment">// H</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(greeting[index])"</span>)               <span class="comment">// o</span></span><br></pre></td></tr></table></figure>
-<h3 id="substrings"><a class="header-anchor" href="#substrings"></a>Substrings</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = <span class="string">"Hello, world!"</span></span><br><span class="line"><span class="keyword">let</span> index = greeting.index(of: <span class="string">","</span>) ?? greeting.endIndex</span><br><span class="line"><span class="keyword">let</span> beginning = greeting[..&lt;index]  <span class="comment">// beginning is an instance of Substring</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(beginning)"</span>)               <span class="comment">// Hello</span></span><br><span class="line"><span class="keyword">let</span> newString = <span class="type">String</span>(beginning)</span><br></pre></td></tr></table></figure>
-<h3 id="string-equality"><a class="header-anchor" href="#string-equality"></a>String Equality</h3>
-<p>Two String values (or two Character values) are considered equal if their extended grapheme clusters are canonically equivalent.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"caf\u&#123;E9&#125;"</span> == <span class="string">"caf\u&#123;65&#125;\u&#123;301&#125;"</span>   <span class="comment">// café</span></span><br><span class="line"><span class="string">"\u&#123;41&#125;"</span> != <span class="string">"\u&#123;0410&#125;"</span>              <span class="comment">// А</span></span><br></pre></td></tr></table></figure>
-<h2 id="collection-types"><a class="header-anchor" href="#collection-types"></a>Collection Types</h2>
-<h3 id="array"><a class="header-anchor" href="#array"></a>Array</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create an Array with an Array Literal</span></span><br><span class="line"><span class="keyword">var</span> alphabet = [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>]    <span class="comment">// ["A", "B", "C", "D", "E"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Append an array</span></span><br><span class="line">alphabet += [<span class="string">"F"</span>, <span class="string">"G"</span>]                      <span class="comment">// ["A", "B", "C", "D", "E", "F", "G"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Modify an array</span></span><br><span class="line">alphabet[<span class="number">3</span>...<span class="number">5</span>] = [<span class="string">"M"</span>, <span class="string">"N"</span>]                <span class="comment">// ["A", "B", "C", "M", "N", "G"]</span></span><br></pre></td></tr></table></figure>
-<h3 id="set"><a class="header-anchor" href="#set"></a>Set</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set Operations</span></span><br><span class="line"><span class="keyword">let</span> oddDigits: <span class="type">Set</span> = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> evenDigits: <span class="type">Set</span> = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line"><span class="keyword">let</span> singleDigitPrimeNumbers: <span class="type">Set</span> = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line">oddDigits.union(evenDigits).sorted()                            <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line">oddDigits.intersection(evenDigits).sorted()                     <span class="comment">// []</span></span><br><span class="line">oddDigits.subtracting(singleDigitPrimeNumbers).sorted()         <span class="comment">// [1, 9]</span></span><br><span class="line">oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted() <span class="comment">// [1, 2, 9]</span></span><br></pre></td></tr></table></figure>
-<h3 id="dictionary"><a class="header-anchor" href="#dictionary"></a>Dictionary</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create a Dictionary with a Dictionary Literal</span></span><br><span class="line"><span class="keyword">let</span> romanNumeral = [<span class="string">"I"</span>: <span class="number">1</span>, <span class="string">"V"</span>: <span class="number">5</span>, <span class="string">"X"</span>: <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// Iterate Over a Dictionary</span></span><br><span class="line"><span class="keyword">for</span> (symbol, value) <span class="keyword">in</span> romanNumeral &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(symbol): \(value)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// X: 10</span></span><br><span class="line"><span class="comment">// I: 1</span></span><br><span class="line"><span class="comment">// V: 5</span></span><br></pre></td></tr></table></figure>
-<h2 id="control-flow"><a class="header-anchor" href="#control-flow"></a>Control Flow</h2>
-<h3 id="switch"><a class="header-anchor" href="#switch"></a>Switch</h3>
-<p>No Implicit Fallthrough</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Tuple &amp; Interval Matching</span></span><br><span class="line"><span class="keyword">let</span> somePoint = (<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">switch</span> somePoint &#123;</span><br><span class="line"><span class="keyword">case</span> (<span class="number">0</span>, <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(somePoint) is at the origin"</span>)</span><br><span class="line"><span class="keyword">case</span> (<span class="number">_</span>, <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(somePoint) is on the x-axis"</span>)</span><br><span class="line"><span class="keyword">case</span> (<span class="number">0</span>, <span class="number">_</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(somePoint) is on the y-axis"</span>)</span><br><span class="line"><span class="keyword">case</span> (-<span class="number">2</span>...<span class="number">2</span>, -<span class="number">2</span>...<span class="number">2</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(somePoint) is inside the box"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(somePoint) is outside of the box"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// (1, 1) is inside the box</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Value Binding</span></span><br><span class="line"><span class="keyword">let</span> anotherPoint = (<span class="number">9</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">switch</span> anotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> (<span class="keyword">let</span> <span class="built_in">distance</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="keyword">let</span> <span class="built_in">distance</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"On an axis, \(distance) from the origin"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Not on an axis"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// On an axis, 9 from the origin</span></span><br></pre></td></tr></table></figure>
-<h3 id="early-exit"><a class="header-anchor" href="#early-exit"></a>Early Exit</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">greet</span><span class="params">(person: [String: String])</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> name = person[<span class="string">"name"</span>] <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Hello, stranger!"</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello \(name)!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">greet(person: [<span class="string">"name"</span>: <span class="string">"John"</span>])     <span class="comment">// Hello John!</span></span><br><span class="line">greet(person: [<span class="string">"gender"</span>: <span class="string">"male"</span>])   <span class="comment">// Hello, stranger!</span></span><br></pre></td></tr></table></figure>
+          <h2 id="mac-usage"><a class="header-anchor" href="#mac-usage"></a>Mac Usage</h2>
+<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<h2 id="package-manager"><a class="header-anchor" href="#package-manager"></a>Package Manager</h2>
+<h3 id="homebrew"><a class="header-anchor" href="#homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
+<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="usage"><a class="header-anchor" href="#usage"></a>Usage</h4>
+<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
+<h3 id="homebrew-cask"><a class="header-anchor" href="#homebrew-cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
+<h4 id="install-v2"><a class="header-anchor" href="#install-v2"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v2"><a class="header-anchor" href="#usage-v2"></a>Usage</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
+<h4 id="install-v3"><a class="header-anchor" href="#install-v3"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
+<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
+<h3 id="yarn"><a class="header-anchor" href="#yarn"></a><a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a></h3>
+<h4 id="install-v4"><a class="header-anchor" href="#install-v4"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v4"><a class="header-anchor" href="#usage-v4"></a>Usage</h4>
+<a href="/blog/Yarn-Usage/" title="Yarn Usage">Yarn Usage</a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Mac-Development-Config/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Mac-Usage/" itemprop="url">
+                  Mac Usage
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-07 00:56:07" itemprop="dateCreated datePublished" datetime="2018-03-07T00:56:07+08:00">2018-03-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-31 23:38:52" itemprop="dateModified" datetime="2018-07-31T23:38:52+08:00">2018-07-31</time>
+              
+            
+          </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.8k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="preferences"><a class="header-anchor" href="#preferences"></a>Preferences</h2>
+<h3 id="manage-login-items"><a class="header-anchor" href="#manage-login-items"></a>Manage Login Items</h3>
+<p>System Preferences -&gt; Users &amp; Groups -&gt; Login Items</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Mac-Usage/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Homebrew-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Homebrew-Usage/" itemprop="url">
+                  Homebrew Usage
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-04 23:55:06" itemprop="dateCreated datePublished" datetime="2017-12-04T23:55:06+08:00">2017-12-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-31 22:58:25" itemprop="dateModified" datetime="2018-07-31T22:58:25+08:00">2018-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.1k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Official Site: <a href="https://brew.sh" target="_blank" rel="noopener">https://brew.sh</a></p>
+<h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;  <span class="comment"># Install formula</span></span><br><span class="line">brew update             <span class="comment"># Fetch latest version of Homebrew and all formulae</span></span><br><span class="line">brew upgrade            <span class="comment"># Upgrade all outdated, unpinned packages</span></span><br><span class="line">brew leaves             <span class="comment"># Show installed formulae that are not dependencies of another installed formula</span></span><br><span class="line">brew tap                <span class="comment"># Tap a new formula repository from GitHub, or list existing taps</span></span><br><span class="line">brew doctor             <span class="comment"># Audit your installation for common issues</span></span><br><span class="line">brew cleanup            <span class="comment"># Uninstall unused and old versions of packages</span></span><br><span class="line">brew prune              <span class="comment"># Remove dead links</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Homebrew-Usage/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -617,7 +1011,7 @@
                 
               
 
-              <time title="Created: 2018-07-31 10:10:14 / Modified: 10:21:47" itemprop="dateCreated datePublished" datetime="2018-07-31T10:10:14+08:00">2018-07-31</time>
+              <time title="Created: 2018-07-31 10:10:14 / Modified: 22:27:41" itemprop="dateCreated datePublished" datetime="2018-07-31T10:10:14+08:00">2018-07-31</time>
             
 
             
@@ -667,7 +1061,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">161</span>
+                <span title="Symbols count in article">162</span>
               
 
               
@@ -692,16 +1086,209 @@
 
       
         
-          
-            <h4 id="command-codesign-failed-with-a-nonzero-exit-code"><a class="header-anchor" href="#command-codesign-failed-with-a-nonzero-exit-code"></a>Command CodeSign failed with a nonzero exit code</h4>
+          <h4 id="command-codesign-failed-with-a-nonzero-exit-code"><a class="header-anchor" href="#command-codesign-failed-with-a-nonzero-exit-code"></a>Command CodeSign failed with a nonzero exit code</h4>
 <p><strong>Solution</strong></p>
 <ol>
 <li>Open <em>Keychain Access.app</em></li>
 <li>Lock the ‘login’ keychain and then unlock it</li>
 <li>Clean build folder &amp; Build</li>
 </ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/iOS-Common-Problems/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Swift-Features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Swift-Features/" itemprop="url">
+                  Swift Features
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-31 09:15:40 / Modified: 22:24:41" itemprop="dateCreated datePublished" datetime="2018-07-31T09:15:40+08:00">2018-07-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">3.7k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>References:</p>
+<ul>
+<li><a href="https://docs.swift.org/swift-book/" target="_blank" rel="noopener">The Swift Programming Language</a></li>
+</ul>
+<p>This post is based on Swift 4.2</p>
+<h2 id="operators"><a class="header-anchor" href="#operators"></a>Operators</h2>
+<h3 id="closed-range-operator"><a class="header-anchor" href="#closed-range-operator"></a>Closed Range Operator</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(i) times 5 is \(i * 5)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 times 5 is 5</span></span><br><span class="line"><span class="comment">// 2 times 5 is 10</span></span><br><span class="line"><span class="comment">// 3 times 5 is 15</span></span><br><span class="line"><span class="comment">// 4 times 5 is 20</span></span><br><span class="line"><span class="comment">// 5 times 5 is 25</span></span><br></pre></td></tr></table></figure>
+<h3 id="half-open-range-operator"><a class="header-anchor" href="#half-open-range-operator"></a>Half-Open Range Operator</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Anna"</span>, <span class="string">"Alex"</span>, <span class="string">"Brian"</span>, <span class="string">"Jack"</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">count</span> = names.<span class="built_in">count</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Person \(i + 1) is called \(names[i])"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Person 1 is called Anna</span></span><br><span class="line"><span class="comment">// Person 2 is called Alex</span></span><br><span class="line"><span class="comment">// Person 3 is called Brian</span></span><br><span class="line"><span class="comment">// Person 4 is called Jack</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Swift-Features/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1081,414 +1668,6 @@
 <img src="/blog/iOS-Basic-Concepts/ResponderChain.png" title="Responder Chain">
 
           
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Mac-Usage/" itemprop="url">
-                  Mac Usage
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-03-07 00:56:07" itemprop="dateCreated datePublished" datetime="2018-03-07T00:56:07+08:00">2018-03-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-18 21:32:08" itemprop="dateModified" datetime="2018-05-18T21:32:08+08:00">2018-05-18</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">1.7k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="preferences"><a class="header-anchor" href="#preferences"></a>Preferences</h2>
-<h3 id="manage-login-items"><a class="header-anchor" href="#manage-login-items"></a>Manage Login Items</h3>
-<p>System Preferences -&gt; Users &amp; Groups -&gt; Login Items</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Mac-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Mac-Development-Config/" itemprop="url">
-                  Mac Development Config
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-18 21:26:57" itemprop="dateModified" datetime="2018-05-18T21:26:57+08:00">2018-05-18</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">3.4k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="mac-usage"><a class="header-anchor" href="#mac-usage"></a>Mac Usage</h2>
-<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
-<h2 id="package-manager"><a class="header-anchor" href="#package-manager"></a>Package Manager</h2>
-<h3 id="homebrew"><a class="header-anchor" href="#homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
-<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
-<h4 id="usage"><a class="header-anchor" href="#usage"></a>Usage</h4>
-<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
-<h3 id="homebrew-cask"><a class="header-anchor" href="#homebrew-cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
-<h4 id="install-v2"><a class="header-anchor" href="#install-v2"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
-<h4 id="usage-v2"><a class="header-anchor" href="#usage-v2"></a>Usage</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
-<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
-<h4 id="install-v3"><a class="header-anchor" href="#install-v3"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
-<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
-<h3 id="yarn"><a class="header-anchor" href="#yarn"></a><a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a></h3>
-<h4 id="install-v4"><a class="header-anchor" href="#install-v4"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
-<h4 id="usage-v4"><a class="header-anchor" href="#usage-v4"></a>Usage</h4>
-<a href="/blog/Yarn-Usage/" title="Yarn Usage">Yarn Usage</a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Mac-Development-Config/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -2052,221 +2231,6 @@
 <img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" title="UIViewClassDiagram">
 
           
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/ES6-Features/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/ES6-Features/" itemprop="url">
-                  ES6 Features
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-11 00:38:02" itemprop="dateCreated datePublished" datetime="2018-04-11T00:38:02+08:00">2018-04-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-05-04 17:46:36" itemprop="dateModified" datetime="2018-05-04T17:46:36+08:00">2018-05-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">15k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>References:</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript Docs</a></li>
-<li><a href="http://es6-features.org" target="_blank" rel="noopener">rse/es6-features</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ruanyf/es6tutorial</a></li>
-<li><a href="https://babeljs.io/learn-es2015" target="_blank" rel="noopener">Babel ES2015</a></li>
-</ul>
-<h2 id="data-structures"><a class="header-anchor" href="#data-structures"></a>Data structures</h2>
-<ul>
-<li>Primitive: Boolean, null, undefined, Number, String, Symbol</li>
-<li>Object</li>
-</ul>
-<h2 id="let-const"><a class="header-anchor" href="#let-const"></a>Let &amp; Const</h2>
-<p>Block-scoped binding constructs.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> var1 [= value1];</span><br><span class="line"><span class="keyword">const</span> name1 = value1;</span><br></pre></td></tr></table></figure>
-<h2 id="destructuring"><a class="header-anchor" href="#destructuring"></a>Destructuring</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array matching</span></span><br><span class="line"><span class="keyword">let</span> [a, ,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">c === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object matching</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">b === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default arguments</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">&#123;a, b, c = <span class="number">3</span>, d = <span class="number">4</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;) === <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap values</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiple return values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">colorWhite</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    red: <span class="number">255</span>,</span><br><span class="line">    green: <span class="number">255</span>,</span><br><span class="line">    blue: <span class="number">255</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/ES6-Features/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
