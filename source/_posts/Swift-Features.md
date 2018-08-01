@@ -12,6 +12,17 @@ References:
 
 This post is based on Swift 4.2
 
+## The Basics
+### Value Types
+A value type is a type whose value is copied when it’s assigned to a variable or constant, or when it’s passed to a function.
+All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are value types, and are implemented as structures behind the scenes. All structures and enumerations are also value types.
+
+> Collections defined by the standard library like arrays, dictionaries, and strings use an optimization to reduce the performance cost of copying. Instead of making a copy immediately, these collections share the memory where the elements are stored between the original instance and any copies. If one of the copies of the collection is modified, the elements are copied just before the modification. The behavior you see in your code is always as if a copy took place immediately.
+
+### Reference Types
+Reference types are not copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.
+Classes, functions and closures are reference types.
+
 ## Operators
 ### Closed Range Operator
 ``` swift
@@ -61,6 +72,10 @@ range.contains(5)   // false
 range.contains(4)   // true
 range.contains(-1)  // true
 ```
+
+### Identity Operators
+`===`: Identical to 
+`!==`: Not identical to
 
 ## String
 ### String Indices
@@ -256,7 +271,7 @@ Closures take one of three forms:
 - Nested functions are closures that have a name and can capture values from their enclosing function.
 - Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.
 
-Optimizations of Swift’s closure
+Optimizations of Swift’s closure:
 - Inferring parameter and return value types from context
 - Implicit returns from single-expression closures
 - Shorthand argument names
@@ -318,12 +333,6 @@ incrementBySeven()      // 7
 incrementByTen()        // 30
 ```
 Every incrementer has its own stored reference to a new, separate `runningTotal` variable.
-
-### Functions and Closures Are Reference Types
-``` swift
-let alsoIncrementByTen = incrementByTen
-alsoIncrementByTen()    // 40
-```
 
 ### @escaping and @autoclosure
 `@escaping`: A closure is said to escape a function when the closure is passed as an argument to the function, but is called after the function returns.
@@ -396,3 +405,87 @@ let sum = ArithmeticExpression.addition(five, four)
 let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.number(2))
 print(evaluate(product))    // 18
 ```
+
+## Structures and Classes
+Classes have additional capabilities that structures don’t have:
+- Inheritance enables one class to inherit the characteristics of another.
+- Type casting enables you to check and interpret the type of a class instance at runtime.
+- Deinitializers enable an instance of a class to free up any resources it has assigned.
+- Reference counting allows more than one reference to a class instance.
+
+### Memberwise Initializers for Structure Types
+All structures have an automatically generated *memberwise initializer*
+``` swift
+struct Resolution {
+    var width = 0
+    var height = 0
+}
+let vga = Resolution(width: 640, height: 480)
+```
+
+## Properties
+### Stored Property
+A constant or variable that is stored as part of an instance of a particular class or structure
+``` swift
+struct FixedLengthRange {
+    var firstValue: Int
+    let length: Int
+}
+```
+
+### Computed Properties
+Computed properties do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
+``` swift
+struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Size {
+    var width = 0.0, height = 0.0
+}
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
+    }
+}
+var square = Rect(origin: Point(x: 0.0, y: 0.0),
+                  size: Size(width: 10.0, height: 10.0))
+square.center = Point(x: 15.0, y: 15.0)
+print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
+// Prints "square.origin is now at (10.0, 10.0)"
+```
+
+### Property Observers
+``` swift
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet {
+            print("About to set totalSteps to \(newValue)")
+        }
+        didSet {
+            if totalSteps > oldValue  {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+// About to set totalSteps to 200
+// Added 200 steps
+stepCounter.totalSteps = 360
+// About to set totalSteps to 360
+// Added 160 steps
+```
+
+### Type Properties
+You define type properties with the `static` keyword. For computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation.

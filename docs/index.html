@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-01 15:35:01" itemprop="dateModified" datetime="2018-08-01T15:35:01+08:00">2018-08-01</time>
+                <time title="Modified: 2018-08-02 00:15:33" itemprop="dateModified" datetime="2018-08-02T00:15:33+08:00">2018-08-02</time>
               
             
           </span>
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">10k</span>
+                <span title="Symbols count in article">14k</span>
               
 
               
@@ -501,6 +501,16 @@
 <li><a href="https://docs.swift.org/swift-book/" target="_blank" rel="noopener">The Swift Programming Language</a></li>
 </ul>
 <p>This post is based on Swift 4.2</p>
+<h2 id="the-basics"><a class="header-anchor" href="#the-basics"></a>The Basics</h2>
+<h3 id="value-types"><a class="header-anchor" href="#value-types"></a>Value Types</h3>
+<p>A value type is a type whose value is copied when it’s assigned to a variable or constant, or when it’s passed to a function.<br>
+All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are value types, and are implemented as structures behind the scenes. All structures and enumerations are also value types.</p>
+<blockquote>
+<p>Collections defined by the standard library like arrays, dictionaries, and strings use an optimization to reduce the performance cost of copying. Instead of making a copy immediately, these collections share the memory where the elements are stored between the original instance and any copies. If one of the copies of the collection is modified, the elements are copied just before the modification. The behavior you see in your code is always as if a copy took place immediately.</p>
+</blockquote>
+<h3 id="reference-types"><a class="header-anchor" href="#reference-types"></a>Reference Types</h3>
+<p>Reference types are not copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.<br>
+Classes, functions and closures are reference types.</p>
 <h2 id="operators"><a class="header-anchor" href="#operators"></a>Operators</h2>
 <h3 id="closed-range-operator"><a class="header-anchor" href="#closed-range-operator"></a>Closed Range Operator</h3>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(i) times 5 is \(i * 5)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 times 5 is 5</span></span><br><span class="line"><span class="comment">// 2 times 5 is 10</span></span><br><span class="line"><span class="comment">// 3 times 5 is 15</span></span><br><span class="line"><span class="comment">// 4 times 5 is 20</span></span><br><span class="line"><span class="comment">// 5 times 5 is 25</span></span><br></pre></td></tr></table></figure>
@@ -509,6 +519,204 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/Swift-Features/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/iOS-Common-Problems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/iOS-Common-Problems/" itemprop="url">
+                  iOS Common Problems
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-31 10:10:14" itemprop="dateCreated datePublished" datetime="2018-07-31T10:10:14+08:00">2018-07-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-01 22:15:17" itemprop="dateModified" datetime="2018-08-01T22:15:17+08:00">2018-08-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">162</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="command-codesign-failed-with-a-nonzero-exit-code"><a class="header-anchor" href="#command-codesign-failed-with-a-nonzero-exit-code"></a>Command CodeSign failed with a nonzero exit code</h4>
+<p><strong>Solution</strong></p>
+<ol>
+<li>Open <em>Keychain Access.app</em></li>
+<li>Lock the ‘login’ keychain and then unlock it</li>
+<li>Clean build folder &amp; Build</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/iOS-Common-Problems/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1299,192 +1507,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/Homebrew-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/iOS-Common-Problems/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/iOS-Common-Problems/" itemprop="url">
-                  iOS Common Problems
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-07-31 10:10:14 / Modified: 22:27:41" itemprop="dateCreated datePublished" datetime="2018-07-31T10:10:14+08:00">2018-07-31</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">162</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="command-codesign-failed-with-a-nonzero-exit-code"><a class="header-anchor" href="#command-codesign-failed-with-a-nonzero-exit-code"></a>Command CodeSign failed with a nonzero exit code</h4>
-<p><strong>Solution</strong></p>
-<ol>
-<li>Open <em>Keychain Access.app</em></li>
-<li>Lock the ‘login’ keychain and then unlock it</li>
-<li>Clean build folder &amp; Build</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/iOS-Common-Problems/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2532,7 +2554,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">132k</span>
+    <span title="Symbols count total">136k</span>
   
 
   
