@@ -29,7 +29,7 @@ j foo
 
 <!-- more -->
 
-### Git
+### git
 View the following file to check the git-related `alias`
 ``` bash
 vim ~/.oh-my-zsh/plugins/git/git.plugin.zsh

@@ -48,6 +48,8 @@ brew install node
 #### Usage
 {% post_link npm-Usage %}
 
+<!-- more -->
+
 ### [Yarn](https://yarnpkg.com/)
 #### Install
 ``` bash
@@ -56,8 +58,6 @@ brew install yarn
 
 #### Usage
 {% post_link Yarn-Usage %}
-
-<!-- more -->
 
 ### [CocoaPods](https://cocoapods.org)
 #### Install
