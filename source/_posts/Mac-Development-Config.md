@@ -77,40 +77,8 @@ sudo gem install cocoapods
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-#### Theme
-##### [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
-
-#### Custom Plugin
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/)
-- [zsh-completions](https://github.com/zsh-users/zsh-completions/)
-
-#### .zshrc
-``` bash
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-DEFAULT_USER="Luminoid"
-
-# Theme           ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
-
-# Plugins         ~/.oh-my-zsh/plugins/
-# Custom plugins  ~/.oh-my-zsh/custom/plugins/
-plugins=(colored-man-pages extract autojump git npm brew pod zsh-completions zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-# LSCOLORS
-export LSCOLORS="exfxcxdxbxexexabagacad"
-alias ls='ls -hG'
-alias l='ls -ahlF'
-
-# This source command must be at the end of ~/.zshrc
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-```
+#### Usage
+{% post_link oh-my-zsh-Usage %}
 
 ## Version Control
 ### Git
