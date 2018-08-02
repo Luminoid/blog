@@ -14,13 +14,13 @@ This post is based on Swift 4.2
 
 ## The Basics
 ### Value Types
-A value type is a type whose value is copied when it’s assigned to a variable or constant, or when it’s passed to a function.
+A *value type* is a type whose value is copied when it’s assigned to a variable or constant, or when it’s passed to a function.
 All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are value types, and are implemented as structures behind the scenes. All structures and enumerations are also value types.
 
 > Collections defined by the standard library like arrays, dictionaries, and strings use an optimization to reduce the performance cost of copying. Instead of making a copy immediately, these collections share the memory where the elements are stored between the original instance and any copies. If one of the copies of the collection is modified, the elements are copied just before the modification. The behavior you see in your code is always as if a copy took place immediately.
 
 ### Reference Types
-Reference types are not copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.
+A *reference type* is not copied when it is assigned to a variable or constant, or when it is passed to a function. Rather than a copy, a reference to the same existing instance is used.
 Classes, functions and closures are reference types.
 
 ## Operators
@@ -77,7 +77,7 @@ range.contains(-1)  // true
 `===`: Identical to 
 `!==`: Not identical to
 
-## String
+## Strings
 ### String Indices
 ``` swift
 let greeting = "Hello!"
@@ -594,6 +594,11 @@ The above rules can be abbreviated as followed:
 - Working back down from the top of the chain, each designated initializer in the chain has the option to customize the instance further. Initializers are now able to access self and can modify its properties, call its instance methods, and so on.
 - Finally, any convenience initializers in the chain have the option to customize the instance and to work with self.
 
+#### Automatic Initializer Inheritance
+Assuming that you provide default values for any new properties you introduce in a subclass, the following two rules apply:
+1. If your subclass doesn’t define any designated initializers, it automatically inherits all of its superclass designated initializers.
+2. If your subclass provides an implementation of all of its superclass designated initializers—either by inheriting them as per rule 1, or by providing a custom implementation as part of its definition—then it automatically inherits all of the superclass convenience initializers.
+
 #### Designated and Convenience Initializers in Action
 ``` swift
 class Food {
@@ -639,7 +644,11 @@ for item in breakfastList {
 ```
 Since `ShoppingListItem` provides a default value for all of the properties it introduces and does not define any initializers itself, it automatically inherits all of the designated and convenience initializers from its superclass.
 
+The figure below shows the overall initializer chain for all three classes:
+{% asset_img DesignatedAndConvenienceInitializersInAction.png "Designated and Convenience Initializers in Action" %}
+
 ### Failable Initializers
+A failable initializer creates an *optional* value of the type it initializes. You write `return nil` within a failable initializer to indicate a point at which initialization failure can be triggered.
 ``` swift
 struct Animal {
     let species: String
