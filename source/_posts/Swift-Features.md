@@ -520,3 +520,143 @@ var matrix = Matrix(rows: 2, columns: 2)
 matrix[0, 1] = 1.5
 matrix[1, 0] = 3.2  // [0, 1.5, 3.2, 0]
 ```
+
+## Inheritance
+Swift classes do not inherit from a universal base class. Classes you define without specifying a superclass automatically become base classes for you to build upon.
+
+### Overriding
+``` swift
+class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return "traveling at \(currentSpeed) miles per hour"
+    }
+}
+class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + " in gear \(gear)"
+    }
+}
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+print("Car: \(car.description)")    // Car: traveling at 25.0 miles per hour in gear 3
+```
+
+### Preventing Overrides
+Use the `final` modifier to prevent a method, property, or subscript from being overridden and class from being subclassed.
+
+## Initialization
+### Customizing Initialization
+``` swift
+struct Celsius {
+    var temperatureInCelsius: Double
+    init(fromFahrenheit fahrenheit: Double) {
+        temperatureInCelsius = (fahrenheit - 32.0) / 1.8
+    }
+    init(fromKelvin kelvin: Double) {
+        temperatureInCelsius = kelvin - 273.15
+    }
+    init(_ celsius: Double) {
+        temperatureInCelsius = celsius
+    }
+}
+let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+let bodyTemperature = Celsius(37.0)
+```
+
+### Class Inheritance and Initialization
+#### Designated Initializers and Convenience Initializers
+*Designated initializers* are the primary initializers for a class. A designated initializer fully initializes all properties introduced by that class and calls an appropriate superclass initializer to continue the initialization process up the superclass chain. Every class must have at least one designated initializer.
+*Convenience initializers* are secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer’s parameters set to default values.
+
+#### Initializer Delegation for Class Types
+Three rules for delegation calls between initializers:
+1. A designated initializer must call a designated initializer from its immediate superclass.
+2. A convenience initializer must call another initializer from the same class.
+3. A convenience initializer must ultimately call a designated initializer.
+
+The above rules can be abbreviated as followed:
+- Designated initializers must always delegate up.
+- Convenience initializers must always delegate across.
+
+#### Two-Phase Initialization
+**Phase 1**
+- A designated or convenience initializer is called on a class.
+- Memory for a new instance of that class is allocated. The memory is not yet initialized.
+- A designated initializer for that class confirms that all stored properties introduced by that class have a value. The memory for these stored properties is now initialized.
+- The designated initializer hands off to a superclass initializer to perform the same task for its own stored properties.
+- This continues up the class inheritance chain until the top of the chain is reached.
+- Once the top of the chain is reached, and the final class in the chain has ensured that all of its stored properties have a value, the instance’s memory is considered to be fully initialized, and phase 1 is complete.
+
+**Phase 2**
+- Working back down from the top of the chain, each designated initializer in the chain has the option to customize the instance further. Initializers are now able to access self and can modify its properties, call its instance methods, and so on.
+- Finally, any convenience initializers in the chain have the option to customize the instance and to work with self.
+
+#### Designated and Convenience Initializers in Action
+``` swift
+class Food {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: "[Unnamed]")
+    }
+}
+class RecipeIngredient: Food {
+    var quantity: Int
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+class ShoppingListItem: RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = "\(quantity) x \(name)"
+        output += purchased ? " ✔" : " ✘"
+        return output
+    }
+}
+var breakfastList = [
+    ShoppingListItem(),
+    ShoppingListItem(name: "Bacon"),
+    ShoppingListItem(name: "Eggs", quantity: 6),
+]
+breakfastList[0].name = "Orange juice"
+breakfastList[0].purchased = true
+for item in breakfastList {
+    print(item.description)
+}
+// 1 x Orange juice ✔
+// 1 x Bacon ✘
+// 6 x Eggs ✘
+```
+Since `ShoppingListItem` provides a default value for all of the properties it introduces and does not define any initializers itself, it automatically inherits all of the designated and convenience initializers from its superclass.
+
+### Failable Initializers
+``` swift
+struct Animal {
+    let species: String
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+```
+
+### Setting a Default Property Value with a Closure or Function
+``` swift
+class SomeClass {
+    let someProperty: SomeType = {
+        // create a default value for someProperty inside this closure
+        // someValue must be of the same type as SomeType
+        return someValue
+    }()
+}
+```
