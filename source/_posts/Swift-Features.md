@@ -645,7 +645,7 @@ for item in breakfastList {
 Since `ShoppingListItem` provides a default value for all of the properties it introduces and does not define any initializers itself, it automatically inherits all of the designated and convenience initializers from its superclass.
 
 The figure below shows the overall initializer chain for all three classes:
-{% asset_img DesignatedAndConvenienceInitializersInAction.png "Designated and Convenience Initializers in Action" %}
+<img src="/blog/Swift-Features/DesignatedAndConvenienceInitializersInAction.png"  alt="Designated and Convenience Initializers in Action" style="width:576px;">
 
 ### Failable Initializers
 A failable initializer creates an *optional* value of the type it initializes. You write `return nil` within a failable initializer to indicate a point at which initialization failure can be triggered.
