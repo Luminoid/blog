@@ -23,6 +23,30 @@ All of the basic types in Swift—integers, floating-point numbers, Booleans, st
 A *reference type* is not copied when it is assigned to a variable or constant, or when it is passed to a function. Rather than a copy, a reference to the same existing instance is used.
 Classes, functions and closures are reference types.
 
+### Optionals
+An *optional* represents two possibilities: Either there is a value, and you can unwrap the optional to access that value, or there isn’t a value at all. Optionals of *any* type can be set to `nil`, not just object types.
+
+#### Forced Unwrapping
+`optional!`: forced unwrapping of the optional’s value
+
+#### Optional Binding
+``` swift
+if let constantName = someOptional {
+    statements
+}
+```
+
+### Implicitly Unwrapped Optionals
+*Implicitly unwrapped optionals* are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.
+You write an implicitly unwrapped optional by placing an exclamation mark (`String!`) rather than a question mark (`String?`) after the type that you want to make optional.
+``` swift
+let possibleString: String? = "An optional string."
+let forcedString: String = possibleString!  // requires an exclamation mark
+
+let assumedString: String! = "An implicitly unwrapped optional string."
+let implicitString: String = assumedString  // no need for an exclamation mark
+```
+
 ## Operators
 ### Closed Range Operator
 ``` swift
@@ -494,6 +518,41 @@ stepCounter.totalSteps = 360
 #### Type Properties
 You define type properties with the `static` keyword. For computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation.
 
+### Methods
+#### Mutating Methods
+Modifying value types from within instance methods
+``` swift
+struct Point {
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+        x += deltaX
+        y += deltaY
+    }
+}
+var somePoint = Point(x: 1.0, y: 1.0)
+somePoint.moveBy(x: 2.0, y: 3.0)
+print("The point is now at (\(somePoint.x), \(somePoint.y))")   // The point is now at (3.0, 4.0)
+```
+Assigning to self within a mutating method
+``` swift
+enum TriStateSwitch {
+    case off, low, high
+    mutating func next() {
+        switch self {
+        case .off:
+            self = .low
+        case .low:
+            self = .high
+        case .high:
+            self = .off
+        }
+    }
+}
+var ovenLight = TriStateSwitch.low
+ovenLight.next()    // ovenLight: TriStateSwitch = high
+ovenLight.next()    // ovenLight: TriStateSwitch = off
+```
+
 ### Subscripts
 ``` swift
 struct Matrix {
@@ -683,4 +742,237 @@ deinit {
 }
 ```
 
+## Error Handling
+In Swift, errors are represented by values of types that conform to the `Error` protocol. This empty protocol indicates that a type can be used for error handling.
 
+There are four ways to handle errors in Swift: 
+1. propagate the error from a function to the code that calls that function
+2. handle the error using a do-catch statement
+3. handle the error as an optional value
+4. assert that the error will not occur
+
+``` swift
+enum VendingMachineError: Error {
+    case invalidSelection
+    case insufficientFunds(coinsNeeded: Int)
+    case outOfStock
+}
+
+struct Item {
+    var price: Int
+    var count: Int
+}
+
+class VendingMachine {
+    var inventory = [
+        "Candy Bar": Item(price: 12, count: 7),
+        "Chips": Item(price: 10, count: 4),
+        "Pretzels": Item(price: 7, count: 11)
+    ]
+    var coinsDeposited = 0
+
+    func vend(itemNamed name: String) throws {
+        guard let item = inventory[name] else {
+            throw VendingMachineError.invalidSelection
+        }
+
+        guard item.count > 0 else {
+            throw VendingMachineError.outOfStock
+        }
+
+        guard item.price <= coinsDeposited else {
+            throw VendingMachineError.insufficientFunds(coinsNeeded: item.price - coinsDeposited)
+        }
+
+        coinsDeposited -= item.price
+
+        var newItem = item
+        newItem.count -= 1
+        inventory[name] = newItem
+
+        print("Dispensing \(name)")
+    }
+}
+```
+
+### Propagating Errors Using Throwing Functions
+Only throwing functions can propagate errors. Any errors thrown inside a nonthrowing function must be handled inside the function.
+``` swift
+let favoriteSnacks = [
+    "Alice": "Chips",
+    "Bob": "Licorice",
+    "Eve": "Pretzels",
+]
+func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(itemNamed: snackName)
+}
+```
+
+### Handling Errors Using Do-Catch
+``` swift
+var vendingMachine = VendingMachine()
+vendingMachine.coinsDeposited = 8
+do {
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+    print("Success! Yum.")
+} catch VendingMachineError.invalidSelection {
+    print("Invalid Selection.")
+} catch VendingMachineError.outOfStock {
+    print("Out of Stock.")
+} catch VendingMachineError.insufficientFunds(let coinsNeeded) {
+    print("Insufficient funds. Please insert an additional \(coinsNeeded) coins.")
+} catch {
+    print("Unexpected error: \(error).")
+}
+// Insufficient funds. Please insert an additional 2 coins.
+```
+
+### Converting Errors to Optional Values
+Use `try?` to handle an error by converting it to an optional value. In the following code `x` and `y` have the same value and behavior:
+``` swift
+func someThrowingFunction() throws -> Int {
+    // ...
+}
+
+let x = try? someThrowingFunction()
+
+let y: Int?
+do {
+    y = try someThrowingFunction()
+} catch {
+    y = nil
+}
+```
+
+### Disabling Error Propagation
+``` swift
+let photo = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
+```
+
+### Specifying Cleanup Actions
+You use a `defer` statement to execute a set of statements just before code execution leaves the current block of code. A `defer` statement defers execution until the current scope is exited.
+``` swift
+func processFile(filename: String) throws {
+    if exists(filename) {
+        let file = open(filename)
+        defer {
+            close(file)
+        }
+        while let line = try file.readline() {
+            // Work with the file.
+        }
+        // close(file) is called here, at the end of the scope.
+    }
+}
+```
+
+## Type Casting
+### Checking Type
+Use the type check operator (`is`) to check whether an instance is of a certain subclass type.
+
+### Downcasting
+Use the type cast operator (as? or as!) to downcast an instance to the subclass 
+``` swift
+class MediaItem {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+class Movie: MediaItem {
+    var director: String
+    init(name: String, director: String) {
+        self.director = director
+        super.init(name: name)
+    }
+}
+class Song: MediaItem {
+    var artist: String
+    init(name: String, artist: String) {
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+let library = [ // the type of "library" is inferred to be [MediaItem]
+    Movie(name: "Casablanca", director: "Michael Curtiz"),
+    Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
+    Song(name: "The One And Only", artist: "Chesney Hawkes"),
+    Movie(name: "Citizen Kane", director: "Orson Welles"),
+]
+
+for item in library {
+    if let movie = item as? Movie {
+        print("Movie: \(movie.name), dir. \(movie.director)")
+    } else if let song = item as? Song {
+        print("Song: \(song.name), by \(song.artist)")
+    }
+}
+// Movie: Casablanca, dir. Michael Curtiz
+// Song: Blue Suede Shoes, by Elvis Presley
+// Song: The One And Only, by Chesney Hawkes
+// Movie: Citizen Kane, dir. Orson Welles
+```
+
+### Type Casting for Any and AnyObject
+``` swift
+var things = [Any]()
+things.append(0)
+things.append(0.0)
+things.append(42)
+things.append(3.14159)
+things.append("hello")
+things.append((3.0, 5.0))
+things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
+things.append({ (name: String) -> String in "Hello, \(name)" })
+
+for thing in things {
+    switch thing {
+    case 0 as Int:
+        print("zero as an Int")
+    case 0 as Double:
+        print("zero as a Double")
+    case let someInt as Int:
+        print("an integer value of \(someInt)")
+    case let someDouble as Double where someDouble > 0:
+        print("a positive double value of \(someDouble)")
+    case is Double:
+        print("some other double value that I don't want to print")
+    case let someString as String:
+        print("a string value of \"\(someString)\"")
+    case let (x, y) as (Double, Double):
+        print("an (x, y) point at \(x), \(y)")
+    case let movie as Movie:
+        print("a movie called \(movie.name), dir. \(movie.director)")
+    case let stringConverter as (String) -> String:
+        print(stringConverter("Michael"))
+    default:
+        print("something else")
+    }
+}
+
+// zero as an Int
+// zero as a Double
+// an integer value of 42
+// a positive double value of 3.14159
+// a string value of "hello"
+// an (x, y) point at 3.0, 5.0
+// a movie called Ghostbusters, dir. Ivan Reitman
+// Hello, Michael
+```
+
+## Extensions
+*Extensions* add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you do not have access to the original source code (known as *retroactive modeling*).
+Extensions in Swift can:
+- Add computed instance properties and computed type properties
+- Define instance methods and type methods
+- Provide new initializers
+- Define subscripts
+- Define and use new nested types
+- Make an existing type conform to a protocol
+
+If you define an extension to add new functionality to an existing type, the new functionality will be available on all existing instances of that type, even if they were created before the extension was defined.
+
+## Protocols
+A *protocol* defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be *adopted* by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to *conform* to that protocol.
