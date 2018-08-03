@@ -36,7 +36,7 @@ if let constantName = someOptional {
 }
 ```
 
-### Implicitly Unwrapped Optionals
+#### Implicitly Unwrapped Optionals
 *Implicitly unwrapped optionals* are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.
 You write an implicitly unwrapped optional by placing an exclamation mark (`String!`) rather than a question mark (`String?`) after the type that you want to make optional.
 ``` swift
@@ -744,7 +744,6 @@ deinit {
 
 ## Error Handling
 In Swift, errors are represented by values of types that conform to the `Error` protocol. This empty protocol indicates that a type can be used for error handling.
-
 There are four ways to handle errors in Swift: 
 1. propagate the error from a function to the code that calls that function
 2. handle the error using a do-catch statement
@@ -872,7 +871,7 @@ func processFile(filename: String) throws {
 Use the type check operator (`is`) to check whether an instance is of a certain subclass type.
 
 ### Downcasting
-Use the type cast operator (as? or as!) to downcast an instance to the subclass 
+Use the type cast operator (`as?` or `as!`) to downcast an instance to the subclass 
 ``` swift
 class MediaItem {
     var name: String

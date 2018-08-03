@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-04 01:30:22" itemprop="dateModified" datetime="2018-08-04T01:30:22+08:00">2018-08-04</time>
+                <time title="Modified: 2018-08-04 01:58:02" itemprop="dateModified" datetime="2018-08-04T01:58:02+08:00">2018-08-04</time>
               
             
           </span>
@@ -517,7 +517,7 @@ Classes, functions and closures are reference types.</p>
 <p><code>optional!</code>: forced unwrapping of the optional’s value</p>
 <h4 id="optional-binding"><a class="header-anchor" href="#optional-binding"></a>Optional Binding</h4>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> constantName = someOptional &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="implicitly-unwrapped-optionals"><a class="header-anchor" href="#implicitly-unwrapped-optionals"></a>Implicitly Unwrapped Optionals</h3>
+<h4 id="implicitly-unwrapped-optionals"><a class="header-anchor" href="#implicitly-unwrapped-optionals"></a>Implicitly Unwrapped Optionals</h4>
 <p><em>Implicitly unwrapped optionals</em> are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.<br>
 You write an implicitly unwrapped optional by placing an exclamation mark (<code>String!</code>) rather than a question mark (<code>String?</code>) after the type that you want to make optional.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleString: <span class="type">String</span>? = <span class="string">"An optional string."</span></span><br><span class="line"><span class="keyword">let</span> forcedString: <span class="type">String</span> = possibleString!  <span class="comment">// requires an exclamation mark</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> assumedString: <span class="type">String</span>! = <span class="string">"An implicitly unwrapped optional string."</span></span><br><span class="line"><span class="keyword">let</span> implicitString: <span class="type">String</span> = assumedString  <span class="comment">// no need for an exclamation mark</span></span><br></pre></td></tr></table></figure>
