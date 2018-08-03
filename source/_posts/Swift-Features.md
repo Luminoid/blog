@@ -354,8 +354,11 @@ for customerProvider in customerProviders {
 // Now serving Barry!
 ```
 
-## Enumerations
-### Associated Values
+## Enumerations, Structures and Classes
+Classes, structures, and enumerations can all define properties, methods and subscripts. (Stored properties are provided only by classes and structures).
+
+### Enumerations
+#### Associated Values
 ``` swift
 enum Barcode {
     case upc(Int, Int, Int, Int)
@@ -371,7 +374,7 @@ case let .qrCode(productCode):
 // UPC : 8, 85909, 51226, 3.
 ```
 
-### Raw Values
+#### Raw Values
 ``` swift
 enum ASCIIControlCharacter: Character {
     case tab = "\t"
@@ -380,7 +383,7 @@ enum ASCIIControlCharacter: Character {
 }
 ```
 
-### Recursive Enumerations
+#### Recursive Enumerations
 ``` swift
 indirect enum ArithmeticExpression {
     case number(Int)
@@ -406,16 +409,8 @@ let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.numb
 print(evaluate(product))    // 18
 ```
 
-## Structures and Classes
-Classes, structures, and enumerations can all define properties, methods and subscripts. (Stored properties are provided only by classes and structures).
-
-Classes have additional capabilities that structures don’t have:
-- Inheritance enables one class to inherit the characteristics of another.
-- Type casting enables you to check and interpret the type of a class instance at runtime.
-- Deinitializers enable an instance of a class to free up any resources it has assigned.
-- Reference counting allows more than one reference to a class instance.
-
-### Memberwise Initializers for Structure Types
+### Structures
+#### Memberwise Initializers for Structure Types
 All structures have an automatically generated *memberwise initializer*
 ``` swift
 struct Resolution {
@@ -424,6 +419,45 @@ struct Resolution {
 }
 let vga = Resolution(width: 640, height: 480)
 ```
+
+### Classes
+Classes have additional capabilities that structures don’t have:
+- Inheritance enables one class to inherit the characteristics of another.
+- Type casting enables you to check and interpret the type of a class instance at runtime.
+- Deinitializers enable an instance of a class to free up any resources it has assigned.
+- Reference counting allows more than one reference to a class instance.
+
+### Subscripts
+``` swift
+struct Matrix {
+    let rows: Int, columns: Int
+    var grid: [Double]
+    init(rows: Int, columns: Int) {
+        self.rows = rows
+        self.columns = columns
+        grid = Array(repeating: 0.0, count: rows * columns)
+    }
+    func indexIsValid(row: Int, column: Int) -> Bool {
+        return row >= 0 && row < rows && column >= 0 && column < columns
+    }
+    subscript(row: Int, column: Int) -> Double {
+        get {
+            assert(indexIsValid(row: row, column: column), "Index out of range")
+            return grid[(row * columns) + column]
+        }
+        set {
+            assert(indexIsValid(row: row, column: column), "Index out of range")
+            grid[(row * columns) + column] = newValue
+        }
+    }
+}
+var matrix = Matrix(rows: 2, columns: 2)
+matrix[0, 1] = 1.5
+matrix[1, 0] = 3.2  // [0, 1.5, 3.2, 0]
+```
+
+### Optional Chaining
+You specify optional chaining by placing a question mark (`?`) after the optional value on which you wish to call a property, method or subscript if the optional is non-`nil`. This is very similar to placing an exclamation mark (`!`) after an optional value to force the unwrapping of its value. The main difference is that optional chaining fails gracefully when the optional is `nil`, whereas forced unwrapping triggers a runtime error when the optional is `nil`.
 
 ## Properties
 ### Stored Property
@@ -491,35 +525,6 @@ stepCounter.totalSteps = 360
 
 ### Type Properties
 You define type properties with the `static` keyword. For computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation.
-
-## Subscripts
-``` swift
-struct Matrix {
-    let rows: Int, columns: Int
-    var grid: [Double]
-    init(rows: Int, columns: Int) {
-        self.rows = rows
-        self.columns = columns
-        grid = Array(repeating: 0.0, count: rows * columns)
-    }
-    func indexIsValid(row: Int, column: Int) -> Bool {
-        return row >= 0 && row < rows && column >= 0 && column < columns
-    }
-    subscript(row: Int, column: Int) -> Double {
-        get {
-            assert(indexIsValid(row: row, column: column), "Index out of range")
-            return grid[(row * columns) + column]
-        }
-        set {
-            assert(indexIsValid(row: row, column: column), "Index out of range")
-            grid[(row * columns) + column] = newValue
-        }
-    }
-}
-var matrix = Matrix(rows: 2, columns: 2)
-matrix[0, 1] = 1.5
-matrix[1, 0] = 3.2  // [0, 1.5, 3.2, 0]
-```
 
 ## Inheritance
 Swift classes do not inherit from a universal base class. Classes you define without specifying a superclass automatically become base classes for you to build upon.
@@ -669,3 +674,13 @@ class SomeClass {
     }()
 }
 ```
+
+### Deinitialization
+A *deinitializer* is called immediately before a class instance is deallocated. Deinitializers are only available on class types.
+``` swift
+deinit {
+    // perform the deinitialization
+}
+```
+
+
