@@ -427,6 +427,73 @@ Classes have additional capabilities that structures don’t have:
 - Deinitializers enable an instance of a class to free up any resources it has assigned.
 - Reference counting allows more than one reference to a class instance.
 
+### Properties
+#### Stored Property
+A constant or variable that is stored as part of an instance of a particular class or structure
+``` swift
+struct FixedLengthRange {
+    var firstValue: Int
+    let length: Int
+}
+```
+
+#### Computed Properties
+Computed properties do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
+``` swift
+struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Size {
+    var width = 0.0, height = 0.0
+}
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
+    }
+}
+var square = Rect(origin: Point(x: 0.0, y: 0.0),
+                  size: Size(width: 10.0, height: 10.0))
+square.center = Point(x: 15.0, y: 15.0)
+print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
+// square.origin is now at (10.0, 10.0)
+```
+
+#### Property Observers
+``` swift
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet {
+            print("About to set totalSteps to \(newValue)")
+        }
+        didSet {
+            if totalSteps > oldValue  {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+// About to set totalSteps to 200
+// Added 200 steps
+stepCounter.totalSteps = 360
+// About to set totalSteps to 360
+// Added 160 steps
+```
+
+#### Type Properties
+You define type properties with the `static` keyword. For computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation.
+
 ### Subscripts
 ``` swift
 struct Matrix {
@@ -458,73 +525,6 @@ matrix[1, 0] = 3.2  // [0, 1.5, 3.2, 0]
 
 ### Optional Chaining
 You specify optional chaining by placing a question mark (`?`) after the optional value on which you wish to call a property, method or subscript if the optional is non-`nil`. This is very similar to placing an exclamation mark (`!`) after an optional value to force the unwrapping of its value. The main difference is that optional chaining fails gracefully when the optional is `nil`, whereas forced unwrapping triggers a runtime error when the optional is `nil`.
-
-## Properties
-### Stored Property
-A constant or variable that is stored as part of an instance of a particular class or structure
-``` swift
-struct FixedLengthRange {
-    var firstValue: Int
-    let length: Int
-}
-```
-
-### Computed Properties
-Computed properties do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
-``` swift
-struct Point {
-    var x = 0.0, y = 0.0
-}
-struct Size {
-    var width = 0.0, height = 0.0
-}
-struct Rect {
-    var origin = Point()
-    var size = Size()
-    var center: Point {
-        get {
-            let centerX = origin.x + (size.width / 2)
-            let centerY = origin.y + (size.height / 2)
-            return Point(x: centerX, y: centerY)
-        }
-        set {
-            origin.x = newValue.x - (size.width / 2)
-            origin.y = newValue.y - (size.height / 2)
-        }
-    }
-}
-var square = Rect(origin: Point(x: 0.0, y: 0.0),
-                  size: Size(width: 10.0, height: 10.0))
-square.center = Point(x: 15.0, y: 15.0)
-print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
-// square.origin is now at (10.0, 10.0)
-```
-
-### Property Observers
-``` swift
-class StepCounter {
-    var totalSteps: Int = 0 {
-        willSet {
-            print("About to set totalSteps to \(newValue)")
-        }
-        didSet {
-            if totalSteps > oldValue  {
-                print("Added \(totalSteps - oldValue) steps")
-            }
-        }
-    }
-}
-let stepCounter = StepCounter()
-stepCounter.totalSteps = 200
-// About to set totalSteps to 200
-// Added 200 steps
-stepCounter.totalSteps = 360
-// About to set totalSteps to 360
-// Added 160 steps
-```
-
-### Type Properties
-You define type properties with the `static` keyword. For computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation.
 
 ## Inheritance
 Swift classes do not inherit from a universal base class. Classes you define without specifying a superclass automatically become base classes for you to build upon.
