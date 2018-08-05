@@ -674,6 +674,7 @@ class Food {
         self.init(name: "[Unnamed]")
     }
 }
+
 class RecipeIngredient: Food {
     var quantity: Int
     init(name: String, quantity: Int) {
@@ -684,6 +685,7 @@ class RecipeIngredient: Food {
         self.init(name: name, quantity: 1)
     }
 }
+
 class ShoppingListItem: RecipeIngredient {
     var purchased = false
     var description: String {
@@ -692,6 +694,7 @@ class ShoppingListItem: RecipeIngredient {
         return output
     }
 }
+
 var breakfastList = [
     ShoppingListItem(),
     ShoppingListItem(name: "Bacon"),
@@ -915,6 +918,8 @@ for item in library {
 ```
 
 ### Type Casting for Any and AnyObject
+`Any` can represent an instance of any type at all, including function types.
+`AnyObject` can represent an instance of any class type.
 ``` swift
 var things = [Any]()
 things.append(0)
@@ -975,3 +980,359 @@ If you define an extension to add new functionality to an existing type, the new
 
 ## Protocols
 A *protocol* defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be *adopted* by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to *conform* to that protocol.
+
+### Property Requirements
+``` swift
+protocol SomeProtocol {
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable: Int { get }
+}
+```
+
+### Protocols as Types
+Protocols don’t actually implement any functionality themselves. Nonetheless, any protocol you create will become a fully-fledged type for use in your code.
+Protocols can be used in many places where other types are allowed, including:
+- As a parameter type or return type in a function, method, or initializer
+- As the type of a constant, variable, or property
+- As the type of items in an array, dictionary, or other container
+
+``` swift
+protocol RandomNumberGenerator {
+    func random() -> Double
+}
+
+class LinearCongruentialGenerator: RandomNumberGenerator {
+    var lastRandom = 47.0
+    let m = 139968.0
+    let a = 3877.0
+    let c = 29573.0
+    func random() -> Double {
+        lastRandom = ((lastRandom * a + c).truncatingRemainder(dividingBy:m))
+        return lastRandom / m
+    }
+}
+
+class Dice {
+    let sides: Int
+    let generator: RandomNumberGenerator
+    init(sides: Int, generator: RandomNumberGenerator) {
+        self.sides = sides
+        self.generator = generator
+    }
+    func roll() -> Int {
+        return Int(generator.random() * Double(sides)) + 1
+    }
+}
+
+var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+for _ in 1...5 {
+    print("Random dice roll is \(d6.roll())")
+}
+// Random dice roll is 4
+// Random dice roll is 5
+// Random dice roll is 1
+// Random dice roll is 6
+// Random dice roll is 1
+```
+
+### Delegation
+Delegation is a design pattern that enables a class or structure to hand off (or delegate) some of its responsibilities to an instance of another type. This design pattern is implemented by defining a protocol that encapsulates the delegated responsibilities, such that a conforming type (known as a delegate) is guaranteed to provide the functionality that has been delegated.
+``` swift
+protocol DiceGame {
+    var dice: Dice { get }
+    func play()
+}
+
+protocol DiceGameDelegate: AnyObject {
+    func gameDidStart(_ game: DiceGame)
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gameDidEnd(_ game: DiceGame)
+}
+
+class SnakesAndLadders: DiceGame {
+    let finalSquare = 25
+    let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    var square = 0
+    var board: [Int]
+    init() {
+        board = Array(repeating: 0, count: finalSquare + 1)
+        board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+        board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+    }
+    weak var delegate: DiceGameDelegate?
+    func play() {
+        square = 0
+        delegate?.gameDidStart(self)
+        gameLoop: while square != finalSquare {
+            let diceRoll = dice.roll()
+            delegate?.game(self, didStartNewTurnWithDiceRoll: diceRoll)
+            switch square + diceRoll {
+            case finalSquare:
+                break gameLoop
+            case let newSquare where newSquare > finalSquare:
+                continue gameLoop
+            default:
+                square += diceRoll
+                square += board[square]
+            }
+        }
+        delegate?.gameDidEnd(self)
+    }
+}
+
+class DiceGameTracker: DiceGameDelegate {
+    var numberOfTurns = 0
+    func gameDidStart(_ game: DiceGame) {
+        numberOfTurns = 0
+        if game is SnakesAndLadders {
+            print("Started a new game of Snakes and Ladders")
+        }
+        print("The game is using a \(game.dice.sides)-sided dice")
+    }
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int) {
+        numberOfTurns += 1
+        print("Rolled a \(diceRoll)")
+    }
+    func gameDidEnd(_ game: DiceGame) {
+        print("The game lasted for \(numberOfTurns) turns")
+    }
+}
+
+let tracker = DiceGameTracker()
+let game = SnakesAndLadders()
+game.delegate = tracker
+game.play()
+// Started a new game of Snakes and Ladders
+// The game is using a 6-sided dice
+// Rolled a 4
+// Rolled a 6
+// Rolled a 4
+// Rolled a 4
+// Rolled a 5
+// The game lasted for 5 turns
+```
+
+### Adding Protocol Conformance with an Extension
+You can extend an existing type to adopt and conform to a new protocol, even if you don’t have access to the source code for the existing type.
+``` swift
+protocol TextRepresentable {
+    var textualDescription: String { get }
+}
+
+extension Dice: TextRepresentable {
+    var textualDescription: String {
+        return "A \(sides)-sided dice"
+    }
+}
+
+extension Array: TextRepresentable where Element: TextRepresentable {
+    var textualDescription: String {
+        let itemsAsText = self.map { $0.textualDescription }
+        return "[" + itemsAsText.joined(separator: ", ") + "]"
+    }
+}
+
+var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
+let myDice = [d6, d12]
+print(myDice.textualDescription)    // [A 6-sided dice, A 12-sided dice]
+```
+
+### Class-Only Protocols
+You can limit protocol adoption to class types (and not structures or enumerations) by adding the `AnyObject` protocol to a protocol’s inheritance list. Use a class-only protocol when the behavior defined by that protocol’s requirements assumes or requires that a conforming type has reference semantics rather than value semantics.
+``` swift
+protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+    // class-only protocol definition goes here
+}
+```
+
+### Optional Protocol Requirements
+You can define *optional requirements* for protocols, These requirements don’t have to be implemented by types that conform to the protocol.
+``` swift
+@objc protocol CounterDataSource {
+    @objc optional func increment(forCount count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+}
+
+class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.increment?(forCount: count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
+        }
+    }
+}
+
+
+class TowardsZeroSource: NSObject, CounterDataSource {
+    func increment(forCount count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
+
+counter.count = -4
+counter.dataSource = TowardsZeroSource()
+for _ in 1...5 {
+    counter.increment()
+    print(counter.count)
+}
+// -3
+// -2
+// -1
+// 0
+// 0
+```
+
+### Protocol Extensions
+Protocols can be extended to provide method, initializer, subscript, and computed property implementations to conforming types. This allows you to define behavior on protocols themselves, rather than in each type’s individual conformance or in a global function.
+``` swift
+extension Collection where Element: Equatable {
+    func allEqual() -> Bool {
+        for element in self {
+            if element != self.first {
+                return false
+            }
+        }
+        return true
+    }
+}
+
+let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+print(equalNumbers.allEqual())      // true
+print(differentNumbers.allEqual())  // false
+```
+
+## Generics
+### Generic Functions
+``` swift
+func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+var someInt = 3
+var anotherInt = 107
+swapTwoValues(&someInt, &anotherInt)
+
+var someString = "hello"
+var anotherString = "world"
+swapTwoValues(&someString, &anotherString)
+```
+
+### Type Parameters
+Type parameters specify and name a placeholder type. In most cases, type parameters have descriptive names, such as `Key` and `Value` in `Dictionary<Key, Value>` and `Element` in `Array<Element>`.
+
+### Generic Types
+``` swift
+struct Stack<Element> {
+    var items = [Element]()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+}
+
+var stackOfStrings = Stack<String>()
+stackOfStrings.push("uno")
+stackOfStrings.push("dos")
+stackOfStrings.push("tres")
+let fromTheTop = stackOfStrings.pop()   // fromTheTop: String = "tres"
+```
+
+### Type Constraints
+``` swift
+func findIndex<T: Equatable>(of valueToFind: T, in array:[T]) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == valueToFind {
+            return index
+        }
+    }
+    return nil
+}
+
+let doubleIndex = findIndex(of: 9.3, in: [3.14159, 0.1, 0.25])                  // doubleIndex: Int? = nil
+let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])    // stringIndex: Int? = 2
+```
+
+### Associated Types
+An *associated type* gives a placeholder name to a type that is used as part of the protocol.
+``` swift
+protocol Container {
+    associatedtype Item
+    mutating func append(_ item: Item)
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+}
+
+struct Stack<Element>: Container {
+    // original Stack<Element> implementation
+    var items = [Element]()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+    // conformance to the Container protocol
+    mutating func append(_ item: Element) {
+        self.push(item)
+    }
+    var count: Int {
+        return items.count
+    }
+    subscript(i: Int) -> Element {
+        return items[i]
+    }
+}
+```
+The type parameter `Element` is used as the type of the `append(_:)` method’s `item` parameter and the return type of the subscript. Swift can therefore infer that `Element` is the appropriate type to use as the `Item` for this particular container.
+
+#### Extending an Existing Type to Specify an Associated Type
+Swift’s `Array` type already provides an `append(_:)` method, a `count` property, and a subscript with an `Int` index to retrieve its elements. These three capabilities match the requirements of the `Container` protocol. This means that you can extend `Array` to conform to the `Container` protocol simply by declaring that `Array` adopts the protocol. 
+``` swift
+extension Array: Container {}
+```
+
+### Generic Where Clauses
+``` swift
+func allItemsMatch<C1: Container, C2: Container>
+    (_ someContainer: C1, _ anotherContainer: C2) -> Bool
+    where C1.Item == C2.Item, C1.Item: Equatable {
+
+        if someContainer.count != anotherContainer.count {
+            return false
+        }
+
+        for i in 0..<someContainer.count {
+            if someContainer[i] != anotherContainer[i] {
+                return false
+            }
+        }
+
+        return true
+}
+
+extension Array: Container {}
+
+var stackOfStrings = Stack<String>()
+stackOfStrings.push("uno")
+stackOfStrings.push("dos")
+stackOfStrings.push("tres")
+
+var arrayOfStrings = ["uno", "dos", "tres"]
+
+allItemsMatch(stackOfStrings, arrayOfStrings)   // true
+```
