@@ -1336,3 +1336,96 @@ var arrayOfStrings = ["uno", "dos", "tres"]
 
 allItemsMatch(stackOfStrings, arrayOfStrings)   // true
 ```
+
+## Automatic Reference Counting
+Swift provides two ways to resolve strong reference cycles when you work with properties of class type: weak references and unowned references. 
+Use a weak reference when the other instance has a shorter lifetime—that is, when the other instance can be deallocated first. In contrast, use an unowned reference when the other instance has the same lifetime or a longer lifetime.
+
+### Weak References
+Because a weak reference does not keep a strong hold on the instance it refers to, it’s possible for that instance to be deallocated while the weak reference is still referring to it. Therefore, ARC automatically sets a weak reference to `nil` when the instance that it refers to is deallocated.
+``` swift
+class Person {
+    let name: String
+    init(name: String) { self.name = name }
+    var apartment: Apartment?
+    deinit { print("\(name) is being deinitialized") }
+}
+
+class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    weak var tenant: Person?
+    deinit { print("Apartment \(unit) is being deinitialized") }
+}
+
+var john: Person?
+var unit4A: Apartment?
+
+john = Person(name: "John Appleseed")
+unit4A = Apartment(unit: "4A")
+
+john!.apartment = unit4A
+unit4A!.tenant = john
+
+john = nil      // John Appleseed is being deinitialized
+unit4A = nil    // Apartment 4A is being deinitialized
+```
+
+In systems that use garbage collection, weak pointers are sometimes used to implement a simple caching mechanism because objects with no strong references are deallocated only when memory pressure triggers garbage collection. However, with ARC, values are deallocated as soon as their last strong reference is removed, making weak references unsuitable for such a purpose.
+
+### Unowned References
+An unowned reference is expected to always have a value. As a result, ARC never sets an unowned reference’s value to `nil`, which means that unowned references are defined using nonoptional types.
+``` swift
+class Customer {
+    let name: String
+    var card: CreditCard?
+    init(name: String) {
+        self.name = name
+    }
+    deinit { print("\(name) is being deinitialized") }
+}
+
+class CreditCard {
+    let number: UInt64
+    unowned let customer: Customer
+    init(number: UInt64, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+    deinit { print("Card #\(number) is being deinitialized") }
+}
+
+var john: Customer?
+john = Customer(name: "John Appleseed")
+john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
+john = nil
+// Prints "John Appleseed is being deinitialized"
+// Prints "Card #1234567890123456 is being deinitialized"
+```
+
+### Unowned References and Implicitly Unwrapped Optional Properties
+The `Person` and `Apartment` example shows a situation where two properties, both of which are allowed to be `nil`, have the potential to cause a strong reference cycle. This scenario is best resolved with a weak reference.
+The `Customer` and `CreditCard` example shows a situation where one property that is allowed to be `nil` and another property that cannot be nil have the potential to cause a strong reference cycle. This scenario is best resolved with an unowned reference.
+However, there is a third scenario, in which both properties should always have a value, and neither property should ever be `nil` once initialization is complete. In this scenario, it’s useful to combine an unowned property on one class with an implicitly unwrapped optional property on the other class.
+``` swift
+class Country {
+    let name: String
+    var capitalCity: City!
+    init(name: String, capitalName: String) {
+        self.name = name
+        self.capitalCity = City(name: capitalName, country: self)
+    }
+}
+
+class City {
+    let name: String
+    unowned let country: Country
+    init(name: String, country: Country) {
+        self.name = name
+        self.country = country
+    }
+}
+
+var country = Country(name: "Canada", capitalName: "Ottawa")
+print("\(country.name)'s capital city is called \(country.capitalCity.name)")   // Canada's capital city is called Ottawa
+```
