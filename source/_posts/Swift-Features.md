@@ -1341,7 +1341,8 @@ allItemsMatch(stackOfStrings, arrayOfStrings)   // true
 Swift provides two ways to resolve strong reference cycles when you work with properties of class type: weak references and unowned references. 
 Use a weak reference when the other instance has a shorter lifetime—that is, when the other instance can be deallocated first. In contrast, use an unowned reference when the other instance has the same lifetime or a longer lifetime.
 
-### Weak References
+### Resolving Strong Reference Cycles Between Class Instances
+#### Weak References
 Because a weak reference does not keep a strong hold on the instance it refers to, it’s possible for that instance to be deallocated while the weak reference is still referring to it. Therefore, ARC automatically sets a weak reference to `nil` when the instance that it refers to is deallocated.
 ``` swift
 class Person {
@@ -1371,9 +1372,9 @@ john = nil      // John Appleseed is being deinitialized
 unit4A = nil    // Apartment 4A is being deinitialized
 ```
 
-In systems that use garbage collection, weak pointers are sometimes used to implement a simple caching mechanism because objects with no strong references are deallocated only when memory pressure triggers garbage collection. However, with ARC, values are deallocated as soon as their last strong reference is removed, making weak references unsuitable for such a purpose.
+> In systems that use garbage collection, weak pointers are sometimes used to implement a simple caching mechanism because objects with no strong references are deallocated only when memory pressure triggers garbage collection. However, with ARC, values are deallocated as soon as their last strong reference is removed, making weak references unsuitable for such a purpose.
 
-### Unowned References
+#### Unowned References
 An unowned reference is expected to always have a value. As a result, ARC never sets an unowned reference’s value to `nil`, which means that unowned references are defined using nonoptional types.
 ``` swift
 class Customer {
@@ -1403,7 +1404,7 @@ john = nil
 // Prints "Card #1234567890123456 is being deinitialized"
 ```
 
-### Unowned References and Implicitly Unwrapped Optional Properties
+#### Unowned References and Implicitly Unwrapped Optional Properties
 The `Person` and `Apartment` example shows a situation where two properties, both of which are allowed to be `nil`, have the potential to cause a strong reference cycle. This scenario is best resolved with a weak reference.
 The `Customer` and `CreditCard` example shows a situation where one property that is allowed to be `nil` and another property that cannot be nil have the potential to cause a strong reference cycle. This scenario is best resolved with an unowned reference.
 However, there is a third scenario, in which both properties should always have a value, and neither property should ever be `nil` once initialization is complete. In this scenario, it’s useful to combine an unowned property on one class with an implicitly unwrapped optional property on the other class.
@@ -1429,3 +1430,103 @@ class City {
 var country = Country(name: "Canada", capitalName: "Ottawa")
 print("\(country.name)'s capital city is called \(country.capitalCity.name)")   // Canada's capital city is called Ottawa
 ```
+
+### Resolving Strong Reference Cycles for Closures
+#### Defining a Capture List
+``` swift
+lazy var someClosure: (Int, String) -> String = {
+    [unowned self, weak delegate = self.delegate!] (index: Int, stringToProcess: String) -> String in
+    // closure body goes here
+}
+```
+
+#### Weak and Unowned References
+Define a capture in a closure as an unowned reference when the closure and the instance it captures will always refer to each other, and will always be deallocated at the same time.
+Conversely, define a capture as a weak reference when the captured reference may become `nil` at some point in the future. Weak references are always of an optional type, and automatically become `nil` when the instance they reference is deallocated. This enables you to check for their existence within the closure’s body.
+``` swift
+class HTMLElement {
+    let name: String
+    let text: String?
+
+    lazy var asHTML: () -> String = {
+        [unowned self] in
+        if let text = self.text {
+            return "<\(self.name)>\(text)</\(self.name)>"
+        } else {
+            return "<\(self.name) />"
+        }
+    }
+
+    init(name: String, text: String? = nil) {
+        self.name = name
+        self.text = text
+    }
+
+    deinit {
+        print("\(name) is being deinitialized")
+    }
+}
+
+var paragraph: HTMLElement? = HTMLElement(name: "p", text: "hello, world")
+print(paragraph!.asHTML())  // <p>hello, world</p>
+paragraph = nil             // p is being deinitialized
+```
+
+## Memory Safety
+### Conflicting Access to In-Out Parameters
+``` swift
+var stepSize = 1
+
+func increment(_ number: inout Int) {
+    number += stepSize
+}
+
+increment(&stepSize)
+// Error: conflicting accesses to stepSize
+```
+
+### Conflicting Access to Properties
+``` swift
+struct Player {
+    var name: String
+    var health: Int
+    var energy: Int
+
+    static let maxHealth = 10
+    mutating func restoreHealth() {
+        health = Player.maxHealth
+    }
+}
+
+var holly = Player(name: "Holly", health: 10, energy: 10)
+balance(&holly.health, &holly.energy)
+// Error: conflicting accesses to properties of a structure that’s stored in a global variable
+```
+Memory safety is the desired guarantee, but exclusive access is a stricter requirement than memory safety—which means some code preserves memory safety, even though it violates exclusive access to memory. The compiler can prove that overlapping access to properties of a structure is safe if the following conditions apply:
+- You’re accessing only stored properties of an instance, not computed properties or class properties.
+- The structure is the value of a local variable, not a global variable.
+- The structure is either not captured by any closures, or it’s captured only by nonescaping closures.
+
+## Access Control
+### Modules and Source Files
+A *module* is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s `import` keyword.
+A *source file* is a single Swift source code file within a module (in effect, a single file within an app or framework). Although it’s common to define individual types in separate source files, a single source file can contain definitions for multiple types, functions, and so on.
+
+### Access Levels
+Swift provides five different *access levels* for entities within your code.
+- *Open access* and *public access* enable entities to be used within any source file from their defining module, and also in a source file from another module that imports the defining module. You typically use open or public access when specifying the public interface to a framework.
+- *Internal access*(default access level) enables entities to be used within any source file from their defining module, but not in any source file outside of that module. You typically use internal access when defining an app’s or a framework’s internal structure.
+- *File-private access* restricts the use of an entity to its own defining source file. Use file-private access to hide the implementation details of a specific piece of functionality when those details are used within an entire file.
+- *Private access* restricts the use of an entity to the enclosing declaration, and to extensions of that declaration that are in the same file. Use private access to hide the implementation details of a specific piece of functionality when those details are used only within a single declaration.
+
+Open access applies only to classes and class members, and it differs from public access as follows:
+- Classes with public access, or any more restrictive access level, can be subclassed only within the module where they’re defined.
+- Class members with public access, or any more restrictive access level, can be overridden by subclasses only within the module where they’re defined.
+- Open classes can be subclassed within the module where they’re defined, and within any module that imports the module where they’re defined.
+- Open class members can be overridden by subclasses within the module where they’re defined, and within any module that imports the module where they’re defined.
+
+### Guiding Principle of Access Levels
+No entity can be defined in terms of another entity that has a lower (more restrictive) access level. 
+For example:
+- A public variable can’t be defined as having an internal, file-private, or private type, because the type might not be available everywhere that the public variable is used.
+- A function can’t have a higher access level than its parameter types and return type, because the function could be used in situations where its constituent types are unavailable to the surrounding code.
