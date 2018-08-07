@@ -338,7 +338,7 @@ A key-path expression refers to a property or subscript of a type. You use key-p
 ``` swift
 \type_name.path
 ```
-At compile time, a key-path expression is replaced by an instance of the KeyPath class. To access a value using a key path, pass the key path to the `subscript(keyPath:)` subscript, which is available on all types. For example:
+At compile time, a key-path expression is replaced by an instance of the `KeyPath` class. To access a value using a key path, pass the key path to the `subscript(keyPath:)` subscript, which is available on all types. For example:
 ``` swift
 struct SomeStructure {
     var someValue: Int
@@ -1919,6 +1919,7 @@ typealias name = existing_type
 
 #### Declaration Modifiers
 Declaration modifiers are keywords or context-sensitive keywords that modify the behavior or meaning of a declaration. You specify a declaration modifier by writing the appropriate keyword or context-sensitive keyword between a declaration’s attributes (if any) and the keyword that introduces the declaration.
+
 `dynamic`: Apply this modifier to any member of a class that can be represented by Objective-C. When you mark a member declaration with the `dynamic` modifier, access to that member is always dynamically dispatched using the Objective-C runtime.
 
 ### Attributes
@@ -1977,7 +1978,7 @@ Interface Builder attributes are declaration attributes used by Interface Builde
 #### Type Attributes
 `autoclosure`: This attribute is used to delay the evaluation of an expression by automatically wrapping that expression in a closure with no arguments.
 
-`convention`: Apply this attribute to the type of a function to indicate its calling conventions. The attribute arguments includ `swift`, `block` and `c`.
+`convention`: Apply this attribute to the type of a function to indicate its calling conventions. The attribute arguments include `swift`, `block` and `c`.
 
 `escaping`: Apply this attribute to a parameter’s type in a method or function declaration to indicate that the parameter’s value can be stored for later execution.
 

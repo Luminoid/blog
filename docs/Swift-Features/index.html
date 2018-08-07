@@ -128,7 +128,7 @@
 <meta property="og:description" content="References:  The Swift Programming Language  This post is based on Swift 4.2 The Basics Value Types A value type is a type whose value is copied when it’s assigned to a variable or constant, or when i">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://luminoid.github.io/blog/Swift-Features/DesignatedAndConvenienceInitializersInAction.png">
-<meta property="og:updated_time" content="2018-08-07T13:13:26.834Z">
+<meta property="og:updated_time" content="2018-08-07T16:22:10.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift Features">
 <meta name="twitter:description" content="References:  The Swift Programming Language  This post is based on Swift 4.2 The Basics Value Types A value type is a type whose value is copied when it’s assigned to a variable or constant, or when i">
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-07 21:13:26" itemprop="dateModified" datetime="2018-08-07T21:13:26+08:00">2018-08-07</time>
+                <time title="Modified: 2018-08-08 00:22:10" itemprop="dateModified" datetime="2018-08-08T00:22:10+08:00">2018-08-08</time>
               
             
           </span>
@@ -637,7 +637,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 <h4 id="key-path-expression"><a class="header-anchor" href="#key-path-expression"></a>Key-Path Expression</h4>
 <p>A key-path expression refers to a property or subscript of a type. You use key-path expressions in dynamic programming tasks, such as key-value observing. They have the following form:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\type_name.path</span><br></pre></td></tr></table></figure>
-<p>At compile time, a key-path expression is replaced by an instance of the KeyPath class. To access a value using a key path, pass the key path to the <code>subscript(keyPath:)</code> subscript, which is available on all types. For example:</p>
+<p>At compile time, a key-path expression is replaced by an instance of the <code>KeyPath</code> class. To access a value using a key path, pass the key path to the <code>subscript(keyPath:)</code> subscript, which is available on all types. For example:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SomeStructure</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> someValue: <span class="type">Int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s = <span class="type">SomeStructure</span>(someValue: <span class="number">12</span>)</span><br><span class="line"><span class="keyword">let</span> pathToProperty = \<span class="type">SomeStructure</span>.someValue</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> value = s[keyPath: pathToProperty]  <span class="comment">// value: Int = 12</span></span><br></pre></td></tr></table></figure>
 <p>The path can include subscripts using brackets, as long as the subscript’s parameter type conforms to the Hashable protocol.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greetings = [<span class="string">"hello"</span>, <span class="string">"hola"</span>, <span class="string">"bonjour"</span>, <span class="string">"안녕"</span>]</span><br><span class="line"><span class="keyword">let</span> myGreeting = greetings[keyPath: \[<span class="type">String</span>].[<span class="number">1</span>]]  <span class="comment">// myGreeting: String = "hola"</span></span><br></pre></td></tr></table></figure>
@@ -1072,8 +1072,8 @@ For example:</p>
 <p>A type alias declaration introduces a named alias of an existing type into your program.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> name = existing_type</span><br></pre></td></tr></table></figure>
 <h4 id="declaration-modifiers"><a class="header-anchor" href="#declaration-modifiers"></a>Declaration Modifiers</h4>
-<p>Declaration modifiers are keywords or context-sensitive keywords that modify the behavior or meaning of a declaration. You specify a declaration modifier by writing the appropriate keyword or context-sensitive keyword between a declaration’s attributes (if any) and the keyword that introduces the declaration.<br>
-<code>dynamic</code>: Apply this modifier to any member of a class that can be represented by Objective-C. When you mark a member declaration with the <code>dynamic</code> modifier, access to that member is always dynamically dispatched using the Objective-C runtime.</p>
+<p>Declaration modifiers are keywords or context-sensitive keywords that modify the behavior or meaning of a declaration. You specify a declaration modifier by writing the appropriate keyword or context-sensitive keyword between a declaration’s attributes (if any) and the keyword that introduces the declaration.</p>
+<p><code>dynamic</code>: Apply this modifier to any member of a class that can be represented by Objective-C. When you mark a member declaration with the <code>dynamic</code> modifier, access to that member is always dynamically dispatched using the Objective-C runtime.</p>
 <h3 id="attributes"><a class="header-anchor" href="#attributes"></a>Attributes</h3>
 <p>Attributes provide more information about a declaration or type. There are two kinds of attributes in Swift, those that apply to declarations and those that apply to types.<br>
 You specify an attribute by writing the <code>@</code> symbol followed by the attribute’s name and any arguments that the attribute accepts:</p>
@@ -1094,7 +1094,7 @@ The <code>objc</code> attribute optionally accepts a single attribute argument, 
 <p>Interface Builder attributes are declaration attributes used by Interface Builder to synchronize with Xcode. Swift provides the following Interface Builder attributes: <code>IBAction</code>, <code>IBOutlet</code>, <code>IBDesignable</code>, and <code>IBInspectable</code>. Applying the Interface Builder attribute also implies the <code>objc</code> attribute.</p>
 <h4 id="type-attributes"><a class="header-anchor" href="#type-attributes"></a>Type Attributes</h4>
 <p><code>autoclosure</code>: This attribute is used to delay the evaluation of an expression by automatically wrapping that expression in a closure with no arguments.</p>
-<p><code>convention</code>: Apply this attribute to the type of a function to indicate its calling conventions. The attribute arguments includ <code>swift</code>, <code>block</code> and <code>c</code>.</p>
+<p><code>convention</code>: Apply this attribute to the type of a function to indicate its calling conventions. The attribute arguments include <code>swift</code>, <code>block</code> and <code>c</code>.</p>
 <p><code>escaping</code>: Apply this attribute to a parameter’s type in a method or function declaration to indicate that the parameter’s value can be stored for later execution.</p>
 <h3 id="patterns"><a class="header-anchor" href="#patterns"></a>Patterns</h3>
 <p>A <em>pattern</em> represents the structure of a single value or a composite value.</p>
