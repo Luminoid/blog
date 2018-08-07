@@ -25,6 +25,7 @@ Classes, functions and closures are reference types.
 
 ### Optionals
 An *optional* represents two possibilities: Either there is a value, and you can unwrap the optional to access that value, or there isn’t a value at all. Optionals of *any* type can be set to `nil`, not just object types.
+The Swift language defines the postfix `?` as syntactic sugar for the named type `Optional<Wrapped>`, which is defined in the Swift standard library.
 
 #### Forced Unwrapping
 `optional!`: forced unwrapping of the optional’s value
@@ -38,7 +39,7 @@ if let constantName = someOptional {
 
 #### Implicitly Unwrapped Optionals
 *Implicitly unwrapped optionals* are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.
-You write an implicitly unwrapped optional by placing an exclamation mark (`String!`) rather than a question mark (`String?`) after the type that you want to make optional.
+You write an implicitly unwrapped optional by placing an exclamation mark (`String!`) rather than a question mark (`String?`) after the type that you want to make optional. The Swift language defines the postfix `!` as syntactic sugar for the named type `Optional<Wrapped>` with the additional behavior that it’s automatically unwrapped when it’s accessed.
 ``` swift
 let possibleString: String? = "An optional string."
 let forcedString: String = possibleString!  // requires an exclamation mark
@@ -176,6 +177,200 @@ extension Vector2D {
 
 var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
 +++toBeDoubled  // toBeDoubled now has values of (2.0, 8.0)
+```
+
+## Expressions
+In Swift, there are four kinds of expressions: prefix expressions, binary expressions, primary expressions, and postfix expressions. Evaluating an expression returns a value, causes a side effect, or both.
+
+### Prefix Expressions
+#### Try Operator
+``` swift
+try expression
+```
+
+### Binary Expressions
+#### Assignment Operator
+``` swift
+expression = value
+```
+#### Ternary Conditional Operator
+``` swift
+condition ? expression_used_if_true : expression_used_if_false
+```
+#### Type-Casting Operators
+``` swift
+expression is type
+expression as type
+```
+
+### Primary Expressions
+#### Literal Expression
+ Literal | Type | Value
+--|---|--
+ `#file` | `String` | The name of the file in which it appears.
+ `#line` | `Int` | The line number on which it appears.
+ `#column` | `Int` | The column number in which it begins.
+ `#function` | `String` | The name of the declaration in which it appears.
+
+#### Self Expression
+``` swift
+self
+self.member_name
+self[subscript_index]
+self(initializer_arguments)
+self.init(initializer_arguments)
+```
+
+#### Closure Expression
+``` swift
+{ (parameters) -> return_type in
+    statements
+}
+```
+
+#### Capture Lists
+By default, a closure expression captures constants and variables from its surrounding scope with strong references to those values. You can use a capture list to explicitly control how values are captured in a closure.
+``` swift
+var a = 1
+var b = 1
+let closure = { [a] in
+    print(a, b)
+}
+
+a = 10
+b = 10
+closure()   // 1 10
+```
+
+If the type of the expression’s value is a class, you can mark the expression in a capture list with weak or unowned to capture a `weak` or `unowned` reference to the expression’s value.
+``` swift
+myFunction { print(self.title) }                    // implicit strong capture
+myFunction { [self] in print(self.title) }          // explicit strong capture
+myFunction { [weak self] in print(self!.title) }    // weak capture
+myFunction { [unowned self] in print(self.title) }  // unowned capture
+```
+
+#### Implicit Member Expression
+An implicit member expression is an abbreviated way to access a member of a type, such as an enumeration case or a type method, in a context where type inference can determine the implied type.
+``` swift
+var x = MyEnumeration.someValue
+x = .anotherValue
+```
+
+#### Tuple Expression
+``` swift
+(identifier 1: expression 1, identifier 2: expression 2, ...)
+```
+
+#### Wildcard Expression
+A wildcard expression is used to explicitly ignore a value during an assignment.
+``` swift
+(x, _) = (10, 20)
+```
+
+#### Key-Path Expression
+A key-path expression refers to a property or subscript of a type. You use key-path expressions in dynamic programming tasks, such as key-value observing. They have the following form:
+``` swift
+\type_name.path
+```
+At compile time, a key-path expression is replaced by an instance of the KeyPath class. To access a value using a key path, pass the key path to the `subscript(keyPath:)` subscript, which is available on all types. For example:
+``` swift
+struct SomeStructure {
+    var someValue: Int
+}
+
+let s = SomeStructure(someValue: 12)
+let pathToProperty = \SomeStructure.someValue
+
+let value = s[keyPath: pathToProperty]  // value: Int = 12
+```
+The path can include subscripts using brackets, as long as the subscript’s parameter type conforms to the Hashable protocol. 
+``` swift
+let greetings = ["hello", "hola", "bonjour", "안녕"]
+let myGreeting = greetings[keyPath: \[String].[1]]  // myGreeting: String = "hola"
+```
+
+#### Selector Expression
+A selector expression lets you access the selector used to refer to a method or to a property’s getter or setter in Objective-C. It has the following form:
+``` swift
+#selector(method_name)
+#selector(getter: property_name)
+#selector(setter: property_name)
+```
+The *method name* and *property name* must be a reference to a method or a property that is available in the Objective-C runtime. The value of a selector expression is an instance of the `Selector` type. For example:
+``` swift
+class SomeClass: NSObject {
+    @objc let property: String
+    @objc(doSomethingWithInt:)
+    func doSomething(_ x: Int) {}
+
+    init(property: String) {
+        self.property = property
+    }
+}
+let selectorForMethod = #selector(SomeClass.doSomething(_:))
+let selectorForPropertyGetter = #selector(getter: SomeClass.property)
+```
+
+#### Key-Path String Expression
+A key-path string expression lets you access the string used to refer to a property in Objective-C, for use in key-value coding and key-value observing APIs. It has the following form:
+``` swift
+#keyPath(property name)
+```
+The *property name* must be a reference to a property that is available in the Objective-C runtime. At compile time, the key-path string expression is replaced by a string literal. For example:
+``` swift
+class SomeClass: NSObject {
+    @objc var someProperty: Int
+    init(someProperty: Int) {
+        self.someProperty = someProperty
+    }
+}
+
+let c = SomeClass(someProperty: 12)
+let keyPath = #keyPath(SomeClass.someProperty)
+
+if let value = c.value(forKey: keyPath) {
+    print(value)    // 12
+}
+```
+
+### Postfix Expressions
+#### Function Call Expression
+``` swift
+function name(argument name 1: argument value 1, argument name 2: argument value 2)
+```
+
+#### Initializer Expression
+``` swift
+expression.init(initializer_arguments)
+```
+
+#### Explicit Member Expression
+``` swift
+expression.member_name
+```
+
+#### Postfix Self Expression
+``` swift
+expression.self
+type.self
+```
+The first form evaluates to the value of the *expression*. For example, `x.self` evaluates to `x`.
+The second form evaluates to the value of the *type*. Use this form to access a type as a value. For example, because `SomeClass.self` evaluates to the `SomeClass` type itself, you can pass it to a function or method that accepts a type-level argument.
+
+#### Subscript Expression
+``` swift
+expression[index_expressions]
+```
+
+#### Forced-Value Expression
+``` swift
+expression!
+```
+
+#### Optional-Chaining Expression
+``` swift
+expression?
 ```
 
 ## Strings
