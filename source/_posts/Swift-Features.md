@@ -47,8 +47,11 @@ let assumedString: String! = "An implicitly unwrapped optional string."
 let implicitString: String = assumedString  // no need for an exclamation mark
 ```
 
+<!-- more -->
+
 ## Operators
-### Closed Range Operator
+### Range Operators
+#### Closed Range Operator
 ``` swift
 for i in 1...5 {
     print("\(i) times 5 is \(i * 5)")
@@ -60,7 +63,7 @@ for i in 1...5 {
 // 5 times 5 is 25
 ```
 
-### Half-Open Range Operator
+#### Half-Open Range Operator
 ``` swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
 let count = names.count
@@ -73,9 +76,7 @@ for i in 0..<count {
 // Person 4 is called Jack
 ```
 
-<!-- more -->
-
-### One-Sided Ranges
+#### One-Sided Ranges
 ``` swift
 for name in names[2...] {
     print(name)
@@ -100,6 +101,82 @@ range.contains(-1)  // true
 ### Identity Operators
 `===`: Identical to 
 `!==`: Not identical to
+
+### Overflow Operators
+`&+`: Overflow addition 
+`&-`: Overflow subtraction
+`&*`: Overflow multiplication
+``` swift
+var potentialOverflow = Int16.max
+// potentialOverflow equals 32767, which is the maximum value an Int16 can hold
+potentialOverflow += 1
+// this causes an error
+
+var signedOverflow = Int16.max
+signedOverflow = signedOverflow &+ 1    // signedOverflow: Int16 = -32768
+
+var unsignedOverflow = UInt8.max
+// unsignedOverflow equals 255, which is the maximum value a UInt8 can hold
+unsignedOverflow = unsignedOverflow &+ 1
+// unsignedOverflow is now equal to 0
+```
+
+### Operator Methods
+Classes and structures can provide their own implementations of existing operators. This is known as *overloading* the existing operators.
+#### infix operator
+``` swift
+struct Vector2D {
+    var x = 0.0, y = 0.0
+}
+
+extension Vector2D {
+    static func + (left: Vector2D, right: Vector2D) -> Vector2D {
+        return Vector2D(x: left.x + right.x, y: left.y + right.y)
+    }
+}
+
+let vectorA = Vector2D(x: 3.0, y: 1.0)
+let VectorB = Vector2D(x: 2.0, y: 4.0)
+let combinedVector = vectorA + VectorB
+// combinedVector is a Vector2D instance with values of (5.0, 5.0)
+```
+
+#### Prefix and Postfix Operators
+``` swift
+extension Vector2D {
+    static prefix func - (vector: Vector2D) -> Vector2D {
+        return Vector2D(x: -vector.x, y: -vector.y)
+    }
+}
+
+let positive = Vector2D(x: 3.0, y: 4.0)
+let negative = -positive
+// negative is a Vector2D instance with values of (-3.0, -4.0)
+```
+
+#### Compound Assignment Operators
+``` swift
+extension Vector2D {
+    static func += (left: inout Vector2D, right: Vector2D) {
+        left = left + right
+    }
+}
+```
+
+### Custom Operators
+``` swift
+prefix operator +++
+
+extension Vector2D {
+    static prefix func +++ (vector: inout Vector2D) -> Vector2D {
+        vector += vector
+        return vector
+    }
+}
+
+var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
++++toBeDoubled  // toBeDoubled now has values of (2.0, 8.0)
+```
 
 ## Strings
 ### String Indices
