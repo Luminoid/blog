@@ -438,11 +438,31 @@ for (symbol, value) in romanNumeral {
 // V: 5
 ```
 
-## Control Flow
-### Switch
-No Implicit Fallthrough
+## Statements
+In Swift, there are three kinds of statements: simple statements, compiler control statements, and control flow statements. Simple statements are the most common and consist of either an expression or a declaration. Compiler control statements allow the program to change aspects of the compiler’s behavior and include a conditional compilation block and a line control statement. Control flow statements are used to control the flow of execution in a program.
+
+### Control Flow Statements
+Control flow statements include loop statements, branch statements, and control transfer statements.
+
+> loop-statement → for-in-statement
+loop-statement → while-statement
+loop-statement → repeat-while-statement
+
+> branch-statement → if-statement
+branch-statement → guard-statement
+branch-statement → switch-statement
+
+> control-transfer-statement → break-statement
+control-transfer-statement → continue-statement
+control-transfer-statement → fallthrough-statement
+control-transfer-statement → return-statement
+control-transfer-statement → throw-statement
+
+#### Switch Statement
+No Implicit Fallthrough: `switch` statements in Swift do not fall through the bottom of each case and into the next one by default.
+
+##### Tuple & Interval Matching
 ``` swift
-// Tuple & Interval Matching
 let somePoint = (1, 1)
 switch somePoint {
 case (0, 0):
@@ -457,8 +477,11 @@ default:
     print("\(somePoint) is outside of the box")
 }
 // (1, 1) is inside the box
+```
 
-// Value Binding
+##### Value Binding
+A *value-binding pattern* binds matched values to variable or constant names.
+``` swift
 let anotherPoint = (9, 0)
 switch anotherPoint {
 case (let distance, 0), (0, let distance):
@@ -469,7 +492,14 @@ default:
 // On an axis, 9 from the origin
 ```
 
-### Early Exit
+#### Guard Statement
+A `guard` statement is used to transfer program control out of a scope if one or more conditions aren’t met. A `guard` statement has the following form:
+``` swift
+guard condition else {
+    statements
+}
+```
+If the `guard` statement’s condition is met, code execution continues after the `guard` statement’s closing brace.
 ``` swift
 func greet(person: [String: String]) {
     guard let name = person["name"] else {
@@ -480,6 +510,68 @@ func greet(person: [String: String]) {
 }
 greet(person: ["name": "John"])     // Hello John!
 greet(person: ["gender": "male"])   // Hello, stranger!
+```
+
+### Defer Statement
+A `defer` statement is used for executing code just before transferring program control outside of the scope that the `defer` statement appears in.
+The statements within the `defer` statement are executed no matter how program control is transferred. This means that a `defer` statement can be used, for example, to perform manual resource management such as closing file descriptors, and to perform actions that need to happen even if an error is thrown.
+If multiple `defer` statements appear in the same scope, the order they appear is the reverse of the order they are executed. Executing the last `defer` statement in a given scope first means that statements inside that last `defer` statement can refer to resources that will be cleaned up by other `defer` statements.
+``` swift
+func f() {
+    defer { print("First") }
+    defer { print("Second") }
+    defer { print("Third") }
+}
+f()
+// Prints "Third"
+// Prints "Second"
+// Prints "First"
+```
+
+### Compiler Control Statements
+> compiler-control-statement → conditional-compilation-block
+compiler-control-statement → line-control-statement
+compiler-control-statement → diagnostic-statement
+
+#### Conditional Compilation Block
+A conditional compilation block allows code to be conditionally compiled depending on the value of one or more compilation conditions.
+``` swift
+#if compilation condition
+statements
+#endif
+```
+Unlike the condition of an `if` statement, the *compilation condition* is evaluated at compile time. As a result, the statements are compiled and executed only if the *compilation condition* evaluates to `true` at compile time.
+
+| Platform condition | Valid arguments |
+|---|---|
+| `os()` | `macOS`, `iOS`, `watchOS`, `tvOS`, `Linux` |
+| `arch()` | `i386`, `x86_64`, `arm`, `arm64` |
+| `swift()` | `>=` followed by a version number |
+| `canImport()` | A module name |
+| `targetEnvironment()` | `simulator` |
+
+#### Line Control Statement
+A line control statement is used to specify a line number and filename that can be different from the line number and filename of the source code being compiled. Use a line control statement to change the source code location used by Swift for diagnostic and debugging purposes.
+``` swift
+#sourceLocation(file: filename, line: line number)
+#sourceLocation()
+```
+
+#### Compile-Time Diagnostic Statement
+A compile-time diagnostic statement causes the compiler to emit an error or a warning during compilation. 
+``` swift
+#error("error message")
+#warning("warning message")
+```
+
+### Availability Condition
+An availability condition is used as a condition of an `if`, `while`, and `guard` statement to query the availability of APIs at runtime, based on specified platforms arguments.
+``` swift
+if #available(platform_name, version, ..., *) {
+    // statements to execute if the APIs are available
+} else {
+    // fallback statements to execute if the APIs are unavailable
+}
 ```
 
 ## Functions
@@ -506,7 +598,7 @@ if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
 
 ### Function Argument Labels
 ``` swift
-func someFunction(argumentLabel parameterName: Int) {}
+func someFunction(argumentLabel parameterName: parameterType) {}
 ```
 
 Specifying Argument Labels
@@ -732,6 +824,9 @@ struct FixedLengthRange {
     let length: Int
 }
 ```
+
+#### Lazy Stored Properties
+A *lazy stored property* is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the `lazy` modifier before its declaration.
 
 #### Computed Properties
 Computed properties do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
@@ -994,6 +1089,16 @@ struct Animal {
     init?(species: String) {
         if species.isEmpty { return nil }
         self.species = species
+    }
+}
+```
+
+### Required Initializers
+Write the `required` modifier before the definition of a class initializer to indicate that every subclass of the class must implement that initializer:
+``` swift
+class SomeClass {
+    required init() {
+        // initializer implementation goes here
     }
 }
 ```
@@ -1420,6 +1525,7 @@ protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
 
 ### Optional Protocol Requirements
 You can define *optional requirements* for protocols, These requirements don’t have to be implemented by types that conform to the protocol.
+You can apply the `optional` modifier only to protocols that are marked with the `objc` attribute.
 ``` swift
 @objc protocol CounterDataSource {
     @objc optional func increment(forCount count: Int) -> Int
@@ -1802,3 +1908,106 @@ No entity can be defined in terms of another entity that has a lower (more restr
 For example:
 - A public variable can’t be defined as having an internal, file-private, or private type, because the type might not be available everywhere that the public variable is used.
 - A function can’t have a higher access level than its parameter types and return type, because the function could be used in situations where its constituent types are unavailable to the surrounding code.
+
+## Reference
+### Declarations
+#### Type Alias Declaration
+A type alias declaration introduces a named alias of an existing type into your program.
+``` swift
+typealias name = existing_type
+```
+
+#### Declaration Modifiers
+Declaration modifiers are keywords or context-sensitive keywords that modify the behavior or meaning of a declaration. You specify a declaration modifier by writing the appropriate keyword or context-sensitive keyword between a declaration’s attributes (if any) and the keyword that introduces the declaration.
+`dynamic`: Apply this modifier to any member of a class that can be represented by Objective-C. When you mark a member declaration with the `dynamic` modifier, access to that member is always dynamically dispatched using the Objective-C runtime.
+
+### Attributes
+Attributes provide more information about a declaration or type. There are two kinds of attributes in Swift, those that apply to declarations and those that apply to types.
+You specify an attribute by writing the `@` symbol followed by the attribute’s name and any arguments that the attribute accepts:
+``` swift
+@attribute name
+@attribute name(attribute arguments)
+```
+
+#### Declaration Attributes
+`available`: Apply this attribute to indicate a declaration’s lifecycle relative to certain Swift language versions or certain platforms and operating system versions.
+You can use the `renamed` argument in conjunction with the `unavailable` argument and a type alias declaration to indicate to clients of your code that a declaration has been renamed.
+``` swift
+// First release
+protocol MyProtocol {
+    // protocol definition
+}
+// Subsequent release renames MyProtocol
+protocol MyRenamedProtocol {
+    // protocol definition
+}
+
+@available(*, unavailable, renamed: "MyRenamedProtocol")
+typealias MyProtocol = MyRenamedProtocol
+```
+The shorthand syntax for `available` attributes allows for availability for multiple platforms to be expressed concisely.
+``` swift
+@available(iOS 10.0, macOS 10.12, *)
+class MyClass {
+    // class definition
+}
+```
+
+`discardableResult`: Apply this attribute to a function or method declaration to suppress the compiler warning when the function or method that returns a value is called without using its result.
+
+`inlinable`: Apply this attribute to a function, method, computed property, subscript, convenience initializer, or deinitializer declaration to expose that declaration’s implementation as part of the module’s public interface. The compiler is allowed to replace calls to an inlinable symbol with a copy of the symbol’s implementation at the call site.
+
+`objc`: Apply this attribute to any declaration that can be represented in Objective-C. The `objc` attribute tells the compiler that a declaration is available to use in Objective-C code.
+The `objc` attribute optionally accepts a single attribute argument, which consists of an identifier. The identifier specifies the name to be exposed to Objective-C for the entity that the `objc` attribute applies to. The example below exposes the getter for the `enabled` property of the `ExampleClass` to Objective-C code as `isEnabled` rather than just as the name of the property itself.
+``` swift
+class ExampleClass: NSObject {
+    @objc var enabled: Bool {
+        @objc(isEnabled) get {
+            // Return the appropriate value
+        }
+    }
+}
+```
+
+`UIApplicationMain`: Apply this attribute to a class to indicate that it’s the application delegate. Using this attribute is equivalent to calling the `UIApplicationMain` function and passing this class’s name as the name of the delegate class.
+
+##### Declaration Attributes Used by Interface Builder
+Interface Builder attributes are declaration attributes used by Interface Builder to synchronize with Xcode. Swift provides the following Interface Builder attributes: `IBAction`, `IBOutlet`, `IBDesignable`, and `IBInspectable`. Applying the Interface Builder attribute also implies the `objc` attribute.
+
+#### Type Attributes
+`autoclosure`: This attribute is used to delay the evaluation of an expression by automatically wrapping that expression in a closure with no arguments.
+
+`convention`: Apply this attribute to the type of a function to indicate its calling conventions. The attribute arguments includ `swift`, `block` and `c`.
+
+`escaping`: Apply this attribute to a parameter’s type in a method or function declaration to indicate that the parameter’s value can be stored for later execution.
+
+### Patterns
+A *pattern* represents the structure of a single value or a composite value.
+
+#### Optional Pattern
+An *optional pattern* matches values wrapped in a `some(Wrapped)` case of an `Optional<Wrapped>` enumeration.
+Because optional patterns are syntactic sugar for `Optional` enumeration case patterns, the following are equivalent:
+``` swift
+let someOptional: Int? = 42
+// Match using an enumeration case pattern.
+if case .some(let x) = someOptional {
+    print(x)
+}
+
+// Match using an optional pattern.
+if case let x? = someOptional {
+    print(x)
+}
+```
+
+The optional pattern provides a convenient way to iterate over an array of optional values in a `for-in` statement, executing the body of the loop only for non-`nil` elements.
+``` swift
+let arrayOfOptionalInts: [Int?] = [nil, 2, 3, nil, 5]
+// Match only non-nil values.
+for case let number? in arrayOfOptionalInts {
+    print("Found a \(number)")
+}
+// Found a 2
+// Found a 3
+// Found a 5
+```
