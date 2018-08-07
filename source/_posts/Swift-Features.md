@@ -179,6 +179,71 @@ var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
 +++toBeDoubled  // toBeDoubled now has values of (2.0, 8.0)
 ```
 
+## Strings
+### String Indices
+``` swift
+let greeting = "Hello!"
+let index = greeting.index(greeting.startIndex, offsetBy: 4)
+print("\(greeting[greeting.startIndex])") // H
+print("\(greeting[index])")               // o
+```
+
+### Substrings
+``` swift
+let greeting = "Hello, world!"
+let index = greeting.index(of: ",") ?? greeting.endIndex
+let beginning = greeting[..<index]  // beginning is an instance of Substring
+print("\(beginning)")               // Hello
+let newString = String(beginning)
+```
+
+### String Equality
+Two String values (or two Character values) are considered equal if their extended grapheme clusters are canonically equivalent.
+``` swift
+"caf\u{E9}" == "caf\u{65}\u{301}"   // café
+"\u{41}" != "\u{0410}"              // А
+```
+
+## Collection Types
+### Array
+``` swift
+// Create an Array with an Array Literal
+var alphabet = ["A", "B", "C", "D", "E"]    // ["A", "B", "C", "D", "E"]
+
+// Append an array
+alphabet += ["F", "G"]                      // ["A", "B", "C", "D", "E", "F", "G"]
+
+// Modify an array
+alphabet[3...5] = ["M", "N"]                // ["A", "B", "C", "M", "N", "G"]
+```
+
+### Set
+``` swift
+// Set Operations
+let oddDigits: Set = [1, 3, 5, 7, 9]
+let evenDigits: Set = [0, 2, 4, 6, 8]
+let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
+
+oddDigits.union(evenDigits).sorted()                            // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+oddDigits.intersection(evenDigits).sorted()                     // []
+oddDigits.subtracting(singleDigitPrimeNumbers).sorted()         // [1, 9]
+oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted() // [1, 2, 9]
+```
+
+### Dictionary
+``` swift
+// Create a Dictionary with a Dictionary Literal
+let romanNumeral = ["I": 1, "V": 5, "X": 10]
+
+// Iterate Over a Dictionary
+for (symbol, value) in romanNumeral {
+    print("\(symbol): \(value)")
+}
+// X: 10
+// I: 1
+// V: 5
+```
+
 ## Expressions
 In Swift, there are four kinds of expressions: prefix expressions, binary expressions, primary expressions, and postfix expressions. Evaluating an expression returns a value, causes a side effect, or both.
 
@@ -371,71 +436,6 @@ expression!
 #### Optional-Chaining Expression
 ``` swift
 expression?
-```
-
-## Strings
-### String Indices
-``` swift
-let greeting = "Hello!"
-let index = greeting.index(greeting.startIndex, offsetBy: 4)
-print("\(greeting[greeting.startIndex])") // H
-print("\(greeting[index])")               // o
-```
-
-### Substrings
-``` swift
-let greeting = "Hello, world!"
-let index = greeting.index(of: ",") ?? greeting.endIndex
-let beginning = greeting[..<index]  // beginning is an instance of Substring
-print("\(beginning)")               // Hello
-let newString = String(beginning)
-```
-
-### String Equality
-Two String values (or two Character values) are considered equal if their extended grapheme clusters are canonically equivalent.
-``` swift
-"caf\u{E9}" == "caf\u{65}\u{301}"   // café
-"\u{41}" != "\u{0410}"              // А
-```
-
-## Collection Types
-### Array
-``` swift
-// Create an Array with an Array Literal
-var alphabet = ["A", "B", "C", "D", "E"]    // ["A", "B", "C", "D", "E"]
-
-// Append an array
-alphabet += ["F", "G"]                      // ["A", "B", "C", "D", "E", "F", "G"]
-
-// Modify an array
-alphabet[3...5] = ["M", "N"]                // ["A", "B", "C", "M", "N", "G"]
-```
-
-### Set
-``` swift
-// Set Operations
-let oddDigits: Set = [1, 3, 5, 7, 9]
-let evenDigits: Set = [0, 2, 4, 6, 8]
-let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
-
-oddDigits.union(evenDigits).sorted()                            // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-oddDigits.intersection(evenDigits).sorted()                     // []
-oddDigits.subtracting(singleDigitPrimeNumbers).sorted()         // [1, 9]
-oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted() // [1, 2, 9]
-```
-
-### Dictionary
-``` swift
-// Create a Dictionary with a Dictionary Literal
-let romanNumeral = ["I": 1, "V": 5, "X": 10]
-
-// Iterate Over a Dictionary
-for (symbol, value) in romanNumeral {
-    print("\(symbol): \(value)")
-}
-// X: 10
-// I: 1
-// V: 5
 ```
 
 ## Statements
@@ -816,7 +816,7 @@ Classes have additional capabilities that structures don’t have:
 - Reference counting allows more than one reference to a class instance.
 
 ### Properties
-#### Stored Property
+#### Stored Properties
 A constant or variable that is stored as part of an instance of a particular class or structure
 ``` swift
 struct FixedLengthRange {
