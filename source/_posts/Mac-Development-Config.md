@@ -4,15 +4,16 @@ date: 2017-08-08 22:45:55
 updated:
 categories: Mac
 tags:
-  - Homebrew
-  - zsh
-  - Atom
-  - Docker
 keywords:
-  - Homebrew
-  - zsh
-  - Atom
-  - Docker
+- Homebrew
+- npm
+- Yarn
+- CocoaPods
+- oh-my-zsh
+- Git
+- Atom
+- VS Code
+- Docker
 ---
 
 ## Mac Usage

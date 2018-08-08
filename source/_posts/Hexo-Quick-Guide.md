@@ -3,14 +3,14 @@ title: Hexo Quick Guide
 date: 2017-06-08 11:06:48
 updated:
 categories:
-  - Web
-  - Static Site Generator
+- Web
+- Static Site Generator
 tags:
-  - Hexo
+- Hexo
 keywords:
-  - Hexo
-  - guide
-  - Algolia
+- Hexo
+- guide
+- Algolia
 ---
 
 [Hexo](https://hexo.io)

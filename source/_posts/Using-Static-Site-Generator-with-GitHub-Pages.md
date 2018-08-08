@@ -3,15 +3,15 @@ title: Using static site generator with GitHub Pages
 date: 2017-08-27 20:02:59
 updated:
 categories:
-  - Web
-  - Static Site Generator
+- Web
+- Static Site Generator
 tags:
-  - GitHub
+- GitHub
 keywords:
-  - static site generator
-  - GitHub Pages
-  - master
-  - gh-pages
+- static site generator
+- GitHub Pages
+- master
+- gh-pages
 ---
 
 There are three ways to deploy static site on GitHub Pages as follows. I tend to use the third scheme myself. The related GitHub documentation can be found [here](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/).

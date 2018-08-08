@@ -4,15 +4,15 @@ date: 2017-08-22 00:10:13
 updated:
 categories: Container
 tags:
-  - Docker
-  - Hexo
-  - Apache
-  - Ubuntu
+- Docker
+- Hexo
+- Apache
+- Ubuntu
 keywords:
-  - Docker
-  - Hexo
-  - Apache
-  - Ubuntu
+- Docker
+- Hexo
+- Apache
+- Ubuntu
 ---
 
 This is a portable and generic solution to build Hexo website with Docker.

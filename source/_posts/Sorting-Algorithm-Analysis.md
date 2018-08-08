@@ -5,8 +5,8 @@ updated:
 categories: Algorithm
 tags: Sorting algorithm
 keywords:
-  - Sorting algorithm
-  - time complexity
+- Sorting algorithm
+- time complexity
 mathjax: true
 ---
 

@@ -3,7 +3,9 @@ title: Homebrew Usage
 date: 2017-12-04 23:55:06
 updated:
 categories: Mac
-tags: Homebrew
+tags: 
+- Package manager
+- Homebrew
 keywords: Homebrew
 ---
 

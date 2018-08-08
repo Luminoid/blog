@@ -5,7 +5,9 @@ updated:
 categories:
 - Web
 - JavaScript
-tags: Yarn
+tags: 
+- Package manager
+- Yarn
 keywords: Yarn
 ---
 

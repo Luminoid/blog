@@ -4,10 +4,10 @@ date: 2018-03-07 00:56:07
 updated:
 categories: Mac
 tags:
-  - bash
+  - Bash
 keywords:
   - Preferences
-  - bash
+  - Bash
 ---
 
 ## Preferences

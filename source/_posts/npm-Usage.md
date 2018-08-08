@@ -5,7 +5,9 @@ updated:
 categories:
 - Web
 - JavaScript
-tags: npm
+tags: 
+- Package manager
+- npm
 keywords: npm
 ---
 

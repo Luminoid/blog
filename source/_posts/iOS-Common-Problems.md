@@ -4,7 +4,7 @@ date: 2018-07-31 10:10:14
 updated:
 categories: iOS
 tags:
-keywords:
+keywords: iOS
 ---
 
 #### Command CodeSign failed with a nonzero exit code

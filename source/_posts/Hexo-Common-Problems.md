@@ -3,17 +3,19 @@ title: Hexo Common Problems
 date: 2017-06-08 20:25:08
 updated:
 categories:
-  - Web
-  - Static Site Generator
+- Web
+- Static Site Generator
 tags:
-  - Hexo
+- Hexo
 keywords:
-  - Hexo
-  - server
-  - Algolia
-  - hexo-algolia
-  - hexo-math
-  - hexo-toc
+- Hexo
+- server
+- hexo-algolia
+- hexo-math
+- hexo-toc
+- hexo-all-minifier
+- Gitment
+- prism
 ---
 
 This article mainly focuses on the problems encountered in theme [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak).

@@ -5,6 +5,7 @@ updated:
 categories:
 - iOS
 tags:
+- Package manager
 - CocoaPods
 keywords:
 - CocoaPods
