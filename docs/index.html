@@ -363,6 +363,228 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Texture-Concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Texture-Concepts/" itemprop="url">
+                  Texture Concepts
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-08 21:52:08" itemprop="dateCreated datePublished" datetime="2018-08-08T21:52:08+08:00">2018-08-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-09 10:20:35" itemprop="dateModified" datetime="2018-08-09T10:20:35+08:00">2018-08-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">6.3k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://texturegroup.org/" target="_blank" rel="noopener">Texture Docs</a></p>
+<h2 id="subclassing"><a class="header-anchor" href="#subclassing"></a>Subclassing</h2>
+<h3 id="asdisplaynode"><a class="header-anchor" href="#asdisplaynode"></a>ASDisplayNode</h3>
+<h4 id="init"><a class="header-anchor" href="#init"></a>-init</h4>
+<p>This method is called on a <strong>background thread</strong> when using nodeBlocks. However, because no other method can run until <code>-init</code> is finished, it should never be necessary to have a lock in this method.</p>
+<p>The most important thing to remember is that your init method must be capable of being called on any queue. Most notably, this means you should never initialize any UIKit objects, touch the view or layer of a node (e.g. <code>node.layer.X</code> or <code>node.view.X</code>) or add any gesture recognizers in your initializer. Instead, do these things in <code>-didLoad</code>.</p>
+<h4 id="didload"><a class="header-anchor" href="#didload"></a>-didLoad</h4>
+<p>This method is conceptually similar to UIViewController’s <code>-viewDidLoad</code> method; it’s called once and is the point where the backing view has been loaded. It is guaranteed to be called on the <strong>main thread</strong> and is the appropriate place to do any UIKit things (such as adding gesture recognizers, touching the view / layer, initializing UIKit objects).</p>
+<h4 id="layoutspecthatfits"><a class="header-anchor" href="#layoutspecthatfits"></a>-layoutSpecThatFits:</h4>
+<p>This method defines the layout and does the heavy calculation on a <strong>background thread</strong>. This method is where you build out a layout spec object that will produce the size of the node, as well as the size and position of all subnodes. This is where you will put the majority of your layout code.</p>
+<p>Because it is run on a background thread, you should not set any <code>node.view</code> or <code>node.layer</code> properties here. Also, unless you know what you are doing, do not create any nodes in this method. Additionally, it is not neccessary to begin this method with a call to super, unlike other method overrides.</p>
+<h4 id="layout"><a class="header-anchor" href="#layout"></a>-layout</h4>
+<p>The call to super in this method is where the results of the layoutSpec are applied; Right after the call to super in this method, the layout spec will have been calculated and all subnodes will have been measured and positioned.</p>
+<p><code>-layout</code> is conceptually similar to UIViewController’s <code>-viewWillLayoutSubviews</code>. This is a good spot to change the hidden property, set view based properties if needed (not layoutable properties) or set background colors. You could put background color setting in -layoutSpecThatFits:, but there may be timing problems. If you happen to be using any UIViews, you can set their frames here. However, you can always create a node wrapper with <code>-initWithViewBlock:</code> and then size this on the background thread elsewhere.</p>
+<p>This method is called on the <strong>main thread</strong>. However, if you are using layout Specs, you shouldn’t rely on this method too much, as it is much preferable to do layout off the main thread. Less than 1 in 10 subclasses will need this.</p>
+<p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subnode.frame = <span class="keyword">self</span>.bounds;</span><br></pre></td></tr></table></figure>
+<p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
+<h3 id="asviewcontroller"><a class="header-anchor" href="#asviewcontroller"></a>ASViewController</h3>
+<p>An <code>ASViewController</code> is a regular <code>UIViewController</code> subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the <strong>main thread</strong> (and you should always create an ASViewController on the main thread).</p>
+<h4 id="init-v2"><a class="header-anchor" href="#init-v2"></a>-init</h4>
+<p>This method is called once, at the very beginning of an ASViewController’s lifecycle. As with UIViewController initialization, it is best practice to <strong>never access</strong> <code>self.view</code> or <code>self.node.view</code> in this method as it will force the view to be created early. Instead, do any view access in <code>-viewDidLoad</code>.</p>
+<p>ASViewController’s designated initializer is <code>initWithNode:</code>. A typical initializer will look something like the code below. Note how the ASViewController’s node is created before calling super. An ASViewController manages a node similarly to how a UIViewController manages a view, but the initialization is slightly different.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>() &#123;</span><br><span class="line">  <span class="keyword">let</span> pagerNode = <span class="type">ASPagerNode</span>()</span><br><span class="line">  <span class="keyword">super</span>.<span class="keyword">init</span>(node: pagerNode)</span><br><span class="line"></span><br><span class="line">  pagerNode.setDataSource(<span class="keyword">self</span>)</span><br><span class="line">  pagerNode.setDelegate(<span class="keyword">self</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="loadview"><a class="header-anchor" href="#loadview"></a>-loadView</h4>
+<p>We recommend that you do not use this method because it is has no particular advantages over <code>-viewDidLoad</code> and has some disadvantages. However, it is safe to use as long as you do not set the <code>self.view</code> property to a different value. The call to <code>[super loadView]</code> will set it to the <code>node.view</code> for you.</p>
+<h4 id="viewdidload"><a class="header-anchor" href="#viewdidload"></a>-viewDidLoad</h4>
+<p>This method is called once in a ASViewController’s lifecycle, immediately after <code>-loadView</code>. This is the earliest time at which you should access the node’s view. It is a great spot to put any <strong>setup code that should only be run once and requires access to the view/layer</strong>, such as adding a gesture recognizer.</p>
+<p>Layout code should never be put in this method, because it will not be called again when geometry changes. Note this is equally true for UIViewController; it is bad practice to put layout code in this method even if you don’t currently expect geometry changes.</p>
+<h4 id="viewwilllayoutsubviews"><a class="header-anchor" href="#viewwilllayoutsubviews"></a>-viewWillLayoutSubviews</h4>
+<p>This method is called at the exact same time as a node’s <code>-layout</code> method and it may be called multiple times in a ASViewController’s lifecycle; it will be called whenever the bounds of the ASViewController’s node are changed (including rotation, split screen, keyboard presentation) as well as when there are changes to the hierarchy (children being added, removed, or changed in size).</p>
+<p>For consistency, it is best practice to put all layout code in this method. Because it is not called very frequently, even code that does not directly depend on the size belongs here.</p>
+<h4 id="viewwillappear-viewdiddisappear"><a class="header-anchor" href="#viewwillappear-viewdiddisappear"></a>-viewWillAppear: / -viewDidDisappear:</h4>
+<p>These methods are called just before the ASViewController’s node appears on screen (the earliest time that it is visible) and just after it is removed from the view hierarchy (the earliest time that it is no longer visible). These methods provide a good opportunity to start or stop animations related to the presentation or dismissal of your controller. This is also a good place to make a log of a user action.</p>
+<p>Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Using-Static-Site-Generator-with-GitHub-Pages/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2236,195 +2458,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/iOS-Basic-Concepts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/iOS-Basic-Concepts/" itemprop="url">
-                  iOS Basic Concepts
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-06-17 14:37:21" itemprop="dateCreated datePublished" datetime="2018-06-17T14:37:21+08:00">2018-06-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-08 22:15:32" itemprop="dateModified" datetime="2018-08-08T22:15:32+08:00">2018-08-08</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">17</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="responder-chain"><a class="header-anchor" href="#responder-chain"></a>Responder Chain</h2>
-<img src="/blog/iOS-Basic-Concepts/ResponderChain.png" title="Responder Chain">
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2682,7 +2715,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">193k</span>
+    <span title="Symbols count total">199k</span>
   
 
   
@@ -3190,9 +3223,9 @@
       
     
       
-        
-      
     
+      
+        
       
     
       
