@@ -37,6 +37,8 @@ subnode.frame = self.bounds;
 ```
 If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.
 
+<!-- more -->
+
 ### ASViewController
 An `ASViewController` is a regular `UIViewController` subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the **main thread** (and you should always create an ASViewController on the main thread).
 
@@ -71,3 +73,12 @@ For consistency, it is best practice to put all layout code in this method. Beca
 These methods are called just before the ASViewController’s node appears on screen (the earliest time that it is visible) and just after it is removed from the view hierarchy (the earliest time that it is no longer visible). These methods provide a good opportunity to start or stop animations related to the presentation or dismissal of your controller. This is also a good place to make a log of a user action.
 
 Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).
+
+## Notices
+- Make sure you access your data source outside of a `nodeBlock`.
+- Take steps to avoid a retain cycle in `viewBlocks`.
+- `ASCellNodes` are not reusable.
+- A node’s layoutSpec gets regenerated every time its `layoutThatFits:` method is called.
+- If you care about performance, do not use `CALayer`'s `.cornerRadius` property (or shadowPath, border or mask).
+- Texture does not support UIKit Auto Layout or InterfaceBuilder.
+- `ASDisplayNode` keep alive reference.

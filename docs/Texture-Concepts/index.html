@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Texture Docs Subclassing ASDisplayNode -init This method is called on a background thread when using nodeBlocks. However, because no other method can run until -init is finished, it should never be ne">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-09T02:20:35.084Z">
+<meta property="og:updated_time" content="2018-08-09T05:06:25.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Texture Concepts">
 <meta name="twitter:description" content="Texture Docs Subclassing ASDisplayNode -init This method is called on a background thread when using nodeBlocks. However, because no other method can run until -init is finished, it should never be ne">
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-09 10:20:35" itemprop="dateModified" datetime="2018-08-09T10:20:35+08:00">2018-08-09</time>
+                <time title="Modified: 2018-08-09 13:06:25" itemprop="dateModified" datetime="2018-08-09T13:06:25+08:00">2018-08-09</time>
               
             
           </span>
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">6.3k</span>
+                <span title="Symbols count in article">6.7k</span>
               
 
               
@@ -520,6 +520,7 @@
 <p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subnode.frame = <span class="keyword">self</span>.bounds;</span><br></pre></td></tr></table></figure>
 <p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
+<a id="more"></a>
 <h3 id="asviewcontroller"><a class="header-anchor" href="#asviewcontroller"></a>ASViewController</h3>
 <p>An <code>ASViewController</code> is a regular <code>UIViewController</code> subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the <strong>main thread</strong> (and you should always create an ASViewController on the main thread).</p>
 <h4 id="init-v2"><a class="header-anchor" href="#init-v2"></a>-init</h4>
@@ -537,6 +538,16 @@
 <h4 id="viewwillappear-viewdiddisappear"><a class="header-anchor" href="#viewwillappear-viewdiddisappear"></a>-viewWillAppear: / -viewDidDisappear:</h4>
 <p>These methods are called just before the ASViewController’s node appears on screen (the earliest time that it is visible) and just after it is removed from the view hierarchy (the earliest time that it is no longer visible). These methods provide a good opportunity to start or stop animations related to the presentation or dismissal of your controller. This is also a good place to make a log of a user action.</p>
 <p>Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).</p>
+<h2 id="notices"><a class="header-anchor" href="#notices"></a>Notices</h2>
+<ul>
+<li>Make sure you access your data source outside of a <code>nodeBlock</code>.</li>
+<li>Take steps to avoid a retain cycle in <code>viewBlocks</code>.</li>
+<li><code>ASCellNodes</code> are not reusable.</li>
+<li>A node’s layoutSpec gets regenerated every time its <code>layoutThatFits:</code> method is called.</li>
+<li>If you care about performance, do not use <code>CALayer</code>'s <code>.cornerRadius</code> property (or shadowPath, border or mask).</li>
+<li>Texture does not support UIKit Auto Layout or InterfaceBuilder.</li>
+<li><code>ASDisplayNode</code> keep alive reference.</li>
+</ul>
 
       
     </div>
@@ -842,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#subclassing"><span class="nav-number">1.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode"><span class="nav-number">1.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didload"><span class="nav-number">1.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutspecthatfits"><span class="nav-number">1.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asviewcontroller"><span class="nav-number">1.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadview"><span class="nav-number">1.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewdidload"><span class="nav-number">1.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwilllayoutsubviews"><span class="nav-number">1.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwillappear-viewdiddisappear"><span class="nav-number">1.2.5.</span> <span class="nav-text">-viewWillAppear: / -viewDidDisappear:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#subclassing"><span class="nav-number">1.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode"><span class="nav-number">1.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didload"><span class="nav-number">1.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutspecthatfits"><span class="nav-number">1.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asviewcontroller"><span class="nav-number">1.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadview"><span class="nav-number">1.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewdidload"><span class="nav-number">1.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwilllayoutsubviews"><span class="nav-number">1.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwillappear-viewdiddisappear"><span class="nav-number">1.2.5.</span> <span class="nav-text">-viewWillAppear: / -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notices"><span class="nav-number">2.</span> <span class="nav-text">Notices</span></a></li></ol></div>
             
 
           </div>
@@ -874,7 +885,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">199k</span>
+    <span title="Symbols count total">200k</span>
   
 
   

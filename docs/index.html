@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-09 10:20:35" itemprop="dateModified" datetime="2018-08-09T10:20:35+08:00">2018-08-09</time>
+                <time title="Modified: 2018-08-09 13:06:25" itemprop="dateModified" datetime="2018-08-09T13:06:25+08:00">2018-08-09</time>
               
             
           </span>
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">6.3k</span>
+                <span title="Symbols count in article">6.7k</span>
               
 
               
@@ -496,8 +496,7 @@
 
       
         
-          
-            <p><a href="https://texturegroup.org/" target="_blank" rel="noopener">Texture Docs</a></p>
+          <p><a href="https://texturegroup.org/" target="_blank" rel="noopener">Texture Docs</a></p>
 <h2 id="subclassing"><a class="header-anchor" href="#subclassing"></a>Subclassing</h2>
 <h3 id="asdisplaynode"><a class="header-anchor" href="#asdisplaynode"></a>ASDisplayNode</h3>
 <h4 id="init"><a class="header-anchor" href="#init"></a>-init</h4>
@@ -515,25 +514,13 @@
 <p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subnode.frame = <span class="keyword">self</span>.bounds;</span><br></pre></td></tr></table></figure>
 <p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
-<h3 id="asviewcontroller"><a class="header-anchor" href="#asviewcontroller"></a>ASViewController</h3>
-<p>An <code>ASViewController</code> is a regular <code>UIViewController</code> subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the <strong>main thread</strong> (and you should always create an ASViewController on the main thread).</p>
-<h4 id="init-v2"><a class="header-anchor" href="#init-v2"></a>-init</h4>
-<p>This method is called once, at the very beginning of an ASViewController’s lifecycle. As with UIViewController initialization, it is best practice to <strong>never access</strong> <code>self.view</code> or <code>self.node.view</code> in this method as it will force the view to be created early. Instead, do any view access in <code>-viewDidLoad</code>.</p>
-<p>ASViewController’s designated initializer is <code>initWithNode:</code>. A typical initializer will look something like the code below. Note how the ASViewController’s node is created before calling super. An ASViewController manages a node similarly to how a UIViewController manages a view, but the initialization is slightly different.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>() &#123;</span><br><span class="line">  <span class="keyword">let</span> pagerNode = <span class="type">ASPagerNode</span>()</span><br><span class="line">  <span class="keyword">super</span>.<span class="keyword">init</span>(node: pagerNode)</span><br><span class="line"></span><br><span class="line">  pagerNode.setDataSource(<span class="keyword">self</span>)</span><br><span class="line">  pagerNode.setDelegate(<span class="keyword">self</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="loadview"><a class="header-anchor" href="#loadview"></a>-loadView</h4>
-<p>We recommend that you do not use this method because it is has no particular advantages over <code>-viewDidLoad</code> and has some disadvantages. However, it is safe to use as long as you do not set the <code>self.view</code> property to a different value. The call to <code>[super loadView]</code> will set it to the <code>node.view</code> for you.</p>
-<h4 id="viewdidload"><a class="header-anchor" href="#viewdidload"></a>-viewDidLoad</h4>
-<p>This method is called once in a ASViewController’s lifecycle, immediately after <code>-loadView</code>. This is the earliest time at which you should access the node’s view. It is a great spot to put any <strong>setup code that should only be run once and requires access to the view/layer</strong>, such as adding a gesture recognizer.</p>
-<p>Layout code should never be put in this method, because it will not be called again when geometry changes. Note this is equally true for UIViewController; it is bad practice to put layout code in this method even if you don’t currently expect geometry changes.</p>
-<h4 id="viewwilllayoutsubviews"><a class="header-anchor" href="#viewwilllayoutsubviews"></a>-viewWillLayoutSubviews</h4>
-<p>This method is called at the exact same time as a node’s <code>-layout</code> method and it may be called multiple times in a ASViewController’s lifecycle; it will be called whenever the bounds of the ASViewController’s node are changed (including rotation, split screen, keyboard presentation) as well as when there are changes to the hierarchy (children being added, removed, or changed in size).</p>
-<p>For consistency, it is best practice to put all layout code in this method. Because it is not called very frequently, even code that does not directly depend on the size belongs here.</p>
-<h4 id="viewwillappear-viewdiddisappear"><a class="header-anchor" href="#viewwillappear-viewdiddisappear"></a>-viewWillAppear: / -viewDidDisappear:</h4>
-<p>These methods are called just before the ASViewController’s node appears on screen (the earliest time that it is visible) and just after it is removed from the view hierarchy (the earliest time that it is no longer visible). These methods provide a good opportunity to start or stop animations related to the presentation or dismissal of your controller. This is also a good place to make a log of a user action.</p>
-<p>Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Texture-Concepts/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2715,7 +2702,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">199k</span>
+    <span title="Symbols count total">200k</span>
   
 
   
