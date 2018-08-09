@@ -9,6 +9,28 @@ keywords: Texture
 
 [Texture Docs](https://texturegroup.org/)
 
+## Node Subclasses
+Node Inheritance Hierarchy
+``` bash
+ASDisplayNode
+├── ASTableNode
+├── ASCollectionNode
+│   └── ASPagerNode
+├── ASCellNode
+├── ASScrollNode
+├── ASEditableTextNode
+└── ASControlNode
+    ├── ASButtonNode
+    ├── ASTextNode
+    ├── ASMapNode
+    └── ASImageNode
+        ├── ASNetworkImageNode
+        │   └── ASVideoNode
+        └── ASMultiplexImageNode
+```
+
+<!-- more -->
+
 ## Subclassing
 ### ASDisplayNode
 #### -init
@@ -36,8 +58,6 @@ One great use of `-layout` is for the specific case in which you want a subnode 
 subnode.frame = self.bounds;
 ```
 If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.
-
-<!-- more -->
 
 ### ASViewController
 An `ASViewController` is a regular `UIViewController` subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the **main thread** (and you should always create an ASViewController on the main thread).
@@ -73,6 +93,29 @@ For consistency, it is best practice to put all layout code in this method. Beca
 These methods are called just before the ASViewController’s node appears on screen (the earliest time that it is visible) and just after it is removed from the view hierarchy (the earliest time that it is no longer visible). These methods provide a good opportunity to start or stop animations related to the presentation or dismissal of your controller. This is also a good place to make a log of a user action.
 
 Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).
+
+## Layout
+All `ASDisplayNodes` and `ASLayoutSpecs` conform to the `<ASLayoutElement>` protocol. This means that you can compose layout specs from both nodes and other layout specs.
+
+### Layout Specs
+A layout spec, short for “layout specification”, has no physical presence. Instead, layout specs act as containers for other layout elements by understanding how these children layout elements relate to each other.
+
+### Layout Elements
+Layout specs contain and arrange layout elements.
+
+### Some nodes need Sizes Set
+Some elements have an “intrinsic size” based on their immediately available content. For example, `ASTextNode` can calculate its size based on its attributed string. Nodes that have an intrinsic size include:
+- `ASImageNode`
+- `ASTextNode`
+- `ASButtonNode`
+
+All other nodes either do not have an intrinsic size or lack an intrinsic size until their external resource is loaded. For example, an `ASNetworkImageNode` does not know its size until the image has been downloaded from the URL. These sorts of elements include:
+- `ASVideoNode`
+- `ASVideoPlayerNode`
+- `ASNetworkImageNode`
+- `ASEditableTextNode`
+
+These nodes that lack an initial intrinsic size must have an initial size set for them using an `ASRatioLayoutSpec`, an `ASAbsoluteLayoutSpec` or the size properties on the style object.
 
 ## Notices
 - Make sure you access your data source outside of a `nodeBlock`.
