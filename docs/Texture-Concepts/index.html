@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Texture Docs Node Subclasses Node Inheritance Hierarchy 123456789101112131415ASDisplayNode├── ASTableNode├── ASCollectionNode│   └── ASPagerNode├── ASCellNode├── ASScrollNode├── ASEditableTextNode└──">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-09T16:21:41.745Z">
+<meta property="og:updated_time" content="2018-08-12T16:26:08.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Texture Concepts">
 <meta name="twitter:description" content="Texture Docs Node Subclasses Node Inheritance Hierarchy 123456789101112131415ASDisplayNode├── ASTableNode├── ASCollectionNode│   └── ASPagerNode├── ASCellNode├── ASScrollNode├── ASEditableTextNode└──">
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-10 00:21:41" itemprop="dateModified" datetime="2018-08-10T00:21:41+08:00">2018-08-10</time>
+                <time title="Modified: 2018-08-13 00:26:08" itemprop="dateModified" datetime="2018-08-13T00:26:08+08:00">2018-08-13</time>
               
             
           </span>
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">8.3k</span>
+                <span title="Symbols count in article">9.2k</span>
               
 
               
@@ -545,8 +545,28 @@
 <p>All <code>ASDisplayNodes</code> and <code>ASLayoutSpecs</code> conform to the <code>&lt;ASLayoutElement&gt;</code> protocol. This means that you can compose layout specs from both nodes and other layout specs.</p>
 <h3 id="layout-specs"><a class="header-anchor" href="#layout-specs"></a>Layout Specs</h3>
 <p>A layout spec, short for “layout specification”, has no physical presence. Instead, layout specs act as containers for other layout elements by understanding how these children layout elements relate to each other.</p>
+<p><code>ASLayoutSpec</code> subclasses:</p>
+<ul>
+<li>ASWrapperLayoutSpec</li>
+<li>ASStackLayoutSpec</li>
+<li>ASInsetLayoutSpec</li>
+<li>ASOverlayLayoutSpec</li>
+<li>ASBackgroundLayoutSpec</li>
+<li>ASCenterLayoutSpec</li>
+<li>ASRatioLayoutSpec</li>
+<li>ASRelativeLayoutSpec</li>
+<li>ASAbsoluteLayoutSpec</li>
+<li>ASCornerLayoutSpec</li>
+</ul>
 <h3 id="layout-elements"><a class="header-anchor" href="#layout-elements"></a>Layout Elements</h3>
 <p>Layout specs contain and arrange layout elements.</p>
+<h3 id="layout-api-sizing"><a class="header-anchor" href="#layout-api-sizing"></a>Layout API Sizing</h3>
+<h4 id="values-cgfloat-asdimension"><a class="header-anchor" href="#values-cgfloat-asdimension"></a>Values (<code>CGFloat</code>, <code>ASDimension</code>)</h4>
+<p><code>ASDimension</code> is essentially a normal <code>CGFloat</code> with support for representing either a point value, a relative percentage value, or an auto value.</p>
+<h4 id="sizes-cgsize-aslayoutsize"><a class="header-anchor" href="#sizes-cgsize-aslayoutsize"></a>Sizes (<code>CGSize</code>, <code>ASLayoutSize</code>)</h4>
+<p><code>ASLayoutSize</code> is similar to a <code>CGSize</code>, but its width and height values may represent either a point or percent value. The type of the width and height are independent; either one may be a point or percent value.</p>
+<h4 id="size-range-assizerange"><a class="header-anchor" href="#size-range-assizerange"></a>Size Range (ASSizeRange)</h4>
+<p><code>UIKit</code> doesn’t provide a structure to bundle a minimum and maximum <code>CGSize</code>. So, <code>ASSizeRange</code> was created to support a minimum and maximum <code>CGSize</code> pair.</p>
 <h3 id="some-nodes-need-sizes-set"><a class="header-anchor" href="#some-nodes-need-sizes-set"></a>Some nodes need Sizes Set</h3>
 <p>Some elements have an “intrinsic size” based on their immediately available content. For example, <code>ASTextNode</code> can calculate its size based on its attributed string. Nodes that have an intrinsic size include:</p>
 <ul>
@@ -877,7 +897,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-subclasses"><span class="nav-number">1.</span> <span class="nav-text">Node Subclasses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subclassing"><span class="nav-number">2.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode"><span class="nav-number">2.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">2.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didload"><span class="nav-number">2.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutspecthatfits"><span class="nav-number">2.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">2.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asviewcontroller"><span class="nav-number">2.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">2.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadview"><span class="nav-number">2.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewdidload"><span class="nav-number">2.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwilllayoutsubviews"><span class="nav-number">2.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwillappear-viewdiddisappear"><span class="nav-number">2.2.5.</span> <span class="nav-text">-viewWillAppear: / -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layout-v2"><span class="nav-number">3.</span> <span class="nav-text">Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-specs"><span class="nav-number">3.1.</span> <span class="nav-text">Layout Specs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-elements"><span class="nav-number">3.2.</span> <span class="nav-text">Layout Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-nodes-need-sizes-set"><span class="nav-number">3.3.</span> <span class="nav-text">Some nodes need Sizes Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notices"><span class="nav-number">4.</span> <span class="nav-text">Notices</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-subclasses"><span class="nav-number">1.</span> <span class="nav-text">Node Subclasses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subclassing"><span class="nav-number">2.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode"><span class="nav-number">2.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">2.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didload"><span class="nav-number">2.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutspecthatfits"><span class="nav-number">2.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">2.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asviewcontroller"><span class="nav-number">2.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">2.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadview"><span class="nav-number">2.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewdidload"><span class="nav-number">2.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwilllayoutsubviews"><span class="nav-number">2.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwillappear-viewdiddisappear"><span class="nav-number">2.2.5.</span> <span class="nav-text">-viewWillAppear: / -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layout-v2"><span class="nav-number">3.</span> <span class="nav-text">Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-specs"><span class="nav-number">3.1.</span> <span class="nav-text">Layout Specs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-elements"><span class="nav-number">3.2.</span> <span class="nav-text">Layout Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-api-sizing"><span class="nav-number">3.3.</span> <span class="nav-text">Layout API Sizing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#values-cgfloat-asdimension"><span class="nav-number">3.3.1.</span> <span class="nav-text">Values (CGFloat, ASDimension)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sizes-cgsize-aslayoutsize"><span class="nav-number">3.3.2.</span> <span class="nav-text">Sizes (CGSize, ASLayoutSize)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#size-range-assizerange"><span class="nav-number">3.3.3.</span> <span class="nav-text">Size Range (ASSizeRange)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-nodes-need-sizes-set"><span class="nav-number">3.4.</span> <span class="nav-text">Some nodes need Sizes Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notices"><span class="nav-number">4.</span> <span class="nav-text">Notices</span></a></li></ol></div>
             
 
           </div>

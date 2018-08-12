@@ -100,8 +100,30 @@ All `ASDisplayNodes` and `ASLayoutSpecs` conform to the `<ASLayoutElement>` prot
 ### Layout Specs
 A layout spec, short for “layout specification”, has no physical presence. Instead, layout specs act as containers for other layout elements by understanding how these children layout elements relate to each other.
 
+`ASLayoutSpec` subclasses:
+- ASWrapperLayoutSpec
+- ASStackLayoutSpec
+- ASInsetLayoutSpec
+- ASOverlayLayoutSpec
+- ASBackgroundLayoutSpec
+- ASCenterLayoutSpec
+- ASRatioLayoutSpec
+- ASRelativeLayoutSpec
+- ASAbsoluteLayoutSpec
+- ASCornerLayoutSpec
+
 ### Layout Elements
 Layout specs contain and arrange layout elements.
+
+### Layout API Sizing
+#### Values (`CGFloat`, `ASDimension`)
+`ASDimension` is essentially a normal `CGFloat` with support for representing either a point value, a relative percentage value, or an auto value.
+
+#### Sizes (`CGSize`, `ASLayoutSize`)
+`ASLayoutSize` is similar to a `CGSize`, but its width and height values may represent either a point or percent value. The type of the width and height are independent; either one may be a point or percent value.
+
+#### Size Range (ASSizeRange)
+`UIKit` doesn’t provide a structure to bundle a minimum and maximum `CGSize`. So, `ASSizeRange` was created to support a minimum and maximum `CGSize` pair.
 
 ### Some nodes need Sizes Set
 Some elements have an “intrinsic size” based on their immediately available content. For example, `ASTextNode` can calculate its size based on its attributed string. Nodes that have an intrinsic size include:
