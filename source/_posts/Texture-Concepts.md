@@ -147,3 +147,20 @@ These nodes that lack an initial intrinsic size must have an initial size set fo
 - If you care about performance, do not use `CALayer`'s `.cornerRadius` property (or shadowPath, border or mask).
 - Texture does not support UIKit Auto Layout or InterfaceBuilder.
 - `ASDisplayNode` keep alive reference.
+
+## Conveniences
+### Hit Test Slop
+`ASDisplayNode` has a `hitTestSlop` property of type `UIEdgeInsets` that when set to a non-zero inset, increase the bounds for hit testing to make it easier to tap or perform gestures on this node.
+
+### Batch Fetching API
+Texture’s Batch Fetching API makes it easy to add fetching chunks of new data. Usually this would be done in a `-scrollViewDidScroll:` method, but Texture provides a more structured mechanism.
+
+### Automatic Subnode Management
+By setting `.automaticallyManagesSubnodes` to `YES` on the `ASCellNode`, ASM means that your nodes no longer require `addSubnode:` or `removeFromSupernode` method calls. The presence or absence of the ASM node and its subnodes is completely determined in its `layoutSpecThatFits:` method.
+
+ASM knows whether or not to include these elements in the UI based on the information provided in the cell’s `ASLayoutSpec`. An `ASLayoutSpec` completely describes the UI of a view in your app by specifying the hierarchy state of a node and its subnodes. An `ASLayoutSpec` is returned by a node from its `layoutSpecThatFits:` method.
+
+If something happens that you know will change your `ASLayoutSpec`, it is your job to call `setNeedsLayout`.
+
+### Inversion
+`ASTableNode` and `ASCollectionNode` have a `inverted` property of type `BOOL` that when set to `YES`, will automatically invert the content so that it’s layed out bottom to top, that is the ‘first’ (indexPath 0, 0) node is at the bottom rather than the top as usual. This is extremely covenient for chat/messaging apps, and with Texture it only takes one property.

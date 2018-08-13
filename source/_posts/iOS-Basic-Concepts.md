@@ -10,6 +10,8 @@ keywords: iOS
 ## Responder Chain
 {% asset_img ResponderChain.png "Responder Chain" %}
 
+<!-- more -->
+
 ## iOS Device Display Summary
 | Device | UIKit Size (Points) | Rendered Pixels | UIKit Scale factor | Physical Pixels | Native Scale factor | Size(Diagonal) | PPI | Associated Devices |
 |---|---|---|---|---|---|---|---|---|
