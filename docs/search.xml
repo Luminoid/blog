@@ -44,7 +44,7 @@
   <entry>
     <title><![CDATA[iOS Basic Concepts]]></title>
     <url>%2Fblog%2FiOS-Basic-Concepts%2F</url>
-    <content type="text"><![CDATA[Responder Chain]]></content>
+    <content type="text"><![CDATA[Responder Chain iOS Device Display Summary Device UIKit Size (Points) Rendered Pixels UIKit Scale factor Physical Pixels Native Scale factor Size(Diagonal) PPI Associated Devices iPhone X 375 x 812 1125 x 2436 3.0 1125 x 2436 3.0 5.8 inch 458 iPhone 8 Plus 414 x 736 1242 × 2208 3.0 1080 x 1920 2.608 5.5 inch 401 iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus iPhone 8 375 x 667 750 x 1334 2.0 750 x 1334 2.0 4.7 inch 326 iPhone 6, iPhone 6s, iPhone 7 iPhone SE 320 x 568 640 x 1136 2.0 640 x 1136 2.0 4 inch 326 iPhone 5, 5C, 5S, iPod Touch 5g iPad Pro (12.9-inch) 1024 x 1366 2048 x 2732 2.0 2048 x 2732 2.0 12.9 inch 264 12.9-inch iPad Pro iPad Pro (10.5-inch) 834 x 1112 1668 x 2224 2.0 1668 x 2224 2.0 10.5 inch 264 iPad Air 768 x 1024 1536 x 2048 2.0 1536 x 2048 2.0 9.7 inch 264 iPad 3, iPad 4, iPad Air, iPad Air 2, 9.7-inch iPad Pro iPad Mini 768 x 1024 1536 x 2048 2.0 1536 x 2048 2.0 7.9 inch 326 iPad Mini 2, iPad Mini 3, iPad Mini 4]]></content>
       <categories>
         <category>iOS</category>
       </categories>
