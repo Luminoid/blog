@@ -381,3 +381,19 @@ override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
 
 ### Inversion
 `ASTableNode` and `ASCollectionNode` have a `inverted` property of type `BOOL` that when set to `YES`, will automatically invert the content so that it’s layed out bottom to top, that is the ‘first’ (indexPath 0, 0) node is at the bottom rather than the top as usual. This is extremely covenient for chat/messaging apps, and with Texture it only takes one property.
+
+### Image Modification Blocks
+By assigning an `imageModificationBlock` to your imageNode, you can define a set of transformations that need to happen asynchronously to any image that gets set on the imageNode.
+``` swift
+backgroundImageNode.imageModificationBlock = { image in
+    let newImage = image.applyBlurWithRadius(30, tintColor: UIColor(white: 0.5, alpha: 0.3),
+    								 saturationDeltaFactor: 1.8,
+    								 			 maskImage: nil)
+    return (newImage != nil) ? newImage : image
+}
+
+//some time later...
+
+backgroundImageNode.image = someImage
+```
+The image named “someImage” will now be blurred asynchronously before being assigned to the imageNode to be displayed.
