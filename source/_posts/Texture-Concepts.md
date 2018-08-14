@@ -100,17 +100,157 @@ All `ASDisplayNodes` and `ASLayoutSpecs` conform to the `<ASLayoutElement>` prot
 ### Layout Specs
 A layout spec, short for “layout specification”, has no physical presence. Instead, layout specs act as containers for other layout elements by understanding how these children layout elements relate to each other.
 
-`ASLayoutSpec` subclasses:
-- ASWrapperLayoutSpec
-- ASStackLayoutSpec
-- ASInsetLayoutSpec
-- ASOverlayLayoutSpec
-- ASBackgroundLayoutSpec
-- ASCenterLayoutSpec
-- ASRatioLayoutSpec
-- ASRelativeLayoutSpec
-- ASAbsoluteLayoutSpec
-- ASCornerLayoutSpec
+#### ASWrapperLayoutSpec
+`ASWrapperLayoutSpec` is a simple `ASLayoutSpec` subclass that can wrap a `ASLayoutElement` and calculate the layout of the child based on the size set on the layout element.
+``` swift
+// return a single subnode from layoutSpecThatFits:
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec 
+{
+  return ASWrapperLayoutSpec(layoutElement: _subnode)
+}
+
+// set a size (but not position)
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec 
+{
+  _subnode.style.preferredSize = CGSize(width: constrainedSize.max.width,
+                                        height: constrainedSize.max.height / 2.0)
+  return ASWrapperLayoutSpec(layoutElement: _subnode)
+}
+```
+
+#### ASStackLayoutSpec
+`ASStackLayoutSpec` uses the flexbox algorithm to determine the position and size of its children.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec 
+{
+  let mainStack = ASStackLayoutSpec(direction: .horizontal,
+                                    spacing: 6.0,
+                                    justifyContent: .start,
+                                    alignItems: .center,
+                                    children: [titleNode, subtitleNode])
+
+  // Set some constrained size to the stack
+  mainStack.style.minWidth = ASDimensionMakeWithPoints(60.0)
+  mainStack.style.maxHeight = ASDimensionMakeWithPoints(40.0)
+
+  return mainStack
+}
+```
+
+#### ASInsetLayoutSpec
+If you set `INFINITY` as a value in the `UIEdgeInsets`, the inset spec will just use the intrinisic size of the child.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  ...
+  let insets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+  let headerWithInset = ASInsetLayoutSpec(insets: insets, child: textNode)
+  ...
+}
+```
+
+#### ASOverlayLayoutSpec
+`ASOverlayLayoutSpec` lays out its child (blue), stretching another component on top of it as an overlay (red).
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red)
+  return ASOverlayLayoutSpec(child: backgroundNode, overlay: foregroundNode)
+}
+```
+
+#### ASBackgroundLayoutSpec
+`ASBackgroundLayoutSpec` lays out a component (blue), stretching another component behind it as a backdrop (red).
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+
+  return ASBackgroundLayoutSpec(child: foregroundNode, background: backgroundNode)
+}
+```
+
+#### ASCenterLayoutSpec
+`ASCenterLayoutSpec` centers its child within its max `constrainedSize`.
+```swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  let subnode = ASDisplayNodeWithBackgroundColor(UIColor.green, CGSize(width: 60.0, height: 100.0))
+  let centerSpec = ASCenterLayoutSpec(centeringOptions: .XY, sizingOptions: [], child: subnode)
+  return centerSpec
+}
+```
+
+#### ASRatioLayoutSpec
+`ASRatioLayoutSpec` lays out a component at a fixed aspect ratio which can scale.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  // Half Ratio
+  let subnode = ASDisplayNodeWithBackgroundColor(UIColor.green, CGSize(width: 100, height: 100.0))
+  let ratioSpec = ASRatioLayoutSpec(ratio: 0.5, child: subnode)
+  return ratioSpec
+}
+```
+
+#### ASRelativeLayoutSpec
+Lays out a component and positions it within the layout bounds according to vertical and horizontal positional specifiers. Similar to the “9-part” image areas, a child can be positioned at any of the 4 corners, or the middle of any of the 4 edges, as well as the center.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  ...
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red, CGSize(width: 70.0, height: 100.0))
+
+  let relativeSpec = ASRelativeLayoutSpec(horizontalPosition: .start,
+                                          verticalPosition: .start,
+                                          sizingOption: [],
+                                          child: foregroundNode)
+
+  let backgroundSpec = ASBackgroundLayoutSpec(child: relativeSpec, background: backgroundNode)
+  ...
+}
+```
+
+#### ASAbsoluteLayoutSpec
+Within `ASAbsoluteLayoutSpec` you can specify exact locations (x/y coordinates) of its children by setting their `layoutPosition` property.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  let maxConstrainedSize = constrainedSize.max
+
+  // Layout all nodes absolute in a static layout spec
+  guitarVideoNode.style.layoutPosition = CGPoint.zero
+  guitarVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width, height: maxConstrainedSize.height / 3.0)
+
+  nicCageVideoNode.style.layoutPosition = CGPoint(x: maxConstrainedSize.width / 2.0, y: maxConstrainedSize.height / 3.0)
+  nicCageVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  simonVideoNode.style.layoutPosition = CGPoint(x: 0.0, y: maxConstrainedSize.height - (maxConstrainedSize.height / 3.0))
+  simonVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  hlsVideoNode.style.layoutPosition = CGPoint(x: 0.0, y: maxConstrainedSize.height / 3.0)
+  hlsVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  return ASAbsoluteLayoutSpec(children: [guitarVideoNode, nicCageVideoNode, simonVideoNode, hlsVideoNode])
+}
+```
+
+#### ASCornerLayoutSpec
+The easy way to position an element in corner is to use declarative code expression rather than manual coordinate calculation, and `ASCornerLayoutSpec` can achieve this goal.
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
+{
+  ...
+  // Layout the center of badge to the top right corner of avatar.
+  let cornerSpec = ASCornerLayoutSpec(child: avatarNode, corner: badgeNode, location: .topRight)
+  // Slightly shift center of badge inside of avatar.
+  cornerSpec.offset = CGPoint(x: -3, y: 3)
+  ...
+}
+```
 
 ### Layout Elements
 Layout specs contain and arrange layout elements.
@@ -151,6 +291,11 @@ These nodes that lack an initial intrinsic size must have an initial size set fo
 ## Conveniences
 ### Hit Test Slop
 `ASDisplayNode` has a `hitTestSlop` property of type `UIEdgeInsets` that when set to a non-zero inset, increase the bounds for hit testing to make it easier to tap or perform gestures on this node.
+``` swift
+let textNode = ASTextNode()
+let padding = (44.0 - button.bounds.size.height)/2.0
+textNode.hitTestSlop = UIEdgeInsetsMake(-padding, 0, -padding, 0)
+```
 
 ### Batch Fetching API
 Texture’s Batch Fetching API makes it easy to add fetching chunks of new data. Usually this would be done in a `-scrollViewDidScroll:` method, but Texture provides a more structured mechanism.
@@ -161,6 +306,78 @@ By setting `.automaticallyManagesSubnodes` to `YES` on the `ASCellNode`, ASM mea
 ASM knows whether or not to include these elements in the UI based on the information provided in the cell’s `ASLayoutSpec`. An `ASLayoutSpec` completely describes the UI of a view in your app by specifying the hierarchy state of a node and its subnodes. An `ASLayoutSpec` is returned by a node from its `layoutSpecThatFits:` method.
 
 If something happens that you know will change your `ASLayoutSpec`, it is your job to call `setNeedsLayout`.
+
+``` swift
+class PhotoCellNode {
+  private let photoModel: PhotoModel
+  
+  private let userAvatarImageNode = ASNetworkImageNode()
+  private let photoImageNode = ASNetworkImageNode()
+  private let userNameTextNode = ASTextNode()
+  private let photoLocationTextNode = ASTextNode()
+
+  init(photo: PhotoModel) {
+    photoModel = photo
+    
+    super.init()
+    
+    automaticallyManagesSubnodes = true
+    
+    userAvatarImageNode.URL = photo.ownerUserProfile.userPicURL
+    photoImageNode.URL = photo.URL
+    userNameTextNode.attributedText = poto.ownerUserProfile.usernameAttributedString(fontSize: fontSize)
+    
+    photo.location.reverseGeocodeLocation { [weak self] location in 
+      if locationModel == self?.photoModel.location {
+        self?.photoLocationTextNode.attributedText = photo.locationAttributedString(fontSize: fontSize)
+        self?.setNeedsLayout()
+      }
+    }
+  }
+}
+
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+  let headerSubStack: ASStackLayoutSpec = .vertical()
+  headerSubStack.style.flexShrink = 1
+
+  if photoLocationLabel.attributedText != nil {
+    headerSubStack.children = [userNameLabel, photoLocationLabel]
+  } else {
+    headerSubStack.children = [userNameLabel]
+  }
+
+  userAvatarImageNode.style.preferredSize = CGSize(width: userImageHeight, height: userImageHeight) //  constrain avatar image frame size
+
+  let spacer = ASLayoutSpec()
+  spacer.style.flexGrow = 1
+
+  let avatarInsets = UIEdgeInsets(top: horizontalBuffer, left: 0, bottom: horizontalBuffer, right: horizontalBuffer)
+  let avatarInset = ASInsetLayoutSpec(insets: avatarInsets, child: userAvatarImageNode)
+
+  let headerStack: ASStackLayoutSpec = .horizontal()
+  headerStack.alignItems = .center      // center items vertically in horizontal stack
+  headerStack.justifyContent = .start   // justify content to the left side of the header stack
+  headerStack.children = [avatarInset, headerSubStack, spacer]
+
+  // header inset stack
+  let insets = UIEdgeInsets(top: 0, left: horizontalBuffer, bottom: 0, right: horizontalBuffer)
+  let headerWithInset = ASInsetLayoutSpec(insets: insets, child: headerStack)
+
+  // footer inset stack
+  let footerInsets = UIEdgeInsets(top: verticalBuffer, left: horizontalBuffer, bottom: verticalBuffer, right: horizontalBuffer)
+  let footerWithInset = ASInsetLayoutSpec(insets: footerInsets, child: photoCommentsNode)
+
+  // vertical stack
+  let cellWidth = constrainedSize.max.width
+  photoImageNode.style.preferredSize = CGSize(width: cellWidth, height: cellWidth)  // constrain photo frame size
+
+  let verticalStack: ASStackLayoutSpec = .vertical()
+  verticalStack.alignItems = .stretch   // stretch headerStack to fill horizontal space
+  verticalStack.children = [headerWithInset, photoImageNode, footerWithInset]
+
+  return verticalStack
+}
+```
 
 ### Inversion
 `ASTableNode` and `ASCollectionNode` have a `inverted` property of type `BOOL` that when set to `YES`, will automatically invert the content so that it’s layed out bottom to top, that is the ‘first’ (indexPath 0, 0) node is at the bottom rather than the top as usual. This is extremely covenient for chat/messaging apps, and with Texture it only takes one property.
