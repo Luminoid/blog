@@ -397,3 +397,41 @@ backgroundImageNode.imageModificationBlock = { image in
 backgroundImageNode.image = someImage
 ```
 The image named “someImage” will now be blurred asynchronously before being assigned to the imageNode to be displayed.
+
+### Placeholders
+#### ASDisplayNodes may Implement Placeholders
+Any `ASDisplayNode` subclass may implement the `-placeholderImage` method to provide a placeholder that covers content until a node’s contents are finished displaying.
+
+#### ASNetworkImageNode also have Default Images
+In addition to placeholders, `ASNetworkImageNodes` also have a `.defaultImage` property. While placeholders are meant to be transient, default images will persist if the image node’s `.URL` property is `nil` or if the URL fails to load.
+
+Use default images for avatars, while use placeholder images for photos.
+
+## Optimizations
+### Layer Backing
+In some cases, you can substantially improve your app’s performance by using layers instead of views. It's recommended to enable layer-backing in any custom node that doesn’t need touch handling.
+
+With all Texture nodes, converting an entire subtree from views to layers is as simple as:
+``` swift
+rootNode.isLayerBacked = true
+```
+
+### Subtree Rasterization
+Flattening an entire view hierarchy into a single layer improves performance, but with UIKit, comes with a hit to maintainability and hierarchy-based reasoning.
+
+With all Texture nodes, enabling precompositing is as simple as:
+``` swift
+rootNode.enableSubtreeRasterization()
+```
+This line will cause the entire node hierarchy from that point on to be rendered into one layer.
+
+### Synchronous Concurrency
+Both `ASViewController` and `ASCellNode` have a property called `neverShowPlaceholders`. By setting this property to YES, the main thread will be blocked until display has completed for the cell or view controller’s view.
+
+Using this option does not eliminate all of the performance advantages of Texture. Normally, a given node has been preloading and is almost done when it reaches the screen, so the blocking time is very short. Even if the rangeTuningParameters are set to 0 this option outperforms UIKit. While the main thread is waiting, all subnode display executes concurrently, thus synchronous concurrency.
+
+``` swift
+node.neverShowPlaceholders = true
+```
+
+Usually, if a cell hasn’t finished its display pass before it has reached the screen it will show placeholders until it has drawing its content. Setting this option to YES makes your scrolling node or ASViewController act more like UIKit, and in fact makes Texture scrolling visually indistinguishable from UIKit’s, except that it’s faster.
