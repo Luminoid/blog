@@ -508,3 +508,33 @@ Use `ASImageNode` extras to round the image and add a border.
 var cornerRadius: CGFloat = 20.0
 photoImageNode.imageModificationBlock = ASImageNodeRoundBorderModificationBlock(5.0, UIColor.orange)
 ```
+
+## Advanced Technologies
+### ASVisibility
+`ASNavigationController` and `ASTabBarController` both implement the `ASVisibility` protocol. These classes can be used even without `ASDisplayNodes`, making them suitable base classes for your inheritance hierarchy. For any child view controllers that are `ASViewControllers`, these classes know the exact number of user taps it would take to make the view controller visible (0 if currently visible).
+
+Knowing a view controller’s visibility depth allows view controllers to automatically take appropriate actions as a user approaches or leaves them. Non-default tabs in an app might preload some of their data; a controller 3 levels deep in a navigation stack might progressively free memory for images, text, and fetched data as it gets deeper.
+
+Any container view controller can implement a simple protocol to integrate with the system. For example, `ASNavigationController` will return a visibility depth of it’s own `visibilityDepth` + 1 for a view controller that would be revealed by tapping the back button once.
+
+You can opt into some of this behavior automatically by enabling `automaticallyAdjustRangeModeBasedOnViewEvents` on `ASViewController`s. With this enabled, if either the view controller or its node conform to `ASRangeControllerUpdateRangeProtocol` (`ASCollectionNode` and ASTableNode do by default), the ranges will automatically be decreased as the visibility depth increases to save memory.
+
+### ASEnvironment
+`ASEnvironment` is a performant and scalable way to enable upward and downward propagation of information throughout the node hierarchy. It stores a variety of critical “environmental” metadata, like the trait collection, interface state, hierarchy state, and more.
+
+Any object that conforms to the `<ASEnvironment>` protocol can propagate specific states defined in an `ASEnvironmentState` up and/or down the ASEnvironment tree. To define how merges of States should happen, specific merge functions can be provided.
+
+Compared to UIKit, this system is very efficient and one of the reasons why nodes are much lighter weight than UIViews. This is achieved by using simple structures to store data rather than creating objects. For example, `UITraitCollection` is an object, but `ASEnvironmentTraitCollection` is just a struct.
+
+This means that whenever a node needs to query something about its environment, for example to check its interface state, instead of climbing the entire tree or checking all of its children, it can go to one spot and read the value that was propogated to it.
+
+A key operating principle of ASEnvironment is to update values when new subnodes are added or removed.
+
+### ASRunLoopQueue
+Even with main thread work, Texture is able to dramatically reduce its impact on the user experience by way of the rather amazing ASRunLoopQueue.
+
+`ASRunloopQueue` breaks up operations that must be performed on the main thread into far smaller chunks, easily 1/10th of the size that they otherwise would be, so that operation such as allocating UIViews or even destroying objects can be spread out and allow the run loops to more frequently turn. This more periodic turning allows the device to much more frequently check if a user touch has started or if an animation timer requires a new frame to be drawn, allowing far greater responsiveness even when the device is very busy and processing a large queue of main thread work.
+
+It’s a longer discussion why this kind of technique is extremely challenging to implement with `UIKit`, but it has to do with the fact that `Texture` prepares content in advance, giving it a buffer of time where it can spread out the creation of these objects in tiny chunks. If it doesn’t finish by the time it needs to be on screen, then it finishes the rest of what needs to be created in a single chunk. `UIKit` has no similar mechanisms to create things in advance, and there is always just one huge chunk as a view controller or cell needs to come on screen.
+
+`ASRunLoopQueue` is enabled by default when running Texture. A developer does not need to be aware of it’s existence except to know that it helps reduce main thread blockage.
