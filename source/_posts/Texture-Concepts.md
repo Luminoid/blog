@@ -435,3 +435,76 @@ node.neverShowPlaceholders = true
 ```
 
 Usually, if a cell hasn’t finished its display pass before it has reached the screen it will show placeholders until it has drawing its content. Setting this option to YES makes your scrolling node or ASViewController act more like UIKit, and in fact makes Texture scrolling visually indistinguishable from UIKit’s, except that it’s faster.
+
+### Corner Rounding
+#### Performant Corner Rounding Strategies
+There are only three things to consider when picking a corner rounding strategy:
+1. Is there movement underneath the corner?
+2. Is there movement through the corner?
+3. Are all 4 corners the same node *and* no other nodes intersect in the corner area?
+
+Movement **underneath the corner**: Any movement behind the corner. For example, as a rounded-corner collection cell scrolls over a background, the background will move underneath and out from under the corners.
+
+Movement **through the corner**: Imagine a small rounded-corner scroll view containing a much larger photo. As you zoom and pan the photo inside of the scroll view, the photo will move through the corners of the scroll view.
+
+##### Precomposited Corners
+Precomposited corners refer to corners drawn using bezier paths to clip the content in a CGContext / UIGraphicsContext (`[path clip]`). In this scenario, the corners become part of the image itself — and are “baked in” to the single CALayer. There are two types of precomposited corners.
+
+The absolute best method is to use **precomposited opaque corners**. This is the most efficient method available, resulting in zero alpha blending (although this is much less critical than avoiding offscreen rendering). Unfortunately, this method is also the least flexible; the background behind the corners will need to be a solid color if the rounded image needs to move around on top of it. It’s possible, but tricky to make precomposited corners with a textured or photo background - usually it’s best to use precomposited alpha corners instead’.’
+
+The second method involves using bezier paths with **precomposited alpha corners**. This method is pretty flexible and should be one of the most frequently used. It does incur the cost of alpha blending across the full size of the content, and including an alpha channel increases memory impact by 25% over opaque precompositing - but these costs are tiny on modern devices, and a different order of magnitude than `.cornerRadius` offscreen rendering.
+
+Note that Texture nodes have a special optimization of `.cornerRadius` that automatically implements precomposited corners only when using `.shouldRasterizeDescendants`.
+
+##### Clip Corner
+This strategy involves placing **4 seperate opaque corners that sit on top of the content** that needs corner rounding. This method is flexible and has quite good performance. It has minor CPU overhead of 4 seperate layers, one layer for each corner.
+
+#### CALayer’s .cornerRadius property
+There are a few, quite rare cases in which it is appropriate to use `.cornerRadius`. These include when there is dynamic content moving both through the inside and underneath the corner. For certain animations, this is impossible to avoid. However, in many cases, it is easy to adjust your design to eliminate one of the sources of movement.
+
+#### Corner Rounding Strategy Flowchart
+<img src="/blog/Texture-Concepts/CornerRoundingFlowchart.png"  alt="Corner Rounding Flowchart" style="width:624px;">
+
+#### Texture Support
+Use `.cornerRadius`
+``` swift
+var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypeDefaultSlowCALayer
+photoImageNode.cornerRadius = cornerRadius
+```
+
+Use clipping for rounding corners
+``` swift
+var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypeClipping
+photoImageNode.backgroundColor = UIColor.white
+photoImageNode.cornerRadius = cornerRadius
+```
+
+Use precomposition for rounding corners
+``` swift
+var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypePrecomposited
+photoImageNode.cornerRadius = cornerRadius
+```
+
+Use `willDisplayNodeContentWithRenderingContext` to set a clipping path for the content for rounding corners
+``` swift
+var cornerRadius: CGFloat = 20.0
+
+// Use the screen scale for corner radius to respect content scale
+var screenScale: CGFloat = UIScreen.main.scale
+photoImageNode.willDisplayNodeContentWithRenderingContext = { context, drawParameters in
+    var bounds: CGRect = context.boundingBoxOfClipPath()
+    var radius: CGFloat = cornerRadius * screenScale
+    var overlay = UIImage.as_resizableRoundedImage(withCornerRadius: radius, cornerColor: UIColor.clear, fill: UIColor.clear)
+    overlay.draw(in: bounds)
+    UIBezierPath(roundedRect: bounds, cornerRadius: radius).addClip()
+}
+```
+
+Use `ASImageNode` extras to round the image and add a border.
+``` swift
+var cornerRadius: CGFloat = 20.0
+photoImageNode.imageModificationBlock = ASImageNodeRoundBorderModificationBlock(5.0, UIColor.orange)
+```
