@@ -94,6 +94,174 @@ These methods are called just before the ASViewController’s node appears on sc
 
 Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).
 
+## Nodes
+### ASDisplayNode
+`ASDisplayNode` is the main view abstraction over `UIView` and `CALayer`. It initializes and owns a `UIView` in the same way `UIViews` create and own their own backing `CALayers`.
+
+#### View Wrapping
+In some cases, it is desirable to initialize a node and provide a view to be used as the backing view. These views are provided via a block that will return a view so that the actual construction of the view can be saved until later. These nodes’ display step happens synchronously. This is because a node can only be asynchronously displayed when it wraps an `_ASDisplayView` (the internal view subclass), not when it wraps a plain `UIView`.
+``` swift
+let node = ASDisplayNode { () -> UIView in
+	let view = SomeView()
+	return view
+}
+```
+
+### ASCellNode
+There are three ways in which you can implement the cells you’ll use in your Texture app: subclassing `ASCellNode`, initializing with an existing `ASViewController` or using an existing `UIView` or `CALayer`.
+
+#### Subclassing
+Most likely, you’ll write a few of the following:
+`-init`: Thread safe initialization.
+`-layoutSpecThatFits:`: Return a layout spec that defines the layout of your cell.
+`-didLoad`: Called on the main thread. Good place to add gesture recognizers, etc.
+`-layout`: Also called on the main thread. Layout is complete after the call to super which means you can do any extra tweaking you need to do.
+
+#### Initializing with an `ASViewController`
+For example, say you already have a view controller written that manages an `ASTableNode`. To use that table as a page in an `ASPagerNode` you can use `-initWithViewControllerBlock`.
+``` swift
+func pagerNode(_ pagerNode: ASPagerNode, nodeAt index: Int) -> ASCellNode {
+    let animals = allAnimals[index]
+    
+    let node = ASCellNode(viewControllerBlock: { () -> UIViewController in
+        return AnimalTableNodeController(animals: animals)
+    }, didLoad: nil)
+    
+    node.style.preferredSize = pagerNode.bounds.size
+    
+    return node
+}
+```
+
+#### Initializing with a `UIView` or `CALayer`
+``` swift
+func pagerNode(_ pagerNode: ASPagerNode, nodeAt index: Int) -> ASCellNode {
+    let animal = animals[index]
+    
+    let node = ASCellNode { () -> UIView in
+        return SomeAnimalView(animal: animal)
+    }
+
+    node.style.preferredSize = pagerNode.bounds.size
+    
+    return node
+}
+```
+
+### ASImageNode
+`ASImageNode` is the Texture equivalent to `UIImageView`. The most basic difference is that images are decoded asynchronously by default.
+``` swift
+let imageNode = ASImageNode()
+imageNode.image = UIImage(named: "someImage")
+imageNode.contentMode = .scaleAspectFill
+```
+
+### ASNetworkImageNode
+`ASNetworkImageNode` can be used any time you need to display an image that is being hosted remotely. All you have to do is set the `.URL` property with the appropriate `NSURL` instance and the image will be asynchonously loaded and concurrently rendered for you.
+``` swift
+let imageNode = ASNetworkImageNode()
+imageNode.url = URL(string: "https://someurl.com/image_uri")
+```
+
+#### Laying Out a Network Image Node
+##### `.style.preferredSize`
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+	imageNode.style.preferredSize = CGSize(width: 100, height: 200)
+	// ...
+	return finalLayoutSpec
+}
+```
+
+##### `ASRatioLayoutSpec`
+``` swift
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+	let ratio: CGFloat = 3.0/1.0
+	let imageRatioSpec = ASRatioLayoutSpec(ratio:ratio, child:self.imageNode)
+	// ...
+	return finalLayoutSpec
+}
+```
+
+## Node Containers
+### ASTableNode
+`ASTableNode` replaces `UITableView`’s required method
+``` swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+```
+with your choice of one of the following methods
+``` swift
+func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode
+func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock
+```
+
+> It is recommended that you use the node block version of these methods so that your table node will be able to prepare and display all of its cells concurrently. This means that all subnode initialization methods can be run in the background. Make sure to keep 'em thread safe.
+
+Note that neither of these methods require a reuse mechanism.
+
+#### Replacing UITableViewController with ASViewController
+Texture does not offer an equivalent to `UITableViewController`. Instead, use an `ASViewController` initialized with an `ASTableNode`.
+``` swift
+init(models: [Model]) {
+    let tableNode = ASTableNode(style: .plain)
+
+    super.init(node: tableNode)
+
+    self.models = models  
+    self.tableNode = tableNode
+    self.tableNode.dataSource = self
+    
+    return self
+}
+```
+
+#### Node Block Thread Safety Warning
+It is very important that node blocks be thread-safe. One aspect of that is ensuring that the data model is accessed outside of the node block. Therefore, it is unlikely that you should need to use the index inside of the block.
+``` swift
+func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock {
+  guard photoFeed.count > indexPath.row else { return { ASCellNode() } }
+    
+  let photoModel = photoFeed[indexPath.row]
+    
+  // this may be executed on a background thread - it is important to make sure it is thread safe
+  let cellNodeBlock = { () -> ASCellNode in
+    let cellNode = PhotoCellNode(photo: photoModel)
+    cellNode.delegate = self
+    return cellNode
+  }
+    
+  return cellNodeBlock
+}
+```
+
+#### Accessing the ASTableView
+`ASTableView` can be used directly by accessing the `.view` property of an `ASTableNode`. 
+``` swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  tableNode.view.allowsSelection = false
+  tableNode.view.separatorStyle = .none
+  tableNode.view.leadingScreensForBatching = 3.0  // default is 2.0
+}
+```
+
+#### Table Row Height
+A node defines its height by way of the layoutSpec returned in the `-layoutSpecThatFits:` method.
+
+If you call `-setNeedsLayout` on an `ASCellNode`, it will automatically perform another layout pass and if its overall desired size has changed, the table will be informed and will update itself. This is different from `UIKit` where normally you would have to call reload row / item.
+
+### ASCollectionNode
+As noted in the `ASTableNode` section:
+- `ASCollectionNodes` do not utilize cell reuse.
+- Using the "nodeBlock" method is preferred.
+- It is very important that the returned node blocks are thread-safe.
+- `ASCellNodes` can be used by `ASTableNode`, `ASCollectionNode` and `ASPagerNode`.
+
+### ASScrollNode
+#### automaticallyManagesContentSize
+When enabled, the size calculated by the `ASScrolNode`’s layout spec defines the `.contentSize` of the scroll view. This is in contrast to most nodes, where the `layoutSpec` size is applied to the bounds (and in turn, frame). In this mode, the bounds of the scroll view always fills the parent’s size.
+
 ## Layout
 All `ASDisplayNodes` and `ASLayoutSpecs` conform to the `<ASLayoutElement>` protocol. This means that you can compose layout specs from both nodes and other layout specs.
 
@@ -428,7 +596,7 @@ This line will cause the entire node hierarchy from that point on to be rendered
 ### Synchronous Concurrency
 Both `ASViewController` and `ASCellNode` have a property called `neverShowPlaceholders`. By setting this property to YES, the main thread will be blocked until display has completed for the cell or view controller’s view.
 
-Using this option does not eliminate all of the performance advantages of Texture. Normally, a given node has been preloading and is almost done when it reaches the screen, so the blocking time is very short. Even if the rangeTuningParameters are set to 0 this option outperforms UIKit. While the main thread is waiting, all subnode display executes concurrently, thus synchronous concurrency.
+Using this option does not eliminate all of the performance advantages of Texture. Normally, a given node has been preloading and is almost done when it reaches the screen, so the blocking time is very short. Even if the `rangeTuningParameters` are set to 0 this option outperforms UIKit. While the main thread is waiting, all subnode display executes concurrently, thus synchronous concurrency.
 
 ``` swift
 node.neverShowPlaceholders = true
@@ -538,78 +706,3 @@ Even with main thread work, Texture is able to dramatically reduce its impact on
 It’s a longer discussion why this kind of technique is extremely challenging to implement with `UIKit`, but it has to do with the fact that `Texture` prepares content in advance, giving it a buffer of time where it can spread out the creation of these objects in tiny chunks. If it doesn’t finish by the time it needs to be on screen, then it finishes the rest of what needs to be created in a single chunk. `UIKit` has no similar mechanisms to create things in advance, and there is always just one huge chunk as a view controller or cell needs to come on screen.
 
 `ASRunLoopQueue` is enabled by default when running Texture. A developer does not need to be aware of it’s existence except to know that it helps reduce main thread blockage.
-
-## Node Containers
-### ASTableNode
-`ASTableNode` replaces `UITableView`’s required method
-``` swift
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-```
-with your choice of one of the following methods
-``` swift
-func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode
-func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock
-```
-
-> It is recommended that you use the node block version of these methods so that your table node will be able to prepare and display all of its cells concurrently. This means that all subnode initialization methods can be run in the background. Make sure to keep 'em thread safe.
-
-Note that neither of these methods require a reuse mechanism.
-
-#### Replacing UITableViewController with ASViewController
-Texture does not offer an equivalent to `UITableViewController`. Instead, use an `ASViewController` initialized with an `ASTableNode`.
-``` swift
-init(models: [Model]) {
-    let tableNode = ASTableNode(style: .plain)
-
-    super.init(node: tableNode)
-
-    self.models = models  
-    self.tableNode = tableNode
-    self.tableNode.dataSource = self
-    
-    return self
-}
-```
-
-#### Node Block Thread Safety Warning
-It is very important that node blocks be thread-safe. One aspect of that is ensuring that the data model is accessed outside of the node block. Therefore, it is unlikely that you should need to use the index inside of the block.
-``` swift
-func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock {
-  guard photoFeed.count > indexPath.row else { return { ASCellNode() } }
-    
-  let photoModel = photoFeed[indexPath.row]
-    
-  // this may be executed on a background thread - it is important to make sure it is thread safe
-  let cellNodeBlock = { () -> ASCellNode in
-    let cellNode = PhotoCellNode(photo: photoModel)
-    cellNode.delegate = self
-    return cellNode
-  }
-    
-  return cellNodeBlock
-}
-```
-
-#### Accessing the ASTableView
-`ASTableView` can be used directly by accessing the `.view` property of an `ASTableNode`. 
-``` swift
-override func viewDidLoad() {
-  super.viewDidLoad()
-
-  tableNode.view.allowsSelection = false
-  tableNode.view.separatorStyle = .none
-  tableNode.view.leadingScreensForBatching = 3.0  // default is 2.0
-}
-```
-
-#### Table Row Height
-A node defines its height by way of the layoutSpec returned in the `-layoutSpecThatFits:` method.
-
-If you call `-setNeedsLayout` on an `ASCellNode`, it will automatically perform another layout pass and if its overall desired size has changed, the table will be informed and will update itself. This is different from `UIKit` where normally you would have to call reload row / item.
-
-### ASCollectionNode
-As noted in the `ASTableNode` section:
-- `ASCollectionNodes` do not utilize cell reuse.
-- Using the "nodeBlock" method is preferred.
-- It is very important that the returned node blocks are thread-safe.
-- `ASCellNodes` can be used by `ASTableNode`, `ASCollectionNode` and `ASPagerNode`.
