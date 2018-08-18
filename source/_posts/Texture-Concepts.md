@@ -9,28 +9,6 @@ keywords: Texture
 
 [Texture Docs](https://texturegroup.org/)
 
-## Node Subclasses
-Node Inheritance Hierarchy
-``` bash
-ASDisplayNode
-├── ASTableNode
-├── ASCollectionNode
-│   └── ASPagerNode
-├── ASCellNode
-├── ASScrollNode
-├── ASEditableTextNode
-└── ASControlNode
-    ├── ASButtonNode
-    ├── ASTextNode
-    ├── ASMapNode
-    └── ASImageNode
-        ├── ASNetworkImageNode
-        │   └── ASVideoNode
-        └── ASMultiplexImageNode
-```
-
-<!-- more -->
-
 ## Subclassing
 ### ASDisplayNode
 #### -init
@@ -58,6 +36,8 @@ One great use of `-layout` is for the specific case in which you want a subnode 
 subnode.frame = self.bounds;
 ```
 If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.
+
+<!-- more -->
 
 ### ASViewController
 An `ASViewController` is a regular `UIViewController` subclass that has special features to manage nodes. Since it is a UIViewController subclass, all methods are called on the **main thread** (and you should always create an ASViewController on the main thread).
@@ -95,8 +75,28 @@ These methods are called just before the ASViewController’s node appears on sc
 Although these methods may be called multiple times and geometry information is available, they are not called for all geometry changes and so should not be used for core layout code (beyond setup required for specific animations).
 
 ## Nodes
+### Node Subclasses
+Node Inheritance Hierarchy
+``` bash
+ASDisplayNode
+├── ASTableNode
+├── ASCollectionNode
+│   └── ASPagerNode
+├── ASCellNode
+├── ASScrollNode
+├── ASEditableTextNode
+└── ASControlNode
+    ├── ASButtonNode
+    ├── ASTextNode
+    ├── ASMapNode
+    └── ASImageNode
+        ├── ASNetworkImageNode
+        │   └── ASVideoNode
+        └── ASMultiplexImageNode
+```
+
 ### ASDisplayNode
-`ASDisplayNode` is the main view abstraction over `UIView` and `CALayer`. It initializes and owns a `UIView` in the same way `UIViews` create and own their own backing `CALayers`.
+`ASDisplayNode` is the main view abstraction over `UIView` and `CALayer`. It initializes and owns a `UIView` in the same way `UIView`s create and own their own backing `CALayer`s.
 
 #### View Wrapping
 In some cases, it is desirable to initialize a node and provide a view to be used as the backing view. These views are provided via a block that will return a view so that the actual construction of the view can be saved until later. These nodes’ display step happens synchronously. This is because a node can only be asynchronously displayed when it wraps an `_ASDisplayView` (the internal view subclass), not when it wraps a plain `UIView`.
@@ -183,6 +183,10 @@ override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec
 }
 ```
 
+### ASScrollNode
+#### automaticallyManagesContentSize
+When enabled, the size calculated by the `ASScrolNode`’s layout spec defines the `.contentSize` of the scroll view. This is in contrast to most nodes, where the `layoutSpec` size is applied to the bounds (and in turn, frame). In this mode, the bounds of the scroll view always fills the parent’s size.
+
 ## Node Containers
 ### ASTableNode
 `ASTableNode` replaces `UITableView`’s required method
@@ -257,10 +261,6 @@ As noted in the `ASTableNode` section:
 - Using the "nodeBlock" method is preferred.
 - It is very important that the returned node blocks are thread-safe.
 - `ASCellNodes` can be used by `ASTableNode`, `ASCollectionNode` and `ASPagerNode`.
-
-### ASScrollNode
-#### automaticallyManagesContentSize
-When enabled, the size calculated by the `ASScrolNode`’s layout spec defines the `.contentSize` of the scroll view. This is in contrast to most nodes, where the `layoutSpec` size is applied to the bounds (and in turn, frame). In this mode, the bounds of the scroll view always fills the parent’s size.
 
 ## Layout
 All `ASDisplayNodes` and `ASLayoutSpecs` conform to the `<ASLayoutElement>` protocol. This means that you can compose layout specs from both nodes and other layout specs.
