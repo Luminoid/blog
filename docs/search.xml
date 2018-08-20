@@ -114,6 +114,7 @@
       </categories>
       <tags>
         <tag>Atom</tag>
+        <tag>Keymap</tag>
         <tag>VS Code</tag>
         <tag>Xcode</tag>
         <tag>JetBrains</tag>
@@ -122,12 +123,13 @@
   <entry>
     <title><![CDATA[Mac Usage]]></title>
     <url>%2Fblog%2FMac-Usage%2F</url>
-    <content type="text"><![CDATA[Preferences Manage Login Items System Preferences -&gt; Users &amp; Groups -&gt; Login Items System Open Apps From the Unidentified Developers Location: System Preferences -&gt; Security &amp; Privacy -&gt; General -&gt; Choose “Anywhere” 1$ sudo spctl --master-disable Maintenance 123456$ brew update$ brew upgrade$ brew cleanup$ brew prune$ brew doctor$ npm-check -gu Directories Xcode Simulator devices data: ~/Library/Developer/CoreSimulator/Devices Disk Cleanup Xcode 12~/Library/Developer/Xcode/iOS DeviceSupport~/Library/Developer/CoreSimulator/Devices]]></content>
+    <content type="text"><![CDATA[Maintenance 123456$ brew update$ brew upgrade$ brew cleanup$ brew prune$ brew doctor$ npm-check -gu Keyboard Shortcuts General Shift-Command-[: Switch to the previous tab Shift-Command-]: Switch to the next tab Shift-Command-T: Reopen the last closed tab Preferences Manage Login Items System Preferences -&gt; Users &amp; Groups -&gt; Login Items System Open Apps From the Unidentified Developers Location: System Preferences -&gt; Security &amp; Privacy -&gt; General -&gt; Choose “Anywhere” 1$ sudo spctl --master-disable Directories Xcode Simulator devices data: ~/Library/Developer/CoreSimulator/Devices Disk Cleanup Xcode 12~/Library/Developer/Xcode/iOS DeviceSupport~/Library/Developer/CoreSimulator/Devices]]></content>
       <categories>
         <category>Mac</category>
       </categories>
       <tags>
         <tag>Bash</tag>
+        <tag>Keymap</tag>
       </tags>
   </entry>
   <entry>

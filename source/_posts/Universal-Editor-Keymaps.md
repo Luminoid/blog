@@ -10,13 +10,14 @@ tags:
 - Atom
 - Xcode
 - JetBrains
+- Keymap
 keywords:
 - VS Code
 - Atom
 - Xcode
 - JetBrains
 - Editor
-- Keymaps
+- Keymap
 ---
 
 This post intended to provide a universal keymaps across different editors and IDEs on Mac.
