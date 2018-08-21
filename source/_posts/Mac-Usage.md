@@ -26,9 +26,9 @@ $ npm-check -gu
 
 ## Keyboard Shortcuts
 ### General
-**Shift-Command-[**: Switch to the previous tab
-**Shift-Command-]**: Switch to the next tab
-**Shift-Command-T**: Reopen the last closed tab
+`Shift-Command-[`: Switch to the previous tab
+`Shift-Command-]`: Switch to the next tab
+`Shift-Command-T`: Reopen the last closed tab
 
 ## Preferences
 ### Manage Login Items
