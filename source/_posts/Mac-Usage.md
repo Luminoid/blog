@@ -18,6 +18,7 @@ $ brew upgrade
 $ brew cleanup
 $ brew prune
 $ brew doctor
+$ brew cask upgrade
 $ npm-check -gu
 ```
 

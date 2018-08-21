@@ -17,6 +17,9 @@ Official Site: https://code.visualstudio.com
 ### Launch VS Code from the Command Line
 Open the Command Palette (⇧⌘P) and type `Shell Command: Install 'code' command in PATH` to install.
 
+### Synchronize Settings
+Use [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) to synchronize.
+
 ## Keymaps
 {% post_link Universal-Editor-Keymaps %}
 
@@ -30,7 +33,7 @@ Debug your JavaScript code in the Chrome browser, or any other target that suppo
 #### [React Native Tools](https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native)
 Code-hinting, debugging and integrated commands for React Native.
 
-### Languages
+### Programming Languages
 #### [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Objective-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D.
 
@@ -48,6 +51,9 @@ Provides CSS class name completion for the HTML class attribute based on the CSS
 
 #### [Document this](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
 Automatically generates detailed JSDoc comments in TypeScript and JavaScript files.
+
+#### [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
+Display pdf file in VSCode.
 
 ### Snippets
 #### [HTML Snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
@@ -74,11 +80,23 @@ VS Code plugin for prettier/prettier
 Icons for Visual Studio Code.
 
 ### Other
+#### [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub Gist.
+
 #### [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 Markdown Preview Enhanced ported to vscode.
 
 #### [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
 Easily switch between projects.
+
+#### [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
+Compare (diff) text selections within a file, across files, or to the clipboard
+
+#### [RegExp Preview and Editor](https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew)
+VSCode extension based on regexper-static
+
+#### [filesize](https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize)
+Show the current file size in the status bar.
 
 #### [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 Visual Studio Code plugin that autocompletes filenames.
@@ -94,8 +112,3 @@ Helper with GUI to generate color codes such as CSS color notations.
 
 #### [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 Highlight web colors in your editor.
-
-#### [filesize](https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize)
-Show the current file size in the status bar.
-
-

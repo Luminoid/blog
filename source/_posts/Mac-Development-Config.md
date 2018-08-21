@@ -169,6 +169,9 @@ set smartindent shiftwidth=4 "Auto indent
 ```
 
 ## IDE
+### [JetBrains](https://www.jetbrains.com/)
+[Toolbox](https://www.jetbrains.com/toolbox/app/)
+
 ### [Xcode](https://developer.apple.com/cn/xcode/)
 
 ## Tool
@@ -183,3 +186,11 @@ brew cask install docker
 
 ## Browser
 {% post_link Browser-Enhancement %}
+
+## Font
+### [Fira Code](https://github.com/tonsky/FiraCode)
+#### Install
+``` bash
+brew tap caskroom/fonts
+brew cask install font-fira-code
+```
