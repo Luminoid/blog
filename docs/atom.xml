@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-08-18T17:42:00.826Z</updated>
+  <updated>2018-08-21T15:07:02.930Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS Development Config</title>
+    <link href="http://luminoid.github.io/blog/iOS-Development-Config/"/>
+    <id>http://luminoid.github.io/blog/iOS-Development-Config/</id>
+    <published>2018-08-21T14:55:52.000Z</published>
+    <updated>2018-08-21T15:07:02.930Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="framework"><a class="header-anchor" href="#framework"></a>Framework</h2><h3 id="rxswift"><a class="header-anchor" href="#rxswift"></a><a href="https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md" target="_blank" rel="noopener">RxSwift</a></h3><p>Reactive Programming in Swift</p><h3 id="texture"><a class="header-anchor" href="#texture"></a><a href="http://texturegroup.org/" target="_blank" rel="noopener">Texture</a></h3><p>Smooth asynchronous user interfaces for iOS apps.</p><a href="/blog/Texture-Concepts/" title="Texture Concepts">Texture Concepts</a><h3 id="cartography"><a class="header-anchor" href="#cartography"></a><a href="http://robb.github.io/Cartography/" target="_blank" rel="noopener">Cartography</a></h3><p>A declarative Auto Layout DSL for Swift</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;framework&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#framework&quot;&gt;&lt;/a&gt;Framework&lt;/h2&gt;
+&lt;h3 id=&quot;rxswift&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#rxswift&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Texture Concepts</title>
@@ -612,34 +636,6 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
     
     
       <category term="VS Code" scheme="http://luminoid.github.io/blog/tags/VS-Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Yarn Usage</title>
-    <link href="http://luminoid.github.io/blog/Yarn-Usage/"/>
-    <id>http://luminoid.github.io/blog/Yarn-Usage/</id>
-    <published>2017-12-12T16:36:44.000Z</published>
-    <updated>2018-08-08T14:23:23.092Z</updated>
-    
-    <content type="html"><![CDATA[<p>Official Site: <a href="https://yarnpkg.com/en/" target="_blank" rel="noopener">https://yarnpkg.com/en/</a></p><h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">yarn list                           <span class="comment"># List installed packages</span></span><br><span class="line">yarn install                        <span class="comment"># Install all the dependencies of project; alias: yarn</span></span><br><span class="line">yarn add &lt;package...&gt;               <span class="comment"># Install packages in your dependencies</span></span><br><span class="line">yarn add &lt;package...&gt; [--dev/-D]    <span class="comment"># Install packages in your devDependencies</span></span><br><span class="line">yarn global add &lt;package...&gt;        <span class="comment"># Install packages globally</span></span><br><span class="line">yarn upgrade [package]              <span class="comment"># Upgrade a package</span></span><br><span class="line">yarn outdated                       <span class="comment"># Checks for outdated package dependencies</span></span><br><span class="line">yarn remove &lt;package...&gt;            <span class="comment"># Remove packages</span></span><br><span class="line">yarn run [script] [&lt;args&gt;]          <span class="comment"># Run a defined package script</span></span><br><span class="line">yarn init                           <span class="comment"># Interactively create or update a package.json file</span></span><br><span class="line">yarn                                <span class="comment"># Try Yarn out on your existing npm project</span></span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="cli-commands-comparison"><a class="header-anchor" href="#cli-commands-comparison"></a>CLI Commands Comparison</h2><table><thead><tr><th>npm (v5)</th><th>Yarn</th></tr></thead><tbody><tr><td><code>npm install</code></td><td><code>yarn install</code></td></tr><tr><td><code>npm install [package]</code></td><td><code>yarn add [package]</code></td></tr><tr><td><code>npm install [package] --save-dev</code></td><td><code>yarn add [package] --dev</code></td></tr><tr><td><code>npm install [package] --global</code></td><td><code>yarn global add [package]</code></td></tr><tr><td><code>npm update --global</code></td><td><code>yarn global upgrade</code></td></tr><tr><td><code>npm rebuild</code></td><td><code>yarn install --force</code></td></tr><tr><td><code>npm uninstall [package]</code></td><td><code>yarn remove [package]</code></td></tr><tr><td><code>rm -rf node_modules &amp;&amp; npm install</code></td><td><code>yarn upgrade</code></td></tr></tbody></table><h2 id="configuration"><a class="header-anchor" href="#configuration"></a>Configuration</h2><h3 id="package-json"><a class="header-anchor" href="#package-json"></a>package.json</h3><ul><li>List the packages that your project depends on</li><li>Allow you to specify the versions of a package that your project can use using <a href="https://yarnpkg.com/en/docs/dependency-versions" target="_blank" rel="noopener">semantic versioning rules</a></li><li>Make your build reproducible, and therefore much easier to share with other developers</li></ul><h3 id="yarn-lock"><a class="header-anchor" href="#yarn-lock"></a>yarn.lock</h3><p>Store exactly which versions of each dependency were installed.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Official Site: &lt;a href=&quot;https://yarnpkg.com/en/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://yarnpkg.com/en/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;command&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#command&quot;&gt;&lt;/a&gt;Command&lt;/h2&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yarn list                           &lt;span class=&quot;comment&quot;&gt;# List installed packages&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn install                        &lt;span class=&quot;comment&quot;&gt;# Install all the dependencies of project; alias: yarn&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn add &amp;lt;package...&amp;gt;               &lt;span class=&quot;comment&quot;&gt;# Install packages in your dependencies&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn add &amp;lt;package...&amp;gt; [--dev/-D]    &lt;span class=&quot;comment&quot;&gt;# Install packages in your devDependencies&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn global add &amp;lt;package...&amp;gt;        &lt;span class=&quot;comment&quot;&gt;# Install packages globally&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn upgrade [package]              &lt;span class=&quot;comment&quot;&gt;# Upgrade a package&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn outdated                       &lt;span class=&quot;comment&quot;&gt;# Checks for outdated package dependencies&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn remove &amp;lt;package...&amp;gt;            &lt;span class=&quot;comment&quot;&gt;# Remove packages&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn run [script] [&amp;lt;args&amp;gt;]          &lt;span class=&quot;comment&quot;&gt;# Run a defined package script&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn init                           &lt;span class=&quot;comment&quot;&gt;# Interactively create or update a package.json file&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn                                &lt;span class=&quot;comment&quot;&gt;# Try Yarn out on your existing npm project&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
-    
-      <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
-    
-    
-      <category term="Package manager" scheme="http://luminoid.github.io/blog/tags/Package-manager/"/>
-    
-      <category term="Yarn" scheme="http://luminoid.github.io/blog/tags/Yarn/"/>
     
   </entry>
   
