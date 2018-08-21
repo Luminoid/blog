@@ -29,40 +29,40 @@ This post intended to provide a universal keymaps across different editors and I
 | Command | Universal Key | VS Code | Atom | Xcode | JetBrains |
 | ------- | ------------- | ---- | ------ | ----- | --------- |
 | **Edit Text** | | | | | |
-| Upper case current text               | `shift-cmd-u`     |   |                   |   | `shift-cmd-u` |
-| Lower case current text               | `shift-cmd-l`     |   |                   |   | `shift-cmd-u` |
-| **Edit Lines**                        |                   |   |                   |   |               |
-| Duplicate lines                       | `cmd-d`           |   |                   |   |               |
-| Cut current line; Cut current text    | `cmd-x`           |   |                   | / |               |
-| Comment line                          | `cmd-/`           |   |                   |   |               |
-| Move line up                          | `alt-shift-up`    |   | `ctrl-cmd-up`     |   |               |
-| Move line down                        | `alt-shift-down`  |   | `ctrl-cmd-down`   |   |               |
-| **Selection**                         |                   |   |                   |   |               |
-| Multi-cursor selection                | `alt-click`       |   | `cmd-alt-click`   | / |               |
-| Column selection                      | `alt-drag`        | / |                   |   |               |
-| Cursor column select up               | `alt-up`          |   |                   | / | /             |
-| Cursor column select down             | `alt-down`        |   |                   | / | /             |
-| **Navigation**                        |                   |   |                   |   |               |
-| Go to Definition                      | `cmd-click`       |   | /                 |   |               |
-| Open Quickly                          | `shift-cmd-o`     |   |                   |   |               |
-| Reveal in Project View                | `shift-cmd-j`     |   |                   |   |               |
-| **Find**                              |                   |   |                   |   |               |
-| Find in the current file              | `cmd-f`           |   |                   |   |               |
-| Find in the entire project            | `shift-cmd-f`     |   |                   |   |               |
-| Find and replace                      | `cmd-r`           |   | `cmd-f`           | / |               |
-| Find next match                       | `cmd-g`           |   |                   |   |               |
-| Find previous match                   | `shift-cmd-g`     |   |                   |   |               |
-| **View**                              |                   |   |                   |   |               |
-| Toggle Command Palette                | `shift-cmd-p`     |   |                   | / | /             |
-| Toggle Terminal                       | `` ctrl-` ``      |   |                   | / |               |
-| Toggle Sidebar                        | `cmd-\ `          |   |                   |   |               |
-| Open User Settings                    | `cmd-,`           |   |                   |   |               |
-| **Tab**                               |                   |   |                   |   |               |
-| Open new tab                          | `cmd-t`           |   |                   |   | /             |
-| Switch to the previous tab            | `shift-cmd-[`     |   |                   |   |               |
-| Switch to the next tab                | `shift-cmd-]`     |   |                   |   |               |
-| **Plugin**                            |                   |   |                   |   |               |
-| Toggle Markdown Preview Enhanced      | `alt-enter`       |   |                   | / | /             |
+| Upper case current text               | `shift-cmd-u`     |                   |                   |   | `shift-cmd-u` |
+| Lower case current text               | `shift-cmd-l`     |                   |                   |   | `shift-cmd-u` |
+| **Edit Lines**                        |                   |                   |                   |   |               |
+| Duplicate lines                       | `cmd-d`           |                   |                   |   |               |
+| Cut current line; Cut current text    | `cmd-x`           |                   |                   | / |               |
+| Comment line                          | `cmd-/`           |                   |                   |   |               |
+| Move line up                          | `alt-shift-up`    |                   | `ctrl-cmd-up`     |   |               |
+| Move line down                        | `alt-shift-down`  |                   | `ctrl-cmd-down`   |   |               |
+| **Selection**                         |                   |                   |                   |   |               |
+| Multi-cursor selection                | `alt-click`       |                   | `cmd-alt-click`   | / |               |
+| Column selection                      | `alt-drag`        | `alt-shift-drag`  |                   |   |               |
+| Cursor column select up               | `alt-up`          |                   |                   | / | /             |
+| Cursor column select down             | `alt-down`        |                   |                   | / | /             |
+| **Navigation**                        |                   |                   |                   |   |               |
+| Go to Definition                      | `cmd-click`       |                   | /                 |   |               |
+| Open Quickly                          | `shift-cmd-o`     |                   |                   |   |               |
+| Reveal in Project View                | `shift-cmd-j`     |                   |                   |   |               |
+| **Find**                              |                   |                   |                   |   |               |
+| Find in the current file              | `cmd-f`           |                   |                   |   |               |
+| Find in the entire project            | `shift-cmd-f`     |                   |                   |   |               |
+| Find and replace                      | `cmd-r`           |                   | `cmd-f`           | / |               |
+| Find next match                       | `cmd-g`           |                   |                   |   |               |
+| Find previous match                   | `shift-cmd-g`     |                   |                   |   |               |
+| **View**                              |                   |                   |                   |   |               |
+| Toggle Command Palette                | `shift-cmd-p`     |                   |                   | / | /             |
+| Toggle Terminal                       | `` ctrl-` ``      |                   |                   | / |               |
+| Toggle Sidebar                        | `cmd-\ `          |                   |                   |   |               |
+| Open User Settings                    | `cmd-,`           |                   |                   |   |               |
+| **Tab**                               |                   |                   |                   |   |               |
+| Open new tab                          | `cmd-t`           |                   |                   |   | /             |
+| Switch to the previous tab            | `shift-cmd-[`     |                   |                   |   |               |
+| Switch to the next tab                | `shift-cmd-]`     |                   |                   |   |               |
+| **Plugin**                            |                   |                   |                   |   |               |
+| Toggle Markdown Preview Enhanced      | `alt-enter`       |                   |                   | / | /             |
 
 ## Config
 ### VSCode

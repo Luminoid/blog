@@ -79,6 +79,9 @@ VS Code plugin for prettier/prettier
 #### [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
 Icons for Visual Studio Code.
 
+#### [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+Material Design Icons for Visual Studio Code
+
 ### Other
 #### [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub Gist.
