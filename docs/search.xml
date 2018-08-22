@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[iOS Development Config]]></title>
     <url>%2Fblog%2FiOS-Development-Config%2F</url>
-    <content type="text"><![CDATA[Framework RxSwift Reactive Programming in Swift. Texture Smooth asynchronous user interfaces for iOS apps. Texture Concepts Cartography A declarative Auto Layout DSL for Swift.]]></content>
+    <content type="text"><![CDATA[Framework RxSwift Reactive Programming in Swift. Texture Smooth asynchronous user interfaces for iOS apps. Texture Concepts Cartography A declarative Auto Layout DSL for Swift. ObjectMapper Simple JSON Object mapping written in Swift.]]></content>
       <categories>
         <category>iOS</category>
       </categories>

@@ -18,3 +18,6 @@ Smooth asynchronous user interfaces for iOS apps.
 
 ### [Cartography](http://robb.github.io/Cartography/)
 A declarative Auto Layout DSL for Swift.
+
+### [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+Simple JSON Object mapping written in Swift.

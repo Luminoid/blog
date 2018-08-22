@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-08-21T15:09:07.493Z</updated>
+  <updated>2018-08-22T16:13:56.158Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://luminoid.github.io/blog/iOS-Development-Config/"/>
     <id>http://luminoid.github.io/blog/iOS-Development-Config/</id>
     <published>2018-08-21T14:55:52.000Z</published>
-    <updated>2018-08-21T15:09:07.493Z</updated>
+    <updated>2018-08-22T16:13:56.158Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="framework"><a class="header-anchor" href="#framework"></a>Framework</h2><h3 id="rxswift"><a class="header-anchor" href="#rxswift"></a><a href="https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md" target="_blank" rel="noopener">RxSwift</a></h3><p>Reactive Programming in Swift.</p><h3 id="texture"><a class="header-anchor" href="#texture"></a><a href="http://texturegroup.org/" target="_blank" rel="noopener">Texture</a></h3><p>Smooth asynchronous user interfaces for iOS apps.</p><a href="/blog/Texture-Concepts/" title="Texture Concepts">Texture Concepts</a><h3 id="cartography"><a class="header-anchor" href="#cartography"></a><a href="http://robb.github.io/Cartography/" target="_blank" rel="noopener">Cartography</a></h3><p>A declarative Auto Layout DSL for Swift.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="framework"><a class="header-anchor" href="#framework"></a>Framework</h2><h3 id="rxswift"><a class="header-anchor" href="#rxswift"></a><a href="https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md" target="_blank" rel="noopener">RxSwift</a></h3><p>Reactive Programming in Swift.</p><h3 id="texture"><a class="header-anchor" href="#texture"></a><a href="http://texturegroup.org/" target="_blank" rel="noopener">Texture</a></h3><p>Smooth asynchronous user interfaces for iOS apps.</p><a href="/blog/Texture-Concepts/" title="Texture Concepts">Texture Concepts</a><h3 id="cartography"><a class="header-anchor" href="#cartography"></a><a href="http://robb.github.io/Cartography/" target="_blank" rel="noopener">Cartography</a></h3><p>A declarative Auto Layout DSL for Swift.</p><h3 id="objectmapper"><a class="header-anchor" href="#objectmapper"></a><a href="https://github.com/Hearst-DD/ObjectMapper" target="_blank" rel="noopener">ObjectMapper</a></h3><p>Simple JSON Object mapping written in Swift.</p>]]></content>
     
     <summary type="html">
     
