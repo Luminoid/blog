@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Theme agnoster Plugins Plugins Overview extract Extract archive files 1extract &amp;lt;filename&amp;gt; autojump A faster way to navigate your filesystem 1j foo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-01T01:10:07.053Z">
+<meta property="og:updated_time" content="2018-08-27T08:31:22.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oh-my-zsh Usage">
 <meta name="twitter:description" content="Theme agnoster Plugins Plugins Overview extract Extract archive files 1extract &amp;lt;filename&amp;gt; autojump A faster way to navigate your filesystem 1j foo">
@@ -408,12 +408,24 @@
                 
               
 
-              <time title="Created: 2018-08-01 08:54:47 / Modified: 09:10:07" itemprop="dateCreated datePublished" datetime="2018-08-01T08:54:47+08:00">2018-08-01</time>
+              <time title="Created: 2018-08-01 08:54:47" itemprop="dateCreated datePublished" datetime="2018-08-01T08:54:47+08:00">2018-08-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-08-27 16:31:22" itemprop="dateModified" datetime="2018-08-27T16:31:22+08:00">2018-08-27</time>
               
             
           </span>
@@ -515,7 +527,7 @@
 <p>Escape the <code>^</code> in command like <code>git reset HEAD^</code> in zsh.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD\^</span><br></pre></td></tr></table></figure>
 <h2 id="zshrc"><a class="header-anchor" href="#zshrc"></a>.zshrc</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="variable">$HOME</span>/.oh-my-zsh</span><br><span class="line"></span><br><span class="line">DEFAULT_USER=<span class="string">"Luminoid"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Theme           ~/.oh-my-zsh/themes/</span></span><br><span class="line">ZSH_THEME=<span class="string">"agnoster"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Plugins         ~/.oh-my-zsh/plugins/</span></span><br><span class="line"><span class="comment"># Custom plugins  ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line">plugins=(colored-man-pages extract autojump git npm brew pod zsh-completions zsh-syntax-highlighting)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># User configuration</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LSCOLORS</span></span><br><span class="line"><span class="built_in">export</span> LSCOLORS=<span class="string">"exfxcxdxbxexexabagacad"</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -hG'</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -ahlF'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This source command must be at the end of ~/.zshrc</span></span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="variable">$HOME</span>/.oh-my-zsh</span><br><span class="line"></span><br><span class="line">DEFAULT_USER=<span class="string">"Luminoid"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Theme           ~/.oh-my-zsh/themes/</span></span><br><span class="line">ZSH_THEME=<span class="string">"agnoster"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Plugins         ~/.oh-my-zsh/plugins/</span></span><br><span class="line"><span class="comment"># Custom plugins  ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line">plugins=(colored-man-pages extract autojump git npm gem brew pod zsh-completions zsh-syntax-highlighting)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># User configuration</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LSCOLORS</span></span><br><span class="line"><span class="built_in">export</span> LSCOLORS=<span class="string">"exfxcxdxbxexexabagacad"</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -hG'</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -ahlF'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This source command must be at the end of ~/.zshrc</span></span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -859,7 +871,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">233k</span>
+    <span title="Symbols count total">234k</span>
   
 
   

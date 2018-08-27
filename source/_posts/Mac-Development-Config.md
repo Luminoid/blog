@@ -187,6 +187,13 @@ brew cask install docker
 ## Browser
 {% post_link Browser-Enhancement %}
 
+## System Enhancement
+### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
+#### Install
+``` bash
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+```
+
 ## Font
 ### [Fira Code](https://github.com/tonsky/FiraCode)
 #### Install

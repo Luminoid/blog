@@ -100,7 +100,7 @@ ZSH_THEME="agnoster"
 
 # Plugins         ~/.oh-my-zsh/plugins/
 # Custom plugins  ~/.oh-my-zsh/custom/plugins/
-plugins=(colored-man-pages extract autojump git npm brew pod zsh-completions zsh-syntax-highlighting)
+plugins=(colored-man-pages extract autojump git npm gem brew pod zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
