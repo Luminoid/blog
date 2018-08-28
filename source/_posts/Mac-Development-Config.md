@@ -194,6 +194,13 @@ brew cask install docker
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 ```
 
+### [Alfred](https://www.alfredapp.com/)
+#### Workflows
+- https://www.alfredapp.com/workflows/
+- http://www.packal.org/
+- https://github.com/zenorocha/alfred-workflows
+- http://www.alfredworkflow.com/
+
 ## Font
 ### [Fira Code](https://github.com/tonsky/FiraCode)
 #### Install
