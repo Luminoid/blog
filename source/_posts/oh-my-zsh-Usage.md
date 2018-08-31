@@ -7,10 +7,15 @@ tags:
 - oh-my-zsh
 keywords: 
 - oh-my-zsh
+- powerlevel9k
+- antigen
 ---
 
 ## Theme
-### [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
+### [powerlevel9k](https://github.com/bhilburn/powerlevel9k)
+
+## Plugin Manager
+### [antigen](https://github.com/zsh-users/antigen)
 
 ## Plugins
 [Plugins Overview](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)
@@ -79,8 +84,9 @@ alias gpsup='git push --set-upstream origin $(git_current_branch)'
 ```
 
 ## Custom Plugins
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/)
-- [zsh-completions](https://github.com/zsh-users/zsh-completions/)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ## Notice
 Escape the `^` in command like `git reset HEAD^` in zsh.
@@ -90,28 +96,60 @@ git reset HEAD\^
 
 ## .zshrc
 ``` bash
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+######################## Variable ########################
 
-DEFAULT_USER="Luminoid"
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_MODE=nerdfont-complete
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator background_jobs time)
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
+# POWERLEVEL9K_SHOW_CHANGESET=true
+# POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 
-# Theme           ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+DEFAULT_USER=$USER
 
-# Plugins         ~/.oh-my-zsh/plugins/
-# Custom plugins  ~/.oh-my-zsh/custom/plugins/
-plugins=(colored-man-pages extract autojump git npm gem brew pod zsh-completions zsh-syntax-highlighting)
+######################## Antigen ########################
 
-source $ZSH/oh-my-zsh.sh
+source /usr/local/share/antigen/antigen.zsh
 
-# User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh)
+antigen bundle colored-man-pages
+antigen bundle extract
+antigen bundle autojump
+antigen bundle git
+antigen bundle npm
+antigen bundle gem
+antigen bundle brew
+antigen bundle osx
+antigen bundle pod
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Fish-like auto suggestions
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Extra zsh completions
+antigen bundle zsh-users/zsh-completions
+
+# Load the theme.
+antigen theme bhilburn/powerlevel9k powerlevel9k
+
+# Tell Antigen that you're done.
+antigen apply
+
+######################## User Configuration ########################
 
 # LSCOLORS
 export LSCOLORS="exfxcxdxbxexexabagacad"
 alias ls='ls -hG'
 alias l='ls -ahlF'
-
-# This source command must be at the end of ~/.zshrc
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```

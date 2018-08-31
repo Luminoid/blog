@@ -20,6 +20,7 @@ $ brew prune
 $ brew doctor
 $ brew cask upgrade
 $ npm-check -gu
+$ sudo gem update
 ```
 
 <!-- more -->
