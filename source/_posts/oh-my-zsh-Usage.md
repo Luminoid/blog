@@ -148,6 +148,8 @@ antigen apply
 
 ######################## User Configuration ########################
 
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # LSCOLORS
 export LSCOLORS="exfxcxdxbxexexabagacad"
 alias ls='ls -hG'
