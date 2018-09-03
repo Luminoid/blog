@@ -16,6 +16,10 @@ keywords:
 
 ## Plugin Manager
 ### [antigen](https://github.com/zsh-users/antigen)
+#### Install
+``` bash
+brew install antigen
+```
 
 ## Plugins
 [Plugins Overview](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview)

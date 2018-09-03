@@ -112,6 +112,11 @@ Run `node --v8-options | grep harmony` to check current supported ES6 features.
 {% post_link VS-Code-Usage %}
 
 ### [Vim](www.vim.org/)
+#### Install
+``` bash
+brew install vim
+```
+
 #### .vimrc
 ``` vim
 " Vundle

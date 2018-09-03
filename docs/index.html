@@ -69,19 +69,19 @@
 
 <link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/blog/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.4.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.4.1" color="#222">
 
 
 
@@ -96,7 +96,7 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '6.4.0',
+    version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: false,
     fastclick: false,
@@ -363,6 +363,409 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Homebrew-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Homebrew-Usage/" itemprop="url">
+                  Homebrew Usage
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-04 23:55:06" itemprop="dateCreated datePublished" datetime="2017-12-04T23:55:06+08:00">2017-12-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-04 01:28:11" itemprop="dateModified" datetime="2018-09-04T01:28:11+08:00">2018-09-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.2k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Official Site: <a href="https://brew.sh" target="_blank" rel="noopener">https://brew.sh</a></p>
+<h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;  <span class="comment"># Install formula</span></span><br><span class="line">brew update             <span class="comment"># Fetch latest version of Homebrew and all formulae</span></span><br><span class="line">brew upgrade            <span class="comment"># Upgrade all outdated, unpinned packages</span></span><br><span class="line">brew leaves             <span class="comment"># Show installed formulae that are not dependencies of another installed formula</span></span><br><span class="line">brew tap                <span class="comment"># Tap a new formula repository from GitHub, or list existing taps</span></span><br><span class="line">brew doctor             <span class="comment"># Audit your installation for common issues</span></span><br><span class="line">brew cleanup            <span class="comment"># Uninstall unused and old versions of packages</span></span><br><span class="line">brew prune              <span class="comment"># Remove dead links</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Homebrew-Usage/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/Mac-Development-Config/" itemprop="url">
+                  Mac Development Config
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 23:29:17" itemprop="dateModified" datetime="2018-09-03T23:29:17+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">3.2k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="mac-usage"><a class="header-anchor" href="#mac-usage"></a>Mac Usage</h2>
+<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<h2 id="package-manager"><a class="header-anchor" href="#package-manager"></a>Package Manager</h2>
+<h3 id="homebrew"><a class="header-anchor" href="#homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
+<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="usage"><a class="header-anchor" href="#usage"></a>Usage</h4>
+<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
+<h3 id="homebrew-cask"><a class="header-anchor" href="#homebrew-cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
+<h4 id="install-v2"><a class="header-anchor" href="#install-v2"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v2"><a class="header-anchor" href="#usage-v2"></a>Usage</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
+<h4 id="install-v3"><a class="header-anchor" href="#install-v3"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
+<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/Mac-Development-Config/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/oh-my-zsh-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -426,7 +829,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-01 19:32:30" itemprop="dateModified" datetime="2018-09-01T19:32:30+08:00">2018-09-01</time>
+                <time title="Modified: 2018-09-03 17:21:15" itemprop="dateModified" datetime="2018-09-03T17:21:15+08:00">2018-09-03</time>
               
             
           </span>
@@ -500,6 +903,8 @@
 <h3 id="powerlevel9k"><a class="header-anchor" href="#powerlevel9k"></a><a href="https://github.com/bhilburn/powerlevel9k" target="_blank" rel="noopener">powerlevel9k</a></h3>
 <h2 id="plugin-manager"><a class="header-anchor" href="#plugin-manager"></a>Plugin Manager</h2>
 <h3 id="antigen"><a class="header-anchor" href="#antigen"></a><a href="https://github.com/zsh-users/antigen" target="_blank" rel="noopener">antigen</a></h3>
+<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install antigen</span><br></pre></td></tr></table></figure>
 <h2 id="plugins"><a class="header-anchor" href="#plugins"></a>Plugins</h2>
 <p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview" target="_blank" rel="noopener">Plugins Overview</a></p>
 <h3 id="extract"><a class="header-anchor" href="#extract"></a>extract</h3>
@@ -704,215 +1109,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/Mac-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Mac-Development-Config/" itemprop="url">
-                  Mac Development Config
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-31 14:36:26" itemprop="dateModified" datetime="2018-08-31T14:36:26+08:00">2018-08-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">3.2k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="mac-usage"><a class="header-anchor" href="#mac-usage"></a>Mac Usage</h2>
-<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
-<h2 id="package-manager"><a class="header-anchor" href="#package-manager"></a>Package Manager</h2>
-<h3 id="homebrew"><a class="header-anchor" href="#homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
-<h4 id="install"><a class="header-anchor" href="#install"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
-<h4 id="usage"><a class="header-anchor" href="#usage"></a>Usage</h4>
-<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
-<h3 id="homebrew-cask"><a class="header-anchor" href="#homebrew-cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
-<h4 id="install-v2"><a class="header-anchor" href="#install-v2"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
-<h4 id="usage-v2"><a class="header-anchor" href="#usage-v2"></a>Usage</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
-<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
-<h4 id="install-v3"><a class="header-anchor" href="#install-v3"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
-<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Mac-Development-Config/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2154,211 +2350,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Using-Static-Site-Generator-with-GitHub-Pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/" itemprop="url">
-                  Using static site generator with GitHub Pages
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-08-27 20:02:59" itemprop="dateCreated datePublished" datetime="2017-08-27T20:02:59+08:00">2017-08-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-08 22:30:48" itemprop="dateModified" datetime="2018-08-08T22:30:48+08:00">2018-08-08</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">1.5k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>There are three ways to deploy static site on GitHub Pages as follows. I tend to use the third scheme myself. The related GitHub documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
-<h2 id="using-gh-pages-branch"><a class="header-anchor" href="#using-gh-pages-branch"></a>Using <code>gh-pages</code> branch</h2>
-<p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="advantage"><a class="header-anchor" href="#advantage"></a>Advantage</h3>
-<p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification. An npm package <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener">gh-pages</a> helps doing this, if there is no built-in <code>deploy</code> command.</p>
-<h3 id="disadvantage"><a class="header-anchor" href="#disadvantage"></a>Disadvantage</h3>
-<p>Only website content is under the version control. The code that generates the website content is maintained locally.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2635,7 +2626,7 @@
 
 
 
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.0</div>
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
 
 
 
@@ -2750,21 +2741,21 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.4.1"></script>
 
 
 
   
-  
-
   
 
   
 
+  
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.4.1"></script>
 
 
 
