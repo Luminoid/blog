@@ -39,7 +39,7 @@ Tool for generating GNU Standards-compliant Makefiles
 Automatic configure script builder
 
 ### [bat](https://github.com/sharkdp/bat)
-Clone of cat(1) with syntax highlighting and Git integration
+Clone of `cat(1)` with syntax highlighting and Git integration
 ``` bash
 bat <file>
 ```
@@ -75,7 +75,7 @@ Image processing tools collection
 Improved top (interactive process viewer)
 
 ### [mtr](https://www.bitwizard.nl/mtr/)
-'traceroute' and 'ping' in a single tool
+`traceroute` and `ping` in a single tool
 
 ### [ncdu](https://dev.yorhel.nl/ncdu)
 NCurses Disk Usage
@@ -102,7 +102,7 @@ prettyping
 rlwrap is a 'readline wrapper', a small utility that uses the GNU readline library to allow the editing of keyboard input for any command.
 
 ### [scons](https://www.scons.org/)
-Substitute for classic 'make' tool with autoconf/automake functionality
+Substitute for classic `make` tool with autoconf/automake functionality
 
 ### [tesseract](https://github.com/tesseract-ocr/)
 OCR (Optical Character Recognition) engine
