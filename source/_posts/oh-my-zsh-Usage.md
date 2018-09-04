@@ -30,12 +30,6 @@ Extract archive files
 extract <filename>
 ```
 
-### autojump
-A faster way to navigate your filesystem
-``` bash
-j foo
-```
-
 <!-- more -->
 
 ### git
