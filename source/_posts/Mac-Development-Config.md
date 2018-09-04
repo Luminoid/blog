@@ -69,9 +69,7 @@ sudo gem install cocoapods
 #### Usage
 {% post_link CocoaPods-Usage %}
 
-## Terminal
-### [iTerm2](https://www.iterm2.com)
-
+## Shell
 ### [oh-my-zsh](http://ohmyz.sh)
 #### Install
 ``` bash
@@ -80,6 +78,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 #### Usage
 {% post_link oh-my-zsh-Usage %}
+
+## Terminal
+### [iTerm2](https://www.iterm2.com)
 
 ## Version Control
 ### Git
@@ -117,7 +118,163 @@ Run `node --v8-options | grep harmony` to check current supported ES6 features.
 brew install vim
 ```
 
-#### .vimrc
+## IDE
+### [JetBrains](https://www.jetbrains.com/)
+[Toolbox](https://www.jetbrains.com/toolbox/app/)
+
+### [Xcode](https://developer.apple.com/cn/xcode/)
+
+## Tool
+### [Docker](https://www.docker.com)
+#### Install
+``` bash
+brew cask install docker
+```
+
+#### Usage
+{% post_link Docker-Cheat-Sheet %}
+
+## Browser
+{% post_link Browser-Enhancement %}
+
+## System Enhancement
+### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
+#### Install
+``` bash
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+```
+
+### [Alfred](https://www.alfredapp.com/)
+#### Workflows
+- https://www.alfredapp.com/workflows/
+- http://www.packal.org/
+- https://github.com/zenorocha/alfred-workflows
+- http://www.alfredworkflow.com/
+
+## Font
+### [Fira Code](https://github.com/tonsky/FiraCode)
+#### Install
+``` bash
+brew tap caskroom/fonts
+brew cask install font-fira-code font-firacode-nerd-font
+```
+
+## Quick Configuration
+### Package Manager
+``` bash
+brew install antigen autojump automake bat cmake diff-so-fancy exa fd ffmpeg fzf gdb git git-lfs graphicsmagick highlight htop hunspell librsvg mtr mysql nasm ncdu openvpn pandoc phantomjs pinentry pngquant prettyping r rlwrap scons sqlmap swiftlint tesseract the_silver_searcher tig tldr tmux tree unrar vim watchman wget yarn
+brew tap caskroom/cask
+brew tap caskroom/fonts
+brew cask install font-fira-code font-firacode-nerd-font font-hack-nerd-font launchrocket qlcolorcode qlimagesize qlmarkdown qlstephen qlvideo  quicklook-json quicklookase suspicious-package webpquicklook
+npm install -g npm-check
+sudo gem install cocoapods
+```
+
+### Git Config
+``` bash
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global color.ui true
+
+git config --global color.diff.meta       "yellow"
+git config --global color.diff.frag       "magenta bold"
+git config --global color.diff.commit     "yellow bold"
+git config --global color.diff.old        "red bold"
+git config --global color.diff.new        "green bold"
+git config --global color.diff.whitespace "red reverse"
+```
+
+### .zshrc
+``` bash
+######################## Theme ########################
+
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_MODE=nerdfont-complete
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator background_jobs time)
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
+# POWERLEVEL9K_SHOW_CHANGESET=true
+# POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+
+DEFAULT_USER=$USER
+
+######################## Antigen ########################
+
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh)
+antigen bundle colored-man-pages
+antigen bundle extract
+antigen bundle autojump
+antigen bundle git
+antigen bundle npm
+antigen bundle gem
+antigen bundle brew
+antigen bundle osx
+antigen bundle pod
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Fish-like auto suggestions
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Extra zsh completions
+antigen bundle zsh-users/zsh-completions
+
+# Load the theme.
+antigen theme bhilburn/powerlevel9k powerlevel9k
+
+# Tell Antigen that you're done.
+antigen apply
+
+######################## User Configuration ########################
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# list
+alias ls='ls -hFG'
+alias tree='tree -C -I node_modules'
+alias l='exa -aghlF --git'
+alias ltree='exa -ghlFT --git -I=node_modules'
+
+# ncdu
+alias ncdu="ncdu --color dark -rr -x"
+alias ncdu-exclude="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+# fzf
+alias preview="fzf --preview 'bat --color \"always\" {} || tree -C {}'"
+export FZF_DEFAULT_COMMAND='fd'                                     # Set fd as the default source for fzf
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"    # Use ctrl+o to open the selected file in VS Code
+
+## Command history
+### fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+## Homebrew
+### Install (one or multiple) selected application(s)
+### using "brew search" as source input
+### mnemonic [B]rew [I]nstall [P]lugin
+bip() {
+  local inst=$(brew search | fzf -m)
+
+  if [[ $inst ]]; then
+    for prog in $(echo $inst);
+    do; brew install $prog; done;
+  fi
+}
+```
+
+### .vimrc
 ``` vim
 " Vundle
 " ---------------------------------------------------------------
@@ -171,45 +328,4 @@ set expandtab "Use spaces instead of tabs
 set tabstop=4 "1 tab == 4 spaces
 set softtabstop=4
 set smartindent shiftwidth=4 "Auto indent
-```
-
-## IDE
-### [JetBrains](https://www.jetbrains.com/)
-[Toolbox](https://www.jetbrains.com/toolbox/app/)
-
-### [Xcode](https://developer.apple.com/cn/xcode/)
-
-## Tool
-### [Docker](https://www.docker.com)
-#### Install
-``` bash
-brew cask install docker
-```
-
-#### Usage
-{% post_link Docker-Cheat-Sheet %}
-
-## Browser
-{% post_link Browser-Enhancement %}
-
-## System Enhancement
-### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
-#### Install
-``` bash
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
-```
-
-### [Alfred](https://www.alfredapp.com/)
-#### Workflows
-- https://www.alfredapp.com/workflows/
-- http://www.packal.org/
-- https://github.com/zenorocha/alfred-workflows
-- http://www.alfredworkflow.com/
-
-## Font
-### [Fira Code](https://github.com/tonsky/FiraCode)
-#### Install
-``` bash
-brew tap caskroom/fonts
-brew cask install font-fira-code font-firacode-nerd-font
 ```

@@ -53,6 +53,9 @@ GNU File, Shell, and Text utilities
 ### [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 Good-lookin' diffs with diff-highlight and more
 
+### [exa](https://the.exa.website)
+Modern replacement for `ls`
+
 ### [fd](https://github.com/sharkdp/fd)
 Simple, fast and user-friendly alternative to find
 ``` bash
@@ -103,6 +106,9 @@ rlwrap is a 'readline wrapper', a small utility that uses the GNU readline libra
 
 ### [scons](https://www.scons.org/)
 Substitute for classic `make` tool with autoconf/automake functionality
+
+### [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+A code searching tool similar to `ack`, with a focus on speed.
 
 ### [tesseract](https://github.com/tesseract-ocr/)
 OCR (Optical Character Recognition) engine
