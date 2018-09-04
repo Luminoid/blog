@@ -100,7 +100,7 @@ git reset HEAD\^
 
 ## .zshrc
 ``` bash
-######################## Variable ########################
+######################## Theme ########################
 
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE=nerdfont-complete
@@ -154,8 +154,37 @@ antigen apply
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# LSCOLORS
-export LSCOLORS="exfxcxdxbxexexabagacad"
-alias ls='ls -hG'
-alias l='ls -ahlF'
+# list
+alias ls='ls -hFG'
+alias tree='tree -C -I node_modules'
+alias l='exa -aghlF --git'
+alias ltree='exa -ghlFT --git -I=node_modules'
+
+# ncdu
+alias ncdu="ncdu --color dark -rr -x"
+alias ncdu-exclude="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+# fzf
+alias preview="fzf --preview 'bat --color \"always\" {} || tree -C {}'"
+export FZF_DEFAULT_COMMAND='fd'                                     # Set fd as the default source for fzf
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"    # Use ctrl+o to open the selected file in VS Code
+
+## Command history
+### fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+## Homebrew
+### Install (one or multiple) selected application(s)
+### using "brew search" as source input
+### mnemonic [B]rew [I]nstall [P]lugin
+bip() {
+  local inst=$(brew search | fzf -m)
+
+  if [[ $inst ]]; then
+    for prog in $(echo $inst);
+    do; brew install $prog; done;
+  fi
+}
 ```
