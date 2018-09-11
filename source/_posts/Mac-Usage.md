@@ -11,7 +11,7 @@ keywords:
 - Bash
 ---
 
-## Maintenance
+## Upgrade
 ``` bash
 $ brew update
 $ brew upgrade

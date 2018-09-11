@@ -239,6 +239,10 @@ antigen apply
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# gem
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
+
 # list
 alias ls='ls -hFG'
 alias tree='tree -C -I node_modules'
