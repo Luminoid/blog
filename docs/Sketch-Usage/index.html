@@ -119,18 +119,18 @@
 
 
 
-  <meta name="description" content="Containers 12345678910111213docker build -t=&quot;luminoid/my_image&quot; .                   # Build an image from current directory&apos;s Dockerfiledocker run username/repository:tag">
-<meta name="keywords" content="Docker,Cheatsheet">
+  <meta name="description" content="Plugin Manager Sketchpacks 1brew cask install sketchpacks Command Palette Runner Plugins Content Generator Content generator allows you quickly create dummy data such as avatars, names, geo location d">
+<meta name="keywords" content="Sketch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker Cheat Sheet">
-<meta property="og:url" content="http://luminoid.github.io/blog/Docker-Cheat-Sheet/index.html">
+<meta property="og:title" content="Sketch Usage">
+<meta property="og:url" content="http://luminoid.github.io/blog/Sketch-Usage/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Containers 12345678910111213docker build -t=&quot;luminoid/my_image&quot; .                   # Build an image from current directory&apos;s Dockerfiledocker run username/repository:tag">
+<meta property="og:description" content="Plugin Manager Sketchpacks 1brew cask install sketchpacks Command Palette Runner Plugins Content Generator Content generator allows you quickly create dummy data such as avatars, names, geo location d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-23T17:40:32.418Z">
+<meta property="og:updated_time" content="2018-09-11T02:58:48.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker Cheat Sheet">
-<meta name="twitter:description" content="Containers 12345678910111213docker build -t=&quot;luminoid/my_image&quot; .                   # Build an image from current directory&apos;s Dockerfiledocker run username/repository:tag">
+<meta name="twitter:title" content="Sketch Usage">
+<meta name="twitter:description" content="Plugin Manager Sketchpacks 1brew cask install sketchpacks Command Palette Runner Plugins Content Generator Content generator allows you quickly create dummy data such as avatars, names, geo location d">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/"/>
+  <link rel="canonical" href="http://luminoid.github.io/blog/Sketch-Usage/"/>
 
 
 
@@ -149,7 +149,7 @@
   };
 </script>
 
-  <title>Docker Cheat Sheet | Luminoid's Site</title>
+  <title>Sketch Usage | Luminoid's Site</title>
   
 
 
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Docker-Cheat-Sheet/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Sketch-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luminoid">
@@ -383,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker Cheat Sheet
+          <h1 class="post-title" itemprop="name headline">Sketch Usage
               
             
           </h1>
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="Created: 2017-10-04 11:49:21" itemprop="dateCreated datePublished" datetime="2017-10-04T11:49:21+08:00">2017-10-04</time>
+              <time title="Created: 2018-09-10 22:26:35" itemprop="dateCreated datePublished" datetime="2018-09-10T22:26:35+08:00">2018-09-10</time>
             
 
             
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-02-24 01:40:32" itemprop="dateModified" datetime="2018-02-24T01:40:32+08:00">2018-02-24</time>
+                <time title="Modified: 2018-09-11 10:58:48" itemprop="dateModified" datetime="2018-09-11T10:58:48+08:00">2018-09-11</time>
               
             
           </span>
@@ -442,7 +442,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Design/" itemprop="url" rel="index"><span itemprop="name">Design</span></a></span>
 
                 
                 
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.5k</span>
+                <span title="Symbols count in article">631</span>
               
 
               
@@ -502,8 +502,24 @@
       
 
       
-        <h2 id="containers"><a class="header-anchor" href="#containers"></a>Containers</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></span><br><span class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></span><br><span class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></span><br><span class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></span><br><span class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></span><br><span class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></span><br><span class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></span><br><span class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></span><br><span class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></span><br><span class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></span><br><span class="line">docker images -a                                                                           <span class="comment"># Show all images</span></span><br><span class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></span><br><span class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></span><br></pre></td></tr></table></figure>
+        <h2 id="plugin-manager"><a class="header-anchor" href="#plugin-manager"></a>Plugin Manager</h2>
+<h3 id="sketchpacks"><a class="header-anchor" href="#sketchpacks"></a><a href="https://sketchpacks.com/" target="_blank" rel="noopener">Sketchpacks</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install sketchpacks</span><br></pre></td></tr></table></figure>
+<h2 id="command-palette"><a class="header-anchor" href="#command-palette"></a>Command Palette</h2>
+<h3 id="runner"><a class="header-anchor" href="#runner"></a><a href="https://sketchrunner.com/" target="_blank" rel="noopener">Runner</a></h3>
+<h2 id="plugins"><a class="header-anchor" href="#plugins"></a>Plugins</h2>
+<h3 id="content-generator"><a class="header-anchor" href="#content-generator"></a><a href="https://github.com/timuric/Content-generator-sketch-plugin" target="_blank" rel="noopener">Content Generator</a></h3>
+<p>Content generator allows you quickly create dummy data such as avatars, names, geo location data etc.</p>
+<h3 id="sketch-measure"><a class="header-anchor" href="#sketch-measure"></a><a href="http://utom.design/measure/" target="_blank" rel="noopener">Sketch Measure</a></h3>
+<p>Make it a fun to create spec for developers and teammates</p>
+<h3 id="sketch-palettes"><a class="header-anchor" href="#sketch-palettes"></a><a href="https://github.com/andrewfiorillo/sketch-palettes" target="_blank" rel="noopener">Sketch Palettes</a></h3>
+<p>A Sketch plugin for exporting and importing fill presets. It supports colors, gradients, and Pattern fills.</p>
+<h3 id="icons"><a class="header-anchor" href="#icons"></a><a href="https://github.com/keremciu/sketch-iconfont" target="_blank" rel="noopener">Icons</a></h3>
+<p>This plugin helps you easily insert and manage icons from icon fonts.</p>
+<h3 id="paddy"><a class="header-anchor" href="#paddy"></a><a href="https://github.com/DWilliames/paddy-sketch-plugin" target="_blank" rel="noopener">Paddy</a></h3>
+<p>Automated padding, spacing and alignment for your Sketch layers</p>
+<h3 id="rename-it"><a class="header-anchor" href="#rename-it"></a><a href="http://rodi01.github.io/RenameIt/" target="_blank" rel="noopener">Rename-It</a></h3>
+<p>Keep your Sketch files organized, batch rename layers and artboards.</p>
 
       
     </div>
@@ -524,7 +540,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Docker/" rel="tag"># Docker</a>
+            <a href="/blog/tags/Sketch/" rel="tag"># Sketch</a>
           
         </div>
       
@@ -537,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/" rel="next" title="Using static site generator with GitHub Pages">
-                <i class="fa fa-chevron-left"></i> Using static site generator with GitHub Pages
+              <a href="/blog/iOS-Development-Config/" rel="next" title="iOS Development Config">
+                <i class="fa fa-chevron-left"></i> iOS Development Config
               </a>
             
           </div>
@@ -546,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/UIView-Inheritance-Relationships/" rel="prev" title="UIView Inheritance Relationships">
-                UIView Inheritance Relationships <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -819,7 +831,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#containers"><span class="nav-number">1.</span> <span class="nav-text">Containers</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#plugin-manager"><span class="nav-number">1.</span> <span class="nav-text">Plugin Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sketchpacks"><span class="nav-number">1.1.</span> <span class="nav-text">Sketchpacks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#command-palette"><span class="nav-number">2.</span> <span class="nav-text">Command Palette</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#runner"><span class="nav-number">2.1.</span> <span class="nav-text">Runner</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plugins"><span class="nav-number">3.</span> <span class="nav-text">Plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#content-generator"><span class="nav-number">3.1.</span> <span class="nav-text">Content Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sketch-measure"><span class="nav-number">3.2.</span> <span class="nav-text">Sketch Measure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sketch-palettes"><span class="nav-number">3.3.</span> <span class="nav-text">Sketch Palettes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#icons"><span class="nav-number">3.4.</span> <span class="nav-text">Icons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paddy"><span class="nav-number">3.5.</span> <span class="nav-text">Paddy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rename-it"><span class="nav-number">3.6.</span> <span class="nav-text">Rename-It</span></a></li></ol></li></ol></div>
             
 
           </div>
