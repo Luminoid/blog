@@ -172,7 +172,7 @@ sudo gem install cocoapods
 
 ### Git Config
 ``` bash
-git config --global core.pager "diff-so-fancy | less --tabs=4 -R"
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global color.ui true
 
 git config --global color.diff.meta       "yellow"
