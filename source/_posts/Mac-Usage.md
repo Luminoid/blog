@@ -42,6 +42,9 @@ Location: System Preferences -> Security & Privacy -> General -> Choose “Anywh
 $ sudo spctl --master-disable
 ```
 
+### External Monitor: force RGB mode instead of YCbCr
+[patch-edid.rb](https://gist.github.com/adaugherity/7435890)
+
 ## Directories
 ### Xcode
 Simulator devices data: `~/Library/Developer/CoreSimulator/Devices`

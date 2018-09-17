@@ -22,6 +22,8 @@ Helps you enjoy a faster, safer, and cleaner browsing experience by giving you t
 <!-- more -->
 
 ## Chrome
+- [Experimental Features](chrome://flags/)
+
 ### [Settings](chrome://settings/)
 [Search Engines](chrome://settings/searchEngines)
 
