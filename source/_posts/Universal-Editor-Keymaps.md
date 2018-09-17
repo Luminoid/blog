@@ -27,7 +27,7 @@ This post intended to provide a universal keymaps across different editors and I
 ## Keymaps
 
 | Command | Universal Key | VS Code | Atom | Xcode | JetBrains |
-| ------- | ------------- | ---- | ------ | ----- | --------- |
+| ------- | ------------- | ------- | ---- | ----- | --------- |
 | **Edit Text** | | | | | |
 | Upper case current text               | `shift-cmd-u`     |                   |                   |   | `shift-cmd-u` |
 | Lower case current text               | `shift-cmd-l`     |                   |                   |   | `shift-cmd-u` |
@@ -56,7 +56,6 @@ This post intended to provide a universal keymaps across different editors and I
 | Toggle Command Palette                | `shift-cmd-p`     |                   |                   | / | /             |
 | Toggle Terminal                       | `` ctrl-` ``      |                   |                   | / |               |
 | Toggle Sidebar                        | `cmd-\ `          |                   |                   |   |               |
-| Open User Settings                    | `cmd-,`           |                   |                   |   |               |
 | **Tab**                               |                   |                   |                   |   |               |
 | Open new tab                          | `cmd-t`           |                   |                   |   | /             |
 | Switch to the previous tab            | `shift-cmd-[`     |                   |                   |   |               |
