@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WWDC Note]]></title>
+    <url>%2Fblog%2FWWDC-Note%2F</url>
+    <content type="text"><![CDATA[Session 414 Understanding and Analyzing Application Crash Reports]]></content>
+      <categories>
+        <category>Apple</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Xcode Usage]]></title>
     <url>%2Fblog%2FXcode-Usage%2F</url>
     <content type="text"><![CDATA[Key Bindings Universal Editor Keymaps Navigate Command Key Open File in Assistant Editor alt-click Jump to Definition ctrl-cmd-j Jump to Definition in Assistant Editor ctrl-alt-cmd-j Go Back ctrl-cmd-left Go Forward ctrl-cmd-right View Command Key Show Document Items ctrl-6]]></content>

@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-09-17T06:34:51.856Z</updated>
+  <updated>2018-09-17T12:21:00.417Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WWDC Note</title>
+    <link href="http://luminoid.github.io/blog/WWDC-Note/"/>
+    <id>http://luminoid.github.io/blog/WWDC-Note/</id>
+    <published>2018-09-17T07:38:53.000Z</published>
+    <updated>2018-09-17T12:21:00.417Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="session-414"><a class="header-anchor" href="#session-414"></a>Session 414</h2><ul><li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;session-414&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#session-414&quot;&gt;&lt;/a&gt;Session 414&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library
+      
+    
+    </summary>
+    
+      <category term="Apple" scheme="http://luminoid.github.io/blog/categories/Apple/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Xcode Usage</title>
@@ -589,39 +614,6 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
       <category term="Safari" scheme="http://luminoid.github.io/blog/tags/Safari/"/>
     
       <category term="Chrome" scheme="http://luminoid.github.io/blog/tags/Chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redux Docs Key Point</title>
-    <link href="http://luminoid.github.io/blog/Redux-Docs-Key-Point/"/>
-    <id>http://luminoid.github.io/blog/Redux-Docs-Key-Point/</id>
-    <published>2017-12-25T12:41:46.000Z</published>
-    <updated>2018-05-03T08:34:53.074Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://redux.js.org" target="_blank" rel="noopener">Redux Docs</a></p><h2 id="three-principles"><a class="header-anchor" href="#three-principles"></a>Three Principles</h2><h3 id="single-source-of-truth"><a class="header-anchor" href="#single-source-of-truth"></a>Single source of truth</h3><p>The <a href="https://redux.js.org/docs/Glossary.html#state" target="_blank" rel="noopener">state</a> of your whole application is stored in an object tree within a single <a href="https://redux.js.org/docs/Glossary.html#store" target="_blank" rel="noopener">store</a>.</p><h3 id="state-is-read-only"><a class="header-anchor" href="#state-is-read-only"></a>State is read-only</h3><p>The only way to change the state is to emit an <a href="https://redux.js.org/docs/Glossary.html#action" target="_blank" rel="noopener">action</a>, an object describing what happened.</p><h3 id="changes-are-made-with-pure-functions"><a class="header-anchor" href="#changes-are-made-with-pure-functions"></a>Changes are made with pure functions</h3><p>To specify how the state tree is transformed by actions, you write pure <a href="https://redux.js.org/docs/Glossary.html#reducer" target="_blank" rel="noopener">reducers</a>.</p><a id="more"></a><h2 id="action"><a class="header-anchor" href="#action"></a>Action</h2><h3 id="action-creator"><a class="header-anchor" href="#action-creator"></a>Action creator</h3><p>Action creator: function that returns an action.</p><h2 id="reducers"><a class="header-anchor" href="#reducers"></a>Reducers</h2><h3 id="handling-actions"><a class="header-anchor" href="#handling-actions"></a>Handling Actions</h3><ul><li>Don’t mutate the <code>state</code>, create a copy with <code>Object.assign({}, state, newState)</code>.</li><li>Return the previous <code>state</code> in the <code>default</code> case.</li></ul><h3 id="splitting-reducers"><a class="header-anchor" href="#splitting-reducers"></a>Splitting Reducers</h3><p>Reducer composition: Each of reducers is managing its own part of the global state. The <code>state</code> parameter is different for every reducer, and corresponds to the part of the state it manages.<br>Redux provides a utility called <a href="https://redux.js.org/docs/api/combineReducers.html" target="_blank" rel="noopener"><code>combineReducers()</code></a> to generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.</p><h2 id="store"><a class="header-anchor" href="#store"></a>Store</h2><p>The store has the following responsibilities:</p><ul><li>Holds application state;</li><li>Allows access to state via <a href="https://redux.js.org/docs/api/Store.html#getState" target="_blank" rel="noopener"><code>getState()</code></a>;</li><li>Allows state to be updated via <a href="https://redux.js.org/docs/api/Store.html#dispatch" target="_blank" rel="noopener"><code>dispatch(action)</code></a>;</li><li>Registers listeners via <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="noopener"><code>subscribe(listener)</code></a>;</li><li>Handles unregistering of listeners via the function returned by <a href="https://redux.js.org/docs/api/Store.html#subscribe" target="_blank" rel="noopener"><code>subscribe(listener)</code></a>.</li></ul><h2 id="data-flow"><a class="header-anchor" href="#data-flow"></a>Data Flow</h2><p>Redux architecture revolves around a strict unidirectional data flow.<br>The data lifecycle in any Redux app follows these 4 steps:</p><ol><li>You call <code>store.dispatch(action)</code>.</li><li>The Redux store calls the reducer function you gave it.</li><li>The root reducer may combine the output of multiple reducers into a single state tree.</li><li>The Redux store saves the complete state tree returned by the root reducer.<br>Every listener registered with <code>store.subscribe(listener)</code> will now be invoked; listeners may call <code>store.getState()</code> to get the current state.</li></ol><h2 id="usage-with-react"><a class="header-anchor" href="#usage-with-react"></a>Usage with React</h2><h3 id="presentational-and-container-components"><a class="header-anchor" href="#presentational-and-container-components"></a>Presentational and Container Components</h3><table><thead><tr><th></th><th>Presentational Components</th><th>Container Components</th></tr></thead><tbody><tr><td>Purpose</td><td>How things look (markup, styles)</td><td>How things work (data fetching, state updates)</td></tr><tr><td>Aware of Redux</td><td>No</td><td>Yes</td></tr><tr><td>To read data</td><td>Read data from props</td><td>Subscribe to Redux state</td></tr><tr><td>To change data</td><td>Invoke callbacks from props</td><td>Dispatch Redux actions</td></tr><tr><td>Are written</td><td>By hand</td><td>Usually generated by React Redux</td></tr></tbody></table><h3 id="presentational-components"><a class="header-anchor" href="#presentational-components"></a>Presentational Components</h3><p>Write functional stateless components unless you need to use local state or the lifecycle methods.</p><h3 id="container-components"><a class="header-anchor" href="#container-components"></a>Container Components</h3><p>Use React Redux library’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="noopener"><code>connect()</code></a> function to generate container components.<br>To use <code>connect()</code>, you need to define a special function called <code>mapStateToProps()</code> that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.<br>In a similar fashion, you can define a function called <code>mapDispatchToProps()</code> that receives the <code>dispatch()</code> method and returns callback props that you want to inject into the presentational component.</p><h3 id="passing-the-store"><a class="header-anchor" href="#passing-the-store"></a>Passing the Store</h3><p>Use a special React Redux component called <code>&lt;Provider&gt;</code> to magically make the store available to all container components in the application without passing it explicitly.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://redux.js.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Redux Docs&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;three-principles&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#three-principles&quot;&gt;&lt;/a&gt;Three Principles&lt;/h2&gt;
-&lt;h3 id=&quot;single-source-of-truth&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#single-source-of-truth&quot;&gt;&lt;/a&gt;Single source of truth&lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#state&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;state&lt;/a&gt; of your whole application is stored in an object tree within a single &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#store&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;store&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;state-is-read-only&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#state-is-read-only&quot;&gt;&lt;/a&gt;State is read-only&lt;/h3&gt;
-&lt;p&gt;The only way to change the state is to emit an &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#action&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;action&lt;/a&gt;, an object describing what happened.&lt;/p&gt;
-&lt;h3 id=&quot;changes-are-made-with-pure-functions&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#changes-are-made-with-pure-functions&quot;&gt;&lt;/a&gt;Changes are made with pure functions&lt;/h3&gt;
-&lt;p&gt;To specify how the state tree is transformed by actions, you write pure &lt;a href=&quot;https://redux.js.org/docs/Glossary.html#reducer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;reducers&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
-    
-      <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
-    
-    
-      <category term="Redux" scheme="http://luminoid.github.io/blog/tags/Redux/"/>
-    
-      <category term="Note" scheme="http://luminoid.github.io/blog/tags/Note/"/>
     
   </entry>
   
