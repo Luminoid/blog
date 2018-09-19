@@ -119,18 +119,18 @@
 
 
 
-  <meta name="description" content="WWDC 2018 Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh = OSSignpostI">
+  <meta name="description" content="DeveloperTools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh">
 <meta name="keywords" content="WWDC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WWDC Note">
 <meta property="og:url" content="http://luminoid.github.io/blog/WWDC-Note/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="WWDC 2018 Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh = OSSignpostI">
+<meta property="og:description" content="DeveloperTools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-19T13:34:11.524Z">
+<meta property="og:updated_time" content="2018-09-19T14:53:16.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WWDC Note">
-<meta name="twitter:description" content="WWDC 2018 Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh = OSSignpostI">
+<meta name="twitter:description" content="DeveloperTools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh">
 
 
 
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-19 21:34:11" itemprop="dateModified" datetime="2018-09-19T21:34:11+08:00">2018-09-19</time>
+                <time title="Modified: 2018-09-19 22:53:16" itemprop="dateModified" datetime="2018-09-19T22:53:16+08:00">2018-09-19</time>
               
             
           </span>
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.1k</span>
+                <span title="Symbols count in article">1.3k</span>
               
 
               
@@ -502,22 +502,29 @@
       
 
       
-        <h2 id="wwdc-2018"><a class="header-anchor" href="#wwdc-2018"></a>WWDC 2018</h2>
-<h3 id="session-405-measuring-performance-using-logging"><a class="header-anchor" href="#session-405-measuring-performance-using-logging"></a>Session 405: Measuring Performance Using Logging</h3>
+        <h2 id="developertools"><a class="header-anchor" href="#developertools"></a>DeveloperTools</h2>
+<h3 id="wwdc18-session-405-measuring-performance-using-logging"><a class="header-anchor" href="#wwdc18-session-405-measuring-performance-using-logging"></a>WWDC18, Session 405: Measuring Performance Using Logging</h3>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshLog = <span class="type">OSLog</span>(subsystem: <span class="string">"com.example.your-app"</span>, category: <span class="string">"RefreshOperations"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spidForRefresh = <span class="type">OSSignpostID</span>(log: refreshLog)</span><br><span class="line">os_signpost(.begin, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> panel.elements &#123;</span><br><span class="line">    <span class="keyword">let</span> spid = <span class="type">OSSignpostID</span>(log: refreshLog, object: element)</span><br><span class="line">    os_signpost(.begin, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    fetchAssetAsync(<span class="keyword">for</span>: element) &#123;</span><br><span class="line">        os_signpost(.end, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">notifyWhenDone &#123;</span><br><span class="line">    os_signpost(.end, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#session-414-understanding-crashes-and-crash-logs"></a>Session 414: Understanding Crashes and Crash Logs</h3>
+<h3 id="wwdc18-session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"></a>WWDC18, Session 414: Understanding Crashes and Crash Logs</h3>
 <ul>
 <li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li>
 </ul>
-<h3 id="session-416-ios-memory-deep-dive"><a class="header-anchor" href="#session-416-ios-memory-deep-dive"></a>Session 416: iOS Memory Deep Dive</h3>
+<h3 id="wwdc18-session-416-ios-memory-deep-dive"><a class="header-anchor" href="#wwdc18-session-416-ios-memory-deep-dive"></a>WWDC18, Session 416: iOS Memory Deep Dive</h3>
 <ul>
 <li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li>
 <li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li>
 </ul>
-<h2 id="wwdc-2015"><a class="header-anchor" href="#wwdc-2015"></a>WWDC 2015</h2>
-<h3 id="session-406-ui-testing-in-xcode"><a class="header-anchor" href="#session-406-ui-testing-in-xcode"></a>Session 406: UI Testing in Xcode</h3>
+<a id="more"></a>
+<h3 id="wwdc17-session-409-what-s-new-in-testing"><a class="header-anchor" href="#wwdc17-session-409-what-s-new-in-testing"></a>WWDC17, Session 409: What’s New in Testing</h3>
 <ul>
-<li>XCTest + Accessibility</li>
+<li>Async Testing: <code>XCTWaiter</code> and <code>XCTestExpectation</code></li>
+<li>Snapshot performance optimization: <code>firstMatch</code></li>
+<li><code>XCTActivity</code>, <code>XCTAttachment</code> and <code>XCUIScreenshotProviding</code></li>
+</ul>
+<h3 id="wwdc15-session-406-ui-testing-in-xcode"><a class="header-anchor" href="#wwdc15-session-406-ui-testing-in-xcode"></a>WWDC15, Session 406: UI Testing in Xcode</h3>
+<ul>
+<li>Core Technologies: XCTest + Accessibility</li>
+<li>UI recording</li>
 </ul>
 
       
@@ -826,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#wwdc-2018"><span class="nav-number">1.</span> <span class="nav-text">WWDC 2018</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-405-measuring-performance-using-logging"><span class="nav-number">1.1.</span> <span class="nav-text">Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session-414-understanding-crashes-and-crash-logs"><span class="nav-number">1.2.</span> <span class="nav-text">Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session-416-ios-memory-deep-dive"><span class="nav-number">1.3.</span> <span class="nav-text">Session 416: iOS Memory Deep Dive</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wwdc-2015"><span class="nav-number">2.</span> <span class="nav-text">WWDC 2015</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session-406-ui-testing-in-xcode"><span class="nav-number">2.1.</span> <span class="nav-text">Session 406: UI Testing in Xcode</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#developertools"><span class="nav-number">1.</span> <span class="nav-text">DeveloperTools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-405-measuring-performance-using-logging"><span class="nav-number">1.1.</span> <span class="nav-text">WWDC18, Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"><span class="nav-number">1.2.</span> <span class="nav-text">WWDC18, Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-416-ios-memory-deep-dive"><span class="nav-number">1.3.</span> <span class="nav-text">WWDC18, Session 416: iOS Memory Deep Dive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-409-what-s-new-in-testing"><span class="nav-number">1.4.</span> <span class="nav-text">WWDC17, Session 409: What’s New in Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-406-ui-testing-in-xcode"><span class="nav-number">1.5.</span> <span class="nav-text">WWDC15, Session 406: UI Testing in Xcode</span></a></li></ol></li></ol></div>
             
 
           </div>

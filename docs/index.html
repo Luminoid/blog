@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-19 21:34:11" itemprop="dateModified" datetime="2018-09-19T21:34:11+08:00">2018-09-19</time>
+                <time title="Modified: 2018-09-19 22:53:16" itemprop="dateModified" datetime="2018-09-19T22:53:16+08:00">2018-09-19</time>
               
             
           </span>
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.1k</span>
+                <span title="Symbols count in article">1.3k</span>
               
 
               
@@ -496,26 +496,25 @@
 
       
         
-          
-            <h2 id="wwdc-2018"><a class="header-anchor" href="#wwdc-2018"></a>WWDC 2018</h2>
-<h3 id="session-405-measuring-performance-using-logging"><a class="header-anchor" href="#session-405-measuring-performance-using-logging"></a>Session 405: Measuring Performance Using Logging</h3>
+          <h2 id="developertools"><a class="header-anchor" href="#developertools"></a>DeveloperTools</h2>
+<h3 id="wwdc18-session-405-measuring-performance-using-logging"><a class="header-anchor" href="#wwdc18-session-405-measuring-performance-using-logging"></a>WWDC18, Session 405: Measuring Performance Using Logging</h3>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshLog = <span class="type">OSLog</span>(subsystem: <span class="string">"com.example.your-app"</span>, category: <span class="string">"RefreshOperations"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spidForRefresh = <span class="type">OSSignpostID</span>(log: refreshLog)</span><br><span class="line">os_signpost(.begin, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> panel.elements &#123;</span><br><span class="line">    <span class="keyword">let</span> spid = <span class="type">OSSignpostID</span>(log: refreshLog, object: element)</span><br><span class="line">    os_signpost(.begin, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    fetchAssetAsync(<span class="keyword">for</span>: element) &#123;</span><br><span class="line">        os_signpost(.end, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">notifyWhenDone &#123;</span><br><span class="line">    os_signpost(.end, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#session-414-understanding-crashes-and-crash-logs"></a>Session 414: Understanding Crashes and Crash Logs</h3>
+<h3 id="wwdc18-session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"></a>WWDC18, Session 414: Understanding Crashes and Crash Logs</h3>
 <ul>
 <li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li>
 </ul>
-<h3 id="session-416-ios-memory-deep-dive"><a class="header-anchor" href="#session-416-ios-memory-deep-dive"></a>Session 416: iOS Memory Deep Dive</h3>
+<h3 id="wwdc18-session-416-ios-memory-deep-dive"><a class="header-anchor" href="#wwdc18-session-416-ios-memory-deep-dive"></a>WWDC18, Session 416: iOS Memory Deep Dive</h3>
 <ul>
 <li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li>
 <li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li>
 </ul>
-<h2 id="wwdc-2015"><a class="header-anchor" href="#wwdc-2015"></a>WWDC 2015</h2>
-<h3 id="session-406-ui-testing-in-xcode"><a class="header-anchor" href="#session-406-ui-testing-in-xcode"></a>Session 406: UI Testing in Xcode</h3>
-<ul>
-<li>XCTest + Accessibility</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/WWDC-Note/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
