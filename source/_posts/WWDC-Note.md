@@ -9,3 +9,7 @@ keywords: WWDC
 
 ## Session 414
 - [Understanding and Analyzing Application Crash Reports](https://developer.apple.com/library/archive/technotes/tn2151/_index.html)
+
+## Session 416
+- Image-rendering formats: Use `UIGraphicsImageRenderer` instead of `UIGraphicsBeginImageContextWithOptions`
+- Downsampling: Use `ImageIO` instead of `UIImage`

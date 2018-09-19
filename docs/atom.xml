@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://luminoid.github.io/blog/"/>
-  <updated>2018-09-17T12:21:00.417Z</updated>
+  <updated>2018-09-19T09:43:58.449Z</updated>
   <id>http://luminoid.github.io/blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://luminoid.github.io/blog/WWDC-Note/"/>
     <id>http://luminoid.github.io/blog/WWDC-Note/</id>
     <published>2018-09-17T07:38:53.000Z</published>
-    <updated>2018-09-17T12:21:00.417Z</updated>
+    <updated>2018-09-19T09:43:58.449Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="session-414"><a class="header-anchor" href="#session-414"></a>Session 414</h2><ul><li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="session-414"><a class="header-anchor" href="#session-414"></a>Session 414</h2><ul><li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li></ul><h2 id="session-416"><a class="header-anchor" href="#session-416"></a>Session 416</h2><ul><li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li><li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li></ul>]]></content>
     
     <summary type="html">
     
