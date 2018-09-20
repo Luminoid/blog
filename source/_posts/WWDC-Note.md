@@ -41,6 +41,15 @@ notifyWhenDone {
 - Snapshot performance optimization: `firstMatch`
 - `XCTActivity`, `XCTAttachment` and `XCUIScreenshotProviding`
 
+### WWDC17, Session 414: Engineering for Testability
+- Testable
+    - Protocols and parameterization
+    - Separating logic and effects
+- Scalable(UI tests)
+    - Abstracting UI element queries
+    - Creating objects and utility functions
+    - Utilizing keyboard shortcuts
+
 ### WWDC15, Session 406: UI Testing in Xcode
 - Core Technologies: XCTest + Accessibility
 - UI recording
