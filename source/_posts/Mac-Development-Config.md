@@ -151,6 +151,9 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize we
 - https://github.com/zenorocha/alfred-workflows
 - http://www.alfredworkflow.com/
 
+### [OpenInCode](https://github.com/sozercan/OpenInCode)
+macOS Finder toolbar app to open current folder in Visual Studio Code
+
 ## Font
 ### [Fira Code](https://github.com/tonsky/FiraCode)
 #### Install
