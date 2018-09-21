@@ -43,15 +43,18 @@ Muzli is a new-tab Chrome extension that instantly delivers relevant design stor
 ##### [掘金](https://juejin.im/extension)
 为设计师、程序员、产品经理每日发现优质内容。
 
+##### [Vimium](http://vimium.github.io/)
+The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim.
+
 #### Web Development
 ##### [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
 Extension to show code tree for GitHub.
 
-##### [EditThisCookie](http://www.editthiscookie.com/)
-EditThisCookie is a cookie manager. You can add, delete, edit, search, protect, and block cookies!
-
 ##### [Wappalyzer](https://www.wappalyzer.com/)
 Identify web technologies.
+
+##### [EditThisCookie](http://www.editthiscookie.com/)
+EditThisCookie is a cookie manager. You can add, delete, edit, search, protect, and block cookies!
 
 ##### [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa/related)
 Makes JSON easy to read.
