@@ -246,7 +246,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/blog/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">35</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">36</span></a>
   </li>
         
         
@@ -262,7 +262,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/blog/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">32</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">33</span></a>
   </li>
         
         
@@ -347,6 +347,232 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/RxSwift-Concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/RxSwift-Concepts/" itemprop="url">
+                  RxSwift Concepts
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-24 14:55:56 / Modified: 15:19:22" itemprop="dateCreated datePublished" datetime="2018-09-24T14:55:56+08:00">2018-09-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">542</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="reactivex"><a class="header-anchor" href="#reactivex"></a>ReactiveX</h2>
+<p><a href="http://reactivex.io/" target="_blank" rel="noopener">http://reactivex.io/</a></p>
+<p>Observables fill the gap by being the ideal way to access asynchronous sequences of multiple items.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>single items</th>
+<th>multiple items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>synchronous</td>
+<td><code>T getData()</code></td>
+<td><code>Iterable&lt;T&gt; getData()</code></td>
+</tr>
+<tr>
+<td>asynchronous</td>
+<td><code>Future&lt;T&gt; getData()</code></td>
+<td><code>Observable&lt;T&gt; getData()</code></td>
+</tr>
+</tbody>
+</table>
+<p>An Observable is the asynchronous/push <a href="https://en.wikipedia.org/wiki/Dual_(category_theory)" target="_blank" rel="noopener">dual</a> to the synchronous/pull Iterable</p>
+<table>
+<thead>
+<tr>
+<th>event</th>
+<th>Iterable (pull)</th>
+<th>Observable (push)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>retrieve data</td>
+<td><code>T next()</code></td>
+<td><code>onNext(T)</code></td>
+</tr>
+<tr>
+<td>discover error</td>
+<td>throws <code>Exception</code></td>
+<td><code>onError(Exception)</code></td>
+</tr>
+<tr>
+<td>complete</td>
+<td><code>!hasNext()</code></td>
+<td><code>onCompleted()</code></td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2173,203 +2399,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/iOS-Development-Config/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/iOS-Development-Config/" itemprop="url">
-                  iOS Development Config
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-21 22:55:52" itemprop="dateCreated datePublished" datetime="2018-08-21T22:55:52+08:00">2018-08-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-23 00:13:56" itemprop="dateModified" datetime="2018-08-23T00:13:56+08:00">2018-08-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">235</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="framework"><a class="header-anchor" href="#framework"></a>Framework</h2>
-<h3 id="rxswift"><a class="header-anchor" href="#rxswift"></a><a href="https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md" target="_blank" rel="noopener">RxSwift</a></h3>
-<p>Reactive Programming in Swift.</p>
-<h3 id="texture"><a class="header-anchor" href="#texture"></a><a href="http://texturegroup.org/" target="_blank" rel="noopener">Texture</a></h3>
-<p>Smooth asynchronous user interfaces for iOS apps.</p>
-<a href="/blog/Texture-Concepts/" title="Texture Concepts">Texture Concepts</a>
-<h3 id="cartography"><a class="header-anchor" href="#cartography"></a><a href="http://robb.github.io/Cartography/" target="_blank" rel="noopener">Cartography</a></h3>
-<p>A declarative Auto Layout DSL for Swift.</p>
-<h3 id="objectmapper"><a class="header-anchor" href="#objectmapper"></a><a href="https://github.com/Hearst-DD/ObjectMapper" target="_blank" rel="noopener">ObjectMapper</a></h3>
-<p>Simple JSON Object mapping written in Swift.</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2423,7 +2452,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2539,7 +2568,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -2635,7 +2666,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">240k</span>
+    <span title="Symbols count total">241k</span>
   
 
   

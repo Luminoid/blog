@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[RxSwift Concepts]]></title>
+    <url>%2Fblog%2FRxSwift-Concepts%2F</url>
+    <content type="text"><![CDATA[ReactiveX http://reactivex.io/ Observables fill the gap by being the ideal way to access asynchronous sequences of multiple items. single items multiple items synchronous T getData() Iterable&lt;T&gt; getData() asynchronous Future&lt;T&gt; getData() Observable&lt;T&gt; getData() An Observable is the asynchronous/push dual to the synchronous/pull Iterable event Iterable (pull) Observable (push) retrieve data T next() onNext(T) discover error throws Exception onError(Exception) complete !hasNext() onCompleted()]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>Rx</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WWDC Note]]></title>
     <url>%2Fblog%2FWWDC-Note%2F</url>
     <content type="text"><![CDATA[Developer Tools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: "com.example.your-app", category: "RefreshOperations")let spidForRefresh = OSSignpostID(log: refreshLog)os_signpost(.begin, log: refreshLog, name: "Refresh Panel", signpostID: spidForRefresh)for element in panel.elements &#123; let spid = OSSignpostID(log: refreshLog, object: element) os_signpost(.begin, log: refreshLog, name: "Fetch Asset", signpostID: spid) fetchAssetAsync(for: element) &#123; os_signpost(.end, log: refreshLog, name: "Fetch Asset", signpostID: spid) &#125;&#125;notifyWhenDone &#123; os_signpost(.end, log: refreshLog, name: "Refresh Panel", signpostID: spidForRefresh)&#125; WWDC18, Session 414: Understanding Crashes and Crash Logs Understanding and Analyzing Application Crash Reports WWDC18, Session 416: iOS Memory Deep Dive Image-rendering formats: Use UIGraphicsImageRenderer instead of UIGraphicsBeginImageContextWithOptions Downsampling: Use ImageIO instead of UIImage WWDC17, Session 409: What’s New in Testing Async Testing: XCTWaiter and XCTestExpectation Snapshot performance optimization: firstMatch XCTActivity, XCTAttachment and XCUIScreenshotProviding WWDC17, Session 414: Engineering for Testability Testable Protocols and parameterization Separating logic and effects Scalable(UI tests) Abstracting UI element queries Creating objects and utility functions Utilizing keyboard shortcuts WWDC15, Session 406: UI Testing in Xcode Core Technologies: XCTest + Accessibility UI recording Frameworks WWDC15, Session 201: iOS Accessibility UIAccessibility]]></content>
