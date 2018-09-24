@@ -277,14 +277,20 @@ h6 {
 p {
   margin: 0 0 20px 0;
 }
-a {
+a,
+span.exturl {
+  background-color: transparent;
   color: #555;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
+  cursor: pointer;
 }
-a:hover {
+a:hover,
+span.exturl:hover,
+a:active,
+span.exturl:active {
   color: #222;
   border-bottom-color: #222;
 }
@@ -1340,6 +1346,10 @@ pre .javascript .function {
     word-break: break-word;
   }
 }
+.post-body span.exturl .fa {
+  font-size: 14px;
+  margin-left: 4px;
+}
 .post-body .fancybox img {
   display: block !important;
   margin: 0 auto;
@@ -1953,7 +1963,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7599;
+  background: #13c8cf;
 }
 .links-of-blogroll {
   font-size: 13px;
