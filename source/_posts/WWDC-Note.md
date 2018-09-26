@@ -54,6 +54,9 @@ notifyWhenDone {
 - Core Technologies: XCTest + Accessibility
 - UI recording
 
+### WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode
+
+
 ## Frameworks
 ### WWDC15, Session 201: iOS Accessibility
 - `UIAccessibility`

@@ -13,9 +13,7 @@ keywords:
 
 ## Upgrade
 ``` bash
-$ brew update
-$ brew upgrade
-$ brew cleanup
+$ bubu  # brew update && brew outdated && brew upgrade && brew cleanup
 $ brew prune
 $ brew doctor
 $ brew cask upgrade
