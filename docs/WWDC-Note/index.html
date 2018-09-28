@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Developer Tools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-25T06:28:55.456Z">
+<meta property="og:updated_time" content="2018-09-28T03:58:26.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WWDC Note">
 <meta name="twitter:description" content="Developer Tools WWDC18, Session 405: Measuring Performance Using Logging 123456789101112131415let refreshLog = OSLog(subsystem: &quot;com.example.your-app&quot;, category: &quot;RefreshOperations&quot;)let spidForRefresh">
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-25 14:28:55" itemprop="dateModified" datetime="2018-09-25T14:28:55+08:00">2018-09-25</time>
+                <time title="Modified: 2018-09-28 11:58:26" itemprop="dateModified" datetime="2018-09-28T11:58:26+08:00">2018-09-28</time>
               
             
           </span>
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.7k</span>
+                <span title="Symbols count in article">2.6k</span>
               
 
               
@@ -537,12 +537,83 @@
 </ul>
 </li>
 </ul>
+<h3 id="wwdc16-session-409-advanced-testing-and-continuous-integration"><a class="header-anchor" href="#wwdc16-session-409-advanced-testing-and-continuous-integration"></a>WWDC16, Session 409: Advanced Testing and Continuous Integration</h3>
+<h4 id="testing-overview"><a class="header-anchor" href="#testing-overview"></a>Testing Overview</h4>
+<h5 id="xctest"><a class="header-anchor" href="#xctest"></a>XCTest</h5>
+<p>Testing framework<br>
+Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <code>Unit.xctest</code></p>
+<h5 id="xcode"><a class="header-anchor" href="#xcode"></a>Xcode</h5>
+<p>Test harness</p>
+<ul>
+<li>Author tests</li>
+<li>Execute tests</li>
+<li>Review reports</li>
+</ul>
+<h5 id="xcode-server"><a class="header-anchor" href="#xcode-server"></a>Xcode Server</h5>
+<p>Continuous Integration</p>
+<ul>
+<li>Schedules bot runs</li>
+<li>Generates reports</li>
+<li>Sends notifications</li>
+</ul>
+<h5 id="xcodebuild"><a class="header-anchor" href="#xcodebuild"></a>xcodebuild</h5>
+<p>Command line tool</p>
+<ul>
+<li>Used by Xcode Server</li>
+<li>Build and execute tests</li>
+<li>For custom CI systems</li>
+</ul>
+<h4 id="testing-concepts"><a class="header-anchor" href="#testing-concepts"></a>Testing Concepts</h4>
+<h5 id="compilation"><a class="header-anchor" href="#compilation"></a>Compilation</h5>
+<ul>
+<li><code>.xctest</code></li>
+<li><code>.app</code></li>
+</ul>
+<h5 id="hosting"><a class="header-anchor" href="#hosting"></a>Hosting</h5>
+<table>
+<thead>
+<tr>
+<th>Unit Tests</th>
+<th>UI Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct access to host app data and APIs</td>
+<td>Uses Accessibility to access target app</td>
+</tr>
+<tr>
+<td>All tests run in single app launch</td>
+<td>Tests launch app for every test case</td>
+</tr>
+</tbody>
+</table>
+<h5 id="observation"><a class="header-anchor" href="#observation"></a>Observation</h5>
+<p><code>XCTestObservation</code> Protocol</p>
+<h4 id="new-features"><a class="header-anchor" href="#new-features"></a>New Features</h4>
+<ul>
+<li>Xcode
+<ul>
+<li>Crash Log Gathering</li>
+</ul>
+</li>
+<li>Xcode Server
+<ul>
+<li>Advanced Triggers</li>
+<li>Issue Tracking and Blame</li>
+<li>Configurable Integration User</li>
+</ul>
+</li>
+</ul>
 <h3 id="wwdc15-session-406-ui-testing-in-xcode"><a class="header-anchor" href="#wwdc15-session-406-ui-testing-in-xcode"></a>WWDC15, Session 406: UI Testing in Xcode</h3>
 <ul>
 <li>Core Technologies: XCTest + Accessibility</li>
 <li>UI recording</li>
 </ul>
 <h3 id="wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"><a class="header-anchor" href="#wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"></a>WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode</h3>
+<ul>
+<li>Xcode Server: Scheme, Bot, Integration</li>
+</ul>
 <h2 id="frameworks"><a class="header-anchor" href="#frameworks"></a>Frameworks</h2>
 <h3 id="wwdc15-session-201-ios-accessibility"><a class="header-anchor" href="#wwdc15-session-201-ios-accessibility"></a>WWDC15, Session 201: iOS Accessibility</h3>
 <ul>
@@ -861,7 +932,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#developer-tools"><span class="nav-number">1.</span> <span class="nav-text">Developer Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-405-measuring-performance-using-logging"><span class="nav-number">1.1.</span> <span class="nav-text">WWDC18, Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"><span class="nav-number">1.2.</span> <span class="nav-text">WWDC18, Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-416-ios-memory-deep-dive"><span class="nav-number">1.3.</span> <span class="nav-text">WWDC18, Session 416: iOS Memory Deep Dive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-409-what-s-new-in-testing"><span class="nav-number">1.4.</span> <span class="nav-text">WWDC17, Session 409: What’s New in Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-414-engineering-for-testability"><span class="nav-number">1.5.</span> <span class="nav-text">WWDC17, Session 414: Engineering for Testability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-406-ui-testing-in-xcode"><span class="nav-number">1.6.</span> <span class="nav-text">WWDC15, Session 406: UI Testing in Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"><span class="nav-number">1.7.</span> <span class="nav-text">WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frameworks"><span class="nav-number">2.</span> <span class="nav-text">Frameworks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-201-ios-accessibility"><span class="nav-number">2.1.</span> <span class="nav-text">WWDC15, Session 201: iOS Accessibility</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#developer-tools"><span class="nav-number">1.</span> <span class="nav-text">Developer Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-405-measuring-performance-using-logging"><span class="nav-number">1.1.</span> <span class="nav-text">WWDC18, Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"><span class="nav-number">1.2.</span> <span class="nav-text">WWDC18, Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-416-ios-memory-deep-dive"><span class="nav-number">1.3.</span> <span class="nav-text">WWDC18, Session 416: iOS Memory Deep Dive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-409-what-s-new-in-testing"><span class="nav-number">1.4.</span> <span class="nav-text">WWDC17, Session 409: What’s New in Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-414-engineering-for-testability"><span class="nav-number">1.5.</span> <span class="nav-text">WWDC17, Session 414: Engineering for Testability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc16-session-409-advanced-testing-and-continuous-integration"><span class="nav-number">1.6.</span> <span class="nav-text">WWDC16, Session 409: Advanced Testing and Continuous Integration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-overview"><span class="nav-number">1.6.1.</span> <span class="nav-text">Testing Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#xctest"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">XCTest</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">Xcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode-server"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">Xcode Server</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcodebuild"><span class="nav-number">1.6.1.4.</span> <span class="nav-text">xcodebuild</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-concepts"><span class="nav-number">1.6.2.</span> <span class="nav-text">Testing Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#compilation"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Compilation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hosting"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">Hosting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#observation"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-features"><span class="nav-number">1.6.3.</span> <span class="nav-text">New Features</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-406-ui-testing-in-xcode"><span class="nav-number">1.7.</span> <span class="nav-text">WWDC15, Session 406: UI Testing in Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"><span class="nav-number">1.8.</span> <span class="nav-text">WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frameworks"><span class="nav-number">2.</span> <span class="nav-text">Frameworks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-201-ios-accessibility"><span class="nav-number">2.1.</span> <span class="nav-text">WWDC15, Session 201: iOS Accessibility</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -893,7 +964,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">241k</span>
+    <span title="Symbols count total">242k</span>
   
 
   

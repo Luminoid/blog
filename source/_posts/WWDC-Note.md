@@ -50,12 +50,58 @@ notifyWhenDone {
     - Creating objects and utility functions
     - Utilizing keyboard shortcuts
 
+### WWDC16, Session 409: Advanced Testing and Continuous Integration
+#### Testing Overview
+##### XCTest
+Testing framework
+Compile: `.m`, `.swift` => `UI.xctest`, `Unit.xctest`
+
+##### Xcode
+Test harness
+- Author tests
+- Execute tests
+- Review reports
+
+##### Xcode Server
+Continuous Integration
+- Schedules bot runs
+- Generates reports
+- Sends notifications
+
+##### xcodebuild
+Command line tool
+- Used by Xcode Server
+- Build and execute tests
+- For custom CI systems
+
+#### Testing Concepts
+##### Compilation
+- `.xctest`
+- `.app`
+
+##### Hosting
+| Unit Tests                                | UI Tests                                  |
+|-------------------------------------------|-------------------------------------------|
+| Direct access to host app data and APIs   | Uses Accessibility to access target app   |
+| All tests run in single app launch        | Tests launch app for every test case      |
+
+##### Observation
+`XCTestObservation` Protocol
+
+#### New Features
+- Xcode
+    - Crash Log Gathering
+- Xcode Server
+    - Advanced Triggers
+    - Issue Tracking and Blame
+    - Configurable Integration User
+
 ### WWDC15, Session 406: UI Testing in Xcode
 - Core Technologies: XCTest + Accessibility
 - UI recording
 
 ### WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode
-
+- Xcode Server: Scheme, Bot, Integration
 
 ## Frameworks
 ### WWDC15, Session 201: iOS Accessibility

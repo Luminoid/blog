@@ -363,6 +363,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/WWDC-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="A blog about programming">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/WWDC-Note/" itemprop="url">
+                  WWDC Note
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-17 15:38:53" itemprop="dateCreated datePublished" datetime="2018-09-17T15:38:53+08:00">2018-09-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-28 11:58:26" itemprop="dateModified" datetime="2018-09-28T11:58:26+08:00">2018-09-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.6k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="developer-tools"><a class="header-anchor" href="#developer-tools"></a>Developer Tools</h2>
+<h3 id="wwdc18-session-405-measuring-performance-using-logging"><a class="header-anchor" href="#wwdc18-session-405-measuring-performance-using-logging"></a>WWDC18, Session 405: Measuring Performance Using Logging</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshLog = <span class="type">OSLog</span>(subsystem: <span class="string">"com.example.your-app"</span>, category: <span class="string">"RefreshOperations"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spidForRefresh = <span class="type">OSSignpostID</span>(log: refreshLog)</span><br><span class="line">os_signpost(.begin, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> panel.elements &#123;</span><br><span class="line">    <span class="keyword">let</span> spid = <span class="type">OSSignpostID</span>(log: refreshLog, object: element)</span><br><span class="line">    os_signpost(.begin, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    fetchAssetAsync(<span class="keyword">for</span>: element) &#123;</span><br><span class="line">        os_signpost(.end, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">notifyWhenDone &#123;</span><br><span class="line">    os_signpost(.end, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="wwdc18-session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"></a>WWDC18, Session 414: Understanding Crashes and Crash Logs</h3>
+<ul>
+<li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li>
+</ul>
+<h3 id="wwdc18-session-416-ios-memory-deep-dive"><a class="header-anchor" href="#wwdc18-session-416-ios-memory-deep-dive"></a>WWDC18, Session 416: iOS Memory Deep Dive</h3>
+<ul>
+<li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li>
+<li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/WWDC-Note/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -703,209 +906,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/oh-my-zsh-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/WWDC-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="A blog about programming">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/WWDC-Note/" itemprop="url">
-                  WWDC Note
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-17 15:38:53" itemprop="dateCreated datePublished" datetime="2018-09-17T15:38:53+08:00">2018-09-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-25 14:28:55" itemprop="dateModified" datetime="2018-09-25T14:28:55+08:00">2018-09-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">1.7k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="developer-tools"><a class="header-anchor" href="#developer-tools"></a>Developer Tools</h2>
-<h3 id="wwdc18-session-405-measuring-performance-using-logging"><a class="header-anchor" href="#wwdc18-session-405-measuring-performance-using-logging"></a>WWDC18, Session 405: Measuring Performance Using Logging</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshLog = <span class="type">OSLog</span>(subsystem: <span class="string">"com.example.your-app"</span>, category: <span class="string">"RefreshOperations"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spidForRefresh = <span class="type">OSSignpostID</span>(log: refreshLog)</span><br><span class="line">os_signpost(.begin, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> panel.elements &#123;</span><br><span class="line">    <span class="keyword">let</span> spid = <span class="type">OSSignpostID</span>(log: refreshLog, object: element)</span><br><span class="line">    os_signpost(.begin, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    fetchAssetAsync(<span class="keyword">for</span>: element) &#123;</span><br><span class="line">        os_signpost(.end, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">notifyWhenDone &#123;</span><br><span class="line">    os_signpost(.end, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="wwdc18-session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"></a>WWDC18, Session 414: Understanding Crashes and Crash Logs</h3>
-<ul>
-<li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li>
-</ul>
-<h3 id="wwdc18-session-416-ios-memory-deep-dive"><a class="header-anchor" href="#wwdc18-session-416-ios-memory-deep-dive"></a>WWDC18, Session 416: iOS Memory Deep Dive</h3>
-<ul>
-<li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li>
-<li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/WWDC-Note/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2666,7 +2666,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">241k</span>
+    <span title="Symbols count total">242k</span>
   
 
   
