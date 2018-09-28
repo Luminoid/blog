@@ -7,6 +7,25 @@ tags:
 keywords: WWDC
 ---
 
+## Design
+### WWDC18, Session 210: Introducing Dark Mode
+- Design Considerations
+    - Colors
+    - Vibrancy
+    - Glyphs
+- Advanced Dark Mode
+    - Replace static colors, images, materials
+        - System Colors
+        - Asset Catalog Colors
+    - `NSAppearance`
+    - `NSVisualEffectView` and vibrant blending
+
+## Frameworks
+### WWDC15, Session 201: iOS Accessibility
+- `UIAccessibility`
+
+<!-- more -->
+
 ## Developer Tools
 ### WWDC18, Session 405: Measuring Performance Using Logging
 ``` swift
@@ -33,8 +52,6 @@ notifyWhenDone {
 ### WWDC18, Session 416: iOS Memory Deep Dive
 - Image-rendering formats: Use `UIGraphicsImageRenderer` instead of `UIGraphicsBeginImageContextWithOptions`
 - Downsampling: Use `ImageIO` instead of `UIImage`
-
-<!-- more -->
 
 ### WWDC17, Session 409: What's New in Testing
 - Async Testing: `XCTWaiter` and `XCTestExpectation`
@@ -102,7 +119,3 @@ Command line tool
 
 ### WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode
 - Xcode Server: Scheme, Bot, Integration
-
-## Frameworks
-### WWDC15, Session 201: iOS Accessibility
-- `UIAccessibility`

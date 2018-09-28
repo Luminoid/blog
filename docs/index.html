@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-28 11:58:26" itemprop="dateModified" datetime="2018-09-28T11:58:26+08:00">2018-09-28</time>
+                <time title="Modified: 2018-09-28 15:17:05" itemprop="dateModified" datetime="2018-09-28T15:17:05+08:00">2018-09-28</time>
               
             
           </span>
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">2.6k</span>
+                <span title="Symbols count in article">2.8k</span>
               
 
               
@@ -496,17 +496,33 @@
 
       
         
-          <h2 id="developer-tools"><a class="header-anchor" href="#developer-tools"></a>Developer Tools</h2>
-<h3 id="wwdc18-session-405-measuring-performance-using-logging"><a class="header-anchor" href="#wwdc18-session-405-measuring-performance-using-logging"></a>WWDC18, Session 405: Measuring Performance Using Logging</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshLog = <span class="type">OSLog</span>(subsystem: <span class="string">"com.example.your-app"</span>, category: <span class="string">"RefreshOperations"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spidForRefresh = <span class="type">OSSignpostID</span>(log: refreshLog)</span><br><span class="line">os_signpost(.begin, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> panel.elements &#123;</span><br><span class="line">    <span class="keyword">let</span> spid = <span class="type">OSSignpostID</span>(log: refreshLog, object: element)</span><br><span class="line">    os_signpost(.begin, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    fetchAssetAsync(<span class="keyword">for</span>: element) &#123;</span><br><span class="line">        os_signpost(.end, log: refreshLog, name: <span class="string">"Fetch Asset"</span>, signpostID: spid)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">notifyWhenDone &#123;</span><br><span class="line">    os_signpost(.end, log: refreshLog, name: <span class="string">"Refresh Panel"</span>, signpostID: spidForRefresh)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="wwdc18-session-414-understanding-crashes-and-crash-logs"><a class="header-anchor" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"></a>WWDC18, Session 414: Understanding Crashes and Crash Logs</h3>
+          <h2 id="design"><a class="header-anchor" href="#design"></a>Design</h2>
+<h3 id="wwdc18-session-210-introducing-dark-mode"><a class="header-anchor" href="#wwdc18-session-210-introducing-dark-mode"></a>WWDC18, Session 210: Introducing Dark Mode</h3>
 <ul>
-<li><a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Understanding and Analyzing Application Crash Reports</a></li>
+<li>Design Considerations
+<ul>
+<li>Colors</li>
+<li>Vibrancy</li>
+<li>Glyphs</li>
 </ul>
-<h3 id="wwdc18-session-416-ios-memory-deep-dive"><a class="header-anchor" href="#wwdc18-session-416-ios-memory-deep-dive"></a>WWDC18, Session 416: iOS Memory Deep Dive</h3>
+</li>
+<li>Advanced Dark Mode
 <ul>
-<li>Image-rendering formats: Use <code>UIGraphicsImageRenderer</code> instead of <code>UIGraphicsBeginImageContextWithOptions</code></li>
-<li>Downsampling: Use <code>ImageIO</code> instead of <code>UIImage</code></li>
+<li>Replace static colors, images, materials
+<ul>
+<li>System Colors</li>
+<li>Asset Catalog Colors</li>
+</ul>
+</li>
+<li><code>NSAppearance</code></li>
+<li><code>NSVisualEffectView</code> and vibrant blending</li>
+</ul>
+</li>
+</ul>
+<h2 id="frameworks"><a class="header-anchor" href="#frameworks"></a>Frameworks</h2>
+<h3 id="wwdc15-session-201-ios-accessibility"><a class="header-anchor" href="#wwdc15-session-201-ios-accessibility"></a>WWDC15, Session 201: iOS Accessibility</h3>
+<ul>
+<li><code>UIAccessibility</code></li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
