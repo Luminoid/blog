@@ -46,6 +46,33 @@ notifyWhenDone {
 }
 ```
 
+### WWDC18, Session 412: Advanced Debugging with Xcode and LLDB
+#### Advanced Debugging Tips and Tricks
+- Configure behaviors to dedicate a tab for debugging
+- LLDB expressions can modify program state
+- Use auto-continuing breakpoints with debugger commands to inject code live
+- Create dependent breakpoints using `breakpoint set --one-shot true`
+- `po $arg1` (`$arg2`, etc) in assembly frames to print function arguments
+- Skip lines of code by dragging Instruction Pointer or `thread jump --by 1`
+- Pause when variables are modified by using watchpoints
+- Evaluate Obj-C code in Swift frames with `expression -l objc -O -- <expr>`
+    - Get UIView's view hierarchy: ``expression -l objc -O -- [`self.view` recursiveDescription]``
+    - Get debug description of a memory address: `expression -l objc -O -- <address>`
+- Flush view changes to the screen using `expression CATransaction.flush()`
+- Add custom LLDB commands using aliases and scripts. Alias examples:
+    - `command alias poc expression -l objc -O --`
+    - `command alias 🚽 expression -l objc -- (void)[CATransaction flush]`
+
+#### View Debugging Tips
+- Reveal in Debug Navigator
+- View clipped content
+- Auto Layout debugging
+- Access object pointers (copy casted expressions)
+- Creation backtraces in the inspector
+- Debug description in the inspector
+- ⌘-click-through for selection
+
+
 ### WWDC18, Session 414: Understanding Crashes and Crash Logs
 - [Understanding and Analyzing Application Crash Reports](https://developer.apple.com/library/archive/technotes/tn2151/_index.html)
 
