@@ -27,6 +27,9 @@ keywords: WWDC
 <!-- more -->
 
 ## Developer Tools
+### WWDC18, Session 223: Embracing Algorithms
+[Swift Standard Library](https://developer.apple.com/documentation/swift/swift_standard_library)
+
 ### WWDC18, Session 405: Measuring Performance Using Logging
 ``` swift
 let refreshLog = OSLog(subsystem: "com.example.your-app", category: "RefreshOperations")
