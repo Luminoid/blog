@@ -50,6 +50,9 @@ The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and cont
 ##### [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
 Extension to show code tree for GitHub.
 
+##### [GitZip for github](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn)
+It can make the sub-directories and files of github repository as zip and download it
+
 ##### [Wappalyzer](https://www.wappalyzer.com/)
 Identify web technologies.
 
