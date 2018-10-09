@@ -49,6 +49,15 @@ notifyWhenDone {
 }
 ```
 
+### WWDC18, Session 407: Practical Approaches to Great App Performance
+- Common Solutions
+    - Defer
+    - Batch
+    - Share results
+    - Fewer views
+    - Direct observation
+    - Prefer records to dictionaries
+
 ### WWDC18, Session 412: Advanced Debugging with Xcode and LLDB
 #### Advanced Debugging Tips and Tricks
 - Configure behaviors to dedicate a tab for debugging
