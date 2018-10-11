@@ -23,7 +23,7 @@ keywords: WWDC
 ## Frameworks
 ### WWDC18, Session 221: Textkit Best Practices
 Choosing the Right Control
-{% asset_img ChoosingTheRightControl "Choosing the Right Control" %}
+{% asset_img ChoosingTheRightControl.png "Choosing the Right Control" %}
 
 Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 
