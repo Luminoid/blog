@@ -21,6 +21,12 @@ keywords: WWDC
     - `NSVisualEffectView` and vibrant blending
 
 ## Frameworks
+### WWDC18, Session 221: Textkit Best Practices
+Choosing the Right Control
+{% asset_img ChoosingTheRightControl "Choosing the Right Control" %}
+
+Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
+
 ### WWDC15, Session 201: iOS Accessibility
 - `UIAccessibility`
 
@@ -29,6 +35,20 @@ keywords: WWDC
 ## Developer Tools
 ### WWDC18, Session 223: Embracing Algorithms
 [Swift Standard Library](https://developer.apple.com/documentation/swift/swift_standard_library)
+
+### WWDC18, Session 228: What's New in Energy Debugging
+- What Consumes Energy
+    - Processing: Workload-dependent
+    - Networking: Traffic-dependent
+    - Location: Accuracy, frequency-dependent
+    - Graphics: Complexity-dependent
+- Optimize Energy Consumption
+    - Foreground: Focus on providing value to the user
+        - Do work when requested
+        - Minimize complex UI
+    - Background: Focus on minimizing workload
+        - Coalesce tasks
+        - End tasks quickly
 
 ### WWDC18, Session 405: Measuring Performance Using Logging
 ``` swift
@@ -91,6 +111,12 @@ notifyWhenDone {
 ### WWDC18, Session 416: iOS Memory Deep Dive
 - Image-rendering formats: Use `UIGraphicsImageRenderer` instead of `UIGraphicsBeginImageContextWithOptions`
 - Downsampling: Use `ImageIO` instead of `UIImage`
+
+### WWDC17, Session 406: Finding Bugs Using Xcode Runtime Tools
+- Main Thread Checker
+- Address Sanitizer
+- Thread Sanitizer
+- Undefined Behavior Sanitizer
 
 ### WWDC17, Session 409: What's New in Testing
 - Async Testing: `XCTWaiter` and `XCTestExpectation`
