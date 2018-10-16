@@ -140,7 +140,7 @@ git help hooks
 ```
 
 ## Command
-<img src="/blog/Git-Amateur-Guide/CommonCommands.png" alt="Common Commands" style="width:800px;">
+{% asset_img CommonCommands.png "Common Commands" %}
 
 ### Basic
 `--`: Double dash can be used to contrast the control portion of the command line from a list of operands, such as filenames.
@@ -561,6 +561,22 @@ git fsck
 Set `ignoreCase` to `false`
 ``` bash
 git config core.ignorecase false
+```
+
+## Solution
+### Recover a dropped stash entry
+If the following code is executed accidentally
+``` sh
+git stash pop
+git checkout -- .
+```
+First, use `gitk` to find the corresponding hash value
+``` sh
+gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
+```
+Then, run `git stash` to apply the stash entry
+``` sh
+git stash apply <stash_hash>
 ```
 
 ## Git Concepts at Work

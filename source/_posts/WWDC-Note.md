@@ -20,6 +20,9 @@ keywords: WWDC
     - `NSAppearance`
     - `NSVisualEffectView` and vibrant blending
 
+### WWDC17, Session 818: 60 Second Prototyping
+- Make, Show, Learn
+
 ## Frameworks
 ### WWDC18, Session 221: Textkit Best Practices
 Choosing the Right Control

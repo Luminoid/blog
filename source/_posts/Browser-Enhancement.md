@@ -31,11 +31,19 @@ Helps you enjoy a faster, safer, and cleaner browsing experience by giving you t
 [Webstore](https://chrome.google.com/webstore/category/extensions)
 
 #### Productivity
-##### [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb)
+##### [Evernote Web Clipper](https://evernote.com/products/webclipper)
+Use the Evernote extension to save things you see on the web into your Evernote account.
 
-##### [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij)
+##### [Chrono Download Manager](https://www.chronodownloader.net/)
+Download Manager | Video Downloader | Bulk Image Downloader
 
-##### [Pop up blocker for Chrome](https://chrome.google.com/webstore/detail/pop-up-blocker-for-chrome/bkkbcggnhapdmkeljlodobbkopceiche)
+##### [Ghostery](https://www.ghostery.com/)
+Block ads, stop trackers and speed up websites.
+
+##### [AdBlock](https://getadblock.com/)
+Block ads all over the web.
+
+##### [Pop up blocker for Chrome](http://www.poperblocker.com/)
 
 ##### [Muzli 2](https://muz.li/?ref=ext)
 Muzli is a new-tab Chrome extension that instantly delivers relevant design stories and inspiration.
@@ -52,6 +60,9 @@ Extension to show code tree for GitHub.
 
 ##### [GitZip for github](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn)
 It can make the sub-directories and files of github repository as zip and download it
+
+##### [Stylus](https://add0n.com/stylus.html)
+Redesign the web with Stylus, a user styles manager. Stylus allows you to easily install themes and skins for many popular sites.
 
 ##### [Wappalyzer](https://www.wappalyzer.com/)
 Identify web technologies.
@@ -72,8 +83,9 @@ Just a proxy extension.
 ##### [豆听](https://chrome.google.com/webstore/detail/%E8%B1%86%E5%90%AC/afjaicjhfgokeabilpifkbnmmigkdgif)
 在豆瓣音乐专辑页面试听网易云音乐、虾米音乐、QQ 音乐的专辑歌曲
 
-##### [哔哩哔哩助手](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh)
-哔哩哔哩弹幕网辅助扩展，拥有视频区和直播区的人性化功能
+#### Search Tools
+##### [Wayback Machine](http://web.archive.org/)
+Reduce annoying 404 pages by automatically checking for an archived copy in the Wayback Machine.
 
 ## Script
 ### [Tampermonkey](http://tampermonkey.net)
