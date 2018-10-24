@@ -502,11 +502,13 @@
 <li>Clean build folder &amp; Build</li>
 </ol>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/iOS-Common-Problems/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/iOS-Common-Problems/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -705,11 +707,13 @@ Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" r
 <p>With Algolia and git deployment</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo algolia</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Hexo-Quick-Guide/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Hexo-Quick-Guide/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -908,11 +912,13 @@ Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" r
 <p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
 <p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Hexo-Common-Problems/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Hexo-Common-Problems/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -1105,11 +1111,13 @@ Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" r
 <h3 id="hexo-dockerfile-content"><a class="header-anchor" href="#hexo-dockerfile-content"></a>Hexo Dockerfile Content</h3>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu:14.04</span><br><span class="line">MAINTAINER luminoid</span><br><span class="line">ENV REFRESHED_AT 2017-08-28</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Hexo</span></span><br><span class="line">RUN apt-get update -yqq \</span><br><span class="line">  &amp;&amp; apt-get install -yqq curl git-core \</span><br><span class="line">  <span class="comment"># Install Node.js Using a PPA</span></span><br><span class="line">  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \</span><br><span class="line">  &amp;&amp; apt-get install -yqq nodejs build-essential \</span><br><span class="line">  <span class="comment"># Set config to avoid permission issues</span></span><br><span class="line">  &amp;&amp; npm config <span class="built_in">set</span> user 0 \</span><br><span class="line">  &amp;&amp; npm config <span class="built_in">set</span> unsafe-perm <span class="literal">true</span> \</span><br><span class="line">  &amp;&amp; npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clone blog</span></span><br><span class="line">WORKDIR /data</span><br><span class="line">RUN git <span class="built_in">clone</span> https://github.com/Luminoid/blog.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install blog dependencies</span></span><br><span class="line">WORKDIR /data/blog</span><br><span class="line">RUN npm install \</span><br><span class="line">  &amp;&amp; npm install prompt --save \</span><br><span class="line">  &amp;&amp; npm install jquery --save</span><br><span class="line"></span><br><span class="line">RUN mkdir -p /var/www/html/ \</span><br><span class="line">  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/</span><br><span class="line">VOLUME [ <span class="string">"/data/blog"</span>, <span class="string">"/var/www/html"</span> ]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Building-Hexo-Website-with-Docker/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Building-Hexo-Website-with-Docker/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -1307,11 +1315,13 @@ Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" r
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
 <p><strong>Open <code>MyApp.xcworkspace</code> to work</strong></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/CocoaPods-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/CocoaPods-Usage/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -1524,11 +1534,13 @@ The Swift language defines the postfix <code>?</code> as syntactic sugar for the
 You write an implicitly unwrapped optional by placing an exclamation mark (<code>String!</code>) rather than a question mark (<code>String?</code>) after the type that you want to make optional. The Swift language defines the postfix <code>!</code> as syntactic sugar for the named type <code>Optional&lt;Wrapped&gt;</code> with the additional behavior that it’s automatically unwrapped when it’s accessed.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleString: <span class="type">String</span>? = <span class="string">"An optional string."</span></span><br><span class="line"><span class="keyword">let</span> forcedString: <span class="type">String</span> = possibleString!  <span class="comment">// requires an exclamation mark</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> assumedString: <span class="type">String</span>! = <span class="string">"An implicitly unwrapped optional string."</span></span><br><span class="line"><span class="keyword">let</span> implicitString: <span class="type">String</span> = assumedString  <span class="comment">// no need for an exclamation mark</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Swift-Features/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Swift-Features/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -2105,11 +2117,13 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 <h2 id="destructuring"><a class="header-anchor" href="#destructuring"></a>Destructuring</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array matching</span></span><br><span class="line"><span class="keyword">let</span> [a, ,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">c === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object matching</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">b === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default arguments</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">&#123;a, b, c = <span class="number">3</span>, d = <span class="number">4</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;) === <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap values</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiple return values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">colorWhite</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    red: <span class="number">255</span>,</span><br><span class="line">    green: <span class="number">255</span>,</span><br><span class="line">    blue: <span class="number">255</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/ES6-Features/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/ES6-Features/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       
@@ -2326,11 +2340,13 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 <h4 id="browser-plus"><a class="header-anchor" href="#browser-plus"></a><a href="https://atom.io/packages/browser-plus" target="_blank" rel="noopener">browser-plus</a></h4>
 <p>Real Browser in ATOM</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/Atom-Usage/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/Atom-Usage/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
           <!--/noindex-->
         
       

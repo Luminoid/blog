@@ -151,6 +151,12 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize we
 - https://github.com/zenorocha/alfred-workflows
 - http://www.alfredworkflow.com/
 
+### [Dozer](https://github.com/Mortennn/Dozer)
+Hide MacOS menubar items.
+
+### [FiScript](https://github.com/Mortennn/FiScript)
+Execute custom scripts from the MacOS context menu (CTRL+click) in Finder.
+
 ### [OpenInCode](https://github.com/sozercan/OpenInCode)
 macOS Finder toolbar app to open current folder in Visual Studio Code
 
