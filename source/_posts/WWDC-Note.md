@@ -24,6 +24,19 @@ keywords: WWDC
 - Make, Show, Learn
 
 ## Frameworks
+### WWDC18, Session 220: High Performance Auto Layout
+#### The Render Loop
+{% asset_img TheRenderLoop.png "The Render Loop" %}
+| Update Constraints            | Layout                | Display               |
+|-------------------------------|-----------------------|-----------------------|
+| `updateConstraints()`         | `layoutSubviews()`    | `draw(_:)`            |
+| `setNeedsUpdateConstraints()` | `setNeedsLayout()`    | `setNeedsDisplay()`   |
+| `updateConstraintsIfNeeded()` | `layoutIfNeeded()`    | -                     |
+
+#### Performance Intuition
+- Don't churn constraints
+- The engine is a layout cache and dependency tracker.
+
 ### WWDC18, Session 221: Textkit Best Practices
 Choosing the Right Control
 {% asset_img ChoosingTheRightControl.png "Choosing the Right Control" %}
@@ -34,6 +47,12 @@ Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 - `UIAccessibility`
 
 <!-- more -->
+
+## Graphics and Games
+### WWDC17, Session 609: Going Beyond 2D with SpriteKit
+SpriteKit: `SKScene` -> `SKView` -> `UIKit/AppKit`
+SpriteKit with SceneKit: `SKScene` -> `SCNMaterialProperty` -> `SceneKit`
+SKRenderer: `SKScene` -> `SKRenderer` -> `Metal`
 
 ## Developer Tools
 ### WWDC18, Session 223: Embracing Algorithms

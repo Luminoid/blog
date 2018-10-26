@@ -14,7 +14,6 @@ keywords:
 ## Upgrade
 ``` bash
 $ bubu  # brew update && brew outdated && brew upgrade && brew cleanup
-$ brew prune
 $ brew doctor
 $ brew cask upgrade
 $ npm-check -gu

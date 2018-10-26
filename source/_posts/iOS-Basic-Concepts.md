@@ -13,9 +13,14 @@ keywords: iOS
 <!-- more -->
 
 ## iOS Device Display Summary
+[PaintCode](https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions)
+[iOSRes](http://iosres.com/)
+
 | Device | UIKit Size (Points) | Rendered Pixels | UIKit Scale factor | Physical Pixels | Native Scale factor | Size(Diagonal) | PPI | Associated Devices |
 |---|---|---|---|---|---|---|---|---|
-| iPhone X | 375 x 812 | 1125 x 2436 | 3.0 | 1125 x 2436 | 3.0 | 5.8 inch | 458 | |
+| iPhone X<span style="font-variant-caps: all-small-caps">S</span> Max | 414 x 896 | 1242 x 2688 | 3.0 | 1242 x 2688 | 3.0 | 6.5 inch | 458 | |
+| iPhone X<span style="font-variant-caps: all-small-caps">S</span> | 375 x 812 | 1125 x 2436 | 3.0 | 1125 x 2436 | 3.0 | 5.8 inch | 458 | iPhone X |
+| iPhone X<span style="font-variant-caps: all-small-caps">R</span> | 414 x 896 | 828 x 1792 | 2.0 | 828 x 1792 | 2.0 | 6.1 inch | 326 | |
 | iPhone 8 Plus | 414 x 736 | 1242 × 2208 | 3.0 | 1080 x 1920 | 2.608 | 5.5 inch | 401 | iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus |
 | iPhone 8 | 375 x 667 | 750 x 1334 | 2.0 | 750 x 1334 | 2.0 | 4.7 inch | 326 | iPhone 6, iPhone 6s, iPhone 7 |
 | iPhone SE | 320 x 568 | 640 x 1136 | 2.0 | 640 x 1136 | 2.0 | 4 inch | 326 | iPhone 5, 5C, 5S, iPod Touch 5g |

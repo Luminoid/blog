@@ -14,13 +14,12 @@ Official Site: https://brew.sh
 ## Command
 ``` bash
 brew install <formula>  # Install formula
-brew update             # Fetch latest version of Homebrew and all formulae
+brew update             # Fetch the newest version of Homebrew and all formulae from GitHub
 brew upgrade            # Upgrade all outdated, unpinned packages
 brew leaves             # Show installed formulae that are not dependencies of another installed formula
-brew tap                # Tap a new formula repository from GitHub, or list existing taps
-brew doctor             # Audit your installation for common issues
-brew cleanup            # Uninstall unused and old versions of packages
-brew prune              # Remove dead links
+brew tap                # Tap a formula repository
+brew doctor             # Check your system for potential problems.
+brew cleanup            # Remove stale lock files and outdated downloads for formulae and casks, and remove old versions of installed formulae.
 ```
 
 <!-- more -->
@@ -107,11 +106,11 @@ rlwrap is a 'readline wrapper', a small utility that uses the GNU readline libra
 ### [scons](https://www.scons.org/)
 Substitute for classic `make` tool with autoconf/automake functionality
 
-### [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
-A code searching tool similar to `ack`, with a focus on speed.
-
 ### [tesseract](https://github.com/tesseract-ocr/)
 OCR (Optical Character Recognition) engine
+
+### [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+A code searching tool similar to `ack`, with a focus on speed.
 
 ### [tig](https://jonas.github.io/tig/)
 Text interface for Git repositories

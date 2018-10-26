@@ -1,5 +1,5 @@
 ---
-title: React Docs Key Point
+title: React Features
 date: 2017-12-14 13:21:07
 updated:
 categories:

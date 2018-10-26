@@ -1,5 +1,5 @@
 ---
-title: Redux Docs Key Point
+title: Redux Features
 date: 2017-12-25 20:41:46
 updated:
 categories:

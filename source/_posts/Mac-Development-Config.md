@@ -103,6 +103,19 @@ brew install python3
 Run `node` to toggle ES REPL.
 Run `node --v8-options | grep harmony` to check current supported ES6 features.
 
+## Version Manager
+### [n](https://www.npmjs.com/package/n)
+#### Install
+``` bash
+brew install n
+```
+
+#### Usage
+``` bash
+sudo n latest   # Use or install the latest official release
+sudo n lts      # Use or install the latest LTS official release
+```
+
 ## Text Editor
 ### [Atom](https://atom.io)
 #### Usage
@@ -247,6 +260,9 @@ antigen apply
 ######################## User Configuration ########################
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# npm
+export PATH="$HOME/.npm-packages/bin:$PATH"
 
 # gem
 export GEM_HOME="$HOME/.gem"
