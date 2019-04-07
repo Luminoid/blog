@@ -59,19 +59,19 @@
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -84,8 +84,8 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '7.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -117,7 +117,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://luminoid.github.io/blog/WWDC-Note/TheRenderLoop.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/WWDC-Note/ChoosingTheRightControl.png">
-<meta property="og:updated_time" content="2018-12-04T09:36:40.405Z">
+<meta property="og:updated_time" content="2019-02-27T09:45:42.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WWDC Note">
 <meta name="twitter:description" content="Design WWDC18, Session 210: Introducing Dark Mode  Design Considerations  Colors Vibrancy Glyphs   Advanced Dark Mode  Replace static colors, images, materials  System Colors Asset Catalog Colors   NS">
@@ -261,7 +261,7 @@
       
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">36</span></a>
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">37</span></a>
 
   </li>
         
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-04 17:36:40" itemprop="dateModified" datetime="2018-12-04T17:36:40+08:00">2018-12-04</time>
+                <time title="Modified: 2019-02-27 17:45:42" itemprop="dateModified" datetime="2019-02-27T17:45:42+08:00">2019-02-27</time>
               
             
           </span>
@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">5.8k</span>
+                <span title="Symbols count in article">6.4k</span>
               
 
               
@@ -570,6 +570,25 @@
 </ul>
 </li>
 </ul>
+<h3 id="wwdc17-session-803-designing-sound"><a class="header-anchor" href="#wwdc17-session-803-designing-sound"></a>WWDC17, Session 803: Designing Sound</h3>
+<ul>
+<li>Designing sound for notifications
+<ul>
+<li>Distinguishable</li>
+<li>Matches design</li>
+<li>Unobtrusive, repeatable</li>
+<li>Clear</li>
+</ul>
+</li>
+<li>Designing sound for UI elements
+<ul>
+<li>Used sparingly</li>
+<li>Has a lower volume</li>
+<li>Helps and delights</li>
+<li>Creates a visceral experience</li>
+</ul>
+</li>
+</ul>
 <h3 id="wwdc17-session-818-60-second-prototyping"><a class="header-anchor" href="#wwdc17-session-818-60-second-prototyping"></a>WWDC17, Session 818: 60 Second Prototyping</h3>
 <ul>
 <li>Make, Show, Learn</li>
@@ -613,6 +632,17 @@
 <p>Choosing the Right Control</p>
 <img src="/blog/WWDC-Note/ChoosingTheRightControl.png" title="Choosing the Right Control">
 <p>Layout process: Attribute Fixing -&gt; Glyph Generation -&gt; Glyph Layout -&gt; Display</p>
+<h3 id="wwdc17-session-223-drag-and-drop-with-collection-and-table-view"><a class="header-anchor" href="#wwdc17-session-223-drag-and-drop-with-collection-and-table-view"></a>WWDC17, Session 223: Drag and Drop with Collection and Table View</h3>
+<ul>
+<li><code>dragDelegate</code> and <code>dropDelegate</code></li>
+<li><code>UIDropProposal</code>
+<ul>
+<li><code>operation</code>: <code>.copy</code>, <code>.move</code>, <code>.cancel</code>, <code>.forbidden</code></li>
+<li><code>intent</code>: <code>.unspecified</code>, <code>.insertAtDestinationIndexPath</code>, <code>.insertIntoDestinationIndexPath</code>, <code>.automatic</code></li>
+</ul>
+</li>
+<li>Insert placeholders while data loads asynchronously</li>
+</ul>
 <h3 id="wwdc15-session-201-ios-accessibility"><a class="header-anchor" href="#wwdc15-session-201-ios-accessibility"></a>WWDC15, Session 201: iOS Accessibility</h3>
 <ul>
 <li><code>UIAccessibility</code></li>
@@ -623,6 +653,8 @@
 <p>SpriteKit: <code>SKScene</code> -&gt; <code>SKView</code> -&gt; <code>UIKit/AppKit</code><br>
 SpriteKit with SceneKit: <code>SKScene</code> -&gt; <code>SCNMaterialProperty</code> -&gt; <code>SceneKit</code><br>
 SKRenderer: <code>SKScene</code> -&gt; <code>SKRenderer</code> -&gt; <code>Metal</code></p>
+<h2 id="media"><a class="header-anchor" href="#media"></a>Media</h2>
+<h3 id="wwdc14-session-514-advances-in-core-image"><a class="header-anchor" href="#wwdc14-session-514-advances-in-core-image"></a>WWDC14, Session 514: Advances in Core Image</h3>
 <h2 id="developer-tools"><a class="header-anchor" href="#developer-tools"></a>Developer Tools</h2>
 <h3 id="wwdc18-session-223-embracing-algorithms"><a class="header-anchor" href="#wwdc18-session-223-embracing-algorithms"></a>WWDC18, Session 223: Embracing Algorithms</h3>
 <p><a href="https://developer.apple.com/documentation/swift/swift_standard_library" target="_blank" rel="noopener">Swift Standard Library</a></p>
@@ -898,9 +930,6 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
@@ -933,7 +962,7 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1160,7 +1189,7 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">1.</span> <span class="nav-text">Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-210-introducing-dark-mode"><span class="nav-number">1.1.</span> <span class="nav-text">WWDC18, Session 210: Introducing Dark Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-818-60-second-prototyping"><span class="nav-number">1.2.</span> <span class="nav-text">WWDC17, Session 818: 60 Second Prototyping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frameworks"><span class="nav-number">2.</span> <span class="nav-text">Frameworks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-220-high-performance-auto-layout"><span class="nav-number">2.1.</span> <span class="nav-text">WWDC18, Session 220: High Performance Auto Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-render-loop"><span class="nav-number">2.1.1.</span> <span class="nav-text">The Render Loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#performance-intuition"><span class="nav-number">2.1.2.</span> <span class="nav-text">Performance Intuition</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-221-textkit-best-practices"><span class="nav-number">2.2.</span> <span class="nav-text">WWDC18, Session 221: Textkit Best Practices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-201-ios-accessibility"><span class="nav-number">2.3.</span> <span class="nav-text">WWDC15, Session 201: iOS Accessibility</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphics-and-games"><span class="nav-number">3.</span> <span class="nav-text">Graphics and Games</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-609-going-beyond-2d-with-spritekit"><span class="nav-number">3.1.</span> <span class="nav-text">WWDC17, Session 609: Going Beyond 2D with SpriteKit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#developer-tools"><span class="nav-number">4.</span> <span class="nav-text">Developer Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-223-embracing-algorithms"><span class="nav-number">4.1.</span> <span class="nav-text">WWDC18, Session 223: Embracing Algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-228-what-s-new-in-energy-debugging"><span class="nav-number">4.2.</span> <span class="nav-text">WWDC18, Session 228: What’s New in Energy Debugging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-405-measuring-performance-using-logging"><span class="nav-number">4.3.</span> <span class="nav-text">WWDC18, Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-407-practical-approaches-to-great-app-performance"><span class="nav-number">4.4.</span> <span class="nav-text">WWDC18, Session 407: Practical Approaches to Great App Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-412-advanced-debugging-with-xcode-and-lldb"><span class="nav-number">4.5.</span> <span class="nav-text">WWDC18, Session 412: Advanced Debugging with Xcode and LLDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#advanced-debugging-tips-and-tricks"><span class="nav-number">4.5.1.</span> <span class="nav-text">Advanced Debugging Tips and Tricks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#view-debugging-tips"><span class="nav-number">4.5.2.</span> <span class="nav-text">View Debugging Tips</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"><span class="nav-number">4.6.</span> <span class="nav-text">WWDC18, Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-416-ios-memory-deep-dive"><span class="nav-number">4.7.</span> <span class="nav-text">WWDC18, Session 416: iOS Memory Deep Dive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-406-finding-bugs-using-xcode-runtime-tools"><span class="nav-number">4.8.</span> <span class="nav-text">WWDC17, Session 406: Finding Bugs Using Xcode Runtime Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-409-what-s-new-in-testing"><span class="nav-number">4.9.</span> <span class="nav-text">WWDC17, Session 409: What’s New in Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-414-engineering-for-testability"><span class="nav-number">4.10.</span> <span class="nav-text">WWDC17, Session 414: Engineering for Testability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc16-session-409-advanced-testing-and-continuous-integration"><span class="nav-number">4.11.</span> <span class="nav-text">WWDC16, Session 409: Advanced Testing and Continuous Integration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-overview"><span class="nav-number">4.11.1.</span> <span class="nav-text">Testing Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#xctest"><span class="nav-number">4.11.1.1.</span> <span class="nav-text">XCTest</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode"><span class="nav-number">4.11.1.2.</span> <span class="nav-text">Xcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode-server"><span class="nav-number">4.11.1.3.</span> <span class="nav-text">Xcode Server</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcodebuild"><span class="nav-number">4.11.1.4.</span> <span class="nav-text">xcodebuild</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-concepts"><span class="nav-number">4.11.2.</span> <span class="nav-text">Testing Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#compilation"><span class="nav-number">4.11.2.1.</span> <span class="nav-text">Compilation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hosting"><span class="nav-number">4.11.2.2.</span> <span class="nav-text">Hosting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#observation"><span class="nav-number">4.11.2.3.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-features"><span class="nav-number">4.11.3.</span> <span class="nav-text">New Features</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-406-ui-testing-in-xcode"><span class="nav-number">4.12.</span> <span class="nav-text">WWDC15, Session 406: UI Testing in Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"><span class="nav-number">4.13.</span> <span class="nav-text">WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">1.</span> <span class="nav-text">Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-210-introducing-dark-mode"><span class="nav-number">1.1.</span> <span class="nav-text">WWDC18, Session 210: Introducing Dark Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-803-designing-sound"><span class="nav-number">1.2.</span> <span class="nav-text">WWDC17, Session 803: Designing Sound</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-818-60-second-prototyping"><span class="nav-number">1.3.</span> <span class="nav-text">WWDC17, Session 818: 60 Second Prototyping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frameworks"><span class="nav-number">2.</span> <span class="nav-text">Frameworks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-220-high-performance-auto-layout"><span class="nav-number">2.1.</span> <span class="nav-text">WWDC18, Session 220: High Performance Auto Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-render-loop"><span class="nav-number">2.1.1.</span> <span class="nav-text">The Render Loop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#performance-intuition"><span class="nav-number">2.1.2.</span> <span class="nav-text">Performance Intuition</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-221-textkit-best-practices"><span class="nav-number">2.2.</span> <span class="nav-text">WWDC18, Session 221: Textkit Best Practices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-223-drag-and-drop-with-collection-and-table-view"><span class="nav-number">2.3.</span> <span class="nav-text">WWDC17, Session 223: Drag and Drop with Collection and Table View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-201-ios-accessibility"><span class="nav-number">2.4.</span> <span class="nav-text">WWDC15, Session 201: iOS Accessibility</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphics-and-games"><span class="nav-number">3.</span> <span class="nav-text">Graphics and Games</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-609-going-beyond-2d-with-spritekit"><span class="nav-number">3.1.</span> <span class="nav-text">WWDC17, Session 609: Going Beyond 2D with SpriteKit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">4.</span> <span class="nav-text">Media</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc14-session-514-advances-in-core-image"><span class="nav-number">4.1.</span> <span class="nav-text">WWDC14, Session 514: Advances in Core Image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#developer-tools"><span class="nav-number">5.</span> <span class="nav-text">Developer Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-223-embracing-algorithms"><span class="nav-number">5.1.</span> <span class="nav-text">WWDC18, Session 223: Embracing Algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-228-what-s-new-in-energy-debugging"><span class="nav-number">5.2.</span> <span class="nav-text">WWDC18, Session 228: What’s New in Energy Debugging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-405-measuring-performance-using-logging"><span class="nav-number">5.3.</span> <span class="nav-text">WWDC18, Session 405: Measuring Performance Using Logging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-407-practical-approaches-to-great-app-performance"><span class="nav-number">5.4.</span> <span class="nav-text">WWDC18, Session 407: Practical Approaches to Great App Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-412-advanced-debugging-with-xcode-and-lldb"><span class="nav-number">5.5.</span> <span class="nav-text">WWDC18, Session 412: Advanced Debugging with Xcode and LLDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#advanced-debugging-tips-and-tricks"><span class="nav-number">5.5.1.</span> <span class="nav-text">Advanced Debugging Tips and Tricks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#view-debugging-tips"><span class="nav-number">5.5.2.</span> <span class="nav-text">View Debugging Tips</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-414-understanding-crashes-and-crash-logs"><span class="nav-number">5.6.</span> <span class="nav-text">WWDC18, Session 414: Understanding Crashes and Crash Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc18-session-416-ios-memory-deep-dive"><span class="nav-number">5.7.</span> <span class="nav-text">WWDC18, Session 416: iOS Memory Deep Dive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-406-finding-bugs-using-xcode-runtime-tools"><span class="nav-number">5.8.</span> <span class="nav-text">WWDC17, Session 406: Finding Bugs Using Xcode Runtime Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-409-what-s-new-in-testing"><span class="nav-number">5.9.</span> <span class="nav-text">WWDC17, Session 409: What’s New in Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc17-session-414-engineering-for-testability"><span class="nav-number">5.10.</span> <span class="nav-text">WWDC17, Session 414: Engineering for Testability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc16-session-409-advanced-testing-and-continuous-integration"><span class="nav-number">5.11.</span> <span class="nav-text">WWDC16, Session 409: Advanced Testing and Continuous Integration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-overview"><span class="nav-number">5.11.1.</span> <span class="nav-text">Testing Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#xctest"><span class="nav-number">5.11.1.1.</span> <span class="nav-text">XCTest</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode"><span class="nav-number">5.11.1.2.</span> <span class="nav-text">Xcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcode-server"><span class="nav-number">5.11.1.3.</span> <span class="nav-text">Xcode Server</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xcodebuild"><span class="nav-number">5.11.1.4.</span> <span class="nav-text">xcodebuild</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#testing-concepts"><span class="nav-number">5.11.2.</span> <span class="nav-text">Testing Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#compilation"><span class="nav-number">5.11.2.1.</span> <span class="nav-text">Compilation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hosting"><span class="nav-number">5.11.2.2.</span> <span class="nav-text">Hosting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#observation"><span class="nav-number">5.11.2.3.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-features"><span class="nav-number">5.11.3.</span> <span class="nav-text">New Features</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-406-ui-testing-in-xcode"><span class="nav-number">5.12.</span> <span class="nav-text">WWDC15, Session 406: UI Testing in Xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wwdc15-session-410-continuous-integration-and-code-coverage-in-xcode"><span class="nav-number">5.13.</span> <span class="nav-text">WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1172,6 +1201,7 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
 
     </div>
   </aside>
+  
 
 
         
@@ -1192,7 +1222,7 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">247k</span>
+    <span title="Symbols count total">248k</span>
   
 
   
@@ -1207,7 +1237,7 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 
 
@@ -1322,41 +1352,40 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
   
 
 
-  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
 
 
 
   
-  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
 
 
 
   
-
-
-  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
 
 
 
   
 
 
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
   
 
 
   
 
+
+  
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1686,10 +1715,6 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
   
 
   
-
-  
-
-  
   
 
   
@@ -1697,6 +1722,12 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
 
   
 
+
+  
+
+  
+
+  
 
   
   
@@ -1742,10 +1773,12 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
       white-space: nowrap;
       vertical-align: middle;
       cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
       user-select: none;
       outline: 0;
     }
@@ -1755,13 +1788,15 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
       opacity: 0;
       padding: 2px 6px;
       position: absolute;
-      right: 4px;
-      top: 8px;
+      
+        right: 4px;
+        top: 8px;
+      
     }
 
     .highlight-wrap:hover .copy-btn,
     .highlight-wrap .copy-btn:focus {
-      opacity: 1
+      opacity: 1;
     }
 
     .highlight-wrap {
@@ -1777,27 +1812,22 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
           return $(e).text();
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
+        ta.readOnly = true;
         ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
         document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        ta.select();
         ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
         var result = document.execCommand('copy');
         
           if (result) $(this).text('Copied');
           else $(this).text('Copy failed');
         
-        ta.blur(); //For iOS
+        ta.blur(); // For iOS
         $(this).blur();
       })).on('mouseleave', function(e) {
         var $b = $(this).find('.copy-btn');
@@ -1808,8 +1838,6 @@ Compile: <code>.m</code>, <code>.swift</code> =&gt; <code>UI.xctest</code>, <cod
     })
   </script>
 
-
-  
 
 </body>
 </html>

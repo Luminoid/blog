@@ -59,19 +59,19 @@
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -84,8 +84,8 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '7.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Luminoid&#39;s Site">
 <meta property="og:description" content="Official Site: https://code.visualstudio.com Setup Launch VS Code from the Command Line Open the Command Palette (⇧⌘P) and type Shell Command: Install &apos;code&apos; command in PATH to install. Synchronize Se">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-21T14:24:27.761Z">
+<meta property="og:updated_time" content="2019-02-11T11:11:16.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VS Code Usage">
 <meta name="twitter:description" content="Official Site: https://code.visualstudio.com Setup Launch VS Code from the Command Line Open the Command Palette (⇧⌘P) and type Shell Command: Install &apos;code&apos; command in PATH to install. Synchronize Se">
@@ -258,7 +258,7 @@
       
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">36</span></a>
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">37</span></a>
 
   </li>
         
@@ -467,7 +467,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-21 22:24:27" itemprop="dateModified" datetime="2018-08-21T22:24:27+08:00">2018-08-21</time>
+                <time title="Modified: 2019-02-11 19:11:16" itemprop="dateModified" datetime="2019-02-11T19:11:16+08:00">2019-02-11</time>
               
             
           </span>
@@ -527,7 +527,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">2.8k</span>
+                <span title="Symbols count in article">3k</span>
               
 
               
@@ -613,6 +613,8 @@
 <p>VSCode extension based on regexper-static</p>
 <h4 id="filesize"><a class="header-anchor" href="#filesize"></a><a href="https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize" target="_blank" rel="noopener">filesize</a></h4>
 <p>Show the current file size in the status bar.</p>
+<h4 id="titlebar-less-vscode-for-macos"><a class="header-anchor" href="#titlebar-less-vscode-for-macos"></a><a href="https://marketplace.visualstudio.com/items?itemName=lehni.vscode-titlebar-less-macos" target="_blank" rel="noopener">Titlebar-Less VSCode for macOS</a></h4>
+<p>An extension to hide the titlebar on VSCode for macOS, and inline the traffic lights (= window controls).</p>
 <h4 id="path-intellisense"><a class="header-anchor" href="#path-intellisense"></a><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="noopener">Path Intellisense</a></h4>
 <p>Visual Studio Code plugin that autocompletes filenames.</p>
 <h4 id="npm-intellisense"><a class="header-anchor" href="#npm-intellisense"></a><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense" target="_blank" rel="noopener">npm Intellisense</a></h4>
@@ -710,9 +712,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
@@ -745,7 +744,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -972,7 +971,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#setup"><span class="nav-number">1.</span> <span class="nav-text">Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#launch-vs-code-from-the-command-line"><span class="nav-number">1.1.</span> <span class="nav-text">Launch VS Code from the Command Line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronize-settings"><span class="nav-number">1.2.</span> <span class="nav-text">Synchronize Settings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keymaps"><span class="nav-number">2.</span> <span class="nav-text">Keymaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extension"><span class="nav-number">3.</span> <span class="nav-text">Extension</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debuggers"><span class="nav-number">3.1.</span> <span class="nav-text">Debuggers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#debugger-for-chrome"><span class="nav-number">3.1.1.</span> <span class="nav-text">Debugger for Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-tools"><span class="nav-number">3.1.2.</span> <span class="nav-text">React Native Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#programming-languages"><span class="nav-number">3.2.</span> <span class="nav-text">Programming Languages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-runner"><span class="nav-number">3.2.1.</span> <span class="nav-text">Code Runner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-close-tag"><span class="nav-number">3.2.3.</span> <span class="nav-text">Auto Close Tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-rename-tag"><span class="nav-number">3.2.4.</span> <span class="nav-text">Auto Rename Tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#intellisense-for-css-class-names"><span class="nav-number">3.2.5.</span> <span class="nav-text">IntelliSense for CSS class names</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-this"><span class="nav-number">3.2.6.</span> <span class="nav-text">Document this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode-pdf"><span class="nav-number">3.2.7.</span> <span class="nav-text">vscode-pdf</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#snippets"><span class="nav-number">3.3.</span> <span class="nav-text">Snippets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html-snippets"><span class="nav-number">3.3.1.</span> <span class="nav-text">HTML Snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-es6-code-snippets"><span class="nav-number">3.3.2.</span> <span class="nav-text">JavaScript (ES6) code snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reactjs-code-snippets"><span class="nav-number">3.3.3.</span> <span class="nav-text">Reactjs code snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-react-redux-snippets-for-es6-es7"><span class="nav-number">3.3.4.</span> <span class="nav-text">React-Native/React/Redux snippets for es6/es7</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formatters"><span class="nav-number">3.4.</span> <span class="nav-text">Formatters</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beautify"><span class="nav-number">3.4.1.</span> <span class="nav-text">Beautify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prettier-code-formatter"><span class="nav-number">3.4.2.</span> <span class="nav-text">Prettier - Code formatter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes"><span class="nav-number">3.5.</span> <span class="nav-text">Themes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode-icons"><span class="nav-number">3.5.1.</span> <span class="nav-text">vscode-icons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#material-icon-theme"><span class="nav-number">3.5.2.</span> <span class="nav-text">Material Icon Theme</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other"><span class="nav-number">3.6.</span> <span class="nav-text">Other</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#settings-sync"><span class="nav-number">3.6.1.</span> <span class="nav-text">Settings Sync</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#markdown-preview-enhanced"><span class="nav-number">3.6.2.</span> <span class="nav-text">Markdown Preview Enhanced</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#project-manager"><span class="nav-number">3.6.3.</span> <span class="nav-text">Project Manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#partial-diff"><span class="nav-number">3.6.4.</span> <span class="nav-text">Partial Diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#regexp-preview-and-editor"><span class="nav-number">3.6.5.</span> <span class="nav-text">RegExp Preview and Editor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filesize"><span class="nav-number">3.6.6.</span> <span class="nav-text">filesize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#path-intellisense"><span class="nav-number">3.6.7.</span> <span class="nav-text">Path Intellisense</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm-intellisense"><span class="nav-number">3.6.8.</span> <span class="nav-text">npm Intellisense</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-import"><span class="nav-number">3.6.9.</span> <span class="nav-text">Auto Import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color-picker"><span class="nav-number">3.6.10.</span> <span class="nav-text">Color Picker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color-highlight"><span class="nav-number">3.6.11.</span> <span class="nav-text">Color Highlight</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#setup"><span class="nav-number">1.</span> <span class="nav-text">Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#launch-vs-code-from-the-command-line"><span class="nav-number">1.1.</span> <span class="nav-text">Launch VS Code from the Command Line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronize-settings"><span class="nav-number">1.2.</span> <span class="nav-text">Synchronize Settings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keymaps"><span class="nav-number">2.</span> <span class="nav-text">Keymaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extension"><span class="nav-number">3.</span> <span class="nav-text">Extension</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#debuggers"><span class="nav-number">3.1.</span> <span class="nav-text">Debuggers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#debugger-for-chrome"><span class="nav-number">3.1.1.</span> <span class="nav-text">Debugger for Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-tools"><span class="nav-number">3.1.2.</span> <span class="nav-text">React Native Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#programming-languages"><span class="nav-number">3.2.</span> <span class="nav-text">Programming Languages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-runner"><span class="nav-number">3.2.1.</span> <span class="nav-text">Code Runner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-close-tag"><span class="nav-number">3.2.3.</span> <span class="nav-text">Auto Close Tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-rename-tag"><span class="nav-number">3.2.4.</span> <span class="nav-text">Auto Rename Tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#intellisense-for-css-class-names"><span class="nav-number">3.2.5.</span> <span class="nav-text">IntelliSense for CSS class names</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-this"><span class="nav-number">3.2.6.</span> <span class="nav-text">Document this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode-pdf"><span class="nav-number">3.2.7.</span> <span class="nav-text">vscode-pdf</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#snippets"><span class="nav-number">3.3.</span> <span class="nav-text">Snippets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html-snippets"><span class="nav-number">3.3.1.</span> <span class="nav-text">HTML Snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-es6-code-snippets"><span class="nav-number">3.3.2.</span> <span class="nav-text">JavaScript (ES6) code snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reactjs-code-snippets"><span class="nav-number">3.3.3.</span> <span class="nav-text">Reactjs code snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-react-redux-snippets-for-es6-es7"><span class="nav-number">3.3.4.</span> <span class="nav-text">React-Native/React/Redux snippets for es6/es7</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formatters"><span class="nav-number">3.4.</span> <span class="nav-text">Formatters</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beautify"><span class="nav-number">3.4.1.</span> <span class="nav-text">Beautify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prettier-code-formatter"><span class="nav-number">3.4.2.</span> <span class="nav-text">Prettier - Code formatter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes"><span class="nav-number">3.5.</span> <span class="nav-text">Themes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode-icons"><span class="nav-number">3.5.1.</span> <span class="nav-text">vscode-icons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#material-icon-theme"><span class="nav-number">3.5.2.</span> <span class="nav-text">Material Icon Theme</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other"><span class="nav-number">3.6.</span> <span class="nav-text">Other</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#settings-sync"><span class="nav-number">3.6.1.</span> <span class="nav-text">Settings Sync</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#markdown-preview-enhanced"><span class="nav-number">3.6.2.</span> <span class="nav-text">Markdown Preview Enhanced</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#project-manager"><span class="nav-number">3.6.3.</span> <span class="nav-text">Project Manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#partial-diff"><span class="nav-number">3.6.4.</span> <span class="nav-text">Partial Diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#regexp-preview-and-editor"><span class="nav-number">3.6.5.</span> <span class="nav-text">RegExp Preview and Editor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filesize"><span class="nav-number">3.6.6.</span> <span class="nav-text">filesize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#titlebar-less-vscode-for-macos"><span class="nav-number">3.6.7.</span> <span class="nav-text">Titlebar-Less VSCode for macOS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#path-intellisense"><span class="nav-number">3.6.8.</span> <span class="nav-text">Path Intellisense</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm-intellisense"><span class="nav-number">3.6.9.</span> <span class="nav-text">npm Intellisense</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-import"><span class="nav-number">3.6.10.</span> <span class="nav-text">Auto Import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color-picker"><span class="nav-number">3.6.11.</span> <span class="nav-text">Color Picker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color-highlight"><span class="nav-number">3.6.12.</span> <span class="nav-text">Color Highlight</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -984,6 +983,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -1004,7 +1004,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">247k</span>
+    <span title="Symbols count total">248k</span>
   
 
   
@@ -1019,7 +1019,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 
 
@@ -1134,41 +1134,40 @@
   
 
 
-  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
 
 
 
   
-  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
 
 
 
   
-
-
-  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
 
 
 
   
 
 
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
   
 
 
   
 
+
+  
   <script>
     // Popup Window;
     var isfetched = false;
@@ -1498,10 +1497,6 @@
   
 
   
-
-  
-
-  
   
 
   
@@ -1509,6 +1504,12 @@
 
   
 
+
+  
+
+  
+
+  
 
   
   
@@ -1554,10 +1555,12 @@
       white-space: nowrap;
       vertical-align: middle;
       cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
       user-select: none;
       outline: 0;
     }
@@ -1567,13 +1570,15 @@
       opacity: 0;
       padding: 2px 6px;
       position: absolute;
-      right: 4px;
-      top: 8px;
+      
+        right: 4px;
+        top: 8px;
+      
     }
 
     .highlight-wrap:hover .copy-btn,
     .highlight-wrap .copy-btn:focus {
-      opacity: 1
+      opacity: 1;
     }
 
     .highlight-wrap {
@@ -1589,27 +1594,22 @@
           return $(e).text();
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
+        ta.readOnly = true;
         ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
         document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        ta.select();
         ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
         var result = document.execCommand('copy');
         
           if (result) $(this).text('Copied');
           else $(this).text('Copy failed');
         
-        ta.blur(); //For iOS
+        ta.blur(); // For iOS
         $(this).blur();
       })).on('mouseleave', function(e) {
         var $b = $(this).find('.copy-btn');
@@ -1620,8 +1620,6 @@
     })
   </script>
 
-
-  
 
 </body>
 </html>

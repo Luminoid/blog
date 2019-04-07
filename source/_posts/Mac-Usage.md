@@ -14,9 +14,10 @@ keywords:
 ## Upgrade
 ``` bash
 $ bubu  # brew update && brew outdated && brew upgrade && brew cleanup
-$ brew doctor
 $ brew cask upgrade
+$ brew doctor
 $ npm-check -gu
+$ npm doctor
 $ gem update
 ```
 
@@ -61,4 +62,10 @@ Simulator devices data: `~/Library/Developer/CoreSimulator/Devices`
 ``` bash
 ~/Library/Developer/Xcode/iOS DeviceSupport
 ~/Library/Developer/CoreSimulator/Devices
+```
+
+## iOS
+### Back up iOS Devices to an External Drive
+``` bash
+$ ln -s /Volumes/<External>/<iOS_Backups> ~/Library/Application\ Support/MobileSync/Backup
 ```

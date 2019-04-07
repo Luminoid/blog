@@ -101,6 +101,9 @@ VSCode extension based on regexper-static
 #### [filesize](https://marketplace.visualstudio.com/items?itemName=mkxml.vscode-filesize)
 Show the current file size in the status bar.
 
+#### [Titlebar-Less VSCode for macOS](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-titlebar-less-macos)
+An extension to hide the titlebar on VSCode for macOS, and inline the traffic lights (= window controls).
+
 #### [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 Visual Studio Code plugin that autocompletes filenames.
 

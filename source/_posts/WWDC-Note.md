@@ -20,6 +20,18 @@ keywords: WWDC
     - `NSAppearance`
     - `NSVisualEffectView` and vibrant blending
 
+### WWDC17, Session 803: Designing Sound
+- Designing sound for notifications
+    - Distinguishable
+    - Matches design
+    - Unobtrusive, repeatable
+    - Clear
+- Designing sound for UI elements
+    - Used sparingly
+    - Has a lower volume
+    - Helps and delights
+    - Creates a visceral experience
+
 ### WWDC17, Session 818: 60 Second Prototyping
 - Make, Show, Learn
 
@@ -43,6 +55,13 @@ Choosing the Right Control
 
 Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 
+### WWDC17, Session 223: Drag and Drop with Collection and Table View
+- `dragDelegate` and `dropDelegate`
+- `UIDropProposal`
+    - `operation`: `.copy`, `.move`, `.cancel`, `.forbidden`
+    - `intent`: `.unspecified`, `.insertAtDestinationIndexPath`, `.insertIntoDestinationIndexPath`, `.automatic`
+- Insert placeholders while data loads asynchronously
+
 ### WWDC15, Session 201: iOS Accessibility
 - `UIAccessibility`
 
@@ -53,6 +72,10 @@ Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 SpriteKit: `SKScene` -> `SKView` -> `UIKit/AppKit`
 SpriteKit with SceneKit: `SKScene` -> `SCNMaterialProperty` -> `SceneKit`
 SKRenderer: `SKScene` -> `SKRenderer` -> `Metal`
+
+## Media
+### WWDC14, Session 514: Advances in Core Image
+
 
 ## Developer Tools
 ### WWDC18, Session 223: Embracing Algorithms
