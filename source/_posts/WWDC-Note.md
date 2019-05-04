@@ -7,38 +7,11 @@ tags:
 keywords: WWDC
 ---
 
-## Design
-### WWDC18, Session 210: Introducing Dark Mode
-- Design Considerations
-    - Colors
-    - Vibrancy
-    - Glyphs
-- Advanced Dark Mode
-    - Replace static colors, images, materials
-        - System Colors
-        - Asset Catalog Colors
-    - `NSAppearance`
-    - `NSVisualEffectView` and vibrant blending
-
-### WWDC17, Session 803: Designing Sound
-- Designing sound for notifications
-    - Distinguishable
-    - Matches design
-    - Unobtrusive, repeatable
-    - Clear
-- Designing sound for UI elements
-    - Used sparingly
-    - Has a lower volume
-    - Helps and delights
-    - Creates a visceral experience
-
-### WWDC17, Session 818: 60 Second Prototyping
-- Make, Show, Learn
-
 ## Frameworks
 ### WWDC18, Session 220: High Performance Auto Layout
 #### The Render Loop
 {% asset_img TheRenderLoop.png "The Render Loop" %}
+
 | Update Constraints            | Layout                | Display               |
 |-------------------------------|-----------------------|-----------------------|
 | `updateConstraints()`         | `layoutSubviews()`    | `draw(_:)`            |
@@ -55,16 +28,6 @@ Choosing the Right Control
 
 Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 
-### WWDC17, Session 223: Drag and Drop with Collection and Table View
-- `dragDelegate` and `dropDelegate`
-- `UIDropProposal`
-    - `operation`: `.copy`, `.move`, `.cancel`, `.forbidden`
-    - `intent`: `.unspecified`, `.insertAtDestinationIndexPath`, `.insertIntoDestinationIndexPath`, `.automatic`
-- Insert placeholders while data loads asynchronously
-
-### WWDC15, Session 201: iOS Accessibility
-- `UIAccessibility`
-
 <!-- more -->
 
 ## Graphics and Games
@@ -72,10 +35,6 @@ Layout process: Attribute Fixing -> Glyph Generation -> Glyph Layout -> Display
 SpriteKit: `SKScene` -> `SKView` -> `UIKit/AppKit`
 SpriteKit with SceneKit: `SKScene` -> `SCNMaterialProperty` -> `SceneKit`
 SKRenderer: `SKScene` -> `SKRenderer` -> `Metal`
-
-## Media
-### WWDC14, Session 514: Advances in Core Image
-
 
 ## Developer Tools
 ### WWDC18, Session 223: Embracing Algorithms
@@ -94,34 +53,6 @@ SKRenderer: `SKScene` -> `SKRenderer` -> `Metal`
     - Background: Focus on minimizing workload
         - Coalesce tasks
         - End tasks quickly
-
-### WWDC18, Session 405: Measuring Performance Using Logging
-``` swift
-let refreshLog = OSLog(subsystem: "com.example.your-app", category: "RefreshOperations")
-
-let spidForRefresh = OSSignpostID(log: refreshLog)
-os_signpost(.begin, log: refreshLog, name: "Refresh Panel", signpostID: spidForRefresh)
-
-for element in panel.elements {
-    let spid = OSSignpostID(log: refreshLog, object: element)
-    os_signpost(.begin, log: refreshLog, name: "Fetch Asset", signpostID: spid)
-    fetchAssetAsync(for: element) {
-        os_signpost(.end, log: refreshLog, name: "Fetch Asset", signpostID: spid)
-    }
-}
-notifyWhenDone {
-    os_signpost(.end, log: refreshLog, name: "Refresh Panel", signpostID: spidForRefresh)
-}
-```
-
-### WWDC18, Session 407: Practical Approaches to Great App Performance
-- Common Solutions
-    - Defer
-    - Batch
-    - Share results
-    - Fewer views
-    - Direct observation
-    - Prefer records to dictionaries
 
 ### WWDC18, Session 412: Advanced Debugging with Xcode and LLDB
 #### Advanced Debugging Tips and Tricks
@@ -222,10 +153,3 @@ Command line tool
     - Advanced Triggers
     - Issue Tracking and Blame
     - Configurable Integration User
-
-### WWDC15, Session 406: UI Testing in Xcode
-- Core Technologies: XCTest + Accessibility
-- UI recording
-
-### WWDC15, Session 410: Continuous Integration and Code Coverage in Xcode
-- Xcode Server: Scheme, Bot, Integration
