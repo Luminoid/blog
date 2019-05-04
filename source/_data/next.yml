@@ -9,7 +9,7 @@
 # Site
 title: Luminoid's Site
 subtitle: OK Computer
-description: A blog about programming
+description: Some programming notes
 keywords:
 author: Luminoid
 language: en
@@ -409,7 +409,7 @@ sidebar:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: true
+  sidebar: false
   # Scroll percent label in b2t button.
   scrollpercent: true
   
@@ -468,10 +468,6 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  symbols: true
-  time: false
-  total_symbols: true
-  total_time: false
   separated_meta: true
   item_text_post: true
   item_text_total: false
