@@ -374,7 +374,7 @@ toc:
 
 sidebar:
   # Sidebar Position.
-  position: left
+  position: right
   #position: right
 
   # Manual define the sidebar width. If commented, will be default for:
@@ -866,7 +866,7 @@ needmoreshare2:
   float:
     enable: true
     options:
-      iconStyle: default
+      iconStyle: box
       boxForm: horizontal
       position: middleRight
       networks: Douban,Wechat,Weibo,Facebook,Twitter,Linkedin,Evernote
