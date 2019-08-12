@@ -34,6 +34,7 @@ npm run <command> [-- <args>...]    # Run arbitrary package scripts
 npm start [-- <args>...]            # Start a package
 npm shrinkwrap                      # Lock down dependency versions for publication
 npm doctor                          # Check your environments
+npm audit                           # Run a security audit
 ```
 **Development**
 ``` bash
