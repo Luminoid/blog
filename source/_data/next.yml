@@ -357,8 +357,6 @@ avatar:
   url: /images/avatar.png
   # If true, the avatar would be dispalyed in circle.
   rounded: false
-  # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-  opacity: 1
   # If true, the avatar would be rotated with the cursor.
   rotated: false
 
@@ -457,6 +455,7 @@ symbols_count_time:
   item_text_total: false
   awl: 5 # EN ≈ 5, CN ≈ 2
   wpm: 275 # Slow ≈ 200, Normal ≈ 275, Fast ≈ 350
+  suffix: mins.
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: true
@@ -507,7 +506,7 @@ post_edit:
 # ---------------------------------------------------------------
 
 # Enable "cheers" for archive page.
-cheers: true
+cheers: false
 
 # TagCloud settings for tags page.
 tagcloud:
@@ -676,13 +675,13 @@ pjax: false
 # To install 2.x: https://github.com/theme-next/theme-next-fancybox
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
 # For more information: https://fancyapps.com/fancybox
-fancybox: true
+fancybox: false
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
 # Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 # For more information: https://github.com/francoischalifour/medium-zoom
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # Dependencies: https://github.com/theme-next/theme-next-lazyload
