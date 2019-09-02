@@ -564,6 +564,18 @@ git config core.ignorecase false
 ```
 
 ## Solution
+### [Git pull till a particular commit](https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit)
+``` bash
+git fetch remote <branch_name>
+git merge <commit_hash>
+```
+
+### [Your branch and 'origin/master' have diverged](https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com)
+``` bash
+git fetch origin
+git reset --hard origin/master
+```
+
 ### Recover a dropped stash entry
 If the following code is executed accidentally
 ``` sh
