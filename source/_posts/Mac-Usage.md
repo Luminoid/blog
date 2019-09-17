@@ -19,6 +19,7 @@ $ brew doctor
 $ npm-check -gu
 $ npm doctor
 $ gem update
+$ gem cleanup
 ```
 
 <!-- more -->

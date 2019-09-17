@@ -35,6 +35,7 @@
     
     </summary>
     
+    
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
     
@@ -58,6 +59,7 @@
       
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -121,6 +123,7 @@
     
     </summary>
     
+    
       <category term="Apple" scheme="http://luminoid.github.io/blog/categories/Apple/"/>
     
     
@@ -144,6 +147,7 @@
       
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -171,6 +175,7 @@
     
     </summary>
     
+    
       <category term="Design" scheme="http://luminoid.github.io/blog/categories/Design/"/>
     
     
@@ -196,6 +201,7 @@
       
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -234,6 +240,7 @@
     
     </summary>
     
+    
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
     
@@ -266,6 +273,7 @@
     
     </summary>
     
+    
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
     
@@ -293,6 +301,7 @@
 &lt;/ol&gt;
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -339,6 +348,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     
     </summary>
     
+    
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
     
@@ -361,6 +371,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
 &lt;img src=&quot;/blog/iOS-Basic-Concepts/ResponderChain.png&quot; title=&quot;Responder Chain&quot;&gt;
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -385,6 +396,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
       
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -417,6 +429,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
 &lt;p&gt;&lt;strong&gt;Open &lt;code&gt;MyApp.xcworkspace&lt;/code&gt; to work&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     
@@ -458,6 +471,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     
     </summary>
     
+    
       <category term="Web" scheme="http://luminoid.github.io/blog/categories/Web/"/>
     
       <category term="JavaScript" scheme="http://luminoid.github.io/blog/categories/Web/JavaScript/"/>
@@ -486,6 +500,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     
     </summary>
     
+    
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
     
@@ -511,6 +526,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     
     </summary>
     
+    
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
       <category term="Git" scheme="http://luminoid.github.io/blog/categories/Tool/Git/"/>
@@ -535,6 +551,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     
     </summary>
     
+    
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
       <category term="Editor" scheme="http://luminoid.github.io/blog/categories/Tool/Editor/"/>
@@ -557,16 +574,17 @@ You write an implicitly unwrapped optional by placing an exclamation mark (&lt;c
     <link href="http://luminoid.github.io/blog/Mac-Usage/"/>
     <id>http://luminoid.github.io/blog/Mac-Usage/</id>
     <published>2018-03-06T16:56:07.000Z</published>
-    <updated>2019-08-12T07:15:15.920Z</updated>
+    <updated>2019-09-16T09:42:44.595Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="upgrade"><a class="header-anchor" href="#upgrade"></a>Upgrade</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ bubu  <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew cask upgrade</span><br><span class="line">$ brew doctor</span><br><span class="line">$ npm-check -gu</span><br><span class="line">$ npm doctor</span><br><span class="line">$ gem update</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="keyboard-shortcuts"><a class="header-anchor" href="#keyboard-shortcuts"></a>Keyboard Shortcuts</h2><h3 id="common-shortcuts"><a class="header-anchor" href="#common-shortcuts"></a>Common shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app</p><h3 id="finder-and-system-shortcuts"><a class="header-anchor" href="#finder-and-system-shortcuts"></a>Finder and system shortcuts</h3><p><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to the previous tab<br><code>Shift-Command-]</code>: Switch to the next tab</p><h3 id="document-shortcuts"><a class="header-anchor" href="#document-shortcuts"></a>Document shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of a line or paragraph</p><h2 id="preferences"><a class="header-anchor" href="#preferences"></a>Preferences</h2><h3 id="manage-login-items"><a class="header-anchor" href="#manage-login-items"></a>Manage Login Items</h3><p>System Preferences -&gt; Users &amp; Groups -&gt; Login Items</p><h2 id="system"><a class="header-anchor" href="#system"></a>System</h2><h3 id="open-apps-from-the-unidentified-developers"><a class="header-anchor" href="#open-apps-from-the-unidentified-developers"></a>Open Apps From the Unidentified Developers</h3><p>Location: System Preferences -&gt; Security &amp; Privacy -&gt; General -&gt; Choose “Anywhere”</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo spctl --master-disable</span><br></pre></td></tr></table></figure><h3 id="external-monitor-force-rgb-mode-instead-of-ycbcr"><a class="header-anchor" href="#external-monitor-force-rgb-mode-instead-of-ycbcr"></a>External Monitor: force RGB mode instead of YCbCr</h3><p><a href="https://gist.github.com/adaugherity/7435890" target="_blank" rel="noopener">patch-edid.rb</a></p><h2 id="directories"><a class="header-anchor" href="#directories"></a>Directories</h2><h3 id="xcode"><a class="header-anchor" href="#xcode"></a>Xcode</h3><p>Simulator devices data: <code>~/Library/Developer/CoreSimulator/Devices</code></p><h2 id="disk-cleanup"><a class="header-anchor" href="#disk-cleanup"></a>Disk Cleanup</h2><h3 id="xcode-v2"><a class="header-anchor" href="#xcode-v2"></a>Xcode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Developer/Xcode/iOS DeviceSupport</span><br><span class="line">~/Library/Developer/CoreSimulator/Devices</span><br></pre></td></tr></table></figure><h2 id="ios"><a class="header-anchor" href="#ios"></a>iOS</h2><h3 id="back-up-ios-devices-to-an-external-drive"><a class="header-anchor" href="#back-up-ios-devices-to-an-external-drive"></a>Back up iOS Devices to an External Drive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -s /Volumes/&lt;External&gt;/&lt;iOS_Backups&gt; ~/Library/Application\ Support/MobileSync/Backup</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="upgrade"><a class="header-anchor" href="#upgrade"></a>Upgrade</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ bubu  <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew cask upgrade</span><br><span class="line">$ brew doctor</span><br><span class="line">$ npm-check -gu</span><br><span class="line">$ npm doctor</span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="keyboard-shortcuts"><a class="header-anchor" href="#keyboard-shortcuts"></a>Keyboard Shortcuts</h2><h3 id="common-shortcuts"><a class="header-anchor" href="#common-shortcuts"></a>Common shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app</p><h3 id="finder-and-system-shortcuts"><a class="header-anchor" href="#finder-and-system-shortcuts"></a>Finder and system shortcuts</h3><p><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to the previous tab<br><code>Shift-Command-]</code>: Switch to the next tab</p><h3 id="document-shortcuts"><a class="header-anchor" href="#document-shortcuts"></a>Document shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of a line or paragraph</p><h2 id="preferences"><a class="header-anchor" href="#preferences"></a>Preferences</h2><h3 id="manage-login-items"><a class="header-anchor" href="#manage-login-items"></a>Manage Login Items</h3><p>System Preferences -&gt; Users &amp; Groups -&gt; Login Items</p><h2 id="system"><a class="header-anchor" href="#system"></a>System</h2><h3 id="open-apps-from-the-unidentified-developers"><a class="header-anchor" href="#open-apps-from-the-unidentified-developers"></a>Open Apps From the Unidentified Developers</h3><p>Location: System Preferences -&gt; Security &amp; Privacy -&gt; General -&gt; Choose “Anywhere”</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo spctl --master-disable</span><br></pre></td></tr></table></figure><h3 id="external-monitor-force-rgb-mode-instead-of-ycbcr"><a class="header-anchor" href="#external-monitor-force-rgb-mode-instead-of-ycbcr"></a>External Monitor: force RGB mode instead of YCbCr</h3><p><a href="https://gist.github.com/adaugherity/7435890" target="_blank" rel="noopener">patch-edid.rb</a></p><h2 id="directories"><a class="header-anchor" href="#directories"></a>Directories</h2><h3 id="xcode"><a class="header-anchor" href="#xcode"></a>Xcode</h3><p>Simulator devices data: <code>~/Library/Developer/CoreSimulator/Devices</code></p><h2 id="disk-cleanup"><a class="header-anchor" href="#disk-cleanup"></a>Disk Cleanup</h2><h3 id="xcode-v2"><a class="header-anchor" href="#xcode-v2"></a>Xcode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Developer/Xcode/iOS DeviceSupport</span><br><span class="line">~/Library/Developer/CoreSimulator/Devices</span><br></pre></td></tr></table></figure><h2 id="ios"><a class="header-anchor" href="#ios"></a>iOS</h2><h3 id="back-up-ios-devices-to-an-external-drive"><a class="header-anchor" href="#back-up-ios-devices-to-an-external-drive"></a>Back up iOS Devices to an External Drive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -s /Volumes/&lt;External&gt;/&lt;iOS_Backups&gt; ~/Library/Application\ Support/MobileSync/Backup</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;upgrade&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#upgrade&quot;&gt;&lt;/a&gt;Upgrade&lt;/h2&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ bubu  &lt;span class=&quot;comment&quot;&gt;# brew update &amp;amp;&amp;amp; brew outdated &amp;amp;&amp;amp; brew upgrade &amp;amp;&amp;amp; brew cleanup&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ brew cask upgrade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ brew doctor&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm-check -gu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm doctor&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ gem update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ bubu  &lt;span class=&quot;comment&quot;&gt;# brew update &amp;amp;&amp;amp; brew outdated &amp;amp;&amp;amp; brew upgrade &amp;amp;&amp;amp; brew cleanup&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ brew cask upgrade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ brew doctor&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm-check -gu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm doctor&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ gem update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ gem cleanup&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
+    
     
       <category term="Mac" scheme="http://luminoid.github.io/blog/categories/Mac/"/>
     
@@ -598,6 +616,7 @@ The &lt;strong&gt;index&lt;/strong&gt; is a temporary and dynamic binary file th
 The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented as a content-addressable storage system(SHA1 hash value =&amp;gt; object).&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Tool" scheme="http://luminoid.github.io/blog/categories/Tool/"/>
     
@@ -635,6 +654,7 @@ The &lt;strong&gt;Git object store&lt;/strong&gt; is organized and implemented a
 &lt;/ul&gt;
     
     </summary>
+    
     
       <category term="iOS" scheme="http://luminoid.github.io/blog/categories/iOS/"/>
     

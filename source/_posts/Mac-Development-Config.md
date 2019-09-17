@@ -18,6 +18,7 @@ keywords:
 
 ## Mac Usage
 {% post_link Mac-Usage %}
+[Awesome Mac](https://github.com/jaywcjlove/awesome-mac)
 
 ## Package Manager
 ### [Homebrew](https://brew.sh)
@@ -154,7 +155,7 @@ brew cask install docker
 ### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
 #### Install
 ``` bash
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package quicklookase qlvideo provisionql webpquicklook
 ```
 
 ### [Alfred](https://www.alfredapp.com/)
@@ -164,14 +165,25 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize we
 - https://github.com/zenorocha/alfred-workflows
 - http://www.alfredworkflow.com/
 
-### [Dozer](https://github.com/Mortennn/Dozer)
-Hide MacOS menubar items.
-
+### Finder Tools
 ### [FiScript](https://github.com/Mortennn/FiScript)
 Execute custom scripts from the MacOS context menu (CTRL+click) in Finder.
 
 ### [OpenInCode](https://github.com/sozercan/OpenInCode)
 macOS Finder toolbar app to open current folder in Visual Studio Code
+
+### Menu Bar Tools
+### [Itsycal](https://www.mowglii.com/itsycal/)
+Itsycal is a tiny menu bar calendar.
+
+### [Dozer](https://github.com/Mortennn/Dozer)
+Hide status bar icons on macOS.
+
+#### [BeardedSpice](https://github.com/beardedspice/beardedspice)
+BeardedSpice allows you to control web based media players (Like SoundCloud, and YouTube, etc) and some native apps with the media keys found on Mac keyboards.
+
+#### [BitBar](https://getbitbar.com)
+Put the output from any script or program right in your Mac OS X menu bar.
 
 ## Font
 ### [Fira Code](https://github.com/tonsky/FiraCode)

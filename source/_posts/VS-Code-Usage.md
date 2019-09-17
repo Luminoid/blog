@@ -68,6 +68,10 @@ Code snippets for Reactjs development in ES6 syntax.
 #### [React-Native/React/Redux snippets for es6/es7](https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux)
 Code snippets for React-Native/React/Redux es6/es7.
 
+### Linters
+#### [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+Spelling checker for source code
+
 ### Formatters
 #### [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
 Beautify code in place for VS Code.
@@ -86,8 +90,8 @@ Material Design Icons for Visual Studio Code
 #### [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub Gist.
 
-#### [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
-Markdown Preview Enhanced ported to vscode.
+#### [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
 
 #### [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
 Easily switch between projects.
@@ -103,6 +107,9 @@ Show the current file size in the status bar.
 
 #### [Titlebar-Less VSCode for macOS](https://marketplace.visualstudio.com/items?itemName=lehni.vscode-titlebar-less-macos)
 An extension to hide the titlebar on VSCode for macOS, and inline the traffic lights (= window controls).
+
+#### [iOS Common Files](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-ios-common-files)
+Provides Syntax Highlighting to common iOS files e.g CocoaPods / Fastlane.
 
 #### [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 Visual Studio Code plugin that autocompletes filenames.
