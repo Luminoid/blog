@@ -21,6 +21,15 @@ keywords:
 This article mainly focuses on the problems encountered in theme [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak).
 
 ## Command
+### Template render error
+**Problem**:
+```
+Template render error: (unknown path)
+  Error: unexpected end of comment
+```
+
+**Solution**: Hexo cannot render `#` and `}`, or `{` and `#` together, place a space between these two characters to avoid this error.
+
 ### hexo server not found
 **Problem**: Can't find `hexo server` command.
 

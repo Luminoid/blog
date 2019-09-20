@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command hexo server not found Problem: Can’t find hexo server command. Solution: Extra plugins line in _config.yml may ca">
+  <meta name="description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: 12Template render error: (unknown path)  Error: unexpected end of comment Solution">
 <meta name="keywords" content="Hexo,server,hexo-algolia,hexo-math,hexo-toc,hexo-all-minifier,Gitment,prism">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Common Problems">
 <meta property="og:url" content="http://luminoid.github.io/blog/Hexo-Common-Problems/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command hexo server not found Problem: Can’t find hexo server command. Solution: Extra plugins line in _config.yml may ca">
+<meta property="og:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: 12Template render error: (unknown path)  Error: unexpected end of comment Solution">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-05T09:57:15.845Z">
+<meta property="og:updated_time" content="2019-09-20T17:43:04.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Common Problems">
-<meta name="twitter:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command hexo server not found Problem: Can’t find hexo server command. Solution: Extra plugins line in _config.yml may ca">
+<meta name="twitter:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: 12Template render error: (unknown path)  Error: unexpected end of comment Solution">
   <link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml">
   <link rel="canonical" href="http://luminoid.github.io/blog/Hexo-Common-Problems/">
 
@@ -176,7 +176,7 @@
       
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">37</span></a>
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">38</span></a>
 
   </li>
       
@@ -189,7 +189,7 @@
       
     
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">13</span></a>
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">14</span></a>
 
   </li>
       
@@ -202,7 +202,7 @@
       
     
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">33</span></a>
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">34</span></a>
 
   </li>
       
@@ -314,7 +314,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+                <time title="Modified: 2019-09-21 01:43:04" itemprop="dateModified" datetime="2019-09-21T01:43:04+08:00">2019-09-21</time>
               </span>
             
           
@@ -360,6 +360,10 @@
       
         <p>This article mainly focuses on the problems encountered in theme <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">tranquilpeak</a>.</p>
 <h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2>
+<h3 id="template-render-error"><a class="header-anchor" href="#template-render-error"></a>Template render error</h3>
+<p><strong>Problem</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Template render error: (unknown path)</span><br><span class="line">  Error: unexpected end of comment</span><br></pre></td></tr></table></figure>
+<p><strong>Solution</strong>: Hexo cannot render <code>#</code> and <code>}</code>, or <code>{</code> and <code>#</code> together, place a space between these two characters to avoid this error.</p>
 <h3 id="hexo-server-not-found"><a class="header-anchor" href="#hexo-server-not-found"></a>hexo server not found</h3>
 <p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
 <p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
@@ -477,7 +481,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#command"><span class="nav-number">1.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-server-not-found"><span class="nav-number">1.1.</span> <span class="nav-text">hexo server not found</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plugin"><span class="nav-number">2.</span> <span class="nav-text">Plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-algolia-0-posts-indexed"><span class="nav-number">2.1.</span> <span class="nav-text">hexo-algolia 0 posts indexed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-math-not-working"><span class="nav-number">2.2.</span> <span class="nav-text">hexo-math not working</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-toc-generating-two-tocs"><span class="nav-number">2.3.</span> <span class="nav-text">hexo-toc generating two tocs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-all-minifier-removing-useful-html-annotation"><span class="nav-number">2.4.</span> <span class="nav-text">hexo-all-minifier removing useful html annotation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tool"><span class="nav-number">3.</span> <span class="nav-text">Tool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitment-validation-failed"><span class="nav-number">3.1.</span> <span class="nav-text">Gitment validation failed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#syntax-highlighting"><span class="nav-number">4.</span> <span class="nav-text">Syntax Highlighting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#highlight-js"><span class="nav-number">4.1.</span> <span class="nav-text">highlight.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prism"><span class="nav-number">4.2.</span> <span class="nav-text">prism</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#command"><span class="nav-number">1.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#template-render-error"><span class="nav-number">1.1.</span> <span class="nav-text">Template render error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-server-not-found"><span class="nav-number">1.2.</span> <span class="nav-text">hexo server not found</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plugin"><span class="nav-number">2.</span> <span class="nav-text">Plugin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-algolia-0-posts-indexed"><span class="nav-number">2.1.</span> <span class="nav-text">hexo-algolia 0 posts indexed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-math-not-working"><span class="nav-number">2.2.</span> <span class="nav-text">hexo-math not working</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-toc-generating-two-tocs"><span class="nav-number">2.3.</span> <span class="nav-text">hexo-toc generating two tocs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-all-minifier-removing-useful-html-annotation"><span class="nav-number">2.4.</span> <span class="nav-text">hexo-all-minifier removing useful html annotation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tool"><span class="nav-number">3.</span> <span class="nav-text">Tool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitment-validation-failed"><span class="nav-number">3.1.</span> <span class="nav-text">Gitment validation failed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#syntax-highlighting"><span class="nav-number">4.</span> <span class="nav-text">Syntax Highlighting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#highlight-js"><span class="nav-number">4.1.</span> <span class="nav-text">highlight.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prism"><span class="nav-number">4.2.</span> <span class="nav-text">prism</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -495,7 +499,7 @@
         
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -536,7 +540,9 @@
         
           
         
-        <span class="site-state-item-count">13</span>
+          
+        
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -617,7 +623,9 @@
         
           
         
-        <span class="site-state-item-count">33</span>
+          
+        
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
