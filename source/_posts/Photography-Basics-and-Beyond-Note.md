@@ -24,6 +24,8 @@ $$
 - Mirrorless Cameras
 - DSLR(digital single-lens reflex) Cameras
 
+<!-- more -->
+
 ### Camera Setup
 #### Focus Options
 M-A-P-S: Manual, Aperture priority, Program, Shutter priority
