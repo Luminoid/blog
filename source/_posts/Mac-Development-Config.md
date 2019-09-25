@@ -166,17 +166,17 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlim
 - http://www.alfredworkflow.com/
 
 ### Finder Tools
-### [FiScript](https://github.com/Mortennn/FiScript)
+#### [FiScript](https://github.com/Mortennn/FiScript)
 Execute custom scripts from the MacOS context menu (CTRL+click) in Finder.
 
-### [OpenInCode](https://github.com/sozercan/OpenInCode)
+#### [OpenInCode](https://github.com/sozercan/OpenInCode)
 macOS Finder toolbar app to open current folder in Visual Studio Code
 
 ### Menu Bar Tools
-### [Itsycal](https://www.mowglii.com/itsycal/)
+#### [Itsycal](https://www.mowglii.com/itsycal/)
 Itsycal is a tiny menu bar calendar.
 
-### [Dozer](https://github.com/Mortennn/Dozer)
+#### [Dozer](https://github.com/Mortennn/Dozer)
 Hide status bar icons on macOS.
 
 #### [BeardedSpice](https://github.com/beardedspice/beardedspice)
@@ -184,6 +184,10 @@ BeardedSpice allows you to control web based media players (Like SoundCloud, and
 
 #### [BitBar](https://getbitbar.com)
 Put the output from any script or program right in your Mac OS X menu bar.
+
+### Screen Saver
+- [Aerial](https://github.com/JohnCoates/Aerial)
+- [Brooklyn](https://github.com/pedrommcarrasco/Brooklyn)
 
 ## Font
 ### [Fira Code](https://github.com/tonsky/FiraCode)
