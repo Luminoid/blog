@@ -97,3 +97,37 @@ Shooting directly into the sun with a wide angle lens may result in unwanted col
 
 `Remove Chromatic Aberration`: Remove unwanted color from around objects and bright highlights.
 `Enable Lens Corrections`: Apply automatic Lens Corrections.
+
+### Bringing a Sunrise to Life
+Getting the right tonality and color in a sunrise can be really tricky.
+
+#### Improving the Composition With Crop
+Getting the composition right in the camera is a great goal to strive for. For those times that the frame isn't exactly what you had imagined, the Crop tool can really transform your photo.
+
+`Crop`: Use the crop to split the image into two halves of sky (top) and sea (bottom).
+
+#### Getting the Colors Right with White Balance
+Shooting during sunrise and shooting on the coast can both throw the auto white balance settings off, resulting in a scene that doesn't match your memory. Temperature and Tint are invaluable tools to control color in a photo.
+
+`Temp 10280K`: increase the warmth of the image by increasing the Temperature slider.
+`Tint + 38`: Increasing Tint adds magenta, removing the slight green cast from the photo.
+`Saturation + 30`: To make the colors of the sunrise stand out, increase Saturation a bit.
+
+#### Balancing Contrast
+Now that the colors look much better, it's time to balance tonality and contrast. We're going to want to retain the sleepy sunrise mood while adding a bit of punch through contrast.
+
+`Contrast + 60`
+`Highlights - 100`: The sky is too bright, reduce Highlights to bring details back to the clouds.
+`Shadows + 35`: Shadows can act like a flashlight for dark area, bringing details back.
+`Whites + 45`: Recovering highlights made the photo a bit dingy, use Whites to clean it up.
+`Blacks - 20`: Add some blacks to the image to ensure there's a rage from black to white.
+`Curve: S-curve`
+
+#### Adding Depth With a Vignette
+The Vignette control can add depth to a photo by drawing the viewer's gaze towards the center of the photo. We'll first remove the vignette unique to this lens and then apply a vignette to the cropped area.
+
+`Enable Lens Corrections`
+`Vignette - 30`: Darken the edges, taking care not to create too obvious of an effect.
+`Midpoint 8`: Move the Midpoint to the left to bring the effect into the photo even more.
+`Roundness - 12`: Make the vignette a tiny bit less round.
+`Feather 90`: Increasing Feather ensures that the edge of the effect isn't visible.
