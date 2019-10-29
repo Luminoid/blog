@@ -76,6 +76,12 @@ Image processing tools collection
 ### [htop](https://hisham.hm/htop/)
 Improved top (interactive process viewer)
 
+### [httrack](http://www.httrack.com/)
+Website copier/offline browser
+``` bash
+httrack <URLs>
+```
+
 ### [mtr](https://www.bitwizard.nl/mtr/)
 `traceroute` and `ping` in a single tool
 

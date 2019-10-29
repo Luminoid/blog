@@ -58,6 +58,8 @@ $ sudo spctl --master-disable
 ### Xcode
 Simulator devices data: `~/Library/Developer/CoreSimulator/Devices`
 
+iOS DeviceSupport [(resource)](https://github.com/iGhibli/iOS-DeviceSupport): `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`
+
 ## Disk Cleanup
 ### Xcode
 ``` bash
