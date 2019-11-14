@@ -58,6 +58,43 @@ Sharpening is important in adding interest to landscape images to make all the d
 `Sharpening 75`: Sharpening the photo will also encourage the viewer to notice the details of the rocks.
 `Radius 1.2`: Increase the impact of the sharpening and make the rocks and edges of the landscape pop.
 
+### RGB Curves
+Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and/or creative interpretations to your images.
+
+#### RGB Curves
+The RGB Curves are part of the Point Tone Curve, which allow you to adjust the tonal values of the Red, Green, and Blue values independently to shift and refine color with great control.
+
+Yellow is the opposite of blue, magenta is the opposite of green, and cyan is the opposite of red. So when dragging UP on a given curve we add that curve's color, and dragging DOWN adds its opposite color.
+
+This landscape photo has a lot of blue in the shadow tones. We can use the RGB curves to remove the bluish cast in the shadows without removing it from the lighter areas in the sky, while also subtly boosting contrast.
+
+We'll start by placing a point on the Blue curve in the shadow region and drag downward slightly to add yellow and contrast to the shadows.
+
+Adding yellow left the shadows a little green. Drag down on the shadow region of the Green curve to add magenta and fix that.
+
+### Dealing with Dull Skies with the Linear Gradient Tool
+Bright skies and dark foregrounds are a very common scenario faced by photographers. Balancing out the tones will make the image look much more appealing and the Linear Gradient tool is up to the task.
+
+#### Linear Gradient
+The sky is way too light. Add a Gradient to darken the sky with Exposure and add a bit of 'life' to it with Clarity.
+
+`Selective Edits: Linear Gradient`: Drag a Gradient so that it's parallel to the horizon and wide enough to blend in between the hills and the sky. The width of a Linear Gradient determines its softness. Too soft is a bad idea so, counter intuitively, narrower Gradients often work best.
+`Linear Gradient: Exposure - 0.77`: Darken the sky a bit.
+`Linear Gradient: Clarity + 63`: Adding Clarity to the sky makes the clouds more distinct, which adds some drama.
+
+#### Light
+Once we have improved the sky we will use global adjustments to improve the overall tonality.
+
+`Contrast + 74`
+`Highlights - 50`
+`Shadows + 90`: Lighten the dark tones to open up the shadows and reveal the ship's textures all the better.
+
+#### Effects
+Clarity brings out the details of the ships hull - it works well on rusty and textured objects.
+
+`Clarity + 25`: Accentuate details in the ship's hull and the beach rocks.
+`Vignette - 20`: Darken the edges of the photo to hold the eye in the shot.
+
 ### Improving a Sunrise Portrait
 Improve a portrait captured at sunrise that's too dark.
 
@@ -67,7 +104,7 @@ When the image was captured, the exposure was set to ensure good detail in the s
 `Shadows + 100`: Begin by lightening the dark and underexposed tones.
 `Contrast + 100`: The increase in shadows makes the image feel bland so let's increase image contrast.
 `Exposure + 0.11`: Slightly brighten the overall photo.
-`Highlight - 100`: The very light tones are too bright, so recover those tone by decreasing the Highlights.
+`Highlights - 100`: The very light tones are too bright, so recover those tone by decreasing the Highlights.
 `Whites + 16`: Slightly brighten the bright tones.
 `Blacks - 50`: Drag the Blacks slider to the left to add more density and contrast.
 
