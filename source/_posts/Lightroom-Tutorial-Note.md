@@ -3,11 +3,27 @@ title: Lightroom Tutorial Note
 date: 2019-09-23 22:01:26
 updated:
 categories: Photography
-tags: Lightroom
+tags:
+- Lightroom
+- Note
 keywords: Photography
 ---
 
 ## Landscape
+### RGB Curves
+Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and/or creative interpretations to your images.
+
+#### RGB Curves
+The RGB Curves are part of the Point Tone Curve, which allow you to adjust the tonal values of the Red, Green, and Blue values independently to shift and refine color with great control.
+
+Yellow is the opposite of blue, magenta is the opposite of green, and cyan is the opposite of red. So when dragging UP on a given curve we add that curve's color, and dragging DOWN adds its opposite color.
+
+This landscape photo has a lot of blue in the shadow tones. We can use the RGB curves to remove the bluish cast in the shadows without removing it from the lighter areas in the sky, while also subtly boosting contrast.
+
+We'll start by placing a point on the Blue curve in the shadow region and drag downward slightly to add yellow and contrast to the shadows.
+
+Adding yellow left the shadows a little green. Drag down on the shadow region of the Green curve to add magenta and fix that.
+
 ### Removing Haze and Adding Contrast
 Aerial haze can reduce the overall image sharpness and contrast.
 
@@ -28,6 +44,29 @@ A common side effect of Haze Reduction is the photo tends to get blue. We can co
 Another side effect of the Dehaze slider is that sometimes the blue in the sky get too saturated.
 
 `Color Mix: Blue Saturation - 10`: Only desaturate the blues in the photo.
+
+### Dealing with Dull Skies with the Linear Gradient Tool
+Bright skies and dark foregrounds are a very common scenario faced by photographers. Balancing out the tones will make the image look much more appealing and the Linear Gradient tool is up to the task.
+
+#### Linear Gradient
+The sky is way too light. Add a Gradient to darken the sky with Exposure and add a bit of 'life' to it with Clarity.
+
+`Selective Edits: Linear Gradient`: Drag a Gradient so that it's parallel to the horizon and wide enough to blend in between the hills and the sky. The width of a Linear Gradient determines its softness. Too soft is a bad idea so, counter intuitively, narrower Gradients often work best.
+`Linear Gradient: Exposure - 0.77`: Darken the sky a bit.
+`Linear Gradient: Clarity + 63`: Adding Clarity to the sky makes the clouds more distinct, which adds some drama.
+
+#### Light
+Once we have improved the sky we will use global adjustments to improve the overall tonality.
+
+`Contrast + 74`
+`Highlights - 50`
+`Shadows + 90`: Lighten the dark tones to open up the shadows and reveal the ship's textures all the better.
+
+#### Effects
+Clarity brings out the details of the ships hull - it works well on rusty and textured objects.
+
+`Clarity + 25`: Accentuate details in the ship's hull and the beach rocks.
+`Vignette - 20`: Darken the edges of the photo to hold the eye in the shot.
 
 ### Creating Dramatic Contrast in a Washed-Out Landscape Image
 The midday sun in an environment like Maui's Haleakala Crater can wash out tones. Build contrast and shape color to transform a washed-out landscape image into a moody and dramatic final product.
@@ -58,42 +97,59 @@ Sharpening is important in adding interest to landscape images to make all the d
 `Sharpening 75`: Sharpening the photo will also encourage the viewer to notice the details of the rocks.
 `Radius 1.2`: Increase the impact of the sharpening and make the rocks and edges of the landscape pop.
 
-### RGB Curves
-Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and/or creative interpretations to your images.
+### Perfect Turquoise Water
 
-#### RGB Curves
-The RGB Curves are part of the Point Tone Curve, which allow you to adjust the tonal values of the Red, Green, and Blue values independently to shift and refine color with great control.
+#### Crop
+Most Social Media is consumed on a vertical device such as a phone, so vertical images will work best as they fill the screen. For Instagram the optimal ratio is 4:5 and you can choose the 4x5 ratio from the Crop presets.
 
-Yellow is the opposite of blue, magenta is the opposite of green, and cyan is the opposite of red. So when dragging UP on a given curve we add that curve's color, and dragging DOWN adds its opposite color.
-
-This landscape photo has a lot of blue in the shadow tones. We can use the RGB curves to remove the bluish cast in the shadows without removing it from the lighter areas in the sky, while also subtly boosting contrast.
-
-We'll start by placing a point on the Blue curve in the shadow region and drag downward slightly to add yellow and contrast to the shadows.
-
-Adding yellow left the shadows a little green. Drag down on the shadow region of the Green curve to add magenta and fix that.
-
-### Dealing with Dull Skies with the Linear Gradient Tool
-Bright skies and dark foregrounds are a very common scenario faced by photographers. Balancing out the tones will make the image look much more appealing and the Linear Gradient tool is up to the task.
-
-#### Linear Gradient
-The sky is way too light. Add a Gradient to darken the sky with Exposure and add a bit of 'life' to it with Clarity.
-
-`Selective Edits: Linear Gradient`: Drag a Gradient so that it's parallel to the horizon and wide enough to blend in between the hills and the sky. The width of a Linear Gradient determines its softness. Too soft is a bad idea so, counter intuitively, narrower Gradients often work best.
-`Linear Gradient: Exposure - 0.77`: Darken the sky a bit.
-`Linear Gradient: Clarity + 63`: Adding Clarity to the sky makes the clouds more distinct, which adds some drama.
+`Crop`: Place important subjects one third from the top or bottom. This is a classic composition rule that still works very well.
 
 #### Light
-Once we have improved the sky we will use global adjustments to improve the overall tonality.
+Especially on cloudy days, images often look flat and low in contrast. That's easy to correct. Plus we'll use the Tone Curve to adjust the image contrast to create a popular Instagram look.
 
-`Contrast + 74`
-`Highlights - 50`
-`Shadows + 90`: Lighten the dark tones to open up the shadows and reveal the ship's textures all the better.
+`Contrast + 56`: Get rid of the dullness and make the picture look more brilliant.
+`Highlights - 32`: Darken the bright tones.
+`Shadows + 35`: Lighten the dark tones to see more information in the mountain and water areas.
+`Whites + 27`: Brighten the bright tones. This will also add some brilliance to the image and make it look like the sun is shining.
+`Curve`: If you want the rest of the Curve not to be influenced by the adjustments you made, set anchor points above and below your change on the diagonal line to lock those values from being changed.
+
+#### Color
+The water is still way too green, what doesn't look natural at all. We want it to look like an ice cold turquoise glacial lake.
+
+`Color Mix: Aqua Hue + 43`: Make the aqua tones more blue.
+`Color Mix: Aqua Saturation + 62`: Make the aqua tones richer.
+`Color Mix: Blue Luminance - 35`: Darken the blue tones.
+
+### 2.5 minutes of total solar eclipse
+Learn how to process the strange and beautiful light from a solar eclipse. Give depth and richness to the shadow of the moon as it passes across the sun, and accentuate the symmetry and negative space of your composition.
+
+#### Crop
+I composed the image so that the eclipse was central but to have most of the photo consists of sky. The composition is just slightly off so I begin by making an adjustment to crop and angle.
+
+`Crop`: Center the eclipse but position it slightly lower in the picture.
+
+The reason I used a wide angle lens is because I wanted to capture the effect of the moon shadow across the sky and landscape. The focal point is not the eclipse itself, but rather the subtle gradations in light and color.
+
+#### Light
+The raw image really didn't reflect my memory of the eclipse. The picture needed substantial changes in exposure to recreate the night tones which pervaded the sky.
+
+`Exposure - 1.58`: Darken the image so that the deepest parts of the sky are almost black. It is essentially night time inside the shadow!
+`Curve: S-curve`
+
+#### Color
+Now that the light is in a good place. Work with the color to adjust the mood and atmosphere of the picture.
+To see the subtle color shifts, pinch zoom to the center of the image and work alone.
+
+`Temp 3846K`: Decrease Temperature to make the photo cooler. The sky was a very dark indigo, the color of night.
+`Vibrance + 18`: Make the colors more vivid by increasing Vibrance. I tend to use this function over Saturation.
+`Saturation + 10`: Increase Saturation slightly but not by too much. I prefer to saturate colors individually or use Vibrance.
+`Color Mix: Orange Hue - 7`: Shift the orange hues slightly towards red to deepen the tone.
+`Color Mix: Yellow Hue - 6`: Shift the yellow more orange. The yellow/orange tones on the horizon will be main saturated colors in the photo.
 
 #### Effects
-Clarity brings out the details of the ships hull - it works well on rusty and textured objects.
+Add some structure to the mountain with the Clarity slider.
 
-`Clarity + 25`: Accentuate details in the ship's hull and the beach rocks.
-`Vignette - 20`: Darken the edges of the photo to hold the eye in the shot.
+`Clarity + 37`: Enhance the micro contrast in the midtones and makes the image look defined.
 
 ### Improving a Sunrise Portrait
 Improve a portrait captured at sunrise that's too dark.
