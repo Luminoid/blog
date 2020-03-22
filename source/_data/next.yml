@@ -448,6 +448,9 @@ post_navigation: left
 # See: https://theme-next.org/docs/theme-settings/custom-pages
 # ---------------------------------------------------------------
 
+# Enable "cheers" for archive page.
+cheers: false
+
 # TagCloud settings for tags page.
 tagcloud:
   # All values below are same as default, change them by yourself.
