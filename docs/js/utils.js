@@ -1,13 +1,5 @@
 /* global NexT, CONFIG */
 
-HTMLElement.prototype.outerHeight = function(flag) {
-  var height = this.offsetHeight;
-  if (!flag) return height;
-  var style = window.getComputedStyle(this);
-  height += parseInt(style.marginTop, 10) + parseInt(style.marginBottom, 10);
-  return height;
-};
-
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
@@ -20,12 +12,11 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    document.querySelectorAll('.post-body :not(a) > img').forEach(element => {
+    document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
       var $image = $(element);
       var imageLink = $image.attr('data-src') || $image.attr('src');
       var $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
       if ($image.is('.post-gallery img')) {
-        $imageWrapLink.addClass('post-gallery-img');
         $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
       } else if ($image.is('.group-picture img')) {
         $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
@@ -53,13 +44,17 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    document.querySelectorAll('.exturl').forEach(element => {
-      element.addEventListener('click', event => {
-        var $exturl = event.currentTarget.getAttribute('data-url');
-        var $decurl = decodeURIComponent(escape(window.atob($exturl)));
-        window.open($decurl, '_blank', 'noopener');
-        return false;
-      });
+    document.querySelectorAll('span.exturl').forEach(element => {
+      let link = document.createElement('a');
+      // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
+      link.href = decodeURIComponent(atob(element.dataset.url).split('').map(c => {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      link.rel = 'noopener external nofollow noreferrer';
+      link.target = '_blank';
+      link.className = element.className;
+      link.innerHTML = element.innerHTML;
+      element.parentNode.replaceChild(link, element);
     });
   },
 
@@ -67,26 +62,17 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    document.querySelectorAll('figure.highlight').forEach(e => {
-      const initButton = button => {
-        if (CONFIG.copycode.style === 'mac') {
-          button.innerHTML = '<i class="fa fa-clipboard"></i>';
-        } else {
-          button.innerText = CONFIG.translation.copy_button;
-        }
-      };
+    document.querySelectorAll('figure.highlight').forEach(element => {
       const box = document.createElement('div');
-      box.classList.add('highlight-wrap');
-      e.wrap(box);
-      e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
-      var button = e.parentNode.querySelector('.copy-btn');
+      element.wrap(box);
+      box.classList.add('highlight-container');
+      box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard"></i></div>');
+      var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
-        var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
-          return element.innerText;
-        }).join('\n');
+        var target = event.currentTarget;
+        var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => line.innerText).join('\n');
         var ta = document.createElement('textarea');
-        var yPosition = window.scrollY;
-        ta.style.top = yPosition + 'px'; // Prevent page scrolling
+        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
         ta.readOnly = true;
@@ -99,10 +85,10 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
+          target.querySelector('i').className = result ? 'fa fa-check' : 'fa fa-times';
         }
         ta.blur(); // For iOS
-        event.currentTarget.blur();
+        target.blur();
         if (selected) {
           selection.removeAllRanges();
           selection.addRange(selected);
@@ -111,36 +97,35 @@ NexT.utils = {
       });
       button.addEventListener('mouseleave', event => {
         setTimeout(() => {
-          initButton(event.target);
+          event.target.querySelector('i').className = 'fa fa-clipboard';
         }, 300);
       });
-      initButton(button);
     });
   },
 
   wrapTableWithBox: function() {
-    document.querySelectorAll('table').forEach(table => {
+    document.querySelectorAll('table').forEach(element => {
       const box = document.createElement('div');
       box.className = 'table-container';
-      table.wrap(box);
+      element.wrap(box);
     });
   },
 
   registerVideoIframe: function() {
     document.querySelectorAll('iframe').forEach(element => {
-      const SUPPORTED_PLAYERS = [
+      const supported = [
         'www.youtube.com',
         'player.vimeo.com',
         'player.youku.com',
         'player.bilibili.com',
         'www.tudou.com'
-      ];
-      const pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
-      if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
+      ].some(host => element.src.includes(host));
+      if (supported && !element.parentNode.matches('.video-container')) {
         const box = document.createElement('div');
         box.className = 'video-container';
         element.wrap(box);
-        let width = Number(element.width); let height = Number(element.height);
+        let width = Number(element.width);
+        let height = Number(element.height);
         if (width && height) {
           element.parentNode.style.paddingTop = (height / width * 100) + '%';
         }
@@ -154,26 +139,24 @@ NexT.utils = {
     var readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
     window.addEventListener('scroll', () => {
-      var scrollPercent;
       if (backToTop || readingProgressBar) {
         var docHeight = document.querySelector('.container').offsetHeight;
         var winHeight = window.innerHeight;
         var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
-        var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
-        scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
-      }
-      if (backToTop) {
-        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
-        backToTop.querySelector('span').innerText = scrollPercent;
-      }
-      if (readingProgressBar) {
-        readingProgressBar.style.width = scrollPercent;
+        var scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100);
+        if (backToTop) {
+          backToTop.classList.toggle('back-to-top-on', window.scrollY > THRESHOLD);
+          backToTop.querySelector('span').innerText = Math.round(scrollPercent) + '%';
+        }
+        if (readingProgressBar) {
+          readingProgressBar.style.width = scrollPercent.toFixed(2) + '%';
+        }
       }
     });
 
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
-        targets  : document.documentElement,
+        targets  : document.scrollingElement,
         duration : 500,
         easing   : 'linear',
         scrollTop: 0
@@ -186,20 +169,20 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(tab => {
-      tab.addEventListener('click', event => {
+    document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(element => {
+      element.addEventListener('click', event => {
         event.preventDefault();
+        var target = event.currentTarget;
         // Prevent selected tab to select again.
-        if (!event.currentTarget.classList.contains('active')) {
+        if (!target.classList.contains('active')) {
           // Add & Remove active class on `nav-tabs` & `tab-content`.
-          [...event.currentTarget.parentNode.children].forEach(item => {
-            item.classList.remove('active');
+          [...target.parentNode.children].forEach(element => {
+            element.classList.remove('active');
           });
-          event.currentTarget.classList.add('active');
-          var tActive = event.currentTarget.querySelector('a').getAttribute('href');
-          tActive = document.querySelector(tActive);
-          [...tActive.parentNode.children].forEach(item => {
-            item.classList.remove('active');
+          target.classList.add('active');
+          var tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
+          [...tActive.parentNode.children].forEach(element => {
+            element.classList.remove('active');
           });
           tActive.classList.add('active');
           // Trigger event
@@ -215,12 +198,11 @@ NexT.utils = {
 
   registerCanIUseTag: function() {
     // Get responsive height passed from iframe.
-    window.addEventListener('message', e => {
-      var data = e.data;
-      if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    window.addEventListener('message', ({ data }) => {
+      if ((typeof data === 'string') && data.includes('ciu_embed')) {
         var featureID = data.split(':')[1];
         var height = data.split(':')[2];
-        document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 'px';
+        document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 5 + 'px';
       }
     }, false);
   },
@@ -230,12 +212,20 @@ NexT.utils = {
       var target = element.querySelector('a[href]');
       if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
-      var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
-      if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        element.classList.add('menu-item-active');
-      } else {
-        element.classList.remove('menu-item-active');
-      }
+      var isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
+      element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
+    });
+  },
+
+  registerLangSelect: function() {
+    let sel = document.querySelector('.lang-select');
+    if (!sel) return;
+    sel.value = CONFIG.page.lang;
+    sel.addEventListener('change', () => {
+      let target = sel.options[sel.selectedIndex];
+      document.querySelector('.lang-select-label span').innerText = target.text;
+      let url = target.dataset.href;
+      window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
     });
   },
 
@@ -249,7 +239,7 @@ NexT.utils = {
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
         var offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
-          targets  : document.documentElement,
+          targets  : document.scrollingElement,
           duration : 500,
           easing   : 'linear',
           scrollTop: offset + 10
@@ -287,7 +277,7 @@ NexT.utils = {
         index = sections.indexOf(entry.target);
         return index === 0 ? 0 : index - 1;
       }
-      for (;index < entries.length; index++) {
+      for (; index < entries.length; index++) {
         if (entries[index].boundingClientRect.top <= 0) {
           entry = entries[index];
         } else {
@@ -312,15 +302,16 @@ NexT.utils = {
         rootMargin: marginTop + 'px 0px -100% 0px',
         threshold : 0
       });
-      sections.forEach(item => intersectionObserver.observe(item));
+      sections.forEach(element => {
+        element && intersectionObserver.observe(element);
+      });
     }
     createIntersectionObserver(document.documentElement.scrollHeight);
   },
 
   hasMobileUA: function() {
-    var ua = navigator.userAgent;
-    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
-
+    let ua = navigator.userAgent;
+    let pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
     return pa.test(ua);
   },
 
@@ -336,20 +327,12 @@ NexT.utils = {
     return !this.isTablet() && !this.isMobile();
   },
 
-  isMuse: function() {
-    return CONFIG.scheme === 'Muse';
-  },
-
-  isMist: function() {
-    return CONFIG.scheme === 'Mist';
-  },
-
-  isPisces: function() {
-    return CONFIG.scheme === 'Pisces';
-  },
-
-  isGemini: function() {
-    return CONFIG.scheme === 'Gemini';
+  supportsPDFs: function() {
+    let ua = navigator.userAgent;
+    let isFirefoxWithPDFJS = ua.includes('irefox') && parseInt(ua.split('rv:')[1].split('.')[0], 10) > 18;
+    let supportsPdfMimeType = typeof navigator.mimeTypes['application/pdf'] !== 'undefined';
+    let isIOS = /iphone|ipad|ipod/i.test(ua.toLowerCase());
+    return isFirefoxWithPDFJS || (supportsPdfMimeType && !isIOS);
   },
 
   /**
@@ -358,12 +341,12 @@ NexT.utils = {
    */
   initSidebarDimension: function() {
     var sidebarNav = document.querySelector('.sidebar-nav');
-    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.outerHeight(true) : 0;
+    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.offsetHeight : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    var sidebarSchemePadding = CONFIG.sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
-    // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
-    if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += (sidebarOffset * 2) - 12;
+    var sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
+    // Margin of sidebar b2t: -4px -10px -18px, brings a different of 22px.
+    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += (sidebarOffset * 2) - 22;
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
     document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;
@@ -383,7 +366,7 @@ NexT.utils = {
       document.querySelector('.sidebar-nav-overview').click();
     }
     NexT.utils.initSidebarDimension();
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) return;
+    if (!this.isDesktop() || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
@@ -410,5 +393,21 @@ NexT.utils = {
       script.src = url;
       document.head.appendChild(script);
     }
+  },
+
+  loadComments: function(element, callback) {
+    if (!CONFIG.comments.lazyload || !element) {
+      callback();
+      return;
+    }
+    let intersectionObserver = new IntersectionObserver((entries, observer) => {
+      let entry = entries[0];
+      if (entry.isIntersecting) {
+        callback();
+        observer.disconnect();
+      }
+    });
+    intersectionObserver.observe(element);
+    return intersectionObserver;
   }
 };

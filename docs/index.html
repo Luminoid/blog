@@ -1,61 +1,26 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.4.0">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2">
-  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
-
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/blog/',
-    scheme: 'Muse',
-    version: '7.4.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: true,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    },
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="Notes about programming and other fields">
 <meta property="og:type" content="website">
@@ -67,26 +32,22 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Luminoid&#39;s Site">
 <meta name="twitter:description" content="Notes about programming and other fields">
-  <link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml">
-  <link rel="canonical" href="http://luminoid.github.io/blog/">
+
+<link rel="canonical" href="http://luminoid.github.io/blog/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
   };
 </script>
 
   <title>Luminoid's Site</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -105,7 +66,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -119,135 +79,100 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Luminoid's Site</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-        <p class="site-subtitle">OK Computer</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Luminoid's Site</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">OK Computer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
-      
-    
 
-    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
-      
-    
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">39</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">39</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
-      
-    
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">14</span></a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">14</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
-      
-    
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">35</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">35</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
-      
-    
 
-    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
            placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -261,34 +186,35 @@
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Lightroom-Tutorial-Note/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Lightroom-Tutorial-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Lightroom-Tutorial-Note/" class="post-title-link" itemprop="url">Lightroom Tutorial Note</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Lightroom-Tutorial-Note/" class="post-title-link" itemprop="url">Lightroom Tutorial Note</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -297,38 +223,24 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2019-09-23 22:01:26" itemprop="dateCreated datePublished" datetime="2019-09-23T22:01:26+08:00">2019-09-23</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-31 02:26:51" itemprop="dateModified" datetime="2019-12-31T02:26:51+08:00">2019-12-31</time>
+                <time title="Modified: 2020-03-22 17:40:55" itemprop="dateModified" datetime="2020-03-22T17:40:55+08:00">2020-03-22</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -364,13 +276,11 @@
 <p>Another side effect of the Dehaze slider is that sometimes the blue in the sky get too saturated.</p>
 <p><code>Color Mix: Blue Saturation - 10</code>: Only desaturate the blues in the photo.</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Lightroom-Tutorial-Note/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Lightroom-Tutorial-Note/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -380,38 +290,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/WWDC-Note/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/WWDC-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/WWDC-Note/" class="post-title-link" itemprop="url">WWDC Note</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/WWDC-Note/" class="post-title-link" itemprop="url">WWDC Note</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -420,16 +325,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-09-17 15:38:53" itemprop="dateCreated datePublished" datetime="2018-09-17T15:38:53+08:00">2018-09-17</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -437,21 +334,15 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-18 08:54:26" itemprop="dateModified" datetime="2019-11-18T08:54:26+08:00">2019-11-18</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -504,13 +395,11 @@
 <img src="/blog/WWDC-Note/ChoosingTheRightControl.png" title="Choosing the Right Control">
 <p>Layout process: Attribute Fixing -&gt; Glyph Generation -&gt; Glyph Layout -&gt; Display</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/WWDC-Note/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/WWDC-Note/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -520,38 +409,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Usage/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Mac-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Mac-Usage/" class="post-title-link" itemprop="url">Mac Usage</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Mac-Usage/" class="post-title-link" itemprop="url">Mac Usage</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -560,16 +444,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-03-07 00:56:07" itemprop="dateCreated datePublished" datetime="2018-03-07T00:56:07+08:00">2018-03-07</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -577,21 +453,15 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-10-29 17:02:44" itemprop="dateModified" datetime="2019-10-29T17:02:44+08:00">2019-10-29</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -607,13 +477,11 @@
           <h2 id="upgrade"><a class="header-anchor" href="#upgrade"></a>Upgrade</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ bubu  <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew cask upgrade</span><br><span class="line">$ brew doctor</span><br><span class="line">$ npm-check -gu</span><br><span class="line">$ npm doctor</span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Mac-Usage/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Mac-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -623,38 +491,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Homebrew-Usage/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Homebrew-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Homebrew-Usage/" class="post-title-link" itemprop="url">Homebrew Usage</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Homebrew-Usage/" class="post-title-link" itemprop="url">Homebrew Usage</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -663,16 +526,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-12-04 23:55:06" itemprop="dateCreated datePublished" datetime="2017-12-04T23:55:06+08:00">2017-12-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -680,21 +535,15 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-09-27 16:14:56" itemprop="dateModified" datetime="2019-09-27T16:14:56+08:00">2019-09-27</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -711,13 +560,11 @@
 <h2 id="command"><a class="header-anchor" href="#command"></a>Command</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;  <span class="comment"># Install formula</span></span><br><span class="line">brew update             <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub</span></span><br><span class="line">brew upgrade            <span class="comment"># Upgrade all outdated, unpinned packages</span></span><br><span class="line">brew leaves             <span class="comment"># Show installed formulae that are not dependencies of another installed formula</span></span><br><span class="line">brew tap                <span class="comment"># Tap a formula repository</span></span><br><span class="line">brew doctor             <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup            <span class="comment"># Remove stale lock files and outdated downloads for formulae and casks, and remove old versions of installed formulae.</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Homebrew-Usage/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Homebrew-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -727,38 +574,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Mac-Development-Config/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Mac-Development-Config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Mac-Development-Config/" class="post-title-link" itemprop="url">Mac Development Config</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Mac-Development-Config/" class="post-title-link" itemprop="url">Mac Development Config</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -767,16 +609,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -784,21 +618,15 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-09-25 13:39:54" itemprop="dateModified" datetime="2019-09-25T13:39:54+08:00">2019-09-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -831,13 +659,11 @@
 <h4 id="usage-v3"><a class="header-anchor" href="#usage-v3"></a>Usage</h4>
 <a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Mac-Development-Config/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Mac-Development-Config/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -847,38 +673,33 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Photography-Basics-and-Beyond-Note/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Photography-Basics-and-Beyond-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Photography-Basics-and-Beyond-Note/" class="post-title-link" itemprop="url">Photography Basics and Beyond Note</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Photography-Basics-and-Beyond-Note/" class="post-title-link" itemprop="url">Photography Basics and Beyond Note</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -886,31 +707,19 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-
-              
-                
               
 
               <time title="Created: 2019-09-21 00:58:17 / Modified: 10:32:35" itemprop="dateCreated datePublished" datetime="2019-09-21T00:58:17+08:00">2019-09-21</time>
             </span>
-          
-            
-
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -938,13 +747,11 @@ $$</p>
 <li>DSLR(digital single-lens reflex) Cameras</li>
 </ul>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Photography-Basics-and-Beyond-Note/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Photography-Basics-and-Beyond-Note/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -954,38 +761,33 @@ $$</p>
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Hexo-Common-Problems/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Hexo-Common-Problems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Hexo-Common-Problems/" class="post-title-link" itemprop="url">Hexo Common Problems</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Hexo-Common-Problems/" class="post-title-link" itemprop="url">Hexo Common Problems</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -994,16 +796,8 @@ $$</p>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-06-08 20:25:08" itemprop="dateCreated datePublished" datetime="2017-06-08T20:25:08+08:00">2017-06-08</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1011,28 +805,19 @@ $$</p>
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-09-21 01:43:04" itemprop="dateModified" datetime="2019-09-21T01:43:04+08:00">2019-09-21</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
                   , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -1055,13 +840,11 @@ $$</p>
 <p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
 <p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Hexo-Common-Problems/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Hexo-Common-Problems/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -1071,38 +854,33 @@ $$</p>
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/VS-Code-Usage/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/VS-Code-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/VS-Code-Usage/" class="post-title-link" itemprop="url">VS Code Usage</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/VS-Code-Usage/" class="post-title-link" itemprop="url">VS Code Usage</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -1111,16 +889,8 @@ $$</p>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-12-13 01:12:03" itemprop="dateCreated datePublished" datetime="2017-12-13T01:12:03+08:00">2017-12-13</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1128,28 +898,19 @@ $$</p>
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-09-16 14:37:11" itemprop="dateModified" datetime="2019-09-16T14:37:11+08:00">2019-09-16</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                </span>
                   , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Tool/Editor/" itemprop="url" rel="index"><span itemprop="name">Editor</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/Editor/" itemprop="url" rel="index"><span itemprop="name">Editor</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -1171,13 +932,11 @@ $$</p>
 <h2 id="keymaps"><a class="header-anchor" href="#keymaps"></a>Keymaps</h2>
 <a href="/blog/Universal-Editor-Keymaps/" title="Universal Editor Keymaps">Universal Editor Keymaps</a>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/VS-Code-Usage/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/VS-Code-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -1187,38 +946,33 @@ $$</p>
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Git-Amateur-Guide/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Git-Amateur-Guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/Git-Amateur-Guide/" class="post-title-link" itemprop="url">Git: Amateur Guide</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/Git-Amateur-Guide/" class="post-title-link" itemprop="url">Git: Amateur Guide</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -1227,16 +981,8 @@ $$</p>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-01-25 00:27:11" itemprop="dateCreated datePublished" datetime="2018-01-25T00:27:11+08:00">2018-01-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1244,28 +990,19 @@ $$</p>
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-09-02 13:19:03" itemprop="dateModified" datetime="2019-09-02T13:19:03+08:00">2019-09-02</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                </span>
                   , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -1287,13 +1024,11 @@ $$</p>
 The <strong>index</strong> is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.<br>
 The <strong>Git object store</strong> is organized and implemented as a content-addressable storage system(SHA1 hash value =&gt; object).</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/Git-Amateur-Guide/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/Git-Amateur-Guide/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -1303,38 +1038,33 @@ The <strong>Git object store</strong> is organized and implemented as a content-
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/npm-Usage/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/npm-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/blog/npm-Usage/" class="post-title-link" itemprop="url">npm Usage</a>
+        <h2 class="post-title" itemprop="name headline">
           
-        </h1>
+            <a href="/blog/npm-Usage/" class="post-title-link" itemprop="url">npm Usage</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -1343,16 +1073,8 @@ The <strong>Git object store</strong> is organized and implemented as a content-
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-01-02 22:34:49" itemprop="dateCreated datePublished" datetime="2018-01-02T22:34:49+08:00">2018-01-02</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1360,28 +1082,19 @@ The <strong>Git object store</strong> is organized and implemented as a content-
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-08-12 16:43:15" itemprop="dateModified" datetime="2019-08-12T16:43:15+08:00">2019-08-12</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
                   , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
             </span>
-          
 
           
 
@@ -1400,13 +1113,11 @@ The <strong>Git object store</strong> is organized and implemented as a content-
 <p><strong>Development</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm init                            <span class="comment"># Interactively create a package.json file</span></span><br><span class="line">npm edit &lt;package&gt;                  <span class="comment"># Edit an installed package</span></span><br><span class="line">npm config list                     <span class="comment"># Show all the config settings</span></span><br><span class="line">npm config <span class="built_in">set</span> key value            <span class="comment"># Sets the config key to the value</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/npm-Usage/" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="/blog/npm-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -1416,16 +1127,13 @@ The <strong>Git object store</strong> is organized and implemented as a content-
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
   </div>
 
   
@@ -1434,18 +1142,39 @@ The <strong>Git object store</strong> is organized and implemented as a content-
   </nav>
 
 
+
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
@@ -1467,212 +1196,50 @@ The <strong>Git object store</strong> is organized and implemented as a content-
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/blog/images/avatar.png"
-      alt="Luminoid">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
   <p class="site-author-name" itemprop="name">Luminoid</p>
   <div class="site-description" itemprop="description">Notes about programming and other fields</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/blog/archives/">
         
           <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/blog/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span>
-        </a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/blog/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">35</span>
-        <span class="site-state-item-name">tags</span>
-        </a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
-    
   </nav>
-  <div class="feed-link motion-element">
-    <a href="/blog/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/Luminoid" title="GitHub &rarr; https://github.com/Luminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/Luminoid" title="GitHub → https://github.com/Luminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://instagram.com/pentadelic" title="Instagram &rarr; https://instagram.com/pentadelic" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+        <a href="https://instagram.com/pentadelic" title="Instagram → https://instagram.com/pentadelic" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://twitter.com/YALuminoid" title="Twitter &rarr; https://twitter.com/YALuminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https://twitter.com/YALuminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.douban.com/people/173394996" title="Douban &rarr; https://www.douban.com/people/173394996" rel="noopener" target="_blank"><i class="fa fa-fw fa-leaf"></i>Douban</a>
+        <a href="https://www.douban.com/people/173394996" title="Douban → https://www.douban.com/people/173394996" rel="noopener" target="_blank"><i class="fa fa-fw fa-leaf"></i>Douban</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email &rarr; mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
       </span>
-    
   </div>
 
 
@@ -1685,7 +1252,6 @@ The <strong>Git object store</strong> is organized and implemented as a content-
         <li class="links-of-blogroll-item">
           <a href="https://luminoid.github.io/color-splash/" title="https://luminoid.github.io/color-splash/">Color Splash</a>
         </li>
-      
     </ul>
   </div>
 
@@ -1699,37 +1265,42 @@ The <strong>Git object store</strong> is organized and implemented as a content-
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Luminoid</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
     <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
@@ -1739,25 +1310,18 @@ The <strong>Git object store</strong> is organized and implemented as a content-
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
-
-
-  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-<script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
-<script src="/blog/js/schemes/muse.js?v=7.4.0"></script>
-<script src="/blog/js/next-boot.js?v=7.4.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script>
+<script src="/blog/js/schemes/muse.js"></script>
+<script src="/blog/js/next-boot.js"></script>
 
 
 
@@ -1766,13 +1330,7 @@ The <strong>Git object store</strong> is organized and implemented as a content-
 
 
 
-
-
-
-
-  <script src="/blog/js/local-search.js?v=7.4.0"></script>
-
-
+  <script src="/blog/js/local-search.js"></script>
 
 
 
@@ -1788,84 +1346,71 @@ The <strong>Git object store</strong> is organized and implemented as a content-
   
 
   
-    
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
-  
 
   
-
-  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://luminoid.github.io/blog/',]
+      });
+      });
+  </script>
 
 </body>
 </html>

@@ -1,61 +1,26 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.4.0">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css?v=1.0.2">
-  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
-
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/blog/',
-    scheme: 'Muse',
-    version: '7.4.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: true,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    },
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="Texture Docs Subclassing ASDisplayNode -init This method is called on a background thread when using nodeBlocks. However, because no other method can run until -init is finished, it should never be ne">
 <meta name="keywords" content="Texture">
@@ -71,26 +36,22 @@
 <meta name="twitter:title" content="Texture Concepts">
 <meta name="twitter:description" content="Texture Docs Subclassing ASDisplayNode -init This method is called on a background thread when using nodeBlocks. However, because no other method can run until -init is finished, it should never be ne">
 <meta name="twitter:image" content="http://luminoid.github.io/blog/Texture-Concepts/CornerRoundingFlowchart.png">
-  <link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml">
-  <link rel="canonical" href="http://luminoid.github.io/blog/Texture-Concepts/">
+
+<link rel="canonical" href="http://luminoid.github.io/blog/Texture-Concepts/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
   <title>Texture Concepts | Luminoid's Site</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -109,7 +70,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -123,135 +83,100 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Luminoid's Site</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-        <p class="site-subtitle">OK Computer</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Luminoid's Site</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">OK Computer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
-      
-    
 
-    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
-      
-    
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">39</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">39</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
-      
-    
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">14</span></a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">14</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
-      
-    
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">35</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">35</span></a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
-      
-    
 
-    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
            placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -265,33 +190,33 @@
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/blog/Texture-Concepts/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Texture-Concepts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
       <meta itemprop="description" content="Notes about programming and other fields">
-      <meta itemprop="image" content="/blog/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Texture Concepts
-
-          
+        <h1 class="post-title" itemprop="name headline">
+          Texture Concepts
         </h1>
 
         <div class="post-meta">
@@ -301,16 +226,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-08-08 21:52:08" itemprop="dateCreated datePublished" datetime="2018-08-08T21:52:08+08:00">2018-08-08</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -318,31 +235,24 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="Views">
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
               <span class="post-meta-item-text">Views: </span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
-          
 
         </div>
       </header>
@@ -617,73 +527,91 @@
     
     
         
-      
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/YALuminoid">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           
-            
-          
           <div class="post-tags">
-            
               <a href="/blog/tags/Framework/" rel="tag"><i class="fa fa-tag"></i> Framework</a>
-            
           </div>
-        
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/blog/oh-my-zsh-Usage/" rel="next" title="oh-my-zsh Usage">
-                  <i class="fa fa-chevron-left"></i> oh-my-zsh Usage
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/blog/iOS-Development-Config/" rel="prev" title="iOS Development Config">
-                  iOS Development Config <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/oh-my-zsh-Usage/" rel="prev" title="oh-my-zsh Usage">
+      <i class="fa fa-chevron-left"></i> oh-my-zsh Usage
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/iOS-Development-Config/" rel="next" title="iOS Development Config">
+      iOS Development Config <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -697,218 +625,55 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#subclassing"><span class="nav-number">1.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode"><span class="nav-number">1.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didload"><span class="nav-number">1.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutspecthatfits"><span class="nav-number">1.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asviewcontroller"><span class="nav-number">1.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadview"><span class="nav-number">1.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewdidload"><span class="nav-number">1.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwilllayoutsubviews"><span class="nav-number">1.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewwillappear-viewdiddisappear"><span class="nav-number">1.2.5.</span> <span class="nav-text">-viewWillAppear: / -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodes"><span class="nav-number">2.</span> <span class="nav-text">Nodes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-subclasses"><span class="nav-number">2.1.</span> <span class="nav-text">Node Subclasses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asdisplaynode-v2"><span class="nav-number">2.2.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#view-wrapping"><span class="nav-number">2.2.1.</span> <span class="nav-text">View Wrapping</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ascellnode"><span class="nav-number">2.3.</span> <span class="nav-text">ASCellNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#subclassing-v2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Subclassing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#initializing-with-an-asviewcontroller"><span class="nav-number">2.3.2.</span> <span class="nav-text">Initializing with an ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#initializing-with-a-uiview-or-calayer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Initializing with a UIView or CALayer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asimagenode"><span class="nav-number">2.4.</span> <span class="nav-text">ASImageNode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asnetworkimagenode"><span class="nav-number">2.5.</span> <span class="nav-text">ASNetworkImageNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#laying-out-a-network-image-node"><span class="nav-number">2.5.1.</span> <span class="nav-text">Laying Out a Network Image Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#style-preferredsize"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">.style.preferredSize</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#asratiolayoutspec"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asscrollnode"><span class="nav-number">2.6.</span> <span class="nav-text">ASScrollNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#automaticallymanagescontentsize"><span class="nav-number">2.6.1.</span> <span class="nav-text">automaticallyManagesContentSize</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-containers"><span class="nav-number">3.</span> <span class="nav-text">Node Containers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#astablenode"><span class="nav-number">3.1.</span> <span class="nav-text">ASTableNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#replacing-uitableviewcontroller-with-asviewcontroller"><span class="nav-number">3.1.1.</span> <span class="nav-text">Replacing UITableViewController with ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-block-thread-safety-warning"><span class="nav-number">3.1.2.</span> <span class="nav-text">Node Block Thread Safety Warning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#accessing-the-astableview"><span class="nav-number">3.1.3.</span> <span class="nav-text">Accessing the ASTableView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#table-row-height"><span class="nav-number">3.1.4.</span> <span class="nav-text">Table Row Height</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ascollectionnode"><span class="nav-number">3.2.</span> <span class="nav-text">ASCollectionNode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layout-v2"><span class="nav-number">4.</span> <span class="nav-text">Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-specs"><span class="nav-number">4.1.</span> <span class="nav-text">Layout Specs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#aswrapperlayoutspec"><span class="nav-number">4.1.1.</span> <span class="nav-text">ASWrapperLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asstacklayoutspec"><span class="nav-number">4.1.2.</span> <span class="nav-text">ASStackLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asinsetlayoutspec"><span class="nav-number">4.1.3.</span> <span class="nav-text">ASInsetLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asoverlaylayoutspec"><span class="nav-number">4.1.4.</span> <span class="nav-text">ASOverlayLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asbackgroundlayoutspec"><span class="nav-number">4.1.5.</span> <span class="nav-text">ASBackgroundLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ascenterlayoutspec"><span class="nav-number">4.1.6.</span> <span class="nav-text">ASCenterLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asratiolayoutspec-v2"><span class="nav-number">4.1.7.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asrelativelayoutspec"><span class="nav-number">4.1.8.</span> <span class="nav-text">ASRelativeLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asabsolutelayoutspec"><span class="nav-number">4.1.9.</span> <span class="nav-text">ASAbsoluteLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ascornerlayoutspec"><span class="nav-number">4.1.10.</span> <span class="nav-text">ASCornerLayoutSpec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-elements"><span class="nav-number">4.2.</span> <span class="nav-text">Layout Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout-api-sizing"><span class="nav-number">4.3.</span> <span class="nav-text">Layout API Sizing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#values-cgfloat-asdimension"><span class="nav-number">4.3.1.</span> <span class="nav-text">Values (CGFloat, ASDimension)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sizes-cgsize-aslayoutsize"><span class="nav-number">4.3.2.</span> <span class="nav-text">Sizes (CGSize, ASLayoutSize)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#size-range-assizerange"><span class="nav-number">4.3.3.</span> <span class="nav-text">Size Range (ASSizeRange)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-nodes-need-sizes-set"><span class="nav-number">4.4.</span> <span class="nav-text">Some nodes need Sizes Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notices"><span class="nav-number">5.</span> <span class="nav-text">Notices</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conveniences"><span class="nav-number">6.</span> <span class="nav-text">Conveniences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hit-test-slop"><span class="nav-number">6.1.</span> <span class="nav-text">Hit Test Slop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#batch-fetching-api"><span class="nav-number">6.2.</span> <span class="nav-text">Batch Fetching API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#automatic-subnode-management"><span class="nav-number">6.3.</span> <span class="nav-text">Automatic Subnode Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inversion"><span class="nav-number">6.4.</span> <span class="nav-text">Inversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-modification-blocks"><span class="nav-number">6.5.</span> <span class="nav-text">Image Modification Blocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#placeholders"><span class="nav-number">6.6.</span> <span class="nav-text">Placeholders</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#asdisplaynodes-may-implement-placeholders"><span class="nav-number">6.6.1.</span> <span class="nav-text">ASDisplayNodes may Implement Placeholders</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asnetworkimagenode-also-have-default-images"><span class="nav-number">6.6.2.</span> <span class="nav-text">ASNetworkImageNode also have Default Images</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimizations"><span class="nav-number">7.</span> <span class="nav-text">Optimizations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layer-backing"><span class="nav-number">7.1.</span> <span class="nav-text">Layer Backing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subtree-rasterization"><span class="nav-number">7.2.</span> <span class="nav-text">Subtree Rasterization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronous-concurrency"><span class="nav-number">7.3.</span> <span class="nav-text">Synchronous Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#corner-rounding"><span class="nav-number">7.4.</span> <span class="nav-text">Corner Rounding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#performant-corner-rounding-strategies"><span class="nav-number">7.4.1.</span> <span class="nav-text">Performant Corner Rounding Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#precomposited-corners"><span class="nav-number">7.4.1.1.</span> <span class="nav-text">Precomposited Corners</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#clip-corner"><span class="nav-number">7.4.1.2.</span> <span class="nav-text">Clip Corner</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#calayer-s-cornerradius-property"><span class="nav-number">7.4.2.</span> <span class="nav-text">CALayer’s .cornerRadius property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#corner-rounding-strategy-flowchart"><span class="nav-number">7.4.3.</span> <span class="nav-text">Corner Rounding Strategy Flowchart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#texture-support"><span class="nav-number">7.4.4.</span> <span class="nav-text">Texture Support</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#advanced-technologies"><span class="nav-number">8.</span> <span class="nav-text">Advanced Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asvisibility"><span class="nav-number">8.1.</span> <span class="nav-text">ASVisibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asenvironment"><span class="nav-number">8.2.</span> <span class="nav-text">ASEnvironment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asrunloopqueue"><span class="nav-number">8.3.</span> <span class="nav-text">ASRunLoopQueue</span></a></li></ol></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/blog/images/avatar.png"
-      alt="Luminoid">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
   <p class="site-author-name" itemprop="name">Luminoid</p>
   <div class="site-description" itemprop="description">Notes about programming and other fields</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/blog/archives/">
         
           <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/blog/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span>
-        </a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/blog/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">35</span>
-        <span class="site-state-item-name">tags</span>
-        </a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
-    
   </nav>
-  <div class="feed-link motion-element">
-    <a href="/blog/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/Luminoid" title="GitHub &rarr; https://github.com/Luminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/Luminoid" title="GitHub → https://github.com/Luminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://instagram.com/pentadelic" title="Instagram &rarr; https://instagram.com/pentadelic" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+        <a href="https://instagram.com/pentadelic" title="Instagram → https://instagram.com/pentadelic" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://twitter.com/YALuminoid" title="Twitter &rarr; https://twitter.com/YALuminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https://twitter.com/YALuminoid" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.douban.com/people/173394996" title="Douban &rarr; https://www.douban.com/people/173394996" rel="noopener" target="_blank"><i class="fa fa-fw fa-leaf"></i>Douban</a>
+        <a href="https://www.douban.com/people/173394996" title="Douban → https://www.douban.com/people/173394996" rel="noopener" target="_blank"><i class="fa fa-fw fa-leaf"></i>Douban</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email &rarr; mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Email</a>
       </span>
-    
   </div>
 
 
@@ -921,7 +686,6 @@
         <li class="links-of-blogroll-item">
           <a href="https://luminoid.github.io/color-splash/" title="https://luminoid.github.io/color-splash/">Color Splash</a>
         </li>
-      
     </ul>
   </div>
 
@@ -935,37 +699,42 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Luminoid</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
     <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
@@ -975,25 +744,18 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
-
-
-  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-<script src="/blog/js/utils.js?v=7.4.0"></script><script src="/blog/js/motion.js?v=7.4.0"></script>
-<script src="/blog/js/schemes/muse.js?v=7.4.0"></script>
-<script src="/blog/js/next-boot.js?v=7.4.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script>
+<script src="/blog/js/schemes/muse.js"></script>
+<script src="/blog/js/next-boot.js"></script>
 
 
 
@@ -1002,12 +764,7 @@
 
 
 
-
-
-
-
-  <script src="/blog/js/local-search.js?v=7.4.0"></script>
-
+  <script src="/blog/js/local-search.js"></script>
 
 
 
@@ -1019,9 +776,6 @@
 
 
 
-
-
-  
 
   
 
