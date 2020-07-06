@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Collecting from Version Control with Git &amp; Git Manual Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the informatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git: Amateur Guide">
+<meta property="og:url" content="http://luminoid.github.io/blog/Git-Amateur-Guide/index.html">
+<meta property="og:site_name" content="Luminoid&#39;s Site">
+<meta property="og:description" content="Collecting from Version Control with Git &amp; Git Manual Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the informatio">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/RelativeCommitName.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/CommonCommands.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/InitialState.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/EditFiles.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/StageFiles.png">
+<meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/CommitFiles.png">
+<meta property="article:published_time" content="2018-01-24T16:27:11.000Z">
+<meta property="article:modified_time" content="2019-09-02T05:19:03.627Z">
+<meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/RelativeCommitName.png">
+
+<link rel="canonical" href="http://luminoid.github.io/blog/Git-Amateur-Guide/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Git: Amateur Guide | Luminoid's Site</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Luminoid's Site</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">OK Computer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">40</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Git-Amateur-Guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git: Amateur Guide
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-01-25 00:27:11" itemprop="dateCreated datePublished" datetime="2018-01-25T00:27:11+08:00">2018-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-02 13:19:03" itemprop="dateModified" datetime="2019-09-02T13:19:03+08:00">2019-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>19k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>14 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Collecting from <em>Version Control with Git</em> &amp; <em>Git Manual</em></p>
+<h2 id="Concept"><a class="header-anchor" href="#Concept"></a>Concept</h2>
+<h3 id="Git"><a class="header-anchor" href="#Git"></a>Git</h3>
+<p>Git is a distributed version control system (DVCS).</p>
+<h3 id="Repository"><a class="header-anchor" href="#Repository"></a>Repository</h3>
+<p>A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.<br>
+The <strong>index</strong> is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.<br>
+The <strong>Git object store</strong> is organized and implemented as a content-addressable storage system(SHA1 hash value =&gt; object).</p>
+<a id="more"></a>
+<h4 id="Remote-Repository"><a class="header-anchor" href="#Remote-Repository"></a>Remote Repository</h4>
+<h5 id="origin"><a class="header-anchor" href="#origin"></a>origin</h5>
+<p>The default upstream repository.</p>
+<h5 id="refspec"><a class="header-anchor" href="#refspec"></a>refspec</h5>
+<p>The mapping between remote ref and local ref.<br>
+Syntax: <code>[+]source:destination</code></p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Source</th>
+<th>Destination</th>
+<th>eg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push</td>
+<td>Local ref being pushed</td>
+<td>Remote ref being updated</td>
+<td><code>+refs/heads/*:refs/heads/*</code></td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>Remote ref being fetched</td>
+<td>Local ref being updated</td>
+<td><code>+refs/heads/*:refs/remotes/remote/*</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="Bare-Repository"><a class="header-anchor" href="#Bare-Repository"></a>Bare Repository</h4>
+<p>A bare repository is normally an appropriately named directory with a <code>.git</code> suffix that does not have a locally checked-out copy of any of the files under revision control. A published repository should be bare.</p>
+<h3 id="Git-Object-Types"><a class="header-anchor" href="#Git-Object-Types"></a>Git Object Types</h3>
+<h4 id="Blob"><a class="header-anchor" href="#Blob"></a>Blob</h4>
+<p>Binary large object. Each version of a file is represented as a blob.</p>
+<h4 id="Tree"><a class="header-anchor" href="#Tree"></a>Tree</h4>
+<p>A tree object represents one level of directory information. It records blob identifiers, path names, and a bit of metadata for all the files in one directory.</p>
+<h4 id="Commit"><a class="header-anchor" href="#Commit"></a>Commit</h4>
+<p>A commit object holds metadata for each change introduced into the repository, including the author, committer, commit date, and log message. Each commit points to a tree object that captures, in one complete snapshot, the state of the repository at the time the commit was performed.</p>
+<h4 id="Tag"><a class="header-anchor" href="#Tag"></a>Tag</h4>
+<p>A tag object assigns an arbitrary yet presumably human readable name to a specific object, usually a commit.</p>
+<h3 id="Git-File-Classifications"><a class="header-anchor" href="#Git-File-Classifications"></a>Git File Classifications</h3>
+<h4 id="Tracked"><a class="header-anchor" href="#Tracked"></a>Tracked</h4>
+<p>A tracked file is any file already in the repository or any file that is staged in the index. To add a new file <code>&lt;file&gt;</code> to this group, run <code>git add &lt;file&gt;</code>.</p>
+<h4 id="Ignored"><a class="header-anchor" href="#Ignored"></a>Ignored</h4>
+<p>An ignored file must be explicitly declared invisible or ignored in the repository.</p>
+<h4 id="Untracked"><a class="header-anchor" href="#Untracked"></a>Untracked</h4>
+<p>Git considers the entire set of files in your working directory and subtracts both the tracked files and the ignored files to yield what is untracked.</p>
+<h3 id="Database-Comparison"><a class="header-anchor" href="#Database-Comparison"></a>Database Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Index mechanism</th>
+<th>Data store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traditional database</td>
+<td>Indexed Sequential Access Method (ISAM)</td>
+<td>Data records</td>
+</tr>
+<tr>
+<td>Unix file system</td>
+<td>Directories (/path/to/file)</td>
+<td>Blocks of data</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>.git/objects/hash, tree object contents</td>
+<td>Blob objects, tree objects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="VCS-Comparison"><a class="header-anchor" href="#VCS-Comparison"></a>VCS Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVN</td>
+<td>track revisions and store changes</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>each commit contains an independent tree</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Working-tree"><a class="header-anchor" href="#Working-tree"></a>Working tree</h3>
+<p>The tree of actual checked out files. The working tree normally contains the contents of the HEAD commit’s tree, plus any local changes that you have made but not yet committed.</p>
+<h4 id="Clean"><a class="header-anchor" href="#Clean"></a>Clean</h4>
+<p>A working tree is clean, if it corresponds to the revision referenced by the current head.</p>
+<h3 id="Identifying-Commit"><a class="header-anchor" href="#Identifying-Commit"></a>Identifying Commit</h3>
+<p>Git implements the history of commits within a repository as a DAG(Directed Acyclic Graph).</p>
+<ul>
+<li><strong>Absolute Commit Name</strong>: hash identifier</li>
+<li><strong>Relative Commit Name</strong>:
+<ul>
+<li>
+<p>symref: Symbolic reference in the format like <code>refs/some/thing</code></p>
+</li>
+<li>
+<p><code>^</code>: Select a different parent within a single generation</p>
+</li>
+<li>
+<p><code>~</code>: Go back before an ancestral parent and select a preceding generation</p>
+</li>
+<li>
+<img src="/blog/Git-Amateur-Guide/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
+</li>
+</ul>
+</li>
+<li><code>HEAD</code>: a symref refers to the most recent commit on the current branch</li>
+<li><code>detached HEAD</code>: a ref to an arbitrary commit that isn’t the tip of any particular branch</li>
+</ul>
+<h3 id="Branch"><a class="header-anchor" href="#Branch"></a>Branch</h3>
+<p>A branch is an active line of development.</p>
+<h4 id="master"><a class="header-anchor" href="#master"></a>master</h4>
+<p>The default development branch.</p>
+<h4 id="Remote-tracking-branch"><a class="header-anchor" href="#Remote-tracking-branch"></a>Remote-tracking branch</h4>
+<p>A ref that is used to follow changes from another repository.<br>
+During a clone operation, Git creates a remote-tracking branch in the clone for each topic branch in the upstream repository. The local repository uses its remote-tracking branches to follow or track changes made in the remote repository.</p>
+<h4 id="Upstream-Branch"><a class="header-anchor" href="#Upstream-Branch"></a>Upstream Branch</h4>
+<p>The default branch that is merged into the branch in question.</p>
+<h3 id="Merge-Strategies"><a class="header-anchor" href="#Merge-Strategies"></a>Merge Strategies</h3>
+<p>All branches are created equal.</p>
+<h4 id="Degenerate-Merges"><a class="header-anchor" href="#Degenerate-Merges"></a>Degenerate Merges</h4>
+<ul>
+<li><strong>Already up-to-date</strong>: All the commits from the other branch (its HEAD) are already present in your target branch (eg. perform a merge and immediately follow it with the exact same merge request)</li>
+<li><strong>Fast-forward</strong>: Your branch HEAD is already fully present and represented in the other branch. This is the inverse of the Already up-to-date case.</li>
+</ul>
+<h4 id="Normal-Merges"><a class="header-anchor" href="#Normal-Merges"></a>Normal Merges</h4>
+<ul>
+<li><strong>Resolve</strong>: The resolve strategy operates on only two branches, locating the common ancestor as the merge basis and performing a direct three-way merge by applying the changes from the merge base to the tip of the other branch HEAD onto the current branch.</li>
+<li><strong>Recursive</strong>(default): The recursive strategy also operates on two branches. However, it is designed to handle the scenario where there is more than one merge base between the two branches. In these cases, Git forms a temporary merge of all of the common merge bases and then uses that as the base from which to derive the resulting merge of the two given branches via a normal three-way merge algorithm.</li>
+<li><strong>Octopus</strong>: The octopus strategy is specifically designed to merge together more than two branches simultaneously. It calls the recursive merge strategy multiple times, once for each branch you are merging.</li>
+</ul>
+<h3 id="Action"><a class="header-anchor" href="#Action"></a>Action</h3>
+<h4 id="Checkout"><a class="header-anchor" href="#Checkout"></a>Checkout</h4>
+<p>Updating all or part of the working tree with a tree object or blob from the object database, and updating the index and HEAD if the whole working tree has been pointed at a new branch.</p>
+<h4 id="Fetch"><a class="header-anchor" href="#Fetch"></a>Fetch</h4>
+<p>Fetching a branch means to get the branch’s head ref from a remote repository, to find out which objects are missing from the local object database, and to get them, too.</p>
+<h4 id="Merge"><a class="header-anchor" href="#Merge"></a>Merge</h4>
+<p>Bringing the contents of another branch into the current branch.</p>
+<h3 id="Garbage-Collection"><a class="header-anchor" href="#Garbage-Collection"></a>Garbage Collection</h3>
+<p><code>git gc</code>:</p>
+<ol>
+<li>perform periodic garbage collection (cleaning up dangling objects)</li>
+<li>optimize the size of the repository by locating unpacked objects (loose objects) and creating pack files for them</li>
+</ol>
+<h4 id="Automatic-Garbage-Collection-Situation"><a class="header-anchor" href="#Automatic-Garbage-Collection-Situation"></a>Automatic Garbage Collection Situation</h4>
+<ul>
+<li>too many loose objects in the repository</li>
+<li>pushing to a remote repository</li>
+<li>using some commands that might introduce many loose objects</li>
+<li>requesting explicitly using commands such as <code>git reflog expire</code></li>
+</ul>
+<h4 id="Manual-Garbage-Collection-Situation"><a class="header-anchor" href="#Manual-Garbage-Collection-Situation"></a>Manual Garbage Collection Situation</h4>
+<ul>
+<li>running <code>git filter-branch</code></li>
+<li>using some commands that might introduce many loose objects, like a large rebase effort</li>
+</ul>
+<h3 id="Hooks"><a class="header-anchor" href="#Hooks"></a>Hooks</h3>
+<p>Hooks are programs you can place in a hooks directory to trigger actions at certain points in git’s execution.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> hooks</span><br></pre></td></tr></table></figure>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<img src="/blog/Git-Amateur-Guide/CommonCommands.png" class="" title="Common Commands">
+<h3 id="Basic"><a class="header-anchor" href="#Basic"></a>Basic</h3>
+<p><code>--</code>: Double dash can be used to contrast the control portion of the command line from a list of operands, such as filenames.<br>
+You may need to use the double dash to separate and explicitly identify filenames if they might otherwise be mistaken for another part of the command. For example, if you happened to have both a file and a tag named <code>main.c</code>, then you will get different behavior:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Checkout the tag named "main.c"</span></span><br><span class="line">$ git checkout main.c</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checkout the file named "main.c"</span></span><br><span class="line">$ git checkout -- main.c</span><br></pre></td></tr></table></figure>
+<p><code>git &lt;command&gt; --dry-run</code>: Don’t actually execute the command, just show what the command would do</p>
+<h3 id="Init"><a class="header-anchor" href="#Init"></a>Init</h3>
+<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
+<p>Clone a repository into a new directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;repository&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
+<p>Create an empty Git repository or reinitialize an existing one</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>Run as if git was started in <code>&lt;path&gt;</code> instead of the current working directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --git-dir &lt;path&gt; init</span><br></pre></td></tr></table></figure>
+<h3 id="State"><a class="header-anchor" href="#State"></a>State</h3>
+<h4 id="git-show"><a class="header-anchor" href="#git-show"></a>git show</h4>
+<p>Show various types of objects</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;object&gt;</span><br></pre></td></tr></table></figure>
+<p>Get old version of a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;commit&gt;:&lt;path&gt; [&gt; &lt;output&gt;]</span><br></pre></td></tr></table></figure>
+<p>Reconnect a lost file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;blob_SHA1&gt; &gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-rev-parse"><a class="header-anchor" href="#git-rev-parse"></a>git rev-parse</h4>
+<p>Pick out and massage parameters</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rev-parse &lt;args&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-blame"><a class="header-anchor" href="#git-blame"></a>git blame</h4>
+<p>Show what revision and author last modified each line of a file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame [-L &lt;range&gt;] &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-status"><a class="header-anchor" href="#git-status"></a>git status</h4>
+<p>Show the working tree status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h4 id="git-reflog"><a class="header-anchor" href="#git-reflog"></a>git reflog</h4>
+<p>Manage reflog information (including cloning, pushing, making new commits, changing or creating branches, rebase operations, reset operations)<br>
+eg. <code>HEAD@{1}</code> references the previous commit for the branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog [&lt;ref&gt;]</span><br></pre></td></tr></table></figure>
+<h4 id="git-log"><a class="header-anchor" href="#git-log"></a>git log</h4>
+<p>Print the log message associated with every commit in your history that is reachable from <code>&lt;commit&gt;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> &lt;commit&gt; [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p><code>--follow</code>: Continue listing the history of a file beyond renames</p>
+<p>Show the commits from <code>start</code> to <code>end</code> (<code>start</code> not included).<br>
+<code>start..end</code>: the set of commits reachable from <code>end</code> that are not reachable from <code>start</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> start..end [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p>Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. (Pickaxe)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -S&lt;string&gt; &lt;commit&gt; [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p><code>pickaxe</code> can be used to search a series of commit differences; whereas <code>git grep</code> can be used to search the repository tree at a specific point in that history</p>
+<h3 id="File"><a class="header-anchor" href="#File"></a>File</h3>
+<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
+<p>Add file contents to the index</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;...</span><br></pre></td></tr></table></figure>
+<p>Add, modify, and remove index entries to match the working tree</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br></pre></td></tr></table></figure>
+<p>Stage hunks of patch interactively</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -p</span><br></pre></td></tr></table></figure>
+<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
+<p>Move or rename a file, directory or symlink.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;<span class="built_in">source</span>&gt; &lt;destination&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
+<p>Remove files from the index</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove files from both the index and the working directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove committed files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm [--cached] &lt;file&gt;</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+<p>Removes files even if you have altered it since your last commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -f &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Recover old versions of files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Commit-v2"><a class="header-anchor" href="#Commit-v2"></a>Commit</h3>
+<h4 id="Altering-Commits"><a class="header-anchor" href="#Altering-Commits"></a>Altering Commits</h4>
+<h5 id="git-reset"><a class="header-anchor" href="#git-reset"></a>git reset</h5>
+<p>Reset current HEAD to the specified state</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [&lt;option&gt;] &lt;commit&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>HEAD</th>
+<th>Index</th>
+<th>Working directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--soft</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--mixed</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--hard</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Unstage files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;...</span><br></pre></td></tr></table></figure>
+<p>Eliminate the topmost commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^</span><br></pre></td></tr></table></figure>
+<p>Adjust the commit message</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+<h5 id="git-cherry-pick"><a class="header-anchor" href="#git-cherry-pick"></a>git cherry-pick</h5>
+<p>Apply the changes introduced by some existing commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick &lt;commit&gt;...</span><br></pre></td></tr></table></figure>
+<h5 id="git-revert"><a class="header-anchor" href="#git-revert"></a>git revert</h5>
+<p>Revert some existing commits: record some new commits to reverse the effect of some earlier commits (often only a faulty one)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit&gt;...</span><br></pre></td></tr></table></figure>
+<h5 id="Changing-the-Top-Commit"><a class="header-anchor" href="#Changing-the-Top-Commit"></a>Changing the Top Commit</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+<h5 id="Comparison"><a class="header-anchor" href="#Comparison"></a>Comparison</h5>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Usage Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git checkout</code></td>
+<td>Switch branches; Check out files from a particular commit</td>
+</tr>
+<tr>
+<td><code>git reset</code></td>
+<td>Reset the current branch’s HEAD reference</td>
+</tr>
+<tr>
+<td><code>git revert</code></td>
+<td>Work on commits (without altering history)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Diff"><a class="header-anchor" href="#Diff"></a>Diff</h4>
+<p><code>git diff</code> operates on two different end points; <code>git log</code> operates on a set of commits.</p>
+<p>Differences between the working directory and the index</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p>Differences between the working directory and the given <code>&lt;commit&gt;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;commit&gt; [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p>Differences between the index and the given <code>&lt;commit&gt;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached &lt;commit&gt; [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p>Differences between the two commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;commit1&gt; &lt;commit2&gt; [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+<p><code>--stat</code>: Generate a diffstat</p>
+<h4 id="Stash"><a class="header-anchor" href="#Stash"></a>Stash</h4>
+<p>Stash the changes in a dirty working directory away</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash [save [&lt;message&gt;]]</span><br></pre></td></tr></table></figure>
+<p>The ignored files and the untracked files are also stashed and cleaned</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash save -a [&lt;message&gt;]</span><br></pre></td></tr></table></figure>
+<p>List the stashes that you currently have</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p>Show the changes recorded in the stash as a diff between the stashed state and its original parent</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash show [&lt;stash&gt;]</span><br></pre></td></tr></table></figure>
+<p>Remove a single stashed state from the stash list and apply it on top of the current working tree state</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop [&lt;stash&gt;]  <span class="comment"># pop = apply + drop</span></span><br></pre></td></tr></table></figure>
+<h3 id="Branch-v2"><a class="header-anchor" href="#Branch-v2"></a>Branch</h3>
+<p>Create branches</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;branchname&gt; [&lt;start-point&gt;]</span><br></pre></td></tr></table></figure>
+<p>List branch names(<code>-r</code>: remote; <code>-a</code>: local &amp; remote)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch [-r | -a]</span><br></pre></td></tr></table></figure>
+<p>Show branches and their commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show-branch [-r | -a] [--more=&lt;n&gt;]</span><br></pre></td></tr></table></figure>
+<p>Delete branches</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branchname&gt;</span><br></pre></td></tr></table></figure>
+<p>Figure out if you are on a detached <code>HEAD</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* (no branch)</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<h4 id="Checkout-v2"><a class="header-anchor" href="#Checkout-v2"></a>Checkout</h4>
+<p>Check out branches</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>Create and check out a new branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;new_branch&gt; [&lt;start-point&gt;]</span><br></pre></td></tr></table></figure>
+<p>Check out remote branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;</span><br></pre></td></tr></table></figure>
+<p>Check out remote branch (With Git versions ≥ 1.6.6)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>Push a new local branch to a remote repository</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;branch&gt;</span><br><span class="line">git push -u origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Merge-v2"><a class="header-anchor" href="#Merge-v2"></a>Merge</h4>
+<p>Merge the <code>&lt;branch&gt;</code> into the current branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>Locate Conflicted Files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run <span class="string">"git commit"</span>)</span><br><span class="line">  (use <span class="string">"git merge --abort"</span> to abort the merge)</span><br><span class="line"></span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to mark resolution)</span><br><span class="line"></span><br><span class="line">	both modified:   hello</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)it status</span><br></pre></td></tr></table></figure>
+<p>Three-way merge marker lines</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Here are lines that are either unchanged from the common ancestor, or cleanly resolved because only one side changed.</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; yours:sample.txt</span><br><span class="line">Text A</span><br><span class="line">=======</span><br><span class="line">Text B</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs:sample.txt</span><br><span class="line">And here is another line that is cleanly resolved or unmodified.</span><br></pre></td></tr></table></figure>
+<h4 id="Rebase"><a class="header-anchor" href="#Rebase"></a>Rebase</h4>
+<p>Reapply commits on top of another base tip</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>Edit the list of the commits before rebasing (pick, reword, edit, squash, etc.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>eg.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i master~3</span><br></pre></td></tr></table></figure>
+<h3 id="Remote-Repository-v2"><a class="header-anchor" href="#Remote-Repository-v2"></a>Remote Repository</h3>
+<p>Mechanisms for exchanging commits and keeping distributed repositories synchronized:</p>
+<ul>
+<li>Git-native protocol
+<ul>
+<li>the Git-native protocol can be tunneled over Secure Shell(SSH) for secure, authenticated connections</li>
+</ul>
+</li>
+<li>HTTP protocol</li>
+<li>Git patch
+<ul>
+<li><code>git format-patch</code>: Prepare patches for e-mail submission</li>
+<li><code>git send-email</code>: Send a collection of patches as emails</li>
+<li><code>git am</code>: Apply a series of patches from a mailbox</li>
+</ul>
+</li>
+</ul>
+<h4 id="git-remote"><a class="header-anchor" href="#git-remote"></a>git remote</h4>
+<p>Manage set of tracked repositories</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure>
+<p>Adds a remote named <code>&lt;name&gt;</code> for the repository at <code>&lt;url&gt;</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+<p>Gives some information about the remote <code>&lt;name&gt;</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show &lt;name&gt;...</span><br></pre></td></tr></table></figure>
+<p>Fetch updates for a named set of remotes in the repository as defined by remotes.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote update</span><br></pre></td></tr></table></figure>
+<p>Deletes all stale remote-tracking branches under <code>&lt;name&gt;</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote prune &lt;name&gt;...</span><br></pre></td></tr></table></figure>
+<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
+<p>Download objects and refs from another repository</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></table></figure>
+<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
+<p>Fetch from and integrate with another repository or a local branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull  <span class="comment"># pull = fetch + merge</span></span><br></pre></td></tr></table></figure>
+<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
+<p>Update remote refs along with associated objects</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>Find a ref that matches master in the source repository (most likely, it would find <code>refs/heads/master</code>), and update the same ref(e.g. <code>refs/heads/master</code>) in origin repository with it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>Push the current branch and set the remote as upstream</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --<span class="built_in">set</span>-upstream &lt;repository&gt; &lt;refspec&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Advanced"><a class="header-anchor" href="#Advanced"></a>Advanced</h3>
+<h4 id="git-filter-branch"><a class="header-anchor" href="#git-filter-branch"></a>git filter-branch</h4>
+<p><code>git filter-branch</code>: Rewrite Git revision history by rewriting the branches, applying custom filters on each revision.</p>
+<p>Remove a file from all commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --tree-filter <span class="string">'rm -f &lt;file&gt;'</span> master</span><br></pre></td></tr></table></figure>
+<p>Rewrite the commit messages</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --msg-filter <span class="string">'sed &lt;command&gt;'</span> master</span><br></pre></td></tr></table></figure>
+<p>Remove one line in file from all commits</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --tree-filter <span class="string">"test -f &lt;file&gt; &amp;&amp; sed -i '' \"/&lt;content&gt;/ d\" &lt;file&gt; || echo skip"</span> -- --all</span><br></pre></td></tr></table></figure>
+<p>Faster version of removing a file, translating any tag refs from a prefiltered state into the new postfiltered repository, operating on all branches</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --index-filter <span class="string">'git rm --cached --ignore-unmatch &lt;file&gt;'</span> \</span><br><span class="line">--tag-name-filter cat \</span><br><span class="line">-- --all</span><br></pre></td></tr></table></figure>
+<p>Turn a subdirectory into a repository of its own</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git filter-branch --subdirectory-filter &lt;directory&gt; -- --all</span><br></pre></td></tr></table></figure>
+<h4 id="git-fsck"><a class="header-anchor" href="#git-fsck"></a>git fsck</h4>
+<p>Verify the connectivity and validity of the objects in the database (File System ChecK)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fsck</span><br></pre></td></tr></table></figure>
+<p><code>--no-reflogs</code>: Do not consider commits that are referenced only by an entry in a reflog to be reachable</p>
+<h4 id="git-rerere"><a class="header-anchor" href="#git-rerere"></a>git rerere</h4>
+<p><code>git rerere</code>: Reuse recorded resolution of conflicted merges</p>
+<h3 id="Config"><a class="header-anchor" href="#Config"></a>Config</h3>
+<p><code>git config</code>: Get and set repository or global options</p>
+<p>Set <code>ignoreCase</code> to <code>false</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a class="header-anchor" href="#Solution"></a>Solution</h2>
+<h3 id="Git-pull-till-a-particular-commit"><a class="header-anchor" href="#Git-pull-till-a-particular-commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit" target="_blank" rel="noopener">Git pull till a particular commit</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Your-branch-and-‘origin-master’-have-diverged"><a class="header-anchor" href="#Your-branch-and-‘origin-master’-have-diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com" target="_blank" rel="noopener">Your branch and ‘origin/master’ have diverged</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+<h3 id="Recover-a-dropped-stash-entry"><a class="header-anchor" href="#Recover-a-dropped-stash-entry"></a>Recover a dropped stash entry</h3>
+<p>If the following code is executed accidentally</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+<p>First, use <code>gitk</code> to find the corresponding hash value</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">'/dangling commit/ &#123;print $3&#125;'</span> )</span><br></pre></td></tr></table></figure>
+<p>Then, run <code>git stash</code> to apply the stash entry</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Git-Concepts-at-Work"><a class="header-anchor" href="#Git-Concepts-at-Work"></a>Git Concepts at Work</h2>
+<h3 id="Initialize-Git-repository"><a class="header-anchor" href="#Initialize-Git-repository"></a>Initialize Git repository</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/tmp</span><br><span class="line">$ <span class="built_in">cd</span> ~/tmp</span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>Git status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">nothing to commit (create/copy files and use <span class="string">"git add"</span> to track)</span><br></pre></td></tr></table></figure>
+<p>Directory structure</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ tree -a</span><br><span class="line">.</span><br><span class="line">└── .git</span><br><span class="line">    ├── HEAD</span><br><span class="line">    ├── config</span><br><span class="line">    ├── description</span><br><span class="line">    ├── hooks</span><br><span class="line">    │   ├── applypatch-msg.sample</span><br><span class="line">    │   ├── commit-msg.sample</span><br><span class="line">    │   ├── post-update.sample</span><br><span class="line">    │   ├── pre-applypatch.sample</span><br><span class="line">    │   ├── pre-commit.sample</span><br><span class="line">    │   ├── pre-push.sample</span><br><span class="line">    │   ├── pre-rebase.sample</span><br><span class="line">    │   ├── pre-receive.sample</span><br><span class="line">    │   ├── prepare-commit-msg.sample</span><br><span class="line">    │   └── update.sample</span><br><span class="line">    ├── info</span><br><span class="line">    │   └── exclude</span><br><span class="line">    ├── objects</span><br><span class="line">    │   ├── info</span><br><span class="line">    │   └── pack</span><br><span class="line">    └── refs</span><br><span class="line">        ├── heads</span><br><span class="line">        └── tags</span><br></pre></td></tr></table></figure>
+<h3 id="Create-Initial-Commit"><a class="header-anchor" href="#Create-Initial-Commit"></a>Create Initial Commit</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"This is file1"</span> &gt; file1.txt</span><br><span class="line">$ mkdir dir1</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"This is file2"</span> &gt; dir1/file2.txt</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m <span class="string">"initial commit"</span></span><br><span class="line">[master (root-commit) 4ec4dac] initial commit</span><br><span class="line"> 2 files changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 dir1/file2.txt</span><br><span class="line"> create mode 100644 file1.txt</span><br></pre></td></tr></table></figure>
+<p>Git status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+<p>Directory structure</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">$ tree -a</span><br><span class="line">.</span><br><span class="line">├── .git</span><br><span class="line">│   ├── COMMIT_EDITMSG</span><br><span class="line">│   ├── HEAD</span><br><span class="line">│   ├── config</span><br><span class="line">│   ├── description</span><br><span class="line">│   ├── hooks</span><br><span class="line">│   │   ├── applypatch-msg.sample</span><br><span class="line">│   │   ├── commit-msg.sample</span><br><span class="line">│   │   ├── post-update.sample</span><br><span class="line">│   │   ├── pre-applypatch.sample</span><br><span class="line">│   │   ├── pre-commit.sample</span><br><span class="line">│   │   ├── pre-push.sample</span><br><span class="line">│   │   ├── pre-rebase.sample</span><br><span class="line">│   │   ├── pre-receive.sample</span><br><span class="line">│   │   ├── prepare-commit-msg.sample</span><br><span class="line">│   │   └── update.sample</span><br><span class="line">│   ├── index</span><br><span class="line">│   ├── info</span><br><span class="line">│   │   └── exclude</span><br><span class="line">│   ├── logs</span><br><span class="line">│   │   ├── HEAD</span><br><span class="line">│   │   └── refs</span><br><span class="line">│   │       └── heads</span><br><span class="line">│   │           └── master</span><br><span class="line">│   ├── objects</span><br><span class="line">│   │   ├── 09</span><br><span class="line">│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e</span><br><span class="line">│   │   ├── 11</span><br><span class="line">│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984</span><br><span class="line">│   │   ├── 4e</span><br><span class="line">│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7</span><br><span class="line">│   │   ├── c2</span><br><span class="line">│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7</span><br><span class="line">│   │   ├── e3</span><br><span class="line">│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711</span><br><span class="line">│   │   ├── info</span><br><span class="line">│   │   └── pack</span><br><span class="line">│   └── refs</span><br><span class="line">│       ├── heads</span><br><span class="line">│       │   └── master</span><br><span class="line">│       └── tags</span><br><span class="line">├── dir1</span><br><span class="line">│   └── file2.txt</span><br><span class="line">└── file1.txt</span><br></pre></td></tr></table></figure>
+<p><code>config</code>: repository-specific configuration settings<br>
+<code>index</code>: index<br>
+<code>logs</code>: reflogs<br>
+<code>objects/</code>: Git’s objects<br>
+<code>refs/</code>: refs<br>
+<code>refs/heads/ref</code>: local branches<br>
+<code>refs/remotes/ref</code>: remote tracking branches<br>
+<code>refs/tags/ref</code>: tags<br>
+<code>refs/stash</code>: stash</p>
+<p>Git’s Object Model and Files<br>
+<img src="/blog/Git-Amateur-Guide/InitialState.png" alt="Initial State" style="width:300px;"></p>
+<h3 id="Edit-Files"><a class="header-anchor" href="#Edit-Files"></a>Edit Files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"Another line in file1"</span> &gt;&gt; file1.txt</span><br></pre></td></tr></table></figure>
+<p>Git status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">	modified:   file1.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</span><br></pre></td></tr></table></figure>
+<p>Git’s Object Model and Files<br>
+<img src="/blog/Git-Amateur-Guide/EditFiles.png"  alt="Edit Files" style="width:300px;"></p>
+<h3 id="Stage-Files"><a class="header-anchor" href="#Stage-Files"></a>Stage Files</h3>
+<p><code>git add</code>: Add file contents to the object store and let the index refer to it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add file1.txt</span><br></pre></td></tr></table></figure>
+<p>Git status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">"git reset HEAD &lt;file&gt;..."</span> to unstage)</span><br><span class="line"></span><br><span class="line">	modified:   file1.txt</span><br></pre></td></tr></table></figure>
+<p>Directory structure</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">$ tree -a</span><br><span class="line">.</span><br><span class="line">├── .git</span><br><span class="line">│   ├── COMMIT_EDITMSG</span><br><span class="line">│   ├── HEAD</span><br><span class="line">│   ├── config</span><br><span class="line">│   ├── description</span><br><span class="line">│   ├── hooks</span><br><span class="line">│   │   ├── applypatch-msg.sample</span><br><span class="line">│   │   ├── commit-msg.sample</span><br><span class="line">│   │   ├── post-update.sample</span><br><span class="line">│   │   ├── pre-applypatch.sample</span><br><span class="line">│   │   ├── pre-commit.sample</span><br><span class="line">│   │   ├── pre-push.sample</span><br><span class="line">│   │   ├── pre-rebase.sample</span><br><span class="line">│   │   ├── pre-receive.sample</span><br><span class="line">│   │   ├── prepare-commit-msg.sample</span><br><span class="line">│   │   └── update.sample</span><br><span class="line">│   ├── index</span><br><span class="line">│   ├── info</span><br><span class="line">│   │   └── exclude</span><br><span class="line">│   ├── logs</span><br><span class="line">│   │   ├── HEAD</span><br><span class="line">│   │   └── refs</span><br><span class="line">│   │       └── heads</span><br><span class="line">│   │           └── master</span><br><span class="line">│   ├── objects</span><br><span class="line">│   │   ├── 09</span><br><span class="line">│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e</span><br><span class="line">│   │   ├── 11</span><br><span class="line">│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984</span><br><span class="line">│   │   ├── 4e</span><br><span class="line">│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7</span><br><span class="line">│   │   ├── c2</span><br><span class="line">│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7</span><br><span class="line">│   │   ├── e2</span><br><span class="line">│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e</span><br><span class="line">│   │   ├── e3</span><br><span class="line">│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711</span><br><span class="line">│   │   ├── info</span><br><span class="line">│   │   └── pack</span><br><span class="line">│   └── refs</span><br><span class="line">│       ├── heads</span><br><span class="line">│       │   └── master</span><br><span class="line">│       └── tags</span><br><span class="line">├── dir1</span><br><span class="line">│   └── file2.txt</span><br><span class="line">└── file1.txt</span><br></pre></td></tr></table></figure>
+<p>Get the content of repository objects</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p e2e513</span><br><span class="line">This is file1</span><br><span class="line">Another line <span class="keyword">in</span> file1</span><br></pre></td></tr></table></figure>
+<p>Get staged contents’ object name, mode bits and stage number</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-files --stage</span><br><span class="line">100644 095ee29baa1adc16134c723b6971f7cf68dfaf1e 0	dir1/file2.txt</span><br><span class="line">100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt</span><br></pre></td></tr></table></figure>
+<p>Git’s Object Model and Files<br>
+<img src="/blog/Git-Amateur-Guide/StageFiles.png" alt="Stage Files" style="width:400px;"></p>
+<h3 id="Commit-Files"><a class="header-anchor" href="#Commit-Files"></a>Commit Files</h3>
+<p><code>git-commit</code>: Record changes to the repository</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"update file1"</span></span><br><span class="line">[master a123b84] update file1</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+<p>Git status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+<p>Directory structure</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">$ tree -a</span><br><span class="line">.</span><br><span class="line">├── .git</span><br><span class="line">│   ├── COMMIT_EDITMSG</span><br><span class="line">│   ├── HEAD</span><br><span class="line">│   ├── config</span><br><span class="line">│   ├── description</span><br><span class="line">│   ├── hooks</span><br><span class="line">│   │   ├── applypatch-msg.sample</span><br><span class="line">│   │   ├── commit-msg.sample</span><br><span class="line">│   │   ├── post-update.sample</span><br><span class="line">│   │   ├── pre-applypatch.sample</span><br><span class="line">│   │   ├── pre-commit.sample</span><br><span class="line">│   │   ├── pre-push.sample</span><br><span class="line">│   │   ├── pre-rebase.sample</span><br><span class="line">│   │   ├── pre-receive.sample</span><br><span class="line">│   │   ├── prepare-commit-msg.sample</span><br><span class="line">│   │   └── update.sample</span><br><span class="line">│   ├── index</span><br><span class="line">│   ├── info</span><br><span class="line">│   │   └── exclude</span><br><span class="line">│   ├── logs</span><br><span class="line">│   │   ├── HEAD</span><br><span class="line">│   │   └── refs</span><br><span class="line">│   │       └── heads</span><br><span class="line">│   │           └── master</span><br><span class="line">│   ├── objects</span><br><span class="line">│   │   ├── 09</span><br><span class="line">│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e</span><br><span class="line">│   │   ├── 11</span><br><span class="line">│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984</span><br><span class="line">│   │   ├── 4e</span><br><span class="line">│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7</span><br><span class="line">│   │   ├── a1</span><br><span class="line">│   │   │   └── 23b845d501777ec7c0161af7096b98c2ff3957</span><br><span class="line">│   │   ├── c2</span><br><span class="line">│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7</span><br><span class="line">│   │   ├── e2</span><br><span class="line">│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e</span><br><span class="line">│   │   ├── e3</span><br><span class="line">│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711</span><br><span class="line">│   │   ├── eb</span><br><span class="line">│   │   │   └── 6911337f9ab1b5fb477ba6eb08e4b8c99e7344</span><br><span class="line">│   │   ├── info</span><br><span class="line">│   │   └── pack</span><br><span class="line">│   └── refs</span><br><span class="line">│       ├── heads</span><br><span class="line">│       │   └── master</span><br><span class="line">│       └── tags</span><br><span class="line">├── dir1</span><br><span class="line">│   └── file2.txt</span><br><span class="line">└── file1.txt</span><br></pre></td></tr></table></figure>
+<p>Git’s Object Model and Files<br>
+<img src="/blog/Git-Amateur-Guide/CommitFiles.png" alt="Commit Files" style="width:400px;"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/YALuminoid">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/blog/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/Objective-C-Best-Practice/" rel="prev" title="Objective-C Best Practice">
+      <i class="fa fa-chevron-left"></i> Objective-C Best Practice
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/Mac-Usage/" rel="next" title="Mac Usage">
+      Mac Usage <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concept"><span class="nav-number">1.</span> <span class="nav-text">Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repository"><span class="nav-number">1.2.</span> <span class="nav-text">Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-Repository"><span class="nav-number">1.2.1.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#origin"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">origin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#refspec"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">refspec</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bare-Repository"><span class="nav-number">1.2.2.</span> <span class="nav-text">Bare Repository</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Object-Types"><span class="nav-number">1.3.</span> <span class="nav-text">Git Object Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blob"><span class="nav-number">1.3.1.</span> <span class="nav-text">Blob</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tree"><span class="nav-number">1.3.2.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Commit"><span class="nav-number">1.3.3.</span> <span class="nav-text">Commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag"><span class="nav-number">1.3.4.</span> <span class="nav-text">Tag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-File-Classifications"><span class="nav-number">1.4.</span> <span class="nav-text">Git File Classifications</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tracked"><span class="nav-number">1.4.1.</span> <span class="nav-text">Tracked</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ignored"><span class="nav-number">1.4.2.</span> <span class="nav-text">Ignored</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Untracked"><span class="nav-number">1.4.3.</span> <span class="nav-text">Untracked</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Comparison"><span class="nav-number">1.5.</span> <span class="nav-text">Database Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VCS-Comparison"><span class="nav-number">1.6.</span> <span class="nav-text">VCS Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-tree"><span class="nav-number">1.7.</span> <span class="nav-text">Working tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clean"><span class="nav-number">1.7.1.</span> <span class="nav-text">Clean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Identifying-Commit"><span class="nav-number">1.8.</span> <span class="nav-text">Identifying Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch"><span class="nav-number">1.9.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#master"><span class="nav-number">1.9.1.</span> <span class="nav-text">master</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-tracking-branch"><span class="nav-number">1.9.2.</span> <span class="nav-text">Remote-tracking branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Upstream-Branch"><span class="nav-number">1.9.3.</span> <span class="nav-text">Upstream Branch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Strategies"><span class="nav-number">1.10.</span> <span class="nav-text">Merge Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Degenerate-Merges"><span class="nav-number">1.10.1.</span> <span class="nav-text">Degenerate Merges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normal-Merges"><span class="nav-number">1.10.2.</span> <span class="nav-text">Normal Merges</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action"><span class="nav-number">1.11.</span> <span class="nav-text">Action</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout"><span class="nav-number">1.11.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fetch"><span class="nav-number">1.11.2.</span> <span class="nav-text">Fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge"><span class="nav-number">1.11.3.</span> <span class="nav-text">Merge</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Garbage-Collection"><span class="nav-number">1.12.</span> <span class="nav-text">Garbage Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-Garbage-Collection-Situation"><span class="nav-number">1.12.1.</span> <span class="nav-text">Automatic Garbage Collection Situation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manual-Garbage-Collection-Situation"><span class="nav-number">1.12.2.</span> <span class="nav-text">Manual Garbage Collection Situation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hooks"><span class="nav-number">1.13.</span> <span class="nav-text">Hooks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic"><span class="nav-number">2.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Init"><span class="nav-number">2.2.</span> <span class="nav-text">Init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone"><span class="nav-number">2.2.1.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-init"><span class="nav-number">2.2.2.</span> <span class="nav-text">git init</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.3.</span> <span class="nav-text">State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-show"><span class="nav-number">2.3.1.</span> <span class="nav-text">git show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rev-parse"><span class="nav-number">2.3.2.</span> <span class="nav-text">git rev-parse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-blame"><span class="nav-number">2.3.3.</span> <span class="nav-text">git blame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-status"><span class="nav-number">2.3.4.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reflog"><span class="nav-number">2.3.5.</span> <span class="nav-text">git reflog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-log"><span class="nav-number">2.3.6.</span> <span class="nav-text">git log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File"><span class="nav-number">2.4.</span> <span class="nav-text">File</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-add"><span class="nav-number">2.4.1.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-mv"><span class="nav-number">2.4.2.</span> <span class="nav-text">git mv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rm"><span class="nav-number">2.4.3.</span> <span class="nav-text">git rm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-v2"><span class="nav-number">2.5.</span> <span class="nav-text">Commit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Altering-Commits"><span class="nav-number">2.5.1.</span> <span class="nav-text">Altering Commits</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-reset"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-revert"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Changing-the-Top-Commit"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">Changing the Top Commit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Comparison"><span class="nav-number">2.5.1.5.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff"><span class="nav-number">2.5.2.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stash"><span class="nav-number">2.5.3.</span> <span class="nav-text">Stash</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch-v2"><span class="nav-number">2.6.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout-v2"><span class="nav-number">2.6.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-v2"><span class="nav-number">2.6.2.</span> <span class="nav-text">Merge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase"><span class="nav-number">2.6.3.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-Repository-v2"><span class="nav-number">2.7.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-remote"><span class="nav-number">2.7.1.</span> <span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fetch"><span class="nav-number">2.7.2.</span> <span class="nav-text">git fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-pull"><span class="nav-number">2.7.3.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">2.7.4.</span> <span class="nav-text">git push</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-number">2.8.</span> <span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-filter-branch"><span class="nav-number">2.8.1.</span> <span class="nav-text">git filter-branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fsck"><span class="nav-number">2.8.2.</span> <span class="nav-text">git fsck</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rerere"><span class="nav-number">2.8.3.</span> <span class="nav-text">git rerere</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Config"><span class="nav-number">2.9.</span> <span class="nav-text">Config</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-pull-till-a-particular-commit"><span class="nav-number">3.1.</span> <span class="nav-text">Git pull till a particular commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Your-branch-and-‘origin-master’-have-diverged"><span class="nav-number">3.2.</span> <span class="nav-text">Your branch and ‘origin&#x2F;master’ have diverged</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recover-a-dropped-stash-entry"><span class="nav-number">3.3.</span> <span class="nav-text">Recover a dropped stash entry</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Concepts-at-Work"><span class="nav-number">4.</span> <span class="nav-text">Git Concepts at Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initialize-Git-repository"><span class="nav-number">4.1.</span> <span class="nav-text">Initialize Git repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Initial-Commit"><span class="nav-number">4.2.</span> <span class="nav-text">Create Initial Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edit-Files"><span class="nav-number">4.3.</span> <span class="nav-text">Edit Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stage-Files"><span class="nav-number">4.4.</span> <span class="nav-text">Stage Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Files"><span class="nav-number">4.5.</span> <span class="nav-text">Commit Files</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming and other fields</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luminoid</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">244k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:58</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

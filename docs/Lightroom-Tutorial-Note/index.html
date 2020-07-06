@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Landscape RGB Curves Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and&#x2F;or creative interpretations to your images. RGB Curves The RGB Curves are part of the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lightroom Tutorial Note">
+<meta property="og:url" content="http://luminoid.github.io/blog/Lightroom-Tutorial-Note/index.html">
+<meta property="og:site_name" content="Luminoid&#39;s Site">
+<meta property="og:description" content="Landscape RGB Curves Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and&#x2F;or creative interpretations to your images. RGB Curves The RGB Curves are part of the">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-23T14:01:26.000Z">
+<meta property="article:modified_time" content="2020-03-22T09:40:55.445Z">
+<meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Photography">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://luminoid.github.io/blog/Lightroom-Tutorial-Note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Lightroom Tutorial Note | Luminoid's Site</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="Luminoid's Site" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Luminoid's Site</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">OK Computer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">40</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Lightroom-Tutorial-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lightroom Tutorial Note
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-23 22:01:26" itemprop="dateCreated datePublished" datetime="2019-09-23T22:01:26+08:00">2019-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-22 17:40:55" itemprop="dateModified" datetime="2020-03-22T17:40:55+08:00">2020-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>20k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>14 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Landscape"><a class="header-anchor" href="#Landscape"></a>Landscape</h2>
+<h3 id="RGB-Curves"><a class="header-anchor" href="#RGB-Curves"></a>RGB Curves</h3>
+<p>Learn how to use the RGB Curves to shift and shape color to apply corrective adjustments and/or creative interpretations to your images.</p>
+<h4 id="RGB-Curves-v2"><a class="header-anchor" href="#RGB-Curves-v2"></a>RGB Curves</h4>
+<p>The RGB Curves are part of the Point Tone Curve, which allow you to adjust the tonal values of the Red, Green, and Blue values independently to shift and refine color with great control.</p>
+<p>Yellow is the opposite of blue, magenta is the opposite of green, and cyan is the opposite of red. So when dragging UP on a given curve we add that curve’s color, and dragging DOWN adds its opposite color.</p>
+<p>This landscape photo has a lot of blue in the shadow tones. We can use the RGB curves to remove the bluish cast in the shadows without removing it from the lighter areas in the sky, while also subtly boosting contrast.</p>
+<p>We’ll start by placing a point on the Blue curve in the shadow region and drag downward slightly to add yellow and contrast to the shadows.</p>
+<p>Adding yellow left the shadows a little green. Drag down on the shadow region of the Green curve to add magenta and fix that.</p>
+<h3 id="Removing-Haze-and-Adding-Contrast"><a class="header-anchor" href="#Removing-Haze-and-Adding-Contrast"></a>Removing Haze and Adding Contrast</h3>
+<p>Aerial haze can reduce the overall image sharpness and contrast.</p>
+<h4 id="Crop-to-show-off-the-main-subject"><a class="header-anchor" href="#Crop-to-show-off-the-main-subject"></a>Crop to show off the main subject</h4>
+<p><code>Crop</code>: Crop away some of the outside edges to really show off the mountain in this photo.</p>
+<h4 id="Removing-Haze"><a class="header-anchor" href="#Removing-Haze"></a>Removing Haze</h4>
+<p>The photo has a hazy and low contrast look.</p>
+<p><code>Dahaze + 60</code>: Use the Dehaze slider to reduce the haze.</p>
+<h4 id="Add-some-warmth"><a class="header-anchor" href="#Add-some-warmth"></a>Add some warmth</h4>
+<p>A common side effect of Haze Reduction is the photo tends to get blue. We can counteract that with the White Balance Temperature slider.</p>
+<p><code>Temp 6036K</code>: Drag the Temp slider to the right to warm the photo.</p>
+<h4 id="Reduce-the-Saturation"><a class="header-anchor" href="#Reduce-the-Saturation"></a>Reduce the Saturation</h4>
+<p>Another side effect of the Dehaze slider is that sometimes the blue in the sky get too saturated.</p>
+<p><code>Color Mix: Blue Saturation - 10</code>: Only desaturate the blues in the photo.</p>
+<a id="more"></a>
+<h3 id="Boosting-Fall-Colors"><a class="header-anchor" href="#Boosting-Fall-Colors"></a>Boosting Fall Colors</h3>
+<p>Fall is just about every landscape photographer’s favorite time of year to shoot. But sometimes it seems that the colors aren’t as rich and vibrant as you expected. With a little help, we can boost them and get those nice reds and oranges.</p>
+<h4 id="Brighten-the-Photo"><a class="header-anchor" href="#Brighten-the-Photo"></a>Brighten the Photo</h4>
+<p><code>Exposure + 0.6</code></p>
+<h4 id="Boost-the-Fall-like-Colors"><a class="header-anchor" href="#Boost-the-Fall-like-Colors"></a>Boost the Fall-like Colors</h4>
+<p>The primary fall colors that everyone loves include the bright reds, oranges and yellows. With a few adjustments we can boost the saturation of each one of these.</p>
+<p><code>Color Mix: Red Hue + 10</code>: Adjust the Hue of the Reds to bring more of the fall look to them.<br>
+<code>Color Mix: Red Saturation + 75</code>: Adjust the Saturation to make the reds more vivid.<br>
+<code>Color Mix: Orange Hue - 30</code>: Move the Orange Hue to make the colors more red.<br>
+<code>Color Mix: Orange Saturation + 40</code>: Adjust the Saturation to make the colors more vivid.<br>
+<code>Color Mix: Yellow Hue - 40</code>: Move the Yellow Hue slider to move those colors more toward orange.<br>
+<code>Color Mix: Yellow Saturation + 60</code>: Adjust the Saturation to make the yellows more vivid.<br>
+<code>Color Mix: Green Hue - 70</code>: Make the green tones more yellow.<br>
+<code>Color Mix: Green Saturation + 20</code>: Add some saturation to those colors as well.</p>
+<h4 id="Finishing-Touches"><a class="header-anchor" href="#Finishing-Touches"></a>Finishing Touches</h4>
+<p>Depending on how bright or dark the photo was to start with, you can always go back to your basic Light settings and make some final adjustments.</p>
+<p><code>Whites + 50</code>: The bright areas were still dark, so move the whites slider to brighten them.</p>
+<h3 id="Dealing-with-Dull-Skies-with-the-Linear-Gradient-Tool"><a class="header-anchor" href="#Dealing-with-Dull-Skies-with-the-Linear-Gradient-Tool"></a>Dealing with Dull Skies with the Linear Gradient Tool</h3>
+<p>Bright skies and dark foregrounds are a very common scenario faced by photographers. Balancing out the tones will make the image look much more appealing and the Linear Gradient tool is up to the task.</p>
+<h4 id="Linear-Gradient"><a class="header-anchor" href="#Linear-Gradient"></a>Linear Gradient</h4>
+<p>The sky is way too light. Add a Gradient to darken the sky with Exposure and add a bit of ‘life’ to it with Clarity.</p>
+<p><code>Selective Edits: Linear Gradient</code>: Drag a Gradient so that it’s parallel to the horizon and wide enough to blend in between the hills and the sky. The width of a Linear Gradient determines its softness. Too soft is a bad idea so, counter intuitively, narrower Gradients often work best.<br>
+<code>Linear Gradient: Exposure - 0.77</code>: Darken the sky a bit.<br>
+<code>Linear Gradient: Clarity + 63</code>: Adding Clarity to the sky makes the clouds more distinct, which adds some drama.</p>
+<h4 id="Light"><a class="header-anchor" href="#Light"></a>Light</h4>
+<p>Once we have improved the sky we will use global adjustments to improve the overall tonality.</p>
+<p><code>Contrast + 74</code><br>
+<code>Highlights - 50</code><br>
+<code>Shadows + 90</code>: Lighten the dark tones to open up the shadows and reveal the ship’s textures all the better.</p>
+<h4 id="Effects"><a class="header-anchor" href="#Effects"></a>Effects</h4>
+<p>Clarity brings out the details of the ships hull - it works well on rusty and textured objects.</p>
+<p><code>Clarity + 25</code>: Accentuate details in the ship’s hull and the beach rocks.<br>
+<code>Vignette - 20</code>: Darken the edges of the photo to hold the eye in the shot.</p>
+<h3 id="Sharpening-Landscape-Photos"><a class="header-anchor" href="#Sharpening-Landscape-Photos"></a>Sharpening Landscape Photos</h3>
+<p>In landscape photography, sharpness and focus are especially important. In this tutorial, you’ll learn how to add a great final touch of sharpening to accentuate important details.</p>
+<h4 id="Sharpening-your-photos-with-the-Detail-Panel"><a class="header-anchor" href="#Sharpening-your-photos-with-the-Detail-Panel"></a>Sharpening your photos with the Detail Panel</h4>
+<p>Before we get started, it’s always a good practice to zoom in (pinch zoom) on your photo before sharpening.</p>
+<p><code>Sharpening 100</code>: Sharpening is basically adding contrast to edges and details. So think of that Sharpness slider as the amount of contrast you’re going to add.</p>
+<h4 id="Adjusting-Radius"><a class="header-anchor" href="#Adjusting-Radius"></a>Adjusting Radius</h4>
+<p>Once Lightroom detects an edge to sharpen, the Radius slider controls how far around that edge to apply the sharpening. High values may create unsightly haloing effects, so it is best to be judicious with the Radius slider.</p>
+<p><code>Radius 0.8</code>: Move the Radius to a setting just under 1.0 for tiny details. While the Radius will be different for every photo, you’ll usually want a pretty low number (less than 1) for very detailed and textured photos. For less detailed images such as a water or foggy scenes experiment with higher values.</p>
+<h4 id="Adjusting-the-Detail-Slider"><a class="header-anchor" href="#Adjusting-the-Detail-Slider"></a>Adjusting the Detail Slider</h4>
+<p>The Detail slider tells Lightroom how many details it should look for in the photo. Lower settings mean it’ll look for only super contrasty stuff to sharpen. Higher settings mean it’ll affect more areas.</p>
+<p><code>Detail 65</code>: Increase the Detail slider to affect more of the small details in the photo.</p>
+<h4 id="Hide-or-Mask-the-Sharpening-From-Smooth-Areas"><a class="header-anchor" href="#Hide-or-Mask-the-Sharpening-From-Smooth-Areas"></a>Hide (or Mask) the Sharpening From Smooth Areas</h4>
+<p>The masking slider hides the sharpening from the less detailed and smoother areas in the image, such as skies or flat surfaces that do not to be sharpened as much.</p>
+<p><code>Masking 10</code>: Move the Masking slider to the right and it won’t affect the water as much.</p>
+<p>Whenever you’re done sharpening, it’s always a good practice to tap and hold on your photo to see the before/after.</p>
+<h3 id="Creating-Dramatic-Contrast-in-a-Washed-Out-Landscape-Image"><a class="header-anchor" href="#Creating-Dramatic-Contrast-in-a-Washed-Out-Landscape-Image"></a>Creating Dramatic Contrast in a Washed-Out Landscape Image</h3>
+<p>The midday sun in an environment like Maui’s Haleakala Crater can wash out tones. Build contrast and shape color to transform a washed-out landscape image into a moody and dramatic final product.</p>
+<h4 id="Light-v2"><a class="header-anchor" href="#Light-v2"></a>Light</h4>
+<p>Since so much of this scene is a similar medium tone, adding a lot of contrast will spread out the dynamic range of the image. First maximize what you can do with the Whites and Blacks.</p>
+<p><code>Whites + 36</code>: First to get dramatic contrast, brighten the Whites as much as possible without losing highlights.<br>
+<code>Blacks - 5</code>: Darken the Blacks to get the richest Blacks possible without losing important shadow information.<br>
+<code>Contrast + 15</code>: Increase overall contrast and refine the contrast even more in the next step.<br>
+<code>Curve: S-curve</code></p>
+<h4 id="Color"><a class="header-anchor" href="#Color"></a>Color</h4>
+<p>Increasing the saturation and controlling luminosity of specific colors in this scene can add interest and depth.</p>
+<p><code>Vibrance + 15</code>: Increase Vibrancy to make the subtle reds of the volcanic sands and greens of the mountain appear more vivid.<br>
+<code>Color Mix: Blues Saturation - 25</code>: By increasing vibrance of all colors, the blue sky is too blue, so bring it back a bit, closer to the other colors.<br>
+<code>Color Mix: Blues Luminance - 30</code>: Darkening the blue tones of the sky will help get more contrast with the clouds and give the image more drama.</p>
+<h4 id="Effects-v2"><a class="header-anchor" href="#Effects-v2"></a>Effects</h4>
+<p>The Effects can increase texture, which is the main subject of what could otherwise just be flat gravelly grey sand.</p>
+<p><code>Clarity + 24</code>: Using the Clarity slider will enhance the contrast in the midtones, in this case the areas of rocks and sand.</p>
+<h4 id="Detail"><a class="header-anchor" href="#Detail"></a>Detail</h4>
+<p>Sharpening is important in adding interest to landscape images to make all the details stand out.</p>
+<p><code>Sharpening 75</code>: Sharpening the photo will also encourage the viewer to notice the details of the rocks.<br>
+<code>Radius 1.2</code>: Increase the impact of the sharpening and make the rocks and edges of the landscape pop.</p>
+<h3 id="Perfect-Turquoise-Water"><a class="header-anchor" href="#Perfect-Turquoise-Water"></a>Perfect Turquoise Water</h3>
+<h4 id="Crop"><a class="header-anchor" href="#Crop"></a>Crop</h4>
+<p>Most Social Media is consumed on a vertical device such as a phone, so vertical images will work best as they fill the screen. For Instagram the optimal ratio is 4:5 and you can choose the 4x5 ratio from the Crop presets.</p>
+<p><code>Crop</code>: Place important subjects one third from the top or bottom. This is a classic composition rule that still works very well.</p>
+<h4 id="Light-v3"><a class="header-anchor" href="#Light-v3"></a>Light</h4>
+<p>Especially on cloudy days, images often look flat and low in contrast. That’s easy to correct. Plus we’ll use the Tone Curve to adjust the image contrast to create a popular Instagram look.</p>
+<p><code>Contrast + 56</code>: Get rid of the dullness and make the picture look more brilliant.<br>
+<code>Highlights - 32</code>: Darken the bright tones.<br>
+<code>Shadows + 35</code>: Lighten the dark tones to see more information in the mountain and water areas.<br>
+<code>Whites + 27</code>: Brighten the bright tones. This will also add some brilliance to the image and make it look like the sun is shining.<br>
+<code>Curve</code>: If you want the rest of the Curve not to be influenced by the adjustments you made, set anchor points above and below your change on the diagonal line to lock those values from being changed.</p>
+<h4 id="Color-v2"><a class="header-anchor" href="#Color-v2"></a>Color</h4>
+<p>The water is still way too green, what doesn’t look natural at all. We want it to look like an ice cold turquoise glacial lake.</p>
+<p><code>Color Mix: Aqua Hue + 43</code>: Make the aqua tones more blue.<br>
+<code>Color Mix: Aqua Saturation + 62</code>: Make the aqua tones richer.<br>
+<code>Color Mix: Blue Luminance - 35</code>: Darken the blue tones.</p>
+<h3 id="2-5-minutes-of-total-solar-eclipse"><a class="header-anchor" href="#2-5-minutes-of-total-solar-eclipse"></a>2.5 minutes of total solar eclipse</h3>
+<p>Learn how to process the strange and beautiful light from a solar eclipse. Give depth and richness to the shadow of the moon as it passes across the sun, and accentuate the symmetry and negative space of your composition.</p>
+<h4 id="Crop-v2"><a class="header-anchor" href="#Crop-v2"></a>Crop</h4>
+<p>I composed the image so that the eclipse was central but to have most of the photo consists of sky. The composition is just slightly off so I begin by making an adjustment to crop and angle.</p>
+<p><code>Crop</code>: Center the eclipse but position it slightly lower in the picture.</p>
+<p>The reason I used a wide angle lens is because I wanted to capture the effect of the moon shadow across the sky and landscape. The focal point is not the eclipse itself, but rather the subtle gradations in light and color.</p>
+<h4 id="Light-v4"><a class="header-anchor" href="#Light-v4"></a>Light</h4>
+<p>The raw image really didn’t reflect my memory of the eclipse. The picture needed substantial changes in exposure to recreate the night tones which pervaded the sky.</p>
+<p><code>Exposure - 1.58</code>: Darken the image so that the deepest parts of the sky are almost black. It is essentially night time inside the shadow!<br>
+<code>Curve: S-curve</code></p>
+<h4 id="Color-v3"><a class="header-anchor" href="#Color-v3"></a>Color</h4>
+<p>Now that the light is in a good place. Work with the color to adjust the mood and atmosphere of the picture.<br>
+To see the subtle color shifts, pinch zoom to the center of the image and work alone.</p>
+<p><code>Temp 3846K</code>: Decrease Temperature to make the photo cooler. The sky was a very dark indigo, the color of night.<br>
+<code>Vibrance + 18</code>: Make the colors more vivid by increasing Vibrance. I tend to use this function over Saturation.<br>
+<code>Saturation + 10</code>: Increase Saturation slightly but not by too much. I prefer to saturate colors individually or use Vibrance.<br>
+<code>Color Mix: Orange Hue - 7</code>: Shift the orange hues slightly towards red to deepen the tone.<br>
+<code>Color Mix: Yellow Hue - 6</code>: Shift the yellow more orange. The yellow/orange tones on the horizon will be main saturated colors in the photo.</p>
+<h4 id="Effects-v3"><a class="header-anchor" href="#Effects-v3"></a>Effects</h4>
+<p>Add some structure to the mountain with the Clarity slider.</p>
+<p><code>Clarity + 37</code>: Enhance the micro contrast in the midtones and makes the image look defined.</p>
+<h3 id="Improving-a-Sunrise-Portrait"><a class="header-anchor" href="#Improving-a-Sunrise-Portrait"></a>Improving a Sunrise Portrait</h3>
+<p>Improve a portrait captured at sunrise that’s too dark.</p>
+<h4 id="Light-v5"><a class="header-anchor" href="#Light-v5"></a>Light</h4>
+<p>When the image was captured, the exposure was set to ensure good detail in the sky and clouds. But this left the figure in the foreground dark and underexposed.</p>
+<p><code>Shadows + 100</code>: Begin by lightening the dark and underexposed tones.<br>
+<code>Contrast + 100</code>: The increase in shadows makes the image feel bland so let’s increase image contrast.<br>
+<code>Exposure + 0.11</code>: Slightly brighten the overall photo.<br>
+<code>Highlights - 100</code>: The very light tones are too bright, so recover those tone by decreasing the Highlights.<br>
+<code>Whites + 16</code>: Slightly brighten the bright tones.<br>
+<code>Blacks - 50</code>: Drag the Blacks slider to the left to add more density and contrast.</p>
+<h4 id="Color-v4"><a class="header-anchor" href="#Color-v4"></a>Color</h4>
+<p>Add Some style by slightly boosting the colors.</p>
+<p><code>Vibrance + 13</code>: Make the colors more vivid.<br>
+<code>Saturation + 6</code>: Slightly increase color intensity.</p>
+<h4 id="Effects-v4"><a class="header-anchor" href="#Effects-v4"></a>Effects</h4>
+<p>Clarity, Dehaze and the Slit Toning controls can help us to create more visual interest.</p>
+<p><code>Clarity + 30</code>: Accentuate details and add visual snap.<br>
+<code>Dehaze + 10</code>: Reduce atmospheric haze and darken light tones.<br>
+<code>Split Toning: Shadows H: 231° S: 22</code>: Select a blue color for the darker tones.<br>
+<code>Split Toning: Highlights H: 48° S: 20</code>: Select a yellow for the light tones.</p>
+<h4 id="Detail-v2"><a class="header-anchor" href="#Detail-v2"></a>Detail</h4>
+<p>Brighten shadows can reveal unwanted noise. So let’s fix that and add some overall sharpening.</p>
+<p><code>Noise Reduction 60</code>: Smooth out the noise in the photo.<br>
+<code>Color Noise Reduction 60</code>: Remove colored noise artifacts.<br>
+<code>Sharpening 72</code>: Accentuate details throughout the photo.</p>
+<h4 id="Optics"><a class="header-anchor" href="#Optics"></a>Optics</h4>
+<p>Shooting directly into the sun with a wide angle lens may result in unwanted color fringing and distortion.</p>
+<p><code>Remove Chromatic Aberration</code>: Remove unwanted color from around objects and bright highlights.<br>
+<code>Enable Lens Corrections</code>: Apply automatic Lens Corrections.</p>
+<h3 id="Bringing-a-Sunrise-to-Life"><a class="header-anchor" href="#Bringing-a-Sunrise-to-Life"></a>Bringing a Sunrise to Life</h3>
+<p>Getting the right tonality and color in a sunrise can be really tricky.</p>
+<h4 id="Improving-the-Composition-With-Crop"><a class="header-anchor" href="#Improving-the-Composition-With-Crop"></a>Improving the Composition With Crop</h4>
+<p>Getting the composition right in the camera is a great goal to strive for. For those times that the frame isn’t exactly what you had imagined, the Crop tool can really transform your photo.</p>
+<p><code>Crop</code>: Use the crop to split the image into two halves of sky (top) and sea (bottom).</p>
+<h4 id="Getting-the-Colors-Right-with-White-Balance"><a class="header-anchor" href="#Getting-the-Colors-Right-with-White-Balance"></a>Getting the Colors Right with White Balance</h4>
+<p>Shooting during sunrise and shooting on the coast can both throw the auto white balance settings off, resulting in a scene that doesn’t match your memory. Temperature and Tint are invaluable tools to control color in a photo.</p>
+<p><code>Temp 10280K</code>: increase the warmth of the image by increasing the Temperature slider.<br>
+<code>Tint + 38</code>: Increasing Tint adds magenta, removing the slight green cast from the photo.<br>
+<code>Saturation + 30</code>: To make the colors of the sunrise stand out, increase Saturation a bit.</p>
+<h4 id="Balancing-Contrast"><a class="header-anchor" href="#Balancing-Contrast"></a>Balancing Contrast</h4>
+<p>Now that the colors look much better, it’s time to balance tonality and contrast. We’re going to want to retain the sleepy sunrise mood while adding a bit of punch through contrast.</p>
+<p><code>Contrast + 60</code><br>
+<code>Highlights - 100</code>: The sky is too bright, reduce Highlights to bring details back to the clouds.<br>
+<code>Shadows + 35</code>: Shadows can act like a flashlight for dark area, bringing details back.<br>
+<code>Whites + 45</code>: Recovering highlights made the photo a bit dingy, use Whites to clean it up.<br>
+<code>Blacks - 20</code>: Add some blacks to the image to ensure there’s a rage from black to white.<br>
+<code>Curve: S-curve</code></p>
+<h4 id="Adding-Depth-With-a-Vignette"><a class="header-anchor" href="#Adding-Depth-With-a-Vignette"></a>Adding Depth With a Vignette</h4>
+<p>The Vignette control can add depth to a photo by drawing the viewer’s gaze towards the center of the photo. We’ll first remove the vignette unique to this lens and then apply a vignette to the cropped area.</p>
+<p><code>Enable Lens Corrections</code><br>
+<code>Vignette - 30</code>: Darken the edges, taking care not to create too obvious of an effect.<br>
+<code>Midpoint 8</code>: Move the Midpoint to the left to bring the effect into the photo even more.<br>
+<code>Roundness - 12</code>: Make the vignette a tiny bit less round.<br>
+<code>Feather 90</code>: Increasing Feather ensures that the edge of the effect isn’t visible.</p>
+<h3 id="Bring-Focus-and-Interest-to-Your-Travel-Photographs"><a class="header-anchor" href="#Bring-Focus-and-Interest-to-Your-Travel-Photographs"></a>Bring Focus and Interest to Your Travel Photographs</h3>
+<h4 id="Effects-v5"><a class="header-anchor" href="#Effects-v5"></a>Effects</h4>
+<p>My workflow for processing architectural images stars with Clarity as a high Clarity setting can change the overall image exposure.</p>
+<p><code>Clarity + 30</code>: Adds details and visual snap to the mid-tones.</p>
+<h4 id="Light-v6"><a class="header-anchor" href="#Light-v6"></a>Light</h4>
+<p>The image needs to be brightened and Shadow detail added to make the Exposure correct. Increasing the Contrast will give the image a little more pop.</p>
+<p><code>Exposure + 0.1</code>: Bring up the Exposure slider to brighten the overall photo.<br>
+<code>Shadows + 70</code>: Open up the shadows to reveal important shadow details.<br>
+<code>Contrast + 36</code></p>
+<h4 id="Color-v5"><a class="header-anchor" href="#Color-v5"></a>Color</h4>
+<p>The image needs some color intensity and the sky should be darker. This will achieved by using the Vibrance slider and darken the blue sky tones.</p>
+<p><code>Vibrance + 38</code>: Make the colors more vivid without over-saturating them.<br>
+<code>Color Mix: Blue Luminance - 10</code>: Darken the blue tones, which is something I do on almost all of my exterior photographs.<br>
+<code>Color Mix: Blue Hue + 13</code>: Make the blue tones more purple to give the images a more natural looking sky.<br>
+<code>Color Mix: Blue Saturation - 10</code>: Make the blue tones less colorful to make the sky look more natural.</p>
+<h4 id="Linear-Gradient-v2"><a class="header-anchor" href="#Linear-Gradient-v2"></a>Linear Gradient</h4>
+<p>The bottom of the image needs to be darker and we’ll do that with the Linear Gradient Filter.</p>
+<p><code>Selective Edits: Linear Gradient</code>: Start in the grass and pull up to about halfway up the image.<br>
+<code>Linear Gradient: Exposure - 0.6</code></p>
+<h4 id="Geometry"><a class="header-anchor" href="#Geometry"></a>Geometry</h4>
+<p>The building is not perfectly straight and it can be corrected using the Guided Upright tool.</p>
+<p><code>Upright: Guided</code>: Select Guided and draw a line down the left side of the lighthouse. Then draw a line down the right side of the lighthouse to straighten the building.</p>
+<h4 id="Crop-v3"><a class="header-anchor" href="#Crop-v3"></a>Crop</h4>
+<p>Remove all the distractions so the center of attention is on the most important element in the image - the lighthouse.</p>
+<p><code>Crop</code>: Use the Crop tool to remove unwanted areas and recompose the image.</p>
+<h4 id="Effects-v6"><a class="header-anchor" href="#Effects-v6"></a>Effects</h4>
+<p>Adding a Vignette to your image helps focus your viewer’s attention on the center of the iamge.</p>
+<p><code>Vignette - 14</code>: Darken the edges of the photo. You do not want to go so far that you will notice the effect.<br>
+<code>Midpoint 48</code>: Make the darkening effect larger and bring it into the image.<br>
+<code>Feather 57</code>: As we increased the Midpoint we use Feathering to soften the transition of the darkening effect.</p>
+<h2 id="Portraits"><a class="header-anchor" href="#Portraits"></a>Portraits</h2>
+<h3 id="Creating-a-High-Key-Image"><a class="header-anchor" href="#Creating-a-High-Key-Image"></a>Creating a High Key Image</h3>
+<p>Highkey is light and bright. This photo needs to be all about the lightest tones so let’s use the Light tools to create an image with no deep shadows, one that emphasizes the soft fur, and the perky expression of this dog.</p>
+<h4 id="Light-v7"><a class="header-anchor" href="#Light-v7"></a>Light</h4>
+<p>High key images are light and airy, with no blacks and low contrast. Let’s brighten this image and make sure the lightest tones are under control.</p>
+<p><code>Exposure + 1</code>: Brighten the overall photo by the equivalent of one stop.<br>
+<code>Highlights - 75</code>: Combined with the next stop, reducing the highlights adds contrast to the highlights only.<br>
+<code>Whites + 10</code>: Brighten the brightest tones to make the whites as bright as can be without clipping.<br>
+<code>Shadows + 70</code>: Lighten the dark tones to make sure there are no harsh shadows.</p>
+<h4 id="Color-v6"><a class="header-anchor" href="#Color-v6"></a>Color</h4>
+<p>Warm toned images always look more appealing and this friendly dog is slightly straw colored anyway</p>
+<p><code>Temp 7725K</code>: Push the Temp up to add warmth to the photo and bring out the orange colors of the fur.<br>
+<code>Saturation + 27</code>: Increase color intensity to further bring out the fur color.</p>
+<h4 id="Effects-v7"><a class="header-anchor" href="#Effects-v7"></a>Effects</h4>
+<p>Negative Texture can soften an image in a pleasing way.</p>
+<p><code>Texture - 36</code>: Soften details throughout the photo.<br>
+<code>Vignette - 27</code>: Darken the edges of the photo to hold the eye in the frame.</p>
+<h4 id="Detail-v3"><a class="header-anchor" href="#Detail-v3"></a>Detail</h4>
+<p>Too much sharpening will spoil the nice soft effect we have created so we will back it off a bit.</p>
+<p><code>Sharpening 25</code>: Reduce the sharpening of the details in the photo.<br>
+<code>Noise Reduction 10</code>: Smooth out the noise in the photo.</p>
+<h3 id="Make-a-dark-dog-shine"><a class="header-anchor" href="#Make-a-dark-dog-shine"></a>Make a dark dog shine</h3>
+<p>Dogs with dark fur are hard to photograph. Often, their features get lost, making for dull portraits.</p>
+<h4 id="Light-v8"><a class="header-anchor" href="#Light-v8"></a>Light</h4>
+<p>Bring light into the dark fur, preserve the white fur, and make your dog shine.</p>
+<p><code>Exposure + 0.1</code>: Make sure your portrait’s overall Exposure is balanced, but don’t use the Exposure tool to bring out details yet.<br>
+Although Exposure is a great way to adjust light in many situations, it’s not the right tool for a portrait like this. We need more specific adjustments, to retain the details of the portrait abd the dog’s features.<br>
+<code>Contrast + 32</code>: Start by boosting the Contrast, as a great way to bring drama and sass to any portrait.<br>
+<code>Highlights + 3</code>: Because this dog has a lot of white fur, I won’t push the Highlights, but notice what it does to black fur, and use as needed.<br>
+<code>Shadows + 56</code>: This is the key adjustment for dark fur. See how much light you can bring into the fur, revealing all these amazing details.<br>
+<code>Whites - 67</code>: Bringing the Whites down reveals more texture in the white fur. It’s nice if you don’t want the white fur to be blown out.<br>
+<code>Blacks - 30</code>: Darken the Blacks to retain some of the drama of the black fur.</p>
+<h4 id="Effects-v8"><a class="header-anchor" href="#Effects-v8"></a>Effects</h4>
+<p>Effects are a great way to give personality to your photos, and develop your own unique style.</p>
+<p><code>Clarity + 47</code>: Gently accentuate details and add punch to a portrait.</p>
+<h4 id="Color-v7"><a class="header-anchor" href="#Color-v7"></a>Color</h4>
+<p>The possibilities with Color adjustment are endless. This is a great place to continue exploring your own style.</p>
+<p><code>Vibrance + 57</code><br>
+<code>Saturation - 10</code>: Bring Saturation down a bit, so that the expression of the dog isn’t outshined by the presence of intense colors.</p>
+<p>Next, let’s work on adjusting colors more selectively. For example: if your dog’s tongue is out, it’s a good idea to pay attention to it. Its color and vibrancy can make your dog look happier and healthier.</p>
+<p><code>Color Mix: Red Saturation + 22</code>: Make the red tones more vivid, just to bring more life into the tongue of the dog.<br>
+<code>Color Mix: Red Luminance - 10</code>: Darken the red tones, to fix the pink of the tongue.<br>
+<code>Color Mix: Magenta Hue + 42</code>: Adjust the Hue of the tongue only, by making the modifying the Magenta Hue.</p>
+<p>Next, the eyes! Possibly the most important part of the portrait. Play with their color and make them pop.</p>
+<p><code>Color Mix: Orange Saturation + 32</code><br>
+<code>Color Mix: Orange Luminance - 18</code></p>
+<p>The following step is great if your dog has white fur. That fur can appear a bit yellowish. Let’s tone that down.</p>
+<p><code>Color Mix: Yellow Saturation - 76</code>: By decreasing the Yellow saturation, I removed the yellow hue that was present in the white fur, making my model look cleaner.<br>
+<code>Color Mix: Yellow Luminance + 35</code>: I brightened the yellow tones too, just to continue working on that white fur.</p>
+<p>Final step: It’s amazing how much you can transform a portrait, just by playing with the background. In this case, I felt like my model’s expression and looks would be better served with blue.</p>
+<p><code>Color Mix: Purple Hue - 100</code>: Since the background is purple, I selected the Purple cursor and slid it to modify the Hue until I reached a blue I liked.<br>
+<code>Color Mix: Blue Saturation - 10</code><br>
+<code>Color Mix: Blue Luminance + 30</code>: You can adjust the Luminance to your liking, which will add more separation between your model and the background.</p>
+<h3 id="Color-Correcting-an-Environmental-Portrait"><a class="header-anchor" href="#Color-Correcting-an-Environmental-Portrait"></a>Color Correcting an Environmental Portrait</h3>
+<p>Our eyes neutralize the color of the lights so that we, for example, don’t see the green in fluorescent lights. Refine the color to make the image look closer to how we would see it if we had been on location.</p>
+<h4 id="Color-Profile"><a class="header-anchor" href="#Color-Profile"></a>Color Profile</h4>
+<p>Lightroom includes a variety of Profiles to correct color and/or apply creative effects.</p>
+<p><code>Adobe Portrait</code></p>
+<h4 id="Light-v9"><a class="header-anchor" href="#Light-v9"></a>Light</h4>
+<p>The image is well-exposed, but we can refine the overall exposure to tonally better shape the image.</p>
+<p><code>Exposure + 0.25</code><br>
+<code>Contrast + 30</code>: Increasing contrast adds visual snap and is very appealing to our visual system.<br>
+<code>Highlights - 70</code>: Darken the bright tones to reduce the lights in the background.<br>
+<code>Shadows + 43</code><br>
+<code>Curve: S-curve</code></p>
+<h4 id="Color-v8"><a class="header-anchor" href="#Color-v8"></a>Color</h4>
+<p>The mixed color temperature in this image is a challenge to balance. Keep your eye on the person as that is what the image is really about - correct the color to make him look his very best.</p>
+<p><code>Temp 2525K</code>: Decrease Temp to make the photo more blue to offset the yellow/green color cast.<br>
+<code>Tint + 10</code>: Add a hint of magenta to counteract the greenish light.<br>
+<code>Color Mix: Yellow Saturation - 50</code>: Make the yellow tones less colorful to pull yellow out of the background.<br>
+<code>Color Mix: Green Saturation - 100</code>: Desaturate the green tones to reduce the green in the lights in the background.</p>
+<h4 id="Effects-v9"><a class="header-anchor" href="#Effects-v9"></a>Effects</h4>
+<p>Use the Effects to polish the image and give it visual character.</p>
+<p><code>Clarity + 10</code>: Accentuate details. Use low values to not exaggerate skin textures too much.<br>
+<code>Vignette - 25</code>: Darken the edges of the photo to draw more attention to him.<br>
+<code>Midpoint 40</code>: Move the midtone slider to the left to increase the spread of the vignette.<br>
+<code>Roundness - 15</code>: Adjust roundness to better fit into the scene.</p>
+<h4 id="Crop-v4"><a class="header-anchor" href="#Crop-v4"></a>Crop</h4>
+<p>Slightly tighten it up to make the man more prominent.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/YALuminoid">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/blog/tags/Lightroom/" rel="tag"><i class="fa fa-tag"></i> Lightroom</a>
+              <a href="/blog/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/Photography-Basics-and-Beyond-Note/" rel="prev" title="Photography Basics and Beyond Note">
+      <i class="fa fa-chevron-left"></i> Photography Basics and Beyond Note
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/Audio-in-iOS/" rel="next" title="Audio in iOS">
+      Audio in iOS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Landscape"><span class="nav-number">1.</span> <span class="nav-text">Landscape</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RGB-Curves"><span class="nav-number">1.1.</span> <span class="nav-text">RGB Curves</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RGB-Curves-v2"><span class="nav-number">1.1.1.</span> <span class="nav-text">RGB Curves</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-Haze-and-Adding-Contrast"><span class="nav-number">1.2.</span> <span class="nav-text">Removing Haze and Adding Contrast</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crop-to-show-off-the-main-subject"><span class="nav-number">1.2.1.</span> <span class="nav-text">Crop to show off the main subject</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Removing-Haze"><span class="nav-number">1.2.2.</span> <span class="nav-text">Removing Haze</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-some-warmth"><span class="nav-number">1.2.3.</span> <span class="nav-text">Add some warmth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduce-the-Saturation"><span class="nav-number">1.2.4.</span> <span class="nav-text">Reduce the Saturation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boosting-Fall-Colors"><span class="nav-number">1.3.</span> <span class="nav-text">Boosting Fall Colors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Brighten-the-Photo"><span class="nav-number">1.3.1.</span> <span class="nav-text">Brighten the Photo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boost-the-Fall-like-Colors"><span class="nav-number">1.3.2.</span> <span class="nav-text">Boost the Fall-like Colors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Finishing-Touches"><span class="nav-number">1.3.3.</span> <span class="nav-text">Finishing Touches</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dealing-with-Dull-Skies-with-the-Linear-Gradient-Tool"><span class="nav-number">1.4.</span> <span class="nav-text">Dealing with Dull Skies with the Linear Gradient Tool</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linear-Gradient"><span class="nav-number">1.4.1.</span> <span class="nav-text">Linear Gradient</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light"><span class="nav-number">1.4.2.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects"><span class="nav-number">1.4.3.</span> <span class="nav-text">Effects</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sharpening-Landscape-Photos"><span class="nav-number">1.5.</span> <span class="nav-text">Sharpening Landscape Photos</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sharpening-your-photos-with-the-Detail-Panel"><span class="nav-number">1.5.1.</span> <span class="nav-text">Sharpening your photos with the Detail Panel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adjusting-Radius"><span class="nav-number">1.5.2.</span> <span class="nav-text">Adjusting Radius</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adjusting-the-Detail-Slider"><span class="nav-number">1.5.3.</span> <span class="nav-text">Adjusting the Detail Slider</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hide-or-Mask-the-Sharpening-From-Smooth-Areas"><span class="nav-number">1.5.4.</span> <span class="nav-text">Hide (or Mask) the Sharpening From Smooth Areas</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Dramatic-Contrast-in-a-Washed-Out-Landscape-Image"><span class="nav-number">1.6.</span> <span class="nav-text">Creating Dramatic Contrast in a Washed-Out Landscape Image</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v2"><span class="nav-number">1.6.1.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color"><span class="nav-number">1.6.2.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v2"><span class="nav-number">1.6.3.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Detail"><span class="nav-number">1.6.4.</span> <span class="nav-text">Detail</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perfect-Turquoise-Water"><span class="nav-number">1.7.</span> <span class="nav-text">Perfect Turquoise Water</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crop"><span class="nav-number">1.7.1.</span> <span class="nav-text">Crop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v3"><span class="nav-number">1.7.2.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v2"><span class="nav-number">1.7.3.</span> <span class="nav-text">Color</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-minutes-of-total-solar-eclipse"><span class="nav-number">1.8.</span> <span class="nav-text">2.5 minutes of total solar eclipse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crop-v2"><span class="nav-number">1.8.1.</span> <span class="nav-text">Crop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v4"><span class="nav-number">1.8.2.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v3"><span class="nav-number">1.8.3.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v3"><span class="nav-number">1.8.4.</span> <span class="nav-text">Effects</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improving-a-Sunrise-Portrait"><span class="nav-number">1.9.</span> <span class="nav-text">Improving a Sunrise Portrait</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v5"><span class="nav-number">1.9.1.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v4"><span class="nav-number">1.9.2.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v4"><span class="nav-number">1.9.3.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Detail-v2"><span class="nav-number">1.9.4.</span> <span class="nav-text">Detail</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optics"><span class="nav-number">1.9.5.</span> <span class="nav-text">Optics</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bringing-a-Sunrise-to-Life"><span class="nav-number">1.10.</span> <span class="nav-text">Bringing a Sunrise to Life</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Improving-the-Composition-With-Crop"><span class="nav-number">1.10.1.</span> <span class="nav-text">Improving the Composition With Crop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Getting-the-Colors-Right-with-White-Balance"><span class="nav-number">1.10.2.</span> <span class="nav-text">Getting the Colors Right with White Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Balancing-Contrast"><span class="nav-number">1.10.3.</span> <span class="nav-text">Balancing Contrast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adding-Depth-With-a-Vignette"><span class="nav-number">1.10.4.</span> <span class="nav-text">Adding Depth With a Vignette</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bring-Focus-and-Interest-to-Your-Travel-Photographs"><span class="nav-number">1.11.</span> <span class="nav-text">Bring Focus and Interest to Your Travel Photographs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v5"><span class="nav-number">1.11.1.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v6"><span class="nav-number">1.11.2.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v5"><span class="nav-number">1.11.3.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linear-Gradient-v2"><span class="nav-number">1.11.4.</span> <span class="nav-text">Linear Gradient</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometry"><span class="nav-number">1.11.5.</span> <span class="nav-text">Geometry</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crop-v3"><span class="nav-number">1.11.6.</span> <span class="nav-text">Crop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v6"><span class="nav-number">1.11.7.</span> <span class="nav-text">Effects</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Portraits"><span class="nav-number">2.</span> <span class="nav-text">Portraits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-a-High-Key-Image"><span class="nav-number">2.1.</span> <span class="nav-text">Creating a High Key Image</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v7"><span class="nav-number">2.1.1.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v6"><span class="nav-number">2.1.2.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v7"><span class="nav-number">2.1.3.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Detail-v3"><span class="nav-number">2.1.4.</span> <span class="nav-text">Detail</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Make-a-dark-dog-shine"><span class="nav-number">2.2.</span> <span class="nav-text">Make a dark dog shine</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v8"><span class="nav-number">2.2.1.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v8"><span class="nav-number">2.2.2.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v7"><span class="nav-number">2.2.3.</span> <span class="nav-text">Color</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-Correcting-an-Environmental-Portrait"><span class="nav-number">2.3.</span> <span class="nav-text">Color Correcting an Environmental Portrait</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-Profile"><span class="nav-number">2.3.1.</span> <span class="nav-text">Color Profile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-v9"><span class="nav-number">2.3.2.</span> <span class="nav-text">Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Color-v8"><span class="nav-number">2.3.3.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effects-v9"><span class="nav-number">2.3.4.</span> <span class="nav-text">Effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crop-v4"><span class="nav-number">2.3.5.</span> <span class="nav-text">Crop</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming and other fields</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luminoid</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">244k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:58</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
