@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hexo Theme: hexo-theme-next Quick Deployment With Algolia and git deployment 1234567$ hexo new &quot;My New Article&quot;$ vim source&#x2F;_posts&#x2F;My-New-Article.md$ hexo clean$ hexo algolia$ git add -A$ git commit -">
+  <meta name="description" content="Hexo Theme: hexo-theme-next Quick Deployment Hexo recommended way 1234$ hexo new &quot;My New Article&quot;$ vim source&#x2F;_posts&#x2F;My-New-Article.md$ hexo clean$ hexo deploy -g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Quick Guide">
 <meta property="og:url" content="http://luminoid.github.io/blog/Hexo-Quick-Guide/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Hexo Theme: hexo-theme-next Quick Deployment With Algolia and git deployment 1234567$ hexo new &quot;My New Article&quot;$ vim source&#x2F;_posts&#x2F;My-New-Article.md$ hexo clean$ hexo algolia$ git add -A$ git commit -">
+<meta property="og:description" content="Hexo Theme: hexo-theme-next Quick Deployment Hexo recommended way 1234$ hexo new &quot;My New Article&quot;$ vim source&#x2F;_posts&#x2F;My-New-Article.md$ hexo clean$ hexo deploy -g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-06-08T03:06:48.000Z">
-<meta property="article:modified_time" content="2019-02-05T09:57:15.846Z">
+<meta property="article:modified_time" content="2017-06-08T03:06:48.000Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="guide">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">40</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">41</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -208,7 +208,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -228,13 +228,6 @@
 
               <time title="Created: 2017-06-08 11:06:48" itemprop="dateCreated datePublished" datetime="2017-06-08T11:06:48+08:00">2017-06-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -262,7 +255,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -284,41 +277,53 @@
         <p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>
 Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></p>
 <h2 id="Quick-Deployment"><a class="header-anchor" href="#Quick-Deployment"></a>Quick Deployment</h2>
+<p>Hexo recommended way</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>With Algolia and git deployment</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo algolia</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>With Algolia and hexo deployment</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo algolia</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>Without Algolia and hexo deployment</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
 <h2 id="Maintenance"><a class="header-anchor" href="#Maintenance"></a>Maintenance</h2>
 <p>Update outdated npm packages regularly to avoid security vulnerability:<br>
 Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
 <h2 id="Theme"><a class="header-anchor" href="#Theme"></a>Theme</h2>
 <p>The following are the theme files to be modified for custom configuration, take <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/" target="_blank" rel="noopener">tranquilpeak</a> theme as an example:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">languages&#x2F;</span><br></pre></td></tr></table></figure>
-<h2 id="Grammar"><a class="header-anchor" href="#Grammar"></a>Grammar</h2>
-<h3 id="Tag-Plugins"><a class="header-anchor" href="#Tag-Plugins"></a>Tag Plugins</h3>
-<p>Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br><span class="line">&#123;% asset_img <span class="string">"spaced asset.jpg"</span> <span class="string">"spaced title"</span> %&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Syntax-Highlighting"><a class="header-anchor" href="#Syntax-Highlighting"></a>Syntax Highlighting</h3>
-<p><a href="http://prismjs.com/#languages-list" target="_blank" rel="noopener">http://prismjs.com/#languages-list</a></p>
-<h2 id="Create"><a class="header-anchor" href="#Create"></a>Create</h2>
+<h2 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h2>
+<h3 id="Commands"><a class="header-anchor" href="#Commands"></a>Commands</h3>
 <p>Initializes a website.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init <span class="string">"My New Website"</span></span><br></pre></td></tr></table></figure>
 <p>Create a new article.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Develop"><a class="header-anchor" href="#Develop"></a>Develop</h2>
 <p>Generate static files and watch file changes.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate -w</span><br></pre></td></tr></table></figure>
 <p>Start a local server.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>List all routes.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo list &lt;<span class="built_in">type</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo algolia</span><br></pre></td></tr></table></figure>
-<h2 id="Deploy"><a class="header-anchor" href="#Deploy"></a>Deploy</h2>
+<h3 id="Tag-Plugins"><a class="header-anchor" href="#Tag-Plugins"></a>Tag Plugins</h3>
+<p>Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.</p>
+<h4 id="Code-Block"><a class="header-anchor" href="#Code-Block"></a>Code Block</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>Or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96; [language] [title] [url] [link text] code snippet &#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<h4 id="Include-Code"><a class="header-anchor" href="#Include-Code"></a>Include Code</h4>
+<p>Inserts code snippets in <code>source/downloads/code</code> folder. The folder location can be specified through the <code>code_dir</code> option in the config.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path&#x2F;to&#x2F;file %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Include-Posts"><a class="header-anchor" href="#Include-Posts"></a>Include Posts</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Include-Assets"><a class="header-anchor" href="#Include-Assets"></a>Include Assets</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br><span class="line">&#123;% asset_img <span class="string">"spaced asset.jpg"</span> <span class="string">"spaced title"</span> %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Deployment"><a class="header-anchor" href="#Deployment"></a>Deployment</h3>
 <p>Deploys your website.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
+<p>Ref: <a href="https://hexo.io/docs/github-pages" target="_blank" rel="noopener">https://hexo.io/docs/github-pages</a></p>
+<h3 id="Syntax-Highlighting"><a class="header-anchor" href="#Syntax-Highlighting"></a>Syntax Highlighting</h3>
+<p><a href="http://prismjs.com/#languages-list" target="_blank" rel="noopener">http://prismjs.com/#languages-list</a></p>
 
     </div>
 
@@ -422,7 +427,7 @@ Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Deployment"><span class="nav-number">1.</span> <span class="nav-text">Quick Deployment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintenance"><span class="nav-number">2.</span> <span class="nav-text">Maintenance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme"><span class="nav-number">3.</span> <span class="nav-text">Theme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grammar"><span class="nav-number">4.</span> <span class="nav-text">Grammar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag-Plugins"><span class="nav-number">4.1.</span> <span class="nav-text">Tag Plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax-Highlighting"><span class="nav-number">4.2.</span> <span class="nav-text">Syntax Highlighting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create"><span class="nav-number">5.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Develop"><span class="nav-number">6.</span> <span class="nav-text">Develop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">7.</span> <span class="nav-text">Deploy</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Deployment"><span class="nav-number">1.</span> <span class="nav-text">Quick Deployment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintenance"><span class="nav-number">2.</span> <span class="nav-text">Maintenance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme"><span class="nav-number">3.</span> <span class="nav-text">Theme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">4.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">4.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag-Plugins"><span class="nav-number">4.2.</span> <span class="nav-text">Tag Plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-Block"><span class="nav-number">4.2.1.</span> <span class="nav-text">Code Block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Code"><span class="nav-number">4.2.2.</span> <span class="nav-text">Include Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Posts"><span class="nav-number">4.2.3.</span> <span class="nav-text">Include Posts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Assets"><span class="nav-number">4.2.4.</span> <span class="nav-text">Include Assets</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deployment"><span class="nav-number">4.3.</span> <span class="nav-text">Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax-Highlighting"><span class="nav-number">4.4.</span> <span class="nav-text">Syntax Highlighting</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,14 +436,14 @@ Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
     <img class="site-author-image" itemprop="image" alt="Luminoid"
       src="/blog/images/avatar.png">
   <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming and other fields</div>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -451,7 +456,7 @@ Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -514,7 +519,7 @@ Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">244k</span>
+    <span title="Symbols count total">245k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

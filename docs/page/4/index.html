@@ -22,14 +22,16 @@
     var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Notes about programming and other fields">
+  <meta name="description" content="Notes about programming(mostly iOS and Web) and other fields">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Luminoid&#39;s Site">
 <meta property="og:url" content="http://luminoid.github.io/blog/page/4/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Notes about programming and other fields">
+<meta property="og:description" content="Notes about programming(mostly iOS and Web) and other fields">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content=" Web">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/page/4/">
@@ -122,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">40</span></a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">41</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -132,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -197,12 +199,365 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Homebrew-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Homebrew-Usage/" class="post-title-link" itemprop="url">Homebrew Usage</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-12-04 23:55:06" itemprop="dateCreated datePublished" datetime="2017-12-04T23:55:06+08:00">2017-12-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Official Site: <a href="https://brew.sh" target="_blank" rel="noopener">https://brew.sh</a></p>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;  <span class="comment"># Install formula</span></span><br><span class="line">brew update             <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub</span></span><br><span class="line">brew upgrade            <span class="comment"># Upgrade all outdated, unpinned packages</span></span><br><span class="line">brew leaves             <span class="comment"># Show installed formulae that are not dependencies of another installed formula</span></span><br><span class="line">brew tap                <span class="comment"># Tap a formula repository</span></span><br><span class="line">brew doctor             <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup            <span class="comment"># Remove stale lock files and outdated downloads for formulae and casks, and remove old versions of installed formulae.</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Homebrew-Usage/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/UIView-Inheritance-Relationships/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/UIView-Inheritance-Relationships/" class="post-title-link" itemprop="url">UIView Inheritance Relationships</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-11-08 00:51:51" itemprop="dateCreated datePublished" datetime="2017-11-08T00:51:51+08:00">2017-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>29</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>+</code>: Class method<br>
+<code>-</code>: Instance method</p>
+<img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" class="" title="UIViewClassDiagram">
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Docker-Cheat-Sheet/" class="post-title-link" itemprop="url">Docker Cheat Sheet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-04 11:49:21" itemprop="dateCreated datePublished" datetime="2017-10-04T11:49:21+08:00">2017-10-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>799</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Containers"><a class="header-anchor" href="#Containers"></a>Containers</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></span><br><span class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></span><br><span class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></span><br><span class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></span><br><span class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></span><br><span class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></span><br><span class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></span><br><span class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></span><br><span class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></span><br><span class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></span><br><span class="line">docker images -a                                                                           <span class="comment"># Show all images</span></span><br><span class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></span><br><span class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Using-Static-Site-Generator-with-GitHub-Pages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/" class="post-title-link" itemprop="url">Using static site generator with GitHub Pages</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-08-27 20:02:59" itemprop="dateCreated datePublished" datetime="2017-08-27T20:02:59+08:00">2017-08-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>There are three ways to deploy static site on GitHub Pages as follows. I tend to use the third scheme myself. The related GitHub documentation can be found <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="Using-gh-pages-branch"><a class="header-anchor" href="#Using-gh-pages-branch"></a>Using <code>gh-pages</code> branch</h2>
+<p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
+<h3 id="Advantage"><a class="header-anchor" href="#Advantage"></a>Advantage</h3>
+<p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification. An npm package <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener">gh-pages</a> helps doing this, if there is no built-in <code>deploy</code> command.</p>
+<h3 id="Disadvantage"><a class="header-anchor" href="#Disadvantage"></a>Disadvantage</h3>
+<p>Only website content is under the version control. The code that generates the website content is maintained locally.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Building-Hexo-Website-with-Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -223,13 +578,6 @@
 
               <time title="Created: 2017-08-22 00:10:13" itemprop="dateCreated datePublished" datetime="2017-08-22T00:10:13+08:00">2017-08-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -297,12 +645,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Swift-Features/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Mac-Development-Config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -311,7 +659,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Swift-Features/" class="post-title-link" itemprop="url">Swift Features</a>
+            <a href="/blog/Mac-Development-Config/" class="post-title-link" itemprop="url">Mac Development Config</a>
         </h2>
 
         <div class="post-meta">
@@ -321,22 +669,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-07-31 09:15:40" itemprop="dateCreated datePublished" datetime="2018-07-31T09:15:40+08:00">2018-07-31</time>
+              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:49:44" itemprop="dateModified" datetime="2019-02-05T17:49:44+08:00">2019-02-05</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
             </span>
 
@@ -346,14 +687,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>59k</span>
+              <span>7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>43 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -365,35 +706,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>References:</p>
-<ul>
-<li><a href="https://docs.swift.org/swift-book/" target="_blank" rel="noopener">The Swift Programming Language</a></li>
-</ul>
-<p>This post is based on Swift 4.2</p>
-<h2 id="The-Basics"><a class="header-anchor" href="#The-Basics"></a>The Basics</h2>
-<h3 id="Value-Types"><a class="header-anchor" href="#Value-Types"></a>Value Types</h3>
-<p>A <em>value type</em> is a type whose value is copied when it’s assigned to a variable or constant, or when it’s passed to a function.<br>
-All of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are value types, and are implemented as structures behind the scenes. All structures and enumerations are also value types.</p>
-<blockquote>
-<p>Collections defined by the standard library like arrays, dictionaries, and strings use an optimization to reduce the performance cost of copying. Instead of making a copy immediately, these collections share the memory where the elements are stored between the original instance and any copies. If one of the copies of the collection is modified, the elements are copied just before the modification. The behavior you see in your code is always as if a copy took place immediately.</p>
-</blockquote>
-<h3 id="Reference-Types"><a class="header-anchor" href="#Reference-Types"></a>Reference Types</h3>
-<p>A <em>reference type</em> is not copied when it is assigned to a variable or constant, or when it is passed to a function. Rather than a copy, a reference to the same existing instance is used.<br>
-Classes, functions and closures are reference types.</p>
-<h3 id="Optionals"><a class="header-anchor" href="#Optionals"></a>Optionals</h3>
-<p>An <em>optional</em> represents two possibilities: Either there is a value, and you can unwrap the optional to access that value, or there isn’t a value at all. Optionals of <em>any</em> type can be set to <code>nil</code>, not just object types.<br>
-The Swift language defines the postfix <code>?</code> as syntactic sugar for the named type <code>Optional&lt;Wrapped&gt;</code>, which is defined in the Swift standard library.</p>
-<h4 id="Forced-Unwrapping"><a class="header-anchor" href="#Forced-Unwrapping"></a>Forced Unwrapping</h4>
-<p><code>optional!</code>: forced unwrapping of the optional’s value</p>
-<h4 id="Optional-Binding"><a class="header-anchor" href="#Optional-Binding"></a>Optional Binding</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> constantName = someOptional &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Implicitly-Unwrapped-Optionals"><a class="header-anchor" href="#Implicitly-Unwrapped-Optionals"></a>Implicitly Unwrapped Optionals</h4>
-<p><em>Implicitly unwrapped optionals</em> are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.<br>
-You write an implicitly unwrapped optional by placing an exclamation mark (<code>String!</code>) rather than a question mark (<code>String?</code>) after the type that you want to make optional. The Swift language defines the postfix <code>!</code> as syntactic sugar for the named type <code>Optional&lt;Wrapped&gt;</code> with the additional behavior that it’s automatically unwrapped when it’s accessed.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleString: <span class="type">String?</span> = <span class="string">"An optional string."</span></span><br><span class="line"><span class="keyword">let</span> forcedString: <span class="type">String</span> = possibleString!  <span class="comment">// requires an exclamation mark</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> assumedString: <span class="type">String!</span> = <span class="string">"An implicitly unwrapped optional string."</span></span><br><span class="line"><span class="keyword">let</span> implicitString: <span class="type">String</span> = assumedString  <span class="comment">// no need for an exclamation mark</span></span><br></pre></td></tr></table></figure>
+          <h2 id="Mac-Usage"><a class="header-anchor" href="#Mac-Usage"></a>Mac Usage</h2>
+<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<p><a href="https://github.com/jaywcjlove/awesome-mac" target="_blank" rel="noopener">Awesome Mac</a></p>
+<h2 id="Package-Manager"><a class="header-anchor" href="#Package-Manager"></a>Package Manager</h2>
+<h3 id="Homebrew"><a class="header-anchor" href="#Homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
+<h4 id="Install"><a class="header-anchor" href="#Install"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h4>
+<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
+<h3 id="Homebrew-Cask"><a class="header-anchor" href="#Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
+<h4 id="Install-v2"><a class="header-anchor" href="#Install-v2"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<h4 id="Usage-v2"><a class="header-anchor" href="#Usage-v2"></a>Usage</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
+<h4 id="Install-v3"><a class="header-anchor" href="#Install-v3"></a>Install</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<h4 id="Usage-v3"><a class="header-anchor" href="#Usage-v3"></a>Usage</h4>
+<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/Swift-Features/#more" rel="contents">
+              <a class="btn" href="/blog/Mac-Development-Config/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -417,12 +751,12 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/TabBar-Navigation-TableView-MVC-Structure/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -431,7 +765,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/TabBar-Navigation-TableView-MVC-Structure/" class="post-title-link" itemprop="url">TabBar-Navigation-TableView MVC Structure</a>
+            <a href="/blog/Sorting-Algorithm-Analysis/" class="post-title-link" itemprop="url">Sorting Algorithm Analysis</a>
         </h2>
 
         <div class="post-meta">
@@ -440,9 +774,8 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2018-05-18 17:45:39 / Modified: 18:09:55" itemprop="dateCreated datePublished" datetime="2018-05-18T17:45:39+08:00">2018-05-18</time>
+              <time title="Created: 2017-06-12 19:51:09" itemprop="dateCreated datePublished" datetime="2017-06-12T19:51:09+08:00">2017-06-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -450,7 +783,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                  <a href="/blog/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
                 </span>
             </span>
 
@@ -460,7 +793,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
+              <span>620</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -479,208 +812,92 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="/blog/TabBar-Navigation-TableView-MVC-Structure/MVCClassDiagram.png" class="" title="MVCClassDiagram">
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/UIView-Inheritance-Relationships/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/UIView-Inheritance-Relationships/" class="post-title-link" itemprop="url">UIView Inheritance Relationships</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-11-08 00:51:51" itemprop="dateCreated datePublished" datetime="2017-11-08T00:51:51+08:00">2017-11-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-10 17:27:17" itemprop="dateModified" datetime="2018-05-10T17:27:17+08:00">2018-05-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>29</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><code>+</code>: Class method<br>
-<code>-</code>: Instance method</p>
-<img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" class="" title="UIViewClassDiagram">
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/ES6-Features/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/ES6-Features/" class="post-title-link" itemprop="url">ES6 Features</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-04-11 00:38:02" itemprop="dateCreated datePublished" datetime="2018-04-11T00:38:02+08:00">2018-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-04 17:46:36" itemprop="dateModified" datetime="2018-05-04T17:46:36+08:00">2018-05-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>13k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>9 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>References:</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript Docs</a></li>
-<li><a href="http://es6-features.org" target="_blank" rel="noopener">rse/es6-features</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ruanyf/es6tutorial</a></li>
-<li><a href="https://babeljs.io/learn-es2015" target="_blank" rel="noopener">Babel ES2015</a></li>
-</ul>
-<h2 id="Data-structures"><a class="header-anchor" href="#Data-structures"></a>Data structures</h2>
-<ul>
-<li>Primitive: Boolean, null, undefined, Number, String, Symbol</li>
-<li>Object</li>
-</ul>
-<h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
-<p>Block-scoped binding constructs.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> var1 [= value1];</span><br><span class="line"><span class="keyword">const</span> name1 = value1;</span><br></pre></td></tr></table></figure>
-<h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array matching</span></span><br><span class="line"><span class="keyword">let</span> [a, ,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">c === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object matching</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">b === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default arguments</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">&#123;a, b, c = <span class="number">3</span>, d = <span class="number">4</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;) === <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap values</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiple return values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">colorWhite</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    red: <span class="number">255</span>,</span><br><span class="line">    green: <span class="number">255</span>,</span><br><span class="line">    blue: <span class="number">255</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <table>
+<thead>
+<tr>
+<th style="text-align:left">Algorithm</th>
+<th style="text-align:left">Worst-case running time</th>
+<th style="text-align:left">Average-case / expected running time</th>
+<th style="text-align:left">In-place</th>
+<th style="text-align:left">Stable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Insertion sort<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Shell sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Selection sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Heapsort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Bubble sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Quicksort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(nlgn)$ (expected)</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Counting sort</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">$\Theta(k+n)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Radix sort<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">$\Theta(d(n+k))$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Bucket sort</td>
+<td style="text-align:left">$\Theta(n^2)$</td>
+<td style="text-align:left">$\Theta(n)$ (average-case)</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Merge sort</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">$\Theta(nlgn)$</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/ES6-Features/#more" rel="contents">
+              <a class="btn" href="/blog/Sorting-Algorithm-Analysis/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -709,7 +926,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -730,13 +947,6 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 
               <time title="Created: 2017-06-12 18:04:00" itemprop="dateCreated datePublished" datetime="2017-06-12T18:04:00+08:00">2017-06-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-04 11:00:08" itemprop="dateModified" datetime="2018-05-04T11:00:08+08:00">2018-05-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -825,12 +1035,12 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Objective-C-Best-Practice/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Hexo-Common-Problems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -839,7 +1049,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Objective-C-Best-Practice/" class="post-title-link" itemprop="url">Objective-C Best Practice</a>
+            <a href="/blog/Hexo-Common-Problems/" class="post-title-link" itemprop="url">Hexo Common Problems</a>
         </h2>
 
         <div class="post-meta">
@@ -849,235 +1059,19 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-01-03 23:58:17" itemprop="dateCreated datePublished" datetime="2018-01-03T23:58:17+08:00">2018-01-03</time>
+              <time title="Created: 2017-06-08 20:25:08" itemprop="dateCreated datePublished" datetime="2017-06-08T20:25:08+08:00">2017-06-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-03 16:34:37" itemprop="dateModified" datetime="2018-05-03T16:34:37+08:00">2018-05-03</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Collecting from <em>Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs</em></p>
-<p><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank" rel="noopener">Objective-C</a><br>
-<a href="http://clang.llvm.org/docs/" target="_blank" rel="noopener">Clang</a></p>
-<h2 id="Minimize-importing-other-header-files-in-header"><a class="header-anchor" href="#Minimize-importing-other-header-files-in-header"></a>Minimize importing other header files in header</h2>
-<ul>
-<li>Forward declare classes in a header and import their corresponding headers in an implementation</li>
-<li>Move the protocol-conformance declaration to the class-continuation category if possible</li>
-</ul>
-<h3 id="class-vs-import"><a class="header-anchor" href="#class-vs-import"></a>@class vs. #import</h3>
-<p>Using forward declaring(<code>@class</code>) has following advantages:</p>
-<ul>
-<li>Defer the import to where it is required (implementation file), and decrease compile time</li>
-<li>Alleviate the problem of both classes referring to each other</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/Objective-C-Best-Practice/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/GitHub-Pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/GitHub-Pages/" class="post-title-link" itemprop="url">GitHub Pages</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-26 19:43:48" itemprop="dateCreated datePublished" datetime="2018-03-26T19:43:48+08:00">2018-03-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-03 16:33:53" itemprop="dateModified" datetime="2018-05-03T16:33:53+08:00">2018-05-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>978</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Deploy-React-App-on-GitHub-Pages-from-the-Scratch"><a class="header-anchor" href="#Deploy-React-App-on-GitHub-Pages-from-the-Scratch"></a>Deploy React App on GitHub Pages from the Scratch</h2>
-<p><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="noopener">create-react-app Doc</a><br>
-<a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages Doc</a></p>
-<h3 id="Environment-Configuration"><a class="header-anchor" href="#Environment-Configuration"></a>Environment Configuration</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn global add create-react-app</span><br></pre></td></tr></table></figure>
-<h3 id="Initialize-a-React-App"><a class="header-anchor" href="#Initialize-a-React-App"></a>Initialize a React App</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ create-react-app &lt;project-name&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;project-name&gt;</span><br><span class="line"><span class="comment"># Edit...</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/GitHub-Pages/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Git-Hooks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/Git-Hooks/" class="post-title-link" itemprop="url">Git Hooks</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-21 13:58:12" itemprop="dateCreated datePublished" datetime="2018-03-21T13:58:12+08:00">2018-03-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-04-03 17:46:02" itemprop="dateModified" datetime="2018-04-03T17:46:02+08:00">2018-04-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
                 </span>
             </span>
 
@@ -1087,14 +1081,14 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>555</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -1106,14 +1100,23 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Run-npm-scripts-automatically-before-git-commit"><a class="header-anchor" href="#Run-npm-scripts-automatically-before-git-commit"></a>Run npm scripts automatically before git commit</h2>
-<p>Run <code>sh deploy.sh</code> once to deploy the self-organized <code>hooks</code> folder, so that the hooks can be added to the version control system.<br>
-<code>./deploy.sh</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">configure_hooks</span></span>()&#123;</span><br><span class="line">    git config core.hooksPath || git config core.hooksPath ./chore/hooks</span><br><span class="line">    chmod -R +x ./chore/hooks</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'==&gt; Configuring hooks'</span></span><br><span class="line">configure_hooks</span><br></pre></td></tr></table></figure>
-<p>The hooks under the <code>hooks</code> folder will be triggered automatically.<br>
-<code>./chore/hooks/pre-commit</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> GIT_DIR  <span class="comment"># important</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> path/to/work</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'==&gt; Building project'</span></span><br><span class="line"><span class="keyword">if</span> ! npm run build; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"==&gt; Error: npm run build failed"</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">git add dist</span><br></pre></td></tr></table></figure>
-
+          <p>This article mainly focuses on the problems encountered in theme <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">tranquilpeak</a>.</p>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<h3 id="Template-render-error"><a class="header-anchor" href="#Template-render-error"></a>Template render error</h3>
+<p><strong>Problem</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Template render error: (unknown path)</span><br><span class="line">  Error: unexpected end of comment</span><br></pre></td></tr></table></figure>
+<p><strong>Solution</strong>: Hexo cannot render <code>#</code> and <code>}</code>, or <code>{</code> and <code>#</code> together, place a space between these two characters to avoid this error.</p>
+<h3 id="hexo-server-not-found"><a class="header-anchor" href="#hexo-server-not-found"></a>hexo server not found</h3>
+<p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
+<p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Hexo-Common-Problems/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1132,12 +1135,12 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Hexo-Quick-Guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
       <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming and other fields">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1146,7 +1149,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Docker-Cheat-Sheet/" class="post-title-link" itemprop="url">Docker Cheat Sheet</a>
+            <a href="/blog/Hexo-Quick-Guide/" class="post-title-link" itemprop="url">Hexo Quick Guide</a>
         </h2>
 
         <div class="post-meta">
@@ -1156,22 +1159,19 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-10-04 11:49:21" itemprop="dateCreated datePublished" datetime="2017-10-04T11:49:21+08:00">2017-10-04</time>
+              <time title="Created: 2017-06-08 11:06:48" itemprop="dateCreated datePublished" datetime="2017-06-08T11:06:48+08:00">2017-06-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-02-24 01:40:32" itemprop="dateModified" datetime="2018-02-24T01:40:32+08:00">2018-02-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a>
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
                 </span>
             </span>
 
@@ -1181,7 +1181,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>799</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1200,9 +1200,19 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Containers"><a class="header-anchor" href="#Containers"></a>Containers</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=<span class="string">"luminoid/my_image"</span> .                   <span class="comment"># Build an image from current directory's Dockerfile</span></span><br><span class="line">docker run username/repository:tag                                            <span class="comment"># Run an image from a registry</span></span><br><span class="line">docker run -p 12345:80 &lt;image_name&gt;                                  <span class="comment"># Run an image mapping port 12345 to 80</span></span><br><span class="line">docker run --name &lt;container_name&gt; -i -t ubuntu /bin/bash                 <span class="comment"># Run a command in a new container</span></span><br><span class="line">docker run --name &lt;container_name&gt; -v <span class="string">"<span class="variable">$(pwd)</span>"</span>:/data -i -t ubuntu /bin/bash  <span class="comment"># Run a container with a volume</span></span><br><span class="line">docker start -i &lt;container_name&gt;                                    <span class="comment"># Start stopped containers interactively</span></span><br><span class="line">docker stop &lt;container_name&gt;                                                       <span class="comment"># Stop running containers</span></span><br><span class="line">docker ps -a                                            <span class="comment"># Show all containers (include the ones not running)</span></span><br><span class="line">docker rm &lt;container_name&gt;                                                      <span class="comment"># Remove specified container</span></span><br><span class="line">docker rm $(docker ps -a -q)                                                         <span class="comment"># Remove all containers</span></span><br><span class="line">docker images -a                                                                           <span class="comment"># Show all images</span></span><br><span class="line">docker rmi &lt;<span class="built_in">hash</span>&gt;                                                                   <span class="comment"># Remove specified image</span></span><br><span class="line">docker rmi $(docker images -q)                                                           <span class="comment"># Remove all images</span></span><br></pre></td></tr></table></figure>
-
+          <p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>
+Theme: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></p>
+<h2 id="Quick-Deployment"><a class="header-anchor" href="#Quick-Deployment"></a>Quick Deployment</h2>
+<p>Hexo recommended way</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Article"</span></span><br><span class="line">$ vim <span class="built_in">source</span>/_posts/My-New-Article.md</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Hexo-Quick-Guide/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1220,7 +1230,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/blog/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1281,14 +1291,14 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <img class="site-author-image" itemprop="image" alt="Luminoid"
       src="/blog/images/avatar.png">
   <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming and other fields</div>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1301,7 +1311,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1364,7 +1374,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">244k</span>
+    <span title="Symbols count total">245k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
@@ -1449,6 +1459,59 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
   <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>

@@ -9,8 +9,8 @@
 # Site
 title: Luminoid's Site
 subtitle: OK Computer
-description: Notes about programming and other fields
-keywords:
+description: Notes about programming(mostly iOS and Web) and other fields
+keywords: iOS, Web
 author: Luminoid
 language: en
 timezone:
@@ -68,6 +68,7 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+use_date_for_updated: true
 
 # Pagination
 ## Set per_page to 0 to disable pagination
