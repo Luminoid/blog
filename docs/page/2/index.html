@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,12 +14,14 @@
 
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
   </script>
 
   <meta name="description" content="Notes about programming(mostly iOS and Web) and other fields">
@@ -37,7 +39,7 @@
 <link rel="canonical" href="http://luminoid.github.io/blog/page/2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -57,24 +59,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -85,22 +99,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Luminoid's Site</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">OK Computer</p>
   </div>
@@ -111,7 +126,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -134,7 +148,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -168,7 +182,7 @@
 </div>
 <div id="search-result">
   <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -176,9 +190,100 @@
   </div>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
@@ -187,14 +292,16 @@
 
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content index posts-expand">
-            
+        <div class="content index posts-expand">
+          
       
   
   
@@ -248,7 +355,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>24 mins.</span>
+              <span>23 mins.</span>
             </span>
 
         </div>
@@ -276,7 +383,8 @@
 <p><code>-layout</code> is conceptually similar to UIViewController’s <code>-viewWillLayoutSubviews</code>. This is a good spot to change the hidden property, set view based properties if needed (not layoutable properties) or set background colors. You could put background color setting in -layoutSpecThatFits:, but there may be timing problems. If you happen to be using any UIViews, you can set their frames here. However, you can always create a node wrapper with <code>-initWithViewBlock:</code> and then size this on the background thread elsewhere.</p>
 <p>This method is called on the <strong>main thread</strong>. However, if you are using layout Specs, you shouldn’t rely on this method too much, as it is much preferable to do layout off the main thread. Less than 1 in 10 subclasses will need this.</p>
 <p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subnode.frame = <span class="keyword">self</span>.bounds;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">subnode.frame = self.bounds;
+</code></pre>
 <p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
           <!--noindex-->
             <div class="post-button">
@@ -346,7 +454,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.3k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -370,12 +478,14 @@
 <h2 id="Plugin-Manager"><a class="header-anchor" href="#Plugin-Manager"></a>Plugin Manager</h2>
 <h3 id="antigen"><a class="header-anchor" href="#antigen"></a><a href="https://github.com/zsh-users/antigen" target="_blank" rel="noopener">antigen</a></h3>
 <h4 id="Install"><a class="header-anchor" href="#Install"></a>Install</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install antigen</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">brew install antigen
+</code></pre>
 <h2 id="Plugins"><a class="header-anchor" href="#Plugins"></a>Plugins</h2>
 <p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview" target="_blank" rel="noopener">Plugins Overview</a></p>
 <h3 id="extract"><a class="header-anchor" href="#extract"></a>extract</h3>
 <p>Extract archive files</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extract &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">extract &lt;filename&gt;
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/oh-my-zsh-Usage/#more" rel="contents">
@@ -538,14 +648,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>59k</span>
+              <span>57k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>43 mins.</span>
+              <span>41 mins.</span>
             </span>
 
         </div>
@@ -578,11 +688,19 @@ The Swift language defines the postfix <code>?</code> as syntactic sugar for the
 <h4 id="Forced-Unwrapping"><a class="header-anchor" href="#Forced-Unwrapping"></a>Forced Unwrapping</h4>
 <p><code>optional!</code>: forced unwrapping of the optional’s value</p>
 <h4 id="Optional-Binding"><a class="header-anchor" href="#Optional-Binding"></a>Optional Binding</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> constantName = someOptional &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">if let constantName = someOptional {
+    statements
+}
+</code></pre>
 <h4 id="Implicitly-Unwrapped-Optionals"><a class="header-anchor" href="#Implicitly-Unwrapped-Optionals"></a>Implicitly Unwrapped Optionals</h4>
 <p><em>Implicitly unwrapped optionals</em> are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.<br>
 You write an implicitly unwrapped optional by placing an exclamation mark (<code>String!</code>) rather than a question mark (<code>String?</code>) after the type that you want to make optional. The Swift language defines the postfix <code>!</code> as syntactic sugar for the named type <code>Optional&lt;Wrapped&gt;</code> with the additional behavior that it’s automatically unwrapped when it’s accessed.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> possibleString: <span class="type">String?</span> = <span class="string">"An optional string."</span></span><br><span class="line"><span class="keyword">let</span> forcedString: <span class="type">String</span> = possibleString!  <span class="comment">// requires an exclamation mark</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> assumedString: <span class="type">String!</span> = <span class="string">"An implicitly unwrapped optional string."</span></span><br><span class="line"><span class="keyword">let</span> implicitString: <span class="type">String</span> = assumedString  <span class="comment">// no need for an exclamation mark</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">let possibleString: String? = &quot;An optional string.&quot;
+let forcedString: String = possibleString!  // requires an exclamation mark
+
+let assumedString: String! = &quot;An implicitly unwrapped optional string.&quot;
+let implicitString: String = assumedString  // no need for an exclamation mark
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/Swift-Features/#more" rel="contents">
@@ -821,7 +939,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>991</span>
+              <span>967</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -843,13 +961,24 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
           <p>Official Site: <a href="https://cocoapods.org" target="_blank" rel="noopener">https://cocoapods.org</a></p>
 <h2 id="Adding-Pods-to-an-Xcode-project"><a class="header-anchor" href="#Adding-Pods-to-an-Xcode-project"></a>Adding Pods to an Xcode project</h2>
 <p><strong>Create a Podfile</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod init</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">$ pod init
+</code></pre>
 <p>or</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch Podfile</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">$ touch Podfile
+</code></pre>
 <p><strong>Podfile</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">platform :ios, <span class="string">'9.0'</span></span><br><span class="line">use_frameworks!</span><br><span class="line"></span><br><span class="line">target <span class="string">'MyApp'</span> <span class="keyword">do</span></span><br><span class="line">  pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 2.6'</span></span><br><span class="line">  pod <span class="string">'ORStackView'</span>, <span class="string">'~&gt; 3.0'</span></span><br><span class="line">  pod <span class="string">'SwiftyJSON'</span>, <span class="string">'~&gt; 2.3'</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">platform :ios, '9.0'
+use_frameworks!
+
+target 'MyApp' do
+  pod 'AFNetworking', '~&gt; 2.6'
+  pod 'ORStackView', '~&gt; 3.0'
+  pod 'SwiftyJSON', '~&gt; 2.3'
+end
+</code></pre>
 <p><strong>Install project dependencies</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">$ pod install
+</code></pre>
 <p><strong>Open <code>MyApp.xcworkspace</code> to work</strong></p>
           <!--noindex-->
             <div class="post-button">
@@ -923,14 +1052,14 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>13k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>9 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -956,9 +1085,40 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 </ul>
 <h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
 <p>Block-scoped binding constructs.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> var1 [= value1];</span><br><span class="line"><span class="keyword">const</span> name1 = value1;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let var1 [= value1];
+const name1 = value1;
+</code></pre>
 <h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array matching</span></span><br><span class="line"><span class="keyword">let</span> [a, ,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">c === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object matching</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">b === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default arguments</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">&#123;a, b, c = <span class="number">3</span>, d = <span class="number">4</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;) === <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap values</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiple return values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">colorWhite</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    red: <span class="number">255</span>,</span><br><span class="line">    green: <span class="number">255</span>,</span><br><span class="line">    blue: <span class="number">255</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Array matching
+let [a, ,c] = [1,2,3];
+a === 1;
+c === 3;
+
+// Object matching
+let { a, b } = { a: 1, b: 2 };
+a === 1;
+b === 2;
+
+// Default arguments
+function add({a, b, c = 3, d = 4}) {
+  return a + b + c + d;
+}
+add({a:1, b:2}) === 10;
+
+// Swap values
+let x = 1;
+let y = 2;
+[x, y] = [y, x];
+
+// Multiple return values
+function colorWhite(){
+  return {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }
+}
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/ES6-Features/#more" rel="contents">
@@ -1027,7 +1187,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>978</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1050,9 +1210,13 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 <p><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="noopener">create-react-app Doc</a><br>
 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages Doc</a></p>
 <h3 id="Environment-Configuration"><a class="header-anchor" href="#Environment-Configuration"></a>Environment Configuration</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn global add create-react-app</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">$ yarn global add create-react-app
+</code></pre>
 <h3 id="Initialize-a-React-App"><a class="header-anchor" href="#Initialize-a-React-App"></a>Initialize a React App</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ create-react-app &lt;project-name&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;project-name&gt;</span><br><span class="line"><span class="comment"># Edit...</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">$ create-react-app &lt;project-name&gt;
+$ cd &lt;project-name&gt;
+# Edit...
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/GitHub-Pages/#more" rel="contents">
@@ -1125,7 +1289,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>555</span>
+              <span>537</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1147,10 +1311,28 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
           <h2 id="Run-npm-scripts-automatically-before-git-commit"><a class="header-anchor" href="#Run-npm-scripts-automatically-before-git-commit"></a>Run npm scripts automatically before git commit</h2>
 <p>Run <code>sh deploy.sh</code> once to deploy the self-organized <code>hooks</code> folder, so that the hooks can be added to the version control system.<br>
 <code>./deploy.sh</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">configure_hooks</span></span>()&#123;</span><br><span class="line">    git config core.hooksPath || git config core.hooksPath ./chore/hooks</span><br><span class="line">    chmod -R +x ./chore/hooks</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'==&gt; Configuring hooks'</span></span><br><span class="line">configure_hooks</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">#!/bin/bash
+
+configure_hooks(){
+    git config core.hooksPath || git config core.hooksPath ./chore/hooks
+    chmod -R +x ./chore/hooks
+}
+
+echo '==&gt; Configuring hooks'
+configure_hooks
+</code></pre>
 <p>The hooks under the <code>hooks</code> folder will be triggered automatically.<br>
 <code>./chore/hooks/pre-commit</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> GIT_DIR  <span class="comment"># important</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> path/to/work</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'==&gt; Building project'</span></span><br><span class="line"><span class="keyword">if</span> ! npm run build; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"==&gt; Error: npm run build failed"</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">git add dist</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">unset GIT_DIR  # important
+
+cd path/to/work
+echo '==&gt; Building project'
+if ! npm run build; then
+    echo &quot;==&gt; Error: npm run build failed&quot;
+    exit 1
+fi
+git add dist
+</code></pre>
 
       
     </div>
@@ -1174,8 +1356,8 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1199,99 +1381,6 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Luminoid"
-      src="/blog/images/avatar.png">
-  <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
-        
-          <span class="site-state-item-count">41</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -1303,7 +1392,7 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1313,14 +1402,14 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">245k</span>
+    <span title="Symbols count total">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:54</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
@@ -1358,21 +1447,16 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
 
   
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
 
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/muse.js"></script>
-
-
 <script src="/blog/js/next-boot.js"></script>
-
-
 
 
   
@@ -1400,10 +1484,10 @@ You write an implicitly unwrapped optional by placing an exclamation mark (<code
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
+      quicklink.listen({
         timeout : 3000,
         priority: true,
         ignores : [uri => uri.includes('#'),uri => uri === 'http://luminoid.github.io/blog/page/2/',]

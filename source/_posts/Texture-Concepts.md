@@ -3,7 +3,9 @@ title: Texture Concepts
 date: 2018-08-08 21:52:08
 updated:
 categories: iOS
-tags: Framework
+tags: 
+- Framework
+- Note
 keywords: Texture
 ---
 
@@ -102,8 +104,8 @@ ASDisplayNode
 In some cases, it is desirable to initialize a node and provide a view to be used as the backing view. These views are provided via a block that will return a view so that the actual construction of the view can be saved until later. These nodes’ display step happens synchronously. This is because a node can only be asynchronously displayed when it wraps an `_ASDisplayView` (the internal view subclass), not when it wraps a plain `UIView`.
 ``` swift
 let node = ASDisplayNode { () -> UIView in
-	let view = SomeView()
-	return view
+  let view = SomeView()
+  return view
 }
 ```
 

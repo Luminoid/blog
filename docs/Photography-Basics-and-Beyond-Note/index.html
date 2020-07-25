@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,12 +14,14 @@
 
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
   </script>
 
   <meta name="description" content="Specialization Site: https:&#x2F;&#x2F;www.coursera.org&#x2F;specializations&#x2F;photography-basics Cameras, Exposure, and Photography Course Site: https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;exposure-photography Fundamentals f.stop">
@@ -38,7 +40,7 @@
 <link rel="canonical" href="http://luminoid.github.io/blog/Photography-Basics-and-Beyond-Note/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -58,24 +60,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -86,22 +100,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Luminoid's Site</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">OK Computer</p>
   </div>
@@ -112,7 +127,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -135,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -169,7 +183,7 @@
 </div>
 <div id="search-result">
   <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -177,9 +191,101 @@
   </div>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cameras-Exposure-and-Photography"><span class="nav-number">1.</span> <span class="nav-text">Cameras, Exposure, and Photography</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamentals"><span class="nav-number">1.1.</span> <span class="nav-text">Fundamentals</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#f-stop-Formula"><span class="nav-number">1.1.1.</span> <span class="nav-text">f.stop Formula</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Camera-Capabilities"><span class="nav-number">1.2.</span> <span class="nav-text">Camera Capabilities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Camera-Setup"><span class="nav-number">1.3.</span> <span class="nav-text">Camera Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Focus-Options"><span class="nav-number">1.3.1.</span> <span class="nav-text">Focus Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sunny-Day-Rule"><span class="nav-number">1.3.2.</span> <span class="nav-text">Sunny Day Rule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-Metering-Options"><span class="nav-number">1.3.3.</span> <span class="nav-text">Light Metering Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Cards"><span class="nav-number">1.3.4.</span> <span class="nav-text">Memory Cards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accessories"><span class="nav-number">1.3.5.</span> <span class="nav-text">Accessories</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Vantage-Point-and-Frame"><span class="nav-number">1.4.</span> <span class="nav-text">The Vantage Point and Frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vantage-Point"><span class="nav-number">1.4.1.</span> <span class="nav-text">Vantage Point</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Responding-to-Photograph"><span class="nav-number">1.4.2.</span> <span class="nav-text">Responding to Photograph</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Camera-Work"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Camera Work</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Editing"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">Editing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Composition"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">Composition</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subject-Matter-Content-Concept"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">Subject Matter, Content, Concept</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Frame"><span class="nav-number">1.4.3.</span> <span class="nav-text">The Frame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reading"><span class="nav-number">1.4.4.</span> <span class="nav-text">Reading</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera-Control"><span class="nav-number">2.</span> <span class="nav-text">Camera Control</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exposure"><span class="nav-number">2.1.</span> <span class="nav-text">Exposure</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Under-Exposure-and-Over-Exposure"><span class="nav-number">2.1.1.</span> <span class="nav-text">Under Exposure and Over Exposure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Equivalent-Exposure-Combinations"><span class="nav-number">2.1.2.</span> <span class="nav-text">Equivalent Exposure Combinations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stop-Action"><span class="nav-number">2.1.3.</span> <span class="nav-text">Stop Action</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Focal-Length"><span class="nav-number">2.2.</span> <span class="nav-text">Focal Length</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#“Normal”-Focal-Length"><span class="nav-number">2.2.1.</span> <span class="nav-text">“Normal” Focal Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perspective-effects"><span class="nav-number">2.2.2.</span> <span class="nav-text">Perspective effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fixed-or-Zoom"><span class="nav-number">2.2.3.</span> <span class="nav-text">Fixed or Zoom</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Special-Lenses"><span class="nav-number">2.3.</span> <span class="nav-text">Special Lenses</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Macro"><span class="nav-number">2.3.1.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fisheye"><span class="nav-number">2.3.2.</span> <span class="nav-text">Fisheye</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tilt-Shift"><span class="nav-number">2.3.3.</span> <span class="nav-text">Tilt-Shift</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lens-Accessories"><span class="nav-number">2.4.</span> <span class="nav-text">Lens Accessories</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shades"><span class="nav-number">2.4.1.</span> <span class="nav-text">Shades</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filters"><span class="nav-number">2.4.2.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lens-Adapters"><span class="nav-number">2.4.3.</span> <span class="nav-text">Lens Adapters</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth-of-Field"><span class="nav-number">2.5.</span> <span class="nav-text">Depth of Field</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Determinants"><span class="nav-number">2.5.1.</span> <span class="nav-text">Determinants</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time"><span class="nav-number">2.6.</span> <span class="nav-text">Time</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Time-as-Fact"><span class="nav-number">2.6.1.</span> <span class="nav-text">Time as Fact</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Time-as-Fiction"><span class="nav-number">2.6.2.</span> <span class="nav-text">Time as Fiction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Principles-of-Photo-Composition-and-Digital-Image-Post-Production"><span class="nav-number">3.</span> <span class="nav-text">Principles of Photo Composition and Digital Image Post-Production</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Elements-of-Design-Building-Blocks-of-Composition"><span class="nav-number">3.1.</span> <span class="nav-text">Elements of Design: Building Blocks of Composition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MAKING-not-TAKING-pictures"><span class="nav-number">3.1.1.</span> <span class="nav-text">MAKING not TAKING pictures</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shape-the-2-Dimensional-Aspect"><span class="nav-number">3.1.2.</span> <span class="nav-text">Shape: the 2-Dimensional Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Form-the-3-Dimensional-Aspect"><span class="nav-number">3.1.3.</span> <span class="nav-text">Form: the 3-Dimensional Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Texture-the-Untouched-Aspect"><span class="nav-number">3.1.4.</span> <span class="nav-text">Texture: the Untouched Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tone-Value-Shades-of-Gray"><span class="nav-number">3.1.5.</span> <span class="nav-text">Tone&#x2F;Value: Shades of Gray</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Line-the-Visible-and-Implied"><span class="nav-number">3.1.6.</span> <span class="nav-text">Line: the Visible and Implied</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PATTERN-Recognition-of-Relationships"><span class="nav-number">3.1.7.</span> <span class="nav-text">PATTERN: Recognition of Relationships</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#COLOR-Rainbow-of-Meanings"><span class="nav-number">3.1.8.</span> <span class="nav-text">COLOR: Rainbow of Meanings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Putting-the-Elements-of-Design-together"><span class="nav-number">3.2.</span> <span class="nav-text">Putting the Elements of Design together</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Visual-Weight-attraction-and-interest"><span class="nav-number">3.2.1.</span> <span class="nav-text">Visual Weight: attraction and interest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composition-Mapmaking-and-Bicycling"><span class="nav-number">3.2.2.</span> <span class="nav-text">Composition: Mapmaking and Bicycling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perspective-Drawing-Us-Through-Space"><span class="nav-number">3.2.3.</span> <span class="nav-text">Perspective: Drawing Us Through Space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symmetry"><span class="nav-number">3.2.4.</span> <span class="nav-text">Symmetry</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Asymmetry"><span class="nav-number">3.2.5.</span> <span class="nav-text">Asymmetry</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adobe-Lightroom-Classic"><span class="nav-number">3.3.</span> <span class="nav-text">Adobe Lightroom Classic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lightroom-Interface"><span class="nav-number">3.3.1.</span> <span class="nav-text">Lightroom Interface</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Develop-Module"><span class="nav-number">3.3.2.</span> <span class="nav-text">Develop Module</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photography-Techniques-Light-Content-and-Sharing"><span class="nav-number">4.</span> <span class="nav-text">Photography Techniques: Light, Content, and Sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">4.1.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Portrait-document-and-image"><span class="nav-number">4.1.1.</span> <span class="nav-text">The Portrait: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Landscape-document-and-image"><span class="nav-number">4.1.2.</span> <span class="nav-text">The Landscape: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Still-Life-document-and-image"><span class="nav-number">4.1.3.</span> <span class="nav-text">The Still Life: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Tableau-fictions"><span class="nav-number">4.1.4.</span> <span class="nav-text">The Tableau: fictions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manipulated-Landscape-fictions"><span class="nav-number">4.1.5.</span> <span class="nav-text">Manipulated Landscape: fictions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ambient-Light"><span class="nav-number">4.2.</span> <span class="nav-text">Ambient Light</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-As-Energy"><span class="nav-number">4.2.1.</span> <span class="nav-text">Light As Energy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-As-an-Element-of-Photography"><span class="nav-number">4.2.2.</span> <span class="nav-text">Light As an Element of Photography</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Colors"><span class="nav-number">4.2.3.</span> <span class="nav-text">Colors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-and-Techniques-Ambient-Light-and-People"><span class="nav-number">4.2.4.</span> <span class="nav-text">Tips and Techniques: Ambient Light and People</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-and-Techniques-Ambient-Light-and-Landscapes"><span class="nav-number">4.2.5.</span> <span class="nav-text">Tips and Techniques: Ambient Light and Landscapes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-And-Techniques-Ambient-Light-and-Things"><span class="nav-number">4.2.6.</span> <span class="nav-text">Tips And Techniques: Ambient Light and Things</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controlled-Light"><span class="nav-number">4.3.</span> <span class="nav-text">Controlled Light</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Principles"><span class="nav-number">4.3.1.</span> <span class="nav-text">Basic Principles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Camera-Flash-Types-and-Functions"><span class="nav-number">4.3.2.</span> <span class="nav-text">Camera Flash Types and Functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-and-the-Focal-Plane-Shutter"><span class="nav-number">4.3.3.</span> <span class="nav-text">Flash and the Focal Plane Shutter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-Tools"><span class="nav-number">4.3.4.</span> <span class="nav-text">Flash Tools</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kitchen-Table-Studio-Lighting-an-Object"><span class="nav-number">4.3.5.</span> <span class="nav-text">Kitchen Table Studio: Lighting an Object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prints-and-Printmaking"><span class="nav-number">4.4.</span> <span class="nav-text">Prints and Printmaking</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ICC-Profiles-and-Color-Management"><span class="nav-number">4.4.1.</span> <span class="nav-text">ICC Profiles and Color Management</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calibrating-for-consistency-theory-monitor-and-printer"><span class="nav-number">4.4.2.</span> <span class="nav-text">Calibrating for consistency: theory, monitor and printer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Printmaking"><span class="nav-number">4.4.3.</span> <span class="nav-text">Printmaking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dry-Mounting-a-Print"><span class="nav-number">4.4.4.</span> <span class="nav-text">Dry-Mounting a Print</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sharing-Online"><span class="nav-number">4.5.</span> <span class="nav-text">Sharing Online</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Copyright"><span class="nav-number">4.5.1.</span> <span class="nav-text">Copyright</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photography-Capstone-Project"><span class="nav-number">5.</span> <span class="nav-text">Photography Capstone Project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Capstone-Project-Launch"><span class="nav-number">5.1.</span> <span class="nav-text">Capstone Project Launch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Planning"><span class="nav-number">5.1.1.</span> <span class="nav-text">Planning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Photographing-Light-Itself-U-turn"><span class="nav-number">5.1.2.</span> <span class="nav-text">Photographing Light Itself: U-turn</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-from-others"><span class="nav-number">5.2.</span> <span class="nav-text">Learning from others</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Critique"><span class="nav-number">5.3.</span> <span class="nav-text">The Critique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Photographer’s-Statement-from-ideas-to-pictures-to-questions-and-answers"><span class="nav-number">5.4.</span> <span class="nav-text">The Photographer’s Statement: from ideas to pictures to questions and answers</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
@@ -188,14 +294,16 @@
 
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -596,7 +704,14 @@ $$</p>
 <p>This aspect is primarily related to darkness and lightness in the scene itself, and in the ways the photographer can make the scene appear.</p>
 <p>Zone System:<br>
 For each plus or minus number you adjust your exposure using the exposure value scale, also known as EV, you double or half the amount of light that will hit the censor.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-3EV  Darker Areas w Minimal Detail</span><br><span class="line">-2EV  Dark Shadows, Clothing</span><br><span class="line">-1EV  Detailed Shadow, Dark Leaves</span><br><span class="line">0EV   Middle Gray, Green Grass</span><br><span class="line">+1EV  Lighter Blue Sky</span><br><span class="line">+2EV  Light Stone, Sand, w Detail</span><br><span class="line">+3EV  Lighter Areas w Minimal Detail</span><br></pre></td></tr></table></figure>
+<pre><code>-3EV  Darker Areas w Minimal Detail
+-2EV  Dark Shadows, Clothing
+-1EV  Detailed Shadow, Dark Leaves
+0EV   Middle Gray, Green Grass
++1EV  Lighter Blue Sky
++2EV  Light Stone, Sand, w Detail
++3EV  Lighter Areas w Minimal Detail
+</code></pre>
 <h4 id="Line-the-Visible-and-Implied"><a class="header-anchor" href="#Line-the-Visible-and-Implied"></a>Line: the Visible and Implied</h4>
 <p>Looking for lines that are both visible and invisible, real and implied, is a key activity for photographers who are keen on keeping their viewer’s eye moving.</p>
 <ul>
@@ -917,13 +1032,23 @@ For each plus or minus number you adjust your exposure using the exposure value 
             <span class="label">Twitter</span>
           </a>
         </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
     </div>
   </div>
 
 
       <footer class="post-footer">
-          
           <div class="post-tags">
+              <a href="/blog/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
               <a href="/blog/tags/Coursera/" rel="tag"><i class="fa fa-tag"></i> Coursera</a>
           </div>
 
@@ -950,8 +1075,8 @@ For each plus or minus number you adjust your exposure using the exposure value 
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -975,100 +1100,6 @@ For each plus or minus number you adjust your exposure using the exposure value 
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cameras-Exposure-and-Photography"><span class="nav-number">1.</span> <span class="nav-text">Cameras, Exposure, and Photography</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamentals"><span class="nav-number">1.1.</span> <span class="nav-text">Fundamentals</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#f-stop-Formula"><span class="nav-number">1.1.1.</span> <span class="nav-text">f.stop Formula</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Camera-Capabilities"><span class="nav-number">1.2.</span> <span class="nav-text">Camera Capabilities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Camera-Setup"><span class="nav-number">1.3.</span> <span class="nav-text">Camera Setup</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Focus-Options"><span class="nav-number">1.3.1.</span> <span class="nav-text">Focus Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sunny-Day-Rule"><span class="nav-number">1.3.2.</span> <span class="nav-text">Sunny Day Rule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-Metering-Options"><span class="nav-number">1.3.3.</span> <span class="nav-text">Light Metering Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Cards"><span class="nav-number">1.3.4.</span> <span class="nav-text">Memory Cards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accessories"><span class="nav-number">1.3.5.</span> <span class="nav-text">Accessories</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Vantage-Point-and-Frame"><span class="nav-number">1.4.</span> <span class="nav-text">The Vantage Point and Frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vantage-Point"><span class="nav-number">1.4.1.</span> <span class="nav-text">Vantage Point</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Responding-to-Photograph"><span class="nav-number">1.4.2.</span> <span class="nav-text">Responding to Photograph</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Camera-Work"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Camera Work</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Editing"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">Editing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Composition"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">Composition</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subject-Matter-Content-Concept"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">Subject Matter, Content, Concept</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Frame"><span class="nav-number">1.4.3.</span> <span class="nav-text">The Frame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reading"><span class="nav-number">1.4.4.</span> <span class="nav-text">Reading</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera-Control"><span class="nav-number">2.</span> <span class="nav-text">Camera Control</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exposure"><span class="nav-number">2.1.</span> <span class="nav-text">Exposure</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Under-Exposure-and-Over-Exposure"><span class="nav-number">2.1.1.</span> <span class="nav-text">Under Exposure and Over Exposure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Equivalent-Exposure-Combinations"><span class="nav-number">2.1.2.</span> <span class="nav-text">Equivalent Exposure Combinations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stop-Action"><span class="nav-number">2.1.3.</span> <span class="nav-text">Stop Action</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Focal-Length"><span class="nav-number">2.2.</span> <span class="nav-text">Focal Length</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#“Normal”-Focal-Length"><span class="nav-number">2.2.1.</span> <span class="nav-text">“Normal” Focal Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perspective-effects"><span class="nav-number">2.2.2.</span> <span class="nav-text">Perspective effects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fixed-or-Zoom"><span class="nav-number">2.2.3.</span> <span class="nav-text">Fixed or Zoom</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Special-Lenses"><span class="nav-number">2.3.</span> <span class="nav-text">Special Lenses</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Macro"><span class="nav-number">2.3.1.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fisheye"><span class="nav-number">2.3.2.</span> <span class="nav-text">Fisheye</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tilt-Shift"><span class="nav-number">2.3.3.</span> <span class="nav-text">Tilt-Shift</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lens-Accessories"><span class="nav-number">2.4.</span> <span class="nav-text">Lens Accessories</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shades"><span class="nav-number">2.4.1.</span> <span class="nav-text">Shades</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filters"><span class="nav-number">2.4.2.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lens-Adapters"><span class="nav-number">2.4.3.</span> <span class="nav-text">Lens Adapters</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth-of-Field"><span class="nav-number">2.5.</span> <span class="nav-text">Depth of Field</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Determinants"><span class="nav-number">2.5.1.</span> <span class="nav-text">Determinants</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time"><span class="nav-number">2.6.</span> <span class="nav-text">Time</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Time-as-Fact"><span class="nav-number">2.6.1.</span> <span class="nav-text">Time as Fact</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Time-as-Fiction"><span class="nav-number">2.6.2.</span> <span class="nav-text">Time as Fiction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Principles-of-Photo-Composition-and-Digital-Image-Post-Production"><span class="nav-number">3.</span> <span class="nav-text">Principles of Photo Composition and Digital Image Post-Production</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Elements-of-Design-Building-Blocks-of-Composition"><span class="nav-number">3.1.</span> <span class="nav-text">Elements of Design: Building Blocks of Composition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MAKING-not-TAKING-pictures"><span class="nav-number">3.1.1.</span> <span class="nav-text">MAKING not TAKING pictures</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shape-the-2-Dimensional-Aspect"><span class="nav-number">3.1.2.</span> <span class="nav-text">Shape: the 2-Dimensional Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Form-the-3-Dimensional-Aspect"><span class="nav-number">3.1.3.</span> <span class="nav-text">Form: the 3-Dimensional Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Texture-the-Untouched-Aspect"><span class="nav-number">3.1.4.</span> <span class="nav-text">Texture: the Untouched Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tone-Value-Shades-of-Gray"><span class="nav-number">3.1.5.</span> <span class="nav-text">Tone&#x2F;Value: Shades of Gray</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Line-the-Visible-and-Implied"><span class="nav-number">3.1.6.</span> <span class="nav-text">Line: the Visible and Implied</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PATTERN-Recognition-of-Relationships"><span class="nav-number">3.1.7.</span> <span class="nav-text">PATTERN: Recognition of Relationships</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#COLOR-Rainbow-of-Meanings"><span class="nav-number">3.1.8.</span> <span class="nav-text">COLOR: Rainbow of Meanings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Putting-the-Elements-of-Design-together"><span class="nav-number">3.2.</span> <span class="nav-text">Putting the Elements of Design together</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Visual-Weight-attraction-and-interest"><span class="nav-number">3.2.1.</span> <span class="nav-text">Visual Weight: attraction and interest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composition-Mapmaking-and-Bicycling"><span class="nav-number">3.2.2.</span> <span class="nav-text">Composition: Mapmaking and Bicycling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perspective-Drawing-Us-Through-Space"><span class="nav-number">3.2.3.</span> <span class="nav-text">Perspective: Drawing Us Through Space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symmetry"><span class="nav-number">3.2.4.</span> <span class="nav-text">Symmetry</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Asymmetry"><span class="nav-number">3.2.5.</span> <span class="nav-text">Asymmetry</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adobe-Lightroom-Classic"><span class="nav-number">3.3.</span> <span class="nav-text">Adobe Lightroom Classic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lightroom-Interface"><span class="nav-number">3.3.1.</span> <span class="nav-text">Lightroom Interface</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Develop-Module"><span class="nav-number">3.3.2.</span> <span class="nav-text">Develop Module</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photography-Techniques-Light-Content-and-Sharing"><span class="nav-number">4.</span> <span class="nav-text">Photography Techniques: Light, Content, and Sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">4.1.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Portrait-document-and-image"><span class="nav-number">4.1.1.</span> <span class="nav-text">The Portrait: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Landscape-document-and-image"><span class="nav-number">4.1.2.</span> <span class="nav-text">The Landscape: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Still-Life-document-and-image"><span class="nav-number">4.1.3.</span> <span class="nav-text">The Still Life: document and image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Tableau-fictions"><span class="nav-number">4.1.4.</span> <span class="nav-text">The Tableau: fictions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manipulated-Landscape-fictions"><span class="nav-number">4.1.5.</span> <span class="nav-text">Manipulated Landscape: fictions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ambient-Light"><span class="nav-number">4.2.</span> <span class="nav-text">Ambient Light</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-As-Energy"><span class="nav-number">4.2.1.</span> <span class="nav-text">Light As Energy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-As-an-Element-of-Photography"><span class="nav-number">4.2.2.</span> <span class="nav-text">Light As an Element of Photography</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Colors"><span class="nav-number">4.2.3.</span> <span class="nav-text">Colors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-and-Techniques-Ambient-Light-and-People"><span class="nav-number">4.2.4.</span> <span class="nav-text">Tips and Techniques: Ambient Light and People</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-and-Techniques-Ambient-Light-and-Landscapes"><span class="nav-number">4.2.5.</span> <span class="nav-text">Tips and Techniques: Ambient Light and Landscapes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-And-Techniques-Ambient-Light-and-Things"><span class="nav-number">4.2.6.</span> <span class="nav-text">Tips And Techniques: Ambient Light and Things</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controlled-Light"><span class="nav-number">4.3.</span> <span class="nav-text">Controlled Light</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Principles"><span class="nav-number">4.3.1.</span> <span class="nav-text">Basic Principles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Camera-Flash-Types-and-Functions"><span class="nav-number">4.3.2.</span> <span class="nav-text">Camera Flash Types and Functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-and-the-Focal-Plane-Shutter"><span class="nav-number">4.3.3.</span> <span class="nav-text">Flash and the Focal Plane Shutter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-Tools"><span class="nav-number">4.3.4.</span> <span class="nav-text">Flash Tools</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kitchen-Table-Studio-Lighting-an-Object"><span class="nav-number">4.3.5.</span> <span class="nav-text">Kitchen Table Studio: Lighting an Object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prints-and-Printmaking"><span class="nav-number">4.4.</span> <span class="nav-text">Prints and Printmaking</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ICC-Profiles-and-Color-Management"><span class="nav-number">4.4.1.</span> <span class="nav-text">ICC Profiles and Color Management</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calibrating-for-consistency-theory-monitor-and-printer"><span class="nav-number">4.4.2.</span> <span class="nav-text">Calibrating for consistency: theory, monitor and printer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Printmaking"><span class="nav-number">4.4.3.</span> <span class="nav-text">Printmaking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dry-Mounting-a-Print"><span class="nav-number">4.4.4.</span> <span class="nav-text">Dry-Mounting a Print</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sharing-Online"><span class="nav-number">4.5.</span> <span class="nav-text">Sharing Online</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Copyright"><span class="nav-number">4.5.1.</span> <span class="nav-text">Copyright</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photography-Capstone-Project"><span class="nav-number">5.</span> <span class="nav-text">Photography Capstone Project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Capstone-Project-Launch"><span class="nav-number">5.1.</span> <span class="nav-text">Capstone Project Launch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Planning"><span class="nav-number">5.1.1.</span> <span class="nav-text">Planning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Photographing-Light-Itself-U-turn"><span class="nav-number">5.1.2.</span> <span class="nav-text">Photographing Light Itself: U-turn</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-from-others"><span class="nav-number">5.2.</span> <span class="nav-text">Learning from others</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Critique"><span class="nav-number">5.3.</span> <span class="nav-text">The Critique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Photographer’s-Statement-from-ideas-to-pictures-to-questions-and-answers"><span class="nav-number">5.4.</span> <span class="nav-text">The Photographer’s Statement: from ideas to pictures to questions and answers</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Luminoid"
-      src="/blog/images/avatar.png">
-  <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
-        
-          <span class="site-state-item-count">41</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -1080,7 +1111,7 @@ For each plus or minus number you adjust your exposure using the exposure value 
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1090,14 +1121,14 @@ For each plus or minus number you adjust your exposure using the exposure value 
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">245k</span>
+    <span title="Symbols count total">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:54</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
@@ -1135,21 +1166,16 @@ For each plus or minus number you adjust your exposure using the exposure value 
 
   
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
 
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/muse.js"></script>
-
-
 <script src="/blog/js/next-boot.js"></script>
-
-
 
 
   
@@ -1215,7 +1241,7 @@ For each plus or minus number you adjust your exposure using the exposure value 
       }
     };
     (function () {
-      var script = document.createElement('script');
+      const script = document.createElement('script');
       script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
       script.defer = true;
       document.head.appendChild(script);

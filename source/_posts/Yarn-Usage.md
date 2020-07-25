@@ -11,7 +11,8 @@ tags:
 keywords: Yarn
 ---
 
-Official Site: https://yarnpkg.com/en/
+Official Site: https://yarnpkg.com/
+Version: 1.22.4
 
 ## Command
 ``` bash
@@ -21,10 +22,12 @@ yarn add <package...>               # Install packages in your dependencies
 yarn add <package...> [--dev/-D]    # Install packages in your devDependencies
 yarn global add <package...>        # Install packages globally
 yarn upgrade [package]              # Upgrade a package
+yarn upgrade-interactive            # Provides an easy way to update outdated packages.
 yarn outdated                       # Checks for outdated package dependencies
 yarn remove <package...>            # Remove packages
 yarn run [script] [<args>]          # Run a defined package script
 yarn init                           # Interactively create or update a package.json file
+yarn audit                          # Checks for known security issues with the installed packages.
 yarn                                # Try Yarn out on your existing npm project
 ```
 

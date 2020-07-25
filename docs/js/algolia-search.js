@@ -4,12 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
   const { indexName, appID, apiKey } = algoliaSettings;
 
-  let search = instantsearch({
+  const search = instantsearch({
     indexName,
     searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
-      let searchInput = document.querySelector('.search-input');
-      if (searchInput.value) {
+      if (document.querySelector('.search-input').value) {
         helper.search();
       }
     }
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container: '#algolia-stats',
       templates: {
         text: data => {
-          let stats = algoliaSettings.labels.hits_stats
+          const stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
           return `${stats}
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container: '#algolia-hits',
       templates: {
         item: data => {
-          let link = data.permalink ? data.permalink : CONFIG.root + data.path;
+          const link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
         },
         empty: data => {
@@ -83,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         next    : '<i class="fa fa-angle-right"></i>'
       },
       cssClasses: {
-        root        : 'pagination',
+        list        : ['pagination', 'algolia-pagination'],
         item        : 'pagination-item',
         link        : 'page-number',
         selectedItem: 'current',
@@ -97,16 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
-      document.body.style.overflow = 'hidden';
-      document.querySelector('.search-pop-overlay').classList.add('search-active');
-      document.querySelector('.search-input').focus();
+      document.body.classList.add('search-active');
+      setTimeout(() => document.querySelector('.search-input').focus(), 500);
     });
   });
 
   // Monitor main search box
   const onPopupClose = () => {
-    document.body.style.overflow = '';
-    document.querySelector('.search-pop-overlay').classList.remove('search-active');
+    document.body.classList.remove('search-active');
   };
 
   document.querySelector('.search-pop-overlay').addEventListener('click', event => {
@@ -115,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  window.addEventListener('pjax:success', onPopupClose);
+  document.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
       onPopupClose();

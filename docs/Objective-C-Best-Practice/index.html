@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,12 +14,14 @@
 
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
   </script>
 
   <meta name="description" content="Collecting from Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs Objective-C Clang Minimize importing other header files in header  Forward declare classes in a header">
@@ -38,7 +40,7 @@
 <link rel="canonical" href="http://luminoid.github.io/blog/Objective-C-Best-Practice/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -58,24 +60,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -86,22 +100,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Luminoid's Site</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">OK Computer</p>
   </div>
@@ -112,7 +127,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -135,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -169,7 +183,7 @@
 </div>
 <div id="search-result">
   <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -177,9 +191,101 @@
   </div>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimize-importing-other-header-files-in-header"><span class="nav-number">1.</span> <span class="nav-text">Minimize importing other header files in header</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-vs-import"><span class="nav-number">1.1.</span> <span class="nav-text">@class vs. #import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Literal-Syntax-over-the-equivalent-methods"><span class="nav-number">2.</span> <span class="nav-text">Use Literal Syntax over the equivalent methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Typed-Constants-over-Preprocessor-define"><span class="nav-number">3.</span> <span class="nav-text">Use Typed Constants over Preprocessor #define</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Translation-unit-Constant"><span class="nav-number">3.1.</span> <span class="nav-text">Translation-unit Constant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Constant"><span class="nav-number">3.2.</span> <span class="nav-text">Global Constant</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Enumerations-for-States-Options-and-Status-Code"><span class="nav-number">4.</span> <span class="nav-text">Use Enumerations for States, Options and Status Code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-Enumeration-type"><span class="nav-number">4.1.</span> <span class="nav-text">Normal Enumeration type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration-for-options"><span class="nav-number">4.2.</span> <span class="nav-text">Enumeration for options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Property"><span class="nav-number">5.</span> <span class="nav-text">Property</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Declared-property"><span class="nav-number">5.1.</span> <span class="nav-text">Declared property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Property-Attribute"><span class="nav-number">5.2.</span> <span class="nav-text">Property Attribute</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Management-Semantic"><span class="nav-number">5.2.1.</span> <span class="nav-text">Memory-Management Semantic</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Instance-Variables"><span class="nav-number">6.</span> <span class="nav-text">Access Instance Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Cluster"><span class="nav-number">7.</span> <span class="nav-text">Class Cluster</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Associated-Object"><span class="nav-number">8.</span> <span class="nav-text">Associated Object</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
@@ -188,14 +294,16 @@
 
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -285,26 +393,65 @@
 <a id="more"></a>
 <h2 id="Use-Literal-Syntax-over-the-equivalent-methods"><a class="header-anchor" href="#Use-Literal-Syntax-over-the-equivalent-methods"></a>Use Literal Syntax over the equivalent methods</h2>
 <p>Good Ways</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSNumber</span> *intNum = @<span class="number">1</span>;</span><br><span class="line"><span class="built_in">NSNumber</span> *floatNum = @<span class="number">1.2</span>f;</span><br><span class="line"><span class="built_in">NSNumber</span> *doubleNum = @<span class="number">1.23</span>;</span><br><span class="line"><span class="built_in">NSArray</span> *arr = @[<span class="string">@"a"</span>, <span class="string">@"bb"</span>, <span class="string">@"ccc"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *item = arr[<span class="number">1</span>];</span><br><span class="line"><span class="built_in">NSDictionary</span> *dict = @&#123;<span class="string">@"Name"</span> : <span class="string">@"Tom"</span>,</span><br><span class="line">                       <span class="string">@"Age"</span> : @<span class="number">20</span>&#125;;</span><br><span class="line"><span class="built_in">NSString</span> *name = dict[<span class="string">@"Name"</span>];</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">NSNumber *intNum = @1;
+NSNumber *floatNum = @1.2f;
+NSNumber *doubleNum = @1.23;
+NSArray *arr = @[@&quot;a&quot;, @&quot;bb&quot;, @&quot;ccc&quot;];
+NSString *item = arr[1];
+NSDictionary *dict = @{@&quot;Name&quot; : @&quot;Tom&quot;,
+                       @&quot;Age&quot; : @20};
+NSString *name = dict[@&quot;Name&quot;];
+</code></pre>
 <p>Bad Ways</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSNumber</span> *num = [<span class="built_in">NSNumber</span> numberWithInt:<span class="number">1</span>];</span><br><span class="line"><span class="built_in">NSArray</span> *arr = [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"a"</span>, <span class="string">@"bb"</span>, <span class="string">@"ccc"</span>, <span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSString</span> *item = [arr objectAtIndex:<span class="number">1</span>];</span><br><span class="line"><span class="built_in">NSDictionary</span> *dict = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:</span><br><span class="line">                          <span class="string">@"Tom"</span>, <span class="string">@"Name"</span>,</span><br><span class="line">                          @<span class="number">20</span>, <span class="string">@"Age"</span>,</span><br><span class="line">                          <span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSString</span> *name = [dict objectForKey:<span class="string">@"Name"</span>];</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">NSNumber *num = [NSNumber numberWithInt:1];
+NSArray *arr = [NSArray arrayWithObjects:@&quot;a&quot;, @&quot;bb&quot;, @&quot;ccc&quot;, nil];
+NSString *item = [arr objectAtIndex:1];
+NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @&quot;Tom&quot;, @&quot;Name&quot;,
+                          @20, @&quot;Age&quot;,
+                          nil];
+NSString *name = [dict objectForKey:@&quot;Name&quot;];
+</code></pre>
 <h2 id="Use-Typed-Constants-over-Preprocessor-define"><a class="header-anchor" href="#Use-Typed-Constants-over-Preprocessor-define"></a>Use Typed Constants over Preprocessor #define</h2>
 <h3 id="Translation-unit-Constant"><a class="header-anchor" href="#Translation-unit-Constant"></a>Translation-unit Constant</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">NSTimeInterval</span> kAnimationDuration = <span class="number">0.3</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">// .m
+static const NSTimeInterval kAnimationDuration = 0.3;
+</code></pre>
 <p><code>static</code>: The constant will not be exposed in the global symbol table.</p>
 <h3 id="Global-Constant"><a class="header-anchor" href="#Global-Constant"></a>Global Constant</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .h</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="built_in">NSTimeInterval</span> ClassNamePrefixAnimationDuration;</span><br><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">NSTimeInterval</span> ClassNamePrefixAnimationDuration = <span class="number">0.3</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">// .h
+extern const NSTimeInterval ClassNamePrefixAnimationDuration;
+// .m
+const NSTimeInterval ClassNamePrefixAnimationDuration = 0.3;
+</code></pre>
 <h2 id="Use-Enumerations-for-States-Options-and-Status-Code"><a class="header-anchor" href="#Use-Enumerations-for-States-Options-and-Status-Code"></a>Use Enumerations for States, Options and Status Code</h2>
 <h3 id="Normal-Enumeration-type"><a class="header-anchor" href="#Normal-Enumeration-type"></a>Normal Enumeration type</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, ConnectionState) &#123;</span><br><span class="line">    ConnectionStateDisconnected,</span><br><span class="line">    ConnectionStateConnecting,</span><br><span class="line">    ConnectionStateConnected,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">typedef NS_ENUM(NSUInteger, ConnectionState) {
+    ConnectionStateDisconnected,
+    ConnectionStateConnecting,
+    ConnectionStateConnected,
+};
+</code></pre>
 <h3 id="Enumeration-for-options"><a class="header-anchor" href="#Enumeration-for-options"></a>Enumeration for options</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_OPTIONS</span>(<span class="built_in">NSUInteger</span>, PermittedDirection) &#123;</span><br><span class="line">    PermittedDirectionUp    = <span class="number">1</span> &lt;&lt; <span class="number">0</span>,</span><br><span class="line">    PermittedDirectionDown  = <span class="number">1</span> &lt;&lt; <span class="number">1</span>,</span><br><span class="line">    PermittedDirectionLeft  = <span class="number">1</span> &lt;&lt; <span class="number">2</span>,</span><br><span class="line">    PermittedDirectionRight = <span class="number">1</span> &lt;&lt; <span class="number">3</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">typedef NS_OPTIONS(NSUInteger, PermittedDirection) {
+    PermittedDirectionUp    = 1 &lt;&lt; 0,
+    PermittedDirectionDown  = 1 &lt;&lt; 1,
+    PermittedDirectionLeft  = 1 &lt;&lt; 2,
+    PermittedDirectionRight = 1 &lt;&lt; 3,
+};
+</code></pre>
 <h2 id="Property"><a class="header-anchor" href="#Property"></a>Property</h2>
 <h3 id="Declared-property"><a class="header-anchor" href="#Declared-property"></a>Declared property</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .h</span></span><br><span class="line"><span class="keyword">@property</span> (&lt;<span class="meta">#attributes#&gt;) <span class="meta-string">&lt;#type#&gt; &lt;#name#&gt;; // Declare Property</span></span></span><br><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="keyword">@synthesize</span> <span class="comment">// Create implementations that match the specification you gave in the property declaration</span></span><br><span class="line"><span class="keyword">@dynamic</span>    <span class="comment">// Suppress a warning if the compiler can’t find an implementation of accessor methods</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">// .h
+@property (&lt;#attributes#&gt;) &lt;#type#&gt; &lt;#name#&gt;; // Declare Property
+// .m
+@synthesize // Create implementations that match the specification you gave in the property declaration
+@dynamic    // Suppress a warning if the compiler can’t find an implementation of accessor methods
+</code></pre>
 <p>Autosynthesis: Clang provides default synthesis of declared properties not declared @dynamic and not having user provided backing getter and setter methods.</p>
 <h3 id="Property-Attribute"><a class="header-anchor" href="#Property-Attribute"></a>Property Attribute</h3>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">@property (nonatomic, readwrite, copy) NSString *name;
+</code></pre>
 <h4 id="Memory-Management-Semantic"><a class="header-anchor" href="#Memory-Management-Semantic"></a>Memory-Management Semantic</h4>
 <p><strong>assign</strong>: The setter is a simple assign operation used for scalar types, such as <code>CGFloat</code> or <code>NSInteger</code>.<br>
 <strong>strong</strong>: This designates that the property defines an owning relationship. When a new value is set, it is first retained, the old value is released, and then the value is set.<br>
@@ -318,14 +465,39 @@
 <li>Read data through properties when that data is being lazily initialized</li>
 </ul>
 <h2 id="Class-Cluster"><a class="header-anchor" href="#Class-Cluster"></a>Class Cluster</h2>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">UIButton</span>)buttonWithType:(<span class="built_in">UIButtonType</span>)buttonType;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">+ (UIButton)buttonWithType:(UIButtonType)buttonType;
+</code></pre>
 <ul>
 <li>The Class Cluster pattern can be used to hide implementation detail behind an abstract base class.</li>
 <li>There is no init family method defined in the interface</li>
 </ul>
 <h2 id="Associated-Object"><a class="header-anchor" href="#Associated-Object"></a>Associated Object</h2>
 <p>Associated Object can attach custom data to existing classes, but it should be used only when other approaches are not possible, since it can cause retain cycles.</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;objc/runtime.h&gt;</span></span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> *AlertViewKey = <span class="string">"AlertViewKey"</span>;</span><br><span class="line">- (<span class="keyword">void</span>)popUpAlert &#123;</span><br><span class="line">    <span class="built_in">UIAlertView</span> *alert = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"Alert"</span></span><br><span class="line">                                                    message:<span class="string">@"Do you want to continue?"</span></span><br><span class="line">                                                   delegate:<span class="keyword">self</span></span><br><span class="line">                                          cancelButtonTitle:<span class="string">@"Cancel"</span></span><br><span class="line">                                          otherButtonTitles:<span class="string">@"Continue"</span>, <span class="literal">nil</span>];</span><br><span class="line">    <span class="keyword">void</span> (^block)(<span class="built_in">NSInteger</span>) = ^(<span class="built_in">NSInteger</span> buttonIndex)&#123;</span><br><span class="line">        <span class="keyword">if</span> (buttonIndex == <span class="number">0</span>) &#123;</span><br><span class="line">            [<span class="keyword">self</span> doCancel];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            [<span class="keyword">self</span> deContinue];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    object_setAssociatedObject(alert, AlertViewKey, block, OBJC_ASSOCIATION_COPY);</span><br><span class="line">    [alert show];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)alertView:(<span class="built_in">UIAlertView</span> *)alertView clickedButtonAtIndex:(<span class="built_in">NSInteger</span>)buttonIndex &#123;</span><br><span class="line">    <span class="keyword">void</span> (^block)(<span class="built_in">NSInteger</span>) = object_getAssociatedObject(alertView, AlertViewKey);</span><br><span class="line">    block(buttonIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-objectivec">#import &lt;objc/runtime.h&gt;
+static void *AlertViewKey = &quot;AlertViewKey&quot;;
+- (void)popUpAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;Alert&quot;
+                                                    message:@&quot;Do you want to continue?&quot;
+                                                   delegate:self
+                                          cancelButtonTitle:@&quot;Cancel&quot;
+                                          otherButtonTitles:@&quot;Continue&quot;, nil];
+    void (^block)(NSInteger) = ^(NSInteger buttonIndex){
+        if (buttonIndex == 0) {
+            [self doCancel];
+        } else {
+            [self deContinue];
+        }
+    };
+
+    object_setAssociatedObject(alert, AlertViewKey, block, OBJC_ASSOCIATION_COPY);
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    void (^block)(NSInteger) = object_getAssociatedObject(alertView, AlertViewKey);
+    block(buttonIndex);
+}
+</code></pre>
 
     </div>
 
@@ -348,12 +520,21 @@
             <span class="label">Twitter</span>
           </a>
         </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
     </div>
   </div>
 
 
       <footer class="post-footer">
-          
           <div class="post-tags">
               <a href="/blog/tags/Objective-C/" rel="tag"><i class="fa fa-tag"></i> Objective-C</a>
           </div>
@@ -381,8 +562,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -406,100 +587,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimize-importing-other-header-files-in-header"><span class="nav-number">1.</span> <span class="nav-text">Minimize importing other header files in header</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-vs-import"><span class="nav-number">1.1.</span> <span class="nav-text">@class vs. #import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Literal-Syntax-over-the-equivalent-methods"><span class="nav-number">2.</span> <span class="nav-text">Use Literal Syntax over the equivalent methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Typed-Constants-over-Preprocessor-define"><span class="nav-number">3.</span> <span class="nav-text">Use Typed Constants over Preprocessor #define</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Translation-unit-Constant"><span class="nav-number">3.1.</span> <span class="nav-text">Translation-unit Constant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Constant"><span class="nav-number">3.2.</span> <span class="nav-text">Global Constant</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-Enumerations-for-States-Options-and-Status-Code"><span class="nav-number">4.</span> <span class="nav-text">Use Enumerations for States, Options and Status Code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-Enumeration-type"><span class="nav-number">4.1.</span> <span class="nav-text">Normal Enumeration type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration-for-options"><span class="nav-number">4.2.</span> <span class="nav-text">Enumeration for options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Property"><span class="nav-number">5.</span> <span class="nav-text">Property</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Declared-property"><span class="nav-number">5.1.</span> <span class="nav-text">Declared property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Property-Attribute"><span class="nav-number">5.2.</span> <span class="nav-text">Property Attribute</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-Management-Semantic"><span class="nav-number">5.2.1.</span> <span class="nav-text">Memory-Management Semantic</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Instance-Variables"><span class="nav-number">6.</span> <span class="nav-text">Access Instance Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Cluster"><span class="nav-number">7.</span> <span class="nav-text">Class Cluster</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Associated-Object"><span class="nav-number">8.</span> <span class="nav-text">Associated Object</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Luminoid"
-      src="/blog/images/avatar.png">
-  <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
-        
-          <span class="site-state-item-count">41</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -511,7 +598,7 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -521,14 +608,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">245k</span>
+    <span title="Symbols count total">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:54</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
@@ -566,21 +653,16 @@
 
   
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
 
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/muse.js"></script>
-
-
 <script src="/blog/js/next-boot.js"></script>
-
-
 
 
   

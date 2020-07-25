@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,12 +14,14 @@
 
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
   </script>
 
   <meta name="description" content="Texture Docs Subclassing ASDisplayNode -init This method is called on a background thread when using nodeBlocks. However, because no other method can run until -init is finished, it should never be ne">
@@ -40,7 +42,7 @@
 <link rel="canonical" href="http://luminoid.github.io/blog/Texture-Concepts/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -60,24 +62,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -88,22 +102,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Luminoid's Site</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">OK Computer</p>
   </div>
@@ -114,7 +129,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -137,7 +151,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -171,7 +185,7 @@
 </div>
 <div id="search-result">
   <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -179,9 +193,101 @@
   </div>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subclassing"><span class="nav-number">1.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASDisplayNode"><span class="nav-number">1.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didLoad"><span class="nav-number">1.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutSpecThatFits"><span class="nav-number">1.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASViewController"><span class="nav-number">1.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadView"><span class="nav-number">1.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewDidLoad"><span class="nav-number">1.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillLayoutSubviews"><span class="nav-number">1.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillAppear-viewDidDisappear"><span class="nav-number">1.2.5.</span> <span class="nav-text">-viewWillAppear: &#x2F; -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nodes"><span class="nav-number">2.</span> <span class="nav-text">Nodes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-Subclasses"><span class="nav-number">2.1.</span> <span class="nav-text">Node Subclasses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASDisplayNode-v2"><span class="nav-number">2.2.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Wrapping"><span class="nav-number">2.2.1.</span> <span class="nav-text">View Wrapping</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCellNode"><span class="nav-number">2.3.</span> <span class="nav-text">ASCellNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Subclassing-v2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Subclassing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initializing-with-an-ASViewController"><span class="nav-number">2.3.2.</span> <span class="nav-text">Initializing with an ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initializing-with-a-UIView-or-CALayer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Initializing with a UIView or CALayer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASImageNode"><span class="nav-number">2.4.</span> <span class="nav-text">ASImageNode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASNetworkImageNode"><span class="nav-number">2.5.</span> <span class="nav-text">ASNetworkImageNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Laying-Out-a-Network-Image-Node"><span class="nav-number">2.5.1.</span> <span class="nav-text">Laying Out a Network Image Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#style-preferredSize"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">.style.preferredSize</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ASRatioLayoutSpec"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASScrollNode"><span class="nav-number">2.6.</span> <span class="nav-text">ASScrollNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#automaticallyManagesContentSize"><span class="nav-number">2.6.1.</span> <span class="nav-text">automaticallyManagesContentSize</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-Containers"><span class="nav-number">3.</span> <span class="nav-text">Node Containers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASTableNode"><span class="nav-number">3.1.</span> <span class="nav-text">ASTableNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Replacing-UITableViewController-with-ASViewController"><span class="nav-number">3.1.1.</span> <span class="nav-text">Replacing UITableViewController with ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-Block-Thread-Safety-Warning"><span class="nav-number">3.1.2.</span> <span class="nav-text">Node Block Thread Safety Warning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accessing-the-ASTableView"><span class="nav-number">3.1.3.</span> <span class="nav-text">Accessing the ASTableView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Table-Row-Height"><span class="nav-number">3.1.4.</span> <span class="nav-text">Table Row Height</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCollectionNode"><span class="nav-number">3.2.</span> <span class="nav-text">ASCollectionNode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout"><span class="nav-number">4.</span> <span class="nav-text">Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-Specs"><span class="nav-number">4.1.</span> <span class="nav-text">Layout Specs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ASWrapperLayoutSpec"><span class="nav-number">4.1.1.</span> <span class="nav-text">ASWrapperLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASStackLayoutSpec"><span class="nav-number">4.1.2.</span> <span class="nav-text">ASStackLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASInsetLayoutSpec"><span class="nav-number">4.1.3.</span> <span class="nav-text">ASInsetLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASOverlayLayoutSpec"><span class="nav-number">4.1.4.</span> <span class="nav-text">ASOverlayLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASBackgroundLayoutSpec"><span class="nav-number">4.1.5.</span> <span class="nav-text">ASBackgroundLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASCenterLayoutSpec"><span class="nav-number">4.1.6.</span> <span class="nav-text">ASCenterLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASRatioLayoutSpec-v2"><span class="nav-number">4.1.7.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASRelativeLayoutSpec"><span class="nav-number">4.1.8.</span> <span class="nav-text">ASRelativeLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASAbsoluteLayoutSpec"><span class="nav-number">4.1.9.</span> <span class="nav-text">ASAbsoluteLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASCornerLayoutSpec"><span class="nav-number">4.1.10.</span> <span class="nav-text">ASCornerLayoutSpec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-Elements"><span class="nav-number">4.2.</span> <span class="nav-text">Layout Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-API-Sizing"><span class="nav-number">4.3.</span> <span class="nav-text">Layout API Sizing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Values-CGFloat-ASDimension"><span class="nav-number">4.3.1.</span> <span class="nav-text">Values (CGFloat, ASDimension)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sizes-CGSize-ASLayoutSize"><span class="nav-number">4.3.2.</span> <span class="nav-text">Sizes (CGSize, ASLayoutSize)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Size-Range-ASSizeRange"><span class="nav-number">4.3.3.</span> <span class="nav-text">Size Range (ASSizeRange)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Some-nodes-need-Sizes-Set"><span class="nav-number">4.4.</span> <span class="nav-text">Some nodes need Sizes Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notices"><span class="nav-number">5.</span> <span class="nav-text">Notices</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conveniences"><span class="nav-number">6.</span> <span class="nav-text">Conveniences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hit-Test-Slop"><span class="nav-number">6.1.</span> <span class="nav-text">Hit Test Slop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-Fetching-API"><span class="nav-number">6.2.</span> <span class="nav-text">Batch Fetching API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Automatic-Subnode-Management"><span class="nav-number">6.3.</span> <span class="nav-text">Automatic Subnode Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inversion"><span class="nav-number">6.4.</span> <span class="nav-text">Inversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Modification-Blocks"><span class="nav-number">6.5.</span> <span class="nav-text">Image Modification Blocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Placeholders"><span class="nav-number">6.6.</span> <span class="nav-text">Placeholders</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ASDisplayNodes-may-Implement-Placeholders"><span class="nav-number">6.6.1.</span> <span class="nav-text">ASDisplayNodes may Implement Placeholders</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASNetworkImageNode-also-have-Default-Images"><span class="nav-number">6.6.2.</span> <span class="nav-text">ASNetworkImageNode also have Default Images</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimizations"><span class="nav-number">7.</span> <span class="nav-text">Optimizations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Layer-Backing"><span class="nav-number">7.1.</span> <span class="nav-text">Layer Backing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subtree-Rasterization"><span class="nav-number">7.2.</span> <span class="nav-text">Subtree Rasterization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Synchronous-Concurrency"><span class="nav-number">7.3.</span> <span class="nav-text">Synchronous Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Corner-Rounding"><span class="nav-number">7.4.</span> <span class="nav-text">Corner Rounding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Performant-Corner-Rounding-Strategies"><span class="nav-number">7.4.1.</span> <span class="nav-text">Performant Corner Rounding Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Precomposited-Corners"><span class="nav-number">7.4.1.1.</span> <span class="nav-text">Precomposited Corners</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Clip-Corner"><span class="nav-number">7.4.1.2.</span> <span class="nav-text">Clip Corner</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CALayer’s-cornerRadius-property"><span class="nav-number">7.4.2.</span> <span class="nav-text">CALayer’s .cornerRadius property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Corner-Rounding-Strategy-Flowchart"><span class="nav-number">7.4.3.</span> <span class="nav-text">Corner Rounding Strategy Flowchart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Texture-Support"><span class="nav-number">7.4.4.</span> <span class="nav-text">Texture Support</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Technologies"><span class="nav-number">8.</span> <span class="nav-text">Advanced Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASVisibility"><span class="nav-number">8.1.</span> <span class="nav-text">ASVisibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASEnvironment"><span class="nav-number">8.2.</span> <span class="nav-text">ASEnvironment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASRunLoopQueue"><span class="nav-number">8.3.</span> <span class="nav-text">ASRunLoopQueue</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
@@ -190,14 +296,16 @@
 
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -258,7 +366,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>24 mins.</span>
+              <span>23 mins.</span>
             </span>
 
         </div>
@@ -286,7 +394,8 @@
 <p><code>-layout</code> is conceptually similar to UIViewController’s <code>-viewWillLayoutSubviews</code>. This is a good spot to change the hidden property, set view based properties if needed (not layoutable properties) or set background colors. You could put background color setting in -layoutSpecThatFits:, but there may be timing problems. If you happen to be using any UIViews, you can set their frames here. However, you can always create a node wrapper with <code>-initWithViewBlock:</code> and then size this on the background thread elsewhere.</p>
 <p>This method is called on the <strong>main thread</strong>. However, if you are using layout Specs, you shouldn’t rely on this method too much, as it is much preferable to do layout off the main thread. Less than 1 in 10 subclasses will need this.</p>
 <p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subnode.frame = <span class="keyword">self</span>.bounds;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">subnode.frame = self.bounds;
+</code></pre>
 <p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
 <a id="more"></a>
 <h3 id="ASViewController"><a class="header-anchor" href="#ASViewController"></a>ASViewController</h3>
@@ -294,7 +403,14 @@
 <h4 id="init-v2"><a class="header-anchor" href="#init-v2"></a>-init</h4>
 <p>This method is called once, at the very beginning of an ASViewController’s lifecycle. As with UIViewController initialization, it is best practice to <strong>never access</strong> <code>self.view</code> or <code>self.node.view</code> in this method as it will force the view to be created early. Instead, do any view access in <code>-viewDidLoad</code>.</p>
 <p>ASViewController’s designated initializer is <code>initWithNode:</code>. A typical initializer will look something like the code below. Note how the ASViewController’s node is created before calling super. An ASViewController manages a node similarly to how a UIViewController manages a view, but the initialization is slightly different.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>() &#123;</span><br><span class="line">  <span class="keyword">let</span> pagerNode = <span class="type">ASPagerNode</span>()</span><br><span class="line">  <span class="keyword">super</span>.<span class="keyword">init</span>(node: pagerNode)</span><br><span class="line"></span><br><span class="line">  pagerNode.setDataSource(<span class="keyword">self</span>)</span><br><span class="line">  pagerNode.setDelegate(<span class="keyword">self</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">init() {
+  let pagerNode = ASPagerNode()
+  super.init(node: pagerNode)
+
+  pagerNode.setDataSource(self)
+  pagerNode.setDelegate(self)
+}
+</code></pre>
 <h4 id="loadView"><a class="header-anchor" href="#loadView"></a>-loadView</h4>
 <p>We recommend that you do not use this method because it is has no particular advantages over <code>-viewDidLoad</code> and has some disadvantages. However, it is safe to use as long as you do not set the <code>self.view</code> property to a different value. The call to <code>[super loadView]</code> will set it to the <code>node.view</code> for you.</p>
 <h4 id="viewDidLoad"><a class="header-anchor" href="#viewDidLoad"></a>-viewDidLoad</h4>
@@ -309,12 +425,31 @@
 <h2 id="Nodes"><a class="header-anchor" href="#Nodes"></a>Nodes</h2>
 <h3 id="Node-Subclasses"><a class="header-anchor" href="#Node-Subclasses"></a>Node Subclasses</h3>
 <p>Node Inheritance Hierarchy</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ASDisplayNode</span><br><span class="line">├── ASTableNode</span><br><span class="line">├── ASCollectionNode</span><br><span class="line">│   └── ASPagerNode</span><br><span class="line">├── ASCellNode</span><br><span class="line">├── ASScrollNode</span><br><span class="line">├── ASEditableTextNode</span><br><span class="line">└── ASControlNode</span><br><span class="line">    ├── ASButtonNode</span><br><span class="line">    ├── ASTextNode</span><br><span class="line">    ├── ASMapNode</span><br><span class="line">    └── ASImageNode</span><br><span class="line">        ├── ASNetworkImageNode</span><br><span class="line">        │   └── ASVideoNode</span><br><span class="line">        └── ASMultiplexImageNode</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">ASDisplayNode
+├── ASTableNode
+├── ASCollectionNode
+│   └── ASPagerNode
+├── ASCellNode
+├── ASScrollNode
+├── ASEditableTextNode
+└── ASControlNode
+    ├── ASButtonNode
+    ├── ASTextNode
+    ├── ASMapNode
+    └── ASImageNode
+        ├── ASNetworkImageNode
+        │   └── ASVideoNode
+        └── ASMultiplexImageNode
+</code></pre>
 <h3 id="ASDisplayNode-v2"><a class="header-anchor" href="#ASDisplayNode-v2"></a>ASDisplayNode</h3>
 <p><code>ASDisplayNode</code> is the main view abstraction over <code>UIView</code> and <code>CALayer</code>. It initializes and owns a <code>UIView</code> in the same way <code>UIView</code>s create and own their own backing <code>CALayer</code>s.</p>
 <h4 id="View-Wrapping"><a class="header-anchor" href="#View-Wrapping"></a>View Wrapping</h4>
 <p>In some cases, it is desirable to initialize a node and provide a view to be used as the backing view. These views are provided via a block that will return a view so that the actual construction of the view can be saved until later. These nodes’ display step happens synchronously. This is because a node can only be asynchronously displayed when it wraps an <code>_ASDisplayView</code> (the internal view subclass), not when it wraps a plain <code>UIView</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> node = <span class="type">ASDisplayNode</span> &#123; () -&gt; <span class="type">UIView</span> <span class="keyword">in</span></span><br><span class="line">	<span class="keyword">let</span> view = <span class="type">SomeView</span>()</span><br><span class="line">	<span class="keyword">return</span> view</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">let node = ASDisplayNode { () -&gt; UIView in
+  let view = SomeView()
+  return view
+}
+</code></pre>
 <h3 id="ASCellNode"><a class="header-anchor" href="#ASCellNode"></a>ASCellNode</h3>
 <p>There are three ways in which you can implement the cells you’ll use in your Texture app: subclassing <code>ASCellNode</code>, initializing with an existing <code>ASViewController</code> or using an existing <code>UIView</code> or <code>CALayer</code>.</p>
 <h4 id="Subclassing-v2"><a class="header-anchor" href="#Subclassing-v2"></a>Subclassing</h4>
@@ -325,42 +460,115 @@
 <code>-layout</code>: Also called on the main thread. Layout is complete after the call to super which means you can do any extra tweaking you need to do.</p>
 <h4 id="Initializing-with-an-ASViewController"><a class="header-anchor" href="#Initializing-with-an-ASViewController"></a>Initializing with an <code>ASViewController</code></h4>
 <p>For example, say you already have a view controller written that manages an <code>ASTableNode</code>. To use that table as a page in an <code>ASPagerNode</code> you can use <code>-initWithViewControllerBlock</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pagerNode</span><span class="params">(<span class="number">_</span> pagerNode: ASPagerNode, nodeAt index: Int)</span></span> -&gt; <span class="type">ASCellNode</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> animals = allAnimals[index]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> node = <span class="type">ASCellNode</span>(viewControllerBlock: &#123; () -&gt; <span class="type">UIViewController</span> <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">AnimalTableNodeController</span>(animals: animals)</span><br><span class="line">    &#125;, didLoad: <span class="literal">nil</span>)</span><br><span class="line">    </span><br><span class="line">    node.style.preferredSize = pagerNode.bounds.size</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> node</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">func pagerNode(_ pagerNode: ASPagerNode, nodeAt index: Int) -&gt; ASCellNode {
+    let animals = allAnimals[index]
+    
+    let node = ASCellNode(viewControllerBlock: { () -&gt; UIViewController in
+        return AnimalTableNodeController(animals: animals)
+    }, didLoad: nil)
+    
+    node.style.preferredSize = pagerNode.bounds.size
+    
+    return node
+}
+</code></pre>
 <h4 id="Initializing-with-a-UIView-or-CALayer"><a class="header-anchor" href="#Initializing-with-a-UIView-or-CALayer"></a>Initializing with a <code>UIView</code> or <code>CALayer</code></h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pagerNode</span><span class="params">(<span class="number">_</span> pagerNode: ASPagerNode, nodeAt index: Int)</span></span> -&gt; <span class="type">ASCellNode</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> animal = animals[index]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> node = <span class="type">ASCellNode</span> &#123; () -&gt; <span class="type">UIView</span> <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">SomeAnimalView</span>(animal: animal)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    node.style.preferredSize = pagerNode.bounds.size</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> node</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">func pagerNode(_ pagerNode: ASPagerNode, nodeAt index: Int) -&gt; ASCellNode {
+    let animal = animals[index]
+    
+    let node = ASCellNode { () -&gt; UIView in
+        return SomeAnimalView(animal: animal)
+    }
+
+    node.style.preferredSize = pagerNode.bounds.size
+    
+    return node
+}
+</code></pre>
 <h3 id="ASImageNode"><a class="header-anchor" href="#ASImageNode"></a>ASImageNode</h3>
 <p><code>ASImageNode</code> is the Texture equivalent to <code>UIImageView</code>. The most basic difference is that images are decoded asynchronously by default.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> imageNode = <span class="type">ASImageNode</span>()</span><br><span class="line">imageNode.image = <span class="type">UIImage</span>(named: <span class="string">"someImage"</span>)</span><br><span class="line">imageNode.contentMode = .scaleAspectFill</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">let imageNode = ASImageNode()
+imageNode.image = UIImage(named: &quot;someImage&quot;)
+imageNode.contentMode = .scaleAspectFill
+</code></pre>
 <h3 id="ASNetworkImageNode"><a class="header-anchor" href="#ASNetworkImageNode"></a>ASNetworkImageNode</h3>
 <p><code>ASNetworkImageNode</code> can be used any time you need to display an image that is being hosted remotely. All you have to do is set the <code>.URL</code> property with the appropriate <code>NSURL</code> instance and the image will be asynchonously loaded and concurrently rendered for you.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> imageNode = <span class="type">ASNetworkImageNode</span>()</span><br><span class="line">imageNode.url = <span class="type">URL</span>(string: <span class="string">"https://someurl.com/image_uri"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">let imageNode = ASNetworkImageNode()
+imageNode.url = URL(string: &quot;https://someurl.com/image_uri&quot;)
+</code></pre>
 <h4 id="Laying-Out-a-Network-Image-Node"><a class="header-anchor" href="#Laying-Out-a-Network-Image-Node"></a>Laying Out a Network Image Node</h4>
 <h5 id="style-preferredSize"><a class="header-anchor" href="#style-preferredSize"></a><code>.style.preferredSize</code></h5>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> &#123;</span><br><span class="line">	imageNode.style.preferredSize = <span class="type">CGSize</span>(width: <span class="number">100</span>, height: <span class="number">200</span>)</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">	<span class="keyword">return</span> finalLayoutSpec</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec {
+	imageNode.style.preferredSize = CGSize(width: 100, height: 200)
+	// ...
+	return finalLayoutSpec
+}
+</code></pre>
 <h5 id="ASRatioLayoutSpec"><a class="header-anchor" href="#ASRatioLayoutSpec"></a><code>ASRatioLayoutSpec</code></h5>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> &#123;</span><br><span class="line">	<span class="keyword">let</span> ratio: <span class="type">CGFloat</span> = <span class="number">3.0</span>/<span class="number">1.0</span></span><br><span class="line">	<span class="keyword">let</span> imageRatioSpec = <span class="type">ASRatioLayoutSpec</span>(ratio:ratio, child:<span class="keyword">self</span>.imageNode)</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">	<span class="keyword">return</span> finalLayoutSpec</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec {
+	let ratio: CGFloat = 3.0/1.0
+	let imageRatioSpec = ASRatioLayoutSpec(ratio:ratio, child:self.imageNode)
+	// ...
+	return finalLayoutSpec
+}
+</code></pre>
 <h3 id="ASScrollNode"><a class="header-anchor" href="#ASScrollNode"></a>ASScrollNode</h3>
 <h4 id="automaticallyManagesContentSize"><a class="header-anchor" href="#automaticallyManagesContentSize"></a>automaticallyManagesContentSize</h4>
 <p>When enabled, the size calculated by the <code>ASScrolNode</code>’s layout spec defines the <code>.contentSize</code> of the scroll view. This is in contrast to most nodes, where the <code>layoutSpec</code> size is applied to the bounds (and in turn, frame). In this mode, the bounds of the scroll view always fills the parent’s size.</p>
 <h2 id="Node-Containers"><a class="header-anchor" href="#Node-Containers"></a>Node Containers</h2>
 <h3 id="ASTableNode"><a class="header-anchor" href="#ASTableNode"></a>ASTableNode</h3>
 <p><code>ASTableNode</code> replaces <code>UITableView</code>’s required method</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell
+</code></pre>
 <p>with your choice of one of the following methods</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableNode</span><span class="params">(<span class="number">_</span> tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">ASCellNode</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableNode</span><span class="params">(<span class="number">_</span> tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">ASCellNodeBlock</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -&gt; ASCellNode
+func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -&gt; ASCellNodeBlock
+</code></pre>
 <blockquote>
 <p>It is recommended that you use the node block version of these methods so that your table node will be able to prepare and display all of its cells concurrently. This means that all subnode initialization methods can be run in the background. Make sure to keep 'em thread safe.</p>
 </blockquote>
 <p>Note that neither of these methods require a reuse mechanism.</p>
 <h4 id="Replacing-UITableViewController-with-ASViewController"><a class="header-anchor" href="#Replacing-UITableViewController-with-ASViewController"></a>Replacing UITableViewController with ASViewController</h4>
 <p>Texture does not offer an equivalent to <code>UITableViewController</code>. Instead, use an <code>ASViewController</code> initialized with an <code>ASTableNode</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>(models: [<span class="type">Model</span>]) &#123;</span><br><span class="line">    <span class="keyword">let</span> tableNode = <span class="type">ASTableNode</span>(style: .plain)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">super</span>.<span class="keyword">init</span>(node: tableNode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.models = models  </span><br><span class="line">    <span class="keyword">self</span>.tableNode = tableNode</span><br><span class="line">    <span class="keyword">self</span>.tableNode.dataSource = <span class="keyword">self</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">init(models: [Model]) {
+    let tableNode = ASTableNode(style: .plain)
+
+    super.init(node: tableNode)
+
+    self.models = models  
+    self.tableNode = tableNode
+    self.tableNode.dataSource = self
+    
+    return self
+}
+</code></pre>
 <h4 id="Node-Block-Thread-Safety-Warning"><a class="header-anchor" href="#Node-Block-Thread-Safety-Warning"></a>Node Block Thread Safety Warning</h4>
 <p>It is very important that node blocks be thread-safe. One aspect of that is ensuring that the data model is accessed outside of the node block. Therefore, it is unlikely that you should need to use the index inside of the block.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableNode</span><span class="params">(<span class="number">_</span> tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">ASCellNodeBlock</span> &#123;</span><br><span class="line">  <span class="keyword">guard</span> photoFeed.<span class="built_in">count</span> &gt; indexPath.row <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#123; <span class="type">ASCellNode</span>() &#125; &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">let</span> photoModel = photoFeed[indexPath.row]</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// this may be executed on a background thread - it is important to make sure it is thread safe</span></span><br><span class="line">  <span class="keyword">let</span> cellNodeBlock = &#123; () -&gt; <span class="type">ASCellNode</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">let</span> cellNode = <span class="type">PhotoCellNode</span>(photo: photoModel)</span><br><span class="line">    cellNode.delegate = <span class="keyword">self</span></span><br><span class="line">    <span class="keyword">return</span> cellNode</span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">return</span> cellNodeBlock</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -&gt; ASCellNodeBlock {
+  guard photoFeed.count &gt; indexPath.row else { return { ASCellNode() } }
+    
+  let photoModel = photoFeed[indexPath.row]
+    
+  // this may be executed on a background thread - it is important to make sure it is thread safe
+  let cellNodeBlock = { () -&gt; ASCellNode in
+    let cellNode = PhotoCellNode(photo: photoModel)
+    cellNode.delegate = self
+    return cellNode
+  }
+    
+  return cellNodeBlock
+}
+</code></pre>
 <h4 id="Accessing-the-ASTableView"><a class="header-anchor" href="#Accessing-the-ASTableView"></a>Accessing the ASTableView</h4>
 <p><code>ASTableView</code> can be used directly by accessing the <code>.view</code> property of an <code>ASTableNode</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">  tableNode.view.allowsSelection = <span class="literal">false</span></span><br><span class="line">  tableNode.view.separatorStyle = .<span class="keyword">none</span></span><br><span class="line">  tableNode.view.leadingScreensForBatching = <span class="number">3.0</span>  <span class="comment">// default is 2.0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func viewDidLoad() {
+  super.viewDidLoad()
+
+  tableNode.view.allowsSelection = false
+  tableNode.view.separatorStyle = .none
+  tableNode.view.leadingScreensForBatching = 3.0  // default is 2.0
+}
+</code></pre>
 <h4 id="Table-Row-Height"><a class="header-anchor" href="#Table-Row-Height"></a>Table Row Height</h4>
 <p>A node defines its height by way of the layoutSpec returned in the <code>-layoutSpecThatFits:</code> method.</p>
 <p>If you call <code>-setNeedsLayout</code> on an <code>ASCellNode</code>, it will automatically perform another layout pass and if its overall desired size has changed, the table will be informed and will update itself. This is different from <code>UIKit</code> where normally you would have to call reload row / item.</p>
@@ -378,34 +586,136 @@
 <p>A layout spec, short for “layout specification”, has no physical presence. Instead, layout specs act as containers for other layout elements by understanding how these children layout elements relate to each other.</p>
 <h4 id="ASWrapperLayoutSpec"><a class="header-anchor" href="#ASWrapperLayoutSpec"></a>ASWrapperLayoutSpec</h4>
 <p><code>ASWrapperLayoutSpec</code> is a simple <code>ASLayoutSpec</code> subclass that can wrap a <code>ASLayoutElement</code> and calculate the layout of the child based on the size set on the layout element.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return a single subnode from layoutSpecThatFits:</span></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">ASWrapperLayoutSpec</span>(layoutElement: _subnode)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set a size (but not position)</span></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> </span><br><span class="line">&#123;</span><br><span class="line">  _subnode.style.preferredSize = <span class="type">CGSize</span>(width: constrainedSize.<span class="built_in">max</span>.width,</span><br><span class="line">                                        height: constrainedSize.<span class="built_in">max</span>.height / <span class="number">2.0</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="type">ASWrapperLayoutSpec</span>(layoutElement: _subnode)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">// return a single subnode from layoutSpecThatFits:
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec 
+{
+  return ASWrapperLayoutSpec(layoutElement: _subnode)
+}
+
+// set a size (but not position)
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec 
+{
+  _subnode.style.preferredSize = CGSize(width: constrainedSize.max.width,
+                                        height: constrainedSize.max.height / 2.0)
+  return ASWrapperLayoutSpec(layoutElement: _subnode)
+}
+</code></pre>
 <h4 id="ASStackLayoutSpec"><a class="header-anchor" href="#ASStackLayoutSpec"></a>ASStackLayoutSpec</h4>
 <p><code>ASStackLayoutSpec</code> uses the flexbox algorithm to determine the position and size of its children.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> mainStack = <span class="type">ASStackLayoutSpec</span>(direction: .horizontal,</span><br><span class="line">                                    spacing: <span class="number">6.0</span>,</span><br><span class="line">                                    justifyContent: .start,</span><br><span class="line">                                    alignItems: .center,</span><br><span class="line">                                    children: [titleNode, subtitleNode])</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set some constrained size to the stack</span></span><br><span class="line">  mainStack.style.minWidth = <span class="type">ASDimensionMakeWithPoints</span>(<span class="number">60.0</span>)</span><br><span class="line">  mainStack.style.maxHeight = <span class="type">ASDimensionMakeWithPoints</span>(<span class="number">40.0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> mainStack</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec 
+{
+  let mainStack = ASStackLayoutSpec(direction: .horizontal,
+                                    spacing: 6.0,
+                                    justifyContent: .start,
+                                    alignItems: .center,
+                                    children: [titleNode, subtitleNode])
+
+  // Set some constrained size to the stack
+  mainStack.style.minWidth = ASDimensionMakeWithPoints(60.0)
+  mainStack.style.maxHeight = ASDimensionMakeWithPoints(40.0)
+
+  return mainStack
+}
+</code></pre>
 <h4 id="ASInsetLayoutSpec"><a class="header-anchor" href="#ASInsetLayoutSpec"></a>ASInsetLayoutSpec</h4>
 <p>If you set <code>INFINITY</code> as a value in the <code>UIEdgeInsets</code>, the inset spec will just use the intrinisic size of the child.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">let</span> insets = <span class="type">UIEdgeInsets</span>(top: <span class="number">10.0</span>, <span class="keyword">left</span>: <span class="number">10.0</span>, bottom: <span class="number">10.0</span>, <span class="keyword">right</span>: <span class="number">10.0</span>)</span><br><span class="line">  <span class="keyword">let</span> headerWithInset = <span class="type">ASInsetLayoutSpec</span>(insets: insets, child: textNode)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  ...
+  let insets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+  let headerWithInset = ASInsetLayoutSpec(insets: insets, child: textNode)
+  ...
+}
+</code></pre>
 <h4 id="ASOverlayLayoutSpec"><a class="header-anchor" href="#ASOverlayLayoutSpec"></a>ASOverlayLayoutSpec</h4>
 <p><code>ASOverlayLayoutSpec</code> lays out its child (blue), stretching another component on top of it as an overlay (red).</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> backgroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.blue)</span><br><span class="line">  <span class="keyword">let</span> foregroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.red)</span><br><span class="line">  <span class="keyword">return</span> <span class="type">ASOverlayLayoutSpec</span>(child: backgroundNode, overlay: foregroundNode)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red)
+  return ASOverlayLayoutSpec(child: backgroundNode, overlay: foregroundNode)
+}
+</code></pre>
 <h4 id="ASBackgroundLayoutSpec"><a class="header-anchor" href="#ASBackgroundLayoutSpec"></a>ASBackgroundLayoutSpec</h4>
 <p><code>ASBackgroundLayoutSpec</code> lays out a component (blue), stretching another component behind it as a backdrop (red).</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> backgroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.red)</span><br><span class="line">  <span class="keyword">let</span> foregroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.blue)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="type">ASBackgroundLayoutSpec</span>(child: foregroundNode, background: backgroundNode)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+
+  return ASBackgroundLayoutSpec(child: foregroundNode, background: backgroundNode)
+}
+</code></pre>
 <h4 id="ASCenterLayoutSpec"><a class="header-anchor" href="#ASCenterLayoutSpec"></a>ASCenterLayoutSpec</h4>
 <p><code>ASCenterLayoutSpec</code> centers its child within its max <code>constrainedSize</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> subnode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.green, <span class="type">CGSize</span>(width: <span class="number">60.0</span>, height: <span class="number">100.0</span>))</span><br><span class="line">  <span class="keyword">let</span> centerSpec = <span class="type">ASCenterLayoutSpec</span>(centeringOptions: .<span class="type">XY</span>, sizingOptions: [], child: subnode)</span><br><span class="line">  <span class="keyword">return</span> centerSpec</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  let subnode = ASDisplayNodeWithBackgroundColor(UIColor.green, CGSize(width: 60.0, height: 100.0))
+  let centerSpec = ASCenterLayoutSpec(centeringOptions: .XY, sizingOptions: [], child: subnode)
+  return centerSpec
+}
+</code></pre>
 <h4 id="ASRatioLayoutSpec-v2"><a class="header-anchor" href="#ASRatioLayoutSpec-v2"></a>ASRatioLayoutSpec</h4>
 <p><code>ASRatioLayoutSpec</code> lays out a component at a fixed aspect ratio which can scale.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// Half Ratio</span></span><br><span class="line">  <span class="keyword">let</span> subnode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.green, <span class="type">CGSize</span>(width: <span class="number">100</span>, height: <span class="number">100.0</span>))</span><br><span class="line">  <span class="keyword">let</span> ratioSpec = <span class="type">ASRatioLayoutSpec</span>(ratio: <span class="number">0.5</span>, child: subnode)</span><br><span class="line">  <span class="keyword">return</span> ratioSpec</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  // Half Ratio
+  let subnode = ASDisplayNodeWithBackgroundColor(UIColor.green, CGSize(width: 100, height: 100.0))
+  let ratioSpec = ASRatioLayoutSpec(ratio: 0.5, child: subnode)
+  return ratioSpec
+}
+</code></pre>
 <h4 id="ASRelativeLayoutSpec"><a class="header-anchor" href="#ASRelativeLayoutSpec"></a>ASRelativeLayoutSpec</h4>
 <p>Lays out a component and positions it within the layout bounds according to vertical and horizontal positional specifiers. Similar to the “9-part” image areas, a child can be positioned at any of the 4 corners, or the middle of any of the 4 edges, as well as the center.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">let</span> backgroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.blue)</span><br><span class="line">  <span class="keyword">let</span> foregroundNode = <span class="type">ASDisplayNodeWithBackgroundColor</span>(<span class="type">UIColor</span>.red, <span class="type">CGSize</span>(width: <span class="number">70.0</span>, height: <span class="number">100.0</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> relativeSpec = <span class="type">ASRelativeLayoutSpec</span>(horizontalPosition: .start,</span><br><span class="line">                                          verticalPosition: .start,</span><br><span class="line">                                          sizingOption: [],</span><br><span class="line">                                          child: foregroundNode)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> backgroundSpec = <span class="type">ASBackgroundLayoutSpec</span>(child: relativeSpec, background: backgroundNode)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  ...
+  let backgroundNode = ASDisplayNodeWithBackgroundColor(UIColor.blue)
+  let foregroundNode = ASDisplayNodeWithBackgroundColor(UIColor.red, CGSize(width: 70.0, height: 100.0))
+
+  let relativeSpec = ASRelativeLayoutSpec(horizontalPosition: .start,
+                                          verticalPosition: .start,
+                                          sizingOption: [],
+                                          child: foregroundNode)
+
+  let backgroundSpec = ASBackgroundLayoutSpec(child: relativeSpec, background: backgroundNode)
+  ...
+}
+</code></pre>
 <h4 id="ASAbsoluteLayoutSpec"><a class="header-anchor" href="#ASAbsoluteLayoutSpec"></a>ASAbsoluteLayoutSpec</h4>
 <p>Within <code>ASAbsoluteLayoutSpec</code> you can specify exact locations (x/y coordinates) of its children by setting their <code>layoutPosition</code> property.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> maxConstrainedSize = constrainedSize.<span class="built_in">max</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Layout all nodes absolute in a static layout spec</span></span><br><span class="line">  guitarVideoNode.style.layoutPosition = <span class="type">CGPoint</span>.zero</span><br><span class="line">  guitarVideoNode.style.preferredSize = <span class="type">CGSize</span>(width: maxConstrainedSize.width, height: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line"></span><br><span class="line">  nicCageVideoNode.style.layoutPosition = <span class="type">CGPoint</span>(x: maxConstrainedSize.width / <span class="number">2.0</span>, y: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line">  nicCageVideoNode.style.preferredSize = <span class="type">CGSize</span>(width: maxConstrainedSize.width / <span class="number">2.0</span>, height: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line"></span><br><span class="line">  simonVideoNode.style.layoutPosition = <span class="type">CGPoint</span>(x: <span class="number">0.0</span>, y: maxConstrainedSize.height - (maxConstrainedSize.height / <span class="number">3.0</span>))</span><br><span class="line">  simonVideoNode.style.preferredSize = <span class="type">CGSize</span>(width: maxConstrainedSize.width / <span class="number">2.0</span>, height: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line"></span><br><span class="line">  hlsVideoNode.style.layoutPosition = <span class="type">CGPoint</span>(x: <span class="number">0.0</span>, y: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line">  hlsVideoNode.style.preferredSize = <span class="type">CGSize</span>(width: maxConstrainedSize.width / <span class="number">2.0</span>, height: maxConstrainedSize.height / <span class="number">3.0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="type">ASAbsoluteLayoutSpec</span>(children: [guitarVideoNode, nicCageVideoNode, simonVideoNode, hlsVideoNode])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  let maxConstrainedSize = constrainedSize.max
+
+  // Layout all nodes absolute in a static layout spec
+  guitarVideoNode.style.layoutPosition = CGPoint.zero
+  guitarVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width, height: maxConstrainedSize.height / 3.0)
+
+  nicCageVideoNode.style.layoutPosition = CGPoint(x: maxConstrainedSize.width / 2.0, y: maxConstrainedSize.height / 3.0)
+  nicCageVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  simonVideoNode.style.layoutPosition = CGPoint(x: 0.0, y: maxConstrainedSize.height - (maxConstrainedSize.height / 3.0))
+  simonVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  hlsVideoNode.style.layoutPosition = CGPoint(x: 0.0, y: maxConstrainedSize.height / 3.0)
+  hlsVideoNode.style.preferredSize = CGSize(width: maxConstrainedSize.width / 2.0, height: maxConstrainedSize.height / 3.0)
+
+  return ASAbsoluteLayoutSpec(children: [guitarVideoNode, nicCageVideoNode, simonVideoNode, hlsVideoNode])
+}
+</code></pre>
 <h4 id="ASCornerLayoutSpec"><a class="header-anchor" href="#ASCornerLayoutSpec"></a>ASCornerLayoutSpec</h4>
 <p>The easy way to position an element in corner is to use declarative code expression rather than manual coordinate calculation, and <code>ASCornerLayoutSpec</code> can achieve this goal.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span></span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="comment">// Layout the center of badge to the top right corner of avatar.</span></span><br><span class="line">  <span class="keyword">let</span> cornerSpec = <span class="type">ASCornerLayoutSpec</span>(child: avatarNode, corner: badgeNode, location: .topRight)</span><br><span class="line">  <span class="comment">// Slightly shift center of badge inside of avatar.</span></span><br><span class="line">  cornerSpec.offset = <span class="type">CGPoint</span>(x: -<span class="number">3</span>, y: <span class="number">3</span>)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec
+{
+  ...
+  // Layout the center of badge to the top right corner of avatar.
+  let cornerSpec = ASCornerLayoutSpec(child: avatarNode, corner: badgeNode, location: .topRight)
+  // Slightly shift center of badge inside of avatar.
+  cornerSpec.offset = CGPoint(x: -3, y: 3)
+  ...
+}
+</code></pre>
 <h3 id="Layout-Elements"><a class="header-anchor" href="#Layout-Elements"></a>Layout Elements</h3>
 <p>Layout specs contain and arrange layout elements.</p>
 <h3 id="Layout-API-Sizing"><a class="header-anchor" href="#Layout-API-Sizing"></a>Layout API Sizing</h3>
@@ -443,19 +753,101 @@
 <h2 id="Conveniences"><a class="header-anchor" href="#Conveniences"></a>Conveniences</h2>
 <h3 id="Hit-Test-Slop"><a class="header-anchor" href="#Hit-Test-Slop"></a>Hit Test Slop</h3>
 <p><code>ASDisplayNode</code> has a <code>hitTestSlop</code> property of type <code>UIEdgeInsets</code> that when set to a non-zero inset, increase the bounds for hit testing to make it easier to tap or perform gestures on this node.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> textNode = <span class="type">ASTextNode</span>()</span><br><span class="line"><span class="keyword">let</span> padding = (<span class="number">44.0</span> - button.bounds.size.height)/<span class="number">2.0</span></span><br><span class="line">textNode.hitTestSlop = <span class="type">UIEdgeInsetsMake</span>(-padding, <span class="number">0</span>, -padding, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">let textNode = ASTextNode()
+let padding = (44.0 - button.bounds.size.height)/2.0
+textNode.hitTestSlop = UIEdgeInsetsMake(-padding, 0, -padding, 0)
+</code></pre>
 <h3 id="Batch-Fetching-API"><a class="header-anchor" href="#Batch-Fetching-API"></a>Batch Fetching API</h3>
 <p>Texture’s Batch Fetching API makes it easy to add fetching chunks of new data. Usually this would be done in a <code>-scrollViewDidScroll:</code> method, but Texture provides a more structured mechanism.</p>
 <h3 id="Automatic-Subnode-Management"><a class="header-anchor" href="#Automatic-Subnode-Management"></a>Automatic Subnode Management</h3>
 <p>By setting <code>.automaticallyManagesSubnodes</code> to <code>YES</code> on the <code>ASCellNode</code>, ASM means that your nodes no longer require <code>addSubnode:</code> or <code>removeFromSupernode</code> method calls. The presence or absence of the ASM node and its subnodes is completely determined in its <code>layoutSpecThatFits:</code> method.</p>
 <p>ASM knows whether or not to include these elements in the UI based on the information provided in the cell’s <code>ASLayoutSpec</code>. An <code>ASLayoutSpec</code> completely describes the UI of a view in your app by specifying the hierarchy state of a node and its subnodes. An <code>ASLayoutSpec</code> is returned by a node from its <code>layoutSpecThatFits:</code> method.</p>
 <p>If something happens that you know will change your <code>ASLayoutSpec</code>, it is your job to call <code>setNeedsLayout</code>.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoCellNode</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> photoModel: <span class="type">PhotoModel</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> userAvatarImageNode = <span class="type">ASNetworkImageNode</span>()</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> photoImageNode = <span class="type">ASNetworkImageNode</span>()</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> userNameTextNode = <span class="type">ASTextNode</span>()</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> photoLocationTextNode = <span class="type">ASTextNode</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">init</span>(photo: <span class="type">PhotoModel</span>) &#123;</span><br><span class="line">    photoModel = photo</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">super</span>.<span class="keyword">init</span>()</span><br><span class="line">    </span><br><span class="line">    automaticallyManagesSubnodes = <span class="literal">true</span></span><br><span class="line">    </span><br><span class="line">    userAvatarImageNode.<span class="type">URL</span> = photo.ownerUserProfile.userPicURL</span><br><span class="line">    photoImageNode.<span class="type">URL</span> = photo.<span class="type">URL</span></span><br><span class="line">    userNameTextNode.attributedText = poto.ownerUserProfile.usernameAttributedString(fontSize: fontSize)</span><br><span class="line">    </span><br><span class="line">    photo.location.reverseGeocodeLocation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] location <span class="keyword">in</span> </span><br><span class="line">      <span class="keyword">if</span> locationModel == <span class="keyword">self</span>?.photoModel.location &#123;</span><br><span class="line">        <span class="keyword">self</span>?.photoLocationTextNode.attributedText = photo.locationAttributedString(fontSize: fontSize)</span><br><span class="line">        <span class="keyword">self</span>?.setNeedsLayout()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSpecThatFits</span><span class="params">(<span class="number">_</span> constrainedSize: ASSizeRange)</span></span> -&gt; <span class="type">ASLayoutSpec</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> headerSubStack: <span class="type">ASStackLayoutSpec</span> = .vertical()</span><br><span class="line">  headerSubStack.style.flexShrink = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> photoLocationLabel.attributedText != <span class="literal">nil</span> &#123;</span><br><span class="line">    headerSubStack.children = [userNameLabel, photoLocationLabel]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    headerSubStack.children = [userNameLabel]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  userAvatarImageNode.style.preferredSize = <span class="type">CGSize</span>(width: userImageHeight, height: userImageHeight) <span class="comment">//  constrain avatar image frame size</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> spacer = <span class="type">ASLayoutSpec</span>()</span><br><span class="line">  spacer.style.flexGrow = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> avatarInsets = <span class="type">UIEdgeInsets</span>(top: horizontalBuffer, <span class="keyword">left</span>: <span class="number">0</span>, bottom: horizontalBuffer, <span class="keyword">right</span>: horizontalBuffer)</span><br><span class="line">  <span class="keyword">let</span> avatarInset = <span class="type">ASInsetLayoutSpec</span>(insets: avatarInsets, child: userAvatarImageNode)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> headerStack: <span class="type">ASStackLayoutSpec</span> = .horizontal()</span><br><span class="line">  headerStack.alignItems = .center      <span class="comment">// center items vertically in horizontal stack</span></span><br><span class="line">  headerStack.justifyContent = .start   <span class="comment">// justify content to the left side of the header stack</span></span><br><span class="line">  headerStack.children = [avatarInset, headerSubStack, spacer]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// header inset stack</span></span><br><span class="line">  <span class="keyword">let</span> insets = <span class="type">UIEdgeInsets</span>(top: <span class="number">0</span>, <span class="keyword">left</span>: horizontalBuffer, bottom: <span class="number">0</span>, <span class="keyword">right</span>: horizontalBuffer)</span><br><span class="line">  <span class="keyword">let</span> headerWithInset = <span class="type">ASInsetLayoutSpec</span>(insets: insets, child: headerStack)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// footer inset stack</span></span><br><span class="line">  <span class="keyword">let</span> footerInsets = <span class="type">UIEdgeInsets</span>(top: verticalBuffer, <span class="keyword">left</span>: horizontalBuffer, bottom: verticalBuffer, <span class="keyword">right</span>: horizontalBuffer)</span><br><span class="line">  <span class="keyword">let</span> footerWithInset = <span class="type">ASInsetLayoutSpec</span>(insets: footerInsets, child: photoCommentsNode)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// vertical stack</span></span><br><span class="line">  <span class="keyword">let</span> cellWidth = constrainedSize.<span class="built_in">max</span>.width</span><br><span class="line">  photoImageNode.style.preferredSize = <span class="type">CGSize</span>(width: cellWidth, height: cellWidth)  <span class="comment">// constrain photo frame size</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> verticalStack: <span class="type">ASStackLayoutSpec</span> = .vertical()</span><br><span class="line">  verticalStack.alignItems = .stretch   <span class="comment">// stretch headerStack to fill horizontal space</span></span><br><span class="line">  verticalStack.children = [headerWithInset, photoImageNode, footerWithInset]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> verticalStack</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">class PhotoCellNode {
+  private let photoModel: PhotoModel
+  
+  private let userAvatarImageNode = ASNetworkImageNode()
+  private let photoImageNode = ASNetworkImageNode()
+  private let userNameTextNode = ASTextNode()
+  private let photoLocationTextNode = ASTextNode()
+
+  init(photo: PhotoModel) {
+    photoModel = photo
+    
+    super.init()
+    
+    automaticallyManagesSubnodes = true
+    
+    userAvatarImageNode.URL = photo.ownerUserProfile.userPicURL
+    photoImageNode.URL = photo.URL
+    userNameTextNode.attributedText = poto.ownerUserProfile.usernameAttributedString(fontSize: fontSize)
+    
+    photo.location.reverseGeocodeLocation { [weak self] location in 
+      if locationModel == self?.photoModel.location {
+        self?.photoLocationTextNode.attributedText = photo.locationAttributedString(fontSize: fontSize)
+        self?.setNeedsLayout()
+      }
+    }
+  }
+}
+
+override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -&gt; ASLayoutSpec {
+  let headerSubStack: ASStackLayoutSpec = .vertical()
+  headerSubStack.style.flexShrink = 1
+
+  if photoLocationLabel.attributedText != nil {
+    headerSubStack.children = [userNameLabel, photoLocationLabel]
+  } else {
+    headerSubStack.children = [userNameLabel]
+  }
+
+  userAvatarImageNode.style.preferredSize = CGSize(width: userImageHeight, height: userImageHeight) //  constrain avatar image frame size
+
+  let spacer = ASLayoutSpec()
+  spacer.style.flexGrow = 1
+
+  let avatarInsets = UIEdgeInsets(top: horizontalBuffer, left: 0, bottom: horizontalBuffer, right: horizontalBuffer)
+  let avatarInset = ASInsetLayoutSpec(insets: avatarInsets, child: userAvatarImageNode)
+
+  let headerStack: ASStackLayoutSpec = .horizontal()
+  headerStack.alignItems = .center      // center items vertically in horizontal stack
+  headerStack.justifyContent = .start   // justify content to the left side of the header stack
+  headerStack.children = [avatarInset, headerSubStack, spacer]
+
+  // header inset stack
+  let insets = UIEdgeInsets(top: 0, left: horizontalBuffer, bottom: 0, right: horizontalBuffer)
+  let headerWithInset = ASInsetLayoutSpec(insets: insets, child: headerStack)
+
+  // footer inset stack
+  let footerInsets = UIEdgeInsets(top: verticalBuffer, left: horizontalBuffer, bottom: verticalBuffer, right: horizontalBuffer)
+  let footerWithInset = ASInsetLayoutSpec(insets: footerInsets, child: photoCommentsNode)
+
+  // vertical stack
+  let cellWidth = constrainedSize.max.width
+  photoImageNode.style.preferredSize = CGSize(width: cellWidth, height: cellWidth)  // constrain photo frame size
+
+  let verticalStack: ASStackLayoutSpec = .vertical()
+  verticalStack.alignItems = .stretch   // stretch headerStack to fill horizontal space
+  verticalStack.children = [headerWithInset, photoImageNode, footerWithInset]
+
+  return verticalStack
+}
+</code></pre>
 <h3 id="Inversion"><a class="header-anchor" href="#Inversion"></a>Inversion</h3>
 <p><code>ASTableNode</code> and <code>ASCollectionNode</code> have a <code>inverted</code> property of type <code>BOOL</code> that when set to <code>YES</code>, will automatically invert the content so that it’s layed out bottom to top, that is the ‘first’ (indexPath 0, 0) node is at the bottom rather than the top as usual. This is extremely covenient for chat/messaging apps, and with Texture it only takes one property.</p>
 <h3 id="Image-Modification-Blocks"><a class="header-anchor" href="#Image-Modification-Blocks"></a>Image Modification Blocks</h3>
 <p>By assigning an <code>imageModificationBlock</code> to your imageNode, you can define a set of transformations that need to happen asynchronously to any image that gets set on the imageNode.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">backgroundImageNode.imageModificationBlock = &#123; image <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">let</span> newImage = image.applyBlurWithRadius(<span class="number">30</span>, tintColor: <span class="type">UIColor</span>(white: <span class="number">0.5</span>, alpha: <span class="number">0.3</span>),</span><br><span class="line">    								 saturationDeltaFactor: <span class="number">1.8</span>,</span><br><span class="line">    								 			 maskImage: <span class="literal">nil</span>)</span><br><span class="line">    <span class="keyword">return</span> (newImage != <span class="literal">nil</span>) ? newImage : image</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//some time later...</span></span><br><span class="line"></span><br><span class="line">backgroundImageNode.image = someImage</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">backgroundImageNode.imageModificationBlock = { image in
+    let newImage = image.applyBlurWithRadius(30, tintColor: UIColor(white: 0.5, alpha: 0.3),
+    								 saturationDeltaFactor: 1.8,
+    								 			 maskImage: nil)
+    return (newImage != nil) ? newImage : image
+}
+
+//some time later...
+
+backgroundImageNode.image = someImage
+</code></pre>
 <p>The image named “someImage” will now be blurred asynchronously before being assigned to the imageNode to be displayed.</p>
 <h3 id="Placeholders"><a class="header-anchor" href="#Placeholders"></a>Placeholders</h3>
 <h4 id="ASDisplayNodes-may-Implement-Placeholders"><a class="header-anchor" href="#ASDisplayNodes-may-Implement-Placeholders"></a>ASDisplayNodes may Implement Placeholders</h4>
@@ -467,16 +859,19 @@
 <h3 id="Layer-Backing"><a class="header-anchor" href="#Layer-Backing"></a>Layer Backing</h3>
 <p>In some cases, you can substantially improve your app’s performance by using layers instead of views. It’s recommended to enable layer-backing in any custom node that doesn’t need touch handling.</p>
 <p>With all Texture nodes, converting an entire subtree from views to layers is as simple as:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rootNode.isLayerBacked = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">rootNode.isLayerBacked = true
+</code></pre>
 <h3 id="Subtree-Rasterization"><a class="header-anchor" href="#Subtree-Rasterization"></a>Subtree Rasterization</h3>
 <p>Flattening an entire view hierarchy into a single layer improves performance, but with UIKit, comes with a hit to maintainability and hierarchy-based reasoning.</p>
 <p>With all Texture nodes, enabling precompositing is as simple as:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rootNode.enableSubtreeRasterization()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">rootNode.enableSubtreeRasterization()
+</code></pre>
 <p>This line will cause the entire node hierarchy from that point on to be rendered into one layer.</p>
 <h3 id="Synchronous-Concurrency"><a class="header-anchor" href="#Synchronous-Concurrency"></a>Synchronous Concurrency</h3>
 <p>Both <code>ASViewController</code> and <code>ASCellNode</code> have a property called <code>neverShowPlaceholders</code>. By setting this property to YES, the main thread will be blocked until display has completed for the cell or view controller’s view.</p>
 <p>Using this option does not eliminate all of the performance advantages of Texture. Normally, a given node has been preloading and is almost done when it reaches the screen, so the blocking time is very short. Even if the <code>rangeTuningParameters</code> are set to 0 this option outperforms UIKit. While the main thread is waiting, all subnode display executes concurrently, thus synchronous concurrency.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node.neverShowPlaceholders = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">node.neverShowPlaceholders = true
+</code></pre>
 <p>Usually, if a cell hasn’t finished its display pass before it has reached the screen it will show placeholders until it has drawing its content. Setting this option to YES makes your scrolling node or ASViewController act more like UIKit, and in fact makes Texture scrolling visually indistinguishable from UIKit’s, except that it’s faster.</p>
 <h3 id="Corner-Rounding"><a class="header-anchor" href="#Corner-Rounding"></a>Corner Rounding</h3>
 <h4 id="Performant-Corner-Rounding-Strategies"><a class="header-anchor" href="#Performant-Corner-Rounding-Strategies"></a>Performant Corner Rounding Strategies</h4>
@@ -501,15 +896,38 @@
 <img src="/blog/Texture-Concepts/CornerRoundingFlowchart.png"  alt="Corner Rounding Flowchart" style="width:624px;">
 <h4 id="Texture-Support"><a class="header-anchor" href="#Texture-Support"></a>Texture Support</h4>
 <p>Use <code>.cornerRadius</code></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cornerRadius: <span class="type">CGFloat</span> = <span class="number">20.0</span></span><br><span class="line">photoImageNode.cornerRoundingType = <span class="type">ASCornerRoundingTypeDefaultSlowCALayer</span></span><br><span class="line">photoImageNode.cornerRadius = cornerRadius</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypeDefaultSlowCALayer
+photoImageNode.cornerRadius = cornerRadius
+</code></pre>
 <p>Use clipping for rounding corners</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cornerRadius: <span class="type">CGFloat</span> = <span class="number">20.0</span></span><br><span class="line">photoImageNode.cornerRoundingType = <span class="type">ASCornerRoundingTypeClipping</span></span><br><span class="line">photoImageNode.backgroundColor = <span class="type">UIColor</span>.white</span><br><span class="line">photoImageNode.cornerRadius = cornerRadius</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypeClipping
+photoImageNode.backgroundColor = UIColor.white
+photoImageNode.cornerRadius = cornerRadius
+</code></pre>
 <p>Use precomposition for rounding corners</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cornerRadius: <span class="type">CGFloat</span> = <span class="number">20.0</span></span><br><span class="line">photoImageNode.cornerRoundingType = <span class="type">ASCornerRoundingTypePrecomposited</span></span><br><span class="line">photoImageNode.cornerRadius = cornerRadius</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">var cornerRadius: CGFloat = 20.0
+photoImageNode.cornerRoundingType = ASCornerRoundingTypePrecomposited
+photoImageNode.cornerRadius = cornerRadius
+</code></pre>
 <p>Use <code>willDisplayNodeContentWithRenderingContext</code> to set a clipping path for the content for rounding corners</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cornerRadius: <span class="type">CGFloat</span> = <span class="number">20.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Use the screen scale for corner radius to respect content scale</span></span><br><span class="line"><span class="keyword">var</span> screenScale: <span class="type">CGFloat</span> = <span class="type">UIScreen</span>.main.scale</span><br><span class="line">photoImageNode.willDisplayNodeContentWithRenderingContext = &#123; context, drawParameters <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">var</span> bounds: <span class="type">CGRect</span> = context.boundingBoxOfClipPath()</span><br><span class="line">    <span class="keyword">var</span> radius: <span class="type">CGFloat</span> = cornerRadius * screenScale</span><br><span class="line">    <span class="keyword">var</span> overlay = <span class="type">UIImage</span>.as_resizableRoundedImage(withCornerRadius: radius, cornerColor: <span class="type">UIColor</span>.clear, fill: <span class="type">UIColor</span>.clear)</span><br><span class="line">    overlay.draw(<span class="keyword">in</span>: bounds)</span><br><span class="line">    <span class="type">UIBezierPath</span>(roundedRect: bounds, cornerRadius: radius).addClip()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">var cornerRadius: CGFloat = 20.0
+
+// Use the screen scale for corner radius to respect content scale
+var screenScale: CGFloat = UIScreen.main.scale
+photoImageNode.willDisplayNodeContentWithRenderingContext = { context, drawParameters in
+    var bounds: CGRect = context.boundingBoxOfClipPath()
+    var radius: CGFloat = cornerRadius * screenScale
+    var overlay = UIImage.as_resizableRoundedImage(withCornerRadius: radius, cornerColor: UIColor.clear, fill: UIColor.clear)
+    overlay.draw(in: bounds)
+    UIBezierPath(roundedRect: bounds, cornerRadius: radius).addClip()
+}
+</code></pre>
 <p>Use <code>ASImageNode</code> extras to round the image and add a border.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cornerRadius: <span class="type">CGFloat</span> = <span class="number">20.0</span></span><br><span class="line">photoImageNode.imageModificationBlock = <span class="type">ASImageNodeRoundBorderModificationBlock</span>(<span class="number">5.0</span>, <span class="type">UIColor</span>.orange)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-swift">var cornerRadius: CGFloat = 20.0
+photoImageNode.imageModificationBlock = ASImageNodeRoundBorderModificationBlock(5.0, UIColor.orange)
+</code></pre>
 <h2 id="Advanced-Technologies"><a class="header-anchor" href="#Advanced-Technologies"></a>Advanced Technologies</h2>
 <h3 id="ASVisibility"><a class="header-anchor" href="#ASVisibility"></a>ASVisibility</h3>
 <p><code>ASNavigationController</code> and <code>ASTabBarController</code> both implement the <code>ASVisibility</code> protocol. These classes can be used even without <code>ASDisplayNodes</code>, making them suitable base classes for your inheritance hierarchy. For any child view controllers that are <code>ASViewControllers</code>, these classes know the exact number of user taps it would take to make the view controller visible (0 if currently visible).</p>
@@ -549,13 +967,23 @@
             <span class="label">Twitter</span>
           </a>
         </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
     </div>
   </div>
 
 
       <footer class="post-footer">
-          
           <div class="post-tags">
+              <a href="/blog/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
               <a href="/blog/tags/Framework/" rel="tag"><i class="fa fa-tag"></i> Framework</a>
           </div>
 
@@ -582,8 +1010,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -607,100 +1035,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subclassing"><span class="nav-number">1.</span> <span class="nav-text">Subclassing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASDisplayNode"><span class="nav-number">1.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didLoad"><span class="nav-number">1.1.2.</span> <span class="nav-text">-didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutSpecThatFits"><span class="nav-number">1.1.3.</span> <span class="nav-text">-layoutSpecThatFits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.1.4.</span> <span class="nav-text">-layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASViewController"><span class="nav-number">1.2.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">-init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadView"><span class="nav-number">1.2.2.</span> <span class="nav-text">-loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewDidLoad"><span class="nav-number">1.2.3.</span> <span class="nav-text">-viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillLayoutSubviews"><span class="nav-number">1.2.4.</span> <span class="nav-text">-viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillAppear-viewDidDisappear"><span class="nav-number">1.2.5.</span> <span class="nav-text">-viewWillAppear: &#x2F; -viewDidDisappear:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nodes"><span class="nav-number">2.</span> <span class="nav-text">Nodes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-Subclasses"><span class="nav-number">2.1.</span> <span class="nav-text">Node Subclasses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASDisplayNode-v2"><span class="nav-number">2.2.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Wrapping"><span class="nav-number">2.2.1.</span> <span class="nav-text">View Wrapping</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCellNode"><span class="nav-number">2.3.</span> <span class="nav-text">ASCellNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Subclassing-v2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Subclassing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initializing-with-an-ASViewController"><span class="nav-number">2.3.2.</span> <span class="nav-text">Initializing with an ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initializing-with-a-UIView-or-CALayer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Initializing with a UIView or CALayer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASImageNode"><span class="nav-number">2.4.</span> <span class="nav-text">ASImageNode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASNetworkImageNode"><span class="nav-number">2.5.</span> <span class="nav-text">ASNetworkImageNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Laying-Out-a-Network-Image-Node"><span class="nav-number">2.5.1.</span> <span class="nav-text">Laying Out a Network Image Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#style-preferredSize"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">.style.preferredSize</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ASRatioLayoutSpec"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASScrollNode"><span class="nav-number">2.6.</span> <span class="nav-text">ASScrollNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#automaticallyManagesContentSize"><span class="nav-number">2.6.1.</span> <span class="nav-text">automaticallyManagesContentSize</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-Containers"><span class="nav-number">3.</span> <span class="nav-text">Node Containers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASTableNode"><span class="nav-number">3.1.</span> <span class="nav-text">ASTableNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Replacing-UITableViewController-with-ASViewController"><span class="nav-number">3.1.1.</span> <span class="nav-text">Replacing UITableViewController with ASViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-Block-Thread-Safety-Warning"><span class="nav-number">3.1.2.</span> <span class="nav-text">Node Block Thread Safety Warning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accessing-the-ASTableView"><span class="nav-number">3.1.3.</span> <span class="nav-text">Accessing the ASTableView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Table-Row-Height"><span class="nav-number">3.1.4.</span> <span class="nav-text">Table Row Height</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCollectionNode"><span class="nav-number">3.2.</span> <span class="nav-text">ASCollectionNode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout"><span class="nav-number">4.</span> <span class="nav-text">Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-Specs"><span class="nav-number">4.1.</span> <span class="nav-text">Layout Specs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ASWrapperLayoutSpec"><span class="nav-number">4.1.1.</span> <span class="nav-text">ASWrapperLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASStackLayoutSpec"><span class="nav-number">4.1.2.</span> <span class="nav-text">ASStackLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASInsetLayoutSpec"><span class="nav-number">4.1.3.</span> <span class="nav-text">ASInsetLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASOverlayLayoutSpec"><span class="nav-number">4.1.4.</span> <span class="nav-text">ASOverlayLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASBackgroundLayoutSpec"><span class="nav-number">4.1.5.</span> <span class="nav-text">ASBackgroundLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASCenterLayoutSpec"><span class="nav-number">4.1.6.</span> <span class="nav-text">ASCenterLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASRatioLayoutSpec-v2"><span class="nav-number">4.1.7.</span> <span class="nav-text">ASRatioLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASRelativeLayoutSpec"><span class="nav-number">4.1.8.</span> <span class="nav-text">ASRelativeLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASAbsoluteLayoutSpec"><span class="nav-number">4.1.9.</span> <span class="nav-text">ASAbsoluteLayoutSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASCornerLayoutSpec"><span class="nav-number">4.1.10.</span> <span class="nav-text">ASCornerLayoutSpec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-Elements"><span class="nav-number">4.2.</span> <span class="nav-text">Layout Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-API-Sizing"><span class="nav-number">4.3.</span> <span class="nav-text">Layout API Sizing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Values-CGFloat-ASDimension"><span class="nav-number">4.3.1.</span> <span class="nav-text">Values (CGFloat, ASDimension)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sizes-CGSize-ASLayoutSize"><span class="nav-number">4.3.2.</span> <span class="nav-text">Sizes (CGSize, ASLayoutSize)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Size-Range-ASSizeRange"><span class="nav-number">4.3.3.</span> <span class="nav-text">Size Range (ASSizeRange)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Some-nodes-need-Sizes-Set"><span class="nav-number">4.4.</span> <span class="nav-text">Some nodes need Sizes Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notices"><span class="nav-number">5.</span> <span class="nav-text">Notices</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conveniences"><span class="nav-number">6.</span> <span class="nav-text">Conveniences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hit-Test-Slop"><span class="nav-number">6.1.</span> <span class="nav-text">Hit Test Slop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-Fetching-API"><span class="nav-number">6.2.</span> <span class="nav-text">Batch Fetching API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Automatic-Subnode-Management"><span class="nav-number">6.3.</span> <span class="nav-text">Automatic Subnode Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inversion"><span class="nav-number">6.4.</span> <span class="nav-text">Inversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Modification-Blocks"><span class="nav-number">6.5.</span> <span class="nav-text">Image Modification Blocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Placeholders"><span class="nav-number">6.6.</span> <span class="nav-text">Placeholders</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ASDisplayNodes-may-Implement-Placeholders"><span class="nav-number">6.6.1.</span> <span class="nav-text">ASDisplayNodes may Implement Placeholders</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASNetworkImageNode-also-have-Default-Images"><span class="nav-number">6.6.2.</span> <span class="nav-text">ASNetworkImageNode also have Default Images</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimizations"><span class="nav-number">7.</span> <span class="nav-text">Optimizations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Layer-Backing"><span class="nav-number">7.1.</span> <span class="nav-text">Layer Backing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subtree-Rasterization"><span class="nav-number">7.2.</span> <span class="nav-text">Subtree Rasterization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Synchronous-Concurrency"><span class="nav-number">7.3.</span> <span class="nav-text">Synchronous Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Corner-Rounding"><span class="nav-number">7.4.</span> <span class="nav-text">Corner Rounding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Performant-Corner-Rounding-Strategies"><span class="nav-number">7.4.1.</span> <span class="nav-text">Performant Corner Rounding Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Precomposited-Corners"><span class="nav-number">7.4.1.1.</span> <span class="nav-text">Precomposited Corners</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Clip-Corner"><span class="nav-number">7.4.1.2.</span> <span class="nav-text">Clip Corner</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CALayer’s-cornerRadius-property"><span class="nav-number">7.4.2.</span> <span class="nav-text">CALayer’s .cornerRadius property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Corner-Rounding-Strategy-Flowchart"><span class="nav-number">7.4.3.</span> <span class="nav-text">Corner Rounding Strategy Flowchart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Texture-Support"><span class="nav-number">7.4.4.</span> <span class="nav-text">Texture Support</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Technologies"><span class="nav-number">8.</span> <span class="nav-text">Advanced Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASVisibility"><span class="nav-number">8.1.</span> <span class="nav-text">ASVisibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASEnvironment"><span class="nav-number">8.2.</span> <span class="nav-text">ASEnvironment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASRunLoopQueue"><span class="nav-number">8.3.</span> <span class="nav-text">ASRunLoopQueue</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Luminoid"
-      src="/blog/images/avatar.png">
-  <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
-        
-          <span class="site-state-item-count">41</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -712,7 +1046,7 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -722,14 +1056,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">245k</span>
+    <span title="Symbols count total">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:54</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
@@ -767,21 +1101,16 @@
 
   
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
 
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/muse.js"></script>
-
-
 <script src="/blog/js/next-boot.js"></script>
-
-
 
 
   

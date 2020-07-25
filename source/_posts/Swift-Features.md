@@ -3,7 +3,9 @@ title: Swift Features
 date: 2018-07-31 09:15:40
 updated:
 categories: iOS
-tags: Swift
+tags: 
+- Swift
+- Note
 keywords: Swift
 ---
 

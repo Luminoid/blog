@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,12 +14,14 @@
 
 
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-flash.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
   </script>
 
   <meta name="description" content="References:  MDN JavaScript Docs rse&#x2F;es6-features ruanyf&#x2F;es6tutorial Babel ES2015  Data structures  Primitive: Boolean, null, undefined, Number, String, Symbol Object  Let &amp; Const Block-scoped bin">
@@ -38,7 +40,7 @@
 <link rel="canonical" href="http://luminoid.github.io/blog/ES6-Features/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -58,24 +60,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -86,22 +100,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Luminoid's Site</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">OK Computer</p>
   </div>
@@ -112,7 +127,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -135,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">37</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -169,7 +183,7 @@
 </div>
 <div id="search-result">
   <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -177,9 +191,101 @@
   </div>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-structures"><span class="nav-number">1.</span> <span class="nav-text">Data structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let-Const"><span class="nav-number">2.</span> <span class="nav-text">Let &amp; Const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructuring"><span class="nav-number">3.</span> <span class="nav-text">Destructuring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">5.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">5.1.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template-Strings"><span class="nav-number">5.2.</span> <span class="nav-text">Template Strings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">6.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">7.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration"><span class="nav-number">7.1.</span> <span class="nav-text">Enumeration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">8.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp"><span class="nav-number">9.</span> <span class="nav-text">RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">10.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Map"><span class="nav-number">11.</span> <span class="nav-text">Set &amp; Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator-for…of"><span class="nav-number">12.</span> <span class="nav-text">Iterator &amp; for…of</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">12.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in-for…of"><span class="nav-number">12.2.</span> <span class="nav-text">for…in &amp; for…of</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-Programming"><span class="nav-number">13.</span> <span class="nav-text">Meta-Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">13.1.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect"><span class="nav-number">13.2.</span> <span class="nav-text">Reflect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asynchronization"><span class="nav-number">14.</span> <span class="nav-text">Asynchronization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">14.1.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">14.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Example"><span class="nav-number">14.2.1.</span> <span class="nav-text">Simple Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-image-asynchronously"><span class="nav-number">14.2.2.</span> <span class="nav-text">Load image asynchronously</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">14.3.</span> <span class="nav-text">Generator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-v2"><span class="nav-number">14.3.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Direct-Use"><span class="nav-number">14.3.2.</span> <span class="nav-text">Direct Use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">14.3.3.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-expression"><span class="nav-number">14.3.4.</span> <span class="nav-text">yield* expression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#thunkify"><span class="nav-number">14.3.5.</span> <span class="nav-text">thunkify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co"><span class="nav-number">14.3.6.</span> <span class="nav-text">co</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">14.4.</span> <span class="nav-text">async</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Animations"><span class="nav-number">14.4.1.</span> <span class="nav-text">Perform Animations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Asynchronous-Tasks-in-Order"><span class="nav-number">14.4.2.</span> <span class="nav-text">Perform Asynchronous Tasks in Order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-await…of"><span class="nav-number">14.4.3.</span> <span class="nav-text">for await…of</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-generator"><span class="nav-number">14.4.4.</span> <span class="nav-text">Async generator</span></a></li></ol></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
@@ -188,14 +294,16 @@
 
   <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -253,14 +361,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>13k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>9 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -286,21 +394,110 @@
 </ul>
 <h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
 <p>Block-scoped binding constructs.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> var1 [= value1];</span><br><span class="line"><span class="keyword">const</span> name1 = value1;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let var1 [= value1];
+const name1 = value1;
+</code></pre>
 <h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array matching</span></span><br><span class="line"><span class="keyword">let</span> [a, ,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">c === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object matching</span></span><br><span class="line"><span class="keyword">let</span> &#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">a === <span class="number">1</span>;</span><br><span class="line">b === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Default arguments</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">&#123;a, b, c = <span class="number">3</span>, d = <span class="number">4</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;) === <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap values</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line">[x, y] = [y, x];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiple return values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">colorWhite</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    red: <span class="number">255</span>,</span><br><span class="line">    green: <span class="number">255</span>,</span><br><span class="line">    blue: <span class="number">255</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Array matching
+let [a, ,c] = [1,2,3];
+a === 1;
+c === 3;
+
+// Object matching
+let { a, b } = { a: 1, b: 2 };
+a === 1;
+b === 2;
+
+// Default arguments
+function add({a, b, c = 3, d = 4}) {
+  return a + b + c + d;
+}
+add({a:1, b:2}) === 10;
+
+// Swap values
+let x = 1;
+let y = 2;
+[x, y] = [y, x];
+
+// Multiple return values
+function colorWhite(){
+  return {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }
+}
+</code></pre>
 <a id="more"></a>
 <h2 id="Number"><a class="header-anchor" href="#Number"></a>Number</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Binary and Octal Literals</span></span><br><span class="line"><span class="number">0b101</span> === <span class="number">5</span>;</span><br><span class="line"><span class="number">0o101</span> === <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Number method</span></span><br><span class="line"><span class="built_in">Number</span>.parseInt(<span class="string">'12.34'</span>) === <span class="number">12</span>;</span><br><span class="line"><span class="built_in">Number</span>.parseFloat(<span class="string">'12.34'</span>) === <span class="number">12.34</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1</span></span><br><span class="line"><span class="built_in">Number</span>.EPSILON === <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">-52</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> - <span class="number">0.3</span> !== <span class="number">0</span>;</span><br><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> - <span class="number">0.3</span> &lt; <span class="built_in">Number</span>.EPSILON;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Exponentiation operator</span></span><br><span class="line"><span class="number">2</span> ** <span class="number">3</span> === <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Binary and Octal Literals
+0b101 === 5;
+0o101 === 65;
+
+// Number method
+Number.parseInt('12.34') === 12;
+Number.parseFloat('12.34') === 12.34;
+
+// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1
+Number.EPSILON === Math.pow(2, -52);
+
+0.1 + 0.2 - 0.3 !== 0;
+0.1 + 0.2 - 0.3 &lt; Number.EPSILON;
+
+// Exponentiation operator
+2 ** 3 === 8;
+</code></pre>
 <h2 id="String"><a class="header-anchor" href="#String"></a>String</h2>
 <h3 id="Unicode"><a class="header-anchor" href="#Unicode"></a>Unicode</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"𠮷"</span> === <span class="string">"\u&#123;20BB7&#125;"</span>;</span><br><span class="line"><span class="string">"𠮷"</span> === <span class="string">"\uD842\uDFB7"</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">&quot;𠮷&quot; === &quot;\u{20BB7}&quot;;
+&quot;𠮷&quot; === &quot;\uD842\uDFB7&quot;;
+</code></pre>
 <h3 id="Template-Strings"><a class="header-anchor" href="#Template-Strings"></a>Template Strings</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tem_str = <span class="string">"Template Strings"</span>;</span><br><span class="line"><span class="keyword">let</span> s = <span class="string">`<span class="subst">$&#123;tem_str&#125;</span> supports multiline strings</span></span><br><span class="line"><span class="string">and interpolate variable bindings.`</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let tem_str = &quot;Template Strings&quot;;
+let s = `${tem_str} supports multiline strings
+and interpolate variable bindings.`;
+</code></pre>
 <h2 id="Symbol"><a class="header-anchor" href="#Symbol"></a>Symbol</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>(<span class="string">"foo"</span>) !== <span class="built_in">Symbol</span>(<span class="string">"foo"</span>)</span><br><span class="line"><span class="built_in">Symbol</span>.for(<span class="string">"bar"</span>) === <span class="built_in">Symbol</span>.for(<span class="string">"bar"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol as an identifier for object properties</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Symbol</span>(<span class="string">"foo"</span>);</span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">obj[foo] = <span class="string">"hello"</span>;</span><br><span class="line">obj; <span class="comment">// &#123; [Symbol(foo)]: 'hello' &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol as a const value</span></span><br><span class="line"><span class="keyword">const</span> shapeType = &#123;</span><br><span class="line">  triangle: <span class="built_in">Symbol</span>()</span><br><span class="line">  rectangle: <span class="built_in">Symbol</span>()</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">Symbol(&quot;foo&quot;) !== Symbol(&quot;foo&quot;)
+Symbol.for(&quot;bar&quot;) === Symbol.for(&quot;bar&quot;)
+
+// Symbol as an identifier for object properties
+const foo = Symbol(&quot;foo&quot;);
+let obj = {};
+obj[foo] = &quot;hello&quot;;
+obj; // { [Symbol(foo)]: 'hello' }
+
+// Symbol as a const value
+const shapeType = {
+  triangle: Symbol()
+  rectangle: Symbol()
+};
+</code></pre>
 <h2 id="Object"><a class="header-anchor" href="#Object"></a>Object</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Property shorthand</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;; <span class="comment">// equals to: obj = &#123; x: x, y: y &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.is(): determines whether two values are the same value.</span></span><br><span class="line">+<span class="number">0</span> === <span class="number">-0</span>;</span><br><span class="line"><span class="literal">NaN</span> !== <span class="literal">NaN</span>;</span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>) === <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Merge objects</span></span><br><span class="line"><span class="keyword">let</span> dest = &#123; <span class="attr">a</span>: <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> src1 = &#123; <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> src2 = &#123; <span class="attr">b</span>: <span class="number">3</span>, <span class="attr">d</span>: <span class="number">4</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(dest, src1, src2);</span><br><span class="line">dest; <span class="comment">// &#123; a: 0, b: 3, c: 2, d: 4 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Deep clone</span></span><br><span class="line">obj1 = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123;<span class="attr">c</span>: <span class="number">2</span>&#125;&#125;;</span><br><span class="line">obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line">obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</span><br><span class="line">obj2.b === obj1.b</span><br><span class="line">obj3.b !== obj1.b</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Property shorthand
+let x = 0, y = 0;
+const obj = { x, y }; // equals to: obj = { x: x, y: y };
+
+// Object.is(): determines whether two values are the same value.
++0 === -0;
+NaN !== NaN;
+Object.is(+0, -0) === false;
+Object.is(NaN, NaN) === true;
+
+// Merge objects
+let dest = { a: 0 };
+let src1 = { b: 1, c: 2 };
+let src2 = { b: 3, d: 4 };
+Object.assign(dest, src1, src2);
+dest; // { a: 0, b: 3, c: 2, d: 4 }
+
+// Deep clone
+obj1 = {a: 1, b: {c: 2}};
+obj2 = Object.assign({}, obj1);
+obj3 = JSON.parse(JSON.stringify(obj1));
+obj2.b === obj1.b
+obj3.b !== obj1.b
+</code></pre>
 <h3 id="Enumeration"><a class="header-anchor" href="#Enumeration"></a>Enumeration</h3>
 <table>
 <thead>
@@ -357,29 +554,260 @@
 </tbody>
 </table>
 <h2 id="Function"><a class="header-anchor" href="#Function"></a>Function</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Default parameter values</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">2</span>) === <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Rest</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">...values</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> values) &#123;</span><br><span class="line">    sum += val;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) === <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Arrow function</span></span><br><span class="line"><span class="comment">// Arrow functions share the same lexical this as their surrounding code.</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2;</span><br><span class="line">sum(<span class="number">1</span>, <span class="number">2</span>) === <span class="number">3</span>;</span><br><span class="line"><span class="keyword">let</span> result = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Tail Recursion</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tailFactorial</span>(<span class="params">n, acc</span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> acc;</span><br><span class="line">  <span class="keyword">return</span> tailFactorial(n - <span class="number">1</span>, n * acc);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> tailFactorial(n, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">factorial(<span class="number">5</span>) === <span class="number">120</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Default parameter values
+function add(x, y = 1) {
+  return x + y;
+}
+add(2) === 3;
+
+// Rest
+function add(...values) {
+  let sum = 0;
+  for (let val of values) {
+    sum += val;
+  }
+  return sum;
+}
+add(1, 2, 3) === 6;
+
+// Arrow function
+// Arrow functions share the same lexical this as their surrounding code.
+let sum = (num1, num2) =&gt; num1 + num2;
+sum(1, 2) === 3;
+let result = [3, 2, 1].sort((a, b) =&gt; a - b); // [ 1, 2, 3 ]
+
+// Tail Recursion
+function tailFactorial(n, acc) {
+  &quot;use strict&quot;;
+  if (n === 1) return acc;
+  return tailFactorial(n - 1, n * acc);
+}
+function factorial(n) {
+  return tailFactorial(n, 1);
+}
+factorial(5) === 120;
+</code></pre>
 <h2 id="RegExp"><a class="header-anchor" href="#RegExp"></a>RegExp</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String method: match</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/abc+/ig</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"abdabcdeabccdef"</span>;</span><br><span class="line"><span class="keyword">const</span> arr = str.match(reg);</span><br><span class="line">arr; <span class="comment">// [ 'abc', 'abcc' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// RegExp method: test</span></span><br><span class="line"><span class="keyword">const</span> reg1 = <span class="regexp">/abc+/i</span>;</span><br><span class="line"><span class="keyword">const</span> reg2 = <span class="regexp">/abc*/i</span>;</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"ababab"</span></span><br><span class="line">reg1.test(str) === <span class="literal">false</span>;</span><br><span class="line">reg2.test(str) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// u (unicode) flag:</span></span><br><span class="line">/^.$/.test(<span class="string">'😀'</span>) === <span class="literal">false</span>;</span><br><span class="line">/^.$/u.test(<span class="string">'😀'</span>) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// s (dotAll) flag</span></span><br><span class="line">/^.$/.test(<span class="string">'\n'</span>) === <span class="literal">false</span>;</span><br><span class="line">/^.$/s.test(<span class="string">'\n'</span>) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// lookahead</span></span><br><span class="line">(<span class="string">'1$ and 2¢'</span>).match(<span class="regexp">/\d+(?=\$)/g</span>); <span class="comment">// [ '1' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// negative lookahead</span></span><br><span class="line">(<span class="string">'1$ and 2¢'</span>).match(<span class="regexp">/\d+(?!\$)/g</span>); <span class="comment">// [ '2' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// lookbehind</span></span><br><span class="line">(<span class="string">'$1 and ¢2'</span>).match(<span class="regexp">/(?&lt;=\$)\d+/g</span>); <span class="comment">// [ '1' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// negative lookbehind</span></span><br><span class="line">(<span class="string">'$1 and ¢2'</span>).match(<span class="regexp">/(?&lt;!\$)\d+/g</span>); <span class="comment">// [ '2' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Named Capture Groups</span></span><br><span class="line"><span class="keyword">const</span> regDate = <span class="regexp">/(?&lt;year&gt;[0-9]&#123;4&#125;)-(?&lt;month&gt;[0-9]&#123;2&#125;)-(?&lt;day&gt;[0-9]&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> matchObj = regDate.exec(<span class="string">'1987-12-31'</span>);</span><br><span class="line"><span class="keyword">const</span> year = matchObj.groups.year;      <span class="comment">// 1987</span></span><br><span class="line"><span class="keyword">const</span> month = matchObj.groups.month;    <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">const</span> day = matchObj.groups.day;        <span class="comment">// 31</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Destructuring with named capture groups</span></span><br><span class="line"><span class="keyword">const</span> regDate = <span class="regexp">/(?&lt;year&gt;[0-9]&#123;4&#125;)-(?&lt;month&gt;[0-9]&#123;2&#125;)-(?&lt;day&gt;[0-9]&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> &#123;<span class="attr">groups</span>: &#123;day, year&#125;&#125; = regDate.exec(<span class="string">'1987-12-31'</span>);</span><br><span class="line">day === <span class="string">'31'</span>;</span><br><span class="line">year === <span class="string">'1987'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace() with named capture groups</span></span><br><span class="line"><span class="keyword">const</span> regDate = <span class="regexp">/(?&lt;year&gt;[0-9]&#123;4&#125;)-(?&lt;month&gt;[0-9]&#123;2&#125;)-(?&lt;day&gt;[0-9]&#123;2&#125;)/</span>;</span><br><span class="line"><span class="string">'1987-12-31'</span>.replace(regDate, <span class="string">'$&lt;month&gt;/$&lt;day&gt;/$&lt;year&gt;'</span>) === <span class="string">'12/31/1987'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Backreferences</span></span><br><span class="line"><span class="keyword">const</span> regTwice = <span class="regexp">/^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$/</span>;</span><br><span class="line">regTwice.test(<span class="string">'abc!abc'</span>) === <span class="literal">true</span>;</span><br><span class="line">regTwice.test(<span class="string">'abc!ab'</span>) === <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// String method: match
+const reg = /abc+/ig;
+const str = &quot;abdabcdeabccdef&quot;;
+const arr = str.match(reg);
+arr; // [ 'abc', 'abcc' ]
+
+// RegExp method: test
+const reg1 = /abc+/i;
+const reg2 = /abc*/i;
+const str = &quot;ababab&quot;
+reg1.test(str) === false;
+reg2.test(str) === true;
+
+// u (unicode) flag:
+/^.$/.test('😀') === false;
+/^.$/u.test('😀') === true;
+
+// s (dotAll) flag
+/^.$/.test('\n') === false;
+/^.$/s.test('\n') === true;
+
+// lookahead
+('1$ and 2¢').match(/\d+(?=\$)/g); // [ '1' ]
+
+// negative lookahead
+('1$ and 2¢').match(/\d+(?!\$)/g); // [ '2' ]
+
+// lookbehind
+('$1 and ¢2').match(/(?&lt;=\$)\d+/g); // [ '1' ]
+
+// negative lookbehind
+('$1 and ¢2').match(/(?&lt;!\$)\d+/g); // [ '2' ]
+
+// Named Capture Groups
+const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
+const matchObj = regDate.exec('1987-12-31');
+const year = matchObj.groups.year;      // 1987
+const month = matchObj.groups.month;    // 12
+const day = matchObj.groups.day;        // 31
+
+// Destructuring with named capture groups
+const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
+const {groups: {day, year}} = regDate.exec('1987-12-31');
+day === '31';
+year === '1987';
+
+// replace() with named capture groups
+const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
+'1987-12-31'.replace(regDate, '$&lt;month&gt;/$&lt;day&gt;/$&lt;year&gt;') === '12/31/1987';
+
+// Backreferences
+const regTwice = /^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$/;
+regTwice.test('abc!abc') === true;
+regTwice.test('abc!ab') === false;
+</code></pre>
 <h2 id="Array"><a class="header-anchor" href="#Array"></a>Array</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Spread</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, c, d</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>, ...[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]) === <span class="number">10</span>;</span><br><span class="line"><span class="built_in">Math</span>.max(...[<span class="number">12</span>, <span class="number">34</span>, <span class="number">5</span>]) === <span class="number">34</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Copy an array</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr1]; <span class="comment">// one level deep copy</span></span><br><span class="line">arr1 !== arr2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Concatenate arrays</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> arr = [...arr1, ...arr2]; <span class="comment">// [ 1, 2, 3, 4, 5, 6 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Destructuring</span></span><br><span class="line"><span class="keyword">const</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">tail; <span class="comment">// [ 2, 3, 4, 5 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array.from(): create a new Array instance from an array-like or iterable object.</span></span><br><span class="line"><span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">5</span>&#125;, (v, i) =&gt; i * i); <span class="comment">// [ 0, 1, 4, 9, 16 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array.of(): create a new Array instance with a variable number of arguments.</span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="number">3</span>);        <span class="comment">// [ 3 ]</span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array Iterator</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a'</span></span><br><span class="line"><span class="comment">// 'b'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 'a'</span></span><br><span class="line"><span class="comment">// 1 'b'</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Spread
+function add(a, b, c, d) {
+  return a + b + c + d;
+}
+add(1, ...[2, 3, 4]) === 10;
+Math.max(...[12, 34, 5]) === 34;
+
+// Copy an array
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1]; // one level deep copy
+arr1 !== arr2;
+
+// Concatenate arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr = [...arr1, ...arr2]; // [ 1, 2, 3, 4, 5, 6 ]
+
+// Destructuring
+const [head, ...tail] = [1, 2, 3, 4, 5];
+tail; // [ 2, 3, 4, 5 ]
+
+// Array.from(): create a new Array instance from an array-like or iterable object.
+Array.from({length: 5}, (v, i) =&gt; i * i); // [ 0, 1, 4, 9, 16 ]
+
+// Array.of(): create a new Array instance with a variable number of arguments.
+Array.of(3);        // [ 3 ]
+Array.of(1, 2, 3);  // [ 1, 2, 3 ]
+
+// Array Iterator
+for (let index of ['a', 'b'].keys()) {
+  console.log(index);
+}
+// 0
+// 1
+
+for (let elem of ['a', 'b'].values()) {
+  console.log(elem);
+}
+// 'a'
+// 'b'
+
+for (let [index, elem] of ['a', 'b'].entries()) {
+  console.log(index, elem);
+}
+// 0 'a'
+// 1 'b'
+</code></pre>
 <h2 id="Set-Map"><a class="header-anchor" href="#Set-Map"></a>Set &amp; Map</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set</span></span><br><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">"a"</span>]);</span><br><span class="line">s.add(<span class="string">"b"</span>).add(<span class="string">"a"</span>);</span><br><span class="line">s; <span class="comment">// Set &#123; 'a', 'b' &#125;</span></span><br><span class="line">s.size === <span class="number">2</span>;</span><br><span class="line">s.has(<span class="string">"a"</span>) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove duplicated elements in an array</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>];</span><br><span class="line">[...new <span class="built_in">Set</span>(arr)]; <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Union, Intersect &amp; Difference</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">let</span> union = <span class="keyword">new</span> <span class="built_in">Set</span>([...a, ...b]);                          <span class="comment">// Set &#123; 1, 2, 3, 4 &#125;</span></span><br><span class="line"><span class="keyword">let</span> intersect = <span class="keyword">new</span> <span class="built_in">Set</span>([...a].filter(<span class="function"><span class="params">x</span> =&gt;</span> b.has(x)));      <span class="comment">// Set &#123; 2, 3 &#125;</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="keyword">new</span> <span class="built_in">Set</span>([...a].filter(<span class="function"><span class="params">x</span> =&gt;</span> !b.has(x)));    <span class="comment">// Set &#123; 1 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>();</span><br><span class="line">m.set(<span class="string">"foo"</span>, <span class="number">1</span>);</span><br><span class="line">m.set(s, <span class="number">2</span>);</span><br><span class="line">m.get(s) === <span class="number">2</span>;</span><br><span class="line">m.size === <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Weak Sets &amp; Weak Maps</span></span><br><span class="line"><span class="comment">// WeakSet: collection of objects only and not of arbitrary values of any type.</span></span><br><span class="line"><span class="comment">// - References to objects in the collection are held weakly.</span></span><br><span class="line"><span class="comment">// - WeakSets are not enumerable.</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">foo</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> ws = <span class="keyword">new</span> <span class="built_in">WeakSet</span>();</span><br><span class="line">ws.add(obj); <span class="comment">// WeakSet &#123;&#125;</span></span><br><span class="line">ws.has(obj) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line">wm.set(obj, <span class="number">123</span>); <span class="comment">// WeakMap &#123;&#125;</span></span><br><span class="line">wm.get(obj) === <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Set
+let s = new Set([&quot;a&quot;]);
+s.add(&quot;b&quot;).add(&quot;a&quot;);
+s; // Set { 'a', 'b' }
+s.size === 2;
+s.has(&quot;a&quot;) === true;
+
+// Remove duplicated elements in an array
+let arr = [1, 2, 1, 3];
+[...new Set(arr)]; // [ 1, 2, 3 ]
+
+// Union, Intersect &amp; Difference
+let a = new Set([1, 2, 3]);
+let b = new Set([2, 3, 4]);
+let union = new Set([...a, ...b]);                          // Set { 1, 2, 3, 4 }
+let intersect = new Set([...a].filter(x =&gt; b.has(x)));      // Set { 2, 3 }
+let difference = new Set([...a].filter(x =&gt; !b.has(x)));    // Set { 1 }
+
+// Map
+let m = new Map();
+let s = Symbol();
+m.set(&quot;foo&quot;, 1);
+m.set(s, 2);
+m.get(s) === 2;
+m.size === 2;
+
+// Weak Sets &amp; Weak Maps
+// WeakSet: collection of objects only and not of arbitrary values of any type.
+// - References to objects in the collection are held weakly.
+// - WeakSets are not enumerable.
+const obj = {foo: 1};
+let ws = new WeakSet();
+ws.add(obj); // WeakSet {}
+ws.has(obj) === true;
+
+let wm = new WeakMap();
+wm.set(obj, 123); // WeakMap {}
+wm.get(obj) === 123;
+</code></pre>
 <h2 id="Iterator-for…of"><a class="header-anchor" href="#Iterator-for…of"></a>Iterator &amp; for…of</h2>
 <h3 id="Iterator"><a class="header-anchor" href="#Iterator"></a>Iterator</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci = &#123;</span><br><span class="line">  [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">let</span> pre = <span class="number">0</span>, cur = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next() &#123;</span><br><span class="line">        [pre, cur] = [cur, pre + cur];</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">false</span>, <span class="attr">value</span>: cur &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n <span class="keyword">of</span> fibonacci) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1000</span>)</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let fibonacci = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}
+
+for (let n of fibonacci) {
+  if (n &gt; 1000)
+    break;
+  console.log(n);
+}
+</code></pre>
 <h3 id="for…in-for…of"><a class="header-anchor" href="#for…in-for…of"></a>for…in &amp; for…of</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">in</span> arr) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> value <span class="keyword">of</span> arr) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a</span></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="comment">// c</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> pair <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(pair);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [ 0, 'a' ]</span></span><br><span class="line"><span class="comment">// [ 1, 'b' ]</span></span><br><span class="line"><span class="comment">// [ 2, 'c' ]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let arr = ['a', 'b', 'c'];
+for (let index in arr) {
+  console.log(index);
+}
+// 0
+// 1
+// 2
+for (let value of arr) {
+  console.log(value);
+}
+// a
+// b
+// c
+for (let pair of arr.entries()) {
+  console.log(pair);
+}
+// [ 0, 'a' ]
+// [ 1, 'b' ]
+// [ 2, 'c' ]
+</code></pre>
 <h2 id="Meta-Programming"><a class="header-anchor" href="#Meta-Programming"></a>Meta-Programming</h2>
 <h3 id="Proxy"><a class="header-anchor" href="#Proxy"></a>Proxy</h3>
 <p>The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  <span class="keyword">get</span>: function (obj, prop) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;prop&#125;</span>!`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler);</span><br><span class="line">p.world === <span class="string">"Hello, world!"</span>;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let target = {};
+let handler = {
+  get: function (obj, prop) {
+    return `Hello, ${prop}!`;
+  }
+};
+let p = new Proxy(target, handler);
+p.world === &quot;Hello, world!&quot;;
+</code></pre>
 <h3 id="Reflect"><a class="header-anchor" href="#Reflect"></a>Reflect</h3>
 <p>Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reflect.defineProperty(): Similar to Object.defineProperty(). Returns a Boolean.</span></span><br><span class="line"><span class="comment">// Reflect.construct(): The new operator as a function. Equivalent to calling new target(...args).</span></span><br><span class="line"><span class="comment">// Reflect.deleteProperty(): The delete operator as a function. Equivalent to calling delete target[name].</span></span><br><span class="line"><span class="comment">// Reflect.has(): The in operator as function.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="built_in">Reflect</span>.defineProperty(obj, <span class="string">"b"</span>, &#123; <span class="attr">value</span>: <span class="number">2</span> &#125;);</span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">"c"</span>)] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">Reflect</span>.ownKeys(obj); <span class="comment">// [ 'a', 'b', Symbol(c) ]</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">// Reflect.defineProperty(): Similar to Object.defineProperty(). Returns a Boolean.
+// Reflect.construct(): The new operator as a function. Equivalent to calling new target(...args).
+// Reflect.deleteProperty(): The delete operator as a function. Equivalent to calling delete target[name].
+// Reflect.has(): The in operator as function.
+
+let obj = { a: 1 };
+Reflect.defineProperty(obj, &quot;b&quot;, { value: 2 });
+obj[Symbol(&quot;c&quot;)] = 3;
+Reflect.ownKeys(obj); // [ 'a', 'b', Symbol(c) ]
+</code></pre>
 <h2 id="Asynchronization"><a class="header-anchor" href="#Asynchronization"></a>Asynchronization</h2>
 <h3 id="Callback"><a class="header-anchor" href="#Callback"></a>Callback</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 123 &gt; tmp.txt</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(<span class="string">'./tmp.txt'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'456'</span>);</span><br><span class="line"><span class="comment">// 456</span></span><br><span class="line"><span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">echo 123 &gt; tmp.txt
+</code></pre>
+<pre><code class="language-js">fs.readFile('./tmp.txt', 'utf-8', function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+console.log('456');
+// 456
+// 123
+</code></pre>
 <h3 id="Promise"><a class="header-anchor" href="#Promise"></a>Promise</h3>
 <p>A Promise is in one of these states:</p>
 <ul>
@@ -388,46 +816,244 @@
 <li>rejected: meaning that the operation failed.</li>
 </ul>
 <h4 id="Simple-Example"><a class="header-anchor" href="#Simple-Example"></a>Simple Example</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Promise task'</span>);</span><br><span class="line">  resolve();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Promise task resolved.'</span>);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Promise task rejected.'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Next task'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Promise task</span></span><br><span class="line"><span class="comment">// Next task</span></span><br><span class="line"><span class="comment">// Promise resolved.</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let promise = new Promise(function(resolve, reject) {
+  console.log('Promise task');
+  resolve();
+});
+
+promise.then(function() {
+  console.log('Promise task resolved.');
+}).catch(function(error) {
+  console.log('Promise task rejected.');
+});
+
+console.log('Next task');
+
+// Promise task
+// Next task
+// Promise resolved.
+</code></pre>
 <h4 id="Load-image-asynchronously"><a class="header-anchor" href="#Load-image-asynchronously"></a>Load image asynchronously</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImageAsync</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> image = <span class="keyword">new</span> Image();</span><br><span class="line"></span><br><span class="line">    image.src = url;</span><br><span class="line">    image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(image);</span><br><span class="line">    &#125;;</span><br><span class="line">    image.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Failed to load image at '</span> + url));</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">function loadImageAsync(url) {
+  return new Promise(function(resolve, reject) {
+    const image = new Image();
+
+    image.src = url;
+    image.onload = function() {
+      resolve(image);
+    };
+    image.onerror = function() {
+      reject(new Error('Failed to load image at ' + url));
+    };
+  });
+}
+</code></pre>
 <p><code>Promise.all(iterable)</code>: returns a single Promise that resolves when all of the promises in the iterable argument have resolved or when the iterable argument contains no promises. It rejects with the reason of the first promise that rejects.</p>
 <p><code>Promise.race(iterable)</code>: returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.</p>
 <h3 id="Generator"><a class="header-anchor" href="#Generator"></a>Generator</h3>
 <p><code>yield</code> provides implementation of semi-coroutine in Javascript</p>
 <h4 id="Iterator-v2"><a class="header-anchor" href="#Iterator-v2"></a>Iterator</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci = &#123;</span><br><span class="line">  * [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">let</span> pre = <span class="number">0</span>, cur = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">      [ pre, cur ] = [ cur, pre + cur ]</span><br><span class="line">      <span class="keyword">yield</span> cur</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n <span class="keyword">of</span> fibonacci) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1000</span>)</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="built_in">console</span>.log(n)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">let fibonacci = {
+  * [Symbol.iterator]() {
+    let pre = 0, cur = 1
+    for (;;) {
+      [ pre, cur ] = [ cur, pre + cur ]
+      yield cur
+    }
+  }
+}
+
+for (let n of fibonacci) {
+  if (n &gt; 1000)
+    break
+  console.log(n)
+}
+</code></pre>
 <h4 id="Direct-Use"><a class="header-anchor" href="#Direct-Use"></a>Direct Use</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">range</span> (<span class="params">start, end, step</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">    <span class="keyword">yield</span> start</span><br><span class="line">    start += step</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> range(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 0, 2, 4, 6, 8</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">function* range (start, end, step) {
+  while (start &lt; end) {
+    yield start
+    start += step
+  }
+}
+
+for (let i of range(0, 10, 2)) {
+  console.log(i) // 0, 2, 4, 6, 8
+}
+</code></pre>
 <h4 id="Method"><a class="header-anchor" href="#Method"></a>Method</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="keyword">yield</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">function* gen() {
+  while(true) {
+    var value = yield null;
+    console.log(value);
+  }
+}
+var g = gen();
+</code></pre>
 <p><code>next()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; g.next();</span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">&gt; g.next();</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">&gt; g.next();</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">&gt; g.next();
+{ value: null, done: false }
+&gt; g.next();
+undefined
+{ value: null, done: false }
+&gt; g.next();
+undefined
+{ value: null, done: false }
+</code></pre>
 <p><code>next(value)</code>: <code>value</code> will be the return value of the previous <code>yield</code> expression</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; g.next(<span class="number">1</span>);</span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">&gt; g.next(<span class="number">2</span>);</span><br><span class="line"><span class="number">2</span></span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">&gt; g.next(<span class="number">3</span>);</span><br><span class="line"><span class="number">3</span></span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">null</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">&gt; g.next(1);
+{ value: null, done: false }
+&gt; g.next(2);
+2
+{ value: null, done: false }
+&gt; g.next(3);
+3
+{ value: null, done: false }
+</code></pre>
 <p><code>throw()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; g.throw(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error throwed!'</span>));</span><br><span class="line"><span class="built_in">Error</span>: <span class="built_in">Error</span> throwed!</span><br><span class="line">&gt; g.next();</span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">&gt; g.throw(new Error('Error throwed!'));
+Error: Error throwed!
+&gt; g.next();
+{ value: undefined, done: true }
+</code></pre>
 <p><code>return()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; gen.return(<span class="number">3</span>);</span><br><span class="line">&#123; <span class="attr">value</span>: <span class="number">3</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;</span><br><span class="line">&gt; gen.next();</span><br><span class="line">&#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">&gt; gen.return(3);
+{ value: 3, done: true }
+&gt; gen.next();
+{ value: undefined, done: true }
+</code></pre>
 <h4 id="yield-expression"><a class="header-anchor" href="#yield-expression"></a><code>yield*</code> expression</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">traverseArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr)) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">      <span class="keyword">yield</span>* traverseArray(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">yield</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, [<span class="string">'b'</span>], [<span class="string">'c'</span>, [<span class="string">'d'</span>, <span class="string">'e'</span>]]];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> t <span class="keyword">of</span> traverseArray(arr)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(t);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a</span></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="comment">// c</span></span><br><span class="line"><span class="comment">// d</span></span><br><span class="line"><span class="comment">// e</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">function* traverseArray(arr) {
+  if (Array.isArray(arr)) {
+    for(let i = 0; i &lt; arr.length; i++) {
+      yield* traverseArray(arr[i]);
+    }
+  } else {
+    yield arr;
+  }
+}
+
+const arr = ['a', ['b'], ['c', ['d', 'e']]];
+
+for(let t of traverseArray(arr)) {
+  console.log(t);
+}
+
+// a
+// b
+// c
+// d
+// e
+</code></pre>
 <h4 id="thunkify"><a class="header-anchor" href="#thunkify"></a>thunkify</h4>
 <p>Turn a regular node function into one which returns a thunk.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> thunkify = <span class="built_in">require</span>(<span class="string">'thunkify'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> read = thunkify(fs.readFile);</span><br><span class="line"></span><br><span class="line">read(<span class="string">'tmp.txt'</span>, <span class="string">'utf8'</span>)(<span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">const thunkify = require('thunkify');
+const fs = require('fs');
+
+const read = thunkify(fs.readFile);
+
+read('tmp.txt', 'utf8')(function(err, data){
+  if (err) throw err;
+  console.log(data);
+});
+</code></pre>
 <h4 id="co"><a class="header-anchor" href="#co"></a>co</h4>
 <p>Generator based control flow goodness for nodejs and the browser, using promises.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">yield</span> <span class="built_in">Promise</span>.resolve(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">co(gen).then(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.error(err.stack);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">const co = require('co');
+
+const gen = function* () {
+  const result = yield Promise.resolve(true);
+  return result;
+};
+
+co(gen).then(function (value) {
+  console.log(value);
+}, function (err) {
+  console.error(err.stack);
+});
+</code></pre>
 <h3 id="async"><a class="header-anchor" href="#async"></a>async</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolveAfter2Seconds</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(x);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">add1</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> resolveAfter2Seconds(<span class="number">20</span>);</span><br><span class="line">  <span class="keyword">const</span> b = <span class="keyword">await</span> resolveAfter2Seconds(<span class="number">30</span>);</span><br><span class="line">  <span class="keyword">return</span> x + a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add1(<span class="number">10</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v);  <span class="comment">// prints 60 after 4 seconds.</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">add2</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> [p_a, p_b] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([resolveAfter2Seconds(<span class="number">20</span>), resolveAfter2Seconds(<span class="number">30</span>)]);</span><br><span class="line">  <span class="keyword">return</span> x + p_a + p_b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add2(<span class="number">10</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v);  <span class="comment">// prints 60 after 2 seconds.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">function resolveAfter2Seconds(x) {
+  return new Promise(resolve =&gt; {
+    setTimeout(() =&gt; {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function add1(x) {
+  const a = await resolveAfter2Seconds(20);
+  const b = await resolveAfter2Seconds(30);
+  return x + a + b;
+}
+
+add1(10).then(v =&gt; {
+  console.log(v);  // prints 60 after 4 seconds.
+});
+
+async function add2(x) {
+  let [p_a, p_b] = await Promise.all([resolveAfter2Seconds(20), resolveAfter2Seconds(30)]);
+  return x + p_a + p_b;
+}
+
+add2(10).then(v =&gt; {
+  console.log(v);  // prints 60 after 2 seconds.
+});
+</code></pre>
 <h4 id="Perform-Animations"><a class="header-anchor" href="#Perform-Animations"></a>Perform Animations</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">chainAnimationsAsync</span>(<span class="params">elem, animations</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> ret = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> anim <span class="keyword">of</span> animations) &#123;</span><br><span class="line">      ret = <span class="keyword">await</span> anim(elem);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">async function chainAnimationsAsync(elem, animations) {
+  let ret = null;
+  try {
+    for(let anim of animations) {
+      ret = await anim(elem);
+    }
+  } catch(e) {
+    console.log(e);
+  }
+  return ret;
+}
+</code></pre>
 <h4 id="Perform-Asynchronous-Tasks-in-Order"><a class="header-anchor" href="#Perform-Asynchronous-Tasks-in-Order"></a>Perform Asynchronous Tasks in Order</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">logInOrder</span>(<span class="params">urls</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Fetch urls concurrently</span></span><br><span class="line">  <span class="keyword">const</span> textPromises = urls.map(<span class="keyword">async</span> url =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);</span><br><span class="line">    <span class="keyword">return</span> response.text();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// log in order</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> textPromise <span class="keyword">of</span> textPromises) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> textPromise);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">async function logInOrder(urls) {
+  // Fetch urls concurrently
+  const textPromises = urls.map(async url =&gt; {
+    const response = await fetch(url);
+    return response.text();
+  });
+
+  // log in order
+  for (const textPromise of textPromises) {
+    console.log(await textPromise);
+  }
+}
+</code></pre>
 <h4 id="for-await…of"><a class="header-anchor" href="#for-await…of"></a>for await…of</h4>
 <p>Iterate through async iterator</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> x <span class="keyword">of</span> createAsyncIterable([<span class="string">'a'</span>, <span class="string">'b'</span>])) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">async function f() {
+  for await (const x of createAsyncIterable(['a', 'b'])) {
+    console.log(x);
+  }
+}
+</code></pre>
 <h4 id="Async-generator"><a class="header-anchor" href="#Async-generator"></a>Async generator</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>* <span class="title">readLines</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> file = <span class="keyword">await</span> fileOpen(path);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (!file.EOF) &#123;</span><br><span class="line">      <span class="keyword">yield</span> <span class="keyword">await</span> file.readLine();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">await</span> file.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> line <span class="keyword">of</span> readLines(filePath)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(line);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-js">async function* readLines(path) {
+  let file = await fileOpen(path);
+
+  try {
+    while (!file.EOF) {
+      yield await file.readLine();
+    }
+  } finally {
+    await file.close();
+  }
+}
+
+(async function () {
+  for await (const line of readLines(filePath)) {
+    console.log(line);
+  }
+})()
+</code></pre>
 
     </div>
 
@@ -448,6 +1074,16 @@
             </span>
 
             <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
         </div>
     </div>
@@ -479,8 +1115,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -504,100 +1140,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-structures"><span class="nav-number">1.</span> <span class="nav-text">Data structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let-Const"><span class="nav-number">2.</span> <span class="nav-text">Let &amp; Const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructuring"><span class="nav-number">3.</span> <span class="nav-text">Destructuring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">5.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">5.1.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template-Strings"><span class="nav-number">5.2.</span> <span class="nav-text">Template Strings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">6.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">7.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration"><span class="nav-number">7.1.</span> <span class="nav-text">Enumeration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">8.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp"><span class="nav-number">9.</span> <span class="nav-text">RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">10.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Map"><span class="nav-number">11.</span> <span class="nav-text">Set &amp; Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator-for…of"><span class="nav-number">12.</span> <span class="nav-text">Iterator &amp; for…of</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">12.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in-for…of"><span class="nav-number">12.2.</span> <span class="nav-text">for…in &amp; for…of</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-Programming"><span class="nav-number">13.</span> <span class="nav-text">Meta-Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">13.1.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect"><span class="nav-number">13.2.</span> <span class="nav-text">Reflect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asynchronization"><span class="nav-number">14.</span> <span class="nav-text">Asynchronization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">14.1.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">14.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Example"><span class="nav-number">14.2.1.</span> <span class="nav-text">Simple Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-image-asynchronously"><span class="nav-number">14.2.2.</span> <span class="nav-text">Load image asynchronously</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">14.3.</span> <span class="nav-text">Generator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-v2"><span class="nav-number">14.3.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Direct-Use"><span class="nav-number">14.3.2.</span> <span class="nav-text">Direct Use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">14.3.3.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-expression"><span class="nav-number">14.3.4.</span> <span class="nav-text">yield* expression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#thunkify"><span class="nav-number">14.3.5.</span> <span class="nav-text">thunkify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co"><span class="nav-number">14.3.6.</span> <span class="nav-text">co</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">14.4.</span> <span class="nav-text">async</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Animations"><span class="nav-number">14.4.1.</span> <span class="nav-text">Perform Animations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Asynchronous-Tasks-in-Order"><span class="nav-number">14.4.2.</span> <span class="nav-text">Perform Asynchronous Tasks in Order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-await…of"><span class="nav-number">14.4.3.</span> <span class="nav-text">for await…of</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-generator"><span class="nav-number">14.4.4.</span> <span class="nav-text">Async generator</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Luminoid"
-      src="/blog/images/avatar.png">
-  <p class="site-author-name" itemprop="name">Luminoid</p>
-  <div class="site-description" itemprop="description">Notes about programming(mostly iOS and Web) and other fields</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
-        
-          <span class="site-state-item-count">41</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/YALuminoid" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YALuminoid" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.douban.com/people/173394996" title="Douban → https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;173394996" rel="noopener" target="_blank"><i class="fa fa-leaf fa-fw"></i>Douban</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:14302010006@fudan.edu.cn" title="Email → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://luminoid.github.io/color-splash/" title="https:&#x2F;&#x2F;luminoid.github.io&#x2F;color-splash&#x2F;">Color Splash</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -609,7 +1151,7 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -619,14 +1161,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">245k</span>
+    <span title="Symbols count total">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:58</span>
+    <span title="Reading time total">2:54</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
@@ -664,21 +1206,16 @@
 
   
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
 
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/muse.js"></script>
-
-
 <script src="/blog/js/next-boot.js"></script>
-
-
 
 
   

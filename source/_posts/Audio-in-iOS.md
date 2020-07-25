@@ -24,6 +24,8 @@ Example: A 3-minute song of 16 bit depth, two-channel is about 30MB. (44100 * 2 
 ### Codec
 > A codec is a device or computer program which encodes or decodes a digital data stream or signal. Codec is a portmanteau of coder-decoder.
 
+<!-- more -->
+
 ## Audio Session
 ### [AVAudioSession](https://developer.apple.com/documentation/avfoundation/avaudiosession)
 > An audio session acts as an intermediary between your app and the operating system—and, in turn, the underlying audio hardware. You use an audio session to communicate to the operating system the general nature of your app’s audio without detailing the specific behavior or required interactions with the audio hardware.

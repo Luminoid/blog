@@ -14,7 +14,7 @@ keywords:
 ---
 
 [Hexo](https://hexo.io)
-Theme: [hexo-theme-next](https://github.com/theme-next/hexo-theme-next)
+Theme: {% post_link hexo-theme-next Usage %}
 
 ## Quick Deployment
 Hexo recommended way

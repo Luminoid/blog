@@ -3,7 +3,9 @@ title: Photography Basics and Beyond Note
 date: 2019-09-21 00:58:17
 updated:
 categories: Photography
-tags: Coursera
+tags: 
+- Coursera
+- Note
 keywords: Photography
 mathjax: true
 ---
