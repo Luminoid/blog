@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,19 +21,20 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Official Site: https:&#x2F;&#x2F;cocoapods.org Adding Pods to an Xcode project Create a Podfile $ pod init  or $ touch Podfile  Podfile platform :ios, &#39;9.0&#39; use_frameworks!  target &#39;MyApp&#39; do   pod &#39;AFNetworkin">
+  <meta name="description" content="Official Site: https:&#x2F;&#x2F;cocoapods.org Adding Pods to an Xcode project Create a Podfile $ pod init or $ touch Podfile Podfile platform :ios, &#39;9.0&#39; use_frameworks!  target &#39;MyApp&#39; do   pod &#39;AFNetworking&#39;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaPods Usage">
 <meta property="og:url" content="http://luminoid.github.io/blog/CocoaPods-Usage/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Official Site: https:&#x2F;&#x2F;cocoapods.org Adding Pods to an Xcode project Create a Podfile $ pod init  or $ touch Podfile  Podfile platform :ios, &#39;9.0&#39; use_frameworks!  target &#39;MyApp&#39; do   pod &#39;AFNetworkin">
+<meta property="og:description" content="Official Site: https:&#x2F;&#x2F;cocoapods.org Adding Pods to an Xcode project Create a Podfile $ pod init or $ touch Podfile Podfile platform :ios, &#39;9.0&#39; use_frameworks!  target &#39;MyApp&#39; do   pod &#39;AFNetworking&#39;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-05-14T16:08:05.000Z">
-<meta property="article:modified_time" content="2018-05-14T16:08:05.000Z">
+<meta property="article:modified_time" content="2019-02-05T09:57:15.845Z">
 <meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Package manager">
 <meta property="article:tag" content="CocoaPods">
 <meta name="twitter:card" content="summary">
 
@@ -105,9 +106,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -149,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -173,7 +174,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -194,9 +195,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -242,7 +243,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -320,6 +321,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           CocoaPods Usage
@@ -334,6 +337,13 @@
 
               <time title="Created: 2018-05-15 00:08:05" itemprop="dateCreated datePublished" datetime="2018-05-15T00:08:05+08:00">2018-05-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -357,7 +367,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>967</span>
+              <span>946</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -374,50 +384,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p>Official Site: <a href="https://cocoapods.org" target="_blank" rel="noopener">https://cocoapods.org</a></p>
+        <p>Official Site: <a target="_blank" rel="noopener" href="https://cocoapods.org">https://cocoapods.org</a></p>
 <h2 id="Adding-Pods-to-an-Xcode-project"><a class="header-anchor" href="#Adding-Pods-to-an-Xcode-project"></a>Adding Pods to an Xcode project</h2>
 <p><strong>Create a Podfile</strong></p>
-<pre><code class="language-bash">$ pod init
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ pod init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>or</p>
-<pre><code class="language-bash">$ touch Podfile
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">touch</span> Podfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>Podfile</strong></p>
-<pre><code class="language-bash">platform :ios, '9.0'
-use_frameworks!
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">platform :ios, <span class="token string">'9.0'</span>
+use_frameworks<span class="token operator">!</span>
 
-target 'MyApp' do
-  pod 'AFNetworking', '~&gt; 2.6'
-  pod 'ORStackView', '~&gt; 3.0'
-  pod 'SwiftyJSON', '~&gt; 2.3'
-end
-</code></pre>
+target <span class="token string">'MyApp'</span> <span class="token keyword">do</span>
+  pod <span class="token string">'AFNetworking'</span>, <span class="token string">'~> 2.6'</span>
+  pod <span class="token string">'ORStackView'</span>, <span class="token string">'~> 3.0'</span>
+  pod <span class="token string">'SwiftyJSON'</span>, <span class="token string">'~> 2.3'</span>
+end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>Install project dependencies</strong></p>
-<pre><code class="language-bash">$ pod install
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ pod <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>Open <code>MyApp.xcworkspace</code> to work</strong></p>
 <a id="more"></a>
 <h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
-<pre><code class="language-bash">cat Podfile.lock    # List installed pods
-pod install         # Install project dependencies according to versions from a Podfile.lock
-pod outdated        # Show outdated project dependencies
-pod update          # Update outdated project dependencies and create new Podfile.lock
-pod search          # Search for pods
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> Podfile.lock    <span class="token comment"># List installed pods</span>
+pod <span class="token function">install</span>         <span class="token comment"># Install project dependencies according to versions from a Podfile.lock</span>
+pod outdated        <span class="token comment"># Show outdated project dependencies</span>
+pod update          <span class="token comment"># Update outdated project dependencies and create new Podfile.lock</span>
+pod search          <span class="token comment"># Search for pods</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Podfile"><a class="header-anchor" href="#Podfile"></a>Podfile</h2>
-<pre><code class="language-ruby">pod 'Texture'             # Use the latest version of a Pod
-pod 'Texture', '0.1'      # Freeze to a specific version of a Pod
-pod 'Texture', '&gt;= 0.1'   # Version 0.1 and any higher version
-pod 'Texture', '~&gt; 0.1'   # Version 0.1 and the versions up to 1.0, not including 1.0 and higher
-pod 'Texture', '~&gt; 0.1.2' # Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby">pod <span class="token string">'Texture'</span>             <span class="token comment"># Use the latest version of a Pod</span>
+pod <span class="token string">'Texture'</span><span class="token punctuation">,</span> <span class="token string">'0.1'</span>      <span class="token comment"># Freeze to a specific version of a Pod</span>
+pod <span class="token string">'Texture'</span><span class="token punctuation">,</span> <span class="token string">'>= 0.1'</span>   <span class="token comment"># Version 0.1 and any higher version</span>
+pod <span class="token string">'Texture'</span><span class="token punctuation">,</span> <span class="token string">'~> 0.1'</span>   <span class="token comment"># Version 0.1 and the versions up to 1.0, not including 1.0 and higher</span>
+pod <span class="token string">'Texture'</span><span class="token punctuation">,</span> <span class="token string">'~> 0.1.2'</span> <span class="token comment"># Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher</span>
 
-pod 'Alamofire', :path =&gt; '~/Documents/Alamofire' # Use the Pod from a local folder
-</code></pre>
+pod <span class="token string">'Alamofire'</span><span class="token punctuation">,</span> <span class="token symbol">:path</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'~/Documents/Alamofire'</span> <span class="token comment"># Use the Pod from a local folder</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Updating-CocoaPods"><a class="header-anchor" href="#Updating-CocoaPods"></a>Updating CocoaPods</h2>
-<pre><code class="language-bash">gem install cocoapods
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gem <span class="token function">install</span> cocoapods<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     </div>
 
@@ -529,12 +530,12 @@ pod 'Alamofire', :path =&gt; '~/Documents/Alamofire' # Use the Pod from a local 
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -574,8 +575,6 @@ pod 'Alamofire', :path =&gt; '~/Documents/Alamofire' # Use the Pod from a local 
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

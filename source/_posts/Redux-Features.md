@@ -8,6 +8,7 @@ categories:
 tags:
 - Redux
 - Note
+- WIP
 keywords:
 - Redux
 ---

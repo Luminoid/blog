@@ -18,14 +18,14 @@ keywords:
 This is a portable and generic solution to build Hexo website with Docker.
 ## The Hexo base image
 ### Creating Hexo Dockerfile
-``` sh
+``` bash
 $ mkdir hexo
 $ cd hexo
 $ vim Dockerfile
 ```
 
 ### Hexo Dockerfile Content
-``` sh
+``` bash
 FROM ubuntu:14.04
 MAINTAINER luminoid
 ENV REFRESHED_AT 2017-08-28
@@ -59,20 +59,20 @@ VOLUME [ "/data/blog", "/var/www/html" ]
 <!-- more -->
 
 ### Building Hexo base image
-``` sh
+``` bash
 $ docker build -t luminoid/hexo .
 ```
 
 ## The Apache image
 ### Creating Apache Dockerfile
-``` sh
+``` bash
 $ mkdir apache
 $ cd apache
 $ vim Dockerfile
 ```
 
 ### Apache Dockerfile Content
-``` sh
+``` bash
 FROM ubuntu:14.04
 MAINTAINER luminoid
 ENV REFRESHED_AT 2017-08-28
@@ -99,25 +99,25 @@ CMD ["-D", "FOREGROUND"]
 ```
 
 ### Building Apache image
-``` sh
+``` bash
 $ docker build -t luminoid/apache .
 $ docker images # list images
 ```
 
 ## Launching hexo site
 ### Creating a Hexo container
-``` sh
+``` bash
 $ docker run --name luminoid_blog luminoid/hexo
 ```
 
 ### Creating an Apache container
-``` sh
+``` bash
 $ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache
 APACHE_CONTAINER_ID
 ```
 
 ### Resolving the Apache container’s port
-``` sh
+``` bash
 $ docker port APACHE_CONTAINER_ID 80
 0.0.0.0:32768
 ```
@@ -127,10 +127,10 @@ The website can be viewed at `http://localhost:32768`
 
 ### Updating Hexo website
 Restart the Hexo container and the website will be updated.
-``` sh
+``` bash
 docker start luminoid_blog
 ```
 ### Backing up Hexo volume
-``` sh
+``` bash
 docker run --rm --volumes-from luminoid_blog -v $(pwd):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html
 ```

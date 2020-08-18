@@ -7,6 +7,8 @@ tags: UIView
 keywords: UIView
 ---
 
+iOS Version: 11
+
 `+`: Class method
 `-`: Instance method
 

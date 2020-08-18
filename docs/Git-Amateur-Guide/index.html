@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,15 +21,15 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Collecting from Version Control with Git &amp; Git Manual Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the informatio">
+  <meta name="description" content="Ref: Version Control with Git &amp; Git Manual Version: 2.27.0 Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the infor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git: Amateur Guide">
 <meta property="og:url" content="http://luminoid.github.io/blog/Git-Amateur-Guide/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Collecting from Version Control with Git &amp; Git Manual Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the informatio">
+<meta property="og:description" content="Ref: Version Control with Git &amp; Git Manual Version: 2.27.0 Concept Git Git is a distributed version control system (DVCS). Repository A Git repository is simply a database containing all the infor">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/RelativeCommitName.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/CommonCommands.png">
@@ -38,9 +38,10 @@
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/StageFiles.png">
 <meta property="og:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/CommitFiles.png">
 <meta property="article:published_time" content="2018-01-24T16:27:11.000Z">
-<meta property="article:modified_time" content="2018-01-24T16:27:11.000Z">
+<meta property="article:modified_time" content="2020-08-18T16:38:50.369Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Git">
+<meta property="article:tag" content="Note">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://luminoid.github.io/blog/Git-Amateur-Guide/RelativeCommitName.png">
 
@@ -112,9 +113,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -156,7 +157,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -180,7 +181,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -201,9 +202,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -220,7 +221,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concept"><span class="nav-number">1.</span> <span class="nav-text">Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repository"><span class="nav-number">1.2.</span> <span class="nav-text">Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-Repository"><span class="nav-number">1.2.1.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#origin"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">origin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#refspec"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">refspec</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bare-Repository"><span class="nav-number">1.2.2.</span> <span class="nav-text">Bare Repository</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Object-Types"><span class="nav-number">1.3.</span> <span class="nav-text">Git Object Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blob"><span class="nav-number">1.3.1.</span> <span class="nav-text">Blob</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tree"><span class="nav-number">1.3.2.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Commit"><span class="nav-number">1.3.3.</span> <span class="nav-text">Commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag"><span class="nav-number">1.3.4.</span> <span class="nav-text">Tag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-File-Classifications"><span class="nav-number">1.4.</span> <span class="nav-text">Git File Classifications</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tracked"><span class="nav-number">1.4.1.</span> <span class="nav-text">Tracked</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ignored"><span class="nav-number">1.4.2.</span> <span class="nav-text">Ignored</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Untracked"><span class="nav-number">1.4.3.</span> <span class="nav-text">Untracked</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Comparison"><span class="nav-number">1.5.</span> <span class="nav-text">Database Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VCS-Comparison"><span class="nav-number">1.6.</span> <span class="nav-text">VCS Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-tree"><span class="nav-number">1.7.</span> <span class="nav-text">Working tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clean"><span class="nav-number">1.7.1.</span> <span class="nav-text">Clean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Identifying-Commit"><span class="nav-number">1.8.</span> <span class="nav-text">Identifying Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch"><span class="nav-number">1.9.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#master"><span class="nav-number">1.9.1.</span> <span class="nav-text">master</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-tracking-branch"><span class="nav-number">1.9.2.</span> <span class="nav-text">Remote-tracking branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Upstream-Branch"><span class="nav-number">1.9.3.</span> <span class="nav-text">Upstream Branch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Strategies"><span class="nav-number">1.10.</span> <span class="nav-text">Merge Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Degenerate-Merges"><span class="nav-number">1.10.1.</span> <span class="nav-text">Degenerate Merges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normal-Merges"><span class="nav-number">1.10.2.</span> <span class="nav-text">Normal Merges</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action"><span class="nav-number">1.11.</span> <span class="nav-text">Action</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout"><span class="nav-number">1.11.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fetch"><span class="nav-number">1.11.2.</span> <span class="nav-text">Fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge"><span class="nav-number">1.11.3.</span> <span class="nav-text">Merge</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Garbage-Collection"><span class="nav-number">1.12.</span> <span class="nav-text">Garbage Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-Garbage-Collection-Situation"><span class="nav-number">1.12.1.</span> <span class="nav-text">Automatic Garbage Collection Situation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manual-Garbage-Collection-Situation"><span class="nav-number">1.12.2.</span> <span class="nav-text">Manual Garbage Collection Situation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hooks"><span class="nav-number">1.13.</span> <span class="nav-text">Hooks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic"><span class="nav-number">2.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Init"><span class="nav-number">2.2.</span> <span class="nav-text">Init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone"><span class="nav-number">2.2.1.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-init"><span class="nav-number">2.2.2.</span> <span class="nav-text">git init</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.3.</span> <span class="nav-text">State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-show"><span class="nav-number">2.3.1.</span> <span class="nav-text">git show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rev-parse"><span class="nav-number">2.3.2.</span> <span class="nav-text">git rev-parse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-blame"><span class="nav-number">2.3.3.</span> <span class="nav-text">git blame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-status"><span class="nav-number">2.3.4.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reflog"><span class="nav-number">2.3.5.</span> <span class="nav-text">git reflog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-log"><span class="nav-number">2.3.6.</span> <span class="nav-text">git log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File"><span class="nav-number">2.4.</span> <span class="nav-text">File</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-add"><span class="nav-number">2.4.1.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-mv"><span class="nav-number">2.4.2.</span> <span class="nav-text">git mv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rm"><span class="nav-number">2.4.3.</span> <span class="nav-text">git rm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-v2"><span class="nav-number">2.5.</span> <span class="nav-text">Commit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Altering-Commits"><span class="nav-number">2.5.1.</span> <span class="nav-text">Altering Commits</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-reset"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-revert"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Changing-the-Top-Commit"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">Changing the Top Commit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Comparison"><span class="nav-number">2.5.1.5.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff"><span class="nav-number">2.5.2.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stash"><span class="nav-number">2.5.3.</span> <span class="nav-text">Stash</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch-v2"><span class="nav-number">2.6.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout-v2"><span class="nav-number">2.6.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-v2"><span class="nav-number">2.6.2.</span> <span class="nav-text">Merge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase"><span class="nav-number">2.6.3.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-Repository-v2"><span class="nav-number">2.7.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-remote"><span class="nav-number">2.7.1.</span> <span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fetch"><span class="nav-number">2.7.2.</span> <span class="nav-text">git fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-pull"><span class="nav-number">2.7.3.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">2.7.4.</span> <span class="nav-text">git push</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-number">2.8.</span> <span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-filter-branch"><span class="nav-number">2.8.1.</span> <span class="nav-text">git filter-branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fsck"><span class="nav-number">2.8.2.</span> <span class="nav-text">git fsck</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rerere"><span class="nav-number">2.8.3.</span> <span class="nav-text">git rerere</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Config"><span class="nav-number">2.9.</span> <span class="nav-text">Config</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-pull-till-a-particular-commit"><span class="nav-number">3.1.</span> <span class="nav-text">Git pull till a particular commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Your-branch-and-‘origin-master’-have-diverged"><span class="nav-number">3.2.</span> <span class="nav-text">Your branch and ‘origin&#x2F;master’ have diverged</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recover-a-dropped-stash-entry"><span class="nav-number">3.3.</span> <span class="nav-text">Recover a dropped stash entry</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Concepts-at-Work"><span class="nav-number">4.</span> <span class="nav-text">Git Concepts at Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initialize-Git-repository"><span class="nav-number">4.1.</span> <span class="nav-text">Initialize Git repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Initial-Commit"><span class="nav-number">4.2.</span> <span class="nav-text">Create Initial Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edit-Files"><span class="nav-number">4.3.</span> <span class="nav-text">Edit Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stage-Files"><span class="nav-number">4.4.</span> <span class="nav-text">Stage Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Files"><span class="nav-number">4.5.</span> <span class="nav-text">Commit Files</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concept"><span class="nav-number">1.</span> <span class="nav-text">Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repository"><span class="nav-number">1.2.</span> <span class="nav-text">Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-Repository"><span class="nav-number">1.2.1.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#origin"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">origin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#refspec"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">refspec</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bare-Repository"><span class="nav-number">1.2.2.</span> <span class="nav-text">Bare Repository</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Object-Types"><span class="nav-number">1.3.</span> <span class="nav-text">Git Object Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blob"><span class="nav-number">1.3.1.</span> <span class="nav-text">Blob</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tree"><span class="nav-number">1.3.2.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Commit"><span class="nav-number">1.3.3.</span> <span class="nav-text">Commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag"><span class="nav-number">1.3.4.</span> <span class="nav-text">Tag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-File-Classifications"><span class="nav-number">1.4.</span> <span class="nav-text">Git File Classifications</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tracked"><span class="nav-number">1.4.1.</span> <span class="nav-text">Tracked</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ignored"><span class="nav-number">1.4.2.</span> <span class="nav-text">Ignored</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Untracked"><span class="nav-number">1.4.3.</span> <span class="nav-text">Untracked</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Comparison"><span class="nav-number">1.5.</span> <span class="nav-text">Database Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VCS-Comparison"><span class="nav-number">1.6.</span> <span class="nav-text">VCS Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-tree"><span class="nav-number">1.7.</span> <span class="nav-text">Working tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clean"><span class="nav-number">1.7.1.</span> <span class="nav-text">Clean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Identifying-Commit"><span class="nav-number">1.8.</span> <span class="nav-text">Identifying Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch"><span class="nav-number">1.9.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#master"><span class="nav-number">1.9.1.</span> <span class="nav-text">master</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remote-tracking-branch"><span class="nav-number">1.9.2.</span> <span class="nav-text">Remote-tracking branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Upstream-Branch"><span class="nav-number">1.9.3.</span> <span class="nav-text">Upstream Branch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Strategies"><span class="nav-number">1.10.</span> <span class="nav-text">Merge Strategies</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Degenerate-Merges"><span class="nav-number">1.10.1.</span> <span class="nav-text">Degenerate Merges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normal-Merges"><span class="nav-number">1.10.2.</span> <span class="nav-text">Normal Merges</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action"><span class="nav-number">1.11.</span> <span class="nav-text">Action</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout"><span class="nav-number">1.11.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fetch"><span class="nav-number">1.11.2.</span> <span class="nav-text">Fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge"><span class="nav-number">1.11.3.</span> <span class="nav-text">Merge</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Garbage-Collection"><span class="nav-number">1.12.</span> <span class="nav-text">Garbage Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Automatic-Garbage-Collection-Situation"><span class="nav-number">1.12.1.</span> <span class="nav-text">Automatic Garbage Collection Situation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manual-Garbage-Collection-Situation"><span class="nav-number">1.12.2.</span> <span class="nav-text">Manual Garbage Collection Situation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hooks"><span class="nav-number">1.13.</span> <span class="nav-text">Hooks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command"><span class="nav-number">2.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic"><span class="nav-number">2.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Init"><span class="nav-number">2.2.</span> <span class="nav-text">Init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone"><span class="nav-number">2.2.1.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-init"><span class="nav-number">2.2.2.</span> <span class="nav-text">git init</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.3.</span> <span class="nav-text">State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-show"><span class="nav-number">2.3.1.</span> <span class="nav-text">git show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rev-parse"><span class="nav-number">2.3.2.</span> <span class="nav-text">git rev-parse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-blame"><span class="nav-number">2.3.3.</span> <span class="nav-text">git blame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-status"><span class="nav-number">2.3.4.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reflog"><span class="nav-number">2.3.5.</span> <span class="nav-text">git reflog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-log"><span class="nav-number">2.3.6.</span> <span class="nav-text">git log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File"><span class="nav-number">2.4.</span> <span class="nav-text">File</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-add"><span class="nav-number">2.4.1.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-mv"><span class="nav-number">2.4.2.</span> <span class="nav-text">git mv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rm"><span class="nav-number">2.4.3.</span> <span class="nav-text">git rm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-v2"><span class="nav-number">2.5.</span> <span class="nav-text">Commit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Altering-Commits"><span class="nav-number">2.5.1.</span> <span class="nav-text">Altering Commits</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-reset"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-revert"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Changing-the-Top-Commit"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">Changing the Top Commit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Comparison"><span class="nav-number">2.5.1.5.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff"><span class="nav-number">2.5.2.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stash"><span class="nav-number">2.5.3.</span> <span class="nav-text">Stash</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch-v2"><span class="nav-number">2.6.</span> <span class="nav-text">Branch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checkout-v2"><span class="nav-number">2.6.1.</span> <span class="nav-text">Checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-v2"><span class="nav-number">2.6.2.</span> <span class="nav-text">Merge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rebase"><span class="nav-number">2.6.3.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-Repository-v2"><span class="nav-number">2.7.</span> <span class="nav-text">Remote Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-remote"><span class="nav-number">2.7.1.</span> <span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fetch"><span class="nav-number">2.7.2.</span> <span class="nav-text">git fetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-pull"><span class="nav-number">2.7.3.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">2.7.4.</span> <span class="nav-text">git push</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-number">2.8.</span> <span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-filter-branch"><span class="nav-number">2.8.1.</span> <span class="nav-text">git filter-branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fsck"><span class="nav-number">2.8.2.</span> <span class="nav-text">git fsck</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-rerere"><span class="nav-number">2.8.3.</span> <span class="nav-text">git rerere</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Config"><span class="nav-number">2.9.</span> <span class="nav-text">Config</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-pull-till-a-particular-commit"><span class="nav-number">3.1.</span> <span class="nav-text">Git pull till a particular commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Your-branch-and-%E2%80%98origin-master%E2%80%99-have-diverged"><span class="nav-number">3.2.</span> <span class="nav-text">Your branch and ‘origin&#x2F;master’ have diverged</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recover-a-dropped-stash-entry"><span class="nav-number">3.3.</span> <span class="nav-text">Recover a dropped stash entry</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-Concepts-at-Work"><span class="nav-number">4.</span> <span class="nav-text">Git Concepts at Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initialize-Git-repository"><span class="nav-number">4.1.</span> <span class="nav-text">Initialize Git repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Initial-Commit"><span class="nav-number">4.2.</span> <span class="nav-text">Create Initial Commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edit-Files"><span class="nav-number">4.3.</span> <span class="nav-text">Edit Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stage-Files"><span class="nav-number">4.4.</span> <span class="nav-text">Stage Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Files"><span class="nav-number">4.5.</span> <span class="nav-text">Commit Files</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -249,7 +250,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -327,6 +328,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Git: Amateur Guide
@@ -341,6 +344,13 @@
 
               <time title="Created: 2018-01-25 00:27:11" itemprop="dateCreated datePublished" datetime="2018-01-25T00:27:11+08:00">2018-01-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 00:38:50" itemprop="dateModified" datetime="2020-08-19T00:38:50+08:00">2020-08-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -368,14 +378,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>19k</span>
+              <span>18k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>14 mins.</span>
+              <span>17 mins.</span>
             </span>
 
         </div>
@@ -385,9 +395,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p>Collecting from <em>Version Control with Git</em> &amp; <em>Git Manual</em></p>
+        <p>Ref: <em>Version Control with Git</em> &amp; <em>Git Manual</em><br>
+Version: 2.27.0</p>
 <h2 id="Concept"><a class="header-anchor" href="#Concept"></a>Concept</h2>
 <h3 id="Git"><a class="header-anchor" href="#Git"></a>Git</h3>
 <p>Git is a distributed version control system (DVCS).</p>
@@ -566,111 +575,86 @@ During a clone operation, Git creates a remote-tracking branch in the clone for 
 </ul>
 <h3 id="Hooks"><a class="header-anchor" href="#Hooks"></a>Hooks</h3>
 <p>Hooks are programs you can place in a hooks directory to trigger actions at certain points in git’s execution.</p>
-<pre><code class="language-bash">git help hooks
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token builtin class-name">help</span> hooks<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
 <img src="/blog/Git-Amateur-Guide/CommonCommands.png" class="" title="Common Commands">
 <h3 id="Basic"><a class="header-anchor" href="#Basic"></a>Basic</h3>
 <p><code>--</code>: Double dash can be used to contrast the control portion of the command line from a list of operands, such as filenames.<br>
 You may need to use the double dash to separate and explicitly identify filenames if they might otherwise be mistaken for another part of the command. For example, if you happened to have both a file and a tag named <code>main.c</code>, then you will get different behavior:</p>
-<pre><code class="language-bash"># Checkout the tag named &quot;main.c&quot;
-$ git checkout main.c
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Checkout the tag named "main.c"</span>
+$ <span class="token function">git</span> checkout main.c
 
-# Checkout the file named &quot;main.c&quot;
-$ git checkout -- main.c
-</code></pre>
+<span class="token comment"># Checkout the file named "main.c"</span>
+$ <span class="token function">git</span> checkout -- main.c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>git &lt;command&gt; --dry-run</code>: Don’t actually execute the command, just show what the command would do</p>
 <h3 id="Init"><a class="header-anchor" href="#Init"></a>Init</h3>
 <h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
 <p>Clone a repository into a new directory</p>
-<pre><code class="language-bash">git clone &lt;repository&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token operator">&lt;</span>repository<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
 <p>Create an empty Git repository or reinitialize an existing one</p>
-<pre><code class="language-bash">git init
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Run as if git was started in <code>&lt;path&gt;</code> instead of the current working directory</p>
-<pre><code class="language-bash">git --git-dir &lt;path&gt; init
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> --git-dir <span class="token operator">&lt;</span>path<span class="token operator">></span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="State"><a class="header-anchor" href="#State"></a>State</h3>
 <h4 id="git-show"><a class="header-anchor" href="#git-show"></a>git show</h4>
 <p>Show various types of objects</p>
-<pre><code class="language-bash">git show &lt;object&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> show <span class="token operator">&lt;</span>object<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Get old version of a file</p>
-<pre><code class="language-bash">git show &lt;commit&gt;:&lt;path&gt; [&gt; &lt;output&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> show <span class="token operator">&lt;</span>commit<span class="token operator">></span>:<span class="token operator">&lt;</span>path<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">></span> <span class="token operator">&lt;</span>output<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Reconnect a lost file</p>
-<pre><code class="language-bash">git show &lt;blob_SHA1&gt; &gt; &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> show <span class="token operator">&lt;</span>blob_SHA<span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token operator">></span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-rev-parse"><a class="header-anchor" href="#git-rev-parse"></a>git rev-parse</h4>
 <p>Pick out and massage parameters</p>
-<pre><code class="language-bash">git rev-parse &lt;args&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rev-parse <span class="token operator">&lt;</span>args<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-blame"><a class="header-anchor" href="#git-blame"></a>git blame</h4>
 <p>Show what revision and author last modified each line of a file</p>
-<pre><code class="language-bash">git blame [-L &lt;range&gt;] &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> blame <span class="token punctuation">[</span>-L <span class="token operator">&lt;</span>range<span class="token operator">></span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-status"><a class="header-anchor" href="#git-status"></a>git status</h4>
 <p>Show the working tree status</p>
-<pre><code class="language-bash">git status
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> status<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-reflog"><a class="header-anchor" href="#git-reflog"></a>git reflog</h4>
 <p>Manage reflog information (including cloning, pushing, making new commits, changing or creating branches, rebase operations, reset operations)<br>
-eg. <code>HEAD@{1}</code> references the previous commit for the branch</p>
-<pre><code class="language-bash">git reflog [&lt;ref&gt;]
-</code></pre>
+eg. <code>HEAD@&#123;1&#125;</code> references the previous commit for the branch</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog <span class="token punctuation">[</span><span class="token operator">&lt;</span>ref<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-log"><a class="header-anchor" href="#git-log"></a>git log</h4>
 <p>Print the log message associated with every commit in your history that is reachable from <code>&lt;commit&gt;</code></p>
-<pre><code class="language-bash">git log &lt;commit&gt; [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>--follow</code>: Continue listing the history of a file beyond renames</p>
 <p>Show the commits from <code>start</code> to <code>end</code> (<code>start</code> not included).<br>
 <code>start..end</code>: the set of commits reachable from <code>end</code> that are not reachable from <code>start</code></p>
-<pre><code class="language-bash">git log start..end [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log start<span class="token punctuation">..</span>end <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Look for differences that change the number of occurrences of the specified string (i.e. addition/deletion) in a file. (Pickaxe)</p>
-<pre><code class="language-bash">git log -S&lt;string&gt; &lt;commit&gt; [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log -S<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>pickaxe</code> can be used to search a series of commit differences; whereas <code>git grep</code> can be used to search the repository tree at a specific point in that history</p>
 <h3 id="File"><a class="header-anchor" href="#File"></a>File</h3>
 <h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
 <p>Add file contents to the index</p>
-<pre><code class="language-bash">git add &lt;file&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Add, modify, and remove index entries to match the working tree</p>
-<pre><code class="language-bash">git add -A
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> -A<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Stage hunks of patch interactively</p>
-<pre><code class="language-bash">git add -p
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
 <p>Move or rename a file, directory or symlink.</p>
-<pre><code class="language-bash">git mv &lt;source&gt; &lt;destination&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">mv</span> <span class="token operator">&lt;</span>source<span class="token operator">></span> <span class="token operator">&lt;</span>destination<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
 <p>Remove files from the index</p>
-<pre><code class="language-bash">git rm --cached &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Remove files from both the index and the working directory</p>
-<pre><code class="language-bash">git rm &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Remove committed files</p>
-<pre><code class="language-bash">git rm [--cached] &lt;file&gt;
-git commit
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token punctuation">[</span>--cached<span class="token punctuation">]</span> <span class="token operator">&lt;</span>file<span class="token operator">></span>
+<span class="token function">git</span> commit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Removes files even if you have altered it since your last commit</p>
-<pre><code class="language-bash">git rm -f &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> -f <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Recover old versions of files</p>
-<pre><code class="language-bash">git checkout HEAD -- &lt;file&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout HEAD -- <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Commit-v2"><a class="header-anchor" href="#Commit-v2"></a>Commit</h3>
 <h4 id="Altering-Commits"><a class="header-anchor" href="#Altering-Commits"></a>Altering Commits</h4>
 <h5 id="git-reset"><a class="header-anchor" href="#git-reset"></a>git reset</h5>
 <p>Reset current HEAD to the specified state</p>
-<pre><code class="language-bash">git reset [&lt;option&gt;] &lt;commit&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token punctuation">[</span><span class="token operator">&lt;</span>option<span class="token operator">></span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -702,26 +686,20 @@ git commit
 </tbody>
 </table>
 <p>Unstage files</p>
-<pre><code class="language-bash">git reset HEAD &lt;file&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>file<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Eliminate the topmost commit</p>
-<pre><code class="language-bash">git reset HEAD^
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Adjust the commit message</p>
-<pre><code class="language-bash">git reset --soft HEAD^
-git commit
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset --soft HEAD^
+<span class="token function">git</span> commit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="git-cherry-pick"><a class="header-anchor" href="#git-cherry-pick"></a>git cherry-pick</h5>
 <p>Apply the changes introduced by some existing commits</p>
-<pre><code class="language-bash">git cherry-pick &lt;commit&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token operator">&lt;</span>commit<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="git-revert"><a class="header-anchor" href="#git-revert"></a>git revert</h5>
 <p>Revert some existing commits: record some new commits to reverse the effect of some earlier commits (often only a faulty one)</p>
-<pre><code class="language-bash">git revert &lt;commit&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> revert <span class="token operator">&lt;</span>commit<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="Changing-the-Top-Commit"><a class="header-anchor" href="#Changing-the-Top-Commit"></a>Changing the Top Commit</h5>
-<pre><code class="language-bash">git commit --amend
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit --amend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="Comparison"><a class="header-anchor" href="#Comparison"></a>Comparison</h5>
 <table>
 <thead>
@@ -748,108 +726,83 @@ git commit
 <h4 id="Diff"><a class="header-anchor" href="#Diff"></a>Diff</h4>
 <p><code>git diff</code> operates on two different end points; <code>git log</code> operates on a set of commits.</p>
 <p>Differences between the working directory and the index</p>
-<pre><code class="language-bash">git diff [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Differences between the working directory and the given <code>&lt;commit&gt;</code></p>
-<pre><code class="language-bash">git diff &lt;commit&gt; [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Differences between the index and the given <code>&lt;commit&gt;</code></p>
-<pre><code class="language-bash">git diff --cached &lt;commit&gt; [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> --cached <span class="token operator">&lt;</span>commit<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Differences between the two commits</p>
-<pre><code class="language-bash">git diff &lt;commit1&gt; &lt;commit2&gt; [&lt;path&gt;...]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> <span class="token operator">&lt;</span>commit<span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token operator">&lt;</span>commit<span class="token operator"><span class="token file-descriptor important">2</span>></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>--stat</code>: Generate a diffstat</p>
 <h4 id="Stash"><a class="header-anchor" href="#Stash"></a>Stash</h4>
 <p>Stash the changes in a dirty working directory away</p>
-<pre><code class="language-bash">git stash [save [&lt;message&gt;]]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash <span class="token punctuation">[</span>save <span class="token punctuation">[</span><span class="token operator">&lt;</span>message<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>The ignored files and the untracked files are also stashed and cleaned</p>
-<pre><code class="language-bash">git stash save -a [&lt;message&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash save -a <span class="token punctuation">[</span><span class="token operator">&lt;</span>message<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>List the stashes that you currently have</p>
-<pre><code class="language-bash">git stash list
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Show the changes recorded in the stash as a diff between the stashed state and its original parent</p>
-<pre><code class="language-bash">git stash show [&lt;stash&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash show <span class="token punctuation">[</span><span class="token operator">&lt;</span>stash<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Remove a single stashed state from the stash list and apply it on top of the current working tree state</p>
-<pre><code class="language-bash">git stash pop [&lt;stash&gt;]  # pop = apply + drop
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop <span class="token punctuation">[</span><span class="token operator">&lt;</span>stash<span class="token operator">></span><span class="token punctuation">]</span>  <span class="token comment"># pop = apply + drop</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Branch-v2"><a class="header-anchor" href="#Branch-v2"></a>Branch</h3>
 <p>Create branches</p>
-<pre><code class="language-bash">git branch &lt;branchname&gt; [&lt;start-point&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token operator">&lt;</span>branchname<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>start-point<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>List branch names(<code>-r</code>: remote; <code>-a</code>: local &amp; remote)</p>
-<pre><code class="language-bash">git branch [-r | -a]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>-r <span class="token operator">|</span> -a<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Show branches and their commits</p>
-<pre><code class="language-bash">git show-branch [-r | -a] [--more=&lt;n&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> show-branch <span class="token punctuation">[</span>-r <span class="token operator">|</span> -a<span class="token punctuation">]</span> <span class="token punctuation">[</span>--more<span class="token operator">=</span><span class="token operator">&lt;</span>n<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Delete branches</p>
-<pre><code class="language-bash">git branch -d &lt;branchname&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -d <span class="token operator">&lt;</span>branchname<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Figure out if you are on a detached <code>HEAD</code></p>
-<pre><code class="language-bash">$ git branch
-* (no branch)
-  master
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> branch
+* <span class="token punctuation">(</span>no branch<span class="token punctuation">)</span>
+  master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="Checkout-v2"><a class="header-anchor" href="#Checkout-v2"></a>Checkout</h4>
 <p>Check out branches</p>
-<pre><code class="language-bash">git checkout &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Create and check out a new branch</p>
-<pre><code class="language-bash">git checkout -b &lt;new_branch&gt; [&lt;start-point&gt;]
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>new_branch<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>start-point<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Check out remote branch</p>
-<pre><code class="language-bash">git fetch origin
-git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch origin
+<span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>local_branch<span class="token operator">></span> origin/<span class="token operator">&lt;</span>remote_branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Check out remote branch (With Git versions ≥ 1.6.6)</p>
-<pre><code class="language-bash">git fetch
-git checkout &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Push a new local branch to a remote repository</p>
-<pre><code class="language-bash">git checkout -b &lt;branch&gt;
-git push -u origin &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+<span class="token function">git</span> push -u origin <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="Merge-v2"><a class="header-anchor" href="#Merge-v2"></a>Merge</h4>
 <p>Merge the <code>&lt;branch&gt;</code> into the current branch</p>
-<pre><code class="language-bash">git merge &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Locate Conflicted Files</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
 You have unmerged paths.
-  (fix conflicts and run &quot;git commit&quot;)
-  (use &quot;git merge --abort&quot; to abort the merge)
+  <span class="token punctuation">(</span>fix conflicts and run <span class="token string">"git commit"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git merge --abort"</span> to abort the merge<span class="token punctuation">)</span>
 
 Unmerged paths:
-  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to mark resolution<span class="token punctuation">)</span>
 
 	both modified:   hello
 
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)it status
-</code></pre>
+no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>it status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Three-way merge marker lines</p>
-<pre><code class="language-bash">Here are lines that are either unchanged from the common ancestor, or cleanly resolved because only one side changed.
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; yours:sample.txt
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Here are lines that are either unchanged from the common ancestor, or cleanly resolved because only one side changed.
+<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> yours:sample.txt
 Text A
-=======
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
 Text B
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs:sample.txt
-And here is another line that is cleanly resolved or unmodified.
-</code></pre>
+<span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span> theirs:sample.txt
+And here is another line that is cleanly resolved or unmodified.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Rebase"><a class="header-anchor" href="#Rebase"></a>Rebase</h4>
 <p>Reapply commits on top of another base tip</p>
-<pre><code class="language-bash">git rebase &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Edit the list of the commits before rebasing (pick, reword, edit, squash, etc.)</p>
-<pre><code class="language-bash">git rebase -i &lt;branch&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase -i <span class="token operator">&lt;</span>branch<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>eg.</p>
-<pre><code class="language-bash">git rebase -i master~3
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase -i master~3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Remote-Repository-v2"><a class="header-anchor" href="#Remote-Repository-v2"></a>Remote Repository</h3>
 <p>Mechanisms for exchanging commits and keeping distributed repositories synchronized:</p>
 <ul>
@@ -869,195 +822,167 @@ And here is another line that is cleanly resolved or unmodified.
 </ul>
 <h4 id="git-remote"><a class="header-anchor" href="#git-remote"></a>git remote</h4>
 <p>Manage set of tracked repositories</p>
-<pre><code class="language-bash">git remote
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Adds a remote named <code>&lt;name&gt;</code> for the repository at <code>&lt;url&gt;</code>.</p>
-<pre><code class="language-bash">git remote add &lt;name&gt; &lt;url&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token operator">&lt;</span>url<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Gives some information about the remote <code>&lt;name&gt;</code>.</p>
-<pre><code class="language-bash">git remote show &lt;name&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote show <span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Fetch updates for a named set of remotes in the repository as defined by remotes.</p>
-<pre><code class="language-bash">git remote update
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Deletes all stale remote-tracking branches under <code>&lt;name&gt;</code>.</p>
-<pre><code class="language-bash">git remote prune &lt;name&gt;...
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote prune <span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
 <p>Download objects and refs from another repository</p>
-<pre><code class="language-bash">git fetch
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
 <p>Fetch from and integrate with another repository or a local branch</p>
-<pre><code class="language-bash">git pull  # pull = fetch + merge
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull  <span class="token comment"># pull = fetch + merge</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
 <p>Update remote refs along with associated objects</p>
-<pre><code class="language-bash">git push
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Find a ref that matches master in the source repository (most likely, it would find <code>refs/heads/master</code>), and update the same ref(e.g. <code>refs/heads/master</code>) in origin repository with it.</p>
-<pre><code class="language-bash">git push origin master
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Push the current branch and set the remote as upstream</p>
-<pre><code class="language-bash">git push --set-upstream &lt;repository&gt; &lt;refspec&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --set-upstream <span class="token operator">&lt;</span>repository<span class="token operator">></span> <span class="token operator">&lt;</span>refspec<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Advanced"><a class="header-anchor" href="#Advanced"></a>Advanced</h3>
 <h4 id="git-filter-branch"><a class="header-anchor" href="#git-filter-branch"></a>git filter-branch</h4>
 <p><code>git filter-branch</code>: Rewrite Git revision history by rewriting the branches, applying custom filters on each revision.</p>
 <p>Remove a file from all commits</p>
-<pre><code class="language-bash">git filter-branch --tree-filter 'rm -f &lt;file&gt;' master
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --tree-filter <span class="token string">'rm -f &lt;file>'</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Rewrite the commit messages</p>
-<pre><code class="language-bash">git filter-branch --msg-filter 'sed &lt;command&gt;' master
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --msg-filter <span class="token string">'sed &lt;command>'</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Remove one line in file from all commits</p>
-<pre><code class="language-bash">git filter-branch --tree-filter &quot;test -f &lt;file&gt; &amp;&amp; sed -i '' \&quot;/&lt;content&gt;/ d\&quot; &lt;file&gt; || echo skip&quot; -- --all
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --tree-filter <span class="token string">"test -f &lt;file> &amp;&amp; sed -i '' <span class="token entity" title="\&quot;">\"</span>/&lt;content>/ d<span class="token entity" title="\&quot;">\"</span> &lt;file> || echo skip"</span> -- --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Faster version of removing a file, translating any tag refs from a prefiltered state into the new postfiltered repository, operating on all branches</p>
-<pre><code class="language-bash">git filter-branch --index-filter 'git rm --cached --ignore-unmatch &lt;file&gt;' \
---tag-name-filter cat \
--- --all
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --index-filter <span class="token string">'git rm --cached --ignore-unmatch &lt;file>'</span> <span class="token punctuation">\</span>
+--tag-name-filter <span class="token function">cat</span> <span class="token punctuation">\</span>
+-- --all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Turn a subdirectory into a repository of its own</p>
-<pre><code class="language-bash">git filter-branch --subdirectory-filter &lt;directory&gt; -- --all
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --subdirectory-filter <span class="token operator">&lt;</span>directory<span class="token operator">></span> -- --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="git-fsck"><a class="header-anchor" href="#git-fsck"></a>git fsck</h4>
 <p>Verify the connectivity and validity of the objects in the database (File System ChecK)</p>
-<pre><code class="language-bash">git fsck
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">fsck</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>--no-reflogs</code>: Do not consider commits that are referenced only by an entry in a reflog to be reachable</p>
 <h4 id="git-rerere"><a class="header-anchor" href="#git-rerere"></a>git rerere</h4>
 <p><code>git rerere</code>: Reuse recorded resolution of conflicted merges</p>
 <h3 id="Config"><a class="header-anchor" href="#Config"></a>Config</h3>
 <p><code>git config</code>: Get and set repository or global options</p>
 <p>Set <code>ignoreCase</code> to <code>false</code></p>
-<pre><code class="language-bash">git config core.ignorecase false
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config core.ignorecase <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="Solution"><a class="header-anchor" href="#Solution"></a>Solution</h2>
-<h3 id="Git-pull-till-a-particular-commit"><a class="header-anchor" href="#Git-pull-till-a-particular-commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit" target="_blank" rel="noopener">Git pull till a particular commit</a></h3>
-<pre><code class="language-bash">git fetch remote &lt;branch_name&gt;
-git merge &lt;commit_hash&gt;
-</code></pre>
-<h3 id="Your-branch-and-‘origin-master’-have-diverged"><a class="header-anchor" href="#Your-branch-and-‘origin-master’-have-diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com" target="_blank" rel="noopener">Your branch and ‘origin/master’ have diverged</a></h3>
-<pre><code class="language-bash">git fetch origin
-git reset --hard origin/master
-</code></pre>
+<h3 id="Git-pull-till-a-particular-commit"><a class="header-anchor" href="#Git-pull-till-a-particular-commit"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch remote <span class="token operator">&lt;</span>branch_name<span class="token operator">></span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>commit_hash<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Your-branch-and-‘origin-master’-have-diverged"><a class="header-anchor" href="#Your-branch-and-‘origin-master’-have-diverged"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin/master’ have diverged</a></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch origin
+<span class="token function">git</span> reset --hard origin/master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Recover-a-dropped-stash-entry"><a class="header-anchor" href="#Recover-a-dropped-stash-entry"></a>Recover a dropped stash entry</h3>
 <p>If the following code is executed accidentally</p>
-<pre><code class="language-sh">git stash pop
-git checkout -- .
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop
+<span class="token function">git</span> checkout -- <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<pre><code class="language-sh">gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gitk --all <span class="token variable"><span class="token variable">$(</span> <span class="token function">git</span> <span class="token function">fsck</span> --no-reflog <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/dangling commit/ &#123;print <span class="token variable">$3</span>&#125;'</span> <span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Then, run <code>git stash</code> to apply the stash entry</p>
-<pre><code class="language-sh">git stash apply &lt;stash_hash&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash apply <span class="token operator">&lt;</span>stash_hash<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="Git-Concepts-at-Work"><a class="header-anchor" href="#Git-Concepts-at-Work"></a>Git Concepts at Work</h2>
 <h3 id="Initialize-Git-repository"><a class="header-anchor" href="#Initialize-Git-repository"></a>Initialize Git repository</h3>
-<pre><code class="language-bash">$ mkdir ~/tmp
-$ cd ~/tmp
-$ git init
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mkdir</span> ~/tmp
+$ <span class="token builtin class-name">cd</span> ~/tmp
+$ <span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Git status</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
 
 Initial commit
 
-nothing to commit (create/copy files and use &quot;git add&quot; to track)
-</code></pre>
+nothing to commit <span class="token punctuation">(</span>create/copy files and use <span class="token string">"git add"</span> to track<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Directory structure</p>
-<pre><code class="language-bash">$ tree -a
-.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ tree -a
+<span class="token builtin class-name">.</span>
 └── .git
     ├── HEAD
     ├── config
     ├── description
     ├── hooks
-    │   ├── applypatch-msg.sample
-    │   ├── commit-msg.sample
-    │   ├── post-update.sample
-    │   ├── pre-applypatch.sample
-    │   ├── pre-commit.sample
-    │   ├── pre-push.sample
-    │   ├── pre-rebase.sample
-    │   ├── pre-receive.sample
-    │   ├── prepare-commit-msg.sample
-    │   └── update.sample
+    │   ├── applypatch-msg.sample
+    │   ├── commit-msg.sample
+    │   ├── post-update.sample
+    │   ├── pre-applypatch.sample
+    │   ├── pre-commit.sample
+    │   ├── pre-push.sample
+    │   ├── pre-rebase.sample
+    │   ├── pre-receive.sample
+    │   ├── prepare-commit-msg.sample
+    │   └── update.sample
     ├── info
-    │   └── exclude
+    │   └── exclude
     ├── objects
-    │   ├── info
-    │   └── pack
+    │   ├── info
+    │   └── pack
     └── refs
         ├── heads
-        └── tags
-</code></pre>
+        └── tags<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Create-Initial-Commit"><a class="header-anchor" href="#Create-Initial-Commit"></a>Create Initial Commit</h3>
-<pre><code class="language-bash">$ echo &quot;This is file1&quot; &gt; file1.txt
-$ mkdir dir1
-$ echo &quot;This is file2&quot; &gt; dir1/file2.txt
-$ git add -A
-$ git commit -m &quot;initial commit&quot;
-[master (root-commit) 4ec4dac] initial commit
- 2 files changed, 2 insertions(+)
- create mode 100644 dir1/file2.txt
- create mode 100644 file1.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">"This is file1"</span> <span class="token operator">></span> file1.txt
+$ <span class="token function">mkdir</span> dir1
+$ <span class="token builtin class-name">echo</span> <span class="token string">"This is file2"</span> <span class="token operator">></span> dir1/file2.txt
+$ <span class="token function">git</span> <span class="token function">add</span> -A
+$ <span class="token function">git</span> commit -m <span class="token string">"initial commit"</span>
+<span class="token punctuation">[</span>master <span class="token punctuation">(</span>root-commit<span class="token punctuation">)</span> 4ec4dac<span class="token punctuation">]</span> initial commit
+ <span class="token number">2</span> files changed, <span class="token number">2</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> dir1/file2.txt
+ create mode <span class="token number">100644</span> file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Git status</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
-nothing to commit, working tree clean
-</code></pre>
+nothing to commit, working tree clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Directory structure</p>
-<pre><code class="language-bash">$ tree -a
-.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ tree -a
+<span class="token builtin class-name">.</span>
 ├── .git
-│   ├── COMMIT_EDITMSG
-│   ├── HEAD
-│   ├── config
-│   ├── description
-│   ├── hooks
-│   │   ├── applypatch-msg.sample
-│   │   ├── commit-msg.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-applypatch.sample
-│   │   ├── pre-commit.sample
-│   │   ├── pre-push.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── pre-receive.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   └── update.sample
-│   ├── index
-│   ├── info
-│   │   └── exclude
-│   ├── logs
-│   │   ├── HEAD
-│   │   └── refs
-│   │       └── heads
-│   │           └── master
-│   ├── objects
-│   │   ├── 09
-│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
-│   │   ├── 11
-│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
-│   │   ├── 4e
-│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
-│   │   ├── c2
-│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
-│   │   ├── e3
-│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
-│   │   ├── info
-│   │   └── pack
-│   └── refs
-│       ├── heads
-│       │   └── master
-│       └── tags
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       └── heads
+│   │           └── master
+│   ├── objects
+│   │   ├── 09
+│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
+│   │   ├── <span class="token number">11</span>
+│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
+│   │   ├── 4e
+│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
+│   │   ├── c2
+│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
+│   │   ├── e3
+│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── tags
 ├── dir1
-│   └── file2.txt
-└── file1.txt
-</code></pre>
+│   └── file2.txt
+└── file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>config</code>: repository-specific configuration settings<br>
 <code>index</code>: index<br>
 <code>logs</code>: reflogs<br>
@@ -1070,161 +995,151 @@ nothing to commit, working tree clean
 <p>Git’s Object Model and Files<br>
 <img src="/blog/Git-Amateur-Guide/InitialState.png" alt="Initial State" style="width:300px;"></p>
 <h3 id="Edit-Files"><a class="header-anchor" href="#Edit-Files"></a>Edit Files</h3>
-<pre><code class="language-bash">$ echo &quot;Another line in file1&quot; &gt;&gt; file1.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">"Another line in file1"</span> <span class="token operator">>></span> file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Git status</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+Changes not staged <span class="token keyword">for</span> commit:
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git checkout -- &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
 
 	modified:   file1.txt
 
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre>
+no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Git’s Object Model and Files<br>
 <img src="/blog/Git-Amateur-Guide/EditFiles.png"  alt="Edit Files" style="width:300px;"></p>
 <h3 id="Stage-Files"><a class="header-anchor" href="#Stage-Files"></a>Stage Files</h3>
 <p><code>git add</code>: Add file contents to the object store and let the index refer to it.</p>
-<pre><code class="language-bash">$ git add file1.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">add</span> file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Git status</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
 Changes to be committed:
-  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+  <span class="token punctuation">(</span>use <span class="token string">"git reset HEAD &lt;file>..."</span> to unstage<span class="token punctuation">)</span>
 
 	modified:   file1.txt
-
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Directory structure</p>
-<pre><code class="language-bash">$ tree -a
-.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ tree -a
+<span class="token builtin class-name">.</span>
 ├── .git
-│   ├── COMMIT_EDITMSG
-│   ├── HEAD
-│   ├── config
-│   ├── description
-│   ├── hooks
-│   │   ├── applypatch-msg.sample
-│   │   ├── commit-msg.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-applypatch.sample
-│   │   ├── pre-commit.sample
-│   │   ├── pre-push.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── pre-receive.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   └── update.sample
-│   ├── index
-│   ├── info
-│   │   └── exclude
-│   ├── logs
-│   │   ├── HEAD
-│   │   └── refs
-│   │       └── heads
-│   │           └── master
-│   ├── objects
-│   │   ├── 09
-│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
-│   │   ├── 11
-│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
-│   │   ├── 4e
-│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
-│   │   ├── c2
-│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
-│   │   ├── e2
-│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e
-│   │   ├── e3
-│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
-│   │   ├── info
-│   │   └── pack
-│   └── refs
-│       ├── heads
-│       │   └── master
-│       └── tags
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       └── heads
+│   │           └── master
+│   ├── objects
+│   │   ├── 09
+│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
+│   │   ├── <span class="token number">11</span>
+│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
+│   │   ├── 4e
+│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
+│   │   ├── c2
+│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
+│   │   ├── e2
+│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e
+│   │   ├── e3
+│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── tags
 ├── dir1
-│   └── file2.txt
-└── file1.txt
-</code></pre>
+│   └── file2.txt
+└── file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Get the content of repository objects</p>
-<pre><code class="language-bash">$ git cat-file -p e2e513
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> cat-file -p e2e513
 This is file1
-Another line in file1
-</code></pre>
+Another line <span class="token keyword">in</span> file1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Get staged contents’ object name, mode bits and stage number</p>
-<pre><code class="language-bash">$ git ls-files --stage
-100644 095ee29baa1adc16134c723b6971f7cf68dfaf1e 0	dir1/file2.txt
-100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> ls-files --stage
+<span class="token number">100644</span> 095ee29baa1adc16134c723b6971f7cf68dfaf1e <span class="token number">0</span>	dir1/file2.txt
+<span class="token number">100644</span> e2e513bd3e053452ffe9b43d66d516e51e46755e <span class="token number">0</span>	file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Git’s Object Model and Files<br>
 <img src="/blog/Git-Amateur-Guide/StageFiles.png" alt="Stage Files" style="width:400px;"></p>
 <h3 id="Commit-Files"><a class="header-anchor" href="#Commit-Files"></a>Commit Files</h3>
 <p><code>git-commit</code>: Record changes to the repository</p>
-<pre><code class="language-bash">$ git commit -m &quot;update file1&quot;
-[master a123b84] update file1
- 1 file changed, 1 insertion(+)
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">"update file1"</span>
+<span class="token punctuation">[</span>master a123b84<span class="token punctuation">]</span> update file1
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Git status</p>
-<pre><code class="language-bash">$ git status
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
 On branch master
-nothing to commit, working tree clean
-</code></pre>
+nothing to commit, working tree clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Directory structure</p>
-<pre><code class="language-bash">$ tree -a
-.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ tree -a
+<span class="token builtin class-name">.</span>
 ├── .git
-│   ├── COMMIT_EDITMSG
-│   ├── HEAD
-│   ├── config
-│   ├── description
-│   ├── hooks
-│   │   ├── applypatch-msg.sample
-│   │   ├── commit-msg.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-applypatch.sample
-│   │   ├── pre-commit.sample
-│   │   ├── pre-push.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── pre-receive.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   └── update.sample
-│   ├── index
-│   ├── info
-│   │   └── exclude
-│   ├── logs
-│   │   ├── HEAD
-│   │   └── refs
-│   │       └── heads
-│   │           └── master
-│   ├── objects
-│   │   ├── 09
-│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
-│   │   ├── 11
-│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
-│   │   ├── 4e
-│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
-│   │   ├── a1
-│   │   │   └── 23b845d501777ec7c0161af7096b98c2ff3957
-│   │   ├── c2
-│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
-│   │   ├── e2
-│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e
-│   │   ├── e3
-│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
-│   │   ├── eb
-│   │   │   └── 6911337f9ab1b5fb477ba6eb08e4b8c99e7344
-│   │   ├── info
-│   │   └── pack
-│   └── refs
-│       ├── heads
-│       │   └── master
-│       └── tags
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       └── heads
+│   │           └── master
+│   ├── objects
+│   │   ├── 09
+│   │   │   └── 5ee29baa1adc16134c723b6971f7cf68dfaf1e
+│   │   ├── <span class="token number">11</span>
+│   │   │   └── 842f14c36f932dd0f7fce95d932be65bb15984
+│   │   ├── 4e
+│   │   │   └── c4dac8025a96681a712705e8cf5c78aebccfc7
+│   │   ├── a1
+│   │   │   └── 23b845d501777ec7c0161af7096b98c2ff3957
+│   │   ├── c2
+│   │   │   └── 78a75b034f58b7a2e3c9a3bf463ada390c5aa7
+│   │   ├── e2
+│   │   │   └── e513bd3e053452ffe9b43d66d516e51e46755e
+│   │   ├── e3
+│   │   │   └── aafd04f6be707d1f6fcb6c469315c9fef4b711
+│   │   ├── eb
+│   │   │   └── 6911337f9ab1b5fb477ba6eb08e4b8c99e7344
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── tags
 ├── dir1
-│   └── file2.txt
-└── file1.txt
-</code></pre>
+│   └── file2.txt
+└── file1.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Git’s Object Model and Files<br>
 <img src="/blog/Git-Amateur-Guide/CommitFiles.png" alt="Commit Files" style="width:400px;"></p>
 
@@ -1266,6 +1181,7 @@ nothing to commit, working tree clean
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+              <a href="/blog/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
           </div>
 
         
@@ -1337,12 +1253,12 @@ nothing to commit, working tree clean
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -1382,8 +1298,6 @@ nothing to commit, working tree clean
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

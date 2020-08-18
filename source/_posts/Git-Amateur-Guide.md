@@ -5,11 +5,14 @@ updated:
 categories:
 - Tool
 - Git
-tags: Git
+tags: 
+- Git
+- Note
 keywords: Git
 ---
 
-Collecting from *Version Control with Git* & *Git Manual*
+Ref: *Version Control with Git* & *Git Manual*
+Version: 2.27.0
 
 ## Concept
 ### Git
@@ -578,16 +581,16 @@ git reset --hard origin/master
 
 ### Recover a dropped stash entry
 If the following code is executed accidentally
-``` sh
+``` bash
 git stash pop
 git checkout -- .
 ```
 First, use `gitk` to find the corresponding hash value
-``` sh
+``` bash
 gitk --all $( git fsck --no-reflog | awk '/dangling commit/ {print $3}' )
 ```
 Then, run `git stash` to apply the stash entry
-``` sh
+``` bash
 git stash apply <stash_hash>
 ```
 

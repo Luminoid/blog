@@ -137,6 +137,7 @@ brew install vim
 [Toolbox](https://www.jetbrains.com/toolbox/app/)
 
 ### [Xcode](https://developer.apple.com/cn/xcode/)
+{% post_link Xcode-Usage %}
 
 ## Tool
 ### [Docker](https://www.docker.com)
@@ -203,7 +204,7 @@ brew cask install font-fira-code font-firacode-nerd-font
 brew install antigen autojump automake bat cmake diff-so-fancy exa fd ffmpeg fzf gdb git git-lfs graphicsmagick highlight htop hunspell librsvg mtr mysql nasm ncdu openvpn pandoc phantomjs pinentry pngquant prettyping r rlwrap scons sqlmap swiftlint tesseract the_silver_searcher tig tldr tmux tree unrar vim watchman wget yarn
 brew tap caskroom/cask
 brew tap caskroom/fonts
-brew cask install font-fira-code font-firacode-nerd-font font-hack-nerd-font launchrocket qlcolorcode qlimagesize qlmarkdown qlstephen qlvideo  quicklook-json quicklookase suspicious-package webpquicklook
+brew cask install brooklyn dozer fiscript font-fira-code font-firacode-nerd-font font-hack-nerd-font itsycal launchrocket qlcolorcode qlimagesize qlmarkdown qlstephen qlvideo  quicklook-json quicklookase suspicious-package webpquicklook
 npm install -g npm-check
 sudo gem install cocoapods
 ```

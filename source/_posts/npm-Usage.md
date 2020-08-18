@@ -12,6 +12,7 @@ keywords: npm
 ---
 
 Official Site: https://www.npmjs.com
+Version: 6.11.3
 
 ## Command
 ``` bash

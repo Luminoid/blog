@@ -16,15 +16,22 @@ keywords:
 - NexT
 ---
 
+Version: v8.0.0-rc.5
 [Repo](https://github.com/next-theme/hexo-theme-next)
 [Documentation](https://theme-next.js.org/)
 [Instruction (Chinese version only)](https://github.com/next-theme/hexo-theme-next/issues/4)
 
 ## Usage
 ### Update
-``` sh
+Using `git`
+``` bash
 $ cd themes/next
 $ git pull
+```
+
+Using `npm` (Since Version 5.0)
+``` bash
+$ yarn upgrade hexo-theme-next
 ```
 
 ### Configurations

@@ -9,12 +9,12 @@ tags:
 - Hexo
 keywords:
 - Hexo
-- server
 - hexo-algolia
 - hexo-math
 - hexo-toc
 - hexo-all-minifier
 - Gitment
+- highlight.js
 - prism
 ---
 

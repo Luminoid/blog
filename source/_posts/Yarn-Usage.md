@@ -11,24 +11,28 @@ tags:
 keywords: Yarn
 ---
 
-Official Site: https://yarnpkg.com/
+Official Site: 
+- https://yarnpkg.com/          (Yarn 2)
+- https://classic.yarnpkg.com/  (Yarn 1.x)
 Version: 1.22.4
 
 ## Command
 ``` bash
-yarn list                           # List installed packages
-yarn install                        # Install all the dependencies of project; alias: yarn
-yarn add <package...>               # Install packages in your dependencies
-yarn add <package...> [--dev/-D]    # Install packages in your devDependencies
-yarn global add <package...>        # Install packages globally
-yarn upgrade [package]              # Upgrade a package
-yarn upgrade-interactive            # Provides an easy way to update outdated packages.
-yarn outdated                       # Checks for outdated package dependencies
-yarn remove <package...>            # Remove packages
-yarn run [script] [<args>]          # Run a defined package script
-yarn init                           # Interactively create or update a package.json file
-yarn audit                          # Checks for known security issues with the installed packages.
-yarn                                # Try Yarn out on your existing npm project
+yarn list                                   # List installed packages
+yarn install                                # Install all the dependencies of project; alias: yarn
+yarn add <package...>                       # Install packages in your dependencies
+yarn add <package...> [--dev/-D]            # Install packages in your devDependencies
+yarn global add <package...>                # Install packages globally
+yarn upgrade [package]                      # Upgrade a package
+yarn upgrade --latest                       # Ignores the version range specified in package.json.
+yarn upgrade-interactive                    # Provides an easy way to update outdated packages.
+yarn global upgrade-interactive --latest    # Update outdated packages globally
+yarn outdated                               # Checks for outdated package dependencies
+yarn remove <package...>                    # Remove packages
+yarn run [script] [<args>]                  # Run a defined package script
+yarn init                                   # Interactively create or update a package.json file
+yarn audit                                  # Checks for known security issues with the installed packages.
+yarn                                        # Try Yarn out on your existing npm project
 ```
 
 <!-- more -->

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="Notes about programming(mostly iOS and Web) and other fields">
@@ -32,8 +32,7 @@
 <meta property="og:description" content="Notes about programming(mostly iOS and Web) and other fields">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Luminoid">
-<meta property="article:tag" content="iOS">
-<meta property="article:tag" content=" Web">
+<meta property="article:tag" content="iOS, Web">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/page/2/">
@@ -104,9 +103,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -148,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -172,7 +171,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -193,9 +192,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -240,7 +239,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -305,7 +304,887 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Browser-Enhancement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Browser-Enhancement/" class="post-title-link" itemprop="url">Browser Enhancement</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-01-01 18:39:12" itemprop="dateCreated datePublished" datetime="2018-01-01T18:39:12+08:00">2018-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 17:34:35" itemprop="dateModified" datetime="2020-07-26T17:34:35+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Safari"><a class="header-anchor" href="#Safari"></a>Safari</h2>
+<h3 id="Extensions"><a class="header-anchor" href="#Extensions"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com">Extensions</a></h3>
+<h4 id="Adblock-Plus"><a class="header-anchor" href="#Adblock-Plus"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A">Adblock Plus</a></h4>
+<blockquote>
+<p>Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.</p>
+</blockquote>
+<h4 id="Ghostery"><a class="header-anchor" href="#Ghostery"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com/details/?id=com.betteradvertising.ghostery-HPY23A294X">Ghostery</a></h4>
+<blockquote>
+<p>Helps you enjoy a faster, safer, and cleaner browsing experience by giving you the control to make informed decisions about the personal data you share with the tags on the sites you visit.</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Browser-Enhancement/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/UIView-Inheritance-Relationships/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/UIView-Inheritance-Relationships/" class="post-title-link" itemprop="url">UIView Inheritance Relationships</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-11-08 00:51:51" itemprop="dateCreated datePublished" datetime="2017-11-08T00:51:51+08:00">2017-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 17:06:47" itemprop="dateModified" datetime="2020-07-26T17:06:47+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>42</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>iOS Version: 11</p>
+<p><code>+</code>: Class method<br>
+<code>-</code>: Instance method</p>
+<img src="/blog/UIView-Inheritance-Relationships/UIViewClassDiagram.png" class="" title="UIViewClassDiagram">
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Docker-Cheat-Sheet/" class="post-title-link" itemprop="url">Docker Cheat Sheet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-04 11:49:21" itemprop="dateCreated datePublished" datetime="2017-10-04T11:49:21+08:00">2017-10-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 17:05:48" itemprop="dateModified" datetime="2020-07-26T17:05:48+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>791</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Docker Version: 17.06.0-ce-mac19</p>
+<h2 id="Containers"><a class="header-anchor" href="#Containers"></a>Containers</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker build -t<span class="token operator">=</span><span class="token string">"luminoid/my_image"</span> <span class="token builtin class-name">.</span>                   <span class="token comment"># Build an image from current directory's Dockerfile</span>
+docker run username/repository:tag                                            <span class="token comment"># Run an image from a registry</span>
+docker run -p <span class="token number">12345</span>:80 <span class="token operator">&lt;</span>image_name<span class="token operator">></span>                                  <span class="token comment"># Run an image mapping port 12345 to 80</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -i -t ubuntu /bin/bash                 <span class="token comment"># Run a command in a new container</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/data -i -t ubuntu /bin/bash  <span class="token comment"># Run a container with a volume</span>
+docker start -i <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                    <span class="token comment"># Start stopped containers interactively</span>
+docker stop <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                       <span class="token comment"># Stop running containers</span>
+docker <span class="token function">ps</span> -a                                            <span class="token comment"># Show all containers (include the ones not running)</span>
+docker <span class="token function">rm</span> <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                      <span class="token comment"># Remove specified container</span>
+docker <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -a -q<span class="token variable">)</span></span>                                                         <span class="token comment"># Remove all containers</span>
+docker images -a                                                                           <span class="token comment"># Show all images</span>
+docker rmi <span class="token operator">&lt;</span>hash<span class="token operator">></span>                                                                   <span class="token comment"># Remove specified image</span>
+docker rmi <span class="token variable"><span class="token variable">$(</span>docker images -q<span class="token variable">)</span></span>                                                           <span class="token comment"># Remove all images</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Building-Hexo-Website-with-Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Building-Hexo-Website-with-Docker/" class="post-title-link" itemprop="url">Building Hexo Website with Docker</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-08-22 00:10:13" itemprop="dateCreated datePublished" datetime="2017-08-22T00:10:13+08:00">2017-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 16:50:28" itemprop="dateModified" datetime="2020-07-26T16:50:28+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This is a portable and generic solution to build Hexo website with Docker.</p>
+<h2 id="The-Hexo-base-image"><a class="header-anchor" href="#The-Hexo-base-image"></a>The Hexo base image</h2>
+<h3 id="Creating-Hexo-Dockerfile"><a class="header-anchor" href="#Creating-Hexo-Dockerfile"></a>Creating Hexo Dockerfile</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mkdir</span> hexo
+$ <span class="token builtin class-name">cd</span> hexo
+$ <span class="token function">vim</span> Dockerfile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="Hexo-Dockerfile-Content"><a class="header-anchor" href="#Hexo-Dockerfile-Content"></a>Hexo Dockerfile Content</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM ubuntu:14.04
+MAINTAINER luminoid
+ENV REFRESHED_AT <span class="token number">2017</span>-08-28
+
+<span class="token comment"># Install Hexo</span>
+RUN <span class="token function">apt-get</span> update -yqq <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -yqq <span class="token function">curl</span> git-core <span class="token punctuation">\</span>
+  <span class="token comment"># Install Node.js Using a PPA</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_7.x <span class="token operator">|</span> <span class="token function">bash</span> - <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -yqq nodejs build-essential <span class="token punctuation">\</span>
+  <span class="token comment"># Set config to avoid permission issues</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> user <span class="token number">0</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> unsafe-perm <span class="token boolean">true</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+
+<span class="token comment"># Clone blog</span>
+WORKDIR /data
+RUN <span class="token function">git</span> clone https://github.com/Luminoid/blog.git
+
+<span class="token comment"># Install blog dependencies</span>
+WORKDIR /data/blog
+RUN <span class="token function">npm</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> prompt --save <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> jquery --save
+
+RUN <span class="token function">mkdir</span> -p /var/www/html/ <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> -r /data/blog/docs/* /var/www/html/
+VOLUME <span class="token punctuation">[</span> <span class="token string">"/data/blog"</span>, <span class="token string">"/var/www/html"</span> <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Building-Hexo-Website-with-Docker/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Mac-Development-Config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Mac-Development-Config/" class="post-title-link" itemprop="url">Mac Development Config</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 16:46:18" itemprop="dateModified" datetime="2020-07-26T16:46:18+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>6.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Mac-Usage"><a class="header-anchor" href="#Mac-Usage"></a>Mac Usage</h2>
+<a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
+<h2 id="Package-Manager"><a class="header-anchor" href="#Package-Manager"></a>Package Manager</h2>
+<h3 id="Homebrew"><a class="header-anchor" href="#Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh">Homebrew</a></h3>
+<h4 id="Install"><a class="header-anchor" href="#Install"></a>Install</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h4>
+<a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
+<h3 id="Homebrew-Cask"><a class="header-anchor" href="#Homebrew-Cask"></a><a target="_blank" rel="noopener" href="https://caskroom.github.io">Homebrew-Cask</a></h3>
+<h4 id="Install-v2"><a class="header-anchor" href="#Install-v2"></a>Install</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap caskroom/cask<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Usage-v2"><a class="header-anchor" href="#Usage-v2"></a>Usage</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cask <span class="token function">install</span> google-chrome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com">npm</a></h3>
+<h4 id="Install-v3"><a class="header-anchor" href="#Install-v3"></a>Install</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Usage-v3"><a class="header-anchor" href="#Usage-v3"></a>Usage</h4>
+<a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Mac-Development-Config/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Hexo-Common-Problems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Hexo-Common-Problems/" class="post-title-link" itemprop="url">Hexo Common Problems</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-06-08 20:25:08" itemprop="dateCreated datePublished" datetime="2017-06-08T20:25:08+08:00">2017-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 01:53:44" itemprop="dateModified" datetime="2020-07-26T01:53:44+08:00">2020-07-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This article mainly focuses on the problems encountered in theme <a target="_blank" rel="noopener" href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak">tranquilpeak</a>.</p>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<h3 id="Template-render-error"><a class="header-anchor" href="#Template-render-error"></a>Template render error</h3>
+<p><strong>Problem</strong>:</p>
+<pre class="line-numbers language-none"><code class="language-none">Template render error: (unknown path)
+  Error: unexpected end of comment<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>Solution</strong>: Hexo cannot render <code>#</code> and <code>&#125;</code>, or <code>&#123;</code> and <code>#</code> together, place a space between these two characters to avoid this error.</p>
+<h3 id="hexo-server-not-found"><a class="header-anchor" href="#hexo-server-not-found"></a>hexo server not found</h3>
+<p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
+<p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Hexo-Common-Problems/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Remove-wbr-tags-from-Beautiful-Soup-object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Remove-wbr-tags-from-Beautiful-Soup-object/" class="post-title-link" itemprop="url">Remove wbr tags from Beautiful Soup object</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-06-06 12:35:16" itemprop="dateCreated datePublished" datetime="2017-06-06T12:35:16+08:00">2017-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-25 17:15:37" itemprop="dateModified" datetime="2020-07-25T17:15:37+08:00">2020-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Web/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>913</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Goal"><a class="header-anchor" href="#Goal"></a>Goal</h2>
+<p>Get plain text from a Beautiful Soup object with <code>&lt;br /&gt;</code> converted into line break and <code>&lt;wbr /&gt;</code> ignored.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Remove-wbr-tags-from-Beautiful-Soup-object/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/WWDC-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/WWDC-Note/" class="post-title-link" itemprop="url">WWDC Note</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-17 15:38:53" itemprop="dateCreated datePublished" datetime="2018-09-17T15:38:53+08:00">2018-09-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-25 16:33:21" itemprop="dateModified" datetime="2020-07-25T16:33:21+08:00">2020-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Frameworks"><a class="header-anchor" href="#Frameworks"></a>Frameworks</h2>
+<h3 id="WWDC18-Session-220-High-Performance-Auto-Layout"><a class="header-anchor" href="#WWDC18-Session-220-High-Performance-Auto-Layout"></a>WWDC18, Session 220: High Performance Auto Layout</h3>
+<h4 id="The-Render-Loop"><a class="header-anchor" href="#The-Render-Loop"></a>The Render Loop</h4>
+<img src="/blog/WWDC-Note/TheRenderLoop.png" class="" title="The Render Loop">
+<table>
+<thead>
+<tr>
+<th>Update Constraints</th>
+<th>Layout</th>
+<th>Display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>updateConstraints()</code></td>
+<td><code>layoutSubviews()</code></td>
+<td><code>draw(_:)</code></td>
+</tr>
+<tr>
+<td><code>setNeedsUpdateConstraints()</code></td>
+<td><code>setNeedsLayout()</code></td>
+<td><code>setNeedsDisplay()</code></td>
+</tr>
+<tr>
+<td><code>updateConstraintsIfNeeded()</code></td>
+<td><code>layoutIfNeeded()</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Performance-Intuition"><a class="header-anchor" href="#Performance-Intuition"></a>Performance Intuition</h4>
+<ul>
+<li>Don’t churn constraints</li>
+<li>The engine is a layout cache and dependency tracker.</li>
+</ul>
+<h3 id="WWDC18-Session-221-Textkit-Best-Practices"><a class="header-anchor" href="#WWDC18-Session-221-Textkit-Best-Practices"></a>WWDC18, Session 221: Textkit Best Practices</h3>
+<p>Choosing the Right Control</p>
+<img src="/blog/WWDC-Note/ChoosingTheRightControl.png" class="" title="Choosing the Right Control">
+<p>Layout process: Attribute Fixing -&gt; Glyph Generation -&gt; Glyph Layout -&gt; Display</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/WWDC-Note/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Texture-Concepts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,6 +1196,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -332,6 +1213,13 @@
 
               <time title="Created: 2018-08-08 21:52:08" itemprop="dateCreated datePublished" datetime="2018-08-08T21:52:08+08:00">2018-08-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-25 16:33:21" itemprop="dateModified" datetime="2020-07-25T16:33:21+08:00">2020-07-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -355,7 +1243,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>23 mins.</span>
+              <span>29 mins.</span>
             </span>
 
         </div>
@@ -365,9 +1253,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://texturegroup.org/" target="_blank" rel="noopener">Texture Docs</a></p>
+          <p><a target="_blank" rel="noopener" href="https://texturegroup.org/">Texture Docs</a></p>
 <h2 id="Subclassing"><a class="header-anchor" href="#Subclassing"></a>Subclassing</h2>
 <h3 id="ASDisplayNode"><a class="header-anchor" href="#ASDisplayNode"></a>ASDisplayNode</h3>
 <h4 id="init"><a class="header-anchor" href="#init"></a>-init</h4>
@@ -383,8 +1269,7 @@
 <p><code>-layout</code> is conceptually similar to UIViewController’s <code>-viewWillLayoutSubviews</code>. This is a good spot to change the hidden property, set view based properties if needed (not layoutable properties) or set background colors. You could put background color setting in -layoutSpecThatFits:, but there may be timing problems. If you happen to be using any UIViews, you can set their frames here. However, you can always create a node wrapper with <code>-initWithViewBlock:</code> and then size this on the background thread elsewhere.</p>
 <p>This method is called on the <strong>main thread</strong>. However, if you are using layout Specs, you shouldn’t rely on this method too much, as it is much preferable to do layout off the main thread. Less than 1 in 10 subclasses will need this.</p>
 <p>One great use of <code>-layout</code> is for the specific case in which you want a subnode to be your exact size. E.g. when you want a collectionNode to take up the full screen. This case is not supported well by layout specs and it is often easiest to set the frame manually with a single line in this method:</p>
-<pre><code class="language-swift">subnode.frame = self.bounds;
-</code></pre>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">subnode<span class="token punctuation">.</span>frame <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>bounds<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>If you desire the same effect in a ASViewController, you can do the same thing in -viewWillLayoutSubviews, unless your node is the node in initWithNode: and in that case it will do this automatically.</p>
           <!--noindex-->
             <div class="post-button">
@@ -411,201 +1296,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/oh-my-zsh-Usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/oh-my-zsh-Usage/" class="post-title-link" itemprop="url">oh-my-zsh Usage</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-08-01 08:54:47" itemprop="dateCreated datePublished" datetime="2018-08-01T08:54:47+08:00">2018-08-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Theme"><a class="header-anchor" href="#Theme"></a>Theme</h2>
-<h3 id="powerlevel9k"><a class="header-anchor" href="#powerlevel9k"></a><a href="https://github.com/bhilburn/powerlevel9k" target="_blank" rel="noopener">powerlevel9k</a></h3>
-<h2 id="Plugin-Manager"><a class="header-anchor" href="#Plugin-Manager"></a>Plugin Manager</h2>
-<h3 id="antigen"><a class="header-anchor" href="#antigen"></a><a href="https://github.com/zsh-users/antigen" target="_blank" rel="noopener">antigen</a></h3>
-<h4 id="Install"><a class="header-anchor" href="#Install"></a>Install</h4>
-<pre><code class="language-bash">brew install antigen
-</code></pre>
-<h2 id="Plugins"><a class="header-anchor" href="#Plugins"></a>Plugins</h2>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview" target="_blank" rel="noopener">Plugins Overview</a></p>
-<h3 id="extract"><a class="header-anchor" href="#extract"></a>extract</h3>
-<p>Extract archive files</p>
-<pre><code class="language-bash">extract &lt;filename&gt;
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/oh-my-zsh-Usage/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-Common-Problems/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/iOS-Common-Problems/" class="post-title-link" itemprop="url">iOS Common Problems</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-07-31 10:10:14" itemprop="dateCreated datePublished" datetime="2018-07-31T10:10:14+08:00">2018-07-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>134</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Command-CodeSign-failed-with-a-nonzero-exit-code"><a class="header-anchor" href="#Command-CodeSign-failed-with-a-nonzero-exit-code"></a>Command CodeSign failed with a nonzero exit code</h4>
-<p><strong>Solution</strong></p>
-<ol>
-<li>Open <em>Keychain Access.app</em></li>
-<li>Lock the ‘login’ keychain and then unlock it</li>
-<li>Clean build folder &amp; Build</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/iOS-Common-Problems/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Swift-Features/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -617,6 +1308,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -632,6 +1325,13 @@
 
               <time title="Created: 2018-07-31 09:15:40" itemprop="dateCreated datePublished" datetime="2018-07-31T09:15:40+08:00">2018-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-25 16:33:21" itemprop="dateModified" datetime="2020-07-25T16:33:21+08:00">2020-07-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -655,7 +1355,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>41 mins.</span>
+              <span>52 mins.</span>
             </span>
 
         </div>
@@ -665,11 +1365,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>References:</p>
 <ul>
-<li><a href="https://docs.swift.org/swift-book/" target="_blank" rel="noopener">The Swift Programming Language</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.swift.org/swift-book/">The Swift Programming Language</a></li>
 </ul>
 <p>This post is based on Swift 4.2</p>
 <h2 id="The-Basics"><a class="header-anchor" href="#The-Basics"></a>The Basics</h2>
@@ -688,19 +1386,17 @@ The Swift language defines the postfix <code>?</code> as syntactic sugar for the
 <h4 id="Forced-Unwrapping"><a class="header-anchor" href="#Forced-Unwrapping"></a>Forced Unwrapping</h4>
 <p><code>optional!</code>: forced unwrapping of the optional’s value</p>
 <h4 id="Optional-Binding"><a class="header-anchor" href="#Optional-Binding"></a>Optional Binding</h4>
-<pre><code class="language-swift">if let constantName = someOptional {
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">if</span> <span class="token keyword">let</span> constantName <span class="token operator">=</span> someOptional <span class="token punctuation">&#123;</span>
     statements
-}
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="Implicitly-Unwrapped-Optionals"><a class="header-anchor" href="#Implicitly-Unwrapped-Optionals"></a>Implicitly Unwrapped Optionals</h4>
 <p><em>Implicitly unwrapped optionals</em> are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter.<br>
 You write an implicitly unwrapped optional by placing an exclamation mark (<code>String!</code>) rather than a question mark (<code>String?</code>) after the type that you want to make optional. The Swift language defines the postfix <code>!</code> as syntactic sugar for the named type <code>Optional&lt;Wrapped&gt;</code> with the additional behavior that it’s automatically unwrapped when it’s accessed.</p>
-<pre><code class="language-swift">let possibleString: String? = &quot;An optional string.&quot;
-let forcedString: String = possibleString!  // requires an exclamation mark
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> possibleString<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token string">"An optional string."</span>
+<span class="token keyword">let</span> forcedString<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> possibleString<span class="token operator">!</span>  <span class="token comment">// requires an exclamation mark</span>
 
-let assumedString: String! = &quot;An implicitly unwrapped optional string.&quot;
-let implicitString: String = assumedString  // no need for an exclamation mark
-</code></pre>
+<span class="token keyword">let</span> assumedString<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token operator">!</span> <span class="token operator">=</span> <span class="token string">"An implicitly unwrapped optional string."</span>
+<span class="token keyword">let</span> implicitString<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> assumedString  <span class="token comment">// no need for an exclamation mark</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/Swift-Features/#more" rel="contents">
@@ -709,631 +1405,6 @@ let implicitString: String = assumedString  // no need for an exclamation mark
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-Basic-Concepts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/iOS-Basic-Concepts/" class="post-title-link" itemprop="url">iOS Basic Concepts</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-06-17 14:37:21" itemprop="dateCreated datePublished" datetime="2018-06-17T14:37:21+08:00">2018-06-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>866</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Responder-Chain"><a class="header-anchor" href="#Responder-Chain"></a>Responder Chain</h2>
-<img src="/blog/iOS-Basic-Concepts/ResponderChain.png" class="" title="Responder Chain">
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/iOS-Basic-Concepts/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/TabBar-Navigation-TableView-MVC-Structure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/TabBar-Navigation-TableView-MVC-Structure/" class="post-title-link" itemprop="url">TabBar-Navigation-TableView MVC Structure</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-05-18 17:45:39" itemprop="dateCreated datePublished" datetime="2018-05-18T17:45:39+08:00">2018-05-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <img src="/blog/TabBar-Navigation-TableView-MVC-Structure/MVCClassDiagram.png" class="" title="MVCClassDiagram">
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/CocoaPods-Usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/CocoaPods-Usage/" class="post-title-link" itemprop="url">CocoaPods Usage</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-05-15 00:08:05" itemprop="dateCreated datePublished" datetime="2018-05-15T00:08:05+08:00">2018-05-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>967</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Official Site: <a href="https://cocoapods.org" target="_blank" rel="noopener">https://cocoapods.org</a></p>
-<h2 id="Adding-Pods-to-an-Xcode-project"><a class="header-anchor" href="#Adding-Pods-to-an-Xcode-project"></a>Adding Pods to an Xcode project</h2>
-<p><strong>Create a Podfile</strong></p>
-<pre><code class="language-bash">$ pod init
-</code></pre>
-<p>or</p>
-<pre><code class="language-bash">$ touch Podfile
-</code></pre>
-<p><strong>Podfile</strong></p>
-<pre><code class="language-bash">platform :ios, '9.0'
-use_frameworks!
-
-target 'MyApp' do
-  pod 'AFNetworking', '~&gt; 2.6'
-  pod 'ORStackView', '~&gt; 3.0'
-  pod 'SwiftyJSON', '~&gt; 2.3'
-end
-</code></pre>
-<p><strong>Install project dependencies</strong></p>
-<pre><code class="language-bash">$ pod install
-</code></pre>
-<p><strong>Open <code>MyApp.xcworkspace</code> to work</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/CocoaPods-Usage/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/ES6-Features/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/ES6-Features/" class="post-title-link" itemprop="url">ES6 Features</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-04-11 00:38:02" itemprop="dateCreated datePublished" datetime="2018-04-11T00:38:02+08:00">2018-04-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>8 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>References:</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript Docs</a></li>
-<li><a href="http://es6-features.org" target="_blank" rel="noopener">rse/es6-features</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ruanyf/es6tutorial</a></li>
-<li><a href="https://babeljs.io/learn-es2015" target="_blank" rel="noopener">Babel ES2015</a></li>
-</ul>
-<h2 id="Data-structures"><a class="header-anchor" href="#Data-structures"></a>Data structures</h2>
-<ul>
-<li>Primitive: Boolean, null, undefined, Number, String, Symbol</li>
-<li>Object</li>
-</ul>
-<h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
-<p>Block-scoped binding constructs.</p>
-<pre><code class="language-js">let var1 [= value1];
-const name1 = value1;
-</code></pre>
-<h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<pre><code class="language-js">// Array matching
-let [a, ,c] = [1,2,3];
-a === 1;
-c === 3;
-
-// Object matching
-let { a, b } = { a: 1, b: 2 };
-a === 1;
-b === 2;
-
-// Default arguments
-function add({a, b, c = 3, d = 4}) {
-  return a + b + c + d;
-}
-add({a:1, b:2}) === 10;
-
-// Swap values
-let x = 1;
-let y = 2;
-[x, y] = [y, x];
-
-// Multiple return values
-function colorWhite(){
-  return {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }
-}
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/ES6-Features/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/GitHub-Pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/GitHub-Pages/" class="post-title-link" itemprop="url">GitHub Pages</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-26 19:43:48" itemprop="dateCreated datePublished" datetime="2018-03-26T19:43:48+08:00">2018-03-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Deploy-React-App-on-GitHub-Pages-from-the-Scratch"><a class="header-anchor" href="#Deploy-React-App-on-GitHub-Pages-from-the-Scratch"></a>Deploy React App on GitHub Pages from the Scratch</h2>
-<p><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="noopener">create-react-app Doc</a><br>
-<a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages Doc</a></p>
-<h3 id="Environment-Configuration"><a class="header-anchor" href="#Environment-Configuration"></a>Environment Configuration</h3>
-<pre><code class="language-bash">$ yarn global add create-react-app
-</code></pre>
-<h3 id="Initialize-a-React-App"><a class="header-anchor" href="#Initialize-a-React-App"></a>Initialize a React App</h3>
-<pre><code class="language-bash">$ create-react-app &lt;project-name&gt;
-$ cd &lt;project-name&gt;
-# Edit...
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/GitHub-Pages/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Git-Hooks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/Git-Hooks/" class="post-title-link" itemprop="url">Git Hooks</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-21 13:58:12" itemprop="dateCreated datePublished" datetime="2018-03-21T13:58:12+08:00">2018-03-21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>537</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Run-npm-scripts-automatically-before-git-commit"><a class="header-anchor" href="#Run-npm-scripts-automatically-before-git-commit"></a>Run npm scripts automatically before git commit</h2>
-<p>Run <code>sh deploy.sh</code> once to deploy the self-organized <code>hooks</code> folder, so that the hooks can be added to the version control system.<br>
-<code>./deploy.sh</code></p>
-<pre><code class="language-bash">#!/bin/bash
-
-configure_hooks(){
-    git config core.hooksPath || git config core.hooksPath ./chore/hooks
-    chmod -R +x ./chore/hooks
-}
-
-echo '==&gt; Configuring hooks'
-configure_hooks
-</code></pre>
-<p>The hooks under the <code>hooks</code> folder will be triggered automatically.<br>
-<code>./chore/hooks/pre-commit</code></p>
-<pre><code class="language-bash">unset GIT_DIR  # important
-
-cd path/to/work
-echo '==&gt; Building project'
-if ! npm run build; then
-    echo &quot;==&gt; Error: npm run build failed&quot;
-    exit 1
-fi
-git add dist
-</code></pre>
-
       
     </div>
 
@@ -1402,12 +1473,12 @@ git add dist
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -1447,8 +1518,6 @@ git add dist
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

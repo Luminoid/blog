@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,27 +21,20 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: Template render error: (unknown path)   Error: unexpected end of comment  Solution">
+  <meta name="description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: Template render error: (unknown path)   Error: unexpected end of comment Solution:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Common Problems">
 <meta property="og:url" content="http://luminoid.github.io/blog/Hexo-Common-Problems/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: Template render error: (unknown path)   Error: unexpected end of comment  Solution">
+<meta property="og:description" content="This article mainly focuses on the problems encountered in theme tranquilpeak. Command Template render error Problem: Template render error: (unknown path)   Error: unexpected end of comment Solution:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-06-08T12:25:08.000Z">
-<meta property="article:modified_time" content="2017-06-08T12:25:08.000Z">
+<meta property="article:modified_time" content="2020-07-25T17:53:44.175Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="server">
-<meta property="article:tag" content="hexo-algolia">
-<meta property="article:tag" content="hexo-math">
-<meta property="article:tag" content="hexo-toc">
-<meta property="article:tag" content="hexo-all-minifier">
-<meta property="article:tag" content="Gitment">
-<meta property="article:tag" content="prism">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/Hexo-Common-Problems/">
@@ -112,9 +105,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -156,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -180,7 +173,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -201,9 +194,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -249,7 +242,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -327,6 +320,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Hexo Common Problems
@@ -341,6 +336,13 @@
 
               <time title="Created: 2017-06-08 20:25:08" itemprop="dateCreated datePublished" datetime="2017-06-08T20:25:08+08:00">2017-06-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 01:53:44" itemprop="dateModified" datetime="2020-07-26T01:53:44+08:00">2020-07-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -385,53 +387,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p>This article mainly focuses on the problems encountered in theme <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">tranquilpeak</a>.</p>
+        <p>This article mainly focuses on the problems encountered in theme <a target="_blank" rel="noopener" href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak">tranquilpeak</a>.</p>
 <h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
 <h3 id="Template-render-error"><a class="header-anchor" href="#Template-render-error"></a>Template render error</h3>
 <p><strong>Problem</strong>:</p>
-<pre><code>Template render error: (unknown path)
-  Error: unexpected end of comment
-</code></pre>
-<p><strong>Solution</strong>: Hexo cannot render <code>#</code> and <code>}</code>, or <code>{</code> and <code>#</code> together, place a space between these two characters to avoid this error.</p>
+<pre class="line-numbers language-none"><code class="language-none">Template render error: (unknown path)
+  Error: unexpected end of comment<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>Solution</strong>: Hexo cannot render <code>#</code> and <code>&#125;</code>, or <code>&#123;</code> and <code>#</code> together, place a space between these two characters to avoid this error.</p>
 <h3 id="hexo-server-not-found"><a class="header-anchor" href="#hexo-server-not-found"></a>hexo server not found</h3>
 <p><strong>Problem</strong>: Can’t find <code>hexo server</code> command.</p>
 <p><strong>Solution</strong>: Extra plugins line in <code>_config.yml</code> may cause this problem.</p>
 <a id="more"></a>
 <h2 id="Plugin"><a class="header-anchor" href="#Plugin"></a>Plugin</h2>
-<h3 id="hexo-algolia-0-posts-indexed"><a class="header-anchor" href="#hexo-algolia-0-posts-indexed"></a><a href="https://github.com/oncletom/hexo-algolia" target="_blank" rel="noopener">hexo-algolia</a> 0 posts indexed</h3>
+<h3 id="hexo-algolia-0-posts-indexed"><a class="header-anchor" href="#hexo-algolia-0-posts-indexed"></a><a target="_blank" rel="noopener" href="https://github.com/oncletom/hexo-algolia">hexo-algolia</a> 0 posts indexed</h3>
 <p><strong>Problem</strong>: Run <code>hexo algolia</code> but no post collected.</p>
 <p><strong>Solution</strong>: Run <code>hexo algolia</code> without <code>hexo generate</code>. If already generated, run <code>hexo clean</code> to clean generated files.</p>
-<h3 id="hexo-math-not-working"><a class="header-anchor" href="#hexo-math-not-working"></a><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a> not working</h3>
+<h3 id="hexo-math-not-working"><a class="header-anchor" href="#hexo-math-not-working"></a><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-math">hexo-math</a> not working</h3>
 <p><strong>Problem</strong>: MathJax is not rendered.</p>
 <p><strong>Solution</strong>: Package hexo-math works by default. Nothing needs to be added in <code>_config.yml</code> file. Remove the <code>math</code> configuration may solve this problem.</p>
-<h3 id="hexo-toc-generating-two-tocs"><a class="header-anchor" href="#hexo-toc-generating-two-tocs"></a><a href="https://github.com/bubkoo/hexo-toc" target="_blank" rel="noopener">hexo-toc</a> generating two tocs</h3>
+<h3 id="hexo-toc-generating-two-tocs"><a class="header-anchor" href="#hexo-toc-generating-two-tocs"></a><a target="_blank" rel="noopener" href="https://github.com/bubkoo/hexo-toc">hexo-toc</a> generating two tocs</h3>
 <p><strong>Problem</strong>: Two tocs are generated in one post when only one <code>&lt;!-- toc --&gt;</code> is inserted</p>
 <p><strong>Solution</strong>: Some themes have their own toc generator and can detect toc annotation ignoring case. Thus both hexo theme and hexo-toc will generate its own toc. The solution can be either stick to the original toc generator of the theme, or, annotate the code of toc generating in the theme and use the hexo-toc instead.</p>
-<h3 id="hexo-all-minifier-removing-useful-html-annotation"><a class="header-anchor" href="#hexo-all-minifier-removing-useful-html-annotation"></a><a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a> removing useful html annotation</h3>
-<p><strong>Problem</strong>: HTML annotation like <code>&lt;!-- TOC --&gt;</code> and <code>&lt;!-- excerpt --&gt;</code> (used in hexo theme <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="noopener">tranquilpeak</a>) would be removed after running <a href="https://github.com/hexojs/hexo-html-minifier" target="_blank" rel="noopener">hexo-html-minifier</a>.</p>
+<h3 id="hexo-all-minifier-removing-useful-html-annotation"><a class="header-anchor" href="#hexo-all-minifier-removing-useful-html-annotation"></a><a target="_blank" rel="noopener" href="https://github.com/chenzhutian/hexo-all-minifier">hexo-all-minifier</a> removing useful html annotation</h3>
+<p><strong>Problem</strong>: HTML annotation like <code>&lt;!-- TOC --&gt;</code> and <code>&lt;!-- excerpt --&gt;</code> (used in hexo theme <a target="_blank" rel="noopener" href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak">tranquilpeak</a>) would be removed after running <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-html-minifier">hexo-html-minifier</a>.</p>
 <p><strong>Solution</strong>: Modify <code>index.js</code> file in <code>hexo-all-minifier</code> package and change <code>ignoreCustomComments</code> attribute (line 13) into the following:</p>
-<pre><code class="language-js">ignoreCustomComments: [/^\s*(toc|more|excerpt)\s*$/i],
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">ignoreCustomComments<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token regex">/^\s*(toc|more|excerpt)\s*$/i</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="Tool"><a class="header-anchor" href="#Tool"></a>Tool</h2>
-<h3 id="Gitment-validation-failed"><a class="header-anchor" href="#Gitment-validation-failed"></a><a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">Gitment</a> validation failed</h3>
+<h3 id="Gitment-validation-failed"><a class="header-anchor" href="#Gitment-validation-failed"></a><a target="_blank" rel="noopener" href="https://github.com/imsun/gitment">Gitment</a> validation failed</h3>
 <p><strong>Problem</strong>: Unable to initialize gitment comment. The issue API returns 422 status code.</p>
 <p><strong>Solution</strong>: This may be caused by the length of id exceeding the maximum length. Change the <code>id</code> to <code>page.title</code> will solve this problem. (In tranquilpeak, the Gitment id is configured in <code>themes/tranquilpeak/layout/_partial/script.ejs</code>)</p>
-<pre><code class="language-js">new Gitment({
-    id: '&lt;%= page.title %&gt;',
-    // Other attributes
-}).render('gitment');
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Gitment</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    id<span class="token operator">:</span> <span class="token string">'&lt;%= page.title %>'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Other attributes</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'gitment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Syntax-Highlighting"><a class="header-anchor" href="#Syntax-Highlighting"></a>Syntax Highlighting</h2>
-<h3 id="highlight-js"><a class="header-anchor" href="#highlight-js"></a><a href="https://github.com/isagalaev/highlight.js" target="_blank" rel="noopener">highlight.js</a></h3>
-<p><strong>Problem</strong>: <a href="https://github.com/isagalaev/highlight.js/issues/494" target="_blank" rel="noopener">React JSX support? #494</a></p>
-<h3 id="prism"><a class="header-anchor" href="#prism"></a><a href="https://github.com/PrismJS/prism" target="_blank" rel="noopener">prism</a></h3>
-<p><strong>Problem</strong>: <a href="https://github.com/ele828/hexo-prism-plugin/issues/24" target="_blank" rel="noopener">Line number may be misplaced when additional theme is used #24</a></p>
+<h3 id="highlight-js"><a class="header-anchor" href="#highlight-js"></a><a target="_blank" rel="noopener" href="https://github.com/isagalaev/highlight.js">highlight.js</a></h3>
+<p><strong>Problem</strong>: <a target="_blank" rel="noopener" href="https://github.com/isagalaev/highlight.js/issues/494">React JSX support? #494</a></p>
+<h3 id="prism"><a class="header-anchor" href="#prism"></a><a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">prism</a></h3>
+<p><strong>Problem</strong>: <a target="_blank" rel="noopener" href="https://github.com/ele828/hexo-prism-plugin/issues/24">Line number may be misplaced when additional theme is used #24</a></p>
 <p><strong>Solution</strong>: The css selector <code>.tag</code> is used in both prismjs and tranquilpeak css files. Remove the <code>.tag</code> in the theme <code>style-&lt;hash&gt;.min.css</code> file may solve this problem. Let <code>a.tag</code> do the selection.<br>
 <code>themes/tranquilpeak/source/assets/css/style-1udptkpril81ozu8ifd8zpujn7ipu7lefxsiu5gxx0dpnzntdx6dusvki3ao.min.css</code></p>
-<pre><code class="language-css">.tag,a.tag{display:inline-block;background:#fff;
-</code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.tag,a.tag</span><span class="token punctuation">&#123;</span><span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span>#fff<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     </div>
 
@@ -542,12 +538,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -587,8 +583,6 @@
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

@@ -13,8 +13,9 @@ keywords:
 - Algolia
 ---
 
-[Hexo](https://hexo.io)
-Theme: {% post_link hexo-theme-next Usage %}
+Official Site: https://hexo.io
+Version: 5.0.0
+Theme: {% post_link hexo-theme-next-Usage %}
 
 ## Quick Deployment
 Hexo recommended way
@@ -49,14 +50,21 @@ $ hexo deploy
 
 ## Maintenance
 Update outdated npm packages regularly to avoid security vulnerability:
-Run `npm-check -u` under blog directory (`./`).
+
+Using npm: Run `npm-check -u` under blog directory (`./`).
+Using yarn: `yarn upgrade-interactive`
 
 ## Theme
 The following are the theme files to be modified for custom configuration, take [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/) theme as an example:
-```
+``` bash
 _config.yml
 languages/
 ```
+
+Priority (From high to low):
+- `theme_config` in site’s primary configuration file
+- a dedicated `_config.[theme].yml` file
+- `_config.yml` file under the theme directory
 
 ## Usage
 ### Commands
@@ -89,29 +97,29 @@ $ hexo algolia
 ### Tag Plugins
 Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.
 #### Code Block
-```
+``` md
 {% codeblock [title] [lang:language] [url] [link text] [additional options] %}
 code snippet
 {% endcodeblock %}
 ```
 Or
-``` 
+``` md
 ``` [language] [title] [url] [link text] code snippet ``` 
 ```
 
 #### Include Code
 Inserts code snippets in `source/downloads/code` folder. The folder location can be specified through the `code_dir` option in the config.
-```
+``` md
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
 
 #### Include Posts
-```
+``` md
 {% post_link filename [title] [escape] %}
 ```
 
 #### Include Assets
-``` js
+``` md
 {% asset_img example.jpg This is an example image %}
 {% asset_img "spaced asset.jpg" "spaced title" %}
 ```
@@ -126,4 +134,5 @@ Set the `public_dir` in `_config.yml` from `public` to `docs` if you want the Gi
 Ref: https://hexo.io/docs/github-pages
 
 ### Syntax Highlighting
+https://hexo.io/docs/syntax-highlight
 http://prismjs.com/#languages-list

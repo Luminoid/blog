@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,28 +21,20 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Mac Usage Mac Usage Awesome Mac Package Manager Homebrew Install &#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;  Usage Homebrew Usage Home">
+  <meta name="description" content="Mac Usage Mac Usage Awesome Mac Package Manager Homebrew Install &#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot; Usage Homebrew Usage Homebrew-Cask I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac Development Config">
 <meta property="og:url" content="http://luminoid.github.io/blog/Mac-Development-Config/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Mac Usage Mac Usage Awesome Mac Package Manager Homebrew Install &#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;  Usage Homebrew Usage Home">
+<meta property="og:description" content="Mac Usage Mac Usage Awesome Mac Package Manager Homebrew Install &#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot; Usage Homebrew Usage Homebrew-Cask I">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-08-08T14:45:55.000Z">
-<meta property="article:modified_time" content="2017-08-08T14:45:55.000Z">
+<meta property="article:modified_time" content="2020-07-26T08:46:18.990Z">
 <meta property="article:author" content="Luminoid">
-<meta property="article:tag" content="Homebrew">
-<meta property="article:tag" content="npm">
-<meta property="article:tag" content="Yarn">
-<meta property="article:tag" content="CocoaPods">
-<meta property="article:tag" content="oh-my-zsh">
-<meta property="article:tag" content="Git">
-<meta property="article:tag" content="Atom">
-<meta property="article:tag" content="VS Code">
-<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="iOS, Web">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/Mac-Development-Config/">
@@ -113,9 +105,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -157,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -181,7 +173,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -202,9 +194,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -250,7 +242,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -328,6 +320,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Mac Development Config
@@ -342,6 +336,13 @@
 
               <time title="Created: 2017-08-08 22:45:55" itemprop="dateCreated datePublished" datetime="2017-08-08T22:45:55+08:00">2017-08-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 16:46:18" itemprop="dateModified" datetime="2020-07-26T16:46:18+08:00">2020-07-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -365,14 +366,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7k</span>
+              <span>6.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -382,310 +383,291 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h2 id="Mac-Usage"><a class="header-anchor" href="#Mac-Usage"></a>Mac Usage</h2>
 <a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
-<p><a href="https://github.com/jaywcjlove/awesome-mac" target="_blank" rel="noopener">Awesome Mac</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
 <h2 id="Package-Manager"><a class="header-anchor" href="#Package-Manager"></a>Package Manager</h2>
-<h3 id="Homebrew"><a class="header-anchor" href="#Homebrew"></a><a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a></h3>
+<h3 id="Homebrew"><a class="header-anchor" href="#Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh">Homebrew</a></h3>
 <h4 id="Install"><a class="header-anchor" href="#Install"></a>Install</h4>
-<pre><code class="language-bash">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/usr/bin/ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h4>
 <a href="/blog/Homebrew-Usage/" title="Homebrew Usage">Homebrew Usage</a>
-<h3 id="Homebrew-Cask"><a class="header-anchor" href="#Homebrew-Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="noopener">Homebrew-Cask</a></h3>
+<h3 id="Homebrew-Cask"><a class="header-anchor" href="#Homebrew-Cask"></a><a target="_blank" rel="noopener" href="https://caskroom.github.io">Homebrew-Cask</a></h3>
 <h4 id="Install-v2"><a class="header-anchor" href="#Install-v2"></a>Install</h4>
-<pre><code class="language-bash">brew tap caskroom/cask
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap caskroom/cask<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v2"><a class="header-anchor" href="#Usage-v2"></a>Usage</h4>
-<pre><code class="language-bash">brew cask install google-chrome
-</code></pre>
-<h3 id="npm"><a class="header-anchor" href="#npm"></a><a href="https://www.npmjs.com" target="_blank" rel="noopener">npm</a></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cask <span class="token function">install</span> google-chrome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="npm"><a class="header-anchor" href="#npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com">npm</a></h3>
 <h4 id="Install-v3"><a class="header-anchor" href="#Install-v3"></a>Install</h4>
-<pre><code class="language-bash">brew install node
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v3"><a class="header-anchor" href="#Usage-v3"></a>Usage</h4>
 <a href="/blog/npm-Usage/" title="npm Usage">npm Usage</a>
 <a id="more"></a>
-<h3 id="Yarn"><a class="header-anchor" href="#Yarn"></a><a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a></h3>
+<h3 id="Yarn"><a class="header-anchor" href="#Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3>
 <h4 id="Install-v4"><a class="header-anchor" href="#Install-v4"></a>Install</h4>
-<pre><code class="language-bash">brew install yarn
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">yarn</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v4"><a class="header-anchor" href="#Usage-v4"></a>Usage</h4>
 <a href="/blog/Yarn-Usage/" title="Yarn Usage">Yarn Usage</a>
-<h3 id="CocoaPods"><a class="header-anchor" href="#CocoaPods"></a><a href="https://cocoapods.org" target="_blank" rel="noopener">CocoaPods</a></h3>
+<h3 id="CocoaPods"><a class="header-anchor" href="#CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org">CocoaPods</a></h3>
 <h4 id="Install-v5"><a class="header-anchor" href="#Install-v5"></a>Install</h4>
-<pre><code class="language-bash">sudo gem install cocoapods
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gem <span class="token function">install</span> cocoapods<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v5"><a class="header-anchor" href="#Usage-v5"></a>Usage</h4>
 <a href="/blog/CocoaPods-Usage/" title="CocoaPods Usage">CocoaPods Usage</a>
 <h2 id="Shell"><a class="header-anchor" href="#Shell"></a>Shell</h2>
-<h3 id="oh-my-zsh"><a class="header-anchor" href="#oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="noopener">oh-my-zsh</a></h3>
+<h3 id="oh-my-zsh"><a class="header-anchor" href="#oh-my-zsh"></a><a target="_blank" rel="noopener" href="http://ohmyz.sh">oh-my-zsh</a></h3>
 <h4 id="Install-v6"><a class="header-anchor" href="#Install-v6"></a>Install</h4>
-<pre><code class="language-bash">sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v6"><a class="header-anchor" href="#Usage-v6"></a>Usage</h4>
 <a href="/blog/oh-my-zsh-Usage/" title="oh-my-zsh Usage">oh-my-zsh Usage</a>
 <h2 id="Terminal"><a class="header-anchor" href="#Terminal"></a>Terminal</h2>
-<h3 id="iTerm2"><a class="header-anchor" href="#iTerm2"></a><a href="https://www.iterm2.com" target="_blank" rel="noopener">iTerm2</a></h3>
+<h3 id="iTerm2"><a class="header-anchor" href="#iTerm2"></a><a target="_blank" rel="noopener" href="https://www.iterm2.com">iTerm2</a></h3>
 <h2 id="Version-Control"><a class="header-anchor" href="#Version-Control"></a>Version Control</h2>
 <h3 id="Git"><a class="header-anchor" href="#Git"></a>Git</h3>
 <h4 id="Usage-v7"><a class="header-anchor" href="#Usage-v7"></a>Usage</h4>
 <a href="/blog/Git-Amateur-Guide/" title="Git: Amateur Guide">Git: Amateur Guide</a>
 <h4 id="SSH"><a class="header-anchor" href="#SSH"></a>SSH</h4>
-<p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<p><a target="_blank" rel="noopener" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h4 id="Git-GUI"><a class="header-anchor" href="#Git-GUI"></a>Git GUI</h4>
-<p><a href="https://www.sourcetreeapp.com" target="_blank" rel="noopener">SourceTree</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com">SourceTree</a></p>
 <h2 id="Language"><a class="header-anchor" href="#Language"></a>Language</h2>
-<h3 id="Python3"><a class="header-anchor" href="#Python3"></a><a href="https://www.python.org" target="_blank" rel="noopener">Python3</a></h3>
+<h3 id="Python3"><a class="header-anchor" href="#Python3"></a><a target="_blank" rel="noopener" href="https://www.python.org">Python3</a></h3>
 <h4 id="Install-v7"><a class="header-anchor" href="#Install-v7"></a>Install</h4>
-<pre><code class="language-bash">brew install python3
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="JavaScript"><a class="header-anchor" href="#JavaScript"></a>JavaScript</h3>
 <p>Run <code>node</code> to toggle ES REPL.<br>
 Run <code>node --v8-options | grep harmony</code> to check current supported ES6 features.</p>
 <h2 id="Version-Manager"><a class="header-anchor" href="#Version-Manager"></a>Version Manager</h2>
-<h3 id="n"><a class="header-anchor" href="#n"></a><a href="https://www.npmjs.com/package/n" target="_blank" rel="noopener">n</a></h3>
+<h3 id="n"><a class="header-anchor" href="#n"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/n">n</a></h3>
 <h4 id="Install-v8"><a class="header-anchor" href="#Install-v8"></a>Install</h4>
-<pre><code class="language-bash">brew install n
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v8"><a class="header-anchor" href="#Usage-v8"></a>Usage</h4>
-<pre><code class="language-bash">sudo n latest   # Use or install the latest official release
-sudo n lts      # Use or install the latest LTS official release
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> n latest   <span class="token comment"># Use or install the latest official release</span>
+<span class="token function">sudo</span> n lts      <span class="token comment"># Use or install the latest LTS official release</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Text-Editor"><a class="header-anchor" href="#Text-Editor"></a>Text Editor</h2>
-<h3 id="Atom"><a class="header-anchor" href="#Atom"></a><a href="https://atom.io" target="_blank" rel="noopener">Atom</a></h3>
+<h3 id="Atom"><a class="header-anchor" href="#Atom"></a><a target="_blank" rel="noopener" href="https://atom.io">Atom</a></h3>
 <h4 id="Usage-v9"><a class="header-anchor" href="#Usage-v9"></a>Usage</h4>
 <a href="/blog/Atom-Usage/" title="Atom Usage">Atom Usage</a>
-<h3 id="VSCode"><a class="header-anchor" href="#VSCode"></a><a href="https://code.visualstudio.com" target="_blank" rel="noopener">VSCode</a></h3>
+<h3 id="VSCode"><a class="header-anchor" href="#VSCode"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com">VSCode</a></h3>
 <h4 id="Usage-v10"><a class="header-anchor" href="#Usage-v10"></a>Usage</h4>
 <a href="/blog/VS-Code-Usage/" title="VS Code Usage">VS Code Usage</a>
 <h3 id="Vim"><a class="header-anchor" href="#Vim"></a><a href="www.vim.org/">Vim</a></h3>
 <h4 id="Install-v9"><a class="header-anchor" href="#Install-v9"></a>Install</h4>
-<pre><code class="language-bash">brew install vim
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">vim</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="IDE"><a class="header-anchor" href="#IDE"></a>IDE</h2>
-<h3 id="JetBrains"><a class="header-anchor" href="#JetBrains"></a><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains</a></h3>
-<p><a href="https://www.jetbrains.com/toolbox/app/" target="_blank" rel="noopener">Toolbox</a></p>
-<h3 id="Xcode"><a class="header-anchor" href="#Xcode"></a><a href="https://developer.apple.com/cn/xcode/" target="_blank" rel="noopener">Xcode</a></h3>
+<h3 id="JetBrains"><a class="header-anchor" href="#JetBrains"></a><a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains</a></h3>
+<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/toolbox/app/">Toolbox</a></p>
+<h3 id="Xcode"><a class="header-anchor" href="#Xcode"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/cn/xcode/">Xcode</a></h3>
+<a href="/blog/Xcode-Usage/" title="Xcode Usage">Xcode Usage</a>
 <h2 id="Tool"><a class="header-anchor" href="#Tool"></a>Tool</h2>
-<h3 id="Docker"><a class="header-anchor" href="#Docker"></a><a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a></h3>
+<h3 id="Docker"><a class="header-anchor" href="#Docker"></a><a target="_blank" rel="noopener" href="https://www.docker.com">Docker</a></h3>
 <h4 id="Install-v10"><a class="header-anchor" href="#Install-v10"></a>Install</h4>
-<pre><code class="language-bash">brew cask install docker
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cask <span class="token function">install</span> docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Usage-v11"><a class="header-anchor" href="#Usage-v11"></a>Usage</h4>
 <a href="/blog/Docker-Cheat-Sheet/" title="Docker Cheat Sheet">Docker Cheat Sheet</a>
 <h2 id="Browser"><a class="header-anchor" href="#Browser"></a>Browser</h2>
 <a href="/blog/Browser-Enhancement/" title="Browser Enhancement">Browser Enhancement</a>
 <h2 id="System-Enhancement"><a class="header-anchor" href="#System-Enhancement"></a>System Enhancement</h2>
-<h3 id="quick-look-plugins"><a class="header-anchor" href="#quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins" target="_blank" rel="noopener">quick-look-plugins</a></h3>
+<h3 id="quick-look-plugins"><a class="header-anchor" href="#quick-look-plugins"></a><a target="_blank" rel="noopener" href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h3>
 <h4 id="Install-v11"><a class="header-anchor" href="#Install-v11"></a>Install</h4>
-<pre><code class="language-bash">brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package quicklookase qlvideo provisionql webpquicklook
-</code></pre>
-<h3 id="Alfred"><a class="header-anchor" href="#Alfred"></a><a href="https://www.alfredapp.com/" target="_blank" rel="noopener">Alfred</a></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cask <span class="token function">install</span> qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package quicklookase qlvideo provisionql webpquicklook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Alfred"><a class="header-anchor" href="#Alfred"></a><a target="_blank" rel="noopener" href="https://www.alfredapp.com/">Alfred</a></h3>
 <h4 id="Workflows"><a class="header-anchor" href="#Workflows"></a>Workflows</h4>
 <ul>
-<li><a href="https://www.alfredapp.com/workflows/" target="_blank" rel="noopener">https://www.alfredapp.com/workflows/</a></li>
-<li><a href="http://www.packal.org/" target="_blank" rel="noopener">http://www.packal.org/</a></li>
-<li><a href="https://github.com/zenorocha/alfred-workflows" target="_blank" rel="noopener">https://github.com/zenorocha/alfred-workflows</a></li>
-<li><a href="http://www.alfredworkflow.com/" target="_blank" rel="noopener">http://www.alfredworkflow.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.alfredapp.com/workflows/">https://www.alfredapp.com/workflows/</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.packal.org/">http://www.packal.org/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zenorocha/alfred-workflows">https://github.com/zenorocha/alfred-workflows</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.alfredworkflow.com/">http://www.alfredworkflow.com/</a></li>
 </ul>
 <h3 id="Finder-Tools"><a class="header-anchor" href="#Finder-Tools"></a>Finder Tools</h3>
-<h4 id="FiScript"><a class="header-anchor" href="#FiScript"></a><a href="https://github.com/Mortennn/FiScript" target="_blank" rel="noopener">FiScript</a></h4>
+<h4 id="FiScript"><a class="header-anchor" href="#FiScript"></a><a target="_blank" rel="noopener" href="https://github.com/Mortennn/FiScript">FiScript</a></h4>
 <p>Execute custom scripts from the MacOS context menu (CTRL+click) in Finder.</p>
-<h4 id="OpenInCode"><a class="header-anchor" href="#OpenInCode"></a><a href="https://github.com/sozercan/OpenInCode" target="_blank" rel="noopener">OpenInCode</a></h4>
+<h4 id="OpenInCode"><a class="header-anchor" href="#OpenInCode"></a><a target="_blank" rel="noopener" href="https://github.com/sozercan/OpenInCode">OpenInCode</a></h4>
 <p>macOS Finder toolbar app to open current folder in Visual Studio Code</p>
 <h3 id="Menu-Bar-Tools"><a class="header-anchor" href="#Menu-Bar-Tools"></a>Menu Bar Tools</h3>
-<h4 id="Itsycal"><a class="header-anchor" href="#Itsycal"></a><a href="https://www.mowglii.com/itsycal/" target="_blank" rel="noopener">Itsycal</a></h4>
+<h4 id="Itsycal"><a class="header-anchor" href="#Itsycal"></a><a target="_blank" rel="noopener" href="https://www.mowglii.com/itsycal/">Itsycal</a></h4>
 <p>Itsycal is a tiny menu bar calendar.</p>
-<h4 id="Dozer"><a class="header-anchor" href="#Dozer"></a><a href="https://github.com/Mortennn/Dozer" target="_blank" rel="noopener">Dozer</a></h4>
+<h4 id="Dozer"><a class="header-anchor" href="#Dozer"></a><a target="_blank" rel="noopener" href="https://github.com/Mortennn/Dozer">Dozer</a></h4>
 <p>Hide status bar icons on macOS.</p>
-<h4 id="BeardedSpice"><a class="header-anchor" href="#BeardedSpice"></a><a href="https://github.com/beardedspice/beardedspice" target="_blank" rel="noopener">BeardedSpice</a></h4>
+<h4 id="BeardedSpice"><a class="header-anchor" href="#BeardedSpice"></a><a target="_blank" rel="noopener" href="https://github.com/beardedspice/beardedspice">BeardedSpice</a></h4>
 <p>BeardedSpice allows you to control web based media players (Like SoundCloud, and YouTube, etc) and some native apps with the media keys found on Mac keyboards.</p>
-<h4 id="BitBar"><a class="header-anchor" href="#BitBar"></a><a href="https://getbitbar.com" target="_blank" rel="noopener">BitBar</a></h4>
+<h4 id="BitBar"><a class="header-anchor" href="#BitBar"></a><a target="_blank" rel="noopener" href="https://getbitbar.com">BitBar</a></h4>
 <p>Put the output from any script or program right in your Mac OS X menu bar.</p>
 <h3 id="Screen-Saver"><a class="header-anchor" href="#Screen-Saver"></a>Screen Saver</h3>
 <ul>
-<li><a href="https://github.com/JohnCoates/Aerial" target="_blank" rel="noopener">Aerial</a></li>
-<li><a href="https://github.com/pedrommcarrasco/Brooklyn" target="_blank" rel="noopener">Brooklyn</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JohnCoates/Aerial">Aerial</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
 </ul>
 <h2 id="Font"><a class="header-anchor" href="#Font"></a>Font</h2>
-<h3 id="Fira-Code"><a class="header-anchor" href="#Fira-Code"></a><a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">Fira Code</a></h3>
+<h3 id="Fira-Code"><a class="header-anchor" href="#Fira-Code"></a><a target="_blank" rel="noopener" href="https://github.com/tonsky/FiraCode">Fira Code</a></h3>
 <h4 id="Install-v12"><a class="header-anchor" href="#Install-v12"></a>Install</h4>
-<pre><code class="language-bash">brew tap caskroom/fonts
-brew cask install font-fira-code font-firacode-nerd-font
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap caskroom/fonts
+brew cask <span class="token function">install</span> font-fira-code font-firacode-nerd-font<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Quick-Configuration"><a class="header-anchor" href="#Quick-Configuration"></a>Quick Configuration</h2>
 <h3 id="Package-Manager-v2"><a class="header-anchor" href="#Package-Manager-v2"></a>Package Manager</h3>
-<pre><code class="language-bash">brew install antigen autojump automake bat cmake diff-so-fancy exa fd ffmpeg fzf gdb git git-lfs graphicsmagick highlight htop hunspell librsvg mtr mysql nasm ncdu openvpn pandoc phantomjs pinentry pngquant prettyping r rlwrap scons sqlmap swiftlint tesseract the_silver_searcher tig tldr tmux tree unrar vim watchman wget yarn
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> antigen autojump automake bat cmake diff-so-fancy exa fd ffmpeg fzf gdb <span class="token function">git</span> git-lfs graphicsmagick highlight <span class="token function">htop</span> hunspell librsvg <span class="token function">mtr</span> mysql nasm ncdu openvpn pandoc phantomjs pinentry pngquant prettyping r rlwrap scons sqlmap swiftlint tesseract the_silver_searcher tig tldr tmux tree <span class="token function">unrar</span> <span class="token function">vim</span> watchman <span class="token function">wget</span> <span class="token function">yarn</span>
 brew tap caskroom/cask
 brew tap caskroom/fonts
-brew cask install font-fira-code font-firacode-nerd-font font-hack-nerd-font launchrocket qlcolorcode qlimagesize qlmarkdown qlstephen qlvideo  quicklook-json quicklookase suspicious-package webpquicklook
-npm install -g npm-check
-sudo gem install cocoapods
-</code></pre>
+brew cask <span class="token function">install</span> brooklyn dozer fiscript font-fira-code font-firacode-nerd-font font-hack-nerd-font itsycal launchrocket qlcolorcode qlimagesize qlmarkdown qlstephen qlvideo  quicklook-json quicklookase suspicious-package webpquicklook
+<span class="token function">npm</span> <span class="token function">install</span> -g npm-check
+<span class="token function">sudo</span> gem <span class="token function">install</span> cocoapods<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Git-Config"><a class="header-anchor" href="#Git-Config"></a>Git Config</h3>
-<pre><code class="language-bash">git config --global core.pager &quot;diff-so-fancy | less --tabs=4 -RFX&quot;
-git config --global color.ui true
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global core.pager <span class="token string">"diff-so-fancy | less --tabs=4 -RFX"</span>
+<span class="token function">git</span> config --global color.ui <span class="token boolean">true</span>
 
-git config --global color.diff.meta       &quot;yellow&quot;
-git config --global color.diff.frag       &quot;magenta bold&quot;
-git config --global color.diff.commit     &quot;yellow bold&quot;
-git config --global color.diff.old        &quot;red bold&quot;
-git config --global color.diff.new        &quot;green bold&quot;
-git config --global color.diff.whitespace &quot;red reverse&quot;
-</code></pre>
+<span class="token function">git</span> config --global color.diff.meta       <span class="token string">"yellow"</span>
+<span class="token function">git</span> config --global color.diff.frag       <span class="token string">"magenta bold"</span>
+<span class="token function">git</span> config --global color.diff.commit     <span class="token string">"yellow bold"</span>
+<span class="token function">git</span> config --global color.diff.old        <span class="token string">"red bold"</span>
+<span class="token function">git</span> config --global color.diff.new        <span class="token string">"green bold"</span>
+<span class="token function">git</span> config --global color.diff.whitespace <span class="token string">"red reverse"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="zshrc"><a class="header-anchor" href="#zshrc"></a>.zshrc</h3>
-<pre><code class="language-bash">######################## Theme ########################
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Theme ########################</span>
 
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE=nerdfont-complete
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator background_jobs time)
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=&quot;white&quot;
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
-# POWERLEVEL9K_SHOW_CHANGESET=true
-# POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
-POWERLEVEL9K_TIME_FORMAT=&quot;%D{%H:%M}&quot;
+<span class="token assign-left variable">POWERLEVEL9K_INSTALLATION_PATH</span><span class="token operator">=</span><span class="token variable">$ANTIGEN_BUNDLES</span>/bhilburn/powerlevel9k
+<span class="token assign-left variable">POWERLEVEL9K_MODE</span><span class="token operator">=</span>nerdfont-complete
+<span class="token assign-left variable">POWERLEVEL9K_PROMPT_ADD_NEWLINE</span><span class="token operator">=</span>true
+<span class="token assign-left variable">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="token operator">=</span><span class="token punctuation">(</span>status context <span class="token function">dir</span> dir_writable rbenv vcs<span class="token punctuation">)</span>
+<span class="token assign-left variable">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="token operator">=</span><span class="token punctuation">(</span>root_indicator background_jobs <span class="token function">time</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">POWERLEVEL9K_STATUS_VERBOSE</span><span class="token operator">=</span>false
+<span class="token assign-left variable">POWERLEVEL9K_SHORTEN_DIR_LENGTH</span><span class="token operator">=</span><span class="token number">4</span>
+<span class="token assign-left variable">POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND</span><span class="token operator">=</span><span class="token string">"white"</span>
+<span class="token assign-left variable">POWERLEVEL9K_VCS_GIT_GITHUB_ICON</span><span class="token operator">=</span><span class="token string">'<span class="token entity" title="\uf09b">\uf09b</span>'</span>
+<span class="token comment"># POWERLEVEL9K_SHOW_CHANGESET=true</span>
+<span class="token comment"># POWERLEVEL9K_CHANGESET_HASH_LENGTH=6</span>
+<span class="token assign-left variable">POWERLEVEL9K_TIME_FORMAT</span><span class="token operator">=</span><span class="token string">"%D&#123;%H:%M&#125;"</span>
 
-DEFAULT_USER=$USER
+<span class="token assign-left variable">DEFAULT_USER</span><span class="token operator">=</span><span class="token environment constant">$USER</span>
 
-######################## Antigen ########################
+<span class="token comment">######################## Antigen ########################</span>
 
-source /usr/local/share/antigen/antigen.zsh
+<span class="token builtin class-name">source</span> /usr/local/share/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
+<span class="token comment"># Load the oh-my-zsh's library.</span>
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh)
+<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
 antigen bundle colored-man-pages
 antigen bundle extract
 antigen bundle autojump
-antigen bundle git
-antigen bundle npm
+antigen bundle <span class="token function">git</span>
+antigen bundle <span class="token function">npm</span>
 antigen bundle gem
 antigen bundle brew
 antigen bundle osx
 antigen bundle pod
 
-# Syntax highlighting bundle.
+<span class="token comment"># Syntax highlighting bundle.</span>
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Fish-like auto suggestions
+<span class="token comment"># Fish-like auto suggestions</span>
 antigen bundle zsh-users/zsh-autosuggestions
 
-# Extra zsh completions
+<span class="token comment"># Extra zsh completions</span>
 antigen bundle zsh-users/zsh-completions
 
-# Load the theme.
+<span class="token comment"># Load the theme.</span>
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
-# Tell Antigen that you're done.
+<span class="token comment"># Tell Antigen that you're done.</span>
 antigen apply
 
-######################## User Configuration ########################
+<span class="token comment">######################## User Configuration ########################</span>
 
-export PATH=&quot;/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin&quot;
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"</span>
 
-# npm
-export PATH=&quot;$HOME/.npm-packages/bin:$PATH&quot;
+<span class="token comment"># npm</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.npm-packages/bin:<span class="token environment constant">$PATH</span>"</span>
 
-# gem
-export GEM_HOME=&quot;$HOME/.gem&quot;
-export PATH=&quot;$GEM_HOME/bin:$PATH&quot;
+<span class="token comment"># gem</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">GEM_HOME</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.gem"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$GEM_HOME</span>/bin:<span class="token environment constant">$PATH</span>"</span>
 
-# list
-alias ls='ls -hFG'
-alias tree='tree -C -I node_modules'
-alias l='exa -aghlF --git'
-alias ltree='exa -ghlFT --git -I=node_modules'
+<span class="token comment"># list</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
 
-# ncdu
-alias ncdu=&quot;ncdu --color dark -rr -x&quot;
-alias ncdu-exclude=&quot;ncdu --color dark -rr -x --exclude .git --exclude node_modules&quot;
+<span class="token comment"># ncdu</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x"</span>
+<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x --exclude .git --exclude node_modules"</span>
 
-# fzf
-alias preview=&quot;fzf --preview 'bat --color \&quot;always\&quot; {} || tree -C {}'&quot;
-export FZF_DEFAULT_COMMAND='fd'                                     # Set fd as the default source for fzf
-export FZF_DEFAULT_OPTS=&quot;--bind='ctrl-o:execute(code {})+abort'&quot;    # Use ctrl+o to open the selected file in VS Code
+<span class="token comment"># fzf</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">preview</span><span class="token operator">=</span><span class="token string">"fzf --preview 'bat --color <span class="token entity" title="\&quot;">\"</span>always<span class="token entity" title="\&quot;">\"</span> &#123;&#125; || tree -C &#123;&#125;'"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FZF_DEFAULT_COMMAND</span><span class="token operator">=</span><span class="token string">'fd'</span>                                     <span class="token comment"># Set fd as the default source for fzf</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FZF_DEFAULT_OPTS</span><span class="token operator">=</span><span class="token string">"--bind='ctrl-o:execute(code &#123;&#125;)+abort'"</span>    <span class="token comment"># Use ctrl+o to open the selected file in VS Code</span>
 
-## Command history
-### fh - repeat history
-fh() {
-  print -z $( ([ -n &quot;$ZSH_NAME&quot; ] &amp;&amp; fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+<span class="token comment">## Command history</span>
+<span class="token comment">### fh - repeat history</span>
+<span class="token function-name function">fh</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  print -z <span class="token variable"><span class="token variable">$(</span> <span class="token punctuation">(</span><span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$ZSH_NAME</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> fc -l <span class="token number">1</span> <span class="token operator">||</span> <span class="token function">history</span><span class="token punctuation">)</span> <span class="token operator">|</span> fzf +s --tac <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/ *[0-9]* *//'</span><span class="token variable">)</span></span>
+<span class="token punctuation">&#125;</span>
 
-## Homebrew
-### Install (one or multiple) selected application(s)
-### using &quot;brew search&quot; as source input
-### mnemonic [B]rew [I]nstall [P]lugin
-bip() {
-  local inst=$(brew search | fzf -m)
+<span class="token comment">## Homebrew</span>
+<span class="token comment">### Install (one or multiple) selected application(s)</span>
+<span class="token comment">### using "brew search" as source input</span>
+<span class="token comment">### mnemonic [B]rew [I]nstall [P]lugin</span>
+<span class="token function-name function">bip</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token builtin class-name">local</span> <span class="token assign-left variable">inst</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>brew search <span class="token operator">|</span> fzf -m<span class="token variable">)</span></span>
 
-  if [[ $inst ]]; then
-    for prog in $(echo $inst);
-    do; brew install $prog; done;
-  fi
-}
-</code></pre>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$inst</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">for</span> <span class="token for-or-select variable">prog</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $inst<span class="token variable">)</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">do</span><span class="token punctuation">;</span> brew <span class="token function">install</span> <span class="token variable">$prog</span><span class="token punctuation">;</span> <span class="token keyword">done</span><span class="token punctuation">;</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="vimrc"><a class="header-anchor" href="#vimrc"></a>.vimrc</h3>
-<pre><code class="language-vim">&quot; Vundle
-&quot; ---------------------------------------------------------------
-set nocompatible              &quot; be iMproved, required
-filetype off                  &quot; required
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token comment">" Vundle</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+<span class="token keyword">set</span> <span class="token builtin">nocompatible</span>              <span class="token comment">" be iMproved, required</span>
+<span class="token keyword">filetype</span> off                  <span class="token comment">" required</span>
 
-&quot; set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-&quot; alternatively, pass a path where Vundle should install plugins
-&quot;call vundle#begin('~/some/path/here')
+<span class="token comment">" set the runtime path to include Vundle and initialize</span>
+<span class="token keyword">set</span> <span class="token builtin">rtp</span><span class="token operator">+=</span>~<span class="token operator">/</span><span class="token operator">.</span><span class="token keyword">vim</span><span class="token operator">/</span>bundle<span class="token operator">/</span>Vundle<span class="token operator">.</span><span class="token keyword">vim</span>
+<span class="token keyword">call</span> vundle#<span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">" alternatively, pass a path where Vundle should install plugins</span>
+<span class="token comment">"call vundle#begin(</span><span class="token string">'~/some/path/here'</span><span class="token punctuation">)</span>
 
-&quot; let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+<span class="token comment">" let Vundle manage Vundle, required</span>
+Plugin <span class="token string">'VundleVim/Vundle.vim'</span>
 
-Plugin 'tpope/vim-fugitive'
-&quot; vim-airline
-&quot; ---------------------------------------------------------------
-Plugin 'vim-airline/vim-airline'
-let g:airline_theme=&quot;molokai&quot;
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+Plugin <span class="token string">'tpope/vim-fugitive'</span>
+<span class="token comment">" vim-airline</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+Plugin <span class="token string">'vim-airline/vim-airline'</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline_theme<span class="token operator">=</span><span class="token string">"molokai"</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline_powerline_fonts <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline#extensions#<span class="token builtin">tabline</span>#enabled <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>airline#extensions#<span class="token builtin">tabline</span>#buffer_nr_show <span class="token operator">=</span> <span class="token number">1</span>
 
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-syntastic/syntastic'
+Plugin <span class="token string">'vim-airline/vim-airline-themes'</span>
+Plugin <span class="token string">'vim-syntastic/syntastic'</span>
 
-&quot; All of your Plugins must be added before the following line
-call vundle#end()            &quot; required
-filetype plugin indent on    &quot; required
+<span class="token comment">" All of your Plugins must be added before the following line</span>
+<span class="token keyword">call</span> vundle#<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token comment">" required</span>
+<span class="token keyword">filetype</span> plugin indent <span class="token keyword">on</span>    <span class="token comment">" required</span>
 
-&quot; VIM user interface
-&quot; ---------------------------------------------------------------
-set number &quot;Always show line number
-set ruler  &quot;Always show current position
+<span class="token comment">" VIM user interface</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+<span class="token keyword">set</span> <span class="token keyword">number</span> <span class="token comment">"Always show line number</span>
+<span class="token keyword">set</span> <span class="token builtin">ruler</span>  <span class="token comment">"Always show current position</span>
 
-&quot; Color Scheme
-&quot; ---------------------------------------------------------------
-syntax enable
-let g:neodark#use_256color = 1 &quot; default: 0
-let g:neodark#terminal_transparent = 1 &quot; default: 0
-colorscheme neodark
+<span class="token comment">" Color Scheme</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+<span class="token builtin">syntax</span> enable
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>neodark#use_256color <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">" default: 0</span>
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>neodark#terminal_transparent <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">" default: 0</span>
+<span class="token keyword">colorscheme</span> neodark
 
-&quot; Mouth
-&quot; ---------------------------------------------------------------
-set mouse=a
+<span class="token comment">" Mouth</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+<span class="token keyword">set</span> <span class="token builtin">mouse</span><span class="token operator">=</span>a
 
-&quot; Tab
-&quot; ---------------------------------------------------------------
-set expandtab &quot;Use spaces instead of tabs
-set tabstop=4 &quot;1 tab == 4 spaces
-set softtabstop=4
-set smartindent shiftwidth=4 &quot;Auto indent
-</code></pre>
+<span class="token comment">" Tab</span>
+<span class="token comment">" ---------------------------------------------------------------</span>
+<span class="token keyword">set</span> <span class="token builtin">expandtab</span> <span class="token comment">"Use spaces instead of tabs</span>
+<span class="token keyword">set</span> <span class="token builtin">tabstop</span><span class="token operator">=</span><span class="token number">4</span> <span class="token comment">"1 tab == 4 spaces</span>
+<span class="token keyword">set</span> <span class="token builtin">softtabstop</span><span class="token operator">=</span><span class="token number">4</span>
+<span class="token keyword">set</span> <span class="token builtin">smartindent</span> <span class="token builtin">shiftwidth</span><span class="token operator">=</span><span class="token number">4</span> <span class="token comment">"Auto indent</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 
@@ -793,12 +775,12 @@ set smartindent shiftwidth=4 &quot;Auto indent
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -838,8 +820,6 @@ set smartindent shiftwidth=4 &quot;Auto indent
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

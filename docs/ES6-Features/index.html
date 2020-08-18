@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="References:  MDN JavaScript Docs rse&#x2F;es6-features ruanyf&#x2F;es6tutorial Babel ES2015  Data structures  Primitive: Boolean, null, undefined, Number, String, Symbol Object  Let &amp; Const Block-scoped bin">
@@ -32,9 +32,9 @@
 <meta property="og:description" content="References:  MDN JavaScript Docs rse&#x2F;es6-features ruanyf&#x2F;es6tutorial Babel ES2015  Data structures  Primitive: Boolean, null, undefined, Number, String, Symbol Object  Let &amp; Const Block-scoped bin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-04-10T16:38:02.000Z">
-<meta property="article:modified_time" content="2018-04-10T16:38:02.000Z">
+<meta property="article:modified_time" content="2018-05-04T09:46:36.791Z">
 <meta property="article:author" content="Luminoid">
-<meta property="article:tag" content="ES6">
+<meta property="article:tag" content="iOS, Web">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/ES6-Features/">
@@ -105,9 +105,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -149,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -173,7 +173,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -194,9 +194,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -213,7 +213,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-structures"><span class="nav-number">1.</span> <span class="nav-text">Data structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let-Const"><span class="nav-number">2.</span> <span class="nav-text">Let &amp; Const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructuring"><span class="nav-number">3.</span> <span class="nav-text">Destructuring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">5.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">5.1.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template-Strings"><span class="nav-number">5.2.</span> <span class="nav-text">Template Strings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">6.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">7.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration"><span class="nav-number">7.1.</span> <span class="nav-text">Enumeration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">8.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp"><span class="nav-number">9.</span> <span class="nav-text">RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">10.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Map"><span class="nav-number">11.</span> <span class="nav-text">Set &amp; Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator-for…of"><span class="nav-number">12.</span> <span class="nav-text">Iterator &amp; for…of</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">12.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in-for…of"><span class="nav-number">12.2.</span> <span class="nav-text">for…in &amp; for…of</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-Programming"><span class="nav-number">13.</span> <span class="nav-text">Meta-Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">13.1.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect"><span class="nav-number">13.2.</span> <span class="nav-text">Reflect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asynchronization"><span class="nav-number">14.</span> <span class="nav-text">Asynchronization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">14.1.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">14.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Example"><span class="nav-number">14.2.1.</span> <span class="nav-text">Simple Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-image-asynchronously"><span class="nav-number">14.2.2.</span> <span class="nav-text">Load image asynchronously</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">14.3.</span> <span class="nav-text">Generator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-v2"><span class="nav-number">14.3.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Direct-Use"><span class="nav-number">14.3.2.</span> <span class="nav-text">Direct Use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">14.3.3.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-expression"><span class="nav-number">14.3.4.</span> <span class="nav-text">yield* expression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#thunkify"><span class="nav-number">14.3.5.</span> <span class="nav-text">thunkify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co"><span class="nav-number">14.3.6.</span> <span class="nav-text">co</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">14.4.</span> <span class="nav-text">async</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Animations"><span class="nav-number">14.4.1.</span> <span class="nav-text">Perform Animations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Asynchronous-Tasks-in-Order"><span class="nav-number">14.4.2.</span> <span class="nav-text">Perform Asynchronous Tasks in Order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-await…of"><span class="nav-number">14.4.3.</span> <span class="nav-text">for await…of</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-generator"><span class="nav-number">14.4.4.</span> <span class="nav-text">Async generator</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-structures"><span class="nav-number">1.</span> <span class="nav-text">Data structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let-Const"><span class="nav-number">2.</span> <span class="nav-text">Let &amp; Const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructuring"><span class="nav-number">3.</span> <span class="nav-text">Destructuring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">5.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">5.1.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template-Strings"><span class="nav-number">5.2.</span> <span class="nav-text">Template Strings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">6.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">7.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumeration"><span class="nav-number">7.1.</span> <span class="nav-text">Enumeration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">8.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp"><span class="nav-number">9.</span> <span class="nav-text">RegExp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">10.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Map"><span class="nav-number">11.</span> <span class="nav-text">Set &amp; Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator-for%E2%80%A6of"><span class="nav-number">12.</span> <span class="nav-text">Iterator &amp; for…of</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">12.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E2%80%A6in-for%E2%80%A6of"><span class="nav-number">12.2.</span> <span class="nav-text">for…in &amp; for…of</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-Programming"><span class="nav-number">13.</span> <span class="nav-text">Meta-Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">13.1.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect"><span class="nav-number">13.2.</span> <span class="nav-text">Reflect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asynchronization"><span class="nav-number">14.</span> <span class="nav-text">Asynchronization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">14.1.</span> <span class="nav-text">Callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">14.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Example"><span class="nav-number">14.2.1.</span> <span class="nav-text">Simple Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-image-asynchronously"><span class="nav-number">14.2.2.</span> <span class="nav-text">Load image asynchronously</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">14.3.</span> <span class="nav-text">Generator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator-v2"><span class="nav-number">14.3.1.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Direct-Use"><span class="nav-number">14.3.2.</span> <span class="nav-text">Direct Use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">14.3.3.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-expression"><span class="nav-number">14.3.4.</span> <span class="nav-text">yield* expression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#thunkify"><span class="nav-number">14.3.5.</span> <span class="nav-text">thunkify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co"><span class="nav-number">14.3.6.</span> <span class="nav-text">co</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">14.4.</span> <span class="nav-text">async</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Animations"><span class="nav-number">14.4.1.</span> <span class="nav-text">Perform Animations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perform-Asynchronous-Tasks-in-Order"><span class="nav-number">14.4.2.</span> <span class="nav-text">Perform Asynchronous Tasks in Order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-await%E2%80%A6of"><span class="nav-number">14.4.3.</span> <span class="nav-text">for await…of</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Async-generator"><span class="nav-number">14.4.4.</span> <span class="nav-text">Async generator</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -242,7 +242,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -320,6 +320,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           ES6 Features
@@ -334,6 +336,13 @@
 
               <time title="Created: 2018-04-11 00:38:02" itemprop="dateCreated datePublished" datetime="2018-04-11T00:38:02+08:00">2018-04-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-05-04 17:46:36" itemprop="dateModified" datetime="2018-05-04T17:46:36+08:00">2018-05-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -361,14 +370,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>8 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -378,14 +387,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>References:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript Docs</a></li>
-<li><a href="http://es6-features.org" target="_blank" rel="noopener">rse/es6-features</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ruanyf/es6tutorial</a></li>
-<li><a href="https://babeljs.io/learn-es2015" target="_blank" rel="noopener">Babel ES2015</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript Docs</a></li>
+<li><a target="_blank" rel="noopener" href="http://es6-features.org">rse/es6-features</a></li>
+<li><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/">ruanyf/es6tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="https://babeljs.io/learn-es2015">Babel ES2015</a></li>
 </ul>
 <h2 id="Data-structures"><a class="header-anchor" href="#Data-structures"></a>Data structures</h2>
 <ul>
@@ -394,110 +401,103 @@
 </ul>
 <h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
 <p>Block-scoped binding constructs.</p>
-<pre><code class="language-js">let var1 [= value1];
-const name1 = value1;
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> var1 <span class="token punctuation">[</span><span class="token operator">=</span> value1<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> name1 <span class="token operator">=</span> value1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<pre><code class="language-js">// Array matching
-let [a, ,c] = [1,2,3];
-a === 1;
-c === 3;
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Array matching</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> <span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
+c <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">;</span>
 
-// Object matching
-let { a, b } = { a: 1, b: 2 };
-a === 1;
-b === 2;
+<span class="token comment">// Object matching</span>
+<span class="token keyword">let</span> <span class="token punctuation">&#123;</span> a<span class="token punctuation">,</span> b <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+a <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
+b <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-// Default arguments
-function add({a, b, c = 3, d = 4}) {
-  return a + b + c + d;
-}
-add({a:1, b:2}) === 10;
+<span class="token comment">// Default arguments</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c <span class="token operator">+</span> d<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">10</span><span class="token punctuation">;</span>
 
-// Swap values
-let x = 1;
-let y = 2;
-[x, y] = [y, x];
+<span class="token comment">// Swap values</span>
+<span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>y<span class="token punctuation">,</span> x<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// Multiple return values
-function colorWhite(){
-  return {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }
-}
-</code></pre>
+<span class="token comment">// Multiple return values</span>
+<span class="token keyword">function</span> <span class="token function">colorWhite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    red<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+    green<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+    blue<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <a id="more"></a>
 <h2 id="Number"><a class="header-anchor" href="#Number"></a>Number</h2>
-<pre><code class="language-js">// Binary and Octal Literals
-0b101 === 5;
-0o101 === 65;
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Binary and Octal Literals</span>
+<span class="token number">0b101</span> <span class="token operator">===</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token number">0o101</span> <span class="token operator">===</span> <span class="token number">65</span><span class="token punctuation">;</span>
 
-// Number method
-Number.parseInt('12.34') === 12;
-Number.parseFloat('12.34') === 12.34;
+<span class="token comment">// Number method</span>
+Number<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'12.34'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token string">'12.34'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12.34</span><span class="token punctuation">;</span>
 
-// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1
-Number.EPSILON === Math.pow(2, -52);
+<span class="token comment">// Number.EPSILON: the difference between 1 and the smallest floating point number greater than 1</span>
+Number<span class="token punctuation">.</span><span class="token constant">EPSILON</span> <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">52</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-0.1 + 0.2 - 0.3 !== 0;
-0.1 + 0.2 - 0.3 &lt; Number.EPSILON;
+<span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">-</span> <span class="token number">0.3</span> <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">-</span> <span class="token number">0.3</span> <span class="token operator">&lt;</span> Number<span class="token punctuation">.</span><span class="token constant">EPSILON</span><span class="token punctuation">;</span>
 
-// Exponentiation operator
-2 ** 3 === 8;
-</code></pre>
+<span class="token comment">// Exponentiation operator</span>
+<span class="token number">2</span> <span class="token operator">**</span> <span class="token number">3</span> <span class="token operator">===</span> <span class="token number">8</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="String"><a class="header-anchor" href="#String"></a>String</h2>
 <h3 id="Unicode"><a class="header-anchor" href="#Unicode"></a>Unicode</h3>
-<pre><code class="language-js">&quot;𠮷&quot; === &quot;\u{20BB7}&quot;;
-&quot;𠮷&quot; === &quot;\uD842\uDFB7&quot;;
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"𠮷"</span> <span class="token operator">===</span> <span class="token string">"\u&#123;20BB7&#125;"</span><span class="token punctuation">;</span>
+<span class="token string">"𠮷"</span> <span class="token operator">===</span> <span class="token string">"\uD842\uDFB7"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Template-Strings"><a class="header-anchor" href="#Template-Strings"></a>Template Strings</h3>
-<pre><code class="language-js">let tem_str = &quot;Template Strings&quot;;
-let s = `${tem_str} supports multiline strings
-and interpolate variable bindings.`;
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> tem_str <span class="token operator">=</span> <span class="token string">"Template Strings"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>tem_str<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> supports multiline strings
+and interpolate variable bindings.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="Symbol"><a class="header-anchor" href="#Symbol"></a>Symbol</h2>
-<pre><code class="language-js">Symbol(&quot;foo&quot;) !== Symbol(&quot;foo&quot;)
-Symbol.for(&quot;bar&quot;) === Symbol.for(&quot;bar&quot;)
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span>
+Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span> <span class="token operator">===</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span>
 
-// Symbol as an identifier for object properties
-const foo = Symbol(&quot;foo&quot;);
-let obj = {};
-obj[foo] = &quot;hello&quot;;
-obj; // { [Symbol(foo)]: 'hello' }
+<span class="token comment">// Symbol as an identifier for object properties</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">[</span>foo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">;</span> <span class="token comment">// &#123; [Symbol(foo)]: 'hello' &#125;</span>
 
-// Symbol as a const value
-const shapeType = {
-  triangle: Symbol()
-  rectangle: Symbol()
-};
-</code></pre>
+<span class="token comment">// Symbol as a const value</span>
+<span class="token keyword">const</span> shapeType <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  triangle<span class="token operator">:</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  rectangle<span class="token operator">:</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Object"><a class="header-anchor" href="#Object"></a>Object</h2>
-<pre><code class="language-js">// Property shorthand
-let x = 0, y = 0;
-const obj = { x, y }; // equals to: obj = { x: x, y: y };
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Property shorthand</span>
+<span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token punctuation">,</span> y <span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// equals to: obj = &#123; x: x, y: y &#125;;</span>
 
-// Object.is(): determines whether two values are the same value.
-+0 === -0;
-NaN !== NaN;
-Object.is(+0, -0) === false;
-Object.is(NaN, NaN) === true;
+<span class="token comment">// Object.is(): determines whether two values are the same value.</span>
+<span class="token operator">+</span><span class="token number">0</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token number">NaN</span> <span class="token operator">!==</span> <span class="token number">NaN</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token operator">+</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">,</span> <span class="token number">NaN</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-// Merge objects
-let dest = { a: 0 };
-let src1 = { b: 1, c: 2 };
-let src2 = { b: 3, d: 4 };
-Object.assign(dest, src1, src2);
-dest; // { a: 0, b: 3, c: 2, d: 4 }
+<span class="token comment">// Merge objects</span>
+<span class="token keyword">let</span> dest <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> src1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> b<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> src2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> b<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> d<span class="token operator">:</span> <span class="token number">4</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>dest<span class="token punctuation">,</span> src1<span class="token punctuation">,</span> src2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+dest<span class="token punctuation">;</span> <span class="token comment">// &#123; a: 0, b: 3, c: 2, d: 4 &#125;</span>
 
-// Deep clone
-obj1 = {a: 1, b: {c: 2}};
-obj2 = Object.assign({}, obj1);
-obj3 = JSON.parse(JSON.stringify(obj1));
-obj2.b === obj1.b
-obj3.b !== obj1.b
-</code></pre>
+<span class="token comment">// Deep clone</span>
+obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token punctuation">&#123;</span>c<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj3 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>b <span class="token operator">===</span> obj1<span class="token punctuation">.</span>b
+obj3<span class="token punctuation">.</span>b <span class="token operator">!==</span> obj1<span class="token punctuation">.</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Enumeration"><a class="header-anchor" href="#Enumeration"></a>Enumeration</h3>
 <table>
 <thead>
@@ -554,260 +554,250 @@ obj3.b !== obj1.b
 </tbody>
 </table>
 <h2 id="Function"><a class="header-anchor" href="#Function"></a>Function</h2>
-<pre><code class="language-js">// Default parameter values
-function add(x, y = 1) {
-  return x + y;
-}
-add(2) === 3;
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Default parameter values</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">;</span>
 
-// Rest
-function add(...values) {
-  let sum = 0;
-  for (let val of values) {
-    sum += val;
-  }
-  return sum;
-}
-add(1, 2, 3) === 6;
+<span class="token comment">// Rest</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> val <span class="token keyword">of</span> values<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    sum <span class="token operator">+=</span> val<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">6</span><span class="token punctuation">;</span>
 
-// Arrow function
-// Arrow functions share the same lexical this as their surrounding code.
-let sum = (num1, num2) =&gt; num1 + num2;
-sum(1, 2) === 3;
-let result = [3, 2, 1].sort((a, b) =&gt; a - b); // [ 1, 2, 3 ]
+<span class="token comment">// Arrow function</span>
+<span class="token comment">// Arrow functions share the same lexical this as their surrounding code.</span>
+<span class="token keyword">let</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2</span><span class="token punctuation">)</span> <span class="token operator">=></span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ 1, 2, 3 ]</span>
 
-// Tail Recursion
-function tailFactorial(n, acc) {
-  &quot;use strict&quot;;
-  if (n === 1) return acc;
-  return tailFactorial(n - 1, n * acc);
-}
-function factorial(n) {
-  return tailFactorial(n, 1);
-}
-factorial(5) === 120;
-</code></pre>
+<span class="token comment">// Tail Recursion</span>
+<span class="token keyword">function</span> <span class="token function">tailFactorial</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> acc</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token string">"use strict"</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> acc<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">tailFactorial</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">*</span> acc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token function">tailFactorial</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">120</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="RegExp"><a class="header-anchor" href="#RegExp"></a>RegExp</h2>
-<pre><code class="language-js">// String method: match
-const reg = /abc+/ig;
-const str = &quot;abdabcdeabccdef&quot;;
-const arr = str.match(reg);
-arr; // [ 'abc', 'abcc' ]
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// String method: match</span>
+<span class="token keyword">const</span> reg <span class="token operator">=</span> <span class="token regex">/abc+/ig</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">"abdabcdeabccdef"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">;</span> <span class="token comment">// [ 'abc', 'abcc' ]</span>
 
-// RegExp method: test
-const reg1 = /abc+/i;
-const reg2 = /abc*/i;
-const str = &quot;ababab&quot;
-reg1.test(str) === false;
-reg2.test(str) === true;
+<span class="token comment">// RegExp method: test</span>
+<span class="token keyword">const</span> reg1 <span class="token operator">=</span> <span class="token regex">/abc+/i</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> reg2 <span class="token operator">=</span> <span class="token regex">/abc*/i</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">"ababab"</span>
+reg1<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+reg2<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-// u (unicode) flag:
-/^.$/.test('😀') === false;
-/^.$/u.test('😀') === true;
+<span class="token comment">// u (unicode) flag:</span>
+<span class="token regex">/^.$/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'😀'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token regex">/^.$/u</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'😀'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-// s (dotAll) flag
-/^.$/.test('\n') === false;
-/^.$/s.test('\n') === true;
+<span class="token comment">// s (dotAll) flag</span>
+<span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">.</span>$<span class="token operator">/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token regex">/^.$/s</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-// lookahead
-('1$ and 2¢').match(/\d+(?=\$)/g); // [ '1' ]
+<span class="token comment">// lookahead</span>
+<span class="token punctuation">(</span><span class="token string">'1$ and 2¢'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/\d+(?=\$)/g</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ '1' ]</span>
 
-// negative lookahead
-('1$ and 2¢').match(/\d+(?!\$)/g); // [ '2' ]
+<span class="token comment">// negative lookahead</span>
+<span class="token punctuation">(</span><span class="token string">'1$ and 2¢'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/\d+(?!\$)/g</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ '2' ]</span>
 
-// lookbehind
-('$1 and ¢2').match(/(?&lt;=\$)\d+/g); // [ '1' ]
+<span class="token comment">// lookbehind</span>
+<span class="token punctuation">(</span><span class="token string">'$1 and ¢2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/(?&lt;=\$)\d+/g</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ '1' ]</span>
 
-// negative lookbehind
-('$1 and ¢2').match(/(?&lt;!\$)\d+/g); // [ '2' ]
+<span class="token comment">// negative lookbehind</span>
+<span class="token punctuation">(</span><span class="token string">'$1 and ¢2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/(?&lt;!\$)\d+/g</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ '2' ]</span>
 
-// Named Capture Groups
-const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
-const matchObj = regDate.exec('1987-12-31');
-const year = matchObj.groups.year;      // 1987
-const month = matchObj.groups.month;    // 12
-const day = matchObj.groups.day;        // 31
+<span class="token comment">// Named Capture Groups</span>
+<span class="token keyword">const</span> regDate <span class="token operator">=</span> <span class="token regex">/(?&lt;year>[0-9]&#123;4&#125;)-(?&lt;month>[0-9]&#123;2&#125;)-(?&lt;day>[0-9]&#123;2&#125;)/</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> matchObj <span class="token operator">=</span> regDate<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'1987-12-31'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> year <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>year<span class="token punctuation">;</span>      <span class="token comment">// 1987</span>
+<span class="token keyword">const</span> month <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>month<span class="token punctuation">;</span>    <span class="token comment">// 12</span>
+<span class="token keyword">const</span> day <span class="token operator">=</span> matchObj<span class="token punctuation">.</span>groups<span class="token punctuation">.</span>day<span class="token punctuation">;</span>        <span class="token comment">// 31</span>
 
-// Destructuring with named capture groups
-const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
-const {groups: {day, year}} = regDate.exec('1987-12-31');
-day === '31';
-year === '1987';
+<span class="token comment">// Destructuring with named capture groups</span>
+<span class="token keyword">const</span> regDate <span class="token operator">=</span> <span class="token regex">/(?&lt;year>[0-9]&#123;4&#125;)-(?&lt;month>[0-9]&#123;2&#125;)-(?&lt;day>[0-9]&#123;2&#125;)/</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>groups<span class="token operator">:</span> <span class="token punctuation">&#123;</span>day<span class="token punctuation">,</span> year<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> <span class="token operator">=</span> regDate<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'1987-12-31'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+day <span class="token operator">===</span> <span class="token string">'31'</span><span class="token punctuation">;</span>
+year <span class="token operator">===</span> <span class="token string">'1987'</span><span class="token punctuation">;</span>
 
-// replace() with named capture groups
-const regDate = /(?&lt;year&gt;[0-9]{4})-(?&lt;month&gt;[0-9]{2})-(?&lt;day&gt;[0-9]{2})/;
-'1987-12-31'.replace(regDate, '$&lt;month&gt;/$&lt;day&gt;/$&lt;year&gt;') === '12/31/1987';
+<span class="token comment">// replace() with named capture groups</span>
+<span class="token keyword">const</span> regDate <span class="token operator">=</span> <span class="token regex">/(?&lt;year>[0-9]&#123;4&#125;)-(?&lt;month>[0-9]&#123;2&#125;)-(?&lt;day>[0-9]&#123;2&#125;)/</span><span class="token punctuation">;</span>
+<span class="token string">'1987-12-31'</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regDate<span class="token punctuation">,</span> <span class="token string">'$&lt;month>/$&lt;day>/$&lt;year>'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'12/31/1987'</span><span class="token punctuation">;</span>
 
-// Backreferences
-const regTwice = /^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$/;
-regTwice.test('abc!abc') === true;
-regTwice.test('abc!ab') === false;
-</code></pre>
+<span class="token comment">// Backreferences</span>
+<span class="token keyword">const</span> regTwice <span class="token operator">=</span> <span class="token regex">/^(?&lt;word>[a-z]+)!\k&lt;word>$/</span><span class="token punctuation">;</span>
+regTwice<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc!abc'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+regTwice<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'abc!ab'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Array"><a class="header-anchor" href="#Array"></a>Array</h2>
-<pre><code class="language-js">// Spread
-function add(a, b, c, d) {
-  return a + b + c + d;
-}
-add(1, ...[2, 3, 4]) === 10;
-Math.max(...[12, 34, 5]) === 34;
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Spread</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c <span class="token operator">+</span> d<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">10</span><span class="token punctuation">;</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">34</span><span class="token punctuation">;</span>
 
-// Copy an array
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1]; // one level deep copy
-arr1 !== arr2;
+<span class="token comment">// Copy an array</span>
+<span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// one level deep copy</span>
+arr1 <span class="token operator">!==</span> arr2<span class="token punctuation">;</span>
 
-// Concatenate arrays
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr = [...arr1, ...arr2]; // [ 1, 2, 3, 4, 5, 6 ]
+<span class="token comment">// Concatenate arrays</span>
+<span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">,</span> <span class="token operator">...</span>arr2<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [ 1, 2, 3, 4, 5, 6 ]</span>
 
-// Destructuring
-const [head, ...tail] = [1, 2, 3, 4, 5];
-tail; // [ 2, 3, 4, 5 ]
+<span class="token comment">// Destructuring</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>head<span class="token punctuation">,</span> <span class="token operator">...</span>tail<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+tail<span class="token punctuation">;</span> <span class="token comment">// [ 2, 3, 4, 5 ]</span>
 
-// Array.from(): create a new Array instance from an array-like or iterable object.
-Array.from({length: 5}, (v, i) =&gt; i * i); // [ 0, 1, 4, 9, 16 ]
+<span class="token comment">// Array.from(): create a new Array instance from an array-like or iterable object.</span>
+Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>length<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">v<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> i <span class="token operator">*</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ 0, 1, 4, 9, 16 ]</span>
 
-// Array.of(): create a new Array instance with a variable number of arguments.
-Array.of(3);        // [ 3 ]
-Array.of(1, 2, 3);  // [ 1, 2, 3 ]
+<span class="token comment">// Array.of(): create a new Array instance with a variable number of arguments.</span>
+Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// [ 3 ]</span>
+Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [ 1, 2, 3 ]</span>
 
-// Array Iterator
-for (let index of ['a', 'b'].keys()) {
-  console.log(index);
-}
-// 0
-// 1
+<span class="token comment">// Array Iterator</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token keyword">of</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 0</span>
+<span class="token comment">// 1</span>
 
-for (let elem of ['a', 'b'].values()) {
-  console.log(elem);
-}
-// 'a'
-// 'b'
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> elem <span class="token keyword">of</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 'a'</span>
+<span class="token comment">// 'b'</span>
 
-for (let [index, elem] of ['a', 'b'].entries()) {
-  console.log(index, elem);
-}
-// 0 'a'
-// 1 'b'
-</code></pre>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>index<span class="token punctuation">,</span> elem<span class="token punctuation">]</span> <span class="token keyword">of</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> elem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 0 'a'</span>
+<span class="token comment">// 1 'b'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Set-Map"><a class="header-anchor" href="#Set-Map"></a>Set &amp; Map</h2>
-<pre><code class="language-js">// Set
-let s = new Set([&quot;a&quot;]);
-s.add(&quot;b&quot;).add(&quot;a&quot;);
-s; // Set { 'a', 'b' }
-s.size === 2;
-s.has(&quot;a&quot;) === true;
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Set</span>
+<span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+s<span class="token punctuation">;</span> <span class="token comment">// Set &#123; 'a', 'b' &#125;</span>
+s<span class="token punctuation">.</span>size <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-// Remove duplicated elements in an array
-let arr = [1, 2, 1, 3];
-[...new Set(arr)]; // [ 1, 2, 3 ]
+<span class="token comment">// Remove duplicated elements in an array</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// [ 1, 2, 3 ]</span>
 
-// Union, Intersect &amp; Difference
-let a = new Set([1, 2, 3]);
-let b = new Set([2, 3, 4]);
-let union = new Set([...a, ...b]);                          // Set { 1, 2, 3, 4 }
-let intersect = new Set([...a].filter(x =&gt; b.has(x)));      // Set { 2, 3 }
-let difference = new Set([...a].filter(x =&gt; !b.has(x)));    // Set { 1 }
+<span class="token comment">// Union, Intersect &amp; Difference</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> union <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">,</span> <span class="token operator">...</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                          <span class="token comment">// Set &#123; 1, 2, 3, 4 &#125;</span>
+<span class="token keyword">let</span> intersect <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=></span> b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Set &#123; 2, 3 &#125;</span>
+<span class="token keyword">let</span> difference <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=></span> <span class="token operator">!</span>b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Set &#123; 1 &#125;</span>
 
-// Map
-let m = new Map();
-let s = Symbol();
-m.set(&quot;foo&quot;, 1);
-m.set(s, 2);
-m.get(s) === 2;
-m.size === 2;
+<span class="token comment">// Map</span>
+<span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span>size <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-// Weak Sets &amp; Weak Maps
-// WeakSet: collection of objects only and not of arbitrary values of any type.
-// - References to objects in the collection are held weakly.
-// - WeakSets are not enumerable.
-const obj = {foo: 1};
-let ws = new WeakSet();
-ws.add(obj); // WeakSet {}
-ws.has(obj) === true;
+<span class="token comment">// Weak Sets &amp; Weak Maps</span>
+<span class="token comment">// WeakSet: collection of objects only and not of arbitrary values of any type.</span>
+<span class="token comment">// - References to objects in the collection are held weakly.</span>
+<span class="token comment">// - WeakSets are not enumerable.</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>foo<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ws <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ws<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// WeakSet &#123;&#125;</span>
+ws<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-let wm = new WeakMap();
-wm.set(obj, 123); // WeakMap {}
-wm.get(obj) === 123;
-</code></pre>
+<span class="token keyword">let</span> wm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+wm<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// WeakMap &#123;&#125;</span>
+wm<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">123</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Iterator-for…of"><a class="header-anchor" href="#Iterator-for…of"></a>Iterator &amp; for…of</h2>
 <h3 id="Iterator"><a class="header-anchor" href="#Iterator"></a>Iterator</h3>
-<pre><code class="language-js">let fibonacci = {
-  [Symbol.iterator]() {
-    let pre = 0, cur = 1;
-    return {
-      next() {
-        [pre, cur] = [cur, pre + cur];
-        return { done: false, value: cur }
-      }
-    }
-  }
-}
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> fibonacci <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> cur <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">[</span>pre<span class="token punctuation">,</span> cur<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>cur<span class="token punctuation">,</span> pre <span class="token operator">+</span> cur<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> value<span class="token operator">:</span> cur <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-for (let n of fibonacci) {
-  if (n &gt; 1000)
-    break;
-  console.log(n);
-}
-</code></pre>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> n <span class="token keyword">of</span> fibonacci<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="for…in-for…of"><a class="header-anchor" href="#for…in-for…of"></a>for…in &amp; for…of</h3>
-<pre><code class="language-js">let arr = ['a', 'b', 'c'];
-for (let index in arr) {
-  console.log(index);
-}
-// 0
-// 1
-// 2
-for (let value of arr) {
-  console.log(value);
-}
-// a
-// b
-// c
-for (let pair of arr.entries()) {
-  console.log(pair);
-}
-// [ 0, 'a' ]
-// [ 1, 'b' ]
-// [ 2, 'c' ]
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token keyword">in</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 0</span>
+<span class="token comment">// 1</span>
+<span class="token comment">// 2</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> value <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// a</span>
+<span class="token comment">// b</span>
+<span class="token comment">// c</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> pair <span class="token keyword">of</span> arr<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>pair<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// [ 0, 'a' ]</span>
+<span class="token comment">// [ 1, 'b' ]</span>
+<span class="token comment">// [ 2, 'c' ]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Meta-Programming"><a class="header-anchor" href="#Meta-Programming"></a>Meta-Programming</h2>
 <h3 id="Proxy"><a class="header-anchor" href="#Proxy"></a>Proxy</h3>
 <p>The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).</p>
-<pre><code class="language-js">let target = {};
-let handler = {
-  get: function (obj, prop) {
-    return `Hello, ${prop}!`;
-  }
-};
-let p = new Proxy(target, handler);
-p.world === &quot;Hello, world!&quot;;
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> handler <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>prop<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>world <span class="token operator">===</span> <span class="token string">"Hello, world!"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Reflect"><a class="header-anchor" href="#Reflect"></a>Reflect</h3>
 <p>Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers.</p>
-<pre><code class="language-js">// Reflect.defineProperty(): Similar to Object.defineProperty(). Returns a Boolean.
-// Reflect.construct(): The new operator as a function. Equivalent to calling new target(...args).
-// Reflect.deleteProperty(): The delete operator as a function. Equivalent to calling delete target[name].
-// Reflect.has(): The in operator as function.
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Reflect.defineProperty(): Similar to Object.defineProperty(). Returns a Boolean.</span>
+<span class="token comment">// Reflect.construct(): The new operator as a function. Equivalent to calling new target(...args).</span>
+<span class="token comment">// Reflect.deleteProperty(): The delete operator as a function. Equivalent to calling delete target[name].</span>
+<span class="token comment">// Reflect.has(): The in operator as function.</span>
 
-let obj = { a: 1 };
-Reflect.defineProperty(obj, &quot;b&quot;, { value: 2 });
-obj[Symbol(&quot;c&quot;)] = 3;
-Reflect.ownKeys(obj); // [ 'a', 'b', Symbol(c) ]
-</code></pre>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Reflect<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">[</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ 'a', 'b', Symbol(c) ]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Asynchronization"><a class="header-anchor" href="#Asynchronization"></a>Asynchronization</h2>
 <h3 id="Callback"><a class="header-anchor" href="#Callback"></a>Callback</h3>
-<pre><code class="language-bash">echo 123 &gt; tmp.txt
-</code></pre>
-<pre><code class="language-js">fs.readFile('./tmp.txt', 'utf-8', function (err, data) {
-  if (err) throw err;
-  console.log(data);
-});
-console.log('456');
-// 456
-// 123
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token number">123</span> <span class="token operator">></span> tmp.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./tmp.txt'</span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 456</span>
+<span class="token comment">// 123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Promise"><a class="header-anchor" href="#Promise"></a>Promise</h3>
 <p>A Promise is in one of these states:</p>
 <ul>
@@ -816,244 +806,227 @@ console.log('456');
 <li>rejected: meaning that the operation failed.</li>
 </ul>
 <h4 id="Simple-Example"><a class="header-anchor" href="#Simple-Example"></a>Simple Example</h4>
-<pre><code class="language-js">let promise = new Promise(function(resolve, reject) {
-  console.log('Promise task');
-  resolve();
-});
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Promise task'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-promise.then(function() {
-  console.log('Promise task resolved.');
-}).catch(function(error) {
-  console.log('Promise task rejected.');
-});
+promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Promise task resolved.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Promise task rejected.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console.log('Next task');
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Next task'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// Promise task
-// Next task
-// Promise resolved.
-</code></pre>
+<span class="token comment">// Promise task</span>
+<span class="token comment">// Next task</span>
+<span class="token comment">// Promise resolved.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Load-image-asynchronously"><a class="header-anchor" href="#Load-image-asynchronously"></a>Load image asynchronously</h4>
-<pre><code class="language-js">function loadImageAsync(url) {
-  return new Promise(function(resolve, reject) {
-    const image = new Image();
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loadImageAsync</span><span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    image.src = url;
-    image.onload = function() {
-      resolve(image);
-    };
-    image.onerror = function() {
-      reject(new Error('Failed to load image at ' + url));
-    };
-  });
-}
-</code></pre>
+    image<span class="token punctuation">.</span>src <span class="token operator">=</span> url<span class="token punctuation">;</span>
+    image<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>image<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    image<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Failed to load image at '</span> <span class="token operator">+</span> url<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>Promise.all(iterable)</code>: returns a single Promise that resolves when all of the promises in the iterable argument have resolved or when the iterable argument contains no promises. It rejects with the reason of the first promise that rejects.</p>
 <p><code>Promise.race(iterable)</code>: returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.</p>
 <h3 id="Generator"><a class="header-anchor" href="#Generator"></a>Generator</h3>
 <p><code>yield</code> provides implementation of semi-coroutine in Javascript</p>
 <h4 id="Iterator-v2"><a class="header-anchor" href="#Iterator-v2"></a>Iterator</h4>
-<pre><code class="language-js">let fibonacci = {
-  * [Symbol.iterator]() {
-    let pre = 0, cur = 1
-    for (;;) {
-      [ pre, cur ] = [ cur, pre + cur ]
-      yield cur
-    }
-  }
-}
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> fibonacci <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token operator">*</span> <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> cur <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token punctuation">[</span> pre<span class="token punctuation">,</span> cur <span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span> cur<span class="token punctuation">,</span> pre <span class="token operator">+</span> cur <span class="token punctuation">]</span>
+      <span class="token keyword">yield</span> cur
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-for (let n of fibonacci) {
-  if (n &gt; 1000)
-    break
-  console.log(n)
-}
-</code></pre>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> n <span class="token keyword">of</span> fibonacci<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Direct-Use"><a class="header-anchor" href="#Direct-Use"></a>Direct Use</h4>
-<pre><code class="language-js">function* range (start, end, step) {
-  while (start &lt; end) {
-    yield start
-    start += step
-  }
-}
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">range</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> end<span class="token punctuation">,</span> step</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>start <span class="token operator">&lt;</span> end<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">yield</span> start
+    start <span class="token operator">+=</span> step
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-for (let i of range(0, 10, 2)) {
-  console.log(i) // 0, 2, 4, 6, 8
-}
-</code></pre>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// 0, 2, 4, 6, 8</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Method"><a class="header-anchor" href="#Method"></a>Method</h4>
-<pre><code class="language-js">function* gen() {
-  while(true) {
-    var value = yield null;
-    console.log(value);
-  }
-}
-var g = gen();
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> g <span class="token operator">=</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>next()</code></p>
-<pre><code class="language-js">&gt; g.next();
-{ value: null, done: false }
-&gt; g.next();
-undefined
-{ value: null, done: false }
-&gt; g.next();
-undefined
-{ value: null, done: false }
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span>
+<span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">undefined</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span>
+<span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">undefined</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>next(value)</code>: <code>value</code> will be the return value of the previous <code>yield</code> expression</p>
-<pre><code class="language-js">&gt; g.next(1);
-{ value: null, done: false }
-&gt; g.next(2);
-2
-{ value: null, done: false }
-&gt; g.next(3);
-3
-{ value: null, done: false }
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span>
+<span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">2</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span>
+<span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">3</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>throw()</code></p>
-<pre><code class="language-js">&gt; g.throw(new Error('Error throwed!'));
-Error: Error throwed!
-&gt; g.next();
-{ value: undefined, done: true }
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">throw</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Error throwed!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Error<span class="token operator">:</span> Error throwed<span class="token operator">!</span>
+<span class="token operator">></span> g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>return()</code></p>
-<pre><code class="language-js">&gt; gen.return(3);
-{ value: 3, done: true }
-&gt; gen.next();
-{ value: undefined, done: true }
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">></span> gen<span class="token punctuation">.</span><span class="token function">return</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span>
+<span class="token operator">></span> gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span> value<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="yield-expression"><a class="header-anchor" href="#yield-expression"></a><code>yield*</code> expression</h4>
-<pre><code class="language-js">function* traverseArray(arr) {
-  if (Array.isArray(arr)) {
-    for(let i = 0; i &lt; arr.length; i++) {
-      yield* traverseArray(arr[i]);
-    }
-  } else {
-    yield arr;
-  }
-}
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">traverseArray</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">traverseArray</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">yield</span> arr<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-const arr = ['a', ['b'], ['c', ['d', 'e']]];
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-for(let t of traverseArray(arr)) {
-  console.log(t);
-}
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> t <span class="token keyword">of</span> <span class="token function">traverseArray</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-// a
-// b
-// c
-// d
-// e
-</code></pre>
+<span class="token comment">// a</span>
+<span class="token comment">// b</span>
+<span class="token comment">// c</span>
+<span class="token comment">// d</span>
+<span class="token comment">// e</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="thunkify"><a class="header-anchor" href="#thunkify"></a>thunkify</h4>
 <p>Turn a regular node function into one which returns a thunk.</p>
-<pre><code class="language-js">const thunkify = require('thunkify');
-const fs = require('fs');
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> thunkify <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'thunkify'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const read = thunkify(fs.readFile);
+<span class="token keyword">const</span> read <span class="token operator">=</span> <span class="token function">thunkify</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span>readFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-read('tmp.txt', 'utf8')(function(err, data){
-  if (err) throw err;
-  console.log(data);
-});
-</code></pre>
+<span class="token function">read</span><span class="token punctuation">(</span><span class="token string">'tmp.txt'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="co"><a class="header-anchor" href="#co"></a>co</h4>
 <p>Generator based control flow goodness for nodejs and the browser, using promises.</p>
-<pre><code class="language-js">const co = require('co');
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> co <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'co'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const gen = function* () {
-  const result = yield Promise.resolve(true);
-  return result;
-};
+<span class="token keyword">const</span> <span class="token function-variable function">gen</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">yield</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-co(gen).then(function (value) {
-  console.log(value);
-}, function (err) {
-  console.error(err.stack);
-});
-</code></pre>
+<span class="token function">co</span><span class="token punctuation">(</span>gen<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="async"><a class="header-anchor" href="#async"></a>async</h3>
-<pre><code class="language-js">function resolveAfter2Seconds(x) {
-  return new Promise(resolve =&gt; {
-    setTimeout(() =&gt; {
-      resolve(x);
-    }, 2000);
-  });
-}
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">resolveAfter2Seconds</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-async function add1(x) {
-  const a = await resolveAfter2Seconds(20);
-  const b = await resolveAfter2Seconds(30);
-  return x + a + b;
-}
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">add1</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">resolveAfter2Seconds</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">resolveAfter2Seconds</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-add1(10).then(v =&gt; {
-  console.log(v);  // prints 60 after 4 seconds.
-});
+<span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 60 after 4 seconds.</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-async function add2(x) {
-  let [p_a, p_b] = await Promise.all([resolveAfter2Seconds(20), resolveAfter2Seconds(30)]);
-  return x + p_a + p_b;
-}
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">add2</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> <span class="token punctuation">[</span>p_a<span class="token punctuation">,</span> p_b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">resolveAfter2Seconds</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">resolveAfter2Seconds</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> p_a <span class="token operator">+</span> p_b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-add2(10).then(v =&gt; {
-  console.log(v);  // prints 60 after 2 seconds.
-});
-</code></pre>
+<span class="token function">add2</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 60 after 2 seconds.</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Perform-Animations"><a class="header-anchor" href="#Perform-Animations"></a>Perform Animations</h4>
-<pre><code class="language-js">async function chainAnimationsAsync(elem, animations) {
-  let ret = null;
-  try {
-    for(let anim of animations) {
-      ret = await anim(elem);
-    }
-  } catch(e) {
-    console.log(e);
-  }
-  return ret;
-}
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">chainAnimationsAsync</span><span class="token punctuation">(</span><span class="token parameter">elem<span class="token punctuation">,</span> animations</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> anim <span class="token keyword">of</span> animations<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      ret <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">anim</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Perform-Asynchronous-Tasks-in-Order"><a class="header-anchor" href="#Perform-Asynchronous-Tasks-in-Order"></a>Perform Asynchronous Tasks in Order</h4>
-<pre><code class="language-js">async function logInOrder(urls) {
-  // Fetch urls concurrently
-  const textPromises = urls.map(async url =&gt; {
-    const response = await fetch(url);
-    return response.text();
-  });
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">logInOrder</span><span class="token punctuation">(</span><span class="token parameter">urls</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// Fetch urls concurrently</span>
+  <span class="token keyword">const</span> textPromises <span class="token operator">=</span> urls<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">url</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // log in order
-  for (const textPromise of textPromises) {
-    console.log(await textPromise);
-  }
-}
-</code></pre>
+  <span class="token comment">// log in order</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> textPromise <span class="token keyword">of</span> textPromises<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">await</span> textPromise<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="for-await…of"><a class="header-anchor" href="#for-await…of"></a>for await…of</h4>
 <p>Iterate through async iterator</p>
-<pre><code class="language-js">async function f() {
-  for await (const x of createAsyncIterable(['a', 'b'])) {
-    console.log(x);
-  }
-}
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> x <span class="token keyword">of</span> <span class="token function">createAsyncIterable</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="Async-generator"><a class="header-anchor" href="#Async-generator"></a>Async generator</h4>
-<pre><code class="language-js">async function* readLines(path) {
-  let file = await fileOpen(path);
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">readLines</span><span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> file <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fileOpen</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  try {
-    while (!file.EOF) {
-      yield await file.readLine();
-    }
-  } finally {
-    await file.close();
-  }
-}
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token constant">EOF</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">yield</span> <span class="token keyword">await</span> file<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">await</span> file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-(async function () {
-  for await (const line of readLines(filePath)) {
-    console.log(line);
-  }
-})()
-</code></pre>
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> line <span class="token keyword">of</span> <span class="token function">readLines</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 
@@ -1161,12 +1134,12 @@ add2(10).then(v =&gt; {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -1206,8 +1179,6 @@ add2(10).then(v =&gt; {
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

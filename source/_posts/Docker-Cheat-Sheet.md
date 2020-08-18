@@ -9,6 +9,8 @@ keywords:
 - Cheatsheet
 ---
 
+Docker Version: 17.06.0-ce-mac19
+
 ## Containers
 ``` bash
 docker build -t="luminoid/my_image" .                   # Build an image from current directory's Dockerfile

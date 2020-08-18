@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,22 +21,20 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Hexo Theme:  Quick Deployment Hexo recommended way $ hexo new &quot;My New Article&quot; $ vim source&#x2F;_posts&#x2F;My-New-Article.md $ hexo clean $ hexo deploy -g">
+  <meta name="description" content="Official Site: https:&#x2F;&#x2F;hexo.io Version: 5.0.0 Theme: hexo-theme-next Usage Quick Deployment Hexo recommended way $ hexo new &quot;My New Article&quot; $ vim source&#x2F;_posts&#x2F;My-New-Article.md $ hexo clean $ hexo d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Quick Guide">
 <meta property="og:url" content="http://luminoid.github.io/blog/Hexo-Quick-Guide/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Hexo Theme:  Quick Deployment Hexo recommended way $ hexo new &quot;My New Article&quot; $ vim source&#x2F;_posts&#x2F;My-New-Article.md $ hexo clean $ hexo deploy -g">
+<meta property="og:description" content="Official Site: https:&#x2F;&#x2F;hexo.io Version: 5.0.0 Theme: hexo-theme-next Usage Quick Deployment Hexo recommended way $ hexo new &quot;My New Article&quot; $ vim source&#x2F;_posts&#x2F;My-New-Article.md $ hexo clean $ hexo d">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-06-08T03:06:48.000Z">
-<meta property="article:modified_time" content="2017-06-08T03:06:48.000Z">
+<meta property="article:modified_time" content="2020-08-04T05:44:46.942Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="guide">
-<meta property="article:tag" content="Algolia">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/Hexo-Quick-Guide/">
@@ -107,9 +105,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -151,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -175,7 +173,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -196,9 +194,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -244,7 +242,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -322,6 +320,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Hexo Quick Guide
@@ -336,6 +336,13 @@
 
               <time title="Created: 2017-06-08 11:06:48" itemprop="dateCreated datePublished" datetime="2017-06-08T11:06:48+08:00">2017-06-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-04 13:44:46" itemprop="dateModified" datetime="2020-08-04T13:44:46+08:00">2020-08-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -363,14 +370,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.9k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -380,91 +387,82 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><br>
-Theme: </p>
+        <p>Official Site: <a target="_blank" rel="noopener" href="https://hexo.io">https://hexo.io</a><br>
+Version: 5.0.0<br>
+Theme: <a href="/blog/hexo-theme-next-Usage/" title="hexo-theme-next Usage">hexo-theme-next Usage</a></p>
 <h2 id="Quick-Deployment"><a class="header-anchor" href="#Quick-Deployment"></a>Quick Deployment</h2>
 <p>Hexo recommended way</p>
-<pre><code class="language-bash">$ hexo new &quot;My New Article&quot;
-$ vim source/_posts/My-New-Article.md
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ <span class="token function">vim</span> source/_posts/My-New-Article.md
 $ hexo clean
-$ hexo deploy -g
-</code></pre>
+$ hexo deploy -g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <a id="more"></a>
 <p>With Algolia and git deployment</p>
-<pre><code class="language-bash">$ hexo new &quot;My New Article&quot;
-$ vim source/_posts/My-New-Article.md
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ <span class="token function">vim</span> source/_posts/My-New-Article.md
 $ hexo clean
 $ hexo algolia
-$ git add -A
-$ git commit -m &lt;msg&gt;
-$ git push
-</code></pre>
+$ <span class="token function">git</span> <span class="token function">add</span> -A
+$ <span class="token function">git</span> commit -m <span class="token operator">&lt;</span>msg<span class="token operator">></span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>With Algolia and hexo deployment</p>
-<pre><code class="language-bash">$ hexo new &quot;My New Article&quot;
-$ vim source/_posts/My-New-Article.md
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+$ <span class="token function">vim</span> source/_posts/My-New-Article.md
 $ hexo clean
 $ hexo algolia
-$ hexo deploy
-</code></pre>
+$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Maintenance"><a class="header-anchor" href="#Maintenance"></a>Maintenance</h2>
-<p>Update outdated npm packages regularly to avoid security vulnerability:<br>
-Run <code>npm-check -u</code> under blog directory (<code>./</code>).</p>
+<p>Update outdated npm packages regularly to avoid security vulnerability:</p>
+<p>Using npm: Run <code>npm-check -u</code> under blog directory (<code>./</code>).<br>
+Using yarn: <code>yarn upgrade-interactive</code></p>
 <h2 id="Theme"><a class="header-anchor" href="#Theme"></a>Theme</h2>
-<p>The following are the theme files to be modified for custom configuration, take <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/" target="_blank" rel="noopener">tranquilpeak</a> theme as an example:</p>
-<pre><code>_config.yml
-languages/
-</code></pre>
+<p>The following are the theme files to be modified for custom configuration, take <a target="_blank" rel="noopener" href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/">tranquilpeak</a> theme as an example:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">_config.yml
+languages/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Priority (From high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li>a dedicated <code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
 <h2 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h2>
 <h3 id="Commands"><a class="header-anchor" href="#Commands"></a>Commands</h3>
 <p>Initializes a website.</p>
-<pre><code class="language-bash">$ hexo init &quot;My New Website&quot;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo init <span class="token string">"My New Website"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Create a new article.</p>
-<pre><code class="language-bash">$ hexo new &quot;My New Article&quot;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Generate static files and watch file changes.</p>
-<pre><code class="language-bash">$ hexo generate -w
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate -w<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Start a local server.</p>
-<pre><code class="language-bash">$ hexo server
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>List all routes.</p>
-<pre><code class="language-bash">$ hexo list &lt;type&gt;
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo list <span class="token operator">&lt;</span>type<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Index posts on Algolia. (This command runs without preceding <code>hexo generate</code>)</p>
-<pre><code class="language-bash">$ hexo algolia
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo algolia<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Tag-Plugins"><a class="header-anchor" href="#Tag-Plugins"></a>Tag Plugins</h3>
 <p>Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.</p>
 <h4 id="Code-Block"><a class="header-anchor" href="#Code-Block"></a>Code Block</h4>
-<pre><code>{% codeblock [title] [lang:language] [url] [link text] [additional options] %}
+<pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;
 code snippet
-{% endcodeblock %}
-</code></pre>
+&#123;% endcodeblock %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Or</p>
-<pre><code>``` [language] [title] [url] [link text] code snippet ``` 
-</code></pre>
+<pre class="line-numbers language-md" data-language="md"><code class="language-md">&#96;&#96;&#96; [language] [title] [url] [link text] code snippet &#96;&#96;&#96; <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Include-Code"><a class="header-anchor" href="#Include-Code"></a>Include Code</h4>
 <p>Inserts code snippets in <code>source/downloads/code</code> folder. The folder location can be specified through the <code>code_dir</code> option in the config.</p>
-<pre><code>{% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
-</code></pre>
+<pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% include_code [title] [lang:language] [from:line] [to:line] path&#x2F;to&#x2F;file %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Include-Posts"><a class="header-anchor" href="#Include-Posts"></a>Include Posts</h4>
-<pre><code>{% post_link filename [title] [escape] %}
-</code></pre>
+<pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% post_link filename [title] [escape] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Include-Assets"><a class="header-anchor" href="#Include-Assets"></a>Include Assets</h4>
-<pre><code class="language-js">{% asset_img example.jpg This is an example image %}
-{% asset_img "spaced asset.jpg" "spaced title" %}
-</code></pre>
+<pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% asset_img example.jpg This is an example image %&#125;
+&#123;% asset_img &quot;spaced asset.jpg&quot; &quot;spaced title&quot; %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Deployment"><a class="header-anchor" href="#Deployment"></a>Deployment</h3>
 <p>Deploys your website.</p>
-<pre><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/" target="_blank" rel="noopener">here</a>.</p>
-<p>Ref: <a href="https://hexo.io/docs/github-pages" target="_blank" rel="noopener">https://hexo.io/docs/github-pages</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Set the <code>public_dir</code> in <code>_config.yml</code> from <code>public</code> to <code>docs</code> if you want the GitHub Pages site built from the <code>/docs</code> folder in the master branch. More info <a target="_blank" rel="noopener" href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">here</a>.</p>
+<p>Ref: <a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages">https://hexo.io/docs/github-pages</a></p>
 <h3 id="Syntax-Highlighting"><a class="header-anchor" href="#Syntax-Highlighting"></a>Syntax Highlighting</h3>
-<p><a href="http://prismjs.com/#languages-list" target="_blank" rel="noopener">http://prismjs.com/#languages-list</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/syntax-highlight">https://hexo.io/docs/syntax-highlight</a><br>
+<a target="_blank" rel="noopener" href="http://prismjs.com/#languages-list">http://prismjs.com/#languages-list</a></p>
 
     </div>
 
@@ -575,12 +573,12 @@ code snippet
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -620,8 +618,6 @@ code snippet
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

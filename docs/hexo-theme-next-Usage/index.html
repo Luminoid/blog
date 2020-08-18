@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,24 +21,21 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Repo Documentation Instruction (Chinese version only) Usage Update $ cd themes&#x2F;next $ git pull  Configurations Both site config and theme config is stored in .&#x2F;source&#x2F;_data&#x2F;next.yml Code Highlight The">
+  <meta name="description" content="Version: v8.0.0-rc.5 Repo Documentation Instruction (Chinese version only) Usage Update Using git $ cd themes&#x2F;next $ git pull Using npm (Since Version 5.0) $ yarn upgrade hexo-theme-next Configuration">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-theme-next Usage">
 <meta property="og:url" content="http://luminoid.github.io/blog/hexo-theme-next-Usage/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Repo Documentation Instruction (Chinese version only) Usage Update $ cd themes&#x2F;next $ git pull  Configurations Both site config and theme config is stored in .&#x2F;source&#x2F;_data&#x2F;next.yml Code Highlight The">
+<meta property="og:description" content="Version: v8.0.0-rc.5 Repo Documentation Instruction (Chinese version only) Usage Update Using git $ cd themes&#x2F;next $ git pull Using npm (Since Version 5.0) $ yarn upgrade hexo-theme-next Configuration">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-22T15:18:53.000Z">
-<meta property="article:modified_time" content="2020-07-22T15:18:53.000Z">
+<meta property="article:modified_time" content="2020-08-04T06:11:22.220Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="hexo-theme">
 <meta property="article:tag" content="hexo-theme-next">
-<meta property="article:tag" content="theme-next">
-<meta property="article:tag" content="NexT">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://luminoid.github.io/blog/hexo-theme-next-Usage/">
@@ -109,9 +106,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -153,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -177,7 +174,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -198,9 +195,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -246,7 +243,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -324,6 +321,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           hexo-theme-next Usage
@@ -338,6 +337,13 @@
 
               <time title="Created: 2020-07-22 23:18:53" itemprop="dateCreated datePublished" datetime="2020-07-22T23:18:53+08:00">2020-07-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-04 14:11:22" itemprop="dateModified" datetime="2020-08-04T14:11:22+08:00">2020-08-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -365,7 +371,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>379</span>
+              <span>458</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -382,26 +388,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p><a href="https://github.com/next-theme/hexo-theme-next" target="_blank" rel="noopener">Repo</a><br>
-<a href="https://theme-next.js.org/" target="_blank" rel="noopener">Documentation</a><br>
-<a href="https://github.com/next-theme/hexo-theme-next/issues/4" target="_blank" rel="noopener">Instruction (Chinese version only)</a></p>
+        <p>Version: v8.0.0-rc.5<br>
+<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">Repo</a><br>
+<a target="_blank" rel="noopener" href="https://theme-next.js.org/">Documentation</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next/issues/4">Instruction (Chinese version only)</a></p>
 <h2 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h2>
 <h3 id="Update"><a class="header-anchor" href="#Update"></a>Update</h3>
-<pre><code class="language-sh">$ cd themes/next
-$ git pull
-</code></pre>
+<p>Using <code>git</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> themes/next
+$ <span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Using <code>npm</code> (Since Version 5.0)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">yarn</span> upgrade hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Configurations"><a class="header-anchor" href="#Configurations"></a>Configurations</h3>
 <p>Both site config and theme config is stored in <code>./source/_data/next.yml</code></p>
 <h4 id="Code-Highlight-Theme"><a class="header-anchor" href="#Code-Highlight-Theme"></a>Code Highlight Theme</h4>
-<p><a href="https://theme-next.js.org/highlight/" target="_blank" rel="noopener">NexT Highlight Theme Preview</a></p>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
 <p><code>Prism</code> has a better syntax parser than <code>Highlight.js</code>, but it doesn’t support <code>line_number</code>.</p>
 <a id="more"></a>
 <h3 id="Legacy-Repositories"><a class="header-anchor" href="#Legacy-Repositories"></a>Legacy Repositories</h3>
 <ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
 </ul>
 
     </div>
@@ -511,12 +518,12 @@ $ git pull
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -556,8 +563,6 @@ $ git pull
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>

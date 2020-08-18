@@ -17,10 +17,10 @@ if [ $# -eq 2 ] && ([ $1 = "deploy" ] || [ $1 = "d" ]); then
     check_commit_msg $2
 
     echo "$ hexo clean"
-    hexo clean --config source/_data/next.yml
+    hexo clean
 
     echo "$ hexo generate"
-    if ! hexo generate --config source/_data/next.yml; then
+    if ! hexo generate; then
         echo "Error! hexo generate failed"
         exit 3
     fi
@@ -64,7 +64,7 @@ fi
 
 # Start hexo server
 if [ $# -eq 1 ] && ([ $1 = "server" ] || [ $1 = "s" ]); then
-    hexo server --config source/_data/next.yml
+    hexo server
     exit 0
 fi
 

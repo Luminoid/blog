@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.0.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -21,18 +21,18 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"path":"search.xml"};
+    var CONFIG = {"hostname":"luminoid.github.io","root":"/blog/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="This is a portable and generic solution to build Hexo website with Docker. The Hexo base image Creating Hexo Dockerfile $ mkdir hexo $ cd hexo $ vim Dockerfile  Hexo Dockerfile Content FROM ubuntu:14.">
+  <meta name="description" content="This is a portable and generic solution to build Hexo website with Docker. The Hexo base image Creating Hexo Dockerfile $ mkdir hexo $ cd hexo $ vim Dockerfile Hexo Dockerfile Content FROM ubuntu:14.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building Hexo Website with Docker">
 <meta property="og:url" content="http://luminoid.github.io/blog/Building-Hexo-Website-with-Docker/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="This is a portable and generic solution to build Hexo website with Docker. The Hexo base image Creating Hexo Dockerfile $ mkdir hexo $ cd hexo $ vim Dockerfile  Hexo Dockerfile Content FROM ubuntu:14.">
+<meta property="og:description" content="This is a portable and generic solution to build Hexo website with Docker. The Hexo base image Creating Hexo Dockerfile $ mkdir hexo $ cd hexo $ vim Dockerfile Hexo Dockerfile Content FROM ubuntu:14.0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-08-21T16:10:13.000Z">
-<meta property="article:modified_time" content="2017-08-21T16:10:13.000Z">
+<meta property="article:modified_time" content="2020-07-26T08:50:28.009Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="Hexo">
@@ -108,9 +108,9 @@
         <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">38</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -176,7 +176,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -197,9 +197,9 @@
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
@@ -216,7 +216,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Hexo-base-image"><span class="nav-number">1.</span> <span class="nav-text">The Hexo base image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Hexo-Dockerfile"><span class="nav-number">1.1.</span> <span class="nav-text">Creating Hexo Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-Dockerfile-Content"><span class="nav-number">1.2.</span> <span class="nav-text">Hexo Dockerfile Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-Hexo-base-image"><span class="nav-number">1.3.</span> <span class="nav-text">Building Hexo base image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Apache-image"><span class="nav-number">2.</span> <span class="nav-text">The Apache image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Apache-Dockerfile"><span class="nav-number">2.1.</span> <span class="nav-text">Creating Apache Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Dockerfile-Content"><span class="nav-number">2.2.</span> <span class="nav-text">Apache Dockerfile Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-Apache-image"><span class="nav-number">2.3.</span> <span class="nav-text">Building Apache image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Launching-hexo-site"><span class="nav-number">3.</span> <span class="nav-text">Launching hexo site</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-a-Hexo-container"><span class="nav-number">3.1.</span> <span class="nav-text">Creating a Hexo container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-an-Apache-container"><span class="nav-number">3.2.</span> <span class="nav-text">Creating an Apache container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-the-Apache-container’s-port"><span class="nav-number">3.3.</span> <span class="nav-text">Resolving the Apache container’s port</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-website"><span class="nav-number">3.4.</span> <span class="nav-text">Hexo website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Hexo-website"><span class="nav-number">3.5.</span> <span class="nav-text">Updating Hexo website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Backing-up-Hexo-volume"><span class="nav-number">3.6.</span> <span class="nav-text">Backing up Hexo volume</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Hexo-base-image"><span class="nav-number">1.</span> <span class="nav-text">The Hexo base image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Hexo-Dockerfile"><span class="nav-number">1.1.</span> <span class="nav-text">Creating Hexo Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-Dockerfile-Content"><span class="nav-number">1.2.</span> <span class="nav-text">Hexo Dockerfile Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-Hexo-base-image"><span class="nav-number">1.3.</span> <span class="nav-text">Building Hexo base image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Apache-image"><span class="nav-number">2.</span> <span class="nav-text">The Apache image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-Apache-Dockerfile"><span class="nav-number">2.1.</span> <span class="nav-text">Creating Apache Dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Dockerfile-Content"><span class="nav-number">2.2.</span> <span class="nav-text">Apache Dockerfile Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-Apache-image"><span class="nav-number">2.3.</span> <span class="nav-text">Building Apache image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Launching-hexo-site"><span class="nav-number">3.</span> <span class="nav-text">Launching hexo site</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-a-Hexo-container"><span class="nav-number">3.1.</span> <span class="nav-text">Creating a Hexo container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-an-Apache-container"><span class="nav-number">3.2.</span> <span class="nav-text">Creating an Apache container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolving-the-Apache-container%E2%80%99s-port"><span class="nav-number">3.3.</span> <span class="nav-text">Resolving the Apache container’s port</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-website"><span class="nav-number">3.4.</span> <span class="nav-text">Hexo website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Hexo-website"><span class="nav-number">3.5.</span> <span class="nav-text">Updating Hexo website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Backing-up-Hexo-volume"><span class="nav-number">3.6.</span> <span class="nav-text">Backing up Hexo volume</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -245,7 +245,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -323,6 +323,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Luminoid's Site">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Building Hexo Website with Docker
@@ -337,6 +339,13 @@
 
               <time title="Created: 2017-08-22 00:10:13" itemprop="dateCreated datePublished" datetime="2017-08-22T00:10:13+08:00">2017-08-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-26 16:50:28" itemprop="dateModified" datetime="2020-07-26T16:50:28+08:00">2020-07-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -377,64 +386,58 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>This is a portable and generic solution to build Hexo website with Docker.</p>
 <h2 id="The-Hexo-base-image"><a class="header-anchor" href="#The-Hexo-base-image"></a>The Hexo base image</h2>
 <h3 id="Creating-Hexo-Dockerfile"><a class="header-anchor" href="#Creating-Hexo-Dockerfile"></a>Creating Hexo Dockerfile</h3>
-<pre><code class="language-sh">$ mkdir hexo
-$ cd hexo
-$ vim Dockerfile
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mkdir</span> hexo
+$ <span class="token builtin class-name">cd</span> hexo
+$ <span class="token function">vim</span> Dockerfile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="Hexo-Dockerfile-Content"><a class="header-anchor" href="#Hexo-Dockerfile-Content"></a>Hexo Dockerfile Content</h3>
-<pre><code class="language-sh">FROM ubuntu:14.04
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM ubuntu:14.04
 MAINTAINER luminoid
-ENV REFRESHED_AT 2017-08-28
+ENV REFRESHED_AT <span class="token number">2017</span>-08-28
 
-# Install Hexo
-RUN apt-get update -yqq \
-  &amp;&amp; apt-get install -yqq curl git-core \
-  # Install Node.js Using a PPA
-  &amp;&amp; curl -sL https://deb.nodesource.com/setup_7.x | bash - \
-  &amp;&amp; apt-get install -yqq nodejs build-essential \
-  # Set config to avoid permission issues
-  &amp;&amp; npm config set user 0 \
-  &amp;&amp; npm config set unsafe-perm true \
-  &amp;&amp; npm install -g hexo-cli
+<span class="token comment"># Install Hexo</span>
+RUN <span class="token function">apt-get</span> update -yqq <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -yqq <span class="token function">curl</span> git-core <span class="token punctuation">\</span>
+  <span class="token comment"># Install Node.js Using a PPA</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_7.x <span class="token operator">|</span> <span class="token function">bash</span> - <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -yqq nodejs build-essential <span class="token punctuation">\</span>
+  <span class="token comment"># Set config to avoid permission issues</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> user <span class="token number">0</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> unsafe-perm <span class="token boolean">true</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
 
-# Clone blog
+<span class="token comment"># Clone blog</span>
 WORKDIR /data
-RUN git clone https://github.com/Luminoid/blog.git
+RUN <span class="token function">git</span> clone https://github.com/Luminoid/blog.git
 
-# Install blog dependencies
+<span class="token comment"># Install blog dependencies</span>
 WORKDIR /data/blog
-RUN npm install \
-  &amp;&amp; npm install prompt --save \
-  &amp;&amp; npm install jquery --save
+RUN <span class="token function">npm</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> prompt --save <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> jquery --save
 
-RUN mkdir -p /var/www/html/ \
-  &amp;&amp; cp -r /data/blog/docs/* /var/www/html/
-VOLUME [ &quot;/data/blog&quot;, &quot;/var/www/html&quot; ]
-</code></pre>
+RUN <span class="token function">mkdir</span> -p /var/www/html/ <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> -r /data/blog/docs/* /var/www/html/
+VOLUME <span class="token punctuation">[</span> <span class="token string">"/data/blog"</span>, <span class="token string">"/var/www/html"</span> <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <a id="more"></a>
 <h3 id="Building-Hexo-base-image"><a class="header-anchor" href="#Building-Hexo-base-image"></a>Building Hexo base image</h3>
-<pre><code class="language-sh">$ docker build -t luminoid/hexo .
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker build -t luminoid/hexo <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="The-Apache-image"><a class="header-anchor" href="#The-Apache-image"></a>The Apache image</h2>
 <h3 id="Creating-Apache-Dockerfile"><a class="header-anchor" href="#Creating-Apache-Dockerfile"></a>Creating Apache Dockerfile</h3>
-<pre><code class="language-sh">$ mkdir apache
-$ cd apache
-$ vim Dockerfile
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mkdir</span> apache
+$ <span class="token builtin class-name">cd</span> apache
+$ <span class="token function">vim</span> Dockerfile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="Apache-Dockerfile-Content"><a class="header-anchor" href="#Apache-Dockerfile-Content"></a>Apache Dockerfile Content</h3>
-<pre><code class="language-sh">FROM ubuntu:14.04
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM ubuntu:14.04
 MAINTAINER luminoid
-ENV REFRESHED_AT 2017-08-28
+ENV REFRESHED_AT <span class="token number">2017</span>-08-28
 
-RUN apt-get update -yqq \
-  &amp;&amp; apt-get install -yqq apache2
+RUN <span class="token function">apt-get</span> update -yqq <span class="token punctuation">\</span>
+  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -yqq apache2
 
-VOLUME [ &quot;/var/www/html&quot; ]
+VOLUME <span class="token punctuation">[</span> <span class="token string">"/var/www/html"</span> <span class="token punctuation">]</span>
 WORKDIR /var/www/html
 
 ENV APACHE_RUN_USER www-data
@@ -444,38 +447,31 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 ENV APACHE_RUN_DIR /var/run/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 
-RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
+RUN <span class="token function">mkdir</span> -p <span class="token variable">$APACHE_RUN_DIR</span> <span class="token variable">$APACHE_LOCK_DIR</span> <span class="token variable">$APACHE_LOG_DIR</span>
 
-EXPOSE 80
+EXPOSE <span class="token number">80</span>
 
-ENTRYPOINT [ &quot;/usr/sbin/apache2&quot; ]
-CMD [&quot;-D&quot;, &quot;FOREGROUND&quot;]
-</code></pre>
+ENTRYPOINT <span class="token punctuation">[</span> <span class="token string">"/usr/sbin/apache2"</span> <span class="token punctuation">]</span>
+CMD <span class="token punctuation">[</span><span class="token string">"-D"</span>, <span class="token string">"FOREGROUND"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Building-Apache-image"><a class="header-anchor" href="#Building-Apache-image"></a>Building Apache image</h3>
-<pre><code class="language-sh">$ docker build -t luminoid/apache .
-$ docker images # list images
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker build -t luminoid/apache <span class="token builtin class-name">.</span>
+$ docker images <span class="token comment"># list images</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Launching-hexo-site"><a class="header-anchor" href="#Launching-hexo-site"></a>Launching hexo site</h2>
 <h3 id="Creating-a-Hexo-container"><a class="header-anchor" href="#Creating-a-Hexo-container"></a>Creating a Hexo container</h3>
-<pre><code class="language-sh">$ docker run --name luminoid_blog luminoid/hexo
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker run --name luminoid_blog luminoid/hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Creating-an-Apache-container"><a class="header-anchor" href="#Creating-an-Apache-container"></a>Creating an Apache container</h3>
-<pre><code class="language-sh">$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache
-APACHE_CONTAINER_ID
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker run -d -P --name blog_server --volumes-from luminoid_blog luminoid/apache
+APACHE_CONTAINER_ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Resolving-the-Apache-container’s-port"><a class="header-anchor" href="#Resolving-the-Apache-container’s-port"></a>Resolving the Apache container’s port</h3>
-<pre><code class="language-sh">$ docker port APACHE_CONTAINER_ID 80
-0.0.0.0:32768
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker port APACHE_CONTAINER_ID <span class="token number">80</span>
+<span class="token number">0.0</span>.0.0:32768<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Hexo-website"><a class="header-anchor" href="#Hexo-website"></a>Hexo website</h3>
 <p>The website can be viewed at <code>http://localhost:32768</code></p>
 <h3 id="Updating-Hexo-website"><a class="header-anchor" href="#Updating-Hexo-website"></a>Updating Hexo website</h3>
 <p>Restart the Hexo container and the website will be updated.</p>
-<pre><code class="language-sh">docker start luminoid_blog
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker start luminoid_blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Backing-up-Hexo-volume"><a class="header-anchor" href="#Backing-up-Hexo-volume"></a>Backing up Hexo volume</h3>
-<pre><code class="language-sh">docker run --rm --volumes-from luminoid_blog -v $(pwd):/backup ubuntu tar cvf /backup/luminoid_blog_backup.tar /var/www/html
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run --rm --volumes-from luminoid_blog -v <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>:/backup ubuntu <span class="token function">tar</span> cvf /backup/luminoid_blog_backup.tar /var/www/html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     </div>
 
@@ -589,12 +585,12 @@ APACHE_CONTAINER_ID
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">239k</span>
+    <span title="Symbols count total">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:54</span>
+    <span title="Reading time total">3:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -634,8 +630,6 @@ APACHE_CONTAINER_ID
 
   
   <script src="/blog/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/blog/js/utils.js"></script>
