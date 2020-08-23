@@ -1,5 +1,5 @@
 ---
-title: 'Git: Amateur Guide'
+title: 'Git: Complete Guide'
 date: 2018-01-25 00:27:11
 updated:
 categories:
@@ -11,7 +11,7 @@ tags:
 Ref: *[Version Control with Git](https://www.oreilly.com/library/view/version-control-with/9781449345037/)* & *Git Manual*
 Version: 2.27.0
 
-## Concept
+## Concepts
 ### Git
 Git is a distributed version control system (DVCS).
 
@@ -82,7 +82,7 @@ Git implements the history of commits within a repository as a DAG(Directed Acyc
     - `^`: Select a different parent within a single generation
     - `~`: Go back before an ancestral parent and select a preceding generation
 
-    - <img src="/blog/Git-Amateur-Guide/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
+    - <img src="/blog/Git-Complete-Guide/RelativeCommitName.png" alt="Relative Commit Name" style="width:600px;">
 - `HEAD`: a symref refers to the most recent commit on the current branch
 - `detached HEAD`: a ref to an arbitrary commit that isn't the tip of any particular branch
 
@@ -139,7 +139,7 @@ Hooks are programs you can place in a hooks directory to trigger actions at cert
 git help hooks
 ```
 
-## Command
+## Commands
 {% asset_img CommonCommands.png "Common Commands" %}
 
 ### Basic
@@ -563,7 +563,7 @@ Set `ignoreCase` to `false`
 git config core.ignorecase false
 ```
 
-## Solution
+## Solutions
 ### [Git pull till a particular commit](https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit)
 ``` bash
 git fetch remote <branch_name>
@@ -576,7 +576,13 @@ git fetch origin
 git reset --hard origin/master
 ```
 
-### Recover a dropped stash entry
+### [Remove unreferenced blobs](https://stackoverflow.com/questions/1904860/how-to-remove-unreferenced-blobs-from-my-git-repo)
+``` bash
+git reflog expire --expire-unreachable=now --all
+git gc --prune=now --aggressive 
+```
+
+### [Recover a dropped stash entry](https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git)
 If the following code is executed accidentally
 ``` bash
 git stash pop
@@ -714,7 +720,7 @@ $ tree -a
 `refs/stash`: stash
 
 Git’s Object Model and Files
-<img src="/blog/Git-Amateur-Guide/InitialState.png" alt="Initial State" style="width:300px;">
+<img src="/blog/Git-Complete-Guide/InitialState.png" alt="Initial State" style="width:300px;">
 
 ### Edit Files
 ``` bash
@@ -733,7 +739,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Amateur-Guide/EditFiles.png"  alt="Edit Files" style="width:300px;">
+<img src="/blog/Git-Complete-Guide/EditFiles.png"  alt="Edit Files" style="width:300px;">
 
 ### Stage Files
 `git add`: Add file contents to the object store and let the index refer to it.
@@ -814,7 +820,7 @@ $ git ls-files --stage
 100644 e2e513bd3e053452ffe9b43d66d516e51e46755e 0	file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Amateur-Guide/StageFiles.png" alt="Stage Files" style="width:400px;">
+<img src="/blog/Git-Complete-Guide/StageFiles.png" alt="Stage Files" style="width:400px;">
 
 ### Commit Files
 `git-commit`: Record changes to the repository
@@ -885,4 +891,4 @@ $ tree -a
 └── file1.txt
 ```
 Git’s Object Model and Files
-<img src="/blog/Git-Amateur-Guide/CommitFiles.png" alt="Commit Files" style="width:400px;">
+<img src="/blog/Git-Complete-Guide/CommitFiles.png" alt="Commit Files" style="width:400px;">

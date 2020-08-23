@@ -116,6 +116,7 @@ Inserts code snippets in `source/downloads/code` folder. The folder location can
 
 #### Include Assets
 ``` md
+{% asset_img [class names] slug [width] [height] [title text [alt text]] %}
 {% asset_img example.jpg This is an example image %}
 {% asset_img "spaced asset.jpg" "spaced title" %}
 ```
