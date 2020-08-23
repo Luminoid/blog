@@ -6,9 +6,6 @@ categories: Mac
 tags:
 - Bash
 - Keymap
-keywords:
-- Preferences
-- Bash
 ---
 
 ## Upgrade

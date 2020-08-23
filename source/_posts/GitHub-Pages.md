@@ -3,8 +3,8 @@ title: GitHub Pages
 date: 2018-03-26 19:43:48
 updated:
 categories: Tool
-tags: GitHub
-keywords:
+tags: 
+- GitHub
 - GitHub Pages
 - React
 ---

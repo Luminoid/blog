@@ -5,8 +5,6 @@ updated:
 categories: Tool
 tags: 
 - oh-my-zsh
-keywords: 
-- oh-my-zsh
 - powerlevel9k
 - antigen
 ---

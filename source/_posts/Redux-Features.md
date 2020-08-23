@@ -9,11 +9,9 @@ tags:
 - Redux
 - Note
 - WIP
-keywords:
-- Redux
 ---
 
-[Redux Docs](https://redux.js.org)
+Notes of [Redux Docs](https://redux.js.org)
 
 ## Three Principles
 ### Single source of truth

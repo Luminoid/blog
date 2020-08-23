@@ -6,9 +6,6 @@ categories: Tool
 tags:
 - Safari
 - Chrome
-keywords:
-- Safari
-- Chrome
 ---
 
 ## Safari

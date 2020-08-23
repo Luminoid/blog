@@ -6,7 +6,6 @@ categories: Apple
 tags: 
 - WWDC
 - Note
-keywords: WWDC
 ---
 
 ## Frameworks

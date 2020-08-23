@@ -8,7 +8,6 @@ categories:
 tags: 
 - Package manager
 - npm
-keywords: npm
 ---
 
 Official Site: https://www.npmjs.com

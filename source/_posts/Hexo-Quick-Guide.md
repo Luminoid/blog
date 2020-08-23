@@ -7,14 +7,10 @@ categories:
 - Static Site Generator
 tags:
 - Hexo
-keywords:
-- Hexo
-- guide
-- Algolia
 ---
 
 Official Site: https://hexo.io
-Version: 5.0.0
+Version: 5.1.0
 Theme: {% post_link hexo-theme-next-Usage %}
 
 ## Quick Deployment
@@ -26,20 +22,18 @@ $ hexo clean
 $ hexo deploy -g
 ```
 
-<!-- more -->
-
-With Algolia and git deployment
+With git deployment
 ``` bash
 $ hexo new "My New Article"
 $ vim source/_posts/My-New-Article.md
 $ hexo clean
-$ hexo algolia
+$ hexo generate
 $ git add -A
 $ git commit -m <msg>
 $ git push
 ```
 
-With Algolia and hexo deployment
+Hexo recommended way with Algolia
 ``` bash
 $ hexo new "My New Article"
 $ vim source/_posts/My-New-Article.md
@@ -47,6 +41,8 @@ $ hexo clean
 $ hexo algolia
 $ hexo deploy
 ```
+
+<!-- more -->
 
 ## Maintenance
 Update outdated npm packages regularly to avoid security vulnerability:
@@ -95,7 +91,7 @@ $ hexo algolia
 ```
 
 ### Tag Plugins
-Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.
+> Use tag plugins to reference images or other assets by relative paths instead of normal markdown syntax, otherwise these assets may be displayed incorrectly.
 #### Code Block
 ``` md
 {% codeblock [title] [lang:language] [url] [link text] [additional options] %}

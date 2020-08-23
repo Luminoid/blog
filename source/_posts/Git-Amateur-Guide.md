@@ -3,15 +3,12 @@ title: 'Git: Amateur Guide'
 date: 2018-01-25 00:27:11
 updated:
 categories:
-- Tool
 - Git
 tags: 
-- Git
 - Note
-keywords: Git
 ---
 
-Ref: *Version Control with Git* & *Git Manual*
+Ref: *[Version Control with Git](https://www.oreilly.com/library/view/version-control-with/9781449345037/)* & *Git Manual*
 Version: 2.27.0
 
 ## Concept
@@ -22,8 +19,6 @@ Git is a distributed version control system (DVCS).
 A Git repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a repository, Git maintains two primary data structures, the object store and the index.
 The **index** is a temporary and dynamic binary file that describes the directory structure of the entire repository. More specifically, the index captures a version of the project’s overall structure at some moment in time. The project’s state could be represented by a commit and a tree from any point in the project’s history.
 The **Git object store** is organized and implemented as a content-addressable storage system(SHA1 hash value => object).
-
-<!-- more -->
 
 #### Remote Repository
 ##### origin
@@ -40,6 +35,8 @@ Syntax: `[+]source:destination`
 
 #### Bare Repository
 A bare repository is normally an appropriately named directory with a `.git` suffix that does not have a locally checked-out copy of any of the files under revision control. A published repository should be bare.
+
+<!-- more -->
 
 ### Git Object Types
 #### Blob

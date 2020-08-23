@@ -8,11 +8,9 @@ categories:
 tags:
 - React
 - Note
-keywords:
-- React
 ---
 
-[React Docs](https://reactjs.org/docs/)
+Notes of [React Docs](https://reactjs.org/docs/)
 
 ## JSX
 Babel compiles JSX down to `React.createElement()` calls.

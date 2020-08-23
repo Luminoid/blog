@@ -6,9 +6,8 @@ categories:
 - Web
 - Static Site Generator
 tags:
-- GitHub
-keywords:
 - static site generator
+- GitHub
 - GitHub Pages
 - master
 - gh-pages

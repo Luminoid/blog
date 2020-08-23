@@ -6,14 +6,14 @@ categories:
 - Web
 - JavaScript
 tags:
-keywords:
 - ES6
+- Note
 ---
 
 References:
 - [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [rse/es6-features](http://es6-features.org)
-- [ruanyf/es6tutorial](http://es6.ruanyifeng.com/)
+- [ruanyf/es6tutorial](http://es6.ruanyifeng.com/) (Chinese)
 - [Babel ES2015](https://babeljs.io/learn-es2015)
 
 ## Data structures

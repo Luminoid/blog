@@ -8,11 +8,6 @@ tags:
 - Hexo
 - Apache
 - Ubuntu
-keywords:
-- Docker
-- Hexo
-- Apache
-- Ubuntu
 ---
 
 This is a portable and generic solution to build Hexo website with Docker.
@@ -56,12 +51,12 @@ RUN mkdir -p /var/www/html/ \
 VOLUME [ "/data/blog", "/var/www/html" ]
 ```
 
-<!-- more -->
-
 ### Building Hexo base image
 ``` bash
 $ docker build -t luminoid/hexo .
 ```
+
+<!-- more -->
 
 ## The Apache image
 ### Creating Apache Dockerfile

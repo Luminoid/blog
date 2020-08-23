@@ -7,11 +7,10 @@ categories:
 tags:
 - Package manager
 - CocoaPods
-keywords:
-- CocoaPods
 ---
 
 Official Site: https://cocoapods.org
+Version: 1.9.3
 
 ## Adding Pods to an Xcode project
 **Create a Podfile**

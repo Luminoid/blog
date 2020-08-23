@@ -7,7 +7,6 @@ tags:
 - Objective-C
 - Note
 - WIP
-keywords: Objective-C
 ---
 
 Collecting from *Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs*

@@ -3,19 +3,12 @@ title: Git Hooks
 date: 2018-03-21 13:58:12
 updated:
 categories:
-- Tool
 - Git
-tags: Git
-keywords:
-- Git
-- Hooks
-- npm
 ---
 
 ## Run npm scripts automatically before git commit
 Run `sh deploy.sh` once to deploy the self-organized `hooks` folder, so that the hooks can be added to the version control system.
-`./deploy.sh`
-``` bash
+``` bash ./deploy.sh
 #!/bin/bash
 
 configure_hooks(){
@@ -28,8 +21,7 @@ configure_hooks
 ```
 
 The hooks under the `hooks` folder will be triggered automatically.
-`./chore/hooks/pre-commit`
-``` bash
+``` bash ./chore/hooks/pre-commit
 unset GIT_DIR  # important
 
 cd path/to/work

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -147,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">49</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -338,7 +338,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+                <time title="Modified: 2020-08-19 01:10:14" itemprop="dateModified" datetime="2020-08-19T01:10:14+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,7 +440,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Using-Static-Site-Generator-with-GitHub-Pages/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/WWDC-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -456,7 +456,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/" class="post-title-link" itemprop="url">Using static site generator with GitHub Pages</a>
+            <a href="/blog/WWDC-Note/" class="post-title-link" itemprop="url">WWDC Note</a>
         </h2>
 
         <div class="post-meta">
@@ -466,14 +466,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-08-27 20:02:59" itemprop="dateCreated datePublished" datetime="2017-08-27T20:02:59+08:00">2017-08-27</time>
+              <time title="Created: 2018-09-17 15:38:53" itemprop="dateCreated datePublished" datetime="2018-09-17T15:38:53+08:00">2018-09-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+                <time title="Modified: 2020-08-19 01:10:11" itemprop="dateModified" datetime="2020-08-19T01:10:11+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -481,11 +481,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Web/Static-Site-Generator/" itemprop="url" rel="index"><span itemprop="name">Static Site Generator</span></a>
+                  <a href="/blog/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
                 </span>
             </span>
 
@@ -495,14 +491,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.3k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -512,430 +508,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>There are three ways to deploy static site on GitHub Pages as follows. I tend to use the third scheme myself. The related GitHub documentation can be found <a target="_blank" rel="noopener" href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">here</a>.</p>
-<h2 id="Using-gh-pages-branch"><a class="header-anchor" href="#Using-gh-pages-branch"></a>Using <code>gh-pages</code> branch</h2>
-<p>Simply deploy website content on <code>gh-pages</code> branch and maintain code locally.</p>
-<h3 id="Advantage"><a class="header-anchor" href="#Advantage"></a>Advantage</h3>
-<p>This is the easiest way because many static site generators have build-in <code>deploy</code> command. Users would only need to setup the deployment configuration once and run <code>deploy</code> command every time after the modification. An npm package <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gh-pages">gh-pages</a> helps doing this, if there is no built-in <code>deploy</code> command.</p>
-<h3 id="Disadvantage"><a class="header-anchor" href="#Disadvantage"></a>Disadvantage</h3>
-<p>Only website content is under the version control. The code that generates the website content is maintained locally.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/Using-Static-Site-Generator-with-GitHub-Pages/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Universal-Editor-Keymaps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/Universal-Editor-Keymaps/" class="post-title-link" itemprop="url">Universal Editor Keymaps</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-17 23:25:41" itemprop="dateCreated datePublished" datetime="2018-03-17T23:25:41+08:00">2018-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/Editor/" itemprop="url" rel="index"><span itemprop="name">Editor</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>15k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>14 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>This post intended to provide a universal keymaps across different editors and IDEs on Mac.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/Universal-Editor-Keymaps/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/RxSwift-Concepts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/RxSwift-Concepts/" class="post-title-link" itemprop="url">RxSwift Concepts</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-09-24 14:55:56" itemprop="dateCreated datePublished" datetime="2018-09-24T14:55:56+08:00">2018-09-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>455</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="ReactiveX"><a class="header-anchor" href="#ReactiveX"></a>ReactiveX</h2>
-<p><a target="_blank" rel="noopener" href="http://reactivex.io/">http://reactivex.io/</a></p>
-<p>Observables fill the gap by being the ideal way to access asynchronous sequences of multiple items.</p>
+          <h2 id="Frameworks"><a class="header-anchor" href="#Frameworks"></a>Frameworks</h2>
+<h3 id="WWDC18-Session-220-High-Performance-Auto-Layout"><a class="header-anchor" href="#WWDC18-Session-220-High-Performance-Auto-Layout"></a>WWDC18, Session 220: High Performance Auto Layout</h3>
+<h4 id="The-Render-Loop"><a class="header-anchor" href="#The-Render-Loop"></a>The Render Loop</h4>
+<img src="/blog/WWDC-Note/TheRenderLoop.png" class="" title="The Render Loop">
 <table>
 <thead>
 <tr>
-<th></th>
-<th>single items</th>
-<th>multiple items</th>
+<th>Update Constraints</th>
+<th>Layout</th>
+<th>Display</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>synchronous</td>
-<td><code>T getData()</code></td>
-<td><code>Iterable&lt;T&gt; getData()</code></td>
+<td><code>updateConstraints()</code></td>
+<td><code>layoutSubviews()</code></td>
+<td><code>draw(_:)</code></td>
 </tr>
 <tr>
-<td>asynchronous</td>
-<td><code>Future&lt;T&gt; getData()</code></td>
-<td><code>Observable&lt;T&gt; getData()</code></td>
+<td><code>setNeedsUpdateConstraints()</code></td>
+<td><code>setNeedsLayout()</code></td>
+<td><code>setNeedsDisplay()</code></td>
+</tr>
+<tr>
+<td><code>updateConstraintsIfNeeded()</code></td>
+<td><code>layoutIfNeeded()</code></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<p>An Observable is the asynchronous/push <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dual_(category_theory)">dual</a> to the synchronous/pull Iterable</p>
-<table>
-<thead>
-<tr>
-<th>event</th>
-<th>Iterable (pull)</th>
-<th>Observable (push)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>retrieve data</td>
-<td><code>T next()</code></td>
-<td><code>onNext(T)</code></td>
-</tr>
-<tr>
-<td>discover error</td>
-<td>throws <code>Exception</code></td>
-<td><code>onError(Exception)</code></td>
-</tr>
-<tr>
-<td>complete</td>
-<td><code>!hasNext()</code></td>
-<td><code>onCompleted()</code></td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Sorting-Algorithm-Analysis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.png">
-      <meta itemprop="name" content="Luminoid">
-      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/Sorting-Algorithm-Analysis/" class="post-title-link" itemprop="url">Sorting Algorithm Analysis</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-06-12 19:51:09" itemprop="dateCreated datePublished" datetime="2017-06-12T19:51:09+08:00">2017-06-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>620</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <table>
-<thead>
-<tr>
-<th style="text-align:left">Algorithm</th>
-<th style="text-align:left">Worst-case running time</th>
-<th style="text-align:left">Average-case / expected running time</th>
-<th style="text-align:left">In-place</th>
-<th style="text-align:left">Stable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Insertion sort<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Shell sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Selection sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Heapsort</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Bubble sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Quicksort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(nlgn)$ (expected)</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Counting sort</td>
-<td style="text-align:left">$\Theta(k+n)$</td>
-<td style="text-align:left">$\Theta(k+n)$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Radix sort<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
-<td style="text-align:left">$\Theta(d(n+k))$</td>
-<td style="text-align:left">$\Theta(d(n+k))$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Bucket sort</td>
-<td style="text-align:left">$\Theta(n^2)$</td>
-<td style="text-align:left">$\Theta(n)$ (average-case)</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Merge sort</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">$\Theta(nlgn)$</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-</tbody>
-</table>
+<h4 id="Performance-Intuition"><a class="header-anchor" href="#Performance-Intuition"></a>Performance Intuition</h4>
+<ul>
+<li>Don’t churn constraints</li>
+<li>The engine is a layout cache and dependency tracker.</li>
+</ul>
+<h3 id="WWDC18-Session-221-Textkit-Best-Practices"><a class="header-anchor" href="#WWDC18-Session-221-Textkit-Best-Practices"></a>WWDC18, Session 221: Textkit Best Practices</h3>
+<p>Choosing the Right Control</p>
+<img src="/blog/WWDC-Note/ChoosingTheRightControl.png" class="" title="Choosing the Right Control">
+<p>Layout process: Attribute Fixing -&gt; Glyph Generation -&gt; Glyph Layout -&gt; Display</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/Sorting-Algorithm-Analysis/#more" rel="contents">
+              <a class="btn" href="/blog/WWDC-Note/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -959,7 +573,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Sketch-Usage/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Web-Development-on-iOS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -975,7 +589,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Sketch-Usage/" class="post-title-link" itemprop="url">Sketch Usage</a>
+            <a href="/blog/Web-Development-on-iOS/" class="post-title-link" itemprop="url">Web Development on iOS</a>
         </h2>
 
         <div class="post-meta">
@@ -985,14 +599,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-09-10 22:26:35" itemprop="dateCreated datePublished" datetime="2018-09-10T22:26:35+08:00">2018-09-10</time>
+              <time title="Created: 2019-02-27 17:51:52" itemprop="dateCreated datePublished" datetime="2019-02-27T17:51:52+08:00">2019-02-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+                <time title="Modified: 2020-08-19 01:10:08" itemprop="dateModified" datetime="2020-08-19T01:10:08+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1000,7 +614,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Design/" itemprop="url" rel="index"><span itemprop="name">Design</span></a>
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
                 </span>
             </span>
 
@@ -1010,7 +624,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>536</span>
+              <span>499</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1027,24 +641,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Plugin-Manager"><a class="header-anchor" href="#Plugin-Manager"></a>Plugin Manager</h2>
-<h3 id="Sketchpacks"><a class="header-anchor" href="#Sketchpacks"></a><a target="_blank" rel="noopener" href="https://sketchpacks.com/">Sketchpacks</a></h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew cask <span class="token function">install</span> sketchpacks<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="Command-Palette"><a class="header-anchor" href="#Command-Palette"></a>Command Palette</h2>
-<h3 id="Runner"><a class="header-anchor" href="#Runner"></a><a target="_blank" rel="noopener" href="https://sketchrunner.com/">Runner</a></h3>
-<h2 id="Plugins"><a class="header-anchor" href="#Plugins"></a>Plugins</h2>
-<h3 id="Content-Generator"><a class="header-anchor" href="#Content-Generator"></a><a target="_blank" rel="noopener" href="https://github.com/timuric/Content-generator-sketch-plugin">Content Generator</a></h3>
-<p>Content generator allows you quickly create dummy data such as avatars, names, geo location data etc.</p>
-<h3 id="Sketch-Measure"><a class="header-anchor" href="#Sketch-Measure"></a><a target="_blank" rel="noopener" href="http://utom.design/measure/">Sketch Measure</a></h3>
-<p>Make it a fun to create spec for developers and teammates</p>
-<h3 id="Sketch-Palettes"><a class="header-anchor" href="#Sketch-Palettes"></a><a target="_blank" rel="noopener" href="https://github.com/andrewfiorillo/sketch-palettes">Sketch Palettes</a></h3>
-<p>A Sketch plugin for exporting and importing fill presets. It supports colors, gradients, and Pattern fills.</p>
-<h3 id="Icons"><a class="header-anchor" href="#Icons"></a><a target="_blank" rel="noopener" href="https://github.com/keremciu/sketch-iconfont">Icons</a></h3>
-<p>This plugin helps you easily insert and manage icons from icon fonts.</p>
-<h3 id="Paddy"><a class="header-anchor" href="#Paddy"></a><a target="_blank" rel="noopener" href="https://github.com/DWilliames/paddy-sketch-plugin">Paddy</a></h3>
-<p>Automated padding, spacing and alignment for your Sketch layers</p>
-<h3 id="Rename-It"><a class="header-anchor" href="#Rename-It"></a><a target="_blank" rel="noopener" href="http://rodi01.github.io/RenameIt/">Rename-It</a></h3>
-<p>Keep your Sketch files organized, batch rename layers and artboards.</p>
+          <h2 id="Scroll"><a class="header-anchor" href="#Scroll"></a>Scroll</h2>
+<h3 id="isScrollEnabled"><a class="header-anchor" href="#isScrollEnabled"></a><code>isScrollEnabled</code></h3>
+<p>In html, if content width is wider than its parent container, the content is scrollable.<br>
+However, if set <code>isScrollEnabled</code> to <code>false</code> in native:</p>
+<pre class="line-numbers language-Swift" data-language="Swift"><code class="language-Swift">wkWebView.scrollView.isScrollEnabled &#x3D; false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>the container will need another wrapper to implement scrolling.</p>
+<h3 id="webkit-overflow-scrolling"><a class="header-anchor" href="#webkit-overflow-scrolling"></a><code>-webkit-overflow-scrolling</code></h3>
+<p>if set <code>-webkit-overflow-scrolling</code> to <code>touch</code> in CSS, device will use momentum-based scrolling for a given element.</p>
+<pre class="line-numbers language-CSS" data-language="CSS"><code class="language-CSS">-webkit-overflow-scrolling: touch;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>The native will treat this element as a <code>UIScrollView</code>, which will come with some default features, like scroll indicator.</p>
 
       
     </div>
@@ -1064,7 +670,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/CocoaPods-Usage/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Photography-Basics-and-Beyond-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -1080,7 +686,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/CocoaPods-Usage/" class="post-title-link" itemprop="url">CocoaPods Usage</a>
+            <a href="/blog/Photography-Basics-and-Beyond-Note/" class="post-title-link" itemprop="url">Photography Basics and Beyond Note</a>
         </h2>
 
         <div class="post-meta">
@@ -1090,14 +696,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-05-15 00:08:05" itemprop="dateCreated datePublished" datetime="2018-05-15T00:08:05+08:00">2018-05-15</time>
+              <time title="Created: 2019-09-21 00:58:17" itemprop="dateCreated datePublished" datetime="2019-09-21T00:58:17+08:00">2019-09-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-02-05 17:57:15" itemprop="dateModified" datetime="2019-02-05T17:57:15+08:00">2019-02-05</time>
+                <time title="Modified: 2020-08-19 01:08:21" itemprop="dateModified" datetime="2020-08-19T01:08:21+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1105,7 +711,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                  <a href="/blog/categories/Photography/" itemprop="url" rel="index"><span itemprop="name">Photography</span></a>
                 </span>
             </span>
 
@@ -1115,14 +721,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>946</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>15 mins.</span>
             </span>
 
         </div>
@@ -1132,27 +738,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Official Site: <a target="_blank" rel="noopener" href="https://cocoapods.org">https://cocoapods.org</a></p>
-<h2 id="Adding-Pods-to-an-Xcode-project"><a class="header-anchor" href="#Adding-Pods-to-an-Xcode-project"></a>Adding Pods to an Xcode project</h2>
-<p><strong>Create a Podfile</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ pod init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>or</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">touch</span> Podfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>Podfile</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">platform :ios, <span class="token string">'9.0'</span>
-use_frameworks<span class="token operator">!</span>
-
-target <span class="token string">'MyApp'</span> <span class="token keyword">do</span>
-  pod <span class="token string">'AFNetworking'</span>, <span class="token string">'~> 2.6'</span>
-  pod <span class="token string">'ORStackView'</span>, <span class="token string">'~> 3.0'</span>
-  pod <span class="token string">'SwiftyJSON'</span>, <span class="token string">'~> 2.3'</span>
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>Install project dependencies</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ pod <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>Open <code>MyApp.xcworkspace</code> to work</strong></p>
+          <p>Specialization Site: <a target="_blank" rel="noopener" href="https://www.coursera.org/specializations/photography-basics">https://www.coursera.org/specializations/photography-basics</a></p>
+<h2 id="Cameras-Exposure-and-Photography"><a class="header-anchor" href="#Cameras-Exposure-and-Photography"></a>Cameras, Exposure, and Photography</h2>
+<p>Course Site: <a target="_blank" rel="noopener" href="https://www.coursera.org/learn/exposure-photography">https://www.coursera.org/learn/exposure-photography</a></p>
+<h3 id="Fundamentals"><a class="header-anchor" href="#Fundamentals"></a>Fundamentals</h3>
+<h4 id="f-stop-Formula"><a class="header-anchor" href="#f-stop-Formula"></a>f.stop Formula</h4>
+<p>$$<br>
+\text{f.Stop} = \frac{\text{Focal Length}}{\text{Diameter of lens}}<br>
+$$</p>
+<h3 id="Camera-Capabilities"><a class="header-anchor" href="#Camera-Capabilities"></a>Camera Capabilities</h3>
+<ul>
+<li>Point &amp; Shoot and Compact Cameras</li>
+<li>Mirrorless Cameras</li>
+<li>DSLR(digital single-lens reflex) Cameras</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/CocoaPods-Usage/#more" rel="contents">
+              <a class="btn" href="/blog/Photography-Basics-and-Beyond-Note/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1176,7 +778,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/TabBar-Navigation-TableView-MVC-Structure/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Objective-C-Best-Practice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -1192,7 +794,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/TabBar-Navigation-TableView-MVC-Structure/" class="post-title-link" itemprop="url">TabBar-Navigation-TableView MVC Structure</a>
+            <a href="/blog/Objective-C-Best-Practice/" class="post-title-link" itemprop="url">Objective-C Best Practice</a>
         </h2>
 
         <div class="post-meta">
@@ -1201,10 +803,16 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2018-05-18 17:45:39 / Modified: 18:09:55" itemprop="dateCreated datePublished" datetime="2018-05-18T17:45:39+08:00">2018-05-18</time>
+              <time title="Created: 2018-01-03 23:58:17" itemprop="dateCreated datePublished" datetime="2018-01-03T23:58:17+08:00">2018-01-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 01:08:02" itemprop="dateModified" datetime="2020-08-19T01:08:02+08:00">2020-08-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1221,14 +829,14 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -1238,8 +846,28 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     
     
     <div class="post-body" itemprop="articleBody">
-          <img src="/blog/TabBar-Navigation-TableView-MVC-Structure/MVCClassDiagram.png" class="" title="MVCClassDiagram">
-
+          <p>Collecting from <em>Effective Objective-C 2.0 52 Specific Ways to Improve Your iOS and OS X Programs</em></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a><br>
+<a target="_blank" rel="noopener" href="http://clang.llvm.org/docs/">Clang</a></p>
+<h2 id="Minimize-importing-other-header-files-in-header"><a class="header-anchor" href="#Minimize-importing-other-header-files-in-header"></a>Minimize importing other header files in header</h2>
+<ul>
+<li>Forward declare classes in a header and import their corresponding headers in an implementation</li>
+<li>Move the protocol-conformance declaration to the class-continuation category if possible</li>
+</ul>
+<h3 id="class-vs-import"><a class="header-anchor" href="#class-vs-import"></a>@class vs. #import</h3>
+<p>Using forward declaring(<code>@class</code>) has following advantages:</p>
+<ul>
+<li>Defer the import to where it is required (implementation file), and decrease compile time</li>
+<li>Alleviate the problem of both classes referring to each other</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Objective-C-Best-Practice/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1258,7 +886,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/ES6-Features/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/npm-Usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -1274,7 +902,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/ES6-Features/" class="post-title-link" itemprop="url">ES6 Features</a>
+            <a href="/blog/npm-Usage/" class="post-title-link" itemprop="url">npm Usage</a>
         </h2>
 
         <div class="post-meta">
@@ -1284,14 +912,14 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-04-11 00:38:02" itemprop="dateCreated datePublished" datetime="2018-04-11T00:38:02+08:00">2018-04-11</time>
+              <time title="Created: 2018-01-02 22:34:49" itemprop="dateCreated datePublished" datetime="2018-01-02T22:34:49+08:00">2018-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-04 17:46:36" itemprop="dateModified" datetime="2018-05-04T17:46:36+08:00">2018-05-04</time>
+                <time title="Modified: 2020-08-19 01:07:58" itemprop="dateModified" datetime="2020-08-19T01:07:58+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1313,14 +941,14 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>11 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -1330,55 +958,37 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>References:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript Docs</a></li>
-<li><a target="_blank" rel="noopener" href="http://es6-features.org">rse/es6-features</a></li>
-<li><a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/">ruanyf/es6tutorial</a></li>
-<li><a target="_blank" rel="noopener" href="https://babeljs.io/learn-es2015">Babel ES2015</a></li>
-</ul>
-<h2 id="Data-structures"><a class="header-anchor" href="#Data-structures"></a>Data structures</h2>
-<ul>
-<li>Primitive: Boolean, null, undefined, Number, String, Symbol</li>
-<li>Object</li>
-</ul>
-<h2 id="Let-Const"><a class="header-anchor" href="#Let-Const"></a>Let &amp; Const</h2>
-<p>Block-scoped binding constructs.</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> var1 <span class="token punctuation">[</span><span class="token operator">=</span> value1<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> name1 <span class="token operator">=</span> value1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="Destructuring"><a class="header-anchor" href="#Destructuring"></a>Destructuring</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Array matching</span>
-<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> <span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-a <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
-c <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Object matching</span>
-<span class="token keyword">let</span> <span class="token punctuation">&#123;</span> a<span class="token punctuation">,</span> b <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-a <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
-b <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Default arguments</span>
-<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c <span class="token operator">+</span> d<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">10</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Swap values</span>
-<span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>y<span class="token punctuation">,</span> x<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Multiple return values</span>
-<span class="token keyword">function</span> <span class="token function">colorWhite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-    red<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
-    green<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
-    blue<span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          <p>Official Site: <a target="_blank" rel="noopener" href="https://www.npmjs.com">https://www.npmjs.com</a><br>
+Version: 6.11.3</p>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">ls</span>                              <span class="token comment"># List packages installed in the current project</span>
+<span class="token function">npm</span> list -g --depth<span class="token operator">=</span><span class="token number">0</span>               <span class="token comment"># List globally installed packages</span>
+<span class="token function">npm</span> search                          <span class="token comment"># Search for packages; aliases: npm s</span>
+<span class="token function">npm</span> <span class="token function">install</span>                         <span class="token comment"># Install all modules listed as dependencies in package.json</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&lt;</span>package<span class="token operator">></span>               <span class="token comment"># Install a local package, and the package will appear in your dependencies by default; alias: npm i</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&lt;</span>package<span class="token operator">></span> --save-dev    <span class="token comment"># Package will appear in your devDependencies; alias: npm i -D</span>
+<span class="token function">npm</span> <span class="token function">install</span> -g <span class="token operator">&lt;</span>package<span class="token operator">></span>            <span class="token comment"># Install a global package</span>
+<span class="token function">npm</span> update                          <span class="token comment"># Update local packages to the latest version (specified by the tag config)</span>
+<span class="token function">npm</span> update -g <span class="token operator">&lt;</span>package<span class="token operator">></span>             <span class="token comment"># Update a global package</span>
+<span class="token function">npm</span> outdated                        <span class="token comment"># Check for outdated packages</span>
+<span class="token function">npm</span> outdated -g --depth<span class="token operator">=</span><span class="token number">0</span>           <span class="token comment"># Check for global outdated packages</span>
+<span class="token function">npm</span> uninstall <span class="token operator">&lt;</span>package<span class="token operator">></span>             <span class="token comment"># Remove a local package</span>
+<span class="token function">npm</span> uninstall <span class="token operator">&lt;</span>package<span class="token operator">></span> --save      <span class="token comment"># Remove a package from the dependencies in package.json</span>
+<span class="token function">npm</span> uninstall -g <span class="token operator">&lt;</span>package<span class="token operator">></span>          <span class="token comment"># Remove a global package</span>
+<span class="token function">npm</span> docs                            <span class="token comment"># Docs for a package in a web browser maybe</span>
+<span class="token function">npm</span> run <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token punctuation">[</span>-- <span class="token operator">&lt;</span>args<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>    <span class="token comment"># Run arbitrary package scripts</span>
+<span class="token function">npm</span> start <span class="token punctuation">[</span>-- <span class="token operator">&lt;</span>args<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>            <span class="token comment"># Start a package</span>
+<span class="token function">npm</span> shrinkwrap                      <span class="token comment"># Lock down dependency versions for publication</span>
+<span class="token function">npm</span> doctor                          <span class="token comment"># Check your environments</span>
+<span class="token function">npm</span> audit                           <span class="token comment"># Run a security audit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Development</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> init                            <span class="token comment"># Interactively create a package.json file</span>
+<span class="token function">npm</span> edit <span class="token operator">&lt;</span>package<span class="token operator">></span>                  <span class="token comment"># Edit an installed package</span>
+<span class="token function">npm</span> config list                     <span class="token comment"># Show all the config settings</span>
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> key value            <span class="token comment"># Sets the config key to the value</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/ES6-Features/#more" rel="contents">
+              <a class="btn" href="/blog/npm-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1402,7 +1012,7 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/GitHub-Pages/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-Development-Config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -1418,7 +1028,7 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/GitHub-Pages/" class="post-title-link" itemprop="url">GitHub Pages</a>
+            <a href="/blog/iOS-Development-Config/" class="post-title-link" itemprop="url">iOS Development Config</a>
         </h2>
 
         <div class="post-meta">
@@ -1428,14 +1038,14 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-03-26 19:43:48" itemprop="dateCreated datePublished" datetime="2018-03-26T19:43:48+08:00">2018-03-26</time>
+              <time title="Created: 2018-08-21 22:55:52" itemprop="dateCreated datePublished" datetime="2018-08-21T22:55:52+08:00">2018-08-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-05-03 16:33:53" itemprop="dateModified" datetime="2018-05-03T16:33:53+08:00">2018-05-03</time>
+                <time title="Modified: 2020-08-19 01:07:11" itemprop="dateModified" datetime="2020-08-19T01:07:11+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1443,7 +1053,7 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
                 </span>
             </span>
 
@@ -1453,7 +1063,7 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>943</span>
+              <span>203</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1470,23 +1080,318 @@ b <span class="token operator">===</span> <span class="token number">2</span><sp
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Deploy-React-App-on-GitHub-Pages-from-the-Scratch"><a class="header-anchor" href="#Deploy-React-App-on-GitHub-Pages-from-the-Scratch"></a>Deploy React App on GitHub Pages from the Scratch</h2>
-<p><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md">create-react-app Doc</a><br>
-<a target="_blank" rel="noopener" href="https://pages.github.com">GitHub Pages Doc</a></p>
-<h3 id="Environment-Configuration"><a class="header-anchor" href="#Environment-Configuration"></a>Environment Configuration</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">yarn</span> global <span class="token function">add</span> create-react-app<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="Initialize-a-React-App"><a class="header-anchor" href="#Initialize-a-React-App"></a>Initialize a React App</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ create-react-app <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
-$ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">></span>
-<span class="token comment"># Edit...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+          <h2 id="Framework"><a class="header-anchor" href="#Framework"></a>Framework</h2>
+<h3 id="RxSwift"><a class="header-anchor" href="#RxSwift"></a><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md">RxSwift</a></h3>
+<p>Reactive Programming in Swift.</p>
+<h3 id="Texture"><a class="header-anchor" href="#Texture"></a><a target="_blank" rel="noopener" href="http://texturegroup.org/">Texture</a></h3>
+<p>Smooth asynchronous user interfaces for iOS apps.</p>
+<a href="/blog/Texture-Concepts/" title="Texture Concepts">Texture Concepts</a>
+<h3 id="Cartography"><a class="header-anchor" href="#Cartography"></a><a target="_blank" rel="noopener" href="http://robb.github.io/Cartography/">Cartography</a></h3>
+<p>A declarative Auto Layout DSL for Swift.</p>
+<h3 id="ObjectMapper"><a class="header-anchor" href="#ObjectMapper"></a><a target="_blank" rel="noopener" href="https://github.com/Hearst-DD/ObjectMapper">ObjectMapper</a></h3>
+<p>Simple JSON Object mapping written in Swift.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-Basic-Concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/iOS-Basic-Concepts/" class="post-title-link" itemprop="url">iOS Basic Concepts</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-06-17 14:37:21" itemprop="dateCreated datePublished" datetime="2018-06-17T14:37:21+08:00">2018-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 01:07:04" itemprop="dateModified" datetime="2020-08-19T01:07:04+08:00">2020-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>866</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Responder-Chain"><a class="header-anchor" href="#Responder-Chain"></a>Responder Chain</h2>
+<img src="/blog/iOS-Basic-Concepts/ResponderChain.png" class="" title="Responder Chain">
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/GitHub-Pages/#more" rel="contents">
+              <a class="btn" href="/blog/iOS-Basic-Concepts/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Homebrew-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Homebrew-Usage/" class="post-title-link" itemprop="url">Homebrew Usage</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-12-04 23:55:06" itemprop="dateCreated datePublished" datetime="2017-12-04T23:55:06+08:00">2017-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 01:07:00" itemprop="dateModified" datetime="2020-08-19T01:07:00+08:00">2020-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Official Site: <a target="_blank" rel="noopener" href="https://brew.sh">https://brew.sh</a></p>
+<h2 id="Command"><a class="header-anchor" href="#Command"></a>Command</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token operator">&lt;</span>formula<span class="token operator">></span>  <span class="token comment"># Install formula</span>
+brew update             <span class="token comment"># Fetch the newest version of Homebrew and all formulae from GitHub</span>
+brew upgrade            <span class="token comment"># Upgrade all outdated, unpinned packages</span>
+brew leaves             <span class="token comment"># Show installed formulae that are not dependencies of another installed formula</span>
+brew tap                <span class="token comment"># Tap a formula repository</span>
+brew doctor             <span class="token comment"># Check your system for potential problems.</span>
+brew cleanup            <span class="token comment"># Remove stale lock files and outdated downloads for formulae and casks, and remove old versions of installed formulae.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Homebrew-Usage/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Docker-Cheat-Sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming(mostly iOS and Web) and other fields">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/Docker-Cheat-Sheet/" class="post-title-link" itemprop="url">Docker Cheat Sheet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-04 11:49:21" itemprop="dateCreated datePublished" datetime="2017-10-04T11:49:21+08:00">2017-10-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 01:05:19" itemprop="dateModified" datetime="2020-08-19T01:05:19+08:00">2020-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Container/" itemprop="url" rel="index"><span itemprop="name">Container</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>791</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Docker Version: 17.06.0-ce-mac19</p>
+<h2 id="Containers"><a class="header-anchor" href="#Containers"></a>Containers</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker build -t<span class="token operator">=</span><span class="token string">"luminoid/my_image"</span> <span class="token builtin class-name">.</span>                   <span class="token comment"># Build an image from current directory's Dockerfile</span>
+docker run username/repository:tag                                            <span class="token comment"># Run an image from a registry</span>
+docker run -p <span class="token number">12345</span>:80 <span class="token operator">&lt;</span>image_name<span class="token operator">></span>                                  <span class="token comment"># Run an image mapping port 12345 to 80</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -i -t ubuntu /bin/bash                 <span class="token comment"># Run a command in a new container</span>
+docker run --name <span class="token operator">&lt;</span>container_name<span class="token operator">></span> -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/data -i -t ubuntu /bin/bash  <span class="token comment"># Run a container with a volume</span>
+docker start -i <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                    <span class="token comment"># Start stopped containers interactively</span>
+docker stop <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                       <span class="token comment"># Stop running containers</span>
+docker <span class="token function">ps</span> -a                                            <span class="token comment"># Show all containers (include the ones not running)</span>
+docker <span class="token function">rm</span> <span class="token operator">&lt;</span>container_name<span class="token operator">></span>                                                      <span class="token comment"># Remove specified container</span>
+docker <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -a -q<span class="token variable">)</span></span>                                                         <span class="token comment"># Remove all containers</span>
+docker images -a                                                                           <span class="token comment"># Show all images</span>
+docker rmi <span class="token operator">&lt;</span>hash<span class="token operator">></span>                                                                   <span class="token comment"># Remove specified image</span>
+docker rmi <span class="token variable"><span class="token variable">$(</span>docker images -q<span class="token variable">)</span></span>                                                           <span class="token comment"># Remove all images</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       
     </div>
 

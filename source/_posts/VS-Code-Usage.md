@@ -3,15 +3,13 @@ title: VS Code Usage
 date: 2017-12-13 01:12:03
 updated:
 categories:
-- Tool
 - Editor
 tags:
-- VS Code
-keywords:
 - VS Code
 ---
 
 Official Site: https://code.visualstudio.com
+Version: 1.48.0
 
 ## Setup
 ### Launch VS Code from the Command Line

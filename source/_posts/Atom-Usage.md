@@ -3,12 +3,8 @@ title: Atom Usage
 date: 2017-06-12 18:04:00
 updated:
 categories:
-- Tool
 - Editor
 tags: Atom
-keywords:
-- Atom
-- package
 ---
 
 Official Site: https://atom.io

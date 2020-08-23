@@ -4,15 +4,15 @@ date: 2017-08-08 22:45:55
 updated:
 categories: Mac
 tags:
-keywords:
+- Package manager
 - Homebrew
 - npm
 - Yarn
 - CocoaPods
 - oh-my-zsh
 - Git
-- Atom
 - VS Code
+- Atom
 - Docker
 ---
 
@@ -118,13 +118,13 @@ sudo n lts      # Use or install the latest LTS official release
 ```
 
 ## Text Editor
-### [Atom](https://atom.io)
-#### Usage
-{% post_link Atom-Usage %}
-
 ### [VSCode](https://code.visualstudio.com)
 #### Usage
 {% post_link VS-Code-Usage %}
+
+### [Atom](https://atom.io)
+#### Usage
+{% post_link Atom-Usage %}
 
 ### [Vim](www.vim.org/)
 #### Install

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
@@ -147,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">39</span></a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">49</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -305,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,default">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Git-Hooks/">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Browser-Enhancement/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -321,7 +321,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/Git-Hooks/" class="post-title-link" itemprop="url">Git Hooks</a>
+            <a href="/blog/Browser-Enhancement/" class="post-title-link" itemprop="url">Browser Enhancement</a>
         </h2>
 
         <div class="post-meta">
@@ -331,14 +331,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-03-21 13:58:12" itemprop="dateCreated datePublished" datetime="2018-03-21T13:58:12+08:00">2018-03-21</time>
+              <time title="Created: 2018-01-01 18:39:12" itemprop="dateCreated datePublished" datetime="2018-01-01T18:39:12+08:00">2018-01-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-04-03 17:46:02" itemprop="dateModified" datetime="2018-04-03T17:46:02+08:00">2018-04-03</time>
+                <time title="Modified: 2020-08-19 01:04:52" itemprop="dateModified" datetime="2020-08-19T01:04:52+08:00">2020-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,10 +348,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/blog/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
                 </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Tool/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
             </span>
 
           <br>
@@ -360,14 +356,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>528</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -377,30 +373,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Run-npm-scripts-automatically-before-git-commit"><a class="header-anchor" href="#Run-npm-scripts-automatically-before-git-commit"></a>Run npm scripts automatically before git commit</h2>
-<p>Run <code>sh deploy.sh</code> once to deploy the self-organized <code>hooks</code> folder, so that the hooks can be added to the version control system.<br>
-<code>./deploy.sh</code></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-
-<span class="token function-name function">configure_hooks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token function">git</span> config core.hooksPath <span class="token operator">||</span> <span class="token function">git</span> config core.hooksPath ./chore/hooks
-    <span class="token function">chmod</span> -R +x ./chore/hooks
-<span class="token punctuation">&#125;</span>
-
-<span class="token builtin class-name">echo</span> <span class="token string">'==> Configuring hooks'</span>
-configure_hooks<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>The hooks under the <code>hooks</code> folder will be triggered automatically.<br>
-<code>./chore/hooks/pre-commit</code></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">unset</span> GIT_DIR  <span class="token comment"># important</span>
-
-<span class="token builtin class-name">cd</span> path/to/work
-<span class="token builtin class-name">echo</span> <span class="token string">'==> Building project'</span>
-<span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">npm</span> run build<span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token builtin class-name">echo</span> <span class="token string">"==> Error: npm run build failed"</span>
-    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
-<span class="token keyword">fi</span>
-<span class="token function">git</span> <span class="token function">add</span> dist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+          <h2 id="Safari"><a class="header-anchor" href="#Safari"></a>Safari</h2>
+<h3 id="Extensions"><a class="header-anchor" href="#Extensions"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com">Extensions</a></h3>
+<h4 id="Adblock-Plus"><a class="header-anchor" href="#Adblock-Plus"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com/details/?id=org.adblockplus.adblockplussafari-GRYYZR985A">Adblock Plus</a></h4>
+<blockquote>
+<p>Blocks all annoying ads and support websites by not blocking unobtrusive ads by default (configurable). Enjoy surfing the web without obtrusive ads cluttering your screen. Blocks: banners, YouTube, video ads, pop-ups, and other obtrusive ads.</p>
+</blockquote>
+<h4 id="Ghostery"><a class="header-anchor" href="#Ghostery"></a><a target="_blank" rel="noopener" href="https://safari-extensions.apple.com/details/?id=com.betteradvertising.ghostery-HPY23A294X">Ghostery</a></h4>
+<blockquote>
+<p>Helps you enjoy a faster, safer, and cleaner browsing experience by giving you the control to make informed decisions about the personal data you share with the tags on the sites you visit.</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Browser-Enhancement/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

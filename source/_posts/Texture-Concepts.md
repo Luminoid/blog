@@ -5,11 +5,11 @@ updated:
 categories: iOS
 tags: 
 - Framework
+- Texture
 - Note
-keywords: Texture
 ---
 
-[Texture Docs](https://texturegroup.org/)
+Notes of [Texture Docs](https://texturegroup.org/)
 
 ## Subclassing
 ### ASDisplayNode

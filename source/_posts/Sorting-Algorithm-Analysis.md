@@ -4,9 +4,6 @@ date: 2017-06-12 19:51:09
 updated:
 categories: Algorithm
 tags: Sorting algorithm
-keywords:
-- Sorting algorithm
-- time complexity
 mathjax: true
 ---
 

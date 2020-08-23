@@ -6,7 +6,6 @@ categories: Mac
 tags: 
 - Package manager
 - Homebrew
-keywords: Homebrew
 ---
 
 Official Site: https://brew.sh

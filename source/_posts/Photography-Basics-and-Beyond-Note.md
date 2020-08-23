@@ -6,7 +6,6 @@ categories: Photography
 tags: 
 - Coursera
 - Note
-keywords: Photography
 mathjax: true
 ---
 

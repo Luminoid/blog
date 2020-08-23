@@ -7,15 +7,6 @@ categories:
 - Static Site Generator
 tags:
 - Hexo
-keywords:
-- Hexo
-- hexo-algolia
-- hexo-math
-- hexo-toc
-- hexo-all-minifier
-- Gitment
-- highlight.js
-- prism
 ---
 
 This article mainly focuses on the problems encountered in theme [tranquilpeak](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak).

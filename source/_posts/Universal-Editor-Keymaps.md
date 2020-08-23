@@ -3,7 +3,6 @@ title: Universal Editor Keymaps
 date: 2018-03-17 23:25:41
 updated:
 categories:
-- Tool
 - Editor
 tags:
 - VS Code
@@ -11,16 +10,9 @@ tags:
 - Xcode
 - JetBrains
 - Keymap
-keywords:
-- VS Code
-- Atom
-- Xcode
-- JetBrains
-- Editor
-- Keymap
 ---
 
-This post intended to provide a universal keymaps across different editors and IDEs on Mac.
+This post intends to provide a universal keymaps across different editors and IDEs on Mac.
 
 <!-- more -->
 

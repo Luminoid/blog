@@ -6,8 +6,8 @@ categories: iOS
 tags:
 - Rx
 - Swift
-keywords:
 - RxSwift
+- WIP
 ---
 
 ## ReactiveX

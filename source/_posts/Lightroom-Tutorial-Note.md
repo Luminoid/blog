@@ -6,8 +6,9 @@ categories: Photography
 tags:
 - Lightroom
 - Note
-keywords: Photography
 ---
+
+Notes of Lightroom Tutorial
 
 ## Landscape
 ### RGB Curves

@@ -6,11 +6,9 @@ categories: iOS
 tags: 
 - Swift
 - Note
-keywords: Swift
 ---
 
-References:
-- [The Swift Programming Language](https://docs.swift.org/swift-book/)
+Notes of [Swift Docs](https://docs.swift.org/swift-book/)
 
 This post is based on Swift 4.2
 
