@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-flash.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luminoid.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="Mac UsageAwesome Mac Package ManagerHomebrewInstallation1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;  Commands12345678brew install &lt;for">
+<meta property="og:type" content="article">
+<meta property="og:title" content="M1 Mac Development Setup">
+<meta property="og:url" content="http://luminoid.github.io/blog/M1-Mac-Development-Setup/index.html">
+<meta property="og:site_name" content="Luminoid&#39;s Site">
+<meta property="og:description" content="Mac UsageAwesome Mac Package ManagerHomebrewInstallation1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;  Commands12345678brew install &lt;for">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-07T20:15:40.000Z">
+<meta property="article:modified_time" content="2021-11-09T19:24:20.754Z">
+<meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Package Manager">
+<meta property="article:tag" content="Homebrew">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="Yarn">
+<meta property="article:tag" content="CocoaPods">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="VS Code">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://luminoid.github.io/blog/M1-Mac-Development-Setup/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://luminoid.github.io/blog/M1-Mac-Development-Setup/","path":"M1-Mac-Development-Setup/","title":"M1 Mac Development Setup"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>M1 Mac Development Setup | Luminoid's Site</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Luminoid's Site</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">OK Computer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-Usage"><span class="nav-number">1.</span> <span class="nav-text">Mac Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Package-Manager"><span class="nav-number">2.</span> <span class="nav-text">Package Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation"><span class="nav-number">2.1.1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Commands"><span class="nav-number">2.1.2.</span> <span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">2.2.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Installation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yarn"><span class="nav-number">2.3.</span> <span class="nav-text">Yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Installation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods"><span class="nav-number">2.4.</span> <span class="nav-text">CocoaPods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">Installation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell"><span class="nav-number">3.</span> <span class="nav-text">Shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminal"><span class="nav-number">4.</span> <span class="nav-text">Terminal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iTerm2"><span class="nav-number">4.1.</span> <span class="nav-text">iTerm2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-4"><span class="nav-number">4.1.1.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iTerm-Color-Schemes"><span class="nav-number">4.1.2.</span> <span class="nav-text">iTerm Color Schemes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version-Control"><span class="nav-number">5.</span> <span class="nav-text">Version Control</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">5.1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH"><span class="nav-number">5.1.1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-GUI"><span class="nav-number">5.1.2.</span> <span class="nav-text">Git GUI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Languages"><span class="nav-number">6.</span> <span class="nav-text">Languages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python3"><span class="nav-number">6.1.</span> <span class="nav-text">Python3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-5"><span class="nav-number">6.1.1.</span> <span class="nav-text">Installation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">6.2.</span> <span class="nav-text">JavaScript</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-Editors"><span class="nav-number">7.</span> <span class="nav-text">Text Editors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VSCode"><span class="nav-number">7.1.</span> <span class="nav-text">VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vim"><span class="nav-number">7.2.</span> <span class="nav-text">Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-6"><span class="nav-number">7.2.1.</span> <span class="nav-text">Installation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">8.</span> <span class="nav-text">IDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JetBrains"><span class="nav-number">8.1.</span> <span class="nav-text">JetBrains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xcode"><span class="nav-number">8.2.</span> <span class="nav-text">Xcode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">9.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder-Tools"><span class="nav-number">9.1.</span> <span class="nav-text">Finder Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#quick-look-plugins"><span class="nav-number">9.1.1.</span> <span class="nav-text">quick-look-plugins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OpenInCode"><span class="nav-number">9.1.2.</span> <span class="nav-text">OpenInCode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menu-Bar-Tools"><span class="nav-number">9.2.</span> <span class="nav-text">Menu Bar Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Itsycal"><span class="nav-number">9.2.1.</span> <span class="nav-text">Itsycal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dozer"><span class="nav-number">9.2.2.</span> <span class="nav-text">Dozer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xbar"><span class="nav-number">9.2.3.</span> <span class="nav-text">xbar</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Screen-Saver"><span class="nav-number">9.3.</span> <span class="nav-text">Screen Saver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maccy"><span class="nav-number">9.4.</span> <span class="nav-text">Maccy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Installation-7"><span class="nav-number">9.4.1.</span> <span class="nav-text">Installation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command-Line-Tools"><span class="nav-number">10.</span> <span class="nav-text">Command Line Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bat"><span class="nav-number">10.1.</span> <span class="nav-text">bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#diff-so-fancy"><span class="nav-number">10.2.</span> <span class="nav-text">diff-so-fancy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exa"><span class="nav-number">10.3.</span> <span class="nav-text">exa</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fd"><span class="nav-number">10.4.</span> <span class="nav-text">fd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ffmpeg"><span class="nav-number">10.5.</span> <span class="nav-text">ffmpeg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fzf"><span class="nav-number">10.6.</span> <span class="nav-text">fzf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#graphicsmagick"><span class="nav-number">10.7.</span> <span class="nav-text">graphicsmagick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#htop"><span class="nav-number">10.8.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httrack"><span class="nav-number">10.9.</span> <span class="nav-text">httrack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mtr"><span class="nav-number">10.10.</span> <span class="nav-text">mtr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ncdu"><span class="nav-number">10.11.</span> <span class="nav-text">ncdu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pandoc"><span class="nav-number">10.12.</span> <span class="nav-text">pandoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pngquant"><span class="nav-number">10.13.</span> <span class="nav-text">pngquant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prettyping"><span class="nav-number">10.14.</span> <span class="nav-text">prettyping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rlwrap"><span class="nav-number">10.15.</span> <span class="nav-text">rlwrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-silver-searcher"><span class="nav-number">10.16.</span> <span class="nav-text">the_silver_searcher</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tig"><span class="nav-number">10.17.</span> <span class="nav-text">tig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tldr"><span class="nav-number">10.18.</span> <span class="nav-text">tldr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree"><span class="nav-number">10.19.</span> <span class="nav-text">tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unrar"><span class="nav-number">10.20.</span> <span class="nav-text">unrar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#z"><span class="nav-number">10.21.</span> <span class="nav-text">z</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Font"><span class="nav-number">11.</span> <span class="nav-text">Font</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fira-Code"><span class="nav-number">11.1.</span> <span class="nav-text">Fira Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Font-Awesome"><span class="nav-number">11.2.</span> <span class="nav-text">Font Awesome</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">12.</span> <span class="nav-text">Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Config"><span class="nav-number">12.1.</span> <span class="nav-text">Git Config</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luminoid"
+      src="/blog/images/Avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Luminoid</p>
+  <div class="site-description" itemprop="description">Notes about programming</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luminoid" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luminoid" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/luminoid" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;luminoid" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/pentadelic" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;pentadelic" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:14302010006@fudan.edu.cn" title="E-Mail → mailto:14302010006@fudan.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Luminoid" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/M1-Mac-Development-Setup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+      <meta itemprop="description" content="Notes about programming">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          M1 Mac Development Setup
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-07 15:15:40" itemprop="dateCreated datePublished" datetime="2021-11-07T15:15:40-05:00">2021-11-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-11-09 14:24:20" itemprop="dateModified" datetime="2021-11-09T14:24:20-05:00">2021-11-09</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>4.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;      <span class="comment"># Install formula.</span></span><br><span class="line">brew install --cask &lt;cask&gt;  <span class="comment"># Install cask.</span></span><br><span class="line">brew update                 <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span></span><br><span class="line">brew upgrade                <span class="comment"># Upgrade outdated casks and outdated, unpinned formulae.</span></span><br><span class="line">brew leaves                 <span class="comment"># List installed formulae that are not dependencies of another installed formula.</span></span><br><span class="line">brew tap                    <span class="comment"># Tap a formula repository.</span></span><br><span class="line">brew doctor                 <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup                <span class="comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/blog/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
+
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a target="_blank" rel="noopener" href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
+
+<h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a target="_blank" rel="noopener" href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">SourceTree</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask sourcetree</span><br></pre></td></tr></table></figure>
+
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a target="_blank" rel="noopener" href="https://www.python.org/">Python3</a></h3><h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><a href="/blog/Node-js-Usage/" title="Node.js Usage">Node.js Usage</a>
+
+<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a target="_blank" rel="noopener" href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains</a></h3><p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
+<h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a target="_blank" rel="noopener" href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
+<p>List of useful Quick Look plugins for developers</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency quicklookase qlvideo provisionql quicklook-pat webpquicklook</span><br></pre></td></tr></table></figure>
+
+<h4 id="OpenInCode"><a href="#OpenInCode" class="headerlink" title="OpenInCode"></a><a target="_blank" rel="noopener" href="https://github.com/sozercan/OpenInCode">OpenInCode</a></h4><blockquote>
+<p>macOS Finder toolbar app to open current folder in Visual Studio Code</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask open-in-code</span><br></pre></td></tr></table></figure>
+
+<h3 id="Menu-Bar-Tools"><a href="#Menu-Bar-Tools" class="headerlink" title="Menu Bar Tools"></a>Menu Bar Tools</h3><h4 id="Itsycal"><a href="#Itsycal" class="headerlink" title="Itsycal"></a><a target="_blank" rel="noopener" href="https://www.mowglii.com/itsycal/">Itsycal</a></h4><blockquote>
+<p>Itsycal is a tiny menu bar calendar.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask itsycal</span><br></pre></td></tr></table></figure>
+
+<h4 id="Dozer"><a href="#Dozer" class="headerlink" title="Dozer"></a><a target="_blank" rel="noopener" href="https://github.com/Mortennn/Dozer">Dozer</a></h4><blockquote>
+<p>Hide status bar icons on macOS.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask dozer</span><br></pre></td></tr></table></figure>
+
+<h4 id="xbar"><a href="#xbar" class="headerlink" title="xbar"></a><a target="_blank" rel="noopener" href="https://github.com/matryer/xbar">xbar</a></h4><blockquote>
+<p>Put the output from any script or program into your macOS Menu Bar (the BitBar reboot)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask xbar</span><br></pre></td></tr></table></figure>
+
+<h3 id="Screen-Saver"><a href="#Screen-Saver" class="headerlink" title="Screen Saver"></a>Screen Saver</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://aerialscreensaver.github.io/">Aerial</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
+</ul>
+<h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a target="_blank" rel="noopener" href="https://github.com/p0deje/Maccy">Maccy</a></h3><h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask maccy</span><br></pre></td></tr></table></figure>
+
+<h2 id="Command-Line-Tools"><a href="#Command-Line-Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a><a target="_blank" rel="noopener" href="https://github.com/sharkdp/bat">bat</a></h3><blockquote>
+<p>A cat(1) clone with syntax highlighting and Git integration.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bat &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a target="_blank" rel="noopener" href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
+<p>Good-lookin’ diffs with diff-highlight and more.</p>
+</blockquote>
+<h3 id="exa"><a href="#exa" class="headerlink" title="exa"></a><a target="_blank" rel="noopener" href="https://the.exa.website/">exa</a></h3><blockquote>
+<p>A modern replacement for <code>ls</code>.</p>
+</blockquote>
+<h3 id="fd"><a href="#fd" class="headerlink" title="fd"></a><a target="_blank" rel="noopener" href="https://github.com/sharkdp/fd">fd</a></h3><blockquote>
+<p>A simple, fast and user-friendly alternative to <code>find</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fd &lt;pattern&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a><a target="_blank" rel="noopener" href="https://www.ffmpeg.org/">ffmpeg</a></h3><blockquote>
+<p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
+</blockquote>
+<h3 id="fzf"><a href="#fzf" class="headerlink" title="fzf"></a><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf">fzf</a></h3><blockquote>
+<p>A command-line fuzzy finder</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fzf</span><br></pre></td></tr></table></figure>
+
+<h3 id="graphicsmagick"><a href="#graphicsmagick" class="headerlink" title="graphicsmagick"></a><a target="_blank" rel="noopener" href="http://www.graphicsmagick.org/">graphicsmagick</a></h3><blockquote>
+<p>Image processing tools collection.</p>
+</blockquote>
+<h3 id="htop"><a href="#htop" class="headerlink" title="htop"></a><a target="_blank" rel="noopener" href="https://htop.dev/">htop</a></h3><blockquote>
+<p>A cross-platform interactive process viewer.</p>
+</blockquote>
+<h3 id="httrack"><a href="#httrack" class="headerlink" title="httrack"></a><a target="_blank" rel="noopener" href="https://www.httrack.com/">httrack</a></h3><blockquote>
+<p>Website copier/offline browser.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httrack &lt;URLs&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="mtr"><a href="#mtr" class="headerlink" title="mtr"></a><a target="_blank" rel="noopener" href="https://www.bitwizard.nl/mtr/">mtr</a></h3><blockquote>
+<p>mtr combines the functionality of the <code>traceroute</code> and <code>ping</code> programs in a single network diagnostic tool.</p>
+</blockquote>
+<h3 id="ncdu"><a href="#ncdu" class="headerlink" title="ncdu"></a><a target="_blank" rel="noopener" href="https://dev.yorhel.nl/ncdu">ncdu</a></h3><blockquote>
+<p>NCurses Disk Usage.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ncdu &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a><a target="_blank" rel="noopener" href="https://pandoc.org/">pandoc</a></h3><blockquote>
+<p>General markup converter.</p>
+</blockquote>
+<h3 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a target="_blank" rel="noopener" href="https://pngquant.org/">pngquant</a></h3><blockquote>
+<p>PPNG converter and lossy image compressor.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pngquant --ext .png --force 256 *.png */*.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="prettyping"><a href="#prettyping" class="headerlink" title="prettyping"></a><a target="_blank" rel="noopener" href="https://denilsonsa.github.io/prettyping/">prettyping</a></h3><blockquote>
+<p><code>prettyping</code> is a wrapper around the standard <code>ping</code> tool, making the output prettier, more colorful, more compact, and easier to read.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prettyping</span><br></pre></td></tr></table></figure>
+
+<h3 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a target="_blank" rel="noopener" href="https://github.com/hanslub42/rlwrap">rlwrap</a></h3><blockquote>
+<p><code>rlwrap</code> is a ‘readline wrapper’, a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.</p>
+</blockquote>
+<h3 id="the-silver-searcher"><a href="#the-silver-searcher" class="headerlink" title="the_silver_searcher"></a><a target="_blank" rel="noopener" href="https://github.com/ggreer/the_silver_searcher">the_silver_searcher</a></h3><blockquote>
+<p>A code searching tool similar to <code>ack</code>, with a focus on speed.</p>
+</blockquote>
+<h3 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a target="_blank" rel="noopener" href="https://jonas.github.io/tig/">tig</a></h3><blockquote>
+<p>Tig is an ncurses-based text-mode interface for git.</p>
+</blockquote>
+<h3 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a><a target="_blank" rel="noopener" href="https://tldr.sh/">tldr</a></h3><blockquote>
+<p>Simplified and community-driven man pages</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tldr &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><a target="_blank" rel="noopener" href="http://mama.indstate.edu/users/ice/tree/">tree</a></h3><blockquote>
+<p>List contents of directories in a tree-like format.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -L &lt;num&gt; -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="unrar"><a href="#unrar" class="headerlink" title="unrar"></a><a target="_blank" rel="noopener" href="https://theunarchiver.com/command-line">unrar</a></h3><blockquote>
+<p>Command-line unarchiving tools supporting multiple formats</p>
+</blockquote>
+<h3 id="z"><a href="#z" class="headerlink" title="z"></a><a target="_blank" rel="noopener" href="https://github.com/rupa/z">z</a></h3><blockquote>
+<p>Tracks your most used directories, based on ‘frecency’.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br></pre></td></tr></table></figure>
+<h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a target="_blank" rel="noopener" href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask font-fira-code</span><br></pre></td></tr></table></figure>
+
+<h3 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a><a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask font-fontawesome</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Git-Config"><a href="#Git-Config" class="headerlink" title="Git Config"></a>Git Config</h3><p><a target="_blank" rel="noopener" href="https://github.com/so-fancy/diff-so-fancy#with-git">diff-so-fancy</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.pager <span class="string">&quot;diff-so-fancy | less --tabs=4 -RFX&quot;</span></span><br><span class="line">git config --global interactive.diffFilter <span class="string">&quot;diff-so-fancy --patch&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff-highlight.oldNormal    <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.oldHighlight <span class="string">&quot;red bold 52&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newNormal    <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newHighlight <span class="string">&quot;green bold 22&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff.meta       <span class="string">&quot;11&quot;</span></span><br><span class="line">git config --global color.diff.frag       <span class="string">&quot;magenta bold&quot;</span></span><br><span class="line">git config --global color.diff.func       <span class="string">&quot;146 bold&quot;</span></span><br><span class="line">git config --global color.diff.commit     <span class="string">&quot;yellow bold&quot;</span></span><br><span class="line">git config --global color.diff.old        <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff.new        <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff.whitespace <span class="string">&quot;red reverse&quot;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/blog/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/blog/tags/Package-Manager/" rel="tag"><i class="fa fa-tag"></i> Package Manager</a>
+              <a href="/blog/tags/Homebrew/" rel="tag"><i class="fa fa-tag"></i> Homebrew</a>
+              <a href="/blog/tags/npm/" rel="tag"><i class="fa fa-tag"></i> npm</a>
+              <a href="/blog/tags/Yarn/" rel="tag"><i class="fa fa-tag"></i> Yarn</a>
+              <a href="/blog/tags/CocoaPods/" rel="tag"><i class="fa fa-tag"></i> CocoaPods</a>
+              <a href="/blog/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+              <a href="/blog/tags/VS-Code/" rel="tag"><i class="fa fa-tag"></i> VS Code</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Node-js-Usage/" rel="next" title="Node.js Usage">
+                  Node.js Usage <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luminoid</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">6k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">6 mins.</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
