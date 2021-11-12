@@ -87,6 +87,17 @@ brew install python3
 ### JavaScript
 {% post_link Node-js-Usage %}
 
+### [Java](https://www.oracle.com/java/)
+#### Installation
+[Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
+[Java SE Development Kit 8](https://www.oracle.com/java/technologies/downloads/#java8)
+
+### [SML](http://www.smlnj.org/)
+#### Installation
+``` bash
+brew install smlnj
+```
+
 ## Text Editors
 ### [VSCode](https://code.visualstudio.com)
 
@@ -138,6 +149,8 @@ brew install --cask xbar
 ### Screen Saver
 - [Aerial](https://aerialscreensaver.github.io)
 - [Brooklyn](https://github.com/pedrommcarrasco/Brooklyn)
+
+### [AppCleaner](https://freemacsoft.net/appcleaner/)
 
 ### [Maccy](https://github.com/p0deje/Maccy)
 #### Installation
@@ -211,6 +224,9 @@ prettyping
 
 ### [rlwrap](https://github.com/hanslub42/rlwrap)
 > `rlwrap` is a 'readline wrapper', a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.
+``` bash 
+rlwrap <command>
+```
 
 ### [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 > A code searching tool similar to `ack`, with a focus on speed.
