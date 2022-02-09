@@ -29,9 +29,11 @@
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><a href="/blog/Node-js-Usage/" title="Node.js Usage">Node.js Usage</a>
 
 <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a><a href="https://www.oracle.com/java/">Java</a></h3><h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><p><a href="https://www.oracle.com/java/technologies/downloads/">Java SE Development Kit</a><br><a href="https://www.oracle.com/java/technologies/downloads/#java8">Java SE Development Kit 8</a></p>
-<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install smlnj</span><br></pre></td></tr></table></figure>
+<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a><a href="https://racket-lang.org/">Scheme</a></h3><h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask racket</span><br></pre></td></tr></table></figure>
 
-<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install smlnj</span><br></pre></td></tr></table></figure>
+
+<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
 
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h3><p><a href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
 <h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
@@ -49,6 +51,9 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask itsycal</span><br></pre></td></tr></table></figure>
 
+<h4 id="MenubarX"><a href="#MenubarX" class="headerlink" title="MenubarX"></a><a href="https://menubarx.app/">MenubarX</a></h4><blockquote>
+<p>A powerful menu bar browser</p>
+</blockquote>
 <h4 id="Dozer"><a href="#Dozer" class="headerlink" title="Dozer"></a><a href="https://github.com/Mortennn/Dozer">Dozer</a></h4><blockquote>
 <p>Hide status bar icons on macOS.</p>
 </blockquote>
@@ -63,7 +68,7 @@
 <li><a href="https://aerialscreensaver.github.io/">Aerial</a></li>
 <li><a href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
 </ul>
-<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask maccy</span><br></pre></td></tr></table></figure>
+<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask maccy</span><br></pre></td></tr></table></figure>
 
 <h2 id="Command-Line-Tools"><a href="#Command-Line-Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a><a href="https://github.com/sharkdp/bat">bat</a></h3><blockquote>
 <p>A cat(1) clone with syntax highlighting and Git integration.</p>

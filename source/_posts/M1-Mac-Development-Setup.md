@@ -92,6 +92,12 @@ brew install python3
 [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
 [Java SE Development Kit 8](https://www.oracle.com/java/technologies/downloads/#java8)
 
+### [Scheme](https://racket-lang.org/)
+#### Installation
+``` bash
+brew install --cask racket
+```
+
 ### [SML](http://www.smlnj.org/)
 #### Installation
 ``` bash
@@ -133,6 +139,9 @@ brew install --cask open-in-code
 ``` bash
 brew install --cask itsycal
 ```
+
+#### [MenubarX](https://menubarx.app/)
+> A powerful menu bar browser
 
 #### [Dozer](https://github.com/Mortennn/Dozer)
 > Hide status bar icons on macOS.
