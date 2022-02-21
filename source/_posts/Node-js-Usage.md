@@ -11,15 +11,15 @@ tags:
 ---
 
 ## Usage
+Start REPL.
 ``` bash
 node
 ```
-Start REPL.
 
+Check current supported ES6 features.
 ``` bash
 node --v8-options | grep harmony
 ```
-Check current supported ES6 features.
 
 ## Version Management
 ### [n](https://github.com/tj/n)

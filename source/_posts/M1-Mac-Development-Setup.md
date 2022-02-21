@@ -6,11 +6,7 @@ categories: Mac
 tags:
 - Package Manager
 - Homebrew
-- npm
-- Yarn
-- CocoaPods
 - Git
-- VS Code
 ---
 
 ## Mac Usage

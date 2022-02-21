@@ -81,7 +81,7 @@ antigen apply
 # list
 alias ls='ls -hFG'
 alias tree='tree -C -I node_modules'
-alias l='exa -aghlF --git'
+alias l='exa -aghlF --git --icons'
 alias ltree='exa -ghlFT --git -I=node_modules'
 
 # ncdu
