@@ -101,7 +101,7 @@
 <p>A cross-platform interactive process viewer.</p>
 </blockquote>
 <h3 id="httrack"><a href="#httrack" class="headerlink" title="httrack"></a><a href="https://www.httrack.com/">httrack</a></h3><blockquote>
-<p>Website copier/offline browser.</p>
+<p>Website copier&#x2F;offline browser.</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">httrack &lt;URLs&gt;</span><br></pre></td></tr></table></figure>
 
