@@ -50,7 +50,13 @@ if [ $# -eq 1 ] && ([ $1 = "compress" ] || [ $1 = "c" ]); then
     exit 0
 fi
 
-# Start hexo server
+# Create a new article
+if [ $# -eq 2 ] && ([ $1 = "new" ] || [ $1 = "n" ]); then
+    hexo new $2
+    exit 0
+fi
+
+# Start a local server
 if [ $# -eq 1 ] && ([ $1 = "server" ] || [ $1 = "s" ]); then
     hexo server
     exit 0
@@ -66,7 +72,8 @@ if [ $# -eq 1 ] && ([ $1 = "help" ] || [ $1 = "h" ]); then
     echo "command.sh [deploy|d] -package            Alias for ${b}command.sh deploy \"update packages\"${e}"
     echo "command.sh [deploy|d] -theme              Alias for ${b}command.sh deploy \"update theme\"${e}"
     echo "command.sh [help|h]                       Display help information"
-    echo "command.sh [server|s]                     Start hexo server locally"
+    echo "command.sh [new|n]                        Create a new article"
+    echo "command.sh [server|s]                     Start a local server"
     exit 0
 fi
 
