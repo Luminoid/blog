@@ -63,17 +63,17 @@ NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-n
 > Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.
 
 #### Include Code
-``` md
+``` liquid
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
 
 #### Include Posts
-``` md
+``` liquid
 {% post_link filename [title] [escape] %}
 ```
 
 #### Include Assets
-``` md
+``` liquid
 {% asset_path filename %}
 {% asset_img [class names] slug [width] [height] [title text [alt text]] %}
 {% asset_link filename [title] [escape] %}

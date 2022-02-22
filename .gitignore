@@ -8,3 +8,4 @@ public/
 
 # executable files
 *.out
+*.class
