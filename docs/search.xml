@@ -4,66 +4,66 @@
     <title>Fibonacci Number in Different Programming Languages</title>
     <url>/blog/Fibonacci-Number-in-Different-Programming-Languages/</url>
     <content><![CDATA[<p>Programs for getting the nth Fibonacci number in different programming languages.</p>
-<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-int fib(int n) {
-    if(n &lt;&#x3D; 1) {
-        return n;
-    }
+<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    int a &#x3D; 0;
-    int b &#x3D; 1;
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    for(int i &#x3D; 2; i &lt;&#x3D; n; i++) {
-        int c &#x3D; a + b;
-        a &#x3D; b;
-        b &#x3D; c;
-    }
-    return b;
-}
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main(int argc, char *argv[]) {
-    int n &#x3D; atoi(argv[1]);
-    printf(&quot;fib(%d) &#x3D; %d\n&quot;, n, fib(n));
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fib(%d) = %d\n"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ gcc fibonacci.c
 $ .&#x2F;a.out 10
-fib(10) &#x3D; 55</code></pre>
+fib(10) &#x3D; 55<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <span id="more"></span>
 
-<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><pre class="line-numbers language-cpp" data-language="cpp"><div class="caption"><span>fibonacci.cpp</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp">view raw</a></div><code class="language-cpp">#include &lt;iostream&gt;
+<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><pre class="line-numbers language-cpp" data-language="cpp"><div class="caption"><span>fibonacci.cpp</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp">view raw</a></div><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 
-using namespace std;
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int fib(int n) {
-    if(n &lt;&#x3D; 1) {
-        return n;
-    }
+<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    int a &#x3D; 0;
-    int b &#x3D; 1;
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    for(int i &#x3D; 2; i &lt;&#x3D; n; i++) {
-        int c &#x3D; a + b;
-        a &#x3D; b;
-        b &#x3D; c;
-    }
-    return b;
-}
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main(int argc, char *argv[]) {
-    int n &#x3D; atoi(argv[1]);
-    cout &lt;&lt; &quot;fib(&quot; &lt;&lt; n &lt;&lt; &quot;)&quot; &lt;&lt; &quot; &#x3D; &quot; &lt;&lt;  fib(n) &lt;&lt; endl;
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"fib("</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" = "</span> <span class="token operator">&lt;&lt;</span>  <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ g++ fibonacci.cpp
 $ .&#x2F;a.out 10
-fib(10) &#x3D; 55</code></pre>
+fib(10) &#x3D; 55<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Programming Languages</category>
@@ -77,13 +77,13 @@ fib(10) &#x3D; 55</code></pre>
     <url>/blog/Hexo-Quick-Quide/</url>
     <content><![CDATA[<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 6.0.0</p>
 <h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Article&quot;
-# Edit source&#x2F;_posts&#x2F;My-New-Article.md
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+<span class="token comment"># Edit source/_posts/My-New-Article.md</span>
 $ hexo clean
 $ hexo generate
-$ git add -A
-$ git commit -m &lt;msg&gt;
-$ git push</code></pre>
+$ <span class="token function">git</span> <span class="token function">add</span> -A
+$ <span class="token function">git</span> commit -m <span class="token operator">&lt;</span>msg<span class="token operator">></span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
 <p>Using npm: With <code>npm-check-updates</code>. Run <code>ncu -u</code> under blog directory (<code>./</code>).</p>
@@ -106,13 +106,13 @@ $ git push</code></pre>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
 <p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
 </blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% include_code [title] [lang:language] [from:line] [to:line] path&#x2F;to&#x2F;file %&#125;</code></pre>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% include_code [title] [lang:language] [from:line] [to:line] path&#x2F;to&#x2F;file %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% post_link filename [title] [escape] %&#125;</code></pre>
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% post_link filename [title] [escape] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><pre class="line-numbers language-md" data-language="md"><code class="language-md">&#123;% asset_path filename %&#125;
 &#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;
-&#123;% asset_link filename [title] [escape] %&#125;</code></pre>
+&#123;% asset_link filename [title] [escape] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -128,16 +128,16 @@ $ git push</code></pre>
     <title>Node.js Usage</title>
     <url>/blog/Node-js-Usage/</url>
     <content><![CDATA[<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Check current supported ES6 features.</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node --v8-options | grep harmony</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node --v8-options <span class="token operator">|</span> <span class="token function">grep</span> harmony<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install n</code></pre>
+<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">n               # Display downloaded Node.js versions and install selection
-sudo n latest   # Install the latest Node.js release (downloading if necessary)
-sudo n lts      # Install the latest LTS Node.js release (downloading if necessary)</code></pre>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">n               <span class="token comment"># Display downloaded Node.js versions and install selection</span>
+<span class="token function">sudo</span> n latest   <span class="token comment"># Install the latest Node.js release (downloading if necessary)</span>
+<span class="token function">sudo</span> n lts      <span class="token comment"># Install the latest LTS Node.js release (downloading if necessary)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -149,62 +149,146 @@ sudo n lts      # Install the latest LTS Node.js release (downloading if necessa
       </tags>
   </entry>
   <entry>
+    <title>Zsh Usage</title>
+    <url>/blog/Zsh-Usage/</url>
+    <content><![CDATA[<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Powerlevel10k ########################</span>
+<span class="token comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
+<span class="token comment"># Initialization code that may require console input (password prompts, [y/n]</span>
+<span class="token comment"># confirmations, etc.) must go above this block; everything else may go below.</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> -r <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -f ~/.p10k.zsh <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">source</span> ~/.p10k.zsh
+
+
+<span class="token comment">######################## Antigen ########################</span>
+
+<span class="token builtin class-name">source</span> /opt/homebrew/share/antigen/antigen.zsh
+
+<span class="token comment"># Load the oh-my-zsh's library.</span>
+antigen use oh-my-zsh
+
+<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
+antigen bundle colored-man-pages
+antigen bundle extract
+antigen bundle <span class="token function">history</span>
+antigen bundle z
+antigen bundle <span class="token function">git</span>
+antigen bundle <span class="token function">npm</span>
+antigen bundle gem
+antigen bundle python
+antigen bundle brew
+antigen bundle osx
+antigen bundle pod
+
+<span class="token comment"># Syntax highlighting bundle.</span>
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+<span class="token comment"># Fish-like auto suggestions</span>
+antigen bundle zsh-users/zsh-autosuggestions
+
+<span class="token comment"># Additional completion definitions for Zsh.</span>
+antigen bundle zsh-users/zsh-completions
+
+<span class="token comment"># Load the theme.</span>
+antigen theme romkatv/powerlevel10k
+
+<span class="token comment"># Tell Antigen that you're done.</span>
+antigen apply
+
+<span class="token comment">######################## User Configuration ########################</span>
+
+<span class="token comment"># list</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git --icons'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
+
+<span class="token comment"># ncdu</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x"</span>
+<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x --exclude .git --exclude node_modules"</span>
+
+<span class="token comment"># rlwrap</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sml</span><span class="token operator">=</span><span class="token string">'rlwrap sml'</span>
+
+<span class="token comment"># Standard ML of New Jersey</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/smlnj/bin:<span class="token string">"<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>M1 Mac Development Setup</title>
     <url>/blog/M1-Mac-Development-Setup/</url>
     <content><![CDATA[<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><p><a href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;</code></pre>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bin/bash -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install &lt;formula&gt;      # Install formula.
-brew install --cask &lt;cask&gt;  # Install cask.
-brew update                 # Fetch the newest version of Homebrew and all formulae from GitHub.
-brew upgrade                # Upgrade outdated casks and outdated, unpinned formulae.
-brew leaves                 # List installed formulae that are not dependencies of another installed formula.
-brew tap                    # Tap a formula repository.
-brew doctor                 # Check your system for potential problems.
-brew cleanup                # Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</code></pre>
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token operator">&lt;</span>formula<span class="token operator">></span>      <span class="token comment"># Install formula.</span>
+brew <span class="token function">install</span> --cask <span class="token operator">&lt;</span>cask<span class="token operator">></span>  <span class="token comment"># Install cask.</span>
+brew update                 <span class="token comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span>
+brew upgrade                <span class="token comment"># Upgrade outdated casks and outdated, unpinned formulae.</span>
+brew leaves                 <span class="token comment"># List installed formulae that are not dependencies of another installed formula.</span>
+brew tap                    <span class="token comment"># Tap a formula repository.</span>
+brew doctor                 <span class="token comment"># Check your system for potential problems.</span>
+brew cleanup                <span class="token comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install node</code></pre>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install yarn</code></pre>
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">yarn</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo gem install cocoapods</code></pre>
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gem <span class="token function">install</span> cocoapods<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <span id="more"></span>
 
 <h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/blog/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
 
-<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask iterm2</code></pre>
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask iterm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com/">SourceTree</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask sourcetree</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask sourcetree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a href="https://www.python.org/">Python3</a></h3><h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install python3</code></pre>
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a href="https://www.python.org/">Python3</a></h3><h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><a href="/blog/Node-js-Usage/" title="Node.js Usage">Node.js Usage</a>
 
 <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a><a href="https://www.oracle.com/java/">Java</a></h3><h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><p><a href="https://www.oracle.com/java/technologies/downloads/">Java SE Development Kit</a><br><a href="https://www.oracle.com/java/technologies/downloads/#java8">Java SE Development Kit 8</a></p>
-<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a><a href="https://racket-lang.org/">Scheme</a></h3><h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask racket</code></pre>
+<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a><a href="https://racket-lang.org/">Scheme</a></h3><h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask racket<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install smlnj</code></pre>
+<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> smlnj<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install vim</code></pre>
+<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">vim</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h3><p><a href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
 <h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
 <p>List of useful Quick Look plugins for developers</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency quicklookase qlvideo provisionql quicklook-pat webpquicklook</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency quicklookase qlvideo provisionql quicklook-pat webpquicklook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="OpenInCode"><a href="#OpenInCode" class="headerlink" title="OpenInCode"></a><a href="https://github.com/sozercan/OpenInCode">OpenInCode</a></h4><blockquote>
 <p>macOS Finder toolbar app to open current folder in Visual Studio Code</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask open-in-code</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask open-in-code<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="Menu-Bar-Tools"><a href="#Menu-Bar-Tools" class="headerlink" title="Menu Bar Tools"></a>Menu Bar Tools</h3><h4 id="Itsycal"><a href="#Itsycal" class="headerlink" title="Itsycal"></a><a href="https://www.mowglii.com/itsycal/">Itsycal</a></h4><blockquote>
 <p>Itsycal is a tiny menu bar calendar.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask itsycal</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask itsycal<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="MenubarX"><a href="#MenubarX" class="headerlink" title="MenubarX"></a><a href="https://menubarx.app/">MenubarX</a></h4><blockquote>
 <p>A powerful menu bar browser</p>
@@ -212,23 +296,23 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h4 id="Dozer"><a href="#Dozer" class="headerlink" title="Dozer"></a><a href="https://github.com/Mortennn/Dozer">Dozer</a></h4><blockquote>
 <p>Hide status bar icons on macOS.</p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">brew install --cask dozer</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">brew install --cask dozer<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="xbar"><a href="#xbar" class="headerlink" title="xbar"></a><a href="https://github.com/matryer/xbar">xbar</a></h4><blockquote>
 <p>Put the output from any script or program into your macOS Menu Bar (the BitBar reboot)</p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">brew install --cask xbar</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">brew install --cask xbar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="Screen-Saver"><a href="#Screen-Saver" class="headerlink" title="Screen Saver"></a>Screen Saver</h3><ul>
 <li><a href="https://aerialscreensaver.github.io/">Aerial</a></li>
 <li><a href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
 </ul>
-<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask maccy</code></pre>
+<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask maccy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="Command-Line-Tools"><a href="#Command-Line-Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a><a href="https://github.com/sharkdp/bat">bat</a></h3><blockquote>
 <p>A cat(1) clone with syntax highlighting and Git integration.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat &lt;file&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
 <p>Good-lookin’ diffs with diff-highlight and more.</p>
@@ -239,7 +323,7 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="fd"><a href="#fd" class="headerlink" title="fd"></a><a href="https://github.com/sharkdp/fd">fd</a></h3><blockquote>
 <p>A simple, fast and user-friendly alternative to <code>find</code></p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fd &lt;pattern&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fd <span class="token operator">&lt;</span>pattern<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a><a href="https://www.ffmpeg.org/">ffmpeg</a></h3><blockquote>
 <p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
@@ -247,7 +331,7 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="fzf"><a href="#fzf" class="headerlink" title="fzf"></a><a href="https://github.com/junegunn/fzf">fzf</a></h3><blockquote>
 <p>A command-line fuzzy finder</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fzf</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">fzf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="graphicsmagick"><a href="#graphicsmagick" class="headerlink" title="graphicsmagick"></a><a href="http://www.graphicsmagick.org/">graphicsmagick</a></h3><blockquote>
 <p>Image processing tools collection.</p>
@@ -258,7 +342,7 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="httrack"><a href="#httrack" class="headerlink" title="httrack"></a><a href="https://www.httrack.com/">httrack</a></h3><blockquote>
 <p>Website copier&#x2F;offline browser.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">httrack &lt;URLs&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">httrack <span class="token operator">&lt;</span>URLs<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="mtr"><a href="#mtr" class="headerlink" title="mtr"></a><a href="https://www.bitwizard.nl/mtr/">mtr</a></h3><blockquote>
 <p>mtr combines the functionality of the <code>traceroute</code> and <code>ping</code> programs in a single network diagnostic tool.</p>
@@ -266,7 +350,7 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="ncdu"><a href="#ncdu" class="headerlink" title="ncdu"></a><a href="https://dev.yorhel.nl/ncdu">ncdu</a></h3><blockquote>
 <p>NCurses Disk Usage.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ncdu &lt;dir&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ncdu <span class="token operator">&lt;</span>dir<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a><a href="https://pandoc.org/">pandoc</a></h3><blockquote>
 <p>General markup converter.</p>
@@ -274,17 +358,17 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org/">pngquant</a></h3><blockquote>
 <p>PPNG converter and lossy image compressor.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pngquant --ext .png --force 256 *.png *&#x2F;*.png</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pngquant --ext .png --force <span class="token number">256</span> *.png */*.png<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="prettyping"><a href="#prettyping" class="headerlink" title="prettyping"></a><a href="https://denilsonsa.github.io/prettyping/">prettyping</a></h3><blockquote>
 <p><code>prettyping</code> is a wrapper around the standard <code>ping</code> tool, making the output prettier, more colorful, more compact, and easier to read.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prettyping</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">prettyping<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap">rlwrap</a></h3><blockquote>
 <p><code>rlwrap</code> is a ‘readline wrapper’, a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rlwrap &lt;command&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rlwrap <span class="token operator">&lt;</span>command<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="the-silver-searcher"><a href="#the-silver-searcher" class="headerlink" title="the_silver_searcher"></a><a href="https://github.com/ggreer/the_silver_searcher">the_silver_searcher</a></h3><blockquote>
 <p>A code searching tool similar to <code>ack</code>, with a focus on speed.</p>
@@ -295,12 +379,12 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a><a href="https://tldr.sh/">tldr</a></h3><blockquote>
 <p>Simplified and community-driven man pages</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tldr &lt;command&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tldr <span class="token operator">&lt;</span>command<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><a href="http://mama.indstate.edu/users/ice/tree/">tree</a></h3><blockquote>
 <p>List contents of directories in a tree-like format.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tree -L &lt;num&gt; -a</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tree -L <span class="token operator">&lt;</span>num<span class="token operator">></span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="unrar"><a href="#unrar" class="headerlink" title="unrar"></a><a href="https://theunarchiver.com/command-line">unrar</a></h3><blockquote>
 <p>Command-line unarchiving tools supporting multiple formats</p>
@@ -308,31 +392,31 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 <h3 id="z"><a href="#z" class="headerlink" title="z"></a><a href="https://github.com/rupa/z">z</a></h3><blockquote>
 <p>Tracks your most used directories, based on ‘frecency’.</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">z &lt;dir&gt;</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">z <span class="token operator">&lt;</span>dir<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew&#x2F;cask-fonts</code></pre>
-<h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><pre class="line-numbers language-none"><code class="language-none">brew install --cask font-fira-code</code></pre>
+<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew/cask-fonts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><pre class="line-numbers language-none"><code class="language-none">brew install --cask font-fira-code<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a><a href="https://fontawesome.com/">Font Awesome</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install --cask font-fontawesome</code></pre>
+<h3 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a><a href="https://fontawesome.com/">Font Awesome</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> --cask font-fontawesome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Git-Config"><a href="#Git-Config" class="headerlink" title="Git Config"></a>Git Config</h3><p><a href="https://github.com/so-fancy/diff-so-fancy#with-git">diff-so-fancy</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git config --global core.pager &quot;diff-so-fancy | less --tabs&#x3D;4 -RFX&quot;
-git config --global interactive.diffFilter &quot;diff-so-fancy --patch&quot;
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global core.pager <span class="token string">"diff-so-fancy | less --tabs=4 -RFX"</span>
+<span class="token function">git</span> config --global interactive.diffFilter <span class="token string">"diff-so-fancy --patch"</span>
 
-git config --global color.ui true
+<span class="token function">git</span> config --global color.ui <span class="token boolean">true</span>
 
-git config --global color.diff-highlight.oldNormal    &quot;red bold&quot;
-git config --global color.diff-highlight.oldHighlight &quot;red bold 52&quot;
-git config --global color.diff-highlight.newNormal    &quot;green bold&quot;
-git config --global color.diff-highlight.newHighlight &quot;green bold 22&quot;
+<span class="token function">git</span> config --global color.diff-highlight.oldNormal    <span class="token string">"red bold"</span>
+<span class="token function">git</span> config --global color.diff-highlight.oldHighlight <span class="token string">"red bold 52"</span>
+<span class="token function">git</span> config --global color.diff-highlight.newNormal    <span class="token string">"green bold"</span>
+<span class="token function">git</span> config --global color.diff-highlight.newHighlight <span class="token string">"green bold 22"</span>
 
-git config --global color.diff.meta       &quot;11&quot;
-git config --global color.diff.frag       &quot;magenta bold&quot;
-git config --global color.diff.func       &quot;146 bold&quot;
-git config --global color.diff.commit     &quot;yellow bold&quot;
-git config --global color.diff.old        &quot;red bold&quot;
-git config --global color.diff.new        &quot;green bold&quot;
-git config --global color.diff.whitespace &quot;red reverse&quot;</code></pre>
+<span class="token function">git</span> config --global color.diff.meta       <span class="token string">"11"</span>
+<span class="token function">git</span> config --global color.diff.frag       <span class="token string">"magenta bold"</span>
+<span class="token function">git</span> config --global color.diff.func       <span class="token string">"146 bold"</span>
+<span class="token function">git</span> config --global color.diff.commit     <span class="token string">"yellow bold"</span>
+<span class="token function">git</span> config --global color.diff.old        <span class="token string">"red bold"</span>
+<span class="token function">git</span> config --global color.diff.new        <span class="token string">"green bold"</span>
+<span class="token function">git</span> config --global color.diff.whitespace <span class="token string">"red reverse"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Mac</category>
@@ -341,90 +425,6 @@ git config --global color.diff.whitespace &quot;red reverse&quot;</code></pre>
         <tag>Package Manager</tag>
         <tag>Homebrew</tag>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Zsh Usage</title>
-    <url>/blog/Zsh-Usage/</url>
-    <content><![CDATA[<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;</code></pre>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
-
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">######################## Powerlevel10k ########################
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~&#x2F;.zshrc.
-# Initialization code that may require console input (password prompts, [y&#x2F;n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r &quot;$&#123;XDG_CACHE_HOME:-$HOME&#x2F;.cache&#125;&#x2F;p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot; ]]; then
-  source &quot;$&#123;XDG_CACHE_HOME:-$HOME&#x2F;.cache&#125;&#x2F;p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot;
-fi
-
-# To customize prompt, run &#96;p10k configure&#96; or edit ~&#x2F;.p10k.zsh.
-[[ ! -f ~&#x2F;.p10k.zsh ]] || source ~&#x2F;.p10k.zsh
-
-
-######################## Antigen ########################
-
-source &#x2F;opt&#x2F;homebrew&#x2F;share&#x2F;antigen&#x2F;antigen.zsh
-
-# Load the oh-my-zsh&#39;s library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell&#39;s oh-my-zsh)
-antigen bundle colored-man-pages
-antigen bundle extract
-antigen bundle history
-antigen bundle z
-antigen bundle git
-antigen bundle npm
-antigen bundle gem
-antigen bundle python
-antigen bundle brew
-antigen bundle osx
-antigen bundle pod
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users&#x2F;zsh-syntax-highlighting
-
-# Fish-like auto suggestions
-antigen bundle zsh-users&#x2F;zsh-autosuggestions
-
-# Additional completion definitions for Zsh.
-antigen bundle zsh-users&#x2F;zsh-completions
-
-# Load the theme.
-antigen theme romkatv&#x2F;powerlevel10k
-
-# Tell Antigen that you&#39;re done.
-antigen apply
-
-######################## User Configuration ########################
-
-# list
-alias ls&#x3D;&#39;ls -hFG&#39;
-alias tree&#x3D;&#39;tree -C -I node_modules&#39;
-alias l&#x3D;&#39;exa -aghlF --git --icons&#39;
-alias ltree&#x3D;&#39;exa -ghlFT --git -I&#x3D;node_modules&#39;
-
-# ncdu
-alias ncdu&#x3D;&quot;ncdu --color dark -rr -x&quot;
-alias ncdu-exclude&#x3D;&quot;ncdu --color dark -rr -x --exclude .git --exclude node_modules&quot;
-
-# rlwrap
-alias sml&#x3D;&#39;rlwrap sml&#39;
-
-# Standard ML of New Jersey
-export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;smlnj&#x2F;bin:&quot;$PATH&quot;</code></pre>
-]]></content>
-      <categories>
-        <category>Shell</category>
-      </categories>
-      <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
       </tags>
   </entry>
 </search>

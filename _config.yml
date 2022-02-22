@@ -54,7 +54,7 @@ highlight:
   hljs: false
 prismjs:
   enable: true
-  preprocess: false
+  preprocess: true
   line_number: true
   tab_replace: ''
 

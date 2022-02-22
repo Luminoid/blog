@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-flash.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"luminoid.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luminoid.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
 
   <meta name="description" content="Notes about programming">
 <meta property="og:type" content="website">
@@ -256,7 +256,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-02-22 15:36:50 / Modified: 17:24:28" itemprop="dateCreated datePublished" datetime="2022-02-22T15:36:50-05:00">2022-02-22</time>
+      <time title="Created: 2022-02-22 15:36:50 / Modified: 17:37:59" itemprop="dateCreated datePublished" datetime="2022-02-22T15:36:50-05:00">2022-02-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>866</span>
+      <span>717</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -294,34 +294,34 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>Programs for getting the nth Fibonacci number in different programming languages.</p>
-<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
 
-int fib(int n) {
-    if(n &lt;&#x3D; 1) {
-        return n;
-    }
+<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    int a &#x3D; 0;
-    int b &#x3D; 1;
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    for(int i &#x3D; 2; i &lt;&#x3D; n; i++) {
-        int c &#x3D; a + b;
-        a &#x3D; b;
-        b &#x3D; c;
-    }
-    return b;
-}
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main(int argc, char *argv[]) {
-    int n &#x3D; atoi(argv[1]);
-    printf(&quot;fib(%d) &#x3D; %d\n&quot;, n, fib(n));
-    return 0;
-}</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fib(%d) = %d\n"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ gcc fibonacci.c
 $ .&#x2F;a.out 10
-fib(10) &#x3D; 55</code></pre>
+fib(10) &#x3D; 55<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/Fibonacci-Number-in-Different-Programming-Languages/#more" rel="contents">
@@ -429,13 +429,13 @@ fib(10) &#x3D; 55</code></pre>
     <div class="post-body" itemprop="articleBody">
           <p>Official Site: <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a><br>Version: 6.0.0</p>
 <h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Article&quot;
-# Edit source&#x2F;_posts&#x2F;My-New-Article.md
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+<span class="token comment"># Edit source/_posts/My-New-Article.md</span>
 $ hexo clean
 $ hexo generate
-$ git add -A
-$ git commit -m &lt;msg&gt;
-$ git push</code></pre>
+$ <span class="token function">git</span> <span class="token function">add</span> -A
+$ <span class="token function">git</span> commit -m <span class="token operator">&lt;</span>msg<span class="token operator">></span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
 <p>Using npm: With <code>npm-check-updates</code>. Run <code>ncu -u</code> under blog directory (<code>./</code>).</p>
@@ -546,16 +546,16 @@ $ git push</code></pre>
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Check current supported ES6 features.</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node --v8-options | grep harmony</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">node --v8-options <span class="token operator">|</span> <span class="token function">grep</span> harmony<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a target="_blank" rel="noopener" href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install n</code></pre>
+<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a target="_blank" rel="noopener" href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">n               # Display downloaded Node.js versions and install selection
-sudo n latest   # Install the latest Node.js release (downloading if necessary)
-sudo n lts      # Install the latest LTS Node.js release (downloading if necessary)</code></pre>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">n               <span class="token comment"># Display downloaded Node.js versions and install selection</span>
+<span class="token function">sudo</span> n latest   <span class="token comment"># Install the latest Node.js release (downloading if necessary)</span>
+<span class="token function">sudo</span> n lts      <span class="token comment"># Install the latest LTS Node.js release (downloading if necessary)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
       
     </div>
@@ -632,7 +632,7 @@ sudo n lts      # Install the latest LTS Node.js release (downloading if necessa
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.1k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -650,7 +650,7 @@ sudo n lts      # Install the latest LTS Node.js release (downloading if necessa
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a target="_blank" rel="noopener" href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;</code></pre>
+          <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a target="_blank" rel="noopener" href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
 <h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
@@ -738,7 +738,7 @@ sudo n lts      # Install the latest LTS Node.js release (downloading if necessa
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>4.2k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -757,22 +757,22 @@ sudo n lts      # Install the latest LTS Node.js release (downloading if necessa
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;</code></pre>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bin/bash -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install &lt;formula&gt;      # Install formula.
-brew install --cask &lt;cask&gt;  # Install cask.
-brew update                 # Fetch the newest version of Homebrew and all formulae from GitHub.
-brew upgrade                # Upgrade outdated casks and outdated, unpinned formulae.
-brew leaves                 # List installed formulae that are not dependencies of another installed formula.
-brew tap                    # Tap a formula repository.
-brew doctor                 # Check your system for potential problems.
-brew cleanup                # Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</code></pre>
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token operator">&lt;</span>formula<span class="token operator">></span>      <span class="token comment"># Install formula.</span>
+brew <span class="token function">install</span> --cask <span class="token operator">&lt;</span>cask<span class="token operator">></span>  <span class="token comment"># Install cask.</span>
+brew update                 <span class="token comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span>
+brew upgrade                <span class="token comment"># Upgrade outdated casks and outdated, unpinned formulae.</span>
+brew leaves                 <span class="token comment"># List installed formulae that are not dependencies of another installed formula.</span>
+brew tap                    <span class="token comment"># Tap a formula repository.</span>
+brew doctor                 <span class="token comment"># Check your system for potential problems.</span>
+brew cleanup                <span class="token comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install node</code></pre>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew install yarn</code></pre>
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">yarn</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo gem install cocoapods</code></pre>
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gem <span class="token function">install</span> cocoapods<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/M1-Mac-Development-Setup/#more" rel="contents">
@@ -819,13 +819,13 @@ brew cleanup                # Remove stale lock files and outdated downloads for
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">9k</span>
+    <span title="Symbols count total">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9 mins.</span>
+    <span title="Reading time total">8 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -854,9 +854,6 @@ brew cleanup                # Remove stale lock files and outdated downloads for
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/components/prism-core.min.js" integrity="sha256-NkONGY0/SqGDVmjgrBO5PJutIl5iKA7EsZTfi8pEYP4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha256-RtKI23ujTCOg3jNK74NK61WGNYbtBWcqh6UKebC2AQo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha256-K837BwIyiXo5k/9fCYgqUyA14bN4/Ve9P2SIT0KmZD0=" crossorigin="anonymous"></script>
 <script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script>
 
   
