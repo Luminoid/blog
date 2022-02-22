@@ -371,7 +371,7 @@ codeblock:
     dark: darcula
   prism:
     light: prism-tomorrow
-    dark: prism-dark
+    dark: prism-tomorrow
   # Add copy button on codeblock
   copy_button:
     enable: true

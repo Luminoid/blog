@@ -52,7 +52,7 @@ fi
 
 # Create a new article
 if [ $# -eq 2 ] && ([ $1 = "new" ] || [ $1 = "n" ]); then
-    hexo new $2
+    hexo new "$2"
     exit 0
 fi
 
