@@ -53,214 +53,6 @@ $ <span class="token function">git</span> push<span aria-hidden="true" class="li
       </tags>
   </entry>
   <entry>
-    <title>Fibonacci Number in Different Programming Languages</title>
-    <url>/blog/Fibonacci-Number-in-Different-Programming-Languages/</url>
-    <content><![CDATA[<p>Programs for getting the nth Fibonacci number in different programming languages.</p>
-<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-
-<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
-        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
-        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fib(%d) = %d\n"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">gcc fibonacci.c</span></span>
-<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./a.out <span class="token number">10</span></span></span>
-<span class="token output">fib(10) = 55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<span id="more"></span>
-
-<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><pre class="line-numbers language-cpp" data-language="cpp"><div class="caption"><span>fibonacci.cpp</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp">view raw</a></div><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
-        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
-        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"fib("</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" = "</span> <span class="token operator">&lt;&lt;</span>  <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">g++ fibonacci.cpp</span></span>
-<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./a.out <span class="token number">10</span></span></span>
-<span class="token output">fib(10) = 55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><pre class="line-numbers language-python" data-language="python"><div class="caption"><span>fibonacci.py</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py">view raw</a></div><code class="language-python"><span class="token keyword">import</span> sys
-
-
-<span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> n
-
-    a <span class="token operator">=</span> <span class="token number">0</span>
-    b <span class="token operator">=</span> <span class="token number">1</span>
-
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        c <span class="token operator">=</span> a <span class="token operator">+</span> b
-        a <span class="token operator">=</span> b
-        b <span class="token operator">=</span> c
-
-    <span class="token keyword">return</span> b
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"fib(</span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token punctuation">}</span></span><span class="token string">) = </span><span class="token interpolation"><span class="token punctuation">{</span>fib<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">python3 fibonacci.py <span class="token number">10</span></span></span>
-<span class="token output">fib(10) = 55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><pre class="line-numbers language-java" data-language="java"><div class="caption"><span>Fibonacci.java</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java">view raw</a></div><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Fibonacci</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> n<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
-            a <span class="token operator">=</span> b<span class="token punctuation">;</span>
-            b <span class="token operator">=</span> c<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"fib("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">") = "</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">javac Fibonacci.java</span></span>
-<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">java Fibonacci <span class="token number">10</span></span></span>
-<span class="token output">fib(10) = 55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Programming Languages</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Zsh Usage</title>
-    <url>/blog/Zsh-Usage/</url>
-    <content><![CDATA[<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
-
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Powerlevel10k ########################</span>
-<span class="token comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
-<span class="token comment"># Initialization code that may require console input (password prompts, [y/n]</span>
-<span class="token comment"># confirmations, etc.) must go above this block; everything else may go below.</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> -r <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span>
-<span class="token keyword">fi</span>
-
-<span class="token comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -f ~/.p10k.zsh <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">source</span> ~/.p10k.zsh
-
-
-<span class="token comment">######################## Antigen ########################</span>
-
-<span class="token builtin class-name">source</span> /opt/homebrew/share/antigen/antigen.zsh
-
-<span class="token comment"># Load the oh-my-zsh's library.</span>
-antigen use oh-my-zsh
-
-<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
-antigen bundle colored-man-pages
-antigen bundle extract
-antigen bundle <span class="token function">history</span>
-antigen bundle z
-antigen bundle <span class="token function">git</span>
-antigen bundle <span class="token function">npm</span>
-antigen bundle gem
-antigen bundle python
-antigen bundle brew
-antigen bundle osx
-antigen bundle pod
-
-<span class="token comment"># Syntax highlighting bundle.</span>
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-<span class="token comment"># Fish-like auto suggestions</span>
-antigen bundle zsh-users/zsh-autosuggestions
-
-<span class="token comment"># Additional completion definitions for Zsh.</span>
-antigen bundle zsh-users/zsh-completions
-
-<span class="token comment"># Load the theme.</span>
-antigen theme romkatv/powerlevel10k
-
-<span class="token comment"># Tell Antigen that you're done.</span>
-antigen apply
-
-<span class="token comment">######################## User Configuration ########################</span>
-
-<span class="token comment"># list</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git --icons'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
-
-<span class="token comment"># ncdu</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x"</span>
-<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x --exclude .git --exclude node_modules"</span>
-
-<span class="token comment"># rlwrap</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sml</span><span class="token operator">=</span><span class="token string">'rlwrap sml'</span>
-
-<span class="token comment"># Standard ML of New Jersey</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/smlnj/bin:<span class="token string">"<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Shell</category>
-      </categories>
-      <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>M1 Mac Development Setup</title>
     <url>/blog/M1-Mac-Development-Setup/</url>
     <content><![CDATA[<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><p><a href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
@@ -477,6 +269,357 @@ brew cleanup                <span class="token comment"># Remove stale lock file
       <tags>
         <tag>Node.js</tag>
         <tag>n</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zsh Usage</title>
+    <url>/blog/Zsh-Usage/</url>
+    <content><![CDATA[<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Powerlevel10k ########################</span>
+<span class="token comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
+<span class="token comment"># Initialization code that may require console input (password prompts, [y/n]</span>
+<span class="token comment"># confirmations, etc.) must go above this block; everything else may go below.</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> -r <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -f ~/.p10k.zsh <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">source</span> ~/.p10k.zsh
+
+
+<span class="token comment">######################## Antigen ########################</span>
+
+<span class="token builtin class-name">source</span> /opt/homebrew/share/antigen/antigen.zsh
+
+<span class="token comment"># Load the oh-my-zsh's library.</span>
+antigen use oh-my-zsh
+
+<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
+antigen bundle colored-man-pages
+antigen bundle extract
+antigen bundle <span class="token function">history</span>
+antigen bundle z
+antigen bundle <span class="token function">git</span>
+antigen bundle <span class="token function">npm</span>
+antigen bundle gem
+antigen bundle python
+antigen bundle brew
+antigen bundle osx
+antigen bundle pod
+
+<span class="token comment"># Syntax highlighting bundle.</span>
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+<span class="token comment"># Fish-like auto suggestions</span>
+antigen bundle zsh-users/zsh-autosuggestions
+
+<span class="token comment"># Additional completion definitions for Zsh.</span>
+antigen bundle zsh-users/zsh-completions
+
+<span class="token comment"># Load the theme.</span>
+antigen theme romkatv/powerlevel10k
+
+<span class="token comment"># Tell Antigen that you're done.</span>
+antigen apply
+
+<span class="token comment">######################## User Configuration ########################</span>
+
+<span class="token comment"># list</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git --icons'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
+
+<span class="token comment"># ncdu</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x"</span>
+<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -rr -x --exclude .git --exclude node_modules"</span>
+
+<span class="token comment"># rlwrap</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sml</span><span class="token operator">=</span><span class="token string">'rlwrap sml'</span>
+
+<span class="token comment"># Standard ML of New Jersey</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/smlnj/bin:<span class="token string">"<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fibonacci Number in Different Programming Languages</title>
+    <url>/blog/Fibonacci-Number-in-Different-Programming-Languages/</url>
+    <content><![CDATA[<p>Programs for getting the nth Fibonacci number in different programming languages.</p>
+<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><pre class="line-numbers language-c" data-language="c"><div class="caption"><span>fibonacci.c</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c">view raw</a></div><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fib(%d) = %d\n"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">gcc fibonacci.c</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./a.out <span class="token number">1</span></span></span>
+<span class="token output">fib(1) = 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<span id="more"></span>
+
+<h2 id="Scheme-1975"><a href="#Scheme-1975" class="headerlink" title="Scheme (1975)"></a>Scheme (1975)</h2><p>Tail recursion</p>
+<pre class="line-numbers language-scheme" data-language="scheme"><div class="caption"><span>fibonacci.scm</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Scheme/fibonacci.scm">view raw</a></div><code class="language-scheme"><span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">fib</span> n<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">iter</span> a b n<span class="token punctuation">)</span>
+    <span class="token punctuation">(</span><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">&lt;=</span> n <span class="token number">1</span><span class="token punctuation">)</span>
+        b
+        <span class="token punctuation">(</span><span class="token function">iter</span> b <span class="token punctuation">(</span><span class="token operator">+</span> a b<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">-</span> n <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">iter</span> <span class="token number">0</span> <span class="token number">1</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">racket -f fibonacci.scm -e <span class="token string">"(fib 2)"</span></span></span>
+<span class="token output">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Ada-1980"><a href="#Ada-1980" class="headerlink" title="Ada (1980)"></a>Ada (1980)</h2><pre class="line-numbers language-ada" data-language="ada"><div class="caption"><span>fibonacci.adb</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Ada/fibonacci.adb">view raw</a></div><code class="language-ada"><span class="token keyword">with</span> <span class="token variable">Ada</span><span class="token punctuation">.</span><span class="token variable">Text_IO</span><span class="token punctuation">;</span>
+<span class="token keyword">with</span> <span class="token variable">Ada</span><span class="token punctuation">.</span><span class="token variable">Command_Line</span><span class="token punctuation">;</span>
+
+<span class="token keyword">procedure</span> <span class="token variable">fibonacci</span> <span class="token keyword">is</span>
+    <span class="token variable">N</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span> <span class="token operator">:=</span> <span class="token variable">Integer</span><span class="token attr-name">'Value</span><span class="token punctuation">(</span><span class="token variable">Ada</span><span class="token punctuation">.</span><span class="token variable">Command_Line</span><span class="token punctuation">.</span><span class="token variable">Argument</span><span class="token punctuation">(</span><span class="token variable">Number</span> <span class="token operator">=></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token variable">fib</span><span class="token punctuation">(</span>
+        <span class="token variable">N</span><span class="token punctuation">:</span> <span class="token keyword">in</span> <span class="token variable">Integer</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token variable">Integer</span> <span class="token keyword">is</span>
+        <span class="token variable">A</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span> <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token variable">B</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span> <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token variable">C</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span> <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">begin</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">N</span> <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">return</span> <span class="token variable">N</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span> <span class="token keyword">if</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token variable">i</span> <span class="token keyword">in</span> <span class="token number">2</span> <span class="token punctuation">..</span> <span class="token variable">N</span> <span class="token keyword">loop</span>
+            <span class="token variable">C</span> <span class="token operator">:=</span> <span class="token variable">A</span> <span class="token operator">+</span> <span class="token variable">B</span><span class="token punctuation">;</span>
+            <span class="token variable">A</span> <span class="token operator">:=</span> <span class="token variable">B</span><span class="token punctuation">;</span>
+            <span class="token variable">B</span> <span class="token operator">:=</span> <span class="token variable">C</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span> <span class="token keyword">loop</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">B</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token variable">Ada</span><span class="token punctuation">.</span><span class="token variable">Text_IO</span><span class="token punctuation">.</span><span class="token variable">Put_Line</span><span class="token punctuation">(</span><span class="token string">"fib("</span> <span class="token operator">&amp;</span> <span class="token variable">Integer</span><span class="token attr-name">'Image</span><span class="token punctuation">(</span><span class="token variable">N</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">") = "</span> <span class="token operator">&amp;</span> <span class="token variable">Integer</span><span class="token attr-name">'Image</span><span class="token punctuation">(</span><span class="token variable">fib</span><span class="token punctuation">(</span><span class="token variable">N</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span> <span class="token variable">fibonacci</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">gnatmake fibonacci.adb</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./fibonacci <span class="token number">3</span></span></span>
+<span class="token output">fib( 3) =  2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Standard-ML-1983"><a href="#Standard-ML-1983" class="headerlink" title="Standard ML (1983)"></a>Standard ML (1983)</h2><p>Tail recursion</p>
+<pre class="line-numbers language-sml" data-language="sml"><div class="caption"><span>fibonacci.sml</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/StandardML/fibonacci.sml">view raw</a></div><code class="language-sml"><span class="token keyword">fun</span> <span class="token function">fib</span> n <span class="token operator">=</span> 
+    <span class="token keyword">let</span> <span class="token keyword">fun</span> <span class="token function">iter</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">if</span> n <span class="token operator">&lt;=</span> <span class="token number">1</span> <span class="token keyword">then</span> b <span class="token keyword">else</span> iter <span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">in</span> 
+        iter<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+
+<span class="token keyword">val</span> n_str <span class="token operator">=</span> hd <span class="token punctuation">(</span>CommandLine<span class="token punctuation">.</span>arguments<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> n <span class="token operator">=</span> valOf <span class="token punctuation">(</span>Int<span class="token punctuation">.</span>fromString n_str<span class="token punctuation">)</span>
+<span class="token keyword">val</span> res <span class="token operator">=</span> fib n
+<span class="token keyword">val</span> _ <span class="token operator">=</span> print <span class="token punctuation">(</span><span class="token string">"fib("</span> <span class="token operator">^</span> Int<span class="token punctuation">.</span>toString n <span class="token operator">^</span> <span class="token string">") = "</span> <span class="token operator">^</span> Int<span class="token punctuation">.</span>toString res<span class="token punctuation">)</span>
+<span class="token keyword">val</span> _ <span class="token operator">=</span> OS<span class="token punctuation">.</span>Process<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>OS<span class="token punctuation">.</span>Process<span class="token punctuation">.</span>success<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">sml fibonacci.sml <span class="token number">4</span></span></span>
+<span class="token output">fib(4) = 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><pre class="line-numbers language-cpp" data-language="cpp"><div class="caption"><span>fibonacci.cpp</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp">view raw</a></div><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"fib("</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" = "</span> <span class="token operator">&lt;&lt;</span>  <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">g++ fibonacci.cpp</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">./a.out <span class="token number">5</span></span></span>
+<span class="token output">fib(5) = 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><pre class="line-numbers language-python" data-language="python"><div class="caption"><span>fibonacci.py</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py">view raw</a></div><code class="language-python"><span class="token keyword">import</span> sys
+
+
+<span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n
+
+    a <span class="token operator">=</span> <span class="token number">0</span>
+    b <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        c <span class="token operator">=</span> a <span class="token operator">+</span> b
+        a <span class="token operator">=</span> b
+        b <span class="token operator">=</span> c
+
+    <span class="token keyword">return</span> b
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"fib(</span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token punctuation">}</span></span><span class="token string">) = </span><span class="token interpolation"><span class="token punctuation">{</span>fib<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">python3 fibonacci.py <span class="token number">6</span></span></span>
+<span class="token output">fib(6) = 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><pre class="line-numbers language-java" data-language="java"><div class="caption"><span>Fibonacci.java</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java">view raw</a></div><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Fibonacci</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+            a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+            b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"fib("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">") = "</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">javac Fibonacci.java</span></span>
+<span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">java Fibonacci <span class="token number">7</span></span></span>
+<span class="token output">fib(7) = 13</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="JavaScript-1995"><a href="#JavaScript-1995" class="headerlink" title="JavaScript (1995)"></a>JavaScript (1995)</h2><pre class="line-numbers language-js" data-language="js"><div class="caption"><span>fibonacci.js</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/JavaScript/fibonacci.js">view raw</a></div><code class="language-js"><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        c <span class="token operator">=</span> a <span class="token operator">+</span> b
+        a <span class="token operator">=</span> b
+        b <span class="token operator">=</span> c
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> n <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">fib(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>n<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">node fibonacci.js <span class="token number">8</span></span></span>
+<span class="token output">fib(8) = 21</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Scala-2004"><a href="#Scala-2004" class="headerlink" title="Scala (2004)"></a>Scala (2004)</h2><pre class="line-numbers language-scala" data-language="scala"><div class="caption"><span>Fibonacci.scala</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Scala/Fibonacci.scala">view raw</a></div><code class="language-scala"><span class="token keyword">object</span> Fibonacci <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> fib<span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> n
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> a<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> b<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>_ <span class="token keyword">&lt;-</span> <span class="token number">2</span> to <span class="token namespace">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">val</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b
+      a <span class="token operator">=</span> b
+      b <span class="token operator">=</span> c
+    <span class="token punctuation">}</span>
+    b
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> n <span class="token operator">=</span> args<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toInt
+    println<span class="token punctuation">(</span>s<span class="token string">"fib(${n}) = ${fib(n)}"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">scala Fibonacci.scala <span class="token number">9</span></span></span>
+<span class="token output">fib(9) = 34</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Swift-2014"><a href="#Swift-2014" class="headerlink" title="Swift (2014)"></a>Swift (2014)</h2><pre class="line-numbers language-swift" data-language="swift"><div class="caption"><span>Fibonacci.swift</span><a href="/blog/downloads/code/Fibonacci-Number-in-Different-Programming-Languages/Swift/Fibonacci.swift">view raw</a></div><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">Foundation</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">fib</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> n<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">1</span>
+    
+    <span class="token keyword">for</span> <span class="token omit keyword">_</span> <span class="token keyword">in</span> <span class="token number">2</span><span class="token operator">...</span>n <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b
+        a <span class="token operator">=</span> b
+        b <span class="token operator">=</span> c
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> b
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token class-name">CommandLine</span><span class="token punctuation">.</span>arguments
+<span class="token keyword">if</span> args<span class="token punctuation">.</span>count <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token class-name">Int</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"fib(</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">n</span><span class="token interpolation-punctuation punctuation">)</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> = </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Usage: swift fibonacci.swift &lt;number>"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell-session" data-language="shell-session"><code class="language-shell-session"><span class="token command"><span class="token shell-symbol important">$</span> <span class="token bash language-bash">swift fibonacci.swift <span class="token number">10</span></span></span>
+<span class="token output">fib(10) = 55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Programming Languages</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Scheme</tag>
+        <tag>Ada</tag>
+        <tag>Standard ML</tag>
+        <tag>C++</tag>
+        <tag>Python</tag>
+        <tag>Java</tag>
+        <tag>JavaScript</tag>
+        <tag>Scala</tag>
+        <tag>Swift</tag>
       </tags>
   </entry>
 </search>

@@ -6,6 +6,8 @@ node_modules/
 public/
 .deploy*/
 
-# executable files
+# executable and compilation files
 *.out
 *.class
+*.ali
+*.o
