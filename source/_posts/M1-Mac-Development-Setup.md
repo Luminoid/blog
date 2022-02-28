@@ -283,6 +283,12 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 ```
 
+### [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
+[Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
+```
+brew install --cask font-fira-code-nerd-font
+```
+
 ### [Font Awesome](https://fontawesome.com)
 ``` bash
 brew install --cask font-fontawesome
