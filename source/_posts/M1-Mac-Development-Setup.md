@@ -10,6 +10,7 @@ tags:
 ---
 
 ## Mac Usage
+{% post_link Mac-Usage %}
 [Awesome Mac](https://github.com/jaywcjlove/awesome-mac)
 
 ## Package Manager
@@ -115,6 +116,10 @@ brew install vim
 
 ### [Xcode](https://developer.apple.com/xcode/)
 
+## Developer Tools
+### [Insomnia](https://insomnia.rest/)
+> The open-source, cross-platform API client for GraphQL, REST, and gRPC.
+
 ## Tools
 ### Finder Tools
 #### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
@@ -163,6 +168,9 @@ brew install --cask xbar
 brew install --cask maccy
 ```
 
+### [OpenEmu](http://openemu.org/)
+> Retro video game emulation for macOS
+
 ## Command Line Tools
 ### [bat](https://github.com/sharkdp/bat)
 > A cat(1) clone with syntax highlighting and Git integration.
@@ -205,6 +213,9 @@ httrack <URLs>
 
 ### [mtr](https://www.bitwizard.nl/mtr/)
 > mtr combines the functionality of the `traceroute` and `ping` programs in a single network diagnostic tool.
+
+### [navi](https://github.com/denisidoro/navi)
+> An interactive cheatsheet tool for the command-line
 
 ### [ncdu](https://dev.yorhel.nl/ncdu)
 > NCurses Disk Usage.
@@ -253,6 +264,9 @@ tree -L <num> -a
 
 ### [unrar](https://theunarchiver.com/command-line)
 > Command-line unarchiving tools supporting multiple formats
+
+### [xxh](https://github.com/xxh/xxh)
+> Bring your favorite shell wherever you go through the ssh.
 
 ### [z](https://github.com/rupa/z)
 > Tracks your most used directories, based on 'frecency'.
