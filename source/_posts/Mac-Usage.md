@@ -7,6 +7,18 @@ tags:
 - Finder
 ---
 
+## Packages Upgrade and Check
+``` bash
+$ bubu          # brew update && brew outdated && brew upgrade && brew cleanup
+$ brew doctor
+
+$ ncu -g
+$ npm doctor
+
+$ gem update
+$ gem cleanup
+```
+
 ## Keyboard Shortcuts
 [Mac keyboard shortcuts](https://support.apple.com/en-us/HT201236)
 
@@ -18,6 +30,12 @@ tags:
 
 ### Finder Shortcuts
 `Shift-Command-.`: Toggle show hidden files
+
+### System Shortcuts
+`Option–Volume Up` / `Option–Volume Down`: Open Sound preferences.
+`Option–Shift–Volume Up` / `Option–Shift–Volume Down`: Adjust the sound volume in smaller steps.
+`Option–Brightness Up` / `Option–Brightness Down`: Open Displays preferences.
+`Option–Shift–Brightness Up` / `Option–Shift–Brightness Down`: Adjust the display brightness in smaller steps.
 
 ### Document Shortcuts
 `Option–Left`: Move the insertion point to the beginning of the previous word
