@@ -227,7 +227,7 @@ ncdu <dir>
 > General markup converter.
 
 ### [pngquant](https://pngquant.org)
-> PPNG converter and lossy image compressor.
+> Lossy PNG compressor
 ``` bash
 pngquant --ext .png --force 256 *.png */*.png
 ```

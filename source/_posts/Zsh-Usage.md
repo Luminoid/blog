@@ -85,8 +85,8 @@ alias l='exa -aghlF --git --icons'
 alias ltree='exa -ghlFT --git -I=node_modules'
 
 # ncdu
-alias ncdu="ncdu --color dark -rr -x"
-alias ncdu-exclude="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias ncdu="ncdu --color dark -r -x"
+alias ncdu-exclude="ncdu --color dark -r -x --exclude .git --exclude node_modules"
 
 # rlwrap
 alias sml='rlwrap sml'

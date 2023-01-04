@@ -12,7 +12,7 @@ tags:
 ---
 
 Official Site: https://hexo.io/
-Version: 6.0.0
+Version: 6.3.0
 
 ## Workflow
 With Git deployment
@@ -29,7 +29,11 @@ $ git push
 ## Maintenance
 Update outdated npm packages:
 
-Using npm: With `npm-check-updates`. Run `ncu -u` under blog directory (`./`).
+Using npm: With `npm-check-updates`. Run the following commands under the blog directory (`./`).
+``` shell
+$ ncu -u
+$ npm install
+```
 
 ## Configuration
 Site config is stored in `./_config.yml`
@@ -46,7 +50,7 @@ Alternation Priority (From high to low):
 ### [NexT](https://theme-next.js.org/)
 [GitHub](https://github.com/next-theme/hexo-theme-next)
 [Documentation](https://theme-next.js.org/)
-Version: 8.10.0
+Version: 8.14.1
 
 #### Configuration
 NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-next/_config.yml`
