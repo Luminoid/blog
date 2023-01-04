@@ -1,5 +1,5 @@
 # ===============================================================
-# NexT version 8.10.0
+# NexT version 8.14.1
 # It's recommended to use Alternate Theme Config to configure NexT
 # Modifying this file may result in merge conflict
 # See: https://theme-next.js.org/docs/getting-started/configuration
@@ -83,8 +83,14 @@ creative_commons:
 # See: https://hexo.io/docs/helpers#open-graph
 open_graph:
   enable: true
-  # Add pairs each line to customize 
-  options: ''
+  options:
+    #twitter_card: <twitter:card>
+    #twitter_id: <twitter:creator>
+    #twitter_site: <twitter:site>
+    #twitter_image: <twitter:image>
+    #google_plus: <g+:profile_link>
+    #fb_admins: <fb:admin_id>
+    #fb_app_id: <fb:app_id>
 
 
 # ---------------------------------------------------------------
@@ -161,7 +167,6 @@ social:
   Twitter: https://twitter.com/Pentadelic || fab fa-twitter
   E-Mail: mailto:14302010006@fudan.edu.cn || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
@@ -175,7 +180,6 @@ social_icons:
 # Blog rolls
 links_settings:
   icon: fa fa-globe
-  title: Links
   # Available values: block | inline
   layout: block
 
@@ -271,7 +275,6 @@ reward_settings:
   # If true, a donate button will be displayed in every article by default.
   enable: false
   animation: false
-  #comment: Buy me a coffee
 
 reward:
   #wechatpay: /images/wechatpay.png
@@ -284,15 +287,14 @@ reward:
 follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
-  #WeChat: /images/wechat_channel.jpg || fab fa-weixin
+  #WeChat: /images/wechat_channel.png || fab fa-weixin
   RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
   enable: false
-  title: # Custom header, leave empty to use the default one
-  display_in_home: false
+  icon: fa fa-signs-post
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -338,7 +340,7 @@ calendar:
 # See: https://theme-next.js.org/docs/theme-settings/miscellaneous
 # ---------------------------------------------------------------
 
-# Preconnect CDN for fonts and plugins.
+# Preload styles and preconnect CDN for fonts and plugins.
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
 preconnect: false
 
@@ -469,7 +471,7 @@ font:
 # See: https://theme-next.js.org/docs/theme-settings/seo
 # ---------------------------------------------------------------
 
-# If true, site-subtitle will be added to index page.
+# If true, site-subtitle will be added to the title of index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
 
@@ -496,16 +498,62 @@ baidu_site_verification:
 
 
 # ---------------------------------------------------------------
+# Tags Settings
+# See: https://theme-next.js.org/docs/tag-plugins/
+# ---------------------------------------------------------------
+
+# Note tag (bootstrap callout)
+note:
+  # Note tag style values:
+  #  - simple    bootstrap callout old alert style. Default.
+  #  - modern    bootstrap callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: simple
+  icons: false
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
+
+# Tabs tag
+tabs:
+  # Make the nav bar of tabs with long content stick to the top.
+  sticky: false
+  transition:
+    tabs: false
+    labels: true
+
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+# Dependencies: https://github.com/next-theme/theme-next-pdf
+pdf:
+  enable: false
+  # Default height
+  height: 500px
+
+# Mermaid tag
+mermaid:
+  enable: false
+  # Available themes: default | dark | forest | neutral
+  theme:
+    light: default
+    dark: dark
+
+
+# ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
 # See: https://theme-next.js.org/docs/third-party-services/
 # More plugins: https://github.com/next-theme/awesome-next
-# You may need to install the corresponding dependency packages
 # ---------------------------------------------------------------
 
+# ---------------------------------------------------------------
 # Math Formulas Render Support
-# Warning: Please install / uninstall the relevant renderer according to the documentation.
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
+# Warning: Please install / uninstall the relevant renderer according to the documentation.
 # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
+# ---------------------------------------------------------------
+
 math:
   # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in front-matter.
@@ -522,6 +570,12 @@ math:
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 
+
+# ---------------------------------------------------------------
+# External Libraries
+# See: https://theme-next.js.org/docs/third-party-services/external-libraries
+# ---------------------------------------------------------------
+
 # Easily enable fast Ajax navigation on your website.
 # For more information: https://github.com/next-theme/pjax
 pjax: false
@@ -530,7 +584,7 @@ pjax: false
 # For more information: https://fancyapps.com/fancybox/
 fancybox: false
 
-# A JavaScript library for zooming images like Medium.
+# Medium Zoom is a JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
 mediumzoom: false
@@ -539,12 +593,12 @@ mediumzoom: false
 # For more information: https://apoorv.pro/lozad.js/demo/
 lazyload: false
 
-# Pangu Support
+# Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
 pangu: false
 
-# Quicklink Support
+# Prefetch links based on what is in the user's viewport.
 # For more information: https://getquick.link
 # Front-matter variable (nonsupport home archive).
 quicklink:
@@ -561,6 +615,46 @@ quicklink:
   timeout: 3000
   # Default (true) will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
   priority: true
+
+
+# ---------------------------------------------------------------
+# Animation Settings
+# ---------------------------------------------------------------
+
+# Use Animate.css to animate everything.
+# For more information: https://animate.style
+motion:
+  enable: true
+  async: false
+  transition:
+    # All available transition variants: https://theme-next.js.org/animate/
+    menu_item: fadeInDown
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    # Only for Pisces | Gemini.
+    sidebar: fadeInUp
+
+# Progress bar in the top during page loading.
+# For more information: https://github.com/CodeByZach/pace
+pace:
+  enable: true
+  # All available colors:
+  # black | blue | green | orange | pink | purple | red | silver | white | yellow
+  color: blue
+  # All available themes:
+  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+  theme: flash
+
+# Generate a ribbon in your website with HTML5 canvas.
+# For more information: https://github.com/hustcc/ribbon.js
+canvas_ribbon:
+  enable: false
+  size: 300 # The width of the ribbon
+  alpha: 0.6 # The transparency of the ribbon
+  zIndex: -1 # The display level of the ribbon
 
 
 # ---------------------------------------------------------------
@@ -612,6 +706,8 @@ changyan:
   enable: false
   appid:
   appkey:
+  # Show comments count
+  count: true
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -645,7 +741,7 @@ utterances:
   theme: github-light
 
 # Isso
-# For more information: https://posativ.org/isso/
+# For more information: https://isso-comments.de
 isso: # <data_isso>
 
 
@@ -653,13 +749,6 @@ isso: # <data_isso>
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.js.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
-
-# Star rating support to each article.
-# To get your ID visit https://widgetpack.com
-rating:
-  enable: false
-  id:     # <app_id>
-  color:  "#fc6423"
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
@@ -694,6 +783,27 @@ cloudflare_analytics:
 # Microsoft Clarity Analytics
 # See: https://clarity.microsoft.com/
 clarity_analytics: # <project_id>
+
+# Matomo Analytics
+# See: https://matomo.org/
+matomo:
+  enable: false
+  server_url: # https://www.example.com/
+  site_id: # <your site id>
+
+# Umami Analytics
+# See: https://umami.is/
+umami:
+  enable: false
+  script_url: # https://umami.example.com/script.js
+  website_id: # <your website id>
+
+# Plausible Analytics
+# See: https://plausible.io/
+plausible:
+  enable: false
+  script_url: # https://plausible.io/js/script.js
+  site_domain: # www.example.com
 
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
@@ -766,9 +876,8 @@ local_search:
 chat:
   enable: false
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
-  text: Chat # Button text, change it as you wish.
 
-# Chatra Support
+# Chatra is a functional, easy to use piece of chat software for websites.
 # For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
@@ -777,101 +886,18 @@ chatra:
   id: # Visit Dashboard to get your ChatraID
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
-# Tidio Support
+# Tidio is a powerful, all-in-one customer service tool.
 # For more information: https://www.tidio.com
 # Dashboard: https://www.tidio.com/panel/dashboard
 tidio:
   enable: false
   key: # Public Key, get it from dashboard. See: https://www.tidio.com/panel/settings/developer
 
-# Gitter Support
+# Gitter is a chat and networking platform.
 # For more information: https://gitter.im
 gitter:
   enable: false
   room:
-
-
-# ---------------------------------------------------------------
-# Tags Settings
-# See: https://theme-next.js.org/docs/tag-plugins/
-# ---------------------------------------------------------------
-
-# Note tag (bootstrap callout)
-note:
-  # Note tag style values:
-  #  - simple    bootstrap callout old alert style. Default.
-  #  - modern    bootstrap callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
-
-# Tabs tag
-tabs:
-  # Make the nav bar of tabs with long content stick to the top.
-  sticky: false
-  transition:
-    tabs: false
-    labels: true
-
-# PDF tag
-# NexT will try to load pdf files natively, if failed, pdf.js will be used.
-# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
-# Dependencies: https://github.com/next-theme/theme-next-pdf
-pdf:
-  enable: false
-  # Default height
-  height: 500px
-
-# Mermaid tag
-mermaid:
-  enable: false
-  # Available themes: default | dark | forest | neutral
-  theme:
-    light: default
-    dark: dark
-
-
-# ---------------------------------------------------------------
-# Animation Settings
-# ---------------------------------------------------------------
-
-# Use Animate.css to animate everything.
-# For more information: https://animate.style
-motion:
-  enable: true
-  async: false
-  transition:
-    # All available transition variants: https://theme-next.js.org/animate/
-    post_block: fadeIn
-    post_header: fadeInDown
-    post_body: fadeInDown
-    coll_header: fadeInLeft
-    # Only for Pisces | Gemini.
-    sidebar: fadeInUp
-
-# Progress bar in the top during page loading.
-# For more information: https://github.com/CodeByZach/pace
-pace:
-  enable: true
-  # All available colors:
-  # black | blue | green | orange | pink | purple | red | silver | white | yellow
-  color: blue
-  # All available themes:
-  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: flash
-
-# Canvas ribbon
-# For more information: https://github.com/hustcc/ribbon.js
-canvas_ribbon:
-  enable: false
-  size: 300 # The width of the ribbon
-  alpha: 0.6 # The transparency of the ribbon
-  zIndex: -1 # The display level of the ribbon
 
 
 # ---------------------------------------------------------------
@@ -887,7 +913,7 @@ vendors:
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs | custom
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-  plugins: jsdelivr
+  plugins: cdnjs
   # Custom CDN URL
   # For example:
   # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
