@@ -36,6 +36,7 @@ $ gem cleanup
 `Option–Shift–Volume Up` / `Option–Shift–Volume Down`: Adjust the sound volume in smaller steps.
 `Option–Brightness Up` / `Option–Brightness Down`: Open Displays preferences.
 `Option–Shift–Brightness Up` / `Option–Shift–Brightness Down`: Adjust the display brightness in smaller steps.
+`Control-Command-Q`: Immediately lock your screen.
 
 ### Document Shortcuts
 `Option–Left`: Move the insertion point to the beginning of the previous word

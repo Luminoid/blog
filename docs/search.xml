@@ -268,6 +268,61 @@ console<span class="token punctuation">.</span><span class="token function">log<
       </tags>
   </entry>
   <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/blog/Hexo-Quick-Quide/</url>
+    <content><![CDATA[<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 6.3.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
+<span class="token comment"># Edit source/_posts/My-New-Article.md</span>
+$ hexo clean
+$ hexo generate
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
+$ <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token operator">&lt;</span>msg<span class="token operator">></span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
+<p>Using npm: With <code>npm-check-updates</code>. Run the following commands under the blog directory (<code>./</code>).</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ ncu <span class="token parameter variable">-u</span>
+$ <span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Alternation Priority (From high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.14.1</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> include_code <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>lang<span class="token operator">:</span>language<span class="token punctuation">]</span> <span class="token punctuation">[</span>from<span class="token operator">:</span>line<span class="token punctuation">]</span> <span class="token punctuation">[</span>to<span class="token operator">:</span>line<span class="token punctuation">]</span> path/to/file <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> post_link filename <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>escape<span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_path filename <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> slug <span class="token punctuation">[</span>width<span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>title text <span class="token punctuation">[</span>alt text<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_link filename <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>escape<span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>M1 Mac Development Setup</title>
     <url>/blog/M1-Mac-Development-Setup/</url>
     <content><![CDATA[<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
@@ -356,6 +411,9 @@ brew cleanup                <span class="token comment"># Remove stale lock file
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h3 id="btop"><a href="#btop" class="headerlink" title="btop"></a><a href="https://github.com/aristocratos/btop">btop</a></h3><blockquote>
+<p>Resource monitor that shows usage and stats for processor, memory, disks, network and processes.</p>
+</blockquote>
 <h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
 <p>Good-lookin’ diffs with diff-highlight and more.</p>
 </blockquote>
@@ -479,61 +537,6 @@ brew cleanup                <span class="token comment"># Remove stale lock file
       </tags>
   </entry>
   <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/blog/Hexo-Quick-Quide/</url>
-    <content><![CDATA[<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 6.3.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Article"</span>
-<span class="token comment"># Edit source/_posts/My-New-Article.md</span>
-$ hexo clean
-$ hexo generate
-$ <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
-$ <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token operator">&lt;</span>msg<span class="token operator">></span>
-$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
-<p>Using npm: With <code>npm-check-updates</code>. Run the following commands under the blog directory (<code>./</code>).</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ ncu <span class="token parameter variable">-u</span>
-$ <span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
-<span id="more"></span>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Alternation Priority (From high to low):</p>
-<ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
-</ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.14.1</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> include_code <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>lang<span class="token operator">:</span>language<span class="token punctuation">]</span> <span class="token punctuation">[</span>from<span class="token operator">:</span>line<span class="token punctuation">]</span> <span class="token punctuation">[</span>to<span class="token operator">:</span>line<span class="token punctuation">]</span> path/to/file <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> post_link filename <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>escape<span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><pre class="line-numbers language-liquid" data-language="liquid"><code class="language-liquid"><span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_path filename <span class="token delimiter punctuation">%&#125;</span></span>
-<span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> slug <span class="token punctuation">[</span>width<span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>title text <span class="token punctuation">[</span>alt text<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span>
-<span class="token liquid language-liquid"><span class="token delimiter punctuation">&#123;%</span> asset_link filename <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>escape<span class="token punctuation">]</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>Static Site Generator</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac Usage</title>
     <url>/blog/Mac-Usage/</url>
     <content><![CDATA[<h2 id="Packages-Upgrade-and-Check"><a href="#Packages-Upgrade-and-Check" class="headerlink" title="Packages Upgrade and Check"></a>Packages Upgrade and Check</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ bubu          <span class="token comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span>
@@ -548,7 +551,7 @@ $ gem cleanup<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
 <h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
 <h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.</p>
+<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
 <h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
 ]]></content>
       <categories>

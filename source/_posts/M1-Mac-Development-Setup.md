@@ -178,6 +178,9 @@ brew install --cask maccy
 bat <file>
 ```
 
+### [btop](https://github.com/aristocratos/btop)
+> Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+
 ### [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 > Good-lookin' diffs with diff-highlight and more.
 
