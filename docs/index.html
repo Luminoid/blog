@@ -237,9 +237,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-01-22 15:58:03 / Modified: 16:31:59" itemprop="dateCreated datePublished" datetime="2023-01-22T15:58:03-05:00">2023-01-22</time>
+      <time title="Created: 2023-01-22 15:58:03" itemprop="dateCreated datePublished" datetime="2023-01-22T15:58:03-05:00">2023-01-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-30 01:37:58" itemprop="dateModified" datetime="2023-01-30T01:37:58-05:00">2023-01-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -258,7 +264,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>133</span>
+      <span>141</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -276,7 +282,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch remote <span class="token operator">&lt;</span>branch_name<span class="token operator">></span>
+          <h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">--amend</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch remote <span class="token operator">&lt;</span>branch_name<span class="token operator">></span>
 <span class="token function">git</span> merge <span class="token operator">&lt;</span>commit_hash<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="Your-branch-and-‘origin-x2F-master’-have-diverged"><a href="#Your-branch-and-‘origin-x2F-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch origin
@@ -286,20 +294,14 @@
 </div>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog expire --expire-unreachable<span class="token operator">=</span>now <span class="token parameter variable">--all</span>
 <span class="token function">git</span> gc <span class="token parameter variable">--prune</span><span class="token operator">=</span>now<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token parameter variable">--cached</span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Remove a folder recursively</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">--cached</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If the following code is executed accidentally</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop
-<span class="token function">git</span> checkout -- <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gitk <span class="token parameter variable">--all</span> <span class="token variable"><span class="token variable">$(</span> <span class="token function">git</span> <span class="token function">fsck</span> --no-reflog <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/dangling commit/ &#123;print $3&#125;'</span> <span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Then, run <code>git stash</code> to apply the stash entry</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash apply <span class="token operator">&lt;</span>stash_hash<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Git-Solutions-Collection/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -361,7 +363,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-01-10 20:16:13" itemprop="dateModified" datetime="2023-01-10T20:16:13-05:00">2023-01-10</time>
+      <time title="Modified: 2023-01-30 01:33:24" itemprop="dateModified" datetime="2023-01-30T01:33:24-05:00">2023-01-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -380,7 +382,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>779</span>
+      <span>820</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -419,6 +421,117 @@ brew cleanup                <span class="token comment"># Remove stale lock file
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/M1-Mac-Development-Setup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Zsh-Usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+      <meta itemprop="description" content="Notes about programming">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Luminoid's Site">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/Zsh-Usage/" class="post-title-link" itemprop="url">Zsh Usage</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-08 01:08:52" itemprop="dateCreated datePublished" datetime="2021-11-08T01:08:52-05:00">2021-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-30 01:23:19" itemprop="dateModified" datetime="2023-01-30T01:23:19-05:00">2023-01-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>276</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a target="_blank" rel="noopener" href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a target="_blank" rel="noopener" href="https://github.com/zsh-users/antigen">antigen</a></h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/Zsh-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -658,117 +771,6 @@ $ <span class="token function">npm</span> <span class="token function">install</
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/Hexo-Quick-Quide/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/Zsh-Usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
-      <meta itemprop="name" content="Luminoid">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-      <meta itemprop="description" content="Notes about programming">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Luminoid's Site">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/Zsh-Usage/" class="post-title-link" itemprop="url">Zsh Usage</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-11-08 01:08:52" itemprop="dateCreated datePublished" datetime="2021-11-08T01:08:52-05:00">2021-11-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-01-04 01:26:33" itemprop="dateModified" datetime="2023-01-04T01:26:33-05:00">2023-01-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>269</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a target="_blank" rel="noopener" href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a target="_blank" rel="noopener" href="https://github.com/zsh-users/antigen">antigen</a></h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/Zsh-Usage/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1067,7 +1069,7 @@ $ <span class="token function">npm</span> <span class="token function">install</
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9 mins.</span>
+    <span title="Reading time total">10 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -6,6 +6,11 @@ categories: Git
 tags:
 ---
 
+## Amend a commit
+``` bash
+git commit --amend
+```
+
 ## [Git pull till a particular commit](https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit)
 ``` bash
 git fetch remote <branch_name>
@@ -27,6 +32,8 @@ This command would remove all stashed objects.
 git reflog expire --expire-unreachable=now --all
 git gc --prune=now
 ```
+
+<!-- more -->
 
 ## [Remove tracked files in `.gitignore`](https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore)
 Remove a file

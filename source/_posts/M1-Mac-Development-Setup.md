@@ -89,6 +89,28 @@ brew install python3
 [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
 [Java SE Development Kit 8](https://www.oracle.com/java/technologies/downloads/#java8)
 
+### [Ruby](https://www.ruby-lang.org/en/)
+#### Version manager
+[chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install)
+``` bash
+brew install chruby ruby-install
+```
+
+#### Installation
+``` bash
+ruby-install ruby   # Install the current stable version of Ruby
+chruby 3.2.0        # Change the current Ruby.
+```
+
+#### Package Manager
+[RubyGems](https://github.com/rubygems/rubygems)
+
+#### Dependency Manager
+[Bundler](https://bundler.io/)
+``` bash
+gem install bundler
+```
+
 ### [Scheme](https://racket-lang.org/)
 #### Installation
 ``` bash
