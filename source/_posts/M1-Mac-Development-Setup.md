@@ -7,6 +7,8 @@ tags:
 - Package Manager
 - Homebrew
 - Git
+- Ruby
+- Font
 ---
 
 ## Mac Usage
