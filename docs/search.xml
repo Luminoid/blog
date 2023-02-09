@@ -329,7 +329,7 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <li><code>_config.[theme].yml</code> file</li>
 <li><code>_config.yml</code> file under the theme directory</li>
 </ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.14.1</p>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.14.2</p>
 <h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
 <h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
 <h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
