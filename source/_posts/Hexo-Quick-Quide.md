@@ -50,7 +50,7 @@ Alternation Priority (From high to low):
 ### [NexT](https://theme-next.js.org/)
 [GitHub](https://github.com/next-theme/hexo-theme-next)
 [Documentation](https://theme-next.js.org/)
-Version: 8.14.2
+Version: 8.15.0
 
 #### Configuration
 NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-next/_config.yml`
