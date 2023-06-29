@@ -1,5 +1,5 @@
 # ===============================================================
-# NexT version 8.14.1
+# NexT version 8.17.0
 # It's recommended to use Alternate Theme Config to configure NexT
 # Modifying this file may result in merge conflict
 # See: https://theme-next.js.org/docs/getting-started/configuration
@@ -540,6 +540,9 @@ mermaid:
     light: default
     dark: dark
 
+# WaveDrom tag
+wavedrom:
+  enable: false
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
@@ -750,9 +753,12 @@ isso: # <data_isso>
 # See: https://theme-next.js.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
-# AddThis Share. See: https://www.addthis.com
-# Go to https://www.addthis.com/dashboard to customize your tools.
-add_this_id:
+# AddToAny Share. See: https://www.addtoany.com
+addtoany:
+  enable: true
+  buttons:
+    - twitter
+    - facebook
 
 
 # ---------------------------------------------------------------
@@ -797,6 +803,7 @@ umami:
   enable: false
   script_url: # https://umami.example.com/script.js
   website_id: # <your website id>
+  host_url: # <your umami site url>
 
 # Plausible Analytics
 # See: https://plausible.io/
