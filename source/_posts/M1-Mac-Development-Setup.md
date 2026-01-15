@@ -15,6 +15,9 @@ tags:
 {% post_link Mac-Usage %}
 [Awesome Mac](https://github.com/jaywcjlove/awesome-mac)
 
+## Shell
+{% post_link Zsh-Usage %}
+
 ## Package Manager
 ### [Homebrew](https://brew.sh)
 #### Installation
@@ -53,9 +56,6 @@ sudo gem install cocoapods
 ```
 
 <!-- more -->
-
-## Shell
-{% post_link Zsh-Usage %}
 
 ## Terminal
 ### [iTerm2](https://iterm2.com)
@@ -128,6 +128,8 @@ brew install smlnj
 ## Text Editors
 ### [VSCode](https://code.visualstudio.com)
 
+### [Cursor](https://cursor.com/)
+
 ### [Vim](https://www.vim.org)
 #### Installation
 ``` bash
@@ -185,8 +187,11 @@ brew install --cask xbar
 - [Brooklyn](https://github.com/pedrommcarrasco/Brooklyn)
 
 ### [AppCleaner](https://freemacsoft.net/appcleaner/)
+> AppCleaner is a small application which allows you to thoroughly uninstall unwanted apps.
 
 ### [Maccy](https://github.com/p0deje/Maccy)
+> Lightweight clipboard manager for macOS
+
 #### Installation
 ``` bash
 brew install --cask maccy
