@@ -1,0 +1,108 @@
+---
+title: iOS Development Resources From Scratch to App Store
+date: 2026-01-15 23:46:41
+updated:
+categories: iOS
+tags:
+---
+
+## Setup
+Remove storyboard: [Link](https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11)
+[gitignore](https://github.com/github/gitignore/blob/main/Swift.gitignore)
+[SwiftLint](https://github.com/realm/SwiftLint)
+
+## Package
+### Package Manager
+[SPM](https://www.swift.org/package-manager/)
+
+### Common Packages
+[SnapKit](https://github.com/SnapKit/SnapKit)
+[Kingfisher](https://github.com/onevcat/Kingfisher)
+[RxSwift](https://github.com/ReactiveX/RxSwift)
+
+## Debug Tools
+[Lookin](https://github.com/QMUI/LookinServer/)
+
+<!-- more -->
+
+## Design
+[Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/)
+
+## Coding Style
+[Trim trailing spaces in Xcode](https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode)
+
+## Git
+[Commit messages convention](https://www.conventionalcommits.org/en/v1.0.0/)
+
+## Distribution
+### [fastlane](https://docs.fastlane.tools/)
+- [App iconset generation](https://github.com/fastlane-community/fastlane-plugin-appicon)
+- [fastlane with SwiftLint](https://docs.fastlane.tools/actions/swiftlint/)
+
+Change version code, then `fastlane beta`
+``` bash
+bundle exec fastlane beta
+bundle exec fastlane generate_icon
+bundle exec fastlane validate
+``` 
+
+#### Fastfile
+``` Ruby
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    # Change to project root for scripts
+    Dir.chdir("..") do
+      # Check localization completeness
+      sh("python3 Scripts/check_localization.py")
+    end
+    
+    # Increment build number
+    # increment_build_number(xcodeproj: "ProjectName.xcodeproj")
+    
+    # Build and upload
+    # Use export_method: "app-store" for TestFlight
+    # With automatic signing, Xcode will automatically use/create the App Store distribution profile
+    # Note: Make sure you've opened the project in Xcode at least once so it can download
+    # the App Store distribution provisioning profile from your Apple Developer account
+    build_app(
+      scheme: "ProjectName",
+      export_method: "app-store"
+    )
+    # upload_to_testflight
+  end
+  
+  desc "Generate app icon from source image"
+  lane :generate_icon do
+    appicon(
+      appicon_image_file: 'fastlane/metadata/app_icon.png',
+      appicon_devices: %i[ipad iphone ios_marketing],
+      appicon_path: 'ProjectName/Assets.xcassets'
+    )
+  end
+
+  desc "Run pre-build validations"
+  lane :validate do
+    # Change to project root for scripts
+    Dir.chdir("..") do
+      sh("python3 Scripts/check_localization.py")
+    end
+  end
+end
+```
+
+### Apple
+- [Preparing your app for distribution](https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution)
+- [Distributing your app for beta testing and releases](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)
+
+### App Store Preview Images
+- https://www.figma.com/community/device-mockups/iphone
+- https://www.figma.com/community/file/1227376606592772837
+
+## Useful Links
+View App data: https://developer.apple.com/forums/thread/21660
+Disable dark mode: https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/
+Hit-Testing: https://smnh.me/hit-testing-in-ios
+Use Cursor for iOS development: https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941
