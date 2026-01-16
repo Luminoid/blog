@@ -29,7 +29,7 @@
 <meta property="og:description" content="oh-my-zshInstallationsh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;  Themepowerlevel10k PluginsOh My Zsh Plugins Plugin Managerantigen">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-08T09:08:52.000Z">
-<meta property="article:modified_time" content="2023-01-30T06:23:19.829Z">
+<meta property="article:modified_time" content="2026-01-16T05:07:35.960Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="zsh">
 <meta property="article:tag" content="oh-my-zsh">
@@ -251,7 +251,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-01-29 22:23:19" itemprop="dateModified" datetime="2023-01-29T22:23:19-08:00">2023-01-29</time>
+      <time title="Modified: 2026-01-15 21:07:35" itemprop="dateModified" datetime="2026-01-15T21:07:35-08:00">2026-01-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>276</span>
+      <span>264</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -300,71 +300,66 @@
 <h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
 <h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a target="_blank" rel="noopener" href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
 
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Powerlevel10k ########################</span>
-<span class="token comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
-<span class="token comment"># Initialization code that may require console input (password prompts, [y/n]</span>
-<span class="token comment"># confirmations, etc.) must go above this block; everything else may go below.</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token parameter variable">-r</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span>
-<span class="token keyword">fi</span>
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre><code class="bash">######################## Powerlevel10k ########################
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r &quot;$&#123;XDG_CACHE_HOME:-$HOME/.cache&#125;/p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot; ]]; then
+  source &quot;$&#123;XDG_CACHE_HOME:-$HOME/.cache&#125;/p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot;
+fi
 
-<span class="token comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> ~/.p10k.zsh <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">source</span> ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-<span class="token comment">######################## Antigen ########################</span>
+######################## Antigen ########################
 
-<span class="token builtin class-name">source</span> /opt/homebrew/share/antigen/antigen.zsh
-<span class="token builtin class-name">source</span> <span class="token variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/share/antigen/antigen.zsh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 
-<span class="token comment"># Load the oh-my-zsh's library.</span>
+# Load the oh-my-zsh&#39;s library.
 antigen use oh-my-zsh
 
-<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
+# Bundles from the default repo (robbyrussell&#39;s oh-my-zsh)
 antigen bundle colored-man-pages
 antigen bundle extract
-antigen bundle <span class="token function">history</span>
+antigen bundle history
 antigen bundle z
-antigen bundle <span class="token function">git</span>
-antigen bundle <span class="token function">npm</span>
+antigen bundle git
+antigen bundle npm
 antigen bundle gem
 antigen bundle python
 antigen bundle brew
 antigen bundle osx
 antigen bundle pod
 
-<span class="token comment"># Syntax highlighting bundle.</span>
+# Fish shell like syntax highlighting for Zsh.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-<span class="token comment"># Fish-like auto suggestions</span>
+# Fish-like autosuggestions for zsh
 antigen bundle zsh-users/zsh-autosuggestions
 
-<span class="token comment"># Additional completion definitions for Zsh.</span>
+# Additional completion definitions for Zsh.
 antigen bundle zsh-users/zsh-completions
 
-<span class="token comment"># Load the theme.</span>
+# Load the theme.
 antigen theme romkatv/powerlevel10k
 
-<span class="token comment"># Tell Antigen that you're done.</span>
+# Tell Antigen that you&#39;re done.
 antigen apply
 
-<span class="token comment">######################## User Configuration ########################</span>
+######################## User Configuration ########################
 
-<span class="token comment"># list</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git --icons'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
+# list
+alias ls=&#39;ls -hFG&#39;
+alias tree=&#39;tree -C -I node_modules&#39;
+alias l=&#39;eza -aghlF --git --icons&#39;
+alias ltree=&#39;eza -ghlTF --git -I=node_modules&#39;
 
-<span class="token comment"># ncdu</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -r -x"</span>
-<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -r -x --exclude .git --exclude node_modules"</span>
-
-<span class="token comment"># rlwrap</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sml</span><span class="token operator">=</span><span class="token string">'rlwrap sml'</span>
-
-<span class="token comment"># Standard ML of New Jersey</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/smlnj/bin:<span class="token string">"<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# ncdu
+alias ncdu=&quot;ncdu --color dark -r -x&quot;
+alias ncdu-exclude=&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;
+</code></pre>
 
     </div>
 

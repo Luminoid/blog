@@ -373,7 +373,12 @@ brew upgrade                <span class="token comment"># Upgrade outdated casks
 brew leaves                 <span class="token comment"># List installed formulae that are not dependencies of another installed formula.</span>
 brew tap                    <span class="token comment"># Tap a formula repository.</span>
 brew doctor                 <span class="token comment"># Check your system for potential problems.</span>
-brew cleanup                <span class="token comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+brew cleanup                <span class="token comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span>
+
+<span class="token comment"># List installed leaf packages by size</span>
+brew leaves <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> pkg<span class="token punctuation">;</span> <span class="token keyword">do</span>
+  <span class="token function">du</span> <span class="token parameter variable">-sh</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--cellar</span><span class="token variable">)</span></span>/<span class="token variable">$pkg</span>"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s|<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--cellar</span><span class="token variable">)</span></span>/||"</span>
+<span class="token keyword">done</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-hr</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token function">node</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -385,7 +390,9 @@ brew cleanup                <span class="token comment"># Remove stale lock file
 
 <h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> iterm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><a href="/blog/Git-Solutions-Collection/" title="Git Solutions Collection">Git Solutions Collection</a>
+
+<h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
 <h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com/">SourceTree</a></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> sourcetree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -417,7 +424,9 @@ chruby <span class="token number">3.2</span>.0        <span class="token comment
 <h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
 <p>List of useful Quick Look plugins for developers</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency quicklookase qlvideo provisionql quicklook-pat webpquicklook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> apparency betterzip provisionql qlcolorcode qlmarkdown qlstephen qlvideo quicklookase quicklook-json quicklook-pat suspicious-package webpquicklook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Restart the QuickLook manager</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">qlmanage <span class="token parameter variable">-r</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="OpenInCode"><a href="#OpenInCode" class="headerlink" title="OpenInCode"></a><a href="https://github.com/sozercan/OpenInCode">OpenInCode</a></h4><blockquote>
 <p>macOS Finder toolbar app to open current folder in Visual Studio Code</p>
@@ -468,8 +477,8 @@ chruby <span class="token number">3.2</span>.0        <span class="token comment
 <h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
 <p>Good-lookin’ diffs with diff-highlight and more.</p>
 </blockquote>
-<h3 id="exa"><a href="#exa" class="headerlink" title="exa"></a><a href="https://the.exa.website/">exa</a></h3><blockquote>
-<p>A modern replacement for <code>ls</code>.</p>
+<h3 id="eza"><a href="#eza" class="headerlink" title="eza"></a><a href="https://github.com/eza-community/eza">eza</a></h3><blockquote>
+<p>A modern alternative to ls</p>
 </blockquote>
 <h3 id="fd"><a href="#fd" class="headerlink" title="fd"></a><a href="https://github.com/sharkdp/fd">fd</a></h3><blockquote>
 <p>A simple, fast and user-friendly alternative to <code>find</code></p>
@@ -551,6 +560,9 @@ chruby <span class="token number">3.2</span>.0        <span class="token comment
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">z <span class="token operator">&lt;</span>dir<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h2 id="Virtual-Machines"><a href="#Virtual-Machines" class="headerlink" title="Virtual Machines"></a>Virtual Machines</h2><h3 id="Multipass"><a href="#Multipass" class="headerlink" title="Multipass"></a><a href="https://canonical.com/multipass">Multipass</a></h3><blockquote>
+<p>Get an instant Ubuntu VM with a single command. Multipass can launch and run virtual machines and configure them with cloud-init like a public cloud.</p>
+</blockquote>
 <h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew/cask-fonts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><pre class="line-numbers language-none"><code class="language-none">brew install --cask font-fira-code<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -628,6 +640,8 @@ $ gem cleanup<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">n               <span class="token comment"># Display downloaded Node.js versions and install selection</span>
 <span class="token function">sudo</span> n latest   <span class="token comment"># Install the latest Node.js release (downloading if necessary)</span>
 <span class="token function">sudo</span> n lts      <span class="token comment"># Install the latest LTS Node.js release (downloading if necessary)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a></p>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -647,71 +661,66 @@ $ gem cleanup<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
 <h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
 
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">######################## Powerlevel10k ########################</span>
-<span class="token comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span>
-<span class="token comment"># Initialization code that may require console input (password prompts, [y/n]</span>
-<span class="token comment"># confirmations, etc.) must go above this block; everything else may go below.</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token parameter variable">-r</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  <span class="token builtin class-name">source</span> <span class="token string">"<span class="token variable">$&#123;XDG_CACHE_HOME<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.cache&#125;</span>/p10k-instant-prompt-<span class="token variable">$&#123;(<span class="token operator">%</span>)<span class="token operator">:-</span><span class="token operator">%</span>n&#125;</span>.zsh"</span>
-<span class="token keyword">fi</span>
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><pre><code class="bash">######################## Powerlevel10k ########################
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r &quot;$&#123;XDG_CACHE_HOME:-$HOME/.cache&#125;/p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot; ]]; then
+  source &quot;$&#123;XDG_CACHE_HOME:-$HOME/.cache&#125;/p10k-instant-prompt-$&#123;(%):-%n&#125;.zsh&quot;
+fi
 
-<span class="token comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> ~/.p10k.zsh <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">source</span> ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-<span class="token comment">######################## Antigen ########################</span>
+######################## Antigen ########################
 
-<span class="token builtin class-name">source</span> /opt/homebrew/share/antigen/antigen.zsh
-<span class="token builtin class-name">source</span> <span class="token variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/share/antigen/antigen.zsh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 
-<span class="token comment"># Load the oh-my-zsh's library.</span>
+# Load the oh-my-zsh&#39;s library.
 antigen use oh-my-zsh
 
-<span class="token comment"># Bundles from the default repo (robbyrussell's oh-my-zsh)</span>
+# Bundles from the default repo (robbyrussell&#39;s oh-my-zsh)
 antigen bundle colored-man-pages
 antigen bundle extract
-antigen bundle <span class="token function">history</span>
+antigen bundle history
 antigen bundle z
-antigen bundle <span class="token function">git</span>
-antigen bundle <span class="token function">npm</span>
+antigen bundle git
+antigen bundle npm
 antigen bundle gem
 antigen bundle python
 antigen bundle brew
 antigen bundle osx
 antigen bundle pod
 
-<span class="token comment"># Syntax highlighting bundle.</span>
+# Fish shell like syntax highlighting for Zsh.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-<span class="token comment"># Fish-like auto suggestions</span>
+# Fish-like autosuggestions for zsh
 antigen bundle zsh-users/zsh-autosuggestions
 
-<span class="token comment"># Additional completion definitions for Zsh.</span>
+# Additional completion definitions for Zsh.
 antigen bundle zsh-users/zsh-completions
 
-<span class="token comment"># Load the theme.</span>
+# Load the theme.
 antigen theme romkatv/powerlevel10k
 
-<span class="token comment"># Tell Antigen that you're done.</span>
+# Tell Antigen that you&#39;re done.
 antigen apply
 
-<span class="token comment">######################## User Configuration ########################</span>
+######################## User Configuration ########################
 
-<span class="token comment"># list</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls -hFG'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">tree</span><span class="token operator">=</span><span class="token string">'tree -C -I node_modules'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">l</span><span class="token operator">=</span><span class="token string">'exa -aghlF --git --icons'</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ltree</span><span class="token operator">=</span><span class="token string">'exa -ghlFT --git -I=node_modules'</span>
+# list
+alias ls=&#39;ls -hFG&#39;
+alias tree=&#39;tree -C -I node_modules&#39;
+alias l=&#39;eza -aghlF --git --icons&#39;
+alias ltree=&#39;eza -ghlTF --git -I=node_modules&#39;
 
-<span class="token comment"># ncdu</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ncdu</span><span class="token operator">=</span><span class="token string">"ncdu --color dark -r -x"</span>
-<span class="token builtin class-name">alias</span> ncdu-exclude<span class="token operator">=</span><span class="token string">"ncdu --color dark -r -x --exclude .git --exclude node_modules"</span>
-
-<span class="token comment"># rlwrap</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">sml</span><span class="token operator">=</span><span class="token string">'rlwrap sml'</span>
-
-<span class="token comment"># Standard ML of New Jersey</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/smlnj/bin:<span class="token string">"<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# ncdu
+alias ncdu=&quot;ncdu --color dark -r -x&quot;
+alias ncdu-exclude=&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;
+</code></pre>
 ]]></content>
       <categories>
         <category>Shell</category>

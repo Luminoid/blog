@@ -34,3 +34,6 @@ n               # Display downloaded Node.js versions and install selection
 sudo n latest   # Install the latest Node.js release (downloading if necessary)
 sudo n lts      # Install the latest LTS Node.js release (downloading if necessary)
 ```
+
+## Package Manager
+[npm-check-updates](https://www.npmjs.com/package/npm-check-updates)

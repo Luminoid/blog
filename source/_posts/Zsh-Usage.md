@@ -62,10 +62,10 @@ antigen bundle brew
 antigen bundle osx
 antigen bundle pod
 
-# Syntax highlighting bundle.
+# Fish shell like syntax highlighting for Zsh.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Fish-like auto suggestions
+# Fish-like autosuggestions for zsh
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Additional completion definitions for Zsh.
@@ -82,16 +82,9 @@ antigen apply
 # list
 alias ls='ls -hFG'
 alias tree='tree -C -I node_modules'
-alias l='exa -aghlF --git --icons'
-alias ltree='exa -ghlFT --git -I=node_modules'
+alias l='eza -aghlF --git --icons'
+alias ltree='eza -ghlTF --git -I=node_modules'
 
 # ncdu
 alias ncdu="ncdu --color dark -r -x"
 alias ncdu-exclude="ncdu --color dark -r -x --exclude .git --exclude node_modules"
-
-# rlwrap
-alias sml='rlwrap sml'
-
-# Standard ML of New Jersey
-export PATH=/usr/local/smlnj/bin:"$PATH"
-```

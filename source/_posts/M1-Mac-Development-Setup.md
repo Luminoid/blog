@@ -35,6 +35,11 @@ brew leaves                 # List installed formulae that are not dependencies 
 brew tap                    # Tap a formula repository.
 brew doctor                 # Check your system for potential problems.
 brew cleanup                # Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.
+
+# List installed leaf packages by size
+brew leaves | while read pkg; do
+  du -sh "$(brew --cellar)/$pkg" 2>/dev/null | sed "s|$(brew --cellar)/||"
+done | sort -hr
 ```
 
 ### [npm](https://www.npmjs.com)
@@ -68,6 +73,9 @@ brew install --cask iterm2
 
 ## Version Control
 ### Git
+
+{% post_link Git-Solutions-Collection %}
+
 #### SSH
 [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 #### Git GUI
@@ -151,7 +159,11 @@ brew install vim
 #### [quick-look-plugins](https://github.com/sindresorhus/quick-look-plugins)
 > List of useful Quick Look plugins for developers
 ``` bash
-brew install qlcolorcode qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency quicklookase qlvideo provisionql quicklook-pat webpquicklook
+brew install apparency betterzip provisionql qlcolorcode qlmarkdown qlstephen qlvideo quicklookase quicklook-json quicklook-pat suspicious-package webpquicklook
+```
+Restart the QuickLook manager
+``` bash
+qlmanage -r
 ```
 
 #### [OpenInCode](https://github.com/sozercan/OpenInCode)
@@ -213,8 +225,8 @@ bat <file>
 ### [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 > Good-lookin' diffs with diff-highlight and more.
 
-### [exa](https://the.exa.website)
-> A modern replacement for `ls`.
+### [eza](https://github.com/eza-community/eza)
+> A modern alternative to ls
 
 ### [fd](https://github.com/sharkdp/fd)
 > A simple, fast and user-friendly alternative to `find`
@@ -305,6 +317,10 @@ tree -L <num> -a
 ``` bash
 z <dir>
 ```
+
+## Virtual Machines
+### [Multipass](https://canonical.com/multipass)
+> Get an instant Ubuntu VM with a single command. Multipass can launch and run virtual machines and configure them with cloud-init like a public cloud.
 
 ## Font
 ``` bash
