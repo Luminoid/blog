@@ -68,6 +68,7 @@ NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-n
 
 #### Include Code
 {% note warning %}
+#### Warning Header
 `include_code` only works with `.js` files in Hexo 8.1.0, seems like a bug
 {% endnote %}
 ``` liquid
