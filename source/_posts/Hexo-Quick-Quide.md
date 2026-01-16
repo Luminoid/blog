@@ -12,7 +12,7 @@ tags:
 ---
 
 Official Site: https://hexo.io/
-Version: 6.3.0
+Version: 8.1.0
 
 ## Workflow
 With Git deployment
@@ -50,7 +50,7 @@ Alternation Priority (From high to low):
 ### [NexT](https://theme-next.js.org/)
 [GitHub](https://github.com/next-theme/hexo-theme-next)
 [Documentation](https://theme-next.js.org/)
-Version: 8.15.0
+Version: 8.27.0
 
 #### Configuration
 NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-next/_config.yml`
