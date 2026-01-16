@@ -4,6 +4,7 @@ date: 2026-01-15 23:46:41
 updated:
 categories: iOS
 tags:
+- fastlane
 ---
 
 ## Setup
