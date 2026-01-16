@@ -88,3 +88,4 @@ alias ltree='eza -ghlTF --git -I=node_modules'
 # ncdu
 alias ncdu="ncdu --color dark -r -x"
 alias ncdu-exclude="ncdu --color dark -r -x --exclude .git --exclude node_modules"
+```
