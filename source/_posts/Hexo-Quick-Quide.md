@@ -67,6 +67,9 @@ NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-n
 > Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.
 
 #### Include Code
+{% note warning %}
+`include_code` only works with `.js` files in Hexo 8.1.0, seems like a bug
+{% endnote %}
 ``` liquid
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
