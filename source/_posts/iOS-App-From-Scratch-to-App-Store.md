@@ -10,7 +10,6 @@ tags:
 ## Setup
 Remove storyboard: [Link](https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11)
 [gitignore](https://github.com/github/gitignore/blob/main/Swift.gitignore)
-[SwiftLint](https://github.com/realm/SwiftLint)
 
 ## Package
 ### Package Manager
@@ -18,11 +17,35 @@ Remove storyboard: [Link](https://sarunw.com/posts/how-to-create-new-xcode-proje
 
 ### Common Packages
 [SnapKit](https://github.com/SnapKit/SnapKit)
-[Kingfisher](https://github.com/onevcat/Kingfisher)
-[RxSwift](https://github.com/ReactiveX/RxSwift)
+> A Swift Autolayout DSL for iOS & OS X
 
-## Debug Tools
+[Kingfisher](https://github.com/onevcat/Kingfisher)
+> A lightweight, pure-Swift library for downloading and caching images from the web.
+
+[RxSwift](https://github.com/ReactiveX/RxSwift)
+> Reactive Programming in Swift
+
+[R.swift](https://github.com/mac-cain13/R.swift)
+> Strong typed, autocompleted resources like images, fonts and segues in Swift projects
+
+## Tools
+### UI
 [Lookin](https://github.com/QMUI/LookinServer/)
+> You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.
+
+### Code
+[SwiftLint](https://github.com/realm/SwiftLint)
+> A tool to enforce Swift style and conventions.
+
+[SwiftFormat](https://github.com/nicklockwood/SwiftFormat)
+> SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.
+
+### Build
+[Xcode-Build-Server](https://github.com/SolaWing/xcode-build-server)
+> This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.
+
+[xcbeautify](https://github.com/cpisciotta/xcbeautify)
+> `xcbeautify` is a little beautifier tool for `xcodebuild`.
 
 <!-- more -->
 
