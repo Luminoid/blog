@@ -14,6 +14,10 @@ Remove storyboard: [Link](https://sarunw.com/posts/how-to-create-new-xcode-proje
 ## Package
 ### Package Manager
 [SPM](https://www.swift.org/package-manager/)
+Organize, manage, and edit Swift packages.
+
+[Mint](https://github.com/yonaskolb/Mint)
+A package manager that installs and runs Swift command line tool packages.
 
 ### Common Packages
 [SnapKit](https://github.com/SnapKit/SnapKit)

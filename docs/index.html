@@ -228,6 +228,125 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/M1-Mac-Development-Setup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+      <meta itemprop="description" content="Notes about programming">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Luminoid's Site">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/M1-Mac-Development-Setup/" class="post-title-link" itemprop="url">M1 Mac Development Setup</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-07 15:15:40" itemprop="dateCreated datePublished" datetime="2021-11-07T15:15:40-08:00">2021-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-02-01 17:11:52" itemprop="dateModified" datetime="2026-02-01T17:11:52-08:00">2026-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>928</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/blog/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
+
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;      <span class="comment"># Install formula.</span></span><br><span class="line">brew install --cask &lt;cask&gt;  <span class="comment"># Install cask.</span></span><br><span class="line">brew update                 <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span></span><br><span class="line">brew upgrade                <span class="comment"># Upgrade outdated casks and outdated, unpinned formulae.</span></span><br><span class="line">brew leaves                 <span class="comment"># List installed formulae that are not dependencies of another installed formula.</span></span><br><span class="line">brew tap                    <span class="comment"># Tap a formula repository.</span></span><br><span class="line">brew doctor                 <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup                <span class="comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List installed leaf packages by size</span></span><br><span class="line">brew leaves | <span class="keyword">while</span> <span class="built_in">read</span> pkg; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">du</span> -sh <span class="string">&quot;<span class="subst">$(brew --cellar)</span>/<span class="variable">$pkg</span>&quot;</span> 2&gt;/dev/null | sed <span class="string">&quot;s|<span class="subst">$(brew --cellar)</span>/||&quot;</span></span><br><span class="line"><span class="keyword">done</span> | <span class="built_in">sort</span> -hr</span><br></pre></td></tr></table></figure>
+
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> gem install cocoapods</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/M1-Mac-Development-Setup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-App-From-Scratch-to-App-Store/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -264,7 +383,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-01-19 22:06:24" itemprop="dateModified" datetime="2026-01-19T22:06:24-08:00">2026-01-19</time>
+      <time title="Modified: 2026-02-01 17:11:41" itemprop="dateModified" datetime="2026-02-01T17:11:41-08:00">2026-02-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -283,7 +402,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>411</span>
+      <span>430</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -302,7 +421,8 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a target="_blank" rel="noopener" href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">SPM</a></p>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
 <h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
 <blockquote>
 <p>A Swift Autolayout DSL for iOS &amp; OS X</p>
@@ -683,125 +803,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/Zsh-Usage/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/M1-Mac-Development-Setup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
-      <meta itemprop="name" content="Luminoid">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-      <meta itemprop="description" content="Notes about programming">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Luminoid's Site">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/M1-Mac-Development-Setup/" class="post-title-link" itemprop="url">M1 Mac Development Setup</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-11-07 15:15:40" itemprop="dateCreated datePublished" datetime="2021-11-07T15:15:40-08:00">2021-11-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-01-15 22:50:11" itemprop="dateModified" datetime="2026-01-15T22:50:11-08:00">2026-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>905</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
-<p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
-<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/blog/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
-
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;formula&gt;      <span class="comment"># Install formula.</span></span><br><span class="line">brew install --cask &lt;cask&gt;  <span class="comment"># Install cask.</span></span><br><span class="line">brew update                 <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span></span><br><span class="line">brew upgrade                <span class="comment"># Upgrade outdated casks and outdated, unpinned formulae.</span></span><br><span class="line">brew leaves                 <span class="comment"># List installed formulae that are not dependencies of another installed formula.</span></span><br><span class="line">brew tap                    <span class="comment"># Tap a formula repository.</span></span><br><span class="line">brew doctor                 <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup                <span class="comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List installed leaf packages by size</span></span><br><span class="line">brew leaves | <span class="keyword">while</span> <span class="built_in">read</span> pkg; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">du</span> -sh <span class="string">&quot;<span class="subst">$(brew --cellar)</span>/<span class="variable">$pkg</span>&quot;</span> 2&gt;/dev/null | sed <span class="string">&quot;s|<span class="subst">$(brew --cellar)</span>/||&quot;</span></span><br><span class="line"><span class="keyword">done</span> | <span class="built_in">sort</span> -hr</span><br></pre></td></tr></table></figure>
-
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-
-<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a target="_blank" rel="noopener" href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
-
-<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> gem install cocoapods</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/M1-Mac-Development-Setup/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

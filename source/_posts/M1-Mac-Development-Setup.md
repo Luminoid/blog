@@ -99,8 +99,16 @@ brew install python3
 [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
 [Java SE Development Kit 8](https://www.oracle.com/java/technologies/downloads/#java8)
 
+### [Swift](https://developer.apple.com/documentation/swift/)
+#### Package Manager
+[SPM](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/)
+Organize, manage, and edit Swift packages.
+
+[Mint](https://github.com/yonaskolb/Mint)
+A package manager that installs and runs Swift command line tool packages.
+
 ### [Ruby](https://www.ruby-lang.org/en/)
-#### Version manager
+#### Version Manager
 [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install)
 ``` bash
 brew install chruby ruby-install
