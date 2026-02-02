@@ -228,6 +228,152 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-App-From-Scratch-to-App-Store/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+      <meta itemprop="description" content="Notes about programming">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Luminoid's Site">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/iOS-App-From-Scratch-to-App-Store/" class="post-title-link" itemprop="url">iOS Development Resources From Scratch to App Store</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-01-15 23:46:41" itemprop="dateCreated datePublished" datetime="2026-01-15T23:46:41-08:00">2026-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-02-01 18:01:32" itemprop="dateModified" datetime="2026-02-01T18:01:32-08:00">2026-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>502</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a target="_blank" rel="noopener" href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
+<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
+<blockquote>
+<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
+<blockquote>
+<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
+<blockquote>
+<p>Reactive Programming in Swift</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
+<blockquote>
+<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
+</blockquote>
+<p>Issue: <a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a target="_blank" rel="noopener" href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
+<blockquote>
+<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a target="_blank" rel="noopener" href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
+<blockquote>
+<p>A tool to enforce Swift style and conventions.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
+<blockquote>
+<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
+</blockquote>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a target="_blank" rel="noopener" href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
+<blockquote>
+<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
+<blockquote>
+<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/iOS-App-From-Scratch-to-App-Store/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/M1-Mac-Development-Setup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,151 +463,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/M1-Mac-Development-Setup/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://luminoid.github.io/blog/iOS-App-From-Scratch-to-App-Store/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/Avatar.jpeg">
-      <meta itemprop="name" content="Luminoid">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-      <meta itemprop="description" content="Notes about programming">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Luminoid's Site">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/iOS-App-From-Scratch-to-App-Store/" class="post-title-link" itemprop="url">iOS Development Resources From Scratch to App Store</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-01-15 23:46:41" itemprop="dateCreated datePublished" datetime="2026-01-15T23:46:41-08:00">2026-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-02-01 17:11:41" itemprop="dateModified" datetime="2026-02-01T17:11:41-08:00">2026-02-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>430</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a target="_blank" rel="noopener" href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
-<blockquote>
-<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
-<blockquote>
-<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
-<blockquote>
-<p>Reactive Programming in Swift</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
-<blockquote>
-<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
-</blockquote>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a target="_blank" rel="noopener" href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
-<blockquote>
-<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
-</blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a target="_blank" rel="noopener" href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
-<blockquote>
-<p>A tool to enforce Swift style and conventions.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
-<blockquote>
-<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
-</blockquote>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a target="_blank" rel="noopener" href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
-<blockquote>
-<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
-<blockquote>
-<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/iOS-App-From-Scratch-to-App-Store/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

@@ -32,6 +32,9 @@ A package manager that installs and runs Swift command line tool packages.
 [R.swift](https://github.com/mac-cain13/R.swift)
 > Strong typed, autocompleted resources like images, fonts and segues in Swift projects
 
+Issue: https://github.com/mac-cain13/R.swift/issues/815
+Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.
+
 ## Tools
 ### UI
 [Lookin](https://github.com/QMUI/LookinServer/)
@@ -78,13 +81,32 @@ bundle exec fastlane validate
 ``` Ruby
 default_platform(:ios)
 
+# Mac Catalyst lanes (root-level: same app, macOS variant)
+desc "Build Mac Catalyst version of the app"
+lane :catalyst do
+  Dir.chdir("..") do
+    sh("python3 Scripts/analyze_localization.py")
+  end
+
+  build_app(
+    scheme: "ProjectName",
+    clean: true,
+    destination: "generic/platform=macOS",
+    skip_package_ipa: true,
+    export_method: "app-store",
+    catalyst_platform: "macos",
+    output_directory: "./build/Catalyst",
+    xcargs: "ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation"
+  )
+end
+
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     # Change to project root for scripts
     Dir.chdir("..") do
       # Check localization completeness
-      sh("python3 Scripts/check_localization.py")
+      sh("python3 Scripts/analyze_localization.py")
     end
     
     # Increment build number
@@ -101,7 +123,7 @@ platform :ios do
     )
     # upload_to_testflight
   end
-  
+
   desc "Generate app icon from source image"
   lane :generate_icon do
     appicon(
@@ -115,7 +137,7 @@ platform :ios do
   lane :validate do
     # Change to project root for scripts
     Dir.chdir("..") do
-      sh("python3 Scripts/check_localization.py")
+      sh("python3 Scripts/analyze_localization.py")
     end
   end
 end
