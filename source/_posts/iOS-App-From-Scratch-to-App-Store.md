@@ -43,6 +43,9 @@ Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateIntern
 [Lookin](https://github.com/QMUI/LookinServer/)
 > You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.
 
+[Lottie JSON Editor](https://lottiefiles.github.io/lottie-docs/playground/json_editor/)
+Lottie edit and preview
+
 ### Code
 [SwiftLint](https://github.com/realm/SwiftLint)
 > A tool to enforce Swift style and conventions.
