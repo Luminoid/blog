@@ -32,6 +32,9 @@ A package manager that installs and runs Swift command line tool packages.
 [R.swift](https://github.com/mac-cain13/R.swift)
 > Strong typed, autocompleted resources like images, fonts and segues in Swift projects
 
+[Lottie](https://github.com/airbnb/lottie-ios)
+> An iOS library to natively render After Effects vector animations
+
 Issue: https://github.com/mac-cain13/R.swift/issues/815
 Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.
 
@@ -152,6 +155,12 @@ end
 - https://www.figma.com/community/file/1227376606592772837
 
 ## Useful Links
+### Apple
+App Store Connect: https://appstoreconnect.apple.com/
+Developer Account: https://developer.apple.com/account
+iCloud Dashboard: https://developer.apple.com/icloud/dashboards/
+
+### Articles
 View App data: https://developer.apple.com/forums/thread/21660
 Disable dark mode: https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/
 Hit-Testing: https://smnh.me/hit-testing-in-ios

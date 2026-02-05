@@ -84,6 +84,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/blog/Hexo-Quick-Quide/</url>
+    <content><![CDATA[<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
+<p>Using npm: With <code>npm-check-updates</code>. Run the following commands under the blog directory (<code>./</code>).</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Alternation Priority (From high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git Solutions Collection</title>
     <url>/blog/Git-Solutions-Collection/</url>
     <content><![CDATA[<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
@@ -332,78 +380,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js Usage</title>
-    <url>/blog/Node-js-Usage/</url>
-    <content><![CDATA[<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
-
-<p>Check current supported ES6 features.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node --v8-options | grep harmony</span><br></pre></td></tr></table></figure>
-
-<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install n</span><br></pre></td></tr></table></figure>
-
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n               <span class="comment"># Display downloaded Node.js versions and install selection</span></span><br><span class="line"><span class="built_in">sudo</span> n latest   <span class="comment"># Install the latest Node.js release (downloading if necessary)</span></span><br><span class="line"><span class="built_in">sudo</span> n lts      <span class="comment"># Install the latest LTS Node.js release (downloading if necessary)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>Node.js</tag>
-        <tag>n</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/blog/Hexo-Quick-Quide/</url>
-    <content><![CDATA[<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages:</p>
-<p>Using npm: With <code>npm-check-updates</code>. Run the following commands under the blog directory (<code>./</code>).</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
-<span id="more"></span>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Alternation Priority (From high to low):</p>
-<ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
-</ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>Static Site Generator</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS Development Resources From Scratch to App Store</title>
     <url>/blog/iOS-App-From-Scratch-to-App-Store/</url>
     <content><![CDATA[<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
@@ -424,6 +400,10 @@
 <p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
 <blockquote>
 <p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
+</blockquote>
+<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
+<blockquote>
+<p>An iOS library to natively render After Effects vector animations</p>
 </blockquote>
 <p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
 <h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
@@ -468,7 +448,8 @@
 <li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
 <li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
 </ul>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
+<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
 ]]></content>
       <categories>
         <category>iOS</category>
@@ -478,21 +459,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac Usage</title>
-    <url>/blog/Mac-Usage/</url>
-    <content><![CDATA[<h2 id="Packages-Upgrade-and-Check"><a href="#Packages-Upgrade-and-Check" class="headerlink" title="Packages Upgrade and Check"></a>Packages Upgrade and Check</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+    <title>Node.js Usage</title>
+    <url>/blog/Node-js-Usage/</url>
+    <content><![CDATA[<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
 
-<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
-<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
-<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
-<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+<p>Check current supported ES6 features.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node --v8-options | grep harmony</span><br></pre></td></tr></table></figure>
+
+<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install n</span><br></pre></td></tr></table></figure>
+
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n               <span class="comment"># Display downloaded Node.js versions and install selection</span></span><br><span class="line"><span class="built_in">sudo</span> n latest   <span class="comment"># Install the latest Node.js release (downloading if necessary)</span></span><br><span class="line"><span class="built_in">sudo</span> n lts      <span class="comment"># Install the latest LTS Node.js release (downloading if necessary)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a></p>
 ]]></content>
       <categories>
-        <category>Mac</category>
+        <category>Web</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>Finder</tag>
+        <tag>Node.js</tag>
+        <tag>n</tag>
       </tags>
   </entry>
   <entry>
@@ -514,6 +501,24 @@
         <tag>oh-my-zsh</tag>
         <tag>powerlevel10k</tag>
         <tag>antigen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac Usage</title>
+    <url>/blog/Mac-Usage/</url>
+    <content><![CDATA[<h2 id="Packages-Upgrade-and-Check"><a href="#Packages-Upgrade-and-Check" class="headerlink" title="Packages Upgrade and Check"></a>Packages Upgrade and Check</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+
+<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
+<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
+<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
+<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
+<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Finder</tag>
       </tags>
   </entry>
 </search>
