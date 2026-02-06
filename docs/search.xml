@@ -132,6 +132,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Git Solutions Collection</title>
+    <url>/blog/Git-Solutions-Collection/</url>
+    <content><![CDATA[<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command would remove all stashed objects.</p>
+</div>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove a folder recursively</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If the following code is executed accidentally</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+<p>First, use <code>gitk</code> to find the corresponding hash value</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
+<p>Then, run <code>git stash</code> to apply the stash entry</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Mac Usage</title>
     <url>/blog/Mac-Usage/</url>
     <content><![CDATA[<h2 id="Packages-Upgrade-and-Check"><a href="#Packages-Upgrade-and-Check" class="headerlink" title="Packages Upgrade and Check"></a>Packages Upgrade and Check</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
@@ -195,6 +226,86 @@
       </tags>
   </entry>
   <entry>
+    <title>iOS Development Resources From Scratch to App Store</title>
+    <url>/blog/iOS-App-From-Scratch-to-App-Store/</url>
+    <content><![CDATA[<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
+<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
+<blockquote>
+<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
+</blockquote>
+<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
+<blockquote>
+<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
+</blockquote>
+<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
+<blockquote>
+<p>Reactive Programming in Swift</p>
+</blockquote>
+<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
+<blockquote>
+<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
+</blockquote>
+<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
+<blockquote>
+<p>An iOS library to natively render After Effects vector animations</p>
+</blockquote>
+<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
+<blockquote>
+<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
+</blockquote>
+<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
+<blockquote>
+<p>A tool to enforce Swift style and conventions.</p>
+</blockquote>
+<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
+<blockquote>
+<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
+</blockquote>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
+<blockquote>
+<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
+</blockquote>
+<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
+<blockquote>
+<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
+<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
+<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
+<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
+<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
+</ul>
+<p>Change version code, then <code>fastlane beta</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
+
+<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
+<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
+<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
+</ul>
+<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
+<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
+<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
+</ul>
+<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>fastlane</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>M1 Mac Development Setup</title>
     <url>/blog/M1-Mac-Development-Setup/</url>
     <content><![CDATA[<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/blog/Mac-Usage/" title="Mac Usage">Mac Usage</a>
@@ -241,7 +352,7 @@
 
 <h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install smlnj</span><br></pre></td></tr></table></figure>
 
-<h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="https://cursor.com/">Cursor</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+<h2 id="AI-Tools"><a href="#AI-Tools" class="headerlink" title="AI Tools"></a>AI Tools</h2><h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="https://cursor.com/home">Cursor</a></h3><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a><a href="https://code.claude.com/">Claude Code</a></h3><h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
 
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h3><p><a href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
 <h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h2><h3 id="Insomnia"><a href="#Insomnia" class="headerlink" title="Insomnia"></a><a href="https://insomnia.rest/">Insomnia</a></h3><blockquote>
@@ -410,116 +521,5 @@
         <tag>Ruby</tag>
         <tag>Font</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>iOS Development Resources From Scratch to App Store</title>
-    <url>/blog/iOS-App-From-Scratch-to-App-Store/</url>
-    <content><![CDATA[<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
-<blockquote>
-<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
-</blockquote>
-<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
-<blockquote>
-<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
-</blockquote>
-<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
-<blockquote>
-<p>Reactive Programming in Swift</p>
-</blockquote>
-<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
-<blockquote>
-<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
-</blockquote>
-<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
-<blockquote>
-<p>An iOS library to natively render After Effects vector animations</p>
-</blockquote>
-<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
-<blockquote>
-<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
-</blockquote>
-<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
-<blockquote>
-<p>A tool to enforce Swift style and conventions.</p>
-</blockquote>
-<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
-<blockquote>
-<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
-</blockquote>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
-<blockquote>
-<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
-</blockquote>
-<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
-<blockquote>
-<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
-<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
-<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
-<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
-<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
-</ul>
-<p>Change version code, then <code>fastlane beta</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
-
-<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
-<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
-<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
-</ul>
-<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
-<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
-<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
-</ul>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
-<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>fastlane</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Solutions Collection</title>
-    <url>/blog/Git-Solutions-Collection/</url>
-    <content><![CDATA[<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command would remove all stashed objects.</p>
-</div>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<p>Remove a folder recursively</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If the following code is executed accidentally</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
-<p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
-<p>Then, run <code>git stash</code> to apply the stash entry</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
   </entry>
 </search>

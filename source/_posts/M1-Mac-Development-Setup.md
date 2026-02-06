@@ -141,10 +141,14 @@ brew install --cask racket
 brew install smlnj
 ```
 
+## AI Tools
+### [Cursor](https://cursor.com/home)
+
+### [Claude Code](https://code.claude.com/)
+
+
 ## Text Editors
 ### [VSCode](https://code.visualstudio.com)
-
-### [Cursor](https://cursor.com/)
 
 ### [Vim](https://www.vim.org)
 #### Installation
