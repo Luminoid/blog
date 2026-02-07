@@ -71,6 +71,12 @@ Lottie edit and preview
 ## Git
 [Commit messages convention](https://www.conventionalcommits.org/en/v1.0.0/)
 
+Add tags to build
+``` bash
+git tag v1.2.0  # Version 1.2.0
+git tag b10     # Build 10
+```
+
 ## Distribution
 ### [fastlane](https://docs.fastlane.tools/)
 - [App iconset generation](https://github.com/fastlane-community/fastlane-plugin-appicon)
