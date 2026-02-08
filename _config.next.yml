@@ -187,7 +187,8 @@ links_settings:
   layout: block
 
 links:
-  #Title: https://example.com
+  Plantfolio (App Store): https://apps.apple.com/us/app/plantfolio-plus/id6757148663
+  Plantfolio (Website): https://luminoid.github.io/plantfolio-site
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).

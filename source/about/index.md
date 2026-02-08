@@ -16,5 +16,9 @@ date: 2021-11-07 22:18:53
 [Dianping](https://www.dianping.com/): Intern Software Engineer of [Dianping](https://apps.apple.com/us/app/%E5%A4%A7%E4%BC%97%E7%82%B9%E8%AF%84-%E5%8F%91%E7%8E%B0%E5%A5%BD%E5%8E%BB%E5%A4%84/id351091731), 2017 - 2018
 [Tencent](https://www.tencent.com/en-us/): Intern iOS Engineer of [Pitu](https://apps.apple.com/us/app/pitu-best-selfie-and-ps-soft/id724295527), 2017
 
+### Projects
+
+[Plantfolio](https://luminoid.github.io/plantfolio-site) — Plant care & growth records app. [App Store](https://apps.apple.com/us/app/plantfolio-plus/id6757148663)
+
 Development: iOS / Front-end
 Interests: film / photography / plant
