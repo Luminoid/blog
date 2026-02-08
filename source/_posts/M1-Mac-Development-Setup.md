@@ -178,11 +178,12 @@ Restart the QuickLook manager
 qlmanage -r
 ```
 
-#### [OpenInCode](https://github.com/sozercan/OpenInCode)
-> macOS Finder toolbar app to open current folder in Visual Studio Code
+#### [OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal/)
+> Finder Toolbar app for macOS to open the current directory in Terminal, iTerm, Hyper or Alacritty.
 ``` bash
-brew install --cask open-in-code
+brew install --cask openinterminal
 ```
+[Configurations](https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Config.md)
 
 ### Menu Bar Tools
 #### [Itsycal](https://www.mowglii.com/itsycal/)
