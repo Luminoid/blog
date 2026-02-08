@@ -3,6 +3,8 @@ title: About
 date: 2021-11-07 22:18:53
 ---
 
+iOS engineer. Notes about programming and development setup.
+
 ### Education
 
 [New York University](https://www.nyu.edu/): M.S. in Computer Science, 2021 - 2023

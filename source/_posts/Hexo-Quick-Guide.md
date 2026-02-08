@@ -29,9 +29,7 @@ $ git push
 ```
 
 ## Maintenance
-Update outdated npm packages:
-
-Using npm: With `npm-check-updates`. Run the following commands under the blog directory (`./`).
+Update outdated npm packages. With `npm-check-updates`, run the following under the blog directory (`./`):
 ``` shell
 $ ncu -u
 $ npm install

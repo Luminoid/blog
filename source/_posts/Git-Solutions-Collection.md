@@ -20,15 +20,16 @@ git merge <commit_hash>
 ```
 
 ## [Your branch and 'origin/master' have diverged](https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com)
+Use `origin/main` if your default branch is `main`.
 ``` bash
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/master   # or origin/main
 ```
 
 ## [Remove all unreachable objects](https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593)
 {% note warning %}
 ### Warning
-This command would remove all stashed objects.
+This command will remove all stashed objects.
 {% endnote %}
 ``` bash
 git reflog expire --expire-unreachable=now --all

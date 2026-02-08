@@ -76,7 +76,7 @@ brew install --cask iterm2
 ## Version Control
 ### Git
 
-{% post_link Git-Solutions-Collection %}
+{% post_link Git-Solutions-Collection %} — common commands and solutions
 
 #### SSH
 [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
