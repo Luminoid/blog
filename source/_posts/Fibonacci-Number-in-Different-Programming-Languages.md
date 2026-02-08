@@ -1,7 +1,6 @@
 ---
 title: Fibonacci Number in Different Programming Languages
 date: 2022-02-22 15:36:50
-updated: 2026-02-08
 categories: Programming Languages
 tags:
 - C

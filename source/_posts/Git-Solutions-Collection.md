@@ -1,7 +1,6 @@
 ---
 title: Git Solutions Collection
 date: 2023-01-22 15:58:03
-updated: 2026-02-08
 categories: Git
 tags:
 ---

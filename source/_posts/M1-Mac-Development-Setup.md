@@ -1,7 +1,6 @@
 ---
 title: M1 Mac Development Setup
 date: 2021-11-07 15:15:40
-updated: 2026-02-08
 categories: Mac
 tags:
 - Package Manager

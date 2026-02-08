@@ -1,7 +1,6 @@
 ---
 title: Mac Usage
 date: 2022-02-28 14:19:45
-updated: 2026-02-08
 categories: Mac
 tags:
 - Finder

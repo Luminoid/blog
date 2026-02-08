@@ -1,7 +1,6 @@
 ---
 title: iOS Development Resources From Scratch to App Store
 date: 2026-01-15 23:46:41
-updated: 2026-02-08
 categories: iOS
 tags:
 - fastlane

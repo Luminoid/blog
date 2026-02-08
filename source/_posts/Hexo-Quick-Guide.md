@@ -1,7 +1,6 @@
 ---
 title: Hexo Quick Guide
 date: 2022-02-21 23:36:21
-updated: 2026-02-08
 categories:
 - Web
 - Static Site Generator

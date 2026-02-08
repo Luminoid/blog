@@ -1,7 +1,6 @@
 ---
 title: Zsh Usage
 date: 2021-11-08 01:08:52
-updated: 2026-02-08
 categories: Shell
 tags:
 - zsh

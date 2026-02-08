@@ -1,7 +1,6 @@
 ---
 title: Node.js Usage
 date: 2021-11-07 19:36:53
-updated: 2026-02-08
 categories: 
 - Web
 - JavaScript
