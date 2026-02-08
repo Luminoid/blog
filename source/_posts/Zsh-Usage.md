@@ -1,7 +1,7 @@
 ---
 title: Zsh Usage
 date: 2021-11-08 01:08:52
-updated:
+updated: 2026-02-08
 categories: Shell
 tags:
 - zsh
@@ -9,6 +9,8 @@ tags:
 - powerlevel10k
 - antigen
 ---
+
+Configuration for oh-my-zsh with powerlevel10k and antigen.
 
 ## [oh-my-zsh](https://ohmyz.sh)
 ### Installation

@@ -1,7 +1,7 @@
 ---
 title: Node.js Usage
 date: 2021-11-07 19:36:53
-updated:
+updated: 2026-02-08
 categories: 
 - Web
 - JavaScript
@@ -10,13 +10,15 @@ tags:
 - n
 ---
 
+Quick reference for Node.js version management and usage.
+
 ## Usage
 Start REPL.
 ``` bash
 node
 ```
 
-Check current supported ES6 features.
+Check currently supported ES6 features.
 ``` bash
 node --v8-options | grep harmony
 ```

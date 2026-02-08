@@ -1,7 +1,7 @@
 ---
 title: Hexo Quick Guide
 date: 2022-02-21 23:36:21
-updated:
+updated: 2026-02-08
 categories:
 - Web
 - Static Site Generator
@@ -10,6 +10,8 @@ tags:
 - NexT
 - hexo-theme-next
 ---
+
+Short reference for my Hexo/NexT workflow.
 
 Official Site: https://hexo.io/
 Version: 8.1.0
@@ -42,8 +44,8 @@ Site config is stored in `./_config.yml`
 
 ## Theme
 ### Configuration
-Alternation Priority (From high to low):
-- `theme_config` in site’s primary configuration file
+Configuration priority (from high to low):
+- `theme_config` in site's primary configuration file
 - `_config.[theme].yml` file
 - `_config.yml` file under the theme directory
 

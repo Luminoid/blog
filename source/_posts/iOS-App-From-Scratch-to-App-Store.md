@@ -1,11 +1,13 @@
 ---
 title: iOS Development Resources From Scratch to App Store
 date: 2026-01-15 23:46:41
-updated:
+updated: 2026-02-08
 categories: iOS
 tags:
 - fastlane
 ---
+
+Resources for iOS development from setup to App Store distribution.
 
 ## Setup
 Remove storyboard: [Link](https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11)

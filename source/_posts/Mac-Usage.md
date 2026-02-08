@@ -1,13 +1,15 @@
 ---
 title: Mac Usage
 date: 2022-02-28 14:19:45
-updated:
+updated: 2026-02-08
 categories: Mac
 tags:
 - Finder
 ---
 
-## Packages Upgrade and Check
+Shortcuts and commands for daily Mac use.
+
+## Upgrading and Checking Packages
 ``` bash
 $ bubu          # brew update && brew outdated && brew upgrade && brew cleanup
 $ brew doctor

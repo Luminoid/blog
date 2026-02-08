@@ -1,7 +1,7 @@
 ---
 title: Fibonacci Number in Different Programming Languages
 date: 2022-02-22 15:36:50
-updated:
+updated: 2026-02-08
 categories: Programming Languages
 tags:
 - C
@@ -16,7 +16,7 @@ tags:
 - Swift
 ---
 
-Programs for getting the nth Fibonacci number in different programming languages.
+Implementations of the nth Fibonacci number in various programming languages.
 
 ## C (1972)
 <!-- {% include_code lang:c Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c %} -->

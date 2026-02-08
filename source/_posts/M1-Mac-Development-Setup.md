@@ -1,7 +1,7 @@
 ---
 title: M1 Mac Development Setup
 date: 2021-11-07 15:15:40
-updated:
+updated: 2026-02-08
 categories: Mac
 tags:
 - Package Manager
@@ -10,6 +10,8 @@ tags:
 - Ruby
 - Font
 ---
+
+Setup guide for development on M1 Mac.
 
 ## Mac Usage
 {% post_link Mac-Usage %}

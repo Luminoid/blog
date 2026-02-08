@@ -1,10 +1,12 @@
 ---
 title: Git Solutions Collection
 date: 2023-01-22 15:58:03
-updated:
+updated: 2026-02-08
 categories: Git
 tags:
 ---
+
+Reference commands for common Git situations.
 
 ## Amend a commit
 ``` bash
@@ -46,7 +48,7 @@ git rm -r --cached <folder>
 ```
 
 ## [Recover a dropped stash entry](https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git)
-If the following code is executed accidentally
+If you run the following by mistake
 ``` bash
 git stash pop
 git checkout -- .
