@@ -160,6 +160,7 @@ end
 - [Distributing your app for beta testing and releases](https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases)
 
 ### App Store Preview Images
+- [Apple Product Bezels](https://developer.apple.com/design/resources/#product-bezels)
 - https://www.figma.com/community/device-mockups/iphone
 - https://www.figma.com/community/file/1227376606592772837
 
