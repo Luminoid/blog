@@ -90,6 +90,11 @@ bundle exec fastlane generate_icon
 bundle exec fastlane validate
 ``` 
 
+#### Update
+``` bash
+fastlane update_fastlane
+```
+
 #### Fastfile
 ``` Ruby
 default_platform(:ios)
