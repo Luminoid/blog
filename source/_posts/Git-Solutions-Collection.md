@@ -37,6 +37,14 @@ git gc --prune=now
 
 <!-- more -->
 
+## [Commit case sensitive only filename changes](https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/)
+
+``` bash
+git config --global core.ignorecase false
+git mv filename.txt Filename.txt
+git commit -m "Case sensitive file rename"
+```
+
 ## [Remove tracked files in `.gitignore`](https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore)
 Remove a file
 ``` bash
