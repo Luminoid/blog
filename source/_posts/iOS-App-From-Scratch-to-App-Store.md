@@ -40,6 +40,10 @@ Issue: https://github.com/mac-cain13/R.swift/issues/815
 Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.
 
 ## Tools
+### Project
+[XcodeGen](https://github.com/yonaskolb/XcodeGen)
+> A Swift command line tool for generating your Xcode project
+
 ### UI
 [Lookin](https://github.com/QMUI/LookinServer/)
 > You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.

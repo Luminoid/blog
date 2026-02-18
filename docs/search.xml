@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Fibonacci Number in Different Programming Languages</title>
+    <url>/blog/Fibonacci-Number-in-Different-Programming-Languages/</url>
+    <content><![CDATA[<p>Implementations of the nth Fibonacci number in various programming languages.</p>
+<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><!-- {% include_code lang:c Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c %} -->
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fib(%d) = %d\n&quot;</span>, n, fib(n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gcc fibonacci.c</span><br><span class="line">$ ./a.out 1</span><br><span class="line">fib(1) = 1</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Scheme-1975"><a href="#Scheme-1975" class="headerlink" title="Scheme (1975)"></a>Scheme (1975)</h2><p>Tail recursion</p>
+<!-- {% include_code lang:scheme Fibonacci-Number-in-Different-Programming-Languages/Scheme/fibonacci.scm %} -->
+
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">fib</span> n)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a b n)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&lt;=</span></span> n <span class="number">1</span>)</span><br><span class="line">        b</span><br><span class="line">        (<span class="name">iter</span> b (<span class="name"><span class="built_in">+</span></span> a b) (<span class="name"><span class="built_in">-</span></span> n <span class="number">1</span>))))</span><br><span class="line">  (<span class="name">iter</span> <span class="number">0</span> <span class="number">1</span> n))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ racket -f fibonacci.scm -e &quot;(fib 2)&quot;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ada-1980"><a href="#Ada-1980" class="headerlink" title="Ada (1980)"></a>Ada (1980)</h2><!-- {% include_code lang:ada Fibonacci-Number-in-Different-Programming-Languages/Ada/fibonacci.adb %} -->
+
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> Ada.Text_IO;</span><br><span class="line"><span class="keyword">with</span> Ada.Command_Line;</span><br><span class="line"></span><br><span class="line"><span class="keyword">procedure</span> <span class="title">fibonacci</span> <span class="keyword">is</span></span><br><span class="line">    N : <span class="type">Integer</span> := Integer<span class="symbol">&#x27;Value</span>(Ada.Command_Line.Argument(Number =&gt; <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">function</span> <span class="title">fib</span>(</span><br><span class="line">        N: in Integer)</span><br><span class="line">        <span class="keyword">return</span> <span class="type">Integer</span> <span class="keyword">is</span></span><br><span class="line">        A : <span class="type">Integer</span> := <span class="number">0</span>;</span><br><span class="line">        B : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">        C : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">if</span> (N &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span> .. N <span class="keyword">loop</span></span><br><span class="line">            C := A + B;</span><br><span class="line">            A := B;</span><br><span class="line">            B := C;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    Ada.Text_IO.Put_Line(<span class="string">&quot;fib(&quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(N) &amp; <span class="string">&quot;) = &quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(fib(N)));</span><br><span class="line"><span class="keyword">end</span> fibonacci;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gnatmake fibonacci.adb</span><br><span class="line">$ ./fibonacci 3</span><br><span class="line">fib( 3) =  2</span><br></pre></td></tr></table></figure>
+
+<h2 id="Standard-ML-1983"><a href="#Standard-ML-1983" class="headerlink" title="Standard ML (1983)"></a>Standard ML (1983)</h2><p>Tail recursion</p>
+<!-- {% include_code lang:sml Fibonacci-Number-in-Different-Programming-Languages/StandardML/fibonacci.sml %} -->
+
+<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> fib n = </span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">fun</span> iter (a, b, n) = <span class="keyword">if</span> n &lt;= <span class="number">1</span> <span class="keyword">then</span> b <span class="keyword">else</span> iter (b, a + b, n - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">in</span> </span><br><span class="line">        iter(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> n_str = hd (<span class="type">CommandLine</span>.arguments<span class="literal">()</span>)</span><br><span class="line"><span class="keyword">val</span> n = valOf (<span class="type">Int</span>.fromString n_str)</span><br><span class="line"><span class="keyword">val</span> res = fib n</span><br><span class="line"><span class="keyword">val</span> _ = print (<span class="string">&quot;fib(&quot;</span> ^ <span class="type">Int</span>.toString n ^ <span class="string">&quot;) = &quot;</span> ^ <span class="type">Int</span>.toString res)</span><br><span class="line"><span class="keyword">val</span> _ = <span class="type">OS</span>.<span class="type">Process</span>.exit(<span class="type">OS</span>.<span class="type">Process</span>.success)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sml fibonacci.sml 4</span><br><span class="line">fib(4) = 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><!-- {% include_code lang:cpp Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp %} -->
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">atoi</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;fib(&quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt;  <span class="built_in">fib</span>(n) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ g++ fibonacci.cpp</span><br><span class="line">$ ./a.out 5</span><br><span class="line">fib(5) = 5</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><!-- {% include_code lang:python Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py %} -->
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fib(<span class="subst">&#123;n&#125;</span>) = <span class="subst">&#123;fib(n)&#125;</span>\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ python3 fibonacci.py 6</span><br><span class="line">fib(6) = 8</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><!-- {% include_code lang:java Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java %} -->
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fibonacci</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a + b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">        System.out.println(<span class="string">&quot;fib(&quot;</span> + n + <span class="string">&quot;) = &quot;</span> + fib(n));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ javac Fibonacci.java</span><br><span class="line">$ java Fibonacci 7</span><br><span class="line">fib(7) = 13</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-1995"><a href="#JavaScript-1995" class="headerlink" title="JavaScript (1995)"></a>JavaScript (1995)</h2><!-- {% include_code lang:js Fibonacci-Number-in-Different-Programming-Languages/JavaScript/fibonacci.js %} -->
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fib</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> n = process.<span class="property">argv</span>[<span class="number">2</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>\n`</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node fibonacci.js 8</span><br><span class="line">fib(8) = 21</span><br></pre></td></tr></table></figure>
+
+<h2 id="Scala-2004"><a href="#Scala-2004" class="headerlink" title="Scala (2004)"></a>Scala (2004)</h2><!-- {% include_code lang:scala Fibonacci-Number-in-Different-Programming-Languages/Scala/Fibonacci.scala %} -->
+
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Fibonacci</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">fib</span></span>(n: <span class="type">Int</span>): <span class="type">Int</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (_ &lt;- <span class="number">2</span> to n) &#123;</span><br><span class="line">      <span class="keyword">val</span> c = a + b</span><br><span class="line">      a = b</span><br><span class="line">      b = c</span><br><span class="line">    &#125;</span><br><span class="line">    b</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">    <span class="keyword">val</span> n = args(<span class="number">0</span>).toInt</span><br><span class="line">    println(<span class="string">s&quot;fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ scala Fibonacci.scala 9</span><br><span class="line">fib(9) = 34</span><br></pre></td></tr></table></figure>
+
+<h2 id="Swift-2014"><a href="#Swift-2014" class="headerlink" title="Swift (2014)"></a>Swift (2014)</h2><!-- {% include_code lang:swift Fibonacci-Number-in-Different-Programming-Languages/Swift/Fibonacci.swift %} -->
+
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fib</span>(<span class="keyword">_</span> <span class="params">n</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n <span class="operator">&lt;=</span> <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">2</span><span class="operator">...</span>n &#123;</span><br><span class="line">        <span class="keyword">let</span> c <span class="operator">=</span> a <span class="operator">+</span> b</span><br><span class="line">        a <span class="operator">=</span> b</span><br><span class="line">        b <span class="operator">=</span> c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> args <span class="operator">=</span> <span class="type">CommandLine</span>.arguments</span><br><span class="line"><span class="keyword">if</span> args.count <span class="operator">==</span> <span class="number">2</span>, <span class="keyword">let</span> n <span class="operator">=</span> <span class="type">Int</span>(args[<span class="number">1</span>]) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fib(<span class="subst">\(n)</span>) = <span class="subst">\(fib(n))</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Usage: swift fibonacci.swift &lt;number&gt;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ swift fibonacci.swift 10</span><br><span class="line">fib(10) = 55</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Programming Languages</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Scheme</tag>
+        <tag>Ada</tag>
+        <tag>Standard ML</tag>
+        <tag>C++</tag>
+        <tag>Python</tag>
+        <tag>Java</tag>
+        <tag>JavaScript</tag>
+        <tag>Scala</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git Solutions Collection</title>
     <url>/blog/Git-Solutions-Collection/</url>
     <content><![CDATA[<p>Reference commands for common Git situations.</p>
@@ -34,6 +117,54 @@
       <categories>
         <category>Git</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/blog/Hexo-Quick-Guide/</url>
+    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
+<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
   </entry>
   <entry>
     <title>M1 Mac Development Setup</title>
@@ -295,31 +426,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js Usage</title>
-    <url>/blog/Node-js-Usage/</url>
-    <content><![CDATA[<p>Quick reference for Node.js version management and usage.</p>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
-
-<p>Check currently supported ES6 features.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node --v8-options | grep harmony</span><br></pre></td></tr></table></figure>
-
-<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install n</span><br></pre></td></tr></table></figure>
-
-<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n               <span class="comment"># Display downloaded Node.js versions and install selection</span></span><br><span class="line"><span class="built_in">sudo</span> n latest   <span class="comment"># Install the latest Node.js release (downloading if necessary)</span></span><br><span class="line"><span class="built_in">sudo</span> n lts      <span class="comment"># Install the latest LTS Node.js release (downloading if necessary)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>Node.js</tag>
-        <tag>n</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iOS Development Resources From Scratch to App Store</title>
     <url>/blog/iOS-App-From-Scratch-to-App-Store/</url>
     <content><![CDATA[<p>Resources for iOS development from setup to App Store distribution.</p>
@@ -347,7 +453,11 @@
 <p>An iOS library to natively render After Effects vector animations</p>
 </blockquote>
 <p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
+<blockquote>
+<p>A Swift command line tool for generating your Xcode project</p>
+</blockquote>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
 <blockquote>
 <p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
 </blockquote>
@@ -408,134 +518,28 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/blog/Hexo-Quick-Guide/</url>
-    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
-<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+    <title>Node.js Usage</title>
+    <url>/blog/Node-js-Usage/</url>
+    <content><![CDATA[<p>Quick reference for Node.js version management and usage.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Start REPL.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
 
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+<p>Check currently supported ES6 features.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node --v8-options | grep harmony</span><br></pre></td></tr></table></figure>
 
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
-<span id="more"></span>
+<h2 id="Version-Management"><a href="#Version-Management" class="headerlink" title="Version Management"></a>Version Management</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a><a href="https://github.com/tj/n">n</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install n</span><br></pre></td></tr></table></figure>
 
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
-<ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
-</ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">n               <span class="comment"># Display downloaded Node.js versions and install selection</span></span><br><span class="line"><span class="built_in">sudo</span> n latest   <span class="comment"># Install the latest Node.js release (downloading if necessary)</span></span><br><span class="line"><span class="built_in">sudo</span> n lts      <span class="comment"># Install the latest LTS Node.js release (downloading if necessary)</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a></p>
 ]]></content>
       <categories>
         <category>Web</category>
-        <category>Static Site Generator</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fibonacci Number in Different Programming Languages</title>
-    <url>/blog/Fibonacci-Number-in-Different-Programming-Languages/</url>
-    <content><![CDATA[<p>Implementations of the nth Fibonacci number in various programming languages.</p>
-<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><!-- {% include_code lang:c Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c %} -->
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fib(%d) = %d\n&quot;</span>, n, fib(n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gcc fibonacci.c</span><br><span class="line">$ ./a.out 1</span><br><span class="line">fib(1) = 1</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Scheme-1975"><a href="#Scheme-1975" class="headerlink" title="Scheme (1975)"></a>Scheme (1975)</h2><p>Tail recursion</p>
-<!-- {% include_code lang:scheme Fibonacci-Number-in-Different-Programming-Languages/Scheme/fibonacci.scm %} -->
-
-<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">fib</span> n)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a b n)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&lt;=</span></span> n <span class="number">1</span>)</span><br><span class="line">        b</span><br><span class="line">        (<span class="name">iter</span> b (<span class="name"><span class="built_in">+</span></span> a b) (<span class="name"><span class="built_in">-</span></span> n <span class="number">1</span>))))</span><br><span class="line">  (<span class="name">iter</span> <span class="number">0</span> <span class="number">1</span> n))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ racket -f fibonacci.scm -e &quot;(fib 2)&quot;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<h2 id="Ada-1980"><a href="#Ada-1980" class="headerlink" title="Ada (1980)"></a>Ada (1980)</h2><!-- {% include_code lang:ada Fibonacci-Number-in-Different-Programming-Languages/Ada/fibonacci.adb %} -->
-
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> Ada.Text_IO;</span><br><span class="line"><span class="keyword">with</span> Ada.Command_Line;</span><br><span class="line"></span><br><span class="line"><span class="keyword">procedure</span> <span class="title">fibonacci</span> <span class="keyword">is</span></span><br><span class="line">    N : <span class="type">Integer</span> := Integer<span class="symbol">&#x27;Value</span>(Ada.Command_Line.Argument(Number =&gt; <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">function</span> <span class="title">fib</span>(</span><br><span class="line">        N: in Integer)</span><br><span class="line">        <span class="keyword">return</span> <span class="type">Integer</span> <span class="keyword">is</span></span><br><span class="line">        A : <span class="type">Integer</span> := <span class="number">0</span>;</span><br><span class="line">        B : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">        C : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">if</span> (N &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span> .. N <span class="keyword">loop</span></span><br><span class="line">            C := A + B;</span><br><span class="line">            A := B;</span><br><span class="line">            B := C;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    Ada.Text_IO.Put_Line(<span class="string">&quot;fib(&quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(N) &amp; <span class="string">&quot;) = &quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(fib(N)));</span><br><span class="line"><span class="keyword">end</span> fibonacci;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gnatmake fibonacci.adb</span><br><span class="line">$ ./fibonacci 3</span><br><span class="line">fib( 3) =  2</span><br></pre></td></tr></table></figure>
-
-<h2 id="Standard-ML-1983"><a href="#Standard-ML-1983" class="headerlink" title="Standard ML (1983)"></a>Standard ML (1983)</h2><p>Tail recursion</p>
-<!-- {% include_code lang:sml Fibonacci-Number-in-Different-Programming-Languages/StandardML/fibonacci.sml %} -->
-
-<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> fib n = </span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">fun</span> iter (a, b, n) = <span class="keyword">if</span> n &lt;= <span class="number">1</span> <span class="keyword">then</span> b <span class="keyword">else</span> iter (b, a + b, n - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">in</span> </span><br><span class="line">        iter(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> n_str = hd (<span class="type">CommandLine</span>.arguments<span class="literal">()</span>)</span><br><span class="line"><span class="keyword">val</span> n = valOf (<span class="type">Int</span>.fromString n_str)</span><br><span class="line"><span class="keyword">val</span> res = fib n</span><br><span class="line"><span class="keyword">val</span> _ = print (<span class="string">&quot;fib(&quot;</span> ^ <span class="type">Int</span>.toString n ^ <span class="string">&quot;) = &quot;</span> ^ <span class="type">Int</span>.toString res)</span><br><span class="line"><span class="keyword">val</span> _ = <span class="type">OS</span>.<span class="type">Process</span>.exit(<span class="type">OS</span>.<span class="type">Process</span>.success)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sml fibonacci.sml 4</span><br><span class="line">fib(4) = 3</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><!-- {% include_code lang:cpp Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp %} -->
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">atoi</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;fib(&quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt;  <span class="built_in">fib</span>(n) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ g++ fibonacci.cpp</span><br><span class="line">$ ./a.out 5</span><br><span class="line">fib(5) = 5</span><br></pre></td></tr></table></figure>
-
-<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><!-- {% include_code lang:python Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py %} -->
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fib(<span class="subst">&#123;n&#125;</span>) = <span class="subst">&#123;fib(n)&#125;</span>\n&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ python3 fibonacci.py 6</span><br><span class="line">fib(6) = 8</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><!-- {% include_code lang:java Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java %} -->
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fibonacci</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a + b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">        System.out.println(<span class="string">&quot;fib(&quot;</span> + n + <span class="string">&quot;) = &quot;</span> + fib(n));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ javac Fibonacci.java</span><br><span class="line">$ java Fibonacci 7</span><br><span class="line">fib(7) = 13</span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript-1995"><a href="#JavaScript-1995" class="headerlink" title="JavaScript (1995)"></a>JavaScript (1995)</h2><!-- {% include_code lang:js Fibonacci-Number-in-Different-Programming-Languages/JavaScript/fibonacci.js %} -->
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fib</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> n = process.<span class="property">argv</span>[<span class="number">2</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>\n`</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node fibonacci.js 8</span><br><span class="line">fib(8) = 21</span><br></pre></td></tr></table></figure>
-
-<h2 id="Scala-2004"><a href="#Scala-2004" class="headerlink" title="Scala (2004)"></a>Scala (2004)</h2><!-- {% include_code lang:scala Fibonacci-Number-in-Different-Programming-Languages/Scala/Fibonacci.scala %} -->
-
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Fibonacci</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">fib</span></span>(n: <span class="type">Int</span>): <span class="type">Int</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (_ &lt;- <span class="number">2</span> to n) &#123;</span><br><span class="line">      <span class="keyword">val</span> c = a + b</span><br><span class="line">      a = b</span><br><span class="line">      b = c</span><br><span class="line">    &#125;</span><br><span class="line">    b</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">    <span class="keyword">val</span> n = args(<span class="number">0</span>).toInt</span><br><span class="line">    println(<span class="string">s&quot;fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ scala Fibonacci.scala 9</span><br><span class="line">fib(9) = 34</span><br></pre></td></tr></table></figure>
-
-<h2 id="Swift-2014"><a href="#Swift-2014" class="headerlink" title="Swift (2014)"></a>Swift (2014)</h2><!-- {% include_code lang:swift Fibonacci-Number-in-Different-Programming-Languages/Swift/Fibonacci.swift %} -->
-
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fib</span>(<span class="keyword">_</span> <span class="params">n</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n <span class="operator">&lt;=</span> <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">2</span><span class="operator">...</span>n &#123;</span><br><span class="line">        <span class="keyword">let</span> c <span class="operator">=</span> a <span class="operator">+</span> b</span><br><span class="line">        a <span class="operator">=</span> b</span><br><span class="line">        b <span class="operator">=</span> c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> args <span class="operator">=</span> <span class="type">CommandLine</span>.arguments</span><br><span class="line"><span class="keyword">if</span> args.count <span class="operator">==</span> <span class="number">2</span>, <span class="keyword">let</span> n <span class="operator">=</span> <span class="type">Int</span>(args[<span class="number">1</span>]) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fib(<span class="subst">\(n)</span>) = <span class="subst">\(fib(n))</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Usage: swift fibonacci.swift &lt;number&gt;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ swift fibonacci.swift 10</span><br><span class="line">fib(10) = 55</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Programming Languages</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-        <tag>Scheme</tag>
-        <tag>Ada</tag>
-        <tag>Standard ML</tag>
-        <tag>C++</tag>
-        <tag>Python</tag>
-        <tag>Java</tag>
-        <tag>JavaScript</tag>
-        <tag>Scala</tag>
-        <tag>Swift</tag>
+        <tag>Node.js</tag>
+        <tag>n</tag>
       </tags>
   </entry>
 </search>
