@@ -257,6 +257,12 @@ fd <pattern>
 fzf
 ```
 
+### [gh](https://cli.github.com/)
+> Work seamlessly with GitHub from the command line.
+``` bash
+gh release create [<tag>] [<filename>... | <pattern>...]
+```
+
 ### [graphicsmagick](http://www.graphicsmagick.org/)
 > Image processing tools collection.
 
