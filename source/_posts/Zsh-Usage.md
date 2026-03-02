@@ -46,6 +46,7 @@ fi
 
 source /opt/homebrew/share/antigen/antigen.zsh
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+chruby ruby-3.4.2
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
