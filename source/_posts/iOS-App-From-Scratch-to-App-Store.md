@@ -33,16 +33,19 @@ A package manager that installs and runs Swift command line tool packages.
 [R.swift](https://github.com/mac-cain13/R.swift)
 > Strong typed, autocompleted resources like images, fonts and segues in Swift projects
 
-[Lottie](https://github.com/airbnb/lottie-ios)
-> An iOS library to natively render After Effects vector animations
-
 Issue: https://github.com/mac-cain13/R.swift/issues/815
 Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.
+
+[Lottie](https://github.com/airbnb/lottie-ios)
+> An iOS library to natively render After Effects vector animations
 
 ## Tools
 ### Project
 [XcodeGen](https://github.com/yonaskolb/XcodeGen)
 > A Swift command line tool for generating your Xcode project
+
+[Monolith](https://github.com/luminoid/Monolith)
+> Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.
 
 ### UI
 [Lookin](https://github.com/QMUI/LookinServer/)
@@ -66,6 +69,67 @@ Lottie edit and preview
 > `xcbeautify` is a little beautifier tool for `xcodebuild`.
 
 <!-- more -->
+
+## Xcode Command Line
+
+### xcodebuild
+
+``` bash
+# Build
+xcodebuild -scheme MyApp -sdk iphonesimulator build
+
+# Clean build (verify zero warnings)
+xcodebuild -scheme MyApp -sdk iphonesimulator clean build
+
+# Run tests
+xcodebuild -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 17' test
+
+# List schemes
+xcodebuild -list
+
+# Archive
+xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive
+```
+
+### LLDB (Debugger)
+
+Common commands in the Xcode debug console:
+
+| Command | Description |
+|---------|-------------|
+| `bt` | Backtrace — print the call stack of the current thread |
+| `bt all` | Backtrace all threads |
+| `po <expr>` | Print object — evaluate and print a Swift/ObjC expression |
+| `p <expr>` | Print — evaluate expression with type info |
+| `frame variable` | Show all local variables in the current frame |
+| `thread list` | List all threads |
+| `thread return` | Force return from the current function |
+| `breakpoint list` | List all breakpoints |
+| `watchpoint set variable <var>` | Break when a variable changes |
+| `expr <code>` | Execute code at runtime (e.g., `expr view.backgroundColor = .red`) |
+| `continue` / `c` | Resume execution |
+| `step` / `s` | Step into |
+| `next` / `n` | Step over |
+| `finish` | Step out of current function |
+
+### simctl
+
+``` bash
+# List available simulators
+xcrun simctl list devices
+
+# Boot a simulator
+xcrun simctl boot "iPhone 17"
+
+# Open URL in simulator
+xcrun simctl openurl booted "myapp://deeplink"
+
+# Take screenshot
+xcrun simctl io booted screenshot output.png
+
+# Erase simulator data
+xcrun simctl erase "iPhone 17"
+```
 
 ## Design
 [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/)
