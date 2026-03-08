@@ -39,6 +39,9 @@ if [ $# -eq 2 ] && ([ $1 = "deploy" ] || [ $1 = "d" ]); then
 
     echo "$ git push"
     git push
+
+    echo "$ wrangler pages deploy"
+    npx wrangler pages deploy docs --project-name blog
     exit 0
 fi
 
