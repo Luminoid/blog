@@ -5,6 +5,7 @@ db.json
 node_modules/
 public/
 .deploy*/
+docs/
 
 # executable and compilation files
 *.out

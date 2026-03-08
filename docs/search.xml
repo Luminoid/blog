@@ -84,153 +84,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy</title>
-    <url>/Deploy-Static-Site-to-Cloudflare-Pages/</url>
-    <content><![CDATA[<p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
-<span id="more"></span>
-
-<h2 id="What-You-Need"><a href="#What-You-Need" class="headerlink" title="What You Need"></a>What You Need</h2><ul>
-<li>A GitHub account</li>
-<li>A Cloudflare account (free plan works)</li>
-<li>A domain managed by Cloudflare DNS</li>
-<li>A static site (plain HTML&#x2F;CSS&#x2F;JS, no build step required)</li>
-</ul>
-<h2 id="1-Push-Your-Site-to-GitHub"><a href="#1-Push-Your-Site-to-GitHub" class="headerlink" title="1. Push Your Site to GitHub"></a>1. Push Your Site to GitHub</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/my-site</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">gh repo create my-site --public --<span class="built_in">source</span>=. --push</span><br></pre></td></tr></table></figure>
-
-<p>If you don’t have the <code>gh</code> CLI, create the repo on GitHub manually and push:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:YOUR_USERNAME/my-site.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Create-a-Cloudflare-Pages-Project"><a href="#2-Create-a-Cloudflare-Pages-Project" class="headerlink" title="2. Create a Cloudflare Pages Project"></a>2. Create a Cloudflare Pages Project</h2><ol>
-<li>Go to <strong>Cloudflare Dashboard</strong></li>
-<li>Navigate to <strong>Workers &amp; Pages</strong></li>
-<li>Click <strong>Create</strong> &gt; <strong>Pages</strong> &gt; <strong>Connect to Git</strong></li>
-<li>Select your GitHub account and the repository</li>
-<li>Set the production branch to <code>main</code></li>
-</ol>
-<h3 id="Build-Settings"><a href="#Build-Settings" class="headerlink" title="Build Settings"></a>Build Settings</h3><p>For a plain static site (no framework, no bundler):</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Build command</td>
-<td><em>(leave blank)</em></td>
-</tr>
-<tr>
-<td>Build output directory</td>
-<td><code>/</code></td>
-</tr>
-</tbody></table>
-<p>If your site uses a framework:</p>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>Build command</th>
-<th>Output directory</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Hugo</td>
-<td><code>hugo</code></td>
-<td><code>public</code></td>
-</tr>
-<tr>
-<td>Hexo</td>
-<td><code>hexo generate</code></td>
-<td><code>public</code></td>
-</tr>
-<tr>
-<td>Next.js (static)</td>
-<td><code>next build &amp;&amp; next export</code></td>
-<td><code>out</code></td>
-</tr>
-<tr>
-<td>Vite</td>
-<td><code>npm run build</code></td>
-<td><code>dist</code></td>
-</tr>
-</tbody></table>
-<p>Click <strong>Save and Deploy</strong>. Cloudflare builds and deploys immediately.</p>
-<p>Your site is now live at <code>my-site.pages.dev</code>.</p>
-<h2 id="3-Add-a-Custom-Domain"><a href="#3-Add-a-Custom-Domain" class="headerlink" title="3. Add a Custom Domain"></a>3. Add a Custom Domain</h2><ol>
-<li>In your Pages project, go to <strong>Custom domains</strong></li>
-<li>Click <strong>Set up a custom domain</strong></li>
-<li>Enter your subdomain (e.g., <code>app.example.com</code>)</li>
-<li>Cloudflare automatically creates the DNS record:</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Name</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CNAME</td>
-<td><code>app</code></td>
-<td><code>my-site.pages.dev</code></td>
-</tr>
-</tbody></table>
-<p>SSL is provisioned automatically. The domain is usually active within seconds since DNS is already on Cloudflare.</p>
-<h2 id="4-Daily-Workflow"><a href="#4-Daily-Workflow" class="headerlink" title="4. Daily Workflow"></a>4. Daily Workflow</h2><p>That’s it. From now on, every push to <code>main</code> triggers an automatic deploy:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Edit your files</span></span><br><span class="line">vim index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># Push</span></span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;update feature&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># Site updates in ~30 seconds at your custom domain</span></span><br></pre></td></tr></table></figure>
-
-<p>No deploy commands. No CI config files. No build scripts.</p>
-<h2 id="Alternative-Manual-Deploy-with-Wrangler"><a href="#Alternative-Manual-Deploy-with-Wrangler" class="headerlink" title="Alternative: Manual Deploy with Wrangler"></a>Alternative: Manual Deploy with Wrangler</h2><p>If you prefer not to connect GitHub (or need to deploy from a different source), you can use the Wrangler CLI:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install wrangler (one-time)</span></span><br><span class="line">npm install -g wrangler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the project (one-time)</span></span><br><span class="line">npx wrangler pages project create my-site --production-branch main</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy (every time)</span></span><br><span class="line">npx wrangler pages deploy . --project-name my-site</span><br></pre></td></tr></table></figure>
-
-<p>This uploads the current directory directly. No Git integration — you run the command manually each time.</p>
-<p><strong>Note:</strong> Projects created via <code>wrangler</code> cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.</p>
-<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>For a static site deployed to Cloudflare Pages:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">*.swp</span><br><span class="line">*.swo</span><br><span class="line">*~</span><br><span class="line">.wrangler/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure>
-
-<p><code>.wrangler/</code> contains local deploy cache from the Wrangler CLI. <code>node_modules/</code> in case you install wrangler locally.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Action</th>
-<th>Frequency</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Create GitHub repo</td>
-<td><code>gh repo create</code></td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Connect to Cloudflare Pages</td>
-<td>Dashboard UI</td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Add custom domain</td>
-<td>Dashboard &gt; Custom domains</td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Deploy</td>
-<td><code>git push</code></td>
-<td>Every change</td>
-</tr>
-</tbody></table>
-<p>Total setup time: ~5 minutes. Zero ongoing maintenance.</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>GitHub</tag>
-        <tag>static-site</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git Solutions Collection</title>
     <url>/Git-Solutions-Collection/</url>
     <content><![CDATA[<p>Reference commands for common Git situations.</p>
@@ -264,6 +117,73 @@
       <categories>
         <category>Git</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Mac Usage</title>
+    <url>/Mac-Usage/</url>
+    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
+<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+
+<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
+<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
+<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
+<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
+<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Finder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/Hexo-Quick-Guide/</url>
+    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
+<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
   </entry>
   <entry>
     <title>M1 Mac Development Setup</title>
@@ -489,25 +409,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac Usage</title>
-    <url>/Mac-Usage/</url>
-    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
-<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
-
-<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
-<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
-<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
-<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
-]]></content>
-      <categories>
-        <category>Mac</category>
-      </categories>
-      <tags>
-        <tag>Finder</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Node.js Usage</title>
     <url>/Node-js-Usage/</url>
     <content><![CDATA[<p>Quick reference for Node.js version management and usage.</p>
@@ -530,28 +431,6 @@
       <tags>
         <tag>Node.js</tag>
         <tag>n</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Zsh Usage</title>
-    <url>/Zsh-Usage/</url>
-    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
-<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
-
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Shell</category>
-      </categories>
-      <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
       </tags>
   </entry>
   <entry>
@@ -720,51 +599,172 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/Hexo-Quick-Guide/</url>
-    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
-<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+    <title>Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy</title>
+    <url>/Deploy-Static-Site-to-Cloudflare-Pages/</url>
+    <content><![CDATA[<p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
 <span id="more"></span>
 
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
-<ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
+<h2 id="What-You-Need"><a href="#What-You-Need" class="headerlink" title="What You Need"></a>What You Need</h2><ul>
+<li>A GitHub account</li>
+<li>A Cloudflare account (free plan works)</li>
+<li>A domain managed by Cloudflare DNS</li>
+<li>A static site (plain HTML&#x2F;CSS&#x2F;JS, no build step required)</li>
 </ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-Push-Your-Site-to-GitHub"><a href="#1-Push-Your-Site-to-GitHub" class="headerlink" title="1. Push Your Site to GitHub"></a>1. Push Your Site to GitHub</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/my-site</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">gh repo create my-site --public --<span class="built_in">source</span>=. --push</span><br></pre></td></tr></table></figure>
 
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p>If you don’t have the <code>gh</code> CLI, create the repo on GitHub manually and push:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:YOUR_USERNAME/my-site.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
 
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Create-a-Cloudflare-Pages-Project"><a href="#2-Create-a-Cloudflare-Pages-Project" class="headerlink" title="2. Create a Cloudflare Pages Project"></a>2. Create a Cloudflare Pages Project</h2><ol>
+<li>Go to <strong>Cloudflare Dashboard</strong></li>
+<li>Navigate to <strong>Workers &amp; Pages</strong></li>
+<li>Click <strong>Create</strong> &gt; <strong>Pages</strong> &gt; <strong>Connect to Git</strong></li>
+<li>Select your GitHub account and the repository</li>
+<li>Set the production branch to <code>main</code></li>
+</ol>
+<h3 id="Build-Settings"><a href="#Build-Settings" class="headerlink" title="Build Settings"></a>Build Settings</h3><p>For a plain static site (no framework, no bundler):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Build command</td>
+<td><em>(leave blank)</em></td>
+</tr>
+<tr>
+<td>Build output directory</td>
+<td><code>/</code></td>
+</tr>
+</tbody></table>
+<p>If your site uses a framework:</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Build command</th>
+<th>Output directory</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hugo</td>
+<td><code>hugo</code></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td><code>hexo generate</code></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td>Next.js (static)</td>
+<td><code>next build &amp;&amp; next export</code></td>
+<td><code>out</code></td>
+</tr>
+<tr>
+<td>Vite</td>
+<td><code>npm run build</code></td>
+<td><code>dist</code></td>
+</tr>
+</tbody></table>
+<p>Click <strong>Save and Deploy</strong>. Cloudflare builds and deploys immediately.</p>
+<p>Your site is now live at <code>my-site.pages.dev</code>.</p>
+<h2 id="3-Add-a-Custom-Domain"><a href="#3-Add-a-Custom-Domain" class="headerlink" title="3. Add a Custom Domain"></a>3. Add a Custom Domain</h2><ol>
+<li>In your Pages project, go to <strong>Custom domains</strong></li>
+<li>Click <strong>Set up a custom domain</strong></li>
+<li>Enter your subdomain (e.g., <code>app.example.com</code>)</li>
+<li>Cloudflare automatically creates the DNS record:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CNAME</td>
+<td><code>app</code></td>
+<td><code>my-site.pages.dev</code></td>
+</tr>
+</tbody></table>
+<p>SSL is provisioned automatically. The domain is usually active within seconds since DNS is already on Cloudflare.</p>
+<h2 id="4-Daily-Workflow"><a href="#4-Daily-Workflow" class="headerlink" title="4. Daily Workflow"></a>4. Daily Workflow</h2><p>That’s it. From now on, every push to <code>main</code> triggers an automatic deploy:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Edit your files</span></span><br><span class="line">vim index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># Push</span></span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;update feature&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># Site updates in ~30 seconds at your custom domain</span></span><br></pre></td></tr></table></figure>
+
+<p>No deploy commands. No CI config files. No build scripts.</p>
+<h2 id="Alternative-Manual-Deploy-with-Wrangler"><a href="#Alternative-Manual-Deploy-with-Wrangler" class="headerlink" title="Alternative: Manual Deploy with Wrangler"></a>Alternative: Manual Deploy with Wrangler</h2><p>If you prefer not to connect GitHub (or need to deploy from a different source), you can use the Wrangler CLI:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install wrangler (one-time)</span></span><br><span class="line">npm install -g wrangler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the project (one-time)</span></span><br><span class="line">npx wrangler pages project create my-site --production-branch main</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy (every time)</span></span><br><span class="line">npx wrangler pages deploy . --project-name my-site</span><br></pre></td></tr></table></figure>
+
+<p>This uploads the current directory directly. No Git integration — you run the command manually each time.</p>
+<p><strong>Note:</strong> Projects created via <code>wrangler</code> cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.</p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>For a static site deployed to Cloudflare Pages:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">*.swp</span><br><span class="line">*.swo</span><br><span class="line">*~</span><br><span class="line">.wrangler/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure>
+
+<p><code>.wrangler/</code> contains local deploy cache from the Wrangler CLI. <code>node_modules/</code> in case you install wrangler locally.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Create GitHub repo</td>
+<td><code>gh repo create</code></td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Connect to Cloudflare Pages</td>
+<td>Dashboard UI</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Add custom domain</td>
+<td>Dashboard &gt; Custom domains</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Deploy</td>
+<td><code>git push</code></td>
+<td>Every change</td>
+</tr>
+</tbody></table>
+<p>Total setup time: ~5 minutes. Zero ongoing maintenance.</p>
 ]]></content>
       <categories>
         <category>Web</category>
-        <category>Static Site Generator</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
+        <tag>Cloudflare</tag>
+        <tag>GitHub</tag>
+        <tag>static-site</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zsh Usage</title>
+    <url>/Zsh-Usage/</url>
+    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
+<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
       </tags>
   </entry>
 </search>
