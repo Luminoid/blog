@@ -84,105 +84,1961 @@
       </tags>
   </entry>
   <entry>
-    <title>Git Solutions Collection</title>
-    <url>/Git-Solutions-Collection/</url>
-    <content><![CDATA[<p>Reference commands for common Git situations.</p>
-<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+    <title>AI services guide: subscriptions, free tiers, and APIs (March 2026)</title>
+    <url>/AI-Services-Guide-March-2026/</url>
+    <content><![CDATA[<p>A detailed breakdown of every major AI provider in March 2026 – free tiers, chat subscriptions, API pricing, coding agents, model capabilities, mobile SDKs, and open source status.</p>
+<span id="more"></span>
 
-<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
+<h2 id="Two-ways-to-use-AI-models"><a href="#Two-ways-to-use-AI-models" class="headerlink" title="Two ways to use AI models"></a>Two ways to use AI models</h2><p>Every provider offers two access layers. They are almost always billed separately:</p>
+<ol>
+<li><strong>Chat product</strong> – the app you talk to (ChatGPT, Claude, Gemini, Grok, Le Chat, Qwen, Copilot, Perplexity, Nova). Every provider has a free tier with limited usage, and paid subscriptions ($8-300&#x2F;mo) that unlock premium models, higher limits, and features like image gen, voice, and video.</li>
+<li><strong>API</strong> – pay-per-token programmatic access for building apps. Separate billing, separate account, separate pricing.</li>
+</ol>
+<p>The only overlaps: Google AI Pro&#x2F;Ultra subscribers get Google Cloud credits ($10&#x2F;$100 per month) toward Gemini API usage. Perplexity Pro subscribers get $5&#x2F;month in API credits. Everyone else: your subscription gets you the chat app, not programmatic access.</p>
+<h2 id="Quick-comparison"><a href="#Quick-comparison" class="headerlink" title="Quick comparison"></a>Quick comparison</h2><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Chat product</th>
+<th>Cheapest API (in&#x2F;out per 1M)</th>
+<th>Free API tier</th>
+<th>Max context</th>
+<th>Open source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Google Gemini</strong></td>
+<td>Gemini</td>
+<td>$0.10&#x2F;$0.40 (Flash-Lite 2.5)</td>
+<td>Unlimited, no card</td>
+<td>1M</td>
+<td>Gemma (open weights)</td>
+</tr>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>ChatGPT</td>
+<td>$0.10&#x2F;$0.40 (GPT-4.1 Nano)</td>
+<td>Limited trial credits</td>
+<td>1M+</td>
+<td>GPT-OSS (Apache 2.0)</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>Claude</td>
+<td>$1&#x2F;$5 (Haiku 4.5)</td>
+<td>$5 trial credits</td>
+<td>200K (1M beta)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td>Grok</td>
+<td>$0.20&#x2F;$0.50 (Grok 4.1 Fast)</td>
+<td>$25 sign-up credits</td>
+<td>2M</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>DeepSeek</td>
+<td>$0.028&#x2F;$0.42 (V3.2 cached)</td>
+<td>5M tokens free</td>
+<td>128K</td>
+<td>Yes (MIT)</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>Le Chat</td>
+<td>$0.02&#x2F;$0.04 (Nemo)</td>
+<td>API trial credits</td>
+<td>256K</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><strong>Meta Llama</strong></td>
+<td>–</td>
+<td>Free (self-host)</td>
+<td>Models are free</td>
+<td>10M (Scout)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Alibaba Qwen</strong></td>
+<td>Qwen</td>
+<td>$0.05&#x2F;$0.20 (Qwen3-8B)</td>
+<td>1M tokens&#x2F;model</td>
+<td>10M (Qwen-Long)</td>
+<td>Yes (Apache 2.0)</td>
+</tr>
+<tr>
+<td><strong>Amazon Nova</strong></td>
+<td>Nova</td>
+<td>$0.035&#x2F;$0.14 (Nova Micro)</td>
+<td>$200 AWS credits</td>
+<td>1M (Premier)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Microsoft Phi</strong></td>
+<td>Copilot</td>
+<td>$0.075&#x2F;$0.30 (Phi-4-mini)</td>
+<td>GitHub Models free</td>
+<td>128K</td>
+<td>Yes (MIT)</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>Perplexity</td>
+<td>$1&#x2F;$1 (Sonar) + per-req fee</td>
+<td>No free tier</td>
+<td>200K</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>–</td>
+<td>$0.05&#x2F;$0.08 (Llama 3.1 8B)</td>
+<td>Rate-limited, no card</td>
+<td>256K</td>
+<td>Hosts OSS only</td>
+</tr>
+</tbody></table>
+<div class="note info"><p><strong>“Open weights” vs “open source”</strong>: The “Open source” column above uses industry shorthand. Strictly speaking, most providers release <strong>open weights</strong> (trained model parameters you can download and run) but not full training code or data. Here’s the distinction:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th align="center">Model weights</th>
+<th align="center">Training code</th>
+<th align="center">Training data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Open weights</strong></td>
+<td align="center">✓</td>
+<td align="center">✗</td>
+<td align="center">✗</td>
+</tr>
+<tr>
+<td><strong>Open source</strong> (OSI definition)</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+</tbody></table>
+<p>In practice: Apache 2.0 &#x2F; MIT models (Qwen, DeepSeek, Phi, GPT-OSS) are the closest to true open source. Gemma and Llama release weights under more restrictive licenses. Anthropic, Amazon, and Perplexity release no weights at all.</p>
 </div>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
 
-<span id="more"></span>
+<hr>
+<h2 id="Subscription-comparison"><a href="#Subscription-comparison" class="headerlink" title="Subscription comparison"></a>Subscription comparison</h2><h3 id="All-12-providers-at-a-glance"><a href="#All-12-providers-at-a-glance" class="headerlink" title="All 12 providers at a glance"></a>All 12 providers at a glance</h3><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Chat product</th>
+<th>Free tier</th>
+<th>Cheapest paid</th>
+<th>~$20 tier</th>
+<th>High-end</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Google Gemini</strong></td>
+<td><a href="https://gemini.google.com/">Gemini</a></td>
+<td>50 daily credits</td>
+<td>AI Plus $8&#x2F;mo</td>
+<td>AI Pro $20&#x2F;mo</td>
+<td>AI Ultra $250&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td><a href="https://chatgpt.com/">ChatGPT</a></td>
+<td>~10 msgs &#x2F; 5 hrs</td>
+<td>Go $8&#x2F;mo</td>
+<td>Plus $20&#x2F;mo</td>
+<td>Pro $200&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td><a href="https://claude.ai/">Claude</a></td>
+<td>~15-40 msgs &#x2F; 5 hrs</td>
+<td>–</td>
+<td>Pro $20&#x2F;mo</td>
+<td>Max 20x $200&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td><a href="https://grok.com/">Grok</a></td>
+<td>~10 msgs &#x2F; 2 hrs</td>
+<td>X Premium $8&#x2F;mo</td>
+<td>SuperGrok $30&#x2F;mo</td>
+<td>Heavy $300&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td><a href="https://chat.deepseek.com/">DeepSeek</a></td>
+<td>Unlimited (no sub)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td><a href="https://chat.mistral.ai/">Le Chat</a></td>
+<td>~25 msgs</td>
+<td>Student $6&#x2F;mo</td>
+<td>Pro $15&#x2F;mo</td>
+<td>Enterprise (custom)</td>
+</tr>
+<tr>
+<td><strong>Meta Llama</strong></td>
+<td>–</td>
+<td>Models are free</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Alibaba Qwen</strong></td>
+<td><a href="https://chat.qwen.ai/">Qwen</a></td>
+<td>Unlimited (no sub)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Amazon Nova</strong></td>
+<td><a href="https://nova.amazon.com/">Nova</a></td>
+<td>Free (US only)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Microsoft</strong></td>
+<td><a href="https://copilot.microsoft.com/">Copilot</a></td>
+<td>Limited GPT-5.x</td>
+<td>–</td>
+<td>Copilot Pro $20&#x2F;mo</td>
+<td>M365 Enterprise $30&#x2F;seat&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td><a href="https://www.perplexity.ai/">Perplexity</a></td>
+<td>Limited Pro Searches</td>
+<td>–</td>
+<td>Pro $20&#x2F;mo</td>
+<td>Max $200&#x2F;mo</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>–</td>
+<td>Rate-limited API</td>
+<td>Pay-as-you-go</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody></table>
+<h3 id="Feature-comparison-20-tier"><a href="#Feature-comparison-20-tier" class="headerlink" title="Feature comparison (~$20 tier)"></a>Feature comparison (~$20 tier)</h3><p>Seven providers offer a tier around $15-30&#x2F;month. Here’s what you get:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>ChatGPT Plus ($20)</th>
+<th>Claude Pro ($20)</th>
+<th>Gemini AI Pro ($20)</th>
+<th>SuperGrok ($30)</th>
+<th>Le Chat Pro ($15)</th>
+<th>Copilot Pro ($20)</th>
+<th>Perplexity Pro ($20)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Top model</td>
+<td>GPT-5.2 Thinking</td>
+<td>Opus 4.6</td>
+<td>Gemini 3.1 Pro</td>
+<td>Grok 4.1</td>
+<td>Mistral Large 3</td>
+<td>GPT-5.x</td>
+<td>GPT-5.4, Claude, Gemini</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>32K</td>
+<td>200K (1M beta)</td>
+<td>128K+</td>
+<td>128K</td>
+<td>128K</td>
+<td>–</td>
+<td>200K</td>
+</tr>
+<tr>
+<td>Image gen</td>
+<td>DALL-E (~180&#x2F;day)</td>
+<td>No</td>
+<td>Nano Banana Pro</td>
+<td>Aurora&#x2F;Imagine</td>
+<td>Yes</td>
+<td>DALL-E (M365 only)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Video gen</td>
+<td>Sora (720p, 20s)</td>
+<td>No</td>
+<td>Veo (limited)</td>
+<td>Imagine (720p, 6s)</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Voice mode</td>
+<td>Advanced (video&#x2F;screen)</td>
+<td>No</td>
+<td>Yes</td>
+<td>Extended</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Web search</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Deep Search</td>
+<td>DeepSearch</td>
+<td>AFP-verified</td>
+<td>Bing</td>
+<td>Grounded (citations)</td>
+</tr>
+<tr>
+<td>Coding agent</td>
+<td>Codex</td>
+<td>Claude Code</td>
+<td>Jules (5x free)</td>
+<td>Grok Build (waitlist)</td>
+<td>Vibe 2.0</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Deep reasoning</td>
+<td>GPT-5.2 Thinking</td>
+<td>Extended Thinking</td>
+<td>Deep Research</td>
+<td>Big Brain Mode</td>
+<td>Flash Answers</td>
+<td>–</td>
+<td>Deep Research</td>
+</tr>
+<tr>
+<td>No training</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>API credits</td>
+<td>No</td>
+<td>No</td>
+<td>$10&#x2F;mo GCP</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>$5&#x2F;mo</td>
+</tr>
+<tr>
+<td>Unique value</td>
+<td>Broadest features</td>
+<td>Best coding</td>
+<td>Workspace + API credits</td>
+<td>2M context, X data</td>
+<td>Cheapest, no telemetry</td>
+<td>M365 integration</td>
+<td>Search + multi-model</td>
+</tr>
+</tbody></table>
+<p><strong>Best free tier</strong>: <a href="https://chat.deepseek.com/">DeepSeek</a> and <a href="https://chat.qwen.ai/">Qwen</a> (both unlimited, no sub) or <a href="https://gemini.google.com/">Gemini</a> (50 daily credits).</p>
+<p><strong>Best value at ~$20</strong>: Claude Pro for coding depth. ChatGPT Plus for broadest features. Gemini AI Pro for Workspace integration and the only one with API credits. Perplexity Pro for search + access to third-party models. Le Chat Pro is cheapest at $15 with no-telemetry.</p>
+<p><strong>High-end tiers</strong>: Claude Max 20x ($200) for near-unlimited Opus 4.6 + Claude Code. ChatGPT Pro ($200) for unlimited everything + Sora 4K. Google AI Ultra ($250) for 25K credits + YouTube Premium + Deep Think. SuperGrok Heavy ($300) for Grok 4 Heavy multi-agent.</p>
+<hr>
+<h2 id="Coding-agents-comparison"><a href="#Coding-agents-comparison" class="headerlink" title="Coding agents comparison"></a>Coding agents comparison</h2><p>Every major provider now ships a coding agent. Plus a growing ecosystem of third-party agents that use their APIs.</p>
+<h3 id="First-party-agents"><a href="#First-party-agents" class="headerlink" title="First-party agents"></a>First-party agents</h3><table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Provider</th>
+<th>Type</th>
+<th>Cheapest access</th>
+<th>Rules</th>
+<th>Memory</th>
+<th>MCP</th>
+<th>Sub-agents</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://openai.com/index/introducing-codex/">Codex</a></td>
+<td>OpenAI</td>
+<td>Cloud sandbox</td>
+<td>Plus $20&#x2F;mo</td>
+<td><code>AGENTS.md</code></td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://claude.com/product/claude-code">Claude Code</a></td>
+<td>Anthropic</td>
+<td>Terminal CLI</td>
+<td>Pro $20&#x2F;mo</td>
+<td><code>CLAUDE.md</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://jules.google/docs/usage-limits/">Jules</a></td>
+<td>Google</td>
+<td>Async GitHub</td>
+<td>Free (15 tasks&#x2F;day)</td>
+<td><code>AGENTS.md</code></td>
+<td>Partial</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://geminicli.com/">Gemini CLI</a></td>
+<td>Google</td>
+<td>Terminal CLI</td>
+<td>Free (1K req&#x2F;day)</td>
+<td><code>GEMINI.md</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://cloud.google.com/products/gemini-code-assist">Gemini Code Assist</a></td>
+<td>Google</td>
+<td>IDE assistant</td>
+<td>Free</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td><a href="https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/">Antigravity</a></td>
+<td>Google</td>
+<td>Agentic IDE</td>
+<td>Free (preview)</td>
+<td><code>.agents/workflows/</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://grokai.build/">Grok Build</a></td>
+<td>xAI</td>
+<td>Local CLI</td>
+<td>Waitlist</td>
+<td><code>.grok/GROK.md</code></td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Yes (8x)</td>
+</tr>
+<tr>
+<td><a href="https://mistral.ai/news/mistral-vibe-2-0">Vibe 2.0</a></td>
+<td>Mistral</td>
+<td>Terminal CLI</td>
+<td>Le Chat Pro $15&#x2F;mo</td>
+<td><code>AGENTS.md</code></td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/QwenLM/qwen-code">Qwen Code</a></td>
+<td>Alibaba</td>
+<td>Terminal CLI</td>
+<td>Free (1K req&#x2F;day)</td>
+<td><code>QWEN.md</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a></td>
+<td>Amazon</td>
+<td>IDE + CLI</td>
+<td>Free (50 agentic&#x2F;mo)</td>
+<td><code>.amazonq/rules/</code></td>
+<td>Partial</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody></table>
+<p><strong>Other first-party agents</strong> (not coding-specific): <a href="https://openai.com/index/introducing-chatgpt-agent/">Agent Mode</a> (OpenAI, web automation, Plus $20&#x2F;mo), <a href="https://claude.com/blog/cowork-research-preview">Cowork</a> (Anthropic, desktop agent, Pro $20&#x2F;mo), <a href="https://platform.claude.com/docs/en/agents-and-tools/computer-use">Computer Use</a> (Anthropic, screen automation, API only).</p>
+<h3 id="Third-party-agents"><a href="#Third-party-agents" class="headerlink" title="Third-party agents"></a>Third-party agents</h3><p>These use the APIs above. You pick the model, they provide the IDE&#x2F;workflow.</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Type</th>
+<th>Pricing</th>
+<th>Rules</th>
+<th>Memory</th>
+<th>MCP</th>
+<th>Sub-agents</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://cursor.com/">Cursor</a></td>
+<td>VS Code fork</td>
+<td>Free &#x2F; Pro $20 &#x2F; Ultra $200</td>
+<td><code>.cursor/rules/*.mdc</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://windsurf.com/">Windsurf</a></td>
+<td>Agentic IDE</td>
+<td>Free &#x2F; Pro $15 &#x2F; Teams $30</td>
+<td><code>.windsurf/rules/*.md</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://github.com/features/copilot/plans">GitHub Copilot</a></td>
+<td>IDE integration</td>
+<td>Free &#x2F; Pro $10 &#x2F; Pro+ $39</td>
+<td><code>.github/copilot-instructions.md</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="https://cline.bot/">Cline</a></td>
+<td>VS Code extension</td>
+<td>Free (OSS, pay API) &#x2F; Teams $20</td>
+<td><code>.clinerules</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://aider.chat/">Aider</a></td>
+<td>Terminal</td>
+<td>Free (OSS, pay API)</td>
+<td><code>CONVENTIONS.md</code></td>
+<td>No</td>
+<td>Partial</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="https://www.continue.dev/">Continue</a></td>
+<td>VS Code &#x2F; JetBrains</td>
+<td>Solo free &#x2F; Team $10&#x2F;dev</td>
+<td><code>.continue/rules/*.md</code></td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody></table>
+<div class="note info"><p><strong>Rules</strong>: Every agent now supports project-level instruction files, but there is no standard. <code>AGENTS.md</code> is gaining traction across OpenAI, Google, and Mistral tools. GitHub Copilot also reads <code>AGENTS.md</code> and <code>CLAUDE.md</code>.</p>
+<p><strong>MCP</strong>: Near-universal. 18 of 19 agents support MCP natively. Aider has only community&#x2F;experimental support.</p>
+<p><strong>Memory</strong>: Split. About half have true persistent cross-session memory. Others rely on rules files as static context.</p>
+</div>
 
-<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<p>Remove a folder recursively</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
-<p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
-<p>Then, run <code>git stash</code> to apply the stash entry</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mac Usage</title>
-    <url>/Mac-Usage/</url>
-    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
-<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
-
-<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
-<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
-<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
-<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
-]]></content>
-      <categories>
-        <category>Mac</category>
-      </categories>
-      <tags>
-        <tag>Finder</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/Hexo-Quick-Guide/</url>
-    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
-<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
-<span id="more"></span>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
+<p>Note: GitHub Copilot is a Microsoft product. The Pro+ tier ($39&#x2F;mo) includes an autonomous coding agent that creates PRs from GitHub issues and model choice across providers.</p>
+<hr>
+<h2 id="Google-Gemini"><a href="#Google-Gemini" class="headerlink" title="Google Gemini"></a>Google Gemini</h2><p><a href="https://gemini.google.com/">gemini.google.com</a> | <a href="https://aistudio.google.com/">AI Studio</a> | <a href="https://ai.google.dev/gemini-api/docs">API docs</a></p>
+<p>The most generous free tier of any provider. No credit card, no trial period, just get an API key and go.</p>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gemini 3.1 Pro</td>
+<td>1M</td>
+<td>$2.00 &#x2F; $12.00</td>
+<td>Flagship reasoning, agentic workflows, 77.1% ARC-AGI-2</td>
+</tr>
+<tr>
+<td>Gemini 3 Flash</td>
+<td>1M</td>
+<td>$0.50 &#x2F; $3.00</td>
+<td>Near-Pro reasoning at fraction of cost</td>
+</tr>
+<tr>
+<td>Gemini 3.1 Flash-Lite</td>
+<td>1M</td>
+<td>$0.25 &#x2F; $1.50</td>
+<td>Most cost-efficient, high-volume workloads</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro</td>
+<td>1M</td>
+<td>$1.25 &#x2F; $10.00</td>
+<td>Deep reasoning, coding, math, science</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash</td>
+<td>1M</td>
+<td>$0.30 &#x2F; $2.50</td>
+<td>Best price-performance for reasoning</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash-Lite</td>
+<td>1M</td>
+<td>$0.10 &#x2F; $0.40</td>
+<td>Fastest and cheapest multimodal model</td>
+</tr>
+</tbody></table>
+<p>All models accept text, image, audio, video, and PDF input. 1M token context across the board.</p>
+<p><strong>Specialized models</strong>: Imagen 4 (image gen, $0.02-0.06&#x2F;image), Veo 3.1 (video gen), Gemini Embedding 2 (multimodal embeddings), Computer Use (UI automation).</p>
+<h3 id="Subscriptions"><a href="#Subscriptions" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Storage</th>
+<th>Models</th>
+<th>Key features</th>
+<th>API access</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>15 GB</td>
+<td>Gemini 3</td>
+<td>50 daily AI credits, basic NotebookLM (100 notebooks, 50 queries&#x2F;day), limited image gen</td>
+<td>No</td>
+</tr>
+<tr>
+<td>AI Plus</td>
+<td>$7.99&#x2F;mo</td>
+<td>200 GB</td>
+<td>Gemini 3 Pro</td>
+<td>200 monthly credits, limited Veo 3.1 Fast video, limited Workspace AI, share with 5 family members</td>
+<td>No</td>
+</tr>
+<tr>
+<td>AI Pro</td>
+<td>$19.99&#x2F;mo</td>
+<td>2 TB</td>
+<td>Gemini 3.1 Pro</td>
+<td>1,000 monthly credits, Deep Research, Deep Search, NotebookLM (500 notebooks, 300 sources, 500 queries&#x2F;day), full Workspace AI (Gmail&#x2F;Docs&#x2F;Sheets&#x2F;Slides), Jules (5x free), Gemini Code Assist, Gems (custom AI personas), family sharing</td>
+<td>$10&#x2F;mo GCP credits</td>
+</tr>
+<tr>
+<td>AI Ultra</td>
+<td>$249.99&#x2F;mo</td>
+<td>30 TB</td>
+<td>Gemini 3.1 Pro, Deep Think</td>
+<td>25,000 monthly credits, Deep Think (extended reasoning, exclusive), highest Deep Research access, Veo 3.1 full + early Veo 3.16, Jules (20x free, multi-agent), YouTube Premium included, early access to experimental features, family sharing</td>
+<td>$100&#x2F;mo GCP credits</td>
+</tr>
+</tbody></table>
+<p>Credits do NOT roll over. See <a href="https://gemini.google/subscriptions/">subscription plans</a> and <a href="https://one.google.com/about/google-ai-plans/">Google One AI plans</a> for details.</p>
+<h3 id="Free-tier-API"><a href="#Free-tier-API" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Requests&#x2F;min</th>
+<th>Tokens&#x2F;min</th>
+<th>Requests&#x2F;day</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gemini 3 Flash</td>
+<td>10</td>
+<td>250K</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Gemini 3.1 Flash-Lite</td>
+<td>15</td>
+<td>250K</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro</td>
+<td>5</td>
+<td>250K</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash</td>
+<td>10</td>
+<td>250K</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash-Lite</td>
+<td>15</td>
+<td>250K</td>
+<td>1,000</td>
+</tr>
+</tbody></table>
+<p>Free tier covers Flash and Flash-Lite models across generations (not Pro). No credit card required. Content on free tier may be used to improve Google’s products.</p>
+<h3 id="Open-source"><a href="#Open-source" class="headerlink" title="Open source"></a>Open source</h3><p>Gemini itself is proprietary. <a href="https://ai.google.dev/gemma">Gemma</a> (1B-27B params) is Google’s open-weight alternative, built on the same research. Free for commercial use.</p>
+<h3 id="Mobile-SDK"><a href="#Mobile-SDK" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>Google consolidated mobile access under <a href="https://firebase.google.com/products/firebase-ai-logic">Firebase AI Logic</a>. SDKs for Swift (iOS), Kotlin (Android), Flutter, React Native, Unity, and Web. The older standalone Google AI SDKs are deprecated.</p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://gemini.google/subscriptions/">Subscription plans</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/pricing">API pricing</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/models">Models reference</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/rate-limits">Rate limits</a></li>
+<li><a href="https://firebase.google.com/products/firebase-ai-logic">Firebase AI Logic SDKs</a></li>
+</ul>
+<hr>
+<h2 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h2><p><a href="https://chatgpt.com/">chatgpt.com</a> | <a href="https://platform.openai.com/">platform.openai.com</a> | <a href="https://developers.openai.com/api/docs">API docs</a></p>
+<p>The largest model lineup. GPT-5.x for general use, o-series for reasoning, GPT-4.1 for low-latency tool calling.</p>
+<h3 id="Models-1"><a href="#Models-1" class="headerlink" title="Models"></a>Models</h3><p><strong>GPT-5 series:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT-5.4</td>
+<td>1M+</td>
+<td>$2.50 &#x2F; $15.00</td>
+<td>Latest flagship, computer-use, 33% fewer errors vs 5.2</td>
+</tr>
+<tr>
+<td>GPT-5.4 Pro</td>
+<td>1M+</td>
+<td>$30.00 &#x2F; $180.00</td>
+<td>Extended reasoning</td>
+</tr>
+<tr>
+<td>GPT-5.2</td>
+<td>400K</td>
+<td>$1.75 &#x2F; $14.00</td>
+<td>Workhorse model, cached input at $0.175</td>
+</tr>
+<tr>
+<td>GPT-5</td>
+<td>400K</td>
+<td>$1.25 &#x2F; $10.00</td>
+<td>Original GPT-5</td>
+</tr>
+<tr>
+<td>GPT-5 Mini</td>
+<td>400K</td>
+<td>$0.25 &#x2F; $2.00</td>
+<td>Faster, cheaper</td>
+</tr>
+<tr>
+<td>GPT-5 Nano</td>
+<td>400K</td>
+<td>$0.05 &#x2F; $0.40</td>
+<td>Cheapest GPT-5, edge-friendly</td>
+</tr>
+</tbody></table>
+<p><strong>O-series (reasoning):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>o3</td>
+<td>200K</td>
+<td>$2.00 &#x2F; $8.00</td>
+<td>Advanced reasoning (math, science, coding)</td>
+</tr>
+<tr>
+<td>o3 Pro</td>
+<td>200K</td>
+<td>$20.00 &#x2F; $80.00</td>
+<td>Extended compute</td>
+</tr>
+<tr>
+<td>o4 Mini</td>
+<td>200K</td>
+<td>$1.10 &#x2F; $4.40</td>
+<td>Fast reasoning, efficient</td>
+</tr>
+<tr>
+<td>o4 Mini High</td>
+<td>200K</td>
+<td>$1.10 &#x2F; $4.40</td>
+<td>Same per-token price, higher reasoning compute budget</td>
+</tr>
+</tbody></table>
+<p>O-series models use hidden “reasoning tokens” billed as output. A 500-token visible response may cost 2,000+ tokens total.</p>
+<p><strong>GPT-4.1 series (still available):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT-4.1</td>
+<td>1M</td>
+<td>$2.00 &#x2F; $8.00</td>
+<td>Instruction following, tool calling</td>
+</tr>
+<tr>
+<td>GPT-4.1 Mini</td>
+<td>1M</td>
+<td>$0.40 &#x2F; $1.60</td>
+<td>Same strengths, lower cost</td>
+</tr>
+<tr>
+<td>GPT-4.1 Nano</td>
+<td>1M</td>
+<td>$0.10 &#x2F; $0.40</td>
+<td>Cheapest in the lineup</td>
+</tr>
+</tbody></table>
+<p>All models accept text and image input. Batch API available at 50% off across all models.</p>
+<h3 id="Subscriptions-1"><a href="#Subscriptions-1" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p><strong>Individual plans:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Models</th>
+<th>Message limits</th>
+<th>Key features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>GPT-5.2 Instant (lightweight)</td>
+<td>~10 per 5 hours, falls back to Mini</td>
+<td>Basic DALL-E (2-3 images&#x2F;day), limited Sora 2, limited Deep Research, basic voice, can use GPTs but not create them</td>
+</tr>
+<tr>
+<td>ChatGPT Go</td>
+<td>$8&#x2F;mo</td>
+<td>GPT-5.2 Instant (unlimited)</td>
+<td>~10x Free</td>
+<td>DALL-E, file upload, code interpreter, web browsing, create custom GPTs. No Sora, no Deep Research, no Agent Mode, no Codex</td>
+</tr>
+<tr>
+<td>ChatGPT Plus</td>
+<td>$20&#x2F;mo</td>
+<td>GPT-5.2, GPT-5.2 Thinking, o3-pro</td>
+<td>~3,000&#x2F;week (Thinking)</td>
+<td>DALL-E (~180 images&#x2F;day), Sora (1,000 credits&#x2F;mo, 720p, 20s clips), Deep Research, Agent Mode, Codex, Canvas, Tasks, Advanced Voice (video&#x2F;screen sharing), 32K context</td>
+</tr>
+<tr>
+<td>ChatGPT Pro</td>
+<td>$200&#x2F;mo</td>
+<td>All Plus models + GPT-5.2 Pro</td>
+<td>Effectively unlimited</td>
+<td>Unlimited DALL-E, Sora (10,000 credits + unlimited relaxed mode, 1080p&#x2F;4K, 90s clips, no watermark), 128K context (4x Plus), ChatGPT Pulse (exclusive), early access to new features</td>
+</tr>
+</tbody></table>
+<p><strong>Business plans:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Team</td>
+<td>$25-30&#x2F;user&#x2F;mo</td>
+<td>Same as Plus models + higher Thinking caps, admin console, conversations NOT used for training, shared workspace GPTs</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>Custom</td>
+<td>Unlimited higher-speed GPT-5.2, extended context, SSO, SCIM, SOC 2 + ISO compliance, custom data retention, not trained on</td>
+</tr>
+</tbody></table>
+<p>None of these include API credits. See <a href="https://chatgpt.com/pricing/">ChatGPT plans</a> for details. API is a completely separate billing system at <a href="https://platform.openai.com/">platform.openai.com</a>.</p>
+<h3 id="Free-tier-API-1"><a href="#Free-tier-API-1" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p>The free trial credit program ($5) was discontinued in mid-2025. Reports conflict on whether new accounts still receive credits. Check <a href="https://platform.openai.com/">platform.openai.com</a> directly. Pay-as-you-go with no minimum spend once you add a payment method.</p>
+<h3 id="Open-source-1"><a href="#Open-source-1" class="headerlink" title="Open source"></a>Open source</h3><p>OpenAI released two open-weight models under <strong>Apache 2.0</strong>:</p>
 <ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
+<li><strong>GPT-OSS-120B</strong>: ~117B params (5.1B active via MoE), runs on a single 80GB GPU. Matches o4-mini on reasoning.</li>
+<li><strong>GPT-OSS-20B</strong>: Runs on 16GB memory. Matches o3-mini.</li>
 </ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+<p>Both on <a href="https://huggingface.co/openai">Hugging Face</a> with MXFP4 quantization.</p>
+<h3 id="Mobile-SDK-1"><a href="#Mobile-SDK-1" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No official native iOS&#x2F;Android SDK. The API is standard REST&#x2F;HTTP. Community options:</p>
+<ul>
+<li><a href="https://github.com/MacPaw/OpenAI">MacPaw&#x2F;OpenAI</a> – third-party Swift package for iOS&#x2F;macOS</li>
 </ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p>OpenAI also offers an <strong>Apps SDK</strong> (preview) for building apps that run inside ChatGPT, and a <strong>Realtime API</strong> via WebRTC for client-side voice&#x2F;text streaming.</p>
+<h3 id="Links-1"><a href="#Links-1" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://chatgpt.com/pricing/">ChatGPT plans</a></li>
+<li><a href="https://openai.com/api/pricing/">API pricing</a></li>
+<li><a href="https://developers.openai.com/api/docs/models">Models docs</a></li>
+<li><a href="https://openai.com/open-models/">Open models</a></li>
+</ul>
+<hr>
+<h2 id="Anthropic-Claude"><a href="#Anthropic-Claude" class="headerlink" title="Anthropic Claude"></a>Anthropic Claude</h2><p><a href="https://claude.ai/">claude.ai</a> | <a href="https://console.anthropic.com/">console.anthropic.com</a> | <a href="https://platform.claude.com/docs">API docs</a></p>
+<p>The smallest model lineup but strong across the board. Known for instruction following, safety, and coding quality.</p>
+<h3 id="Models-2"><a href="#Models-2" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Opus 4.6</td>
+<td>200K (1M beta)</td>
+<td>$5 &#x2F; $25</td>
+<td>Most intelligent; agents, coding, complex reasoning</td>
+</tr>
+<tr>
+<td>Claude Sonnet 4.6</td>
+<td>200K (1M beta)</td>
+<td>$3 &#x2F; $15</td>
+<td>Best balance of speed and intelligence</td>
+</tr>
+<tr>
+<td>Claude Haiku 4.5</td>
+<td>200K</td>
+<td>$1 &#x2F; $5</td>
+<td>Fastest, near-frontier intelligence</td>
+</tr>
+</tbody></table>
+<p>All models support text + image input and PDF processing (up to 100 images per request). Extended thinking available on all three. 1M context in beta for Opus and Sonnet (via <code>context-1m-2025-08-07</code> header).</p>
+<p><strong>Prompt caching</strong>: Cache hits cost 0.1x input price (90% savings). Cache write costs 1.25x-2x depending on TTL (5 min or 1 hour).</p>
+<p><strong>Batch API</strong>: 50% discount on all models.</p>
+<h3 id="Subscriptions-2"><a href="#Subscriptions-2" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p><strong>Individual plans:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Models</th>
+<th>Usage</th>
+<th>Key features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>Sonnet 4.6</td>
+<td>~15-40 msgs per 5-hour window</td>
+<td>200K context, up to 20 file uploads (30 MB each), web search, Projects, Artifacts. No Extended Thinking, no Computer Use, no Claude Code, no Opus. Conversations may be used for training</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>$20&#x2F;mo ($17 annual)</td>
+<td>Sonnet 4.6, Opus 4.5, Opus 4.6, Haiku 4.5</td>
+<td>5x Free (~75-200 per 5 hours)</td>
+<td>Extended Thinking, Claude Code, Cowork, unlimited Projects, limited Computer Use, priority access. NOT used for training</td>
+</tr>
+<tr>
+<td>Max 5x</td>
+<td>$100&#x2F;mo</td>
+<td>All models including Opus 4.6</td>
+<td>5x Pro &#x2F; 25x Free</td>
+<td>Higher Extended Thinking compute, Computer Use, 200K context (1M beta, 128K max output)</td>
+</tr>
+<tr>
+<td>Max 20x</td>
+<td>$200&#x2F;mo</td>
+<td>All models including Opus 4.6</td>
+<td>20x Pro &#x2F; 100x Free</td>
+<td>Everything in Max 5x with 4x the usage ceiling. Best for heavy developers needing near-unlimited Opus 4.6</td>
+</tr>
+</tbody></table>
+<p><strong>Business plans:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Team Standard</td>
+<td>$25&#x2F;seat&#x2F;mo</td>
+<td>Same as Pro, shared project folders, admin console, SSO, domain capture. Min 5 seats. NOT trained on</td>
+</tr>
+<tr>
+<td>Team Premium</td>
+<td>$150&#x2F;seat&#x2F;mo</td>
+<td>Everything in Standard + Claude Code included</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>Custom</td>
+<td>Fine-grained RBAC, SCIM provisioning, SAML 2.0 SSO, compliance API, audit logs, custom data retention, usage-based billing with admin spending caps, Claude Code included</td>
+</tr>
+</tbody></table>
+<p>See <a href="https://claude.com/pricing">Claude plans</a> for details. API is separate at <a href="https://console.anthropic.com/">console.anthropic.com</a>.</p>
+<h3 id="Free-tier-API-2"><a href="#Free-tier-API-2" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p>$5 in free credits upon creating a developer account (phone verification required, region-dependent). After that, pure pay-as-you-go with tier-based rate limits.</p>
+<h3 id="Open-source-2"><a href="#Open-source-2" class="headerlink" title="Open source"></a>Open source</h3><p>Not open source. No model weights released. Anthropic has been explicit about this as a safety position. The <a href="https://modelcontextprotocol.io/">Model Context Protocol (MCP)</a> is open source.</p>
+<h3 id="Mobile-SDK-2"><a href="#Mobile-SDK-2" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No official Swift or Kotlin SDK. Seven official server-side SDKs: Python, TypeScript, Java, Go, Ruby, C#, PHP. Community mobile options:</p>
+<ul>
+<li><a href="https://github.com/jamesrochabrun/SwiftAnthropic">SwiftAnthropic</a> – third-party Swift package</li>
+<li><a href="https://guitaripod.github.io/AnthropicKit/">AnthropicKit</a> – third-party Swift SDK</li>
+</ul>
+<h3 id="Links-2"><a href="#Links-2" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://claude.com/pricing">Claude plans</a></li>
+<li><a href="https://platform.claude.com/docs/en/about-claude/pricing">API pricing</a></li>
+<li><a href="https://platform.claude.com/docs/en/about-claude/models/overview">Models overview</a></li>
+<li><a href="https://platform.claude.com/docs/en/api/client-sdks">Client SDKs</a></li>
+</ul>
+<hr>
+<h2 id="xAI-Grok"><a href="#xAI-Grok" class="headerlink" title="xAI (Grok)"></a>xAI (Grok)</h2><p><a href="https://grok.com/">grok.com</a> | <a href="https://x.ai/api">x.ai&#x2F;api</a> | <a href="https://docs.x.ai/">API docs</a></p>
+<p>Largest context window (2M tokens) and aggressive sign-up credits. Built into X (Twitter) with real-time social data access.</p>
+<h3 id="Models-3"><a href="#Models-3" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Grok 4.20 Multi-Agent</td>
+<td>2M</td>
+<td>$2.00 &#x2F; $6.00</td>
+<td>Multi-agent orchestration</td>
+</tr>
+<tr>
+<td>Grok 4.20 (reasoning)</td>
+<td>2M</td>
+<td>$2.00 &#x2F; $6.00</td>
+<td>Flagship reasoning</td>
+</tr>
+<tr>
+<td>Grok 4.1 Fast (reasoning)</td>
+<td>2M</td>
+<td>$0.20 &#x2F; $0.50</td>
+<td>Best value</td>
+</tr>
+<tr>
+<td>Grok Code Fast 1</td>
+<td>256K</td>
+<td>$0.20 &#x2F; $1.50</td>
+<td>Code-specialized</td>
+</tr>
+</tbody></table>
+<p>Image input supported on Grok 4.x models. Image generation ($0.02-0.07&#x2F;image) and video generation ($0.05&#x2F;second) available as separate endpoints.</p>
+<h3 id="Subscriptions-3"><a href="#Subscriptions-3" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Models</th>
+<th>Limits</th>
+<th>Key features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>Grok 3 (limited)</td>
+<td>~10 msgs per 2 hours</td>
+<td>~10 Aurora images per 2 hours, basic voice. No DeepSearch, no Think mode</td>
+</tr>
+<tr>
+<td>X Premium</td>
+<td>$8&#x2F;mo</td>
+<td>Grok 3, limited Grok 4</td>
+<td>Higher than Free</td>
+<td>Image gen, voice, basic memory. Bundled with blue checkmark + reduced ads. 50% off SuperGrok</td>
+</tr>
+<tr>
+<td>X Premium+</td>
+<td>$40&#x2F;mo</td>
+<td>Grok 4, Grok 4.1</td>
+<td>~100 prompts per 2 hours</td>
+<td>Limited DeepSearch, limited Think (~30 per 2 hours), extended voice + memory. Bundled with ad revenue sharing + ad-free browsing. 50% off SuperGrok</td>
+</tr>
+<tr>
+<td>SuperGrok</td>
+<td>$30&#x2F;mo</td>
+<td>Grok 4, Grok 4.1</td>
+<td>~30 per 2 hours (Think&#x2F;DeepSearch)</td>
+<td>128K context memory, full DeepSearch, Big Brain Mode (extended reasoning), Imagine (image gen + 720p 6s video), Aurora image editing, priority routing</td>
+</tr>
+<tr>
+<td>SuperGrok Heavy</td>
+<td>$300&#x2F;mo</td>
+<td>Grok 4 Heavy (multi-agent)</td>
+<td>Dramatically higher</td>
+<td>256K context (2x SuperGrok), maximum compute priority, 100% AIME 2025, Grok 4 Heavy exclusive</td>
+</tr>
+<tr>
+<td>Grok Business</td>
+<td>$30-300&#x2F;seat&#x2F;mo</td>
+<td>Standard or Heavy</td>
+<td>Team-managed</td>
+<td>Admin controls, API access included</td>
+</tr>
+</tbody></table>
+<p>See <a href="https://grok.com/plans">Grok plans</a> for details. API is separate pay-as-you-go for non-Business tiers. $25 in free sign-up credits.</p>
+<h3 id="Open-source-3"><a href="#Open-source-3" class="headerlink" title="Open source"></a>Open source</h3><p>Grok 1 and Grok 2.5 weights are on <a href="https://huggingface.co/xai-org/grok-2">Hugging Face</a>. Grok 3 open-source planned. Current frontier models (4.x) are proprietary.</p>
+<h3 id="Mobile-SDK-3"><a href="#Mobile-SDK-3" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No dedicated SDK. The API is OpenAI-compatible, so any OpenAI client library works. Grok mobile app available on iOS and Android.</p>
+<h3 id="Links-3"><a href="#Links-3" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://grok.com/plans">Grok plans</a></li>
+<li><a href="https://x.ai/api">API pricing</a></li>
+<li><a href="https://docs.x.ai/developers/models">Models docs</a></li>
+</ul>
+<hr>
+<h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><p><a href="https://chat.deepseek.com/">chat.deepseek.com</a> | <a href="https://platform.deepseek.com/">platform.deepseek.com</a> | <a href="https://api-docs.deepseek.com/">API docs</a></p>
+<p>The price disruptor. V3.2 costs roughly 95% less than GPT-4 Turbo with competitive quality.</p>
+<h3 id="Models-4"><a href="#Models-4" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Cache hit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deepseek-chat (V3.2)</td>
+<td>128K</td>
+<td>$0.28 &#x2F; $0.42</td>
+<td>$0.028</td>
+<td>Non-thinking, 8K max output</td>
+</tr>
+<tr>
+<td>deepseek-reasoner (V3.2)</td>
+<td>128K</td>
+<td>$0.28 &#x2F; $0.42</td>
+<td>$0.028</td>
+<td>Thinking mode, 64K max output</td>
+</tr>
+</tbody></table>
+<p>Text-only as of March 2026. V4 with multimodal is in development.</p>
+<p>Off-peak discount: 50-75% off during 16:30-00:30 GMT.</p>
+<h3 id="Subscriptions-4"><a href="#Subscriptions-4" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p>No subscription model. The <a href="https://chat.deepseek.com/">chat app</a> (web + mobile) is completely <strong>free</strong> with unlimited messages within daily quotas. No paid tier exists – they just give you the models for free. API is pure pay-as-you-go at <a href="https://platform.deepseek.com/">platform.deepseek.com</a>. New accounts get 5M free tokens (30-day validity).</p>
+<h3 id="Open-source-4"><a href="#Open-source-4" class="headerlink" title="Open source"></a>Open source</h3><p><strong>Fully open source under MIT license.</strong> Weights on <a href="https://huggingface.co/deepseek-ai">Hugging Face</a> for V3.2 and R1. Self-host on your own hardware. A quantized 7B version runs on Android.</p>
+<h3 id="Mobile-SDK-4"><a href="#Mobile-SDK-4" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No dedicated SDK. Official apps on iOS and Android (free). The API is OpenAI-compatible.</p>
+<h3 id="Links-4"><a href="#Links-4" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://chat.deepseek.com/">Chat app</a> (free)</li>
+<li><a href="https://api-docs.deepseek.com/quick_start/pricing">API pricing</a></li>
+<li><a href="https://api-docs.deepseek.com/">API docs</a></li>
+</ul>
+<hr>
+<h2 id="Mistral-AI"><a href="#Mistral-AI" class="headerlink" title="Mistral AI"></a>Mistral AI</h2><p><a href="https://chat.mistral.ai/">chat.mistral.ai</a> | <a href="https://console.mistral.ai/">console.mistral.ai</a> | <a href="https://docs.mistral.ai/">API docs</a></p>
+<p>European provider with the widest range from ultra-cheap (Nemo at $0.02&#x2F;M) to frontier.</p>
+<h3 id="Models-5"><a href="#Models-5" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mistral Large 3</td>
+<td>128K</td>
+<td>$0.50 &#x2F; $1.50</td>
+<td>Flagship</td>
+</tr>
+<tr>
+<td>Mistral Medium 3</td>
+<td>128K</td>
+<td>$0.40 &#x2F; $2.00</td>
+<td>Mid-tier</td>
+</tr>
+<tr>
+<td>Mistral Small 3.1 (24B)</td>
+<td>128K</td>
+<td>$0.35 &#x2F; $0.56</td>
+<td>Efficient</td>
+</tr>
+<tr>
+<td>Mistral Nemo</td>
+<td>128K</td>
+<td>$0.02 &#x2F; $0.04</td>
+<td>Ultra-budget</td>
+</tr>
+<tr>
+<td>Codestral</td>
+<td>256K</td>
+<td>Varies</td>
+<td>Code specialist (22B, 80+ languages)</td>
+</tr>
+<tr>
+<td>Devstral 2</td>
+<td>128K</td>
+<td>$0.40 &#x2F; $2.00</td>
+<td>Powers Vibe 2.0 coding agent</td>
+</tr>
+<tr>
+<td>Pixtral Large</td>
+<td>128K</td>
+<td>Varies</td>
+<td>Multimodal (124B, text + image, up to 30 images)</td>
+</tr>
+</tbody></table>
+<h3 id="Subscriptions-Le-Chat"><a href="#Subscriptions-Le-Chat" class="headerlink" title="Subscriptions (Le Chat)"></a>Subscriptions (Le Chat)</h3><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Limits</th>
+<th>Key features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>~25 msgs before throttling</td>
+<td>128K context, code interpreter, document uploads, web search (AFP-verified), Canvas (web pages&#x2F;graphs&#x2F;presentations), image gen. Prompts may be used for training</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>$14.99&#x2F;mo</td>
+<td>~6x Free (soft cap, fair use)</td>
+<td>150 Flash Answers&#x2F;day (ultra-fast, 1,000 words&#x2F;sec), Vibe 2.0 coding agent, No Telemetry Mode (never trained on), priority responses, early feature access</td>
+</tr>
+<tr>
+<td>Student</td>
+<td>$5.99&#x2F;mo</td>
+<td>Same as Pro</td>
+<td>&gt;50% discount, verified students, 12-month validity</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>$24.99&#x2F;user&#x2F;mo</td>
+<td>Pro per seat</td>
+<td>30 GB&#x2F;user shared RAG libraries, admin console, data training opt-out default</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>Custom</td>
+<td>Custom</td>
+<td>On-prem deployment, custom models, multi-step agent pipelines</td>
+</tr>
+</tbody></table>
+<p>See <a href="https://mistral.ai/pricing">Le Chat pricing</a> for details. API is separate pay-as-you-go at <a href="https://console.mistral.ai/">console.mistral.ai</a>.</p>
+<h3 id="Open-source-5"><a href="#Open-source-5" class="headerlink" title="Open source"></a>Open source</h3><p>Mixed. <strong>Apache 2.0</strong>: Mistral 7B, Mixtral 8x7B, Mistral Nemo, Mistral Small 3. <strong>Non-production license</strong>: Codestral. <strong>Proprietary</strong>: Large, Medium, Pixtral Large.</p>
+<h3 id="Mobile-SDK-5"><a href="#Mobile-SDK-5" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No dedicated SDK. Python and JavaScript&#x2F;TypeScript client libraries available.</p>
+<h3 id="Links-5"><a href="#Links-5" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://mistral.ai/pricing">Le Chat pricing</a></li>
+<li><a href="https://docs.mistral.ai/">API docs</a></li>
+<li><a href="https://docs.mistral.ai/getting-started/models">Models</a></li>
+</ul>
+<hr>
+<h2 id="Meta-Llama"><a href="#Meta-Llama" class="headerlink" title="Meta Llama"></a>Meta Llama</h2><p><a href="https://www.llama.com/">llama.com</a> | <a href="https://huggingface.co/meta-llama">Hugging Face</a></p>
+<p>Not a service – it’s a family of models you can run anywhere. Free weights, massive ecosystem.</p>
+<h3 id="Models-6"><a href="#Models-6" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Params (Active&#x2F;Total)</th>
+<th>Context</th>
+<th>Multimodal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Llama 4 Scout</td>
+<td>17B &#x2F; 109B (16 experts)</td>
+<td><strong>10M</strong></td>
+<td>Text, image, video</td>
+</tr>
+<tr>
+<td>Llama 4 Maverick</td>
+<td>17B &#x2F; 400B (128 experts)</td>
+<td><strong>1M</strong></td>
+<td>Text, image, video</td>
+</tr>
+<tr>
+<td>Llama 4 Behemoth</td>
+<td>288B &#x2F; 2T (16 experts)</td>
+<td>TBD</td>
+<td>Yes (still training)</td>
+</tr>
+<tr>
+<td>Llama 3.3 70B</td>
+<td>70B</td>
+<td>128K</td>
+<td>Text only</td>
+</tr>
+<tr>
+<td>Llama 3.1 8B</td>
+<td>8B</td>
+<td>128K</td>
+<td>Text only</td>
+</tr>
+</tbody></table>
+<p>Scout’s 10M token context is the longest of any open model. Scout fits on a single H100 with INT4 quantization.</p>
+<h3 id="API-pricing-via-providers"><a href="#API-pricing-via-providers" class="headerlink" title="API pricing (via providers)"></a>API pricing (via providers)</h3><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Llama 4 Scout</th>
+<th>Llama 3.3 70B</th>
+<th>Speed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Groq</td>
+<td>$0.11 &#x2F; $0.34</td>
+<td>$0.59 &#x2F; $0.79</td>
+<td>594 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Together AI</td>
+<td>–</td>
+<td>~$0.88 &#x2F; $0.88</td>
+<td>–</td>
+</tr>
+<tr>
+<td>DeepInfra</td>
+<td>–</td>
+<td>~$0.15 &#x2F; $0.15</td>
+<td>Budget</td>
+</tr>
+<tr>
+<td>Self-hosted</td>
+<td>Free</td>
+<td>Free</td>
+<td>You pay compute</td>
+</tr>
+</tbody></table>
+<p>Prices vary up to 6.8x across providers for the same model.</p>
+<h3 id="Open-source-6"><a href="#Open-source-6" class="headerlink" title="Open source"></a>Open source</h3><p><strong>Yes.</strong> Llama Community License – free for commercial use (companies under 700M MAU). Weights on <a href="https://huggingface.co/meta-llama">Hugging Face</a> and <a href="https://www.llama.com/">llama.com</a>.</p>
+<h3 id="Mobile-SDK-6"><a href="#Mobile-SDK-6" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No official SDK. On-device inference via llama.cpp, MLX, ONNX. Llama 3.1 8B and Scout can run locally on capable devices.</p>
+<h3 id="Links-6"><a href="#Links-6" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://www.llama.com/">Llama official site</a></li>
+<li><a href="https://huggingface.co/meta-llama">Hugging Face</a></li>
+<li><a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/">Llama 4 announcement</a></li>
+</ul>
+<hr>
+<h2 id="Alibaba-Qwen"><a href="#Alibaba-Qwen" class="headerlink" title="Alibaba Qwen"></a>Alibaba Qwen</h2><p><a href="https://qwen.ai/">qwen.ai</a> | <a href="https://chat.qwen.ai/">chat.qwen.ai</a> | <a href="https://qwen.ai/apiplatform">API platform</a> | <a href="https://www.alibabacloud.com/help/en/model-studio/qwen-api-reference/">API docs</a></p>
+<p>China’s strongest open-source model family. Massive lineup from 0.8B to 480B, all Apache 2.0. The chat app is completely free.</p>
+<h3 id="Models-7"><a href="#Models-7" class="headerlink" title="Models"></a>Models</h3><p><strong>Text generation (API):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Qwen3-Max (235B MoE)</td>
+<td>262K</td>
+<td>$1.20 &#x2F; $6.00</td>
+<td>Flagship reasoning</td>
+</tr>
+<tr>
+<td>Qwen3-Max Thinking</td>
+<td>262K</td>
+<td>$0.78 &#x2F; $3.90</td>
+<td>Thinking mode, flat rate</td>
+</tr>
+<tr>
+<td>Qwen3.5-Plus (MoE)</td>
+<td>1M</td>
+<td>$0.26 &#x2F; $1.56</td>
+<td>Balanced performance</td>
+</tr>
+<tr>
+<td>Qwen3.5-Flash (MoE)</td>
+<td>1M</td>
+<td>$0.10 &#x2F; $0.40</td>
+<td>Fast and cheap</td>
+</tr>
+<tr>
+<td>QwQ-Plus (32B reasoning)</td>
+<td>131K</td>
+<td>$0.80 &#x2F; $2.40</td>
+<td>Reasoning specialist</td>
+</tr>
+<tr>
+<td>Qwen-Long</td>
+<td><strong>10M</strong></td>
+<td>Tiered</td>
+<td>Ultra-long document analysis</td>
+</tr>
+</tbody></table>
+<p><strong>Coding models:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Qwen3-Coder-Plus (480B MoE)</td>
+<td>1M</td>
+<td>$0.65 &#x2F; $3.25</td>
+<td>Flagship coding, SWE-bench leading</td>
+</tr>
+<tr>
+<td>Qwen3-Coder-Next (80B MoE)</td>
+<td>262K</td>
+<td>$0.07 &#x2F; $0.30</td>
+<td>Open-weight (Apache 2.0), hybrid attention</td>
+</tr>
+</tbody></table>
+<p><strong>Vision &#x2F; multimodal</strong>: Qwen3-VL-Plus (262K), QVQ-Max (visual reasoning), Qwen3-Omni-Flash (audio + video + text). <strong>Specialized</strong>: Qwen3-Deep-Research (1M), Qwen-OCR, Qwen-MT (translation, 92 languages).</p>
+<p>Tiered pricing: rates increase as input length grows (0-32K cheapest, 128K+ most expensive). Batch API: 50% off.</p>
+<h3 id="Open-weight-models"><a href="#Open-weight-models" class="headerlink" title="Open-weight models"></a>Open-weight models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Params (Active)</th>
+<th>Context</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Qwen3.5-397B-A17B</td>
+<td>397B (17B)</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-122B-A10B</td>
+<td>122B (10B)</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-27B (dense)</td>
+<td>27B</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-9B (dense)</td>
+<td>9B</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-4B (dense)</td>
+<td>4B</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-2B (dense)</td>
+<td>2B</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>Qwen3.5-0.8B (dense)</td>
+<td>0.8B</td>
+<td>262K</td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td>QwQ-32B</td>
+<td>32B</td>
+<td>32K</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody></table>
+<p>All on <a href="https://huggingface.co/Qwen">Hugging Face</a> and <a href="https://modelscope.cn/organization/qwen">ModelScope</a>. Apache 2.0 &#x3D; full commercial use.</p>
+<h3 id="Subscriptions-5"><a href="#Subscriptions-5" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p><strong>Qwen Chat</strong> (web, iOS, Android, desktop) is completely <strong>free</strong> – full access to Qwen3, image gen, video understanding, deep thinking, web search, artifacts. No paid tier.</p>
+<p><strong>Coding Plan</strong> (developer subscription, Feb 2026): Flat-rate alternative to per-token billing for coding workflows.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Requests&#x2F;month</th>
+<th>Works with</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Lite</td>
+<td>~$10&#x2F;mo</td>
+<td>18,000</td>
+<td>Claude Code, Qwen Code, Cline, Cursor</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>~$50&#x2F;mo</td>
+<td>90,000</td>
+<td>Same + higher rate limits</td>
+</tr>
+</tbody></table>
+<h3 id="Free-tier-API-3"><a href="#Free-tier-API-3" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p>New accounts: 1M tokens free per model (90-day validity). <a href="https://github.com/QwenLM/qwen-code">Qwen Code</a> OAuth: 1,000 free requests&#x2F;day with no billing setup.</p>
+<h3 id="Open-source-7"><a href="#Open-source-7" class="headerlink" title="Open source"></a>Open source</h3><p><strong>Yes.</strong> All Qwen3 and Qwen3.5 open-weight models are <strong>Apache 2.0</strong> – full commercial use, no restrictions. Proprietary models (Qwen-Max, QwQ-Plus) are API-only.</p>
+<h3 id="Mobile-SDK-7"><a href="#Mobile-SDK-7" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No official SDK. On-device via llama.cpp, MLX, Ollama, ONNX. The 0.8B-4B models are designed for on-device use. Qwen3.5-2B runs at 30-50 t&#x2F;s on iPhone&#x2F;M-series Macs via MLX.</p>
+<h3 id="Links-7"><a href="#Links-7" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://chat.qwen.ai/">Qwen Chat</a> (free)</li>
+<li><a href="https://www.alibabacloud.com/help/en/model-studio/model-pricing">API pricing</a></li>
+<li><a href="https://www.alibabacloud.com/help/en/model-studio/models">Models list</a></li>
+<li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan">Coding Plan</a></li>
+<li><a href="https://github.com/QwenLM">GitHub</a></li>
+<li><a href="https://huggingface.co/Qwen">Hugging Face</a></li>
+</ul>
+<hr>
+<h2 id="Amazon-Nova"><a href="#Amazon-Nova" class="headerlink" title="Amazon Nova"></a>Amazon Nova</h2><p><a href="https://aws.amazon.com/nova/models/">aws.amazon.com&#x2F;nova</a> | <a href="https://nova.amazon.com/">nova.amazon.com</a> | <a href="https://aws.amazon.com/bedrock/pricing/">Bedrock pricing</a></p>
+<p>AWS’s in-house model family. Cheapest token pricing in the industry at the low end (Nova Micro $0.035&#x2F;1M input). Consumer chat launched at <a href="https://nova.amazon.com/">nova.amazon.com</a>.</p>
+<h3 id="Models-8"><a href="#Models-8" class="headerlink" title="Models"></a>Models</h3><p><strong>Nova 1 (understanding):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nova Micro</td>
+<td>128K</td>
+<td>$0.035 &#x2F; $0.14</td>
+<td>Text only, lowest cost</td>
+</tr>
+<tr>
+<td>Nova Lite</td>
+<td>300K</td>
+<td>$0.06 &#x2F; $0.24</td>
+<td>Text + image + video</td>
+</tr>
+<tr>
+<td>Nova Pro</td>
+<td>300K</td>
+<td>$0.80 &#x2F; $3.20</td>
+<td>Best accuracy&#x2F;cost balance</td>
+</tr>
+<tr>
+<td>Nova Premier</td>
+<td>1M</td>
+<td>$2.50 &#x2F; $12.50</td>
+<td>Most capable, 200+ languages</td>
+</tr>
+</tbody></table>
+<p><strong>Nova 2 (reasoning, Dec 2025):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Nova 2 Lite</td>
+<td>1M</td>
+<td>Built-in code interpreter, web grounding, MCP support</td>
+</tr>
+<tr>
+<td>Nova 2 Pro</td>
+<td>1M</td>
+<td>Advanced multi-step reasoning, agentic workflows (Preview)</td>
+</tr>
+<tr>
+<td>Nova 2 Omni</td>
+<td>–</td>
+<td>All modalities (text, image, video, speech in&#x2F;out) (Preview)</td>
+</tr>
+</tbody></table>
+<p><strong>Creative</strong>: Nova Canvas (image gen), Nova Reel (video gen, 1280x720 24fps). <strong>Other</strong>: Nova Sonic (speech-to-speech), Nova Act ($4.75&#x2F;agent-hour browser automation).</p>
+<p>Batch API: 50% off on-demand pricing.</p>
+<h3 id="Subscriptions-6"><a href="#Subscriptions-6" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p><strong><a href="https://nova.amazon.com/">Nova Chat</a></strong> – free consumer chat app. Uses your Amazon.com account (not AWS). Powered by Nova Pro. Image creation, code gen. US only at launch.</p>
+<p><strong><a href="https://www.amazon.com/alexa-plus">Alexa+</a></strong> – consumer voice assistant upgraded with Nova models under the hood.</p>
+<p>No traditional subscription tiers like ChatGPT&#x2F;Claude. Access is either free (Nova Chat) or pay-per-token (Bedrock API).</p>
+<h3 id="Free-tier-API-4"><a href="#Free-tier-API-4" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p>No permanent free API tier. New AWS accounts get <strong>$200 in credits</strong> ($100 sign-up + $100 onboarding). Credits apply to all AWS services including Bedrock, valid for 6 months. At Nova Micro pricing, that’s ~5.7B input tokens.</p>
+<h3 id="Open-source-8"><a href="#Open-source-8" class="headerlink" title="Open source"></a>Open source</h3><p><strong>No.</strong> All Nova models are proprietary. Weights not released. Amazon publishes detailed <a href="https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card">technical reports</a> but not weights. Bedrock also hosts third-party open models (Llama, Mistral).</p>
+<h3 id="Mobile-SDK-8"><a href="#Mobile-SDK-8" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p><a href="https://docs.amplify.aws/react/ai/concepts/models/">AWS Amplify AI Kit</a> for React Native and Android. Direct Bedrock API calls via AWS SDK with SigV4 signing. Also supported via <a href="https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock">Vercel AI SDK</a>. No first-party Swift SDK (use Objective-C bindings from Swift).</p>
+<h3 id="Links-8"><a href="#Links-8" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://aws.amazon.com/nova/models/">Nova models</a></li>
+<li><a href="https://aws.amazon.com/nova/pricing/">Nova pricing</a></li>
+<li><a href="https://aws.amazon.com/bedrock/pricing/">Bedrock pricing</a></li>
+<li><a href="https://nova.amazon.com/">Nova Chat</a></li>
+<li><a href="https://aws.amazon.com/q/developer/">Q Developer</a></li>
+<li><a href="https://aws.amazon.com/q/developer/pricing/">Q Developer pricing</a></li>
+</ul>
+<hr>
+<h2 id="Microsoft-Phi"><a href="#Microsoft-Phi" class="headerlink" title="Microsoft Phi"></a>Microsoft Phi</h2><p><a href="https://azure.microsoft.com/en-us/products/phi">azure.microsoft.com&#x2F;products&#x2F;phi</a> | <a href="https://github.com/features/models">GitHub Models</a> | <a href="https://azure.microsoft.com/en-us/pricing/details/ai-foundry-models/microsoft/">Azure AI pricing</a></p>
+<p>Best small models in the industry. All MIT-licensed. Phi-4-mini at 3.8B params punches far above its weight.</p>
+<h3 id="Models-9"><a href="#Models-9" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Params</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Phi-4</td>
+<td>14B</td>
+<td>16K</td>
+<td>$0.125 &#x2F; $0.50</td>
+<td>Base reasoning&#x2F;instruction</td>
+</tr>
+<tr>
+<td>Phi-4-mini</td>
+<td>3.8B</td>
+<td>128K</td>
+<td>$0.075 &#x2F; $0.30</td>
+<td>Grouped-query attention, function calling</td>
+</tr>
+<tr>
+<td>Phi-4-multimodal</td>
+<td>5.6B</td>
+<td>128K</td>
+<td>$0.08 &#x2F; $0.32</td>
+<td>Text + vision + audio in one model</td>
+</tr>
+<tr>
+<td>Phi-4-reasoning</td>
+<td>14B</td>
+<td>32K</td>
+<td>–</td>
+<td>Chain-of-thought fine-tune</td>
+</tr>
+<tr>
+<td>Phi-4-reasoning-plus</td>
+<td>14B</td>
+<td>32K</td>
+<td>–</td>
+<td>Higher RL compute</td>
+</tr>
+<tr>
+<td>Phi-4-reasoning-vision-15B</td>
+<td>15B</td>
+<td>32K</td>
+<td>–</td>
+<td>Multimodal reasoning (MIT, Mar 2026)</td>
+</tr>
+<tr>
+<td>Phi-3.5-MoE</td>
+<td>42B (6.6B active)</td>
+<td>128K</td>
+<td>$0.16 &#x2F; $0.64</td>
+<td>16 experts, efficient inference</td>
+</tr>
+</tbody></table>
+<p>Pricing is on Azure AI Foundry. Phi-4-mini is cheaper per token than GPT-4o-mini.</p>
+<h3 id="Subscriptions-7"><a href="#Subscriptions-7" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p>Microsoft’s consumer AI is <strong>Copilot</strong>, not Phi directly:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Copilot Free</td>
+<td>$0</td>
+<td>GPT-5.x limited, Bing integration</td>
+</tr>
+<tr>
+<td>Copilot Pro</td>
+<td>$20&#x2F;mo</td>
+<td>Priority GPT-5.x, M365 integration (Word, Excel, Outlook, Teams) for M365 subscribers</td>
+</tr>
+<tr>
+<td>M365 Copilot Business</td>
+<td>$18-25&#x2F;user&#x2F;mo</td>
+<td>Full M365 Copilot in all business apps, meeting recap</td>
+</tr>
+<tr>
+<td>M365 Copilot Enterprise</td>
+<td>$30&#x2F;user&#x2F;mo</td>
+<td>Compliance, audit, data residency, Copilot Studio</td>
+</tr>
+</tbody></table>
+<p>Copilot Pro is the ~$20 tier. It’s an M365 productivity tool, not a general chatbot – useful if you’re deep in the Microsoft ecosystem.</p>
+<h3 id="Free-tier-API-5"><a href="#Free-tier-API-5" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p><strong><a href="https://github.com/features/models">GitHub Models</a></strong> is the easiest entry point – free playground + API with rate limits (50-150 req&#x2F;day). Just needs a GitHub account, no credit card. Phi-4 and Phi-4-mini both available. Paid usage mirrors Azure AI Foundry rates.</p>
+<p>Azure free account: $200 credits for 30 days.</p>
+<h3 id="Open-source-9"><a href="#Open-source-9" class="headerlink" title="Open source"></a>Open source</h3><p><strong>Yes.</strong> All Phi models are <strong>MIT license</strong> – full commercial use, modification, distribution. Weights on <a href="https://huggingface.co/microsoft/phi-4">Hugging Face</a>. MAI-1 (Microsoft’s ~500B frontier model) is proprietary and not publicly available.</p>
+<h3 id="Mobile-SDK-9"><a href="#Mobile-SDK-9" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No dedicated SDK. On-device via <strong>ONNX Runtime Mobile</strong> (iOS with CoreML, Android with NNAPI). Pre-quantized ONNX weights on Hugging Face. Phi-4-mini at 3.8B is feasible on devices with 6-8GB RAM.</p>
+<h3 id="Links-9"><a href="#Links-9" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://azure.microsoft.com/en-us/products/phi">Phi product page</a></li>
+<li><a href="https://azure.microsoft.com/en-us/pricing/details/ai-foundry-models/microsoft/">Azure AI pricing</a></li>
+<li><a href="https://huggingface.co/microsoft/phi-4">Phi-4 on Hugging Face</a></li>
+<li><a href="https://github.com/features/models">GitHub Models</a></li>
+<li><a href="https://github.com/features/copilot/plans">GitHub Copilot plans</a></li>
+<li><a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing">Copilot Pro</a></li>
+</ul>
+<hr>
+<h2 id="Perplexity"><a href="#Perplexity" class="headerlink" title="Perplexity"></a>Perplexity</h2><p><a href="https://www.perplexity.ai/">perplexity.ai</a> | <a href="https://docs.perplexity.ai/">API docs</a> | <a href="https://www.perplexity.ai/api-platform">API platform</a></p>
+<p>Search-first AI. Every response is grounded in web sources with citations. The Pro subscription includes access to third-party models (GPT-5.4, Claude, Gemini).</p>
+<h3 id="Models-10"><a href="#Models-10" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Context</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sonar</td>
+<td>128K</td>
+<td>$1 &#x2F; $1 + per-req fee</td>
+<td>Lightweight search + summarization</td>
+</tr>
+<tr>
+<td>Sonar Pro</td>
+<td>200K</td>
+<td>$3 &#x2F; $15 + per-req fee</td>
+<td>2x search results, deeper retrieval</td>
+</tr>
+<tr>
+<td>Sonar Reasoning Pro</td>
+<td>128K</td>
+<td>$2 &#x2F; $8 + per-req fee</td>
+<td>Chain-of-thought reasoning</td>
+</tr>
+<tr>
+<td>Sonar Deep Research</td>
+<td>128K</td>
+<td>$2 &#x2F; $8 + per-req fee</td>
+<td>Long-form synthesis, hundreds of sources</td>
+</tr>
+</tbody></table>
+<p>Per-request fees: $5-14 per 1,000 requests depending on model and search context size. This hybrid pricing (tokens + requests) makes Perplexity more expensive per call than pure token-based providers.</p>
+<p><strong>Search API</strong>: $5 per 1,000 requests (raw web results, no generation).</p>
+<h3 id="Subscriptions-8"><a href="#Subscriptions-8" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Key features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>Basic search, limited Pro Searches</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>$20&#x2F;mo ($200&#x2F;yr)</td>
+<td>Unlimited Pro queries, file uploads, image&#x2F;video gen, third-party models (GPT-5.4, Claude Sonnet&#x2F;Opus, Gemini 3.1 Pro), $5&#x2F;mo API credits</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>$200&#x2F;mo</td>
+<td>Everything in Pro + Perplexity Computer (multi-agent), unlimited Labs, early access</td>
+</tr>
+<tr>
+<td>Enterprise Pro</td>
+<td>$40&#x2F;seat&#x2F;mo</td>
+<td>Team features, SSO, shared Spaces, admin controls</td>
+</tr>
+</tbody></table>
+<p><strong>Pro subscribers get $5&#x2F;month in API credits.</strong> Third-party model access in Pro means you can use GPT-5.4 and Claude Opus through Perplexity’s interface without separate subscriptions.</p>
+<h3 id="Free-tier-API-6"><a href="#Free-tier-API-6" class="headerlink" title="Free tier (API)"></a>Free tier (API)</h3><p>No free API tier. Requires payment method. Pro subscribers get $5&#x2F;mo in API credits. <a href="https://www.perplexity.ai/startups">Startup program</a>: 6 months free Enterprise Pro + $5,000 in API credits.</p>
+<h3 id="Open-source-10"><a href="#Open-source-10" class="headerlink" title="Open source"></a>Open source</h3><p><strong>No.</strong> Sonar models are proprietary (fine-tuned from Llama 3.3 70B and DeepSeek R1, but Perplexity’s weights and search infrastructure are closed).</p>
+<h3 id="Mobile-SDK-10"><a href="#Mobile-SDK-10" class="headerlink" title="Mobile SDK"></a>Mobile SDK</h3><p>No dedicated SDK. Official Python and TypeScript SDKs. MCP server for Cursor, VS Code, Claude Desktop. OpenAI-compatible API. iOS and Android apps available.</p>
+<h3 id="Links-10"><a href="#Links-10" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://www.perplexity.ai/">Perplexity Pro</a></li>
+<li><a href="https://docs.perplexity.ai/docs/getting-started/pricing">API pricing</a></li>
+<li><a href="https://docs.perplexity.ai/">API docs</a></li>
+<li><a href="https://www.perplexity.ai/enterprise/pricing">Enterprise pricing</a></li>
+</ul>
+<hr>
+<h2 id="Groq"><a href="#Groq" class="headerlink" title="Groq"></a>Groq</h2><p><a href="https://groq.com/">groq.com</a> | <a href="https://console.groq.com/">console.groq.com</a> | <a href="https://console.groq.com/docs">API docs</a></p>
+<p>Not a model provider – an inference provider. Runs open-source models on custom LPU hardware at the fastest speeds in the industry.</p>
+<h3 id="Models-pricing"><a href="#Models-pricing" class="headerlink" title="Models &amp; pricing"></a>Models &amp; pricing</h3><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Input&#x2F;Output (per 1M)</th>
+<th>Speed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Llama 4 Maverick</td>
+<td>$0.20 &#x2F; $0.60</td>
+<td>562 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Llama 4 Scout</td>
+<td>$0.11 &#x2F; $0.34</td>
+<td>594 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Llama 3.3 70B</td>
+<td>$0.59 &#x2F; $0.79</td>
+<td>394 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Llama 3.1 8B</td>
+<td>$0.05 &#x2F; $0.08</td>
+<td>840 t&#x2F;s</td>
+</tr>
+<tr>
+<td>GPT-OSS 120B</td>
+<td>$0.15 &#x2F; $0.60</td>
+<td>500 t&#x2F;s</td>
+</tr>
+<tr>
+<td>GPT-OSS 20B</td>
+<td>$0.075 &#x2F; $0.30</td>
+<td>1,000 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Qwen3 32B</td>
+<td>$0.29 &#x2F; $0.59</td>
+<td>662 t&#x2F;s</td>
+</tr>
+<tr>
+<td>Whisper V3 Large (STT)</td>
+<td>$0.111&#x2F;hr</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Whisper V3 Turbo (STT)</td>
+<td>$0.04&#x2F;hr</td>
+<td>–</td>
+</tr>
+</tbody></table>
+<h3 id="Free-tier"><a href="#Free-tier" class="headerlink" title="Free tier"></a>Free tier</h3><p>No credit card required. Rate-limited access (e.g., ~6K tokens&#x2F;min for 70B models, ~500K tokens&#x2F;day). Never charged – just 429 errors at the limit.</p>
+<p>Paid tier (pay-as-you-go) gets 10x the rate limits plus batch processing at 50% off.</p>
+<h3 id="Open-source-11"><a href="#Open-source-11" class="headerlink" title="Open source"></a>Open source</h3><p>N&#x2F;A – Groq doesn’t make models. They host open-source models (Llama, Qwen, GPT-OSS) on custom LPU hardware.</p>
+<h3 id="Links-11"><a href="#Links-11" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://groq.com/pricing">Pricing</a></li>
+<li><a href="https://console.groq.com/docs">API docs</a></li>
+<li><a href="https://console.groq.com/docs/models">Models</a></li>
+</ul>
+<hr>
+<h2 id="Mobile-SDK-summary"><a href="#Mobile-SDK-summary" class="headerlink" title="Mobile SDK summary"></a>Mobile SDK summary</h2><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Official iOS SDK</th>
+<th>Official Android SDK</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Google Gemini</strong></td>
+<td>Yes (Firebase AI Logic, Swift)</td>
+<td>Yes (Firebase AI Logic, Kotlin)</td>
+<td>Also Flutter, React Native, Unity</td>
+</tr>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>No</td>
+<td>No</td>
+<td>Community: <a href="https://github.com/MacPaw/OpenAI">MacPaw&#x2F;OpenAI</a> (Swift)</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>No</td>
+<td>No</td>
+<td>Community: <a href="https://github.com/jamesrochabrun/SwiftAnthropic">SwiftAnthropic</a></td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td>No</td>
+<td>No</td>
+<td>OpenAI-compatible API (any client works)</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>No</td>
+<td>No</td>
+<td>OpenAI-compatible API</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>No</td>
+<td>No</td>
+<td>Python&#x2F;JS SDKs only</td>
+</tr>
+<tr>
+<td><strong>Meta Llama</strong></td>
+<td>No</td>
+<td>No</td>
+<td>On-device via llama.cpp, MLX, ONNX</td>
+</tr>
+<tr>
+<td><strong>Alibaba Qwen</strong></td>
+<td>No</td>
+<td>No</td>
+<td>On-device via MLX, Ollama, llama.cpp</td>
+</tr>
+<tr>
+<td><strong>Amazon Nova</strong></td>
+<td>Partial (Amplify AI Kit)</td>
+<td>Partial (Amplify AI Kit)</td>
+<td>React Native + Android. No native Swift SDK</td>
+</tr>
+<tr>
+<td><strong>Microsoft Phi</strong></td>
+<td>No</td>
+<td>No</td>
+<td>ONNX Runtime Mobile (iOS CoreML, Android NNAPI)</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>No</td>
+<td>No</td>
+<td>Python&#x2F;TS SDKs, MCP server</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>No</td>
+<td>No</td>
+<td>OpenAI-compatible API</td>
+</tr>
+</tbody></table>
+<p>Google is the only provider with first-party mobile SDKs. Amazon has partial coverage via Amplify. Everyone else: use REST directly, community packages, or on-device inference (MLX, ONNX, llama.cpp).</p>
+<hr>
+<h2 id="Bottom-line"><a href="#Bottom-line" class="headerlink" title="Bottom line"></a>Bottom line</h2><p><strong>Best free chat</strong>: <a href="https://chat.deepseek.com/">DeepSeek</a> (unlimited, no sub), <a href="https://chat.qwen.ai/">Qwen</a> (full-featured, also free), or <a href="https://gemini.google.com/">Gemini</a> (50 daily credits). All genuinely useful without paying.</p>
+<p><strong>Best ~$20 subscription</strong>: Claude Pro for coding depth. ChatGPT Plus for broadest features (image, video, voice, agents). Gemini AI Pro for Workspace integration. Perplexity Pro for search + access to third-party models. Le Chat Pro is cheapest at $15 with no-telemetry.</p>
+<p><strong>Best free API</strong>: <a href="https://aistudio.google.com/">Gemini</a>. No credit card, generous limits. <a href="https://console.groq.com/">Groq</a> for fastest open-model inference. <a href="https://qwen.ai/apiplatform">Qwen</a> for 1M free tokens per model.</p>
+<p><strong>Best budget API</strong>: DeepSeek at $0.28&#x2F;M input (or $0.028 cached). Mistral Nemo at $0.02&#x2F;M for ultra-cheap. Amazon Nova Micro at $0.035&#x2F;M for AWS users.</p>
+<p><strong>Best coding agent</strong>: <a href="https://claude.com/product/claude-code">Claude Code</a> (Pro $20&#x2F;mo) or <a href="https://openai.com/index/introducing-codex/">Codex</a> (Plus $20&#x2F;mo) for first-party. <a href="https://cursor.com/">Cursor</a> ($20&#x2F;mo) or <a href="https://cline.bot/">Cline</a> (free, BYOM) for third-party. <a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a> free tier (50 agentic requests&#x2F;mo) if you’re on AWS.</p>
+<p><strong>Best open-source models</strong>: <a href="https://www.llama.com/">Llama 4 Scout</a> (10M context), <a href="https://huggingface.co/Qwen">Qwen3.5</a> (Apache 2.0, up to 397B), <a href="https://huggingface.co/deepseek-ai">DeepSeek V3.2</a> (MIT), <a href="https://huggingface.co/microsoft/phi-4">Phi-4</a> (MIT, best small models).</p>
+<p><strong>Best mobile SDK</strong>: Gemini via <a href="https://firebase.google.com/products/firebase-ai-logic">Firebase AI Logic</a> – only first-party option for iOS&#x2F;Android&#x2F;Flutter.</p>
+<p><strong>Highest capability</strong>: Claude Opus 4.6, GPT-5.4, and Gemini 3.1 Pro are the three frontier models. Pick based on your use case and budget.</p>
+<p>Subscriptions and APIs are separate worlds. Pick your subscription for daily use, pick your API for building things. Or just use Gemini&#x2F;Qwen’s free tier for both.</p>
 ]]></content>
       <categories>
-        <category>Web</category>
-        <category>Static Site Generator</category>
+        <category>AI</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
+        <tag>ai</tag>
+        <tag>api</tag>
+        <tag>llm</tag>
+        <tag>subscription</tag>
+        <tag>agent</tag>
       </tags>
   </entry>
   <entry>
@@ -409,6 +2265,73 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac Usage</title>
+    <url>/Mac-Usage/</url>
+    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
+<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+
+<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
+<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
+<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
+<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
+<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Finder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/Hexo-Quick-Guide/</url>
+    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
+<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node.js Usage</title>
     <url>/Node-js-Usage/</url>
     <content><![CDATA[<p>Quick reference for Node.js version management and usage.</p>
@@ -599,6 +2522,63 @@
       </tags>
   </entry>
   <entry>
+    <title>Zsh Usage</title>
+    <url>/Zsh-Usage/</url>
+    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
+<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Solutions Collection</title>
+    <url>/Git-Solutions-Collection/</url>
+    <content><![CDATA[<p>Reference commands for common Git situations.</p>
+<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
+</div>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove a folder recursively</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+<p>First, use <code>gitk</code> to find the corresponding hash value</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
+<p>Then, run <code>git stash</code> to apply the stash entry</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy</title>
     <url>/Deploy-Static-Site-to-Cloudflare-Pages/</url>
     <content><![CDATA[<p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
@@ -743,28 +2723,6 @@
         <tag>Cloudflare</tag>
         <tag>GitHub</tag>
         <tag>static-site</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Zsh Usage</title>
-    <url>/Zsh-Usage/</url>
-    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
-<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
-
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Shell</category>
-      </categories>
-      <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
       </tags>
   </entry>
 </search>
