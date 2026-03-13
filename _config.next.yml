@@ -188,7 +188,8 @@ links_settings:
 
 links:
   Plantfolio (App Store): https://apps.apple.com/us/app/plantfolio-plus/id6757148663
-  Plantfolio (Website): https://luminoid.github.io/plantfolio-site
+  Plantfolio (Website): https://plantfolio.luminoid.dev/
+  Spectral Lab: https://lab.luminoid.dev/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
