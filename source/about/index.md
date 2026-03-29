@@ -3,7 +3,7 @@ title: About
 date: 2021-11-07 22:18:53
 ---
 
-iOS engineer. Notes about programming and development setup.
+Mediocre engineer.
 
 ### Education
 
