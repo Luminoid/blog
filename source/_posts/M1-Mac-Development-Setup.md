@@ -296,6 +296,12 @@ ncdu <dir>
 pngquant --ext .png --force 256 *.png */*.png
 ```
 
+### [jpegoptim](https://github.com/tjko/jpegoptim)
+> JPEG optimizer — lossless or lossy compression with quality control
+``` bash
+jpegoptim --max=95 *.jpg *.jpeg
+```
+
 ### [prettyping](https://denilsonsa.github.io/prettyping/)
 > `prettyping` is a wrapper around the standard `ping` tool, making the output prettier, more colorful, more compact, and easier to read.
 ``` bash
