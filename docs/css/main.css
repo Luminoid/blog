@@ -1500,7 +1500,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff017a;
+    background: #e857be;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3127,4 +3127,12 @@ code {
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: 'FiraCode Nerd Font', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+.links-of-blogroll-list {
+  gap: 0;
+}
+.sidebar-inner .links-of-blogroll-item a {
+  line-height: 1.4;
+  font-size: 1em;
+  padding: 0 5px;
 }
