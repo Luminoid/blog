@@ -1,319 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy</title>
-    <url>/Deploy-Static-Site-to-Cloudflare-Pages/</url>
-    <content><![CDATA[<p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
-<span id="more"></span>
-
-<h2 id="What-You-Need"><a href="#What-You-Need" class="headerlink" title="What You Need"></a>What You Need</h2><ul>
-<li>A GitHub account</li>
-<li>A Cloudflare account (free plan works)</li>
-<li>A domain managed by Cloudflare DNS</li>
-<li>A static site (plain HTML&#x2F;CSS&#x2F;JS, no build step required)</li>
-</ul>
-<h2 id="1-Push-Your-Site-to-GitHub"><a href="#1-Push-Your-Site-to-GitHub" class="headerlink" title="1. Push Your Site to GitHub"></a>1. Push Your Site to GitHub</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/my-site</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">gh repo create my-site --public --<span class="built_in">source</span>=. --push</span><br></pre></td></tr></table></figure>
-
-<p>If you don’t have the <code>gh</code> CLI, create the repo on GitHub manually and push:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:YOUR_USERNAME/my-site.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Create-a-Cloudflare-Pages-Project"><a href="#2-Create-a-Cloudflare-Pages-Project" class="headerlink" title="2. Create a Cloudflare Pages Project"></a>2. Create a Cloudflare Pages Project</h2><ol>
-<li>Go to <strong>Cloudflare Dashboard</strong></li>
-<li>Navigate to <strong>Workers &amp; Pages</strong></li>
-<li>Click <strong>Create</strong> &gt; <strong>Pages</strong> &gt; <strong>Connect to Git</strong></li>
-<li>Select your GitHub account and the repository</li>
-<li>Set the production branch to <code>main</code></li>
-</ol>
-<h3 id="Build-Settings"><a href="#Build-Settings" class="headerlink" title="Build Settings"></a>Build Settings</h3><p>For a plain static site (no framework, no bundler):</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Build command</td>
-<td><em>(leave blank)</em></td>
-</tr>
-<tr>
-<td>Build output directory</td>
-<td><code>/</code></td>
-</tr>
-</tbody></table>
-<p>If your site uses a framework:</p>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>Build command</th>
-<th>Output directory</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Hugo</td>
-<td><code>hugo</code></td>
-<td><code>public</code></td>
-</tr>
-<tr>
-<td>Hexo</td>
-<td><code>hexo generate</code></td>
-<td><code>public</code></td>
-</tr>
-<tr>
-<td>Next.js (static)</td>
-<td><code>next build &amp;&amp; next export</code></td>
-<td><code>out</code></td>
-</tr>
-<tr>
-<td>Vite</td>
-<td><code>npm run build</code></td>
-<td><code>dist</code></td>
-</tr>
-</tbody></table>
-<p>Click <strong>Save and Deploy</strong>. Cloudflare builds and deploys immediately.</p>
-<p>Your site is now live at <code>my-site.pages.dev</code>.</p>
-<h2 id="3-Add-a-Custom-Domain"><a href="#3-Add-a-Custom-Domain" class="headerlink" title="3. Add a Custom Domain"></a>3. Add a Custom Domain</h2><ol>
-<li>In your Pages project, go to <strong>Custom domains</strong></li>
-<li>Click <strong>Set up a custom domain</strong></li>
-<li>Enter your subdomain (e.g., <code>app.example.com</code>)</li>
-<li>Cloudflare automatically creates the DNS record:</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Name</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CNAME</td>
-<td><code>app</code></td>
-<td><code>my-site.pages.dev</code></td>
-</tr>
-</tbody></table>
-<p>SSL is provisioned automatically. The domain is usually active within seconds since DNS is already on Cloudflare.</p>
-<h2 id="4-Daily-Workflow"><a href="#4-Daily-Workflow" class="headerlink" title="4. Daily Workflow"></a>4. Daily Workflow</h2><p>That’s it. From now on, every push to <code>main</code> triggers an automatic deploy:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Edit your files</span></span><br><span class="line">vim index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># Push</span></span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;update feature&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># Site updates in ~30 seconds at your custom domain</span></span><br></pre></td></tr></table></figure>
-
-<p>No deploy commands. No CI config files. No build scripts.</p>
-<h2 id="Alternative-Manual-Deploy-with-Wrangler"><a href="#Alternative-Manual-Deploy-with-Wrangler" class="headerlink" title="Alternative: Manual Deploy with Wrangler"></a>Alternative: Manual Deploy with Wrangler</h2><p>If you prefer not to connect GitHub (or need to deploy from a different source), you can use the Wrangler CLI:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install wrangler (one-time)</span></span><br><span class="line">npm install -g wrangler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the project (one-time)</span></span><br><span class="line">npx wrangler pages project create my-site --production-branch main</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy (every time)</span></span><br><span class="line">npx wrangler pages deploy . --project-name my-site</span><br></pre></td></tr></table></figure>
-
-<p>This uploads the current directory directly. No Git integration — you run the command manually each time.</p>
-<p><strong>Note:</strong> Projects created via <code>wrangler</code> cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.</p>
-<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>For a static site deployed to Cloudflare Pages:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">*.swp</span><br><span class="line">*.swo</span><br><span class="line">*~</span><br><span class="line">.wrangler/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure>
-
-<p><code>.wrangler/</code> contains local deploy cache from the Wrangler CLI. <code>node_modules/</code> in case you install wrangler locally.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Action</th>
-<th>Frequency</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Create GitHub repo</td>
-<td><code>gh repo create</code></td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Connect to Cloudflare Pages</td>
-<td>Dashboard UI</td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Add custom domain</td>
-<td>Dashboard &gt; Custom domains</td>
-<td>Once</td>
-</tr>
-<tr>
-<td>Deploy</td>
-<td><code>git push</code></td>
-<td>Every change</td>
-</tr>
-</tbody></table>
-<p>Total setup time: ~5 minutes. Zero ongoing maintenance.</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>GitHub</tag>
-        <tag>static-site</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fibonacci Number in Different Programming Languages</title>
-    <url>/Fibonacci-Number-in-Different-Programming-Languages/</url>
-    <content><![CDATA[<p>Implementations of the nth Fibonacci number in various programming languages.</p>
-<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><!-- {% include_code lang:c Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c %} -->
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fib(%d) = %d\n&quot;</span>, n, fib(n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gcc fibonacci.c</span><br><span class="line">$ ./a.out 1</span><br><span class="line">fib(1) = 1</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Scheme-1975"><a href="#Scheme-1975" class="headerlink" title="Scheme (1975)"></a>Scheme (1975)</h2><p>Tail recursion</p>
-<!-- {% include_code lang:scheme Fibonacci-Number-in-Different-Programming-Languages/Scheme/fibonacci.scm %} -->
-
-<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">fib</span> n)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a b n)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&lt;=</span></span> n <span class="number">1</span>)</span><br><span class="line">        b</span><br><span class="line">        (<span class="name">iter</span> b (<span class="name"><span class="built_in">+</span></span> a b) (<span class="name"><span class="built_in">-</span></span> n <span class="number">1</span>))))</span><br><span class="line">  (<span class="name">iter</span> <span class="number">0</span> <span class="number">1</span> n))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ racket -f fibonacci.scm -e &quot;(fib 2)&quot;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<h2 id="Ada-1980"><a href="#Ada-1980" class="headerlink" title="Ada (1980)"></a>Ada (1980)</h2><!-- {% include_code lang:ada Fibonacci-Number-in-Different-Programming-Languages/Ada/fibonacci.adb %} -->
-
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> Ada.Text_IO;</span><br><span class="line"><span class="keyword">with</span> Ada.Command_Line;</span><br><span class="line"></span><br><span class="line"><span class="keyword">procedure</span> <span class="title">fibonacci</span> <span class="keyword">is</span></span><br><span class="line">    N : <span class="type">Integer</span> := Integer<span class="symbol">&#x27;Value</span>(Ada.Command_Line.Argument(Number =&gt; <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">function</span> <span class="title">fib</span>(</span><br><span class="line">        N: in Integer)</span><br><span class="line">        <span class="keyword">return</span> <span class="type">Integer</span> <span class="keyword">is</span></span><br><span class="line">        A : <span class="type">Integer</span> := <span class="number">0</span>;</span><br><span class="line">        B : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">        C : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">if</span> (N &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span> .. N <span class="keyword">loop</span></span><br><span class="line">            C := A + B;</span><br><span class="line">            A := B;</span><br><span class="line">            B := C;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    Ada.Text_IO.Put_Line(<span class="string">&quot;fib(&quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(N) &amp; <span class="string">&quot;) = &quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(fib(N)));</span><br><span class="line"><span class="keyword">end</span> fibonacci;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gnatmake fibonacci.adb</span><br><span class="line">$ ./fibonacci 3</span><br><span class="line">fib( 3) =  2</span><br></pre></td></tr></table></figure>
-
-<h2 id="Standard-ML-1983"><a href="#Standard-ML-1983" class="headerlink" title="Standard ML (1983)"></a>Standard ML (1983)</h2><p>Tail recursion</p>
-<!-- {% include_code lang:sml Fibonacci-Number-in-Different-Programming-Languages/StandardML/fibonacci.sml %} -->
-
-<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> fib n = </span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">fun</span> iter (a, b, n) = <span class="keyword">if</span> n &lt;= <span class="number">1</span> <span class="keyword">then</span> b <span class="keyword">else</span> iter (b, a + b, n - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">in</span> </span><br><span class="line">        iter(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> n_str = hd (<span class="type">CommandLine</span>.arguments<span class="literal">()</span>)</span><br><span class="line"><span class="keyword">val</span> n = valOf (<span class="type">Int</span>.fromString n_str)</span><br><span class="line"><span class="keyword">val</span> res = fib n</span><br><span class="line"><span class="keyword">val</span> _ = print (<span class="string">&quot;fib(&quot;</span> ^ <span class="type">Int</span>.toString n ^ <span class="string">&quot;) = &quot;</span> ^ <span class="type">Int</span>.toString res)</span><br><span class="line"><span class="keyword">val</span> _ = <span class="type">OS</span>.<span class="type">Process</span>.exit(<span class="type">OS</span>.<span class="type">Process</span>.success)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sml fibonacci.sml 4</span><br><span class="line">fib(4) = 3</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><!-- {% include_code lang:cpp Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp %} -->
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">atoi</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;fib(&quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt;  <span class="built_in">fib</span>(n) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ g++ fibonacci.cpp</span><br><span class="line">$ ./a.out 5</span><br><span class="line">fib(5) = 5</span><br></pre></td></tr></table></figure>
-
-<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><!-- {% include_code lang:python Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py %} -->
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fib(<span class="subst">&#123;n&#125;</span>) = <span class="subst">&#123;fib(n)&#125;</span>\n&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ python3 fibonacci.py 6</span><br><span class="line">fib(6) = 8</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><!-- {% include_code lang:java Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java %} -->
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fibonacci</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a + b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">        System.out.println(<span class="string">&quot;fib(&quot;</span> + n + <span class="string">&quot;) = &quot;</span> + fib(n));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ javac Fibonacci.java</span><br><span class="line">$ java Fibonacci 7</span><br><span class="line">fib(7) = 13</span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript-1995"><a href="#JavaScript-1995" class="headerlink" title="JavaScript (1995)"></a>JavaScript (1995)</h2><!-- {% include_code lang:js Fibonacci-Number-in-Different-Programming-Languages/JavaScript/fibonacci.js %} -->
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fib</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> n = process.<span class="property">argv</span>[<span class="number">2</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>\n`</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node fibonacci.js 8</span><br><span class="line">fib(8) = 21</span><br></pre></td></tr></table></figure>
-
-<h2 id="Scala-2004"><a href="#Scala-2004" class="headerlink" title="Scala (2004)"></a>Scala (2004)</h2><!-- {% include_code lang:scala Fibonacci-Number-in-Different-Programming-Languages/Scala/Fibonacci.scala %} -->
-
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Fibonacci</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">fib</span></span>(n: <span class="type">Int</span>): <span class="type">Int</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (_ &lt;- <span class="number">2</span> to n) &#123;</span><br><span class="line">      <span class="keyword">val</span> c = a + b</span><br><span class="line">      a = b</span><br><span class="line">      b = c</span><br><span class="line">    &#125;</span><br><span class="line">    b</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">    <span class="keyword">val</span> n = args(<span class="number">0</span>).toInt</span><br><span class="line">    println(<span class="string">s&quot;fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ scala Fibonacci.scala 9</span><br><span class="line">fib(9) = 34</span><br></pre></td></tr></table></figure>
-
-<h2 id="Swift-2014"><a href="#Swift-2014" class="headerlink" title="Swift (2014)"></a>Swift (2014)</h2><!-- {% include_code lang:swift Fibonacci-Number-in-Different-Programming-Languages/Swift/Fibonacci.swift %} -->
-
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fib</span>(<span class="keyword">_</span> <span class="params">n</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n <span class="operator">&lt;=</span> <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">2</span><span class="operator">...</span>n &#123;</span><br><span class="line">        <span class="keyword">let</span> c <span class="operator">=</span> a <span class="operator">+</span> b</span><br><span class="line">        a <span class="operator">=</span> b</span><br><span class="line">        b <span class="operator">=</span> c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> args <span class="operator">=</span> <span class="type">CommandLine</span>.arguments</span><br><span class="line"><span class="keyword">if</span> args.count <span class="operator">==</span> <span class="number">2</span>, <span class="keyword">let</span> n <span class="operator">=</span> <span class="type">Int</span>(args[<span class="number">1</span>]) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fib(<span class="subst">\(n)</span>) = <span class="subst">\(fib(n))</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Usage: swift fibonacci.swift &lt;number&gt;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ swift fibonacci.swift 10</span><br><span class="line">fib(10) = 55</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Programming Languages</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-        <tag>Scheme</tag>
-        <tag>Ada</tag>
-        <tag>Standard ML</tag>
-        <tag>C++</tag>
-        <tag>Python</tag>
-        <tag>Java</tag>
-        <tag>JavaScript</tag>
-        <tag>Scala</tag>
-        <tag>Swift</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Quick Guide</title>
-    <url>/Hexo-Quick-Guide/</url>
-    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
-<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
-<span id="more"></span>
-
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
-<ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
-</ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>Static Site Generator</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>hexo-theme-next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Solutions Collection</title>
-    <url>/Git-Solutions-Collection/</url>
-    <content><![CDATA[<p>Reference commands for common Git situations.</p>
-<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
-</div>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<p>Remove a folder recursively</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
-<p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
-<p>Then, run <code>git stash</code> to apply the stash entry</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>AI services guide: subscriptions, free tiers, and APIs (March 2026)</title>
     <url>/AI-Services-Guide-March-2026/</url>
     <content><![CDATA[<p>A detailed breakdown of every major AI provider in March 2026 – free tiers, chat subscriptions, API pricing, coding agents, model capabilities, mobile SDKs, and open source status.</p>
@@ -2272,25 +1959,150 @@
       </tags>
   </entry>
   <entry>
-    <title>Zsh Usage</title>
-    <url>/Zsh-Usage/</url>
-    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
-<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy</title>
+    <url>/Deploy-Static-Site-to-Cloudflare-Pages/</url>
+    <content><![CDATA[<p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
+<span id="more"></span>
 
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+<h2 id="What-You-Need"><a href="#What-You-Need" class="headerlink" title="What You Need"></a>What You Need</h2><ul>
+<li>A GitHub account</li>
+<li>A Cloudflare account (free plan works)</li>
+<li>A domain managed by Cloudflare DNS</li>
+<li>A static site (plain HTML&#x2F;CSS&#x2F;JS, no build step required)</li>
+</ul>
+<h2 id="1-Push-Your-Site-to-GitHub"><a href="#1-Push-Your-Site-to-GitHub" class="headerlink" title="1. Push Your Site to GitHub"></a>1. Push Your Site to GitHub</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/my-site</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line">gh repo create my-site --public --<span class="built_in">source</span>=. --push</span><br></pre></td></tr></table></figure>
 
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
+<p>If you don’t have the <code>gh</code> CLI, create the repo on GitHub manually and push:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:YOUR_USERNAME/my-site.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Create-a-Cloudflare-Pages-Project"><a href="#2-Create-a-Cloudflare-Pages-Project" class="headerlink" title="2. Create a Cloudflare Pages Project"></a>2. Create a Cloudflare Pages Project</h2><ol>
+<li>Go to <strong>Cloudflare Dashboard</strong></li>
+<li>Navigate to <strong>Workers &amp; Pages</strong></li>
+<li>Click <strong>Create</strong> &gt; <strong>Pages</strong> &gt; <strong>Connect to Git</strong></li>
+<li>Select your GitHub account and the repository</li>
+<li>Set the production branch to <code>main</code></li>
+</ol>
+<h3 id="Build-Settings"><a href="#Build-Settings" class="headerlink" title="Build Settings"></a>Build Settings</h3><p>For a plain static site (no framework, no bundler):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Build command</td>
+<td><em>(leave blank)</em></td>
+</tr>
+<tr>
+<td>Build output directory</td>
+<td><code>/</code></td>
+</tr>
+</tbody></table>
+<p>If your site uses a framework:</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Build command</th>
+<th>Output directory</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hugo</td>
+<td><code>hugo</code></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td><code>hexo generate</code></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td>Next.js (static)</td>
+<td><code>next build &amp;&amp; next export</code></td>
+<td><code>out</code></td>
+</tr>
+<tr>
+<td>Vite</td>
+<td><code>npm run build</code></td>
+<td><code>dist</code></td>
+</tr>
+</tbody></table>
+<p>Click <strong>Save and Deploy</strong>. Cloudflare builds and deploys immediately.</p>
+<p>Your site is now live at <code>my-site.pages.dev</code>.</p>
+<h2 id="3-Add-a-Custom-Domain"><a href="#3-Add-a-Custom-Domain" class="headerlink" title="3. Add a Custom Domain"></a>3. Add a Custom Domain</h2><ol>
+<li>In your Pages project, go to <strong>Custom domains</strong></li>
+<li>Click <strong>Set up a custom domain</strong></li>
+<li>Enter your subdomain (e.g., <code>app.example.com</code>)</li>
+<li>Cloudflare automatically creates the DNS record:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CNAME</td>
+<td><code>app</code></td>
+<td><code>my-site.pages.dev</code></td>
+</tr>
+</tbody></table>
+<p>SSL is provisioned automatically. The domain is usually active within seconds since DNS is already on Cloudflare.</p>
+<h2 id="4-Daily-Workflow"><a href="#4-Daily-Workflow" class="headerlink" title="4. Daily Workflow"></a>4. Daily Workflow</h2><p>That’s it. From now on, every push to <code>main</code> triggers an automatic deploy:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Edit your files</span></span><br><span class="line">vim index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># Push</span></span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;update feature&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># Site updates in ~30 seconds at your custom domain</span></span><br></pre></td></tr></table></figure>
+
+<p>No deploy commands. No CI config files. No build scripts.</p>
+<h2 id="Alternative-Manual-Deploy-with-Wrangler"><a href="#Alternative-Manual-Deploy-with-Wrangler" class="headerlink" title="Alternative: Manual Deploy with Wrangler"></a>Alternative: Manual Deploy with Wrangler</h2><p>If you prefer not to connect GitHub (or need to deploy from a different source), you can use the Wrangler CLI:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install wrangler (one-time)</span></span><br><span class="line">npm install -g wrangler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the project (one-time)</span></span><br><span class="line">npx wrangler pages project create my-site --production-branch main</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy (every time)</span></span><br><span class="line">npx wrangler pages deploy . --project-name my-site</span><br></pre></td></tr></table></figure>
+
+<p>This uploads the current directory directly. No Git integration — you run the command manually each time.</p>
+<p><strong>Note:</strong> Projects created via <code>wrangler</code> cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.</p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>For a static site deployed to Cloudflare Pages:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">*.swp</span><br><span class="line">*.swo</span><br><span class="line">*~</span><br><span class="line">.wrangler/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure>
+
+<p><code>.wrangler/</code> contains local deploy cache from the Wrangler CLI. <code>node_modules/</code> in case you install wrangler locally.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Create GitHub repo</td>
+<td><code>gh repo create</code></td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Connect to Cloudflare Pages</td>
+<td>Dashboard UI</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Add custom domain</td>
+<td>Dashboard &gt; Custom domains</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Deploy</td>
+<td><code>git push</code></td>
+<td>Every change</td>
+</tr>
+</tbody></table>
+<p>Total setup time: ~5 minutes. Zero ongoing maintenance.</p>
 ]]></content>
       <categories>
-        <category>Shell</category>
+        <category>Web</category>
       </categories>
       <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
+        <tag>Cloudflare</tag>
+        <tag>GitHub</tag>
+        <tag>static-site</tag>
       </tags>
   </entry>
   <entry>
@@ -2313,7 +2125,8 @@
 
 <span id="more"></span>
 
-<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><p>For a detailed comparison of all major terminal emulators (Ghostty, iTerm2, Kitty, Alacritty, WezTerm, and more), see <a href="/Terminal-Emulator-Comparison-2026/" title="Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm">Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</a>.</p>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
 
 <h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><a href="/Git-Solutions-Collection/" title="Git Solutions Collection">Git Solutions Collection</a> — common commands and solutions
 
@@ -2547,6 +2360,137 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo Quick Guide</title>
+    <url>/Hexo-Quick-Guide/</url>
+    <content><![CDATA[<p>Short reference for my Hexo&#x2F;NexT workflow.</p>
+<p>Official Site: <a href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+<span id="more"></span>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
+<ul>
+<li><code>theme_config</code> in site’s primary configuration file</li>
+<li><code>_config.[theme].yml</code> file</li>
+<li><code>_config.yml</code> file under the theme directory</li>
+</ul>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a href="https://theme-next.js.org/">NexT</a></h3><p><a href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
+<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
+<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
+<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
+</blockquote>
+<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Static Site Generator</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>hexo-theme-next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fibonacci Number in Different Programming Languages</title>
+    <url>/Fibonacci-Number-in-Different-Programming-Languages/</url>
+    <content><![CDATA[<p>Implementations of the nth Fibonacci number in various programming languages.</p>
+<h2 id="C-1972"><a href="#C-1972" class="headerlink" title="C (1972)"></a>C (1972)</h2><!-- {% include_code lang:c Fibonacci-Number-in-Different-Programming-Languages/C/fibonacci.c %} -->
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fib(%d) = %d\n&quot;</span>, n, fib(n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gcc fibonacci.c</span><br><span class="line">$ ./a.out 1</span><br><span class="line">fib(1) = 1</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Scheme-1975"><a href="#Scheme-1975" class="headerlink" title="Scheme (1975)"></a>Scheme (1975)</h2><p>Tail recursion</p>
+<!-- {% include_code lang:scheme Fibonacci-Number-in-Different-Programming-Languages/Scheme/fibonacci.scm %} -->
+
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="built_in">define</span></span> (<span class="name">fib</span> n)</span><br><span class="line">  (<span class="name"><span class="built_in">define</span></span> (<span class="name">iter</span> a b n)</span><br><span class="line">    (<span class="name"><span class="built_in">if</span></span> (<span class="name"><span class="built_in">&lt;=</span></span> n <span class="number">1</span>)</span><br><span class="line">        b</span><br><span class="line">        (<span class="name">iter</span> b (<span class="name"><span class="built_in">+</span></span> a b) (<span class="name"><span class="built_in">-</span></span> n <span class="number">1</span>))))</span><br><span class="line">  (<span class="name">iter</span> <span class="number">0</span> <span class="number">1</span> n))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ racket -f fibonacci.scm -e &quot;(fib 2)&quot;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ada-1980"><a href="#Ada-1980" class="headerlink" title="Ada (1980)"></a>Ada (1980)</h2><!-- {% include_code lang:ada Fibonacci-Number-in-Different-Programming-Languages/Ada/fibonacci.adb %} -->
+
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> Ada.Text_IO;</span><br><span class="line"><span class="keyword">with</span> Ada.Command_Line;</span><br><span class="line"></span><br><span class="line"><span class="keyword">procedure</span> <span class="title">fibonacci</span> <span class="keyword">is</span></span><br><span class="line">    N : <span class="type">Integer</span> := Integer<span class="symbol">&#x27;Value</span>(Ada.Command_Line.Argument(Number =&gt; <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">function</span> <span class="title">fib</span>(</span><br><span class="line">        N: in Integer)</span><br><span class="line">        <span class="keyword">return</span> <span class="type">Integer</span> <span class="keyword">is</span></span><br><span class="line">        A : <span class="type">Integer</span> := <span class="number">0</span>;</span><br><span class="line">        B : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">        C : <span class="type">Integer</span> := <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">if</span> (N &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span> .. N <span class="keyword">loop</span></span><br><span class="line">            C := A + B;</span><br><span class="line">            A := B;</span><br><span class="line">            B := C;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    Ada.Text_IO.Put_Line(<span class="string">&quot;fib(&quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(N) &amp; <span class="string">&quot;) = &quot;</span> &amp; Integer<span class="symbol">&#x27;Image</span>(fib(N)));</span><br><span class="line"><span class="keyword">end</span> fibonacci;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ gnatmake fibonacci.adb</span><br><span class="line">$ ./fibonacci 3</span><br><span class="line">fib( 3) =  2</span><br></pre></td></tr></table></figure>
+
+<h2 id="Standard-ML-1983"><a href="#Standard-ML-1983" class="headerlink" title="Standard ML (1983)"></a>Standard ML (1983)</h2><p>Tail recursion</p>
+<!-- {% include_code lang:sml Fibonacci-Number-in-Different-Programming-Languages/StandardML/fibonacci.sml %} -->
+
+<figure class="highlight sml"><table><tr><td class="code"><pre><span class="line"><span class="keyword">fun</span> fib n = </span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">fun</span> iter (a, b, n) = <span class="keyword">if</span> n &lt;= <span class="number">1</span> <span class="keyword">then</span> b <span class="keyword">else</span> iter (b, a + b, n - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">in</span> </span><br><span class="line">        iter(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> n_str = hd (<span class="type">CommandLine</span>.arguments<span class="literal">()</span>)</span><br><span class="line"><span class="keyword">val</span> n = valOf (<span class="type">Int</span>.fromString n_str)</span><br><span class="line"><span class="keyword">val</span> res = fib n</span><br><span class="line"><span class="keyword">val</span> _ = print (<span class="string">&quot;fib(&quot;</span> ^ <span class="type">Int</span>.toString n ^ <span class="string">&quot;) = &quot;</span> ^ <span class="type">Int</span>.toString res)</span><br><span class="line"><span class="keyword">val</span> _ = <span class="type">OS</span>.<span class="type">Process</span>.exit(<span class="type">OS</span>.<span class="type">Process</span>.success)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sml fibonacci.sml 4</span><br><span class="line">fib(4) = 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-1985"><a href="#C-1985" class="headerlink" title="C++ (1985)"></a>C++ (1985)</h2><!-- {% include_code lang:cpp Fibonacci-Number-in-Different-Programming-Languages/C++/fibonacci.cpp %} -->
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">atoi</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;fib(&quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt;  <span class="built_in">fib</span>(n) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ g++ fibonacci.cpp</span><br><span class="line">$ ./a.out 5</span><br><span class="line">fib(5) = 5</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-1991"><a href="#Python-1991" class="headerlink" title="Python (1991)"></a>Python (1991)</h2><!-- {% include_code lang:python Fibonacci-Number-in-Different-Programming-Languages/Python/fibonacci.py %} -->
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fib(<span class="subst">&#123;n&#125;</span>) = <span class="subst">&#123;fib(n)&#125;</span>\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ python3 fibonacci.py 6</span><br><span class="line">fib(6) = 8</span><br></pre></td></tr></table></figure>
+
+<h2 id="Java-1995"><a href="#Java-1995" class="headerlink" title="Java (1995)"></a>Java (1995)</h2><!-- {% include_code lang:java Fibonacci-Number-in-Different-Programming-Languages/Java/Fibonacci.java %} -->
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fibonacci</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a + b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">        System.out.println(<span class="string">&quot;fib(&quot;</span> + n + <span class="string">&quot;) = &quot;</span> + fib(n));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ javac Fibonacci.java</span><br><span class="line">$ java Fibonacci 7</span><br><span class="line">fib(7) = 13</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-1995"><a href="#JavaScript-1995" class="headerlink" title="JavaScript (1995)"></a>JavaScript (1995)</h2><!-- {% include_code lang:js Fibonacci-Number-in-Different-Programming-Languages/JavaScript/fibonacci.js %} -->
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fib</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        c = a + b</span><br><span class="line">        a = b</span><br><span class="line">        b = c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> n = process.<span class="property">argv</span>[<span class="number">2</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>\n`</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node fibonacci.js 8</span><br><span class="line">fib(8) = 21</span><br></pre></td></tr></table></figure>
+
+<h2 id="Scala-2004"><a href="#Scala-2004" class="headerlink" title="Scala (2004)"></a>Scala (2004)</h2><!-- {% include_code lang:scala Fibonacci-Number-in-Different-Programming-Languages/Scala/Fibonacci.scala %} -->
+
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Fibonacci</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">fib</span></span>(n: <span class="type">Int</span>): <span class="type">Int</span> = &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (_ &lt;- <span class="number">2</span> to n) &#123;</span><br><span class="line">      <span class="keyword">val</span> c = a + b</span><br><span class="line">      a = b</span><br><span class="line">      b = c</span><br><span class="line">    &#125;</span><br><span class="line">    b</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">    <span class="keyword">val</span> n = args(<span class="number">0</span>).toInt</span><br><span class="line">    println(<span class="string">s&quot;fib(<span class="subst">$&#123;n&#125;</span>) = <span class="subst">$&#123;fib(n)&#125;</span>&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ scala Fibonacci.scala 9</span><br><span class="line">fib(9) = 34</span><br></pre></td></tr></table></figure>
+
+<h2 id="Swift-2014"><a href="#Swift-2014" class="headerlink" title="Swift (2014)"></a>Swift (2014)</h2><!-- {% include_code lang:swift Fibonacci-Number-in-Different-Programming-Languages/Swift/Fibonacci.swift %} -->
+
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">fib</span>(<span class="keyword">_</span> <span class="params">n</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n <span class="operator">&lt;=</span> <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> b <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">2</span><span class="operator">...</span>n &#123;</span><br><span class="line">        <span class="keyword">let</span> c <span class="operator">=</span> a <span class="operator">+</span> b</span><br><span class="line">        a <span class="operator">=</span> b</span><br><span class="line">        b <span class="operator">=</span> c</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> args <span class="operator">=</span> <span class="type">CommandLine</span>.arguments</span><br><span class="line"><span class="keyword">if</span> args.count <span class="operator">==</span> <span class="number">2</span>, <span class="keyword">let</span> n <span class="operator">=</span> <span class="type">Int</span>(args[<span class="number">1</span>]) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fib(<span class="subst">\(n)</span>) = <span class="subst">\(fib(n))</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Usage: swift fibonacci.swift &lt;number&gt;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ swift fibonacci.swift 10</span><br><span class="line">fib(10) = 55</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Programming Languages</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>Scheme</tag>
+        <tag>Ada</tag>
+        <tag>Standard ML</tag>
+        <tag>C++</tag>
+        <tag>Python</tag>
+        <tag>Java</tag>
+        <tag>JavaScript</tag>
+        <tag>Scala</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac Usage</title>
     <url>/Mac-Usage/</url>
     <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
@@ -2563,6 +2507,1066 @@
       </categories>
       <tags>
         <tag>Finder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Solutions Collection</title>
+    <url>/Git-Solutions-Collection/</url>
+    <content><![CDATA[<p>Reference commands for common Git situations.</p>
+<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
+</div>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove a folder recursively</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+<p>First, use <code>gitk</code> to find the corresponding hash value</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
+<p>Then, run <code>git stash</code> to apply the stash entry</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</title>
+    <url>/Terminal-Emulator-Comparison-2026/</url>
+    <content><![CDATA[<p>A detailed comparison of every major terminal emulator in 2026 – performance, features, configuration, platform support, and which one fits your workflow.</p>
+<span id="more"></span>
+
+<h2 id="Why-your-terminal-matters"><a href="#Why-your-terminal-matters" class="headerlink" title="Why your terminal matters"></a>Why your terminal matters</h2><p>Developers spend hours a day in a terminal. The difference between a slow, limited terminal and a fast, well-configured one compounds over time. Modern terminals offer GPU-accelerated rendering, built-in multiplexing, scriptable configuration, inline images, and more – features that were unthinkable a decade ago.</p>
+<p>This guide covers 8 terminals across 3 categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Options</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GPU-native, feature-rich</strong></td>
+<td>Ghostty, iTerm2, Kitty, WezTerm</td>
+<td>Developers who want speed + features</td>
+</tr>
+<tr>
+<td><strong>GPU-native, minimal</strong></td>
+<td>Alacritty</td>
+<td>Developers who use tmux and want raw speed</td>
+</tr>
+<tr>
+<td><strong>Alternative approaches</strong></td>
+<td>Warp, Hyper</td>
+<td>AI-assisted or web-based workflows</td>
+</tr>
+</tbody></table>
+<p>Terminal.app (macOS built-in) is included in tables as a baseline but doesn’t get its own section – it works, but every option above is a meaningful upgrade.</p>
+<hr>
+<h2 id="Quick-comparison"><a href="#Quick-comparison" class="headerlink" title="Quick comparison"></a>Quick comparison</h2><h3 id="Core-features"><a href="#Core-features" class="headerlink" title="Core features"></a>Core features</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GPU accelerated</strong></td>
+<td align="center">Metal</td>
+<td align="center">Metal (opt-in)</td>
+<td align="center">OpenGL</td>
+<td align="center">OpenGL&#x2F;Metal</td>
+<td align="center">OpenGL&#x2F;Metal</td>
+<td align="center">Metal</td>
+<td align="center">No (Electron)</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Tabs</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td><strong>Splits&#x2F;panes</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes (layouts)</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Ligatures</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Inline images</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes (imgcat)</td>
+<td align="center">Yes (protocol)</td>
+<td align="center">No</td>
+<td align="center">Yes (multi)</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>tmux integration</strong></td>
+<td align="center">No</td>
+<td align="center">Native control mode</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Shell integration</strong></td>
+<td align="center">Deep</td>
+<td align="center">Deep</td>
+<td align="center">Basic</td>
+<td align="center">No</td>
+<td align="center">Basic</td>
+<td align="center">Deep</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Session save&#x2F;restore</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Session files</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes (window groups)</td>
+</tr>
+<tr>
+<td><strong>Undo close tab</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">–</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+<h3 id="Configuration-and-extensibility"><a href="#Configuration-and-extensibility" class="headerlink" title="Configuration and extensibility"></a>Configuration and extensibility</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Config format</strong></td>
+<td>key&#x3D;value</td>
+<td>GUI</td>
+<td>key&#x3D;value</td>
+<td>TOML</td>
+<td>Lua</td>
+<td>GUI + YAML</td>
+<td>JS</td>
+<td>GUI</td>
+</tr>
+<tr>
+<td><strong>Config location</strong></td>
+<td><code>~/.config/ghostty/config</code></td>
+<td>Preferences UI</td>
+<td><code>~/.config/kitty/kitty.conf</code></td>
+<td><code>~/.config/alacritty/alacritty.toml</code></td>
+<td><code>~/.config/wezterm/wezterm.lua</code></td>
+<td><code>~/.warp/</code></td>
+<td><code>~/.hyper.js</code></td>
+<td>Preferences UI</td>
+</tr>
+<tr>
+<td><strong>Live reload</strong></td>
+<td>Keybind</td>
+<td>N&#x2F;A (GUI)</td>
+<td><code>ctrl+shift+f5</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N&#x2F;A</td>
+<td>Yes</td>
+<td>N&#x2F;A</td>
+</tr>
+<tr>
+<td><strong>Scripting</strong></td>
+<td>AppleScript (macOS)</td>
+<td>Python API</td>
+<td>Python (kittens)</td>
+<td>No</td>
+<td>Lua (full)</td>
+<td>No</td>
+<td>JS plugins (npm)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Profiles</strong></td>
+<td>No</td>
+<td>Yes (extensive)</td>
+<td>No</td>
+<td>No</td>
+<td>Domains</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Config complexity</strong></td>
+<td>Very low</td>
+<td>Low (GUI)</td>
+<td>Low</td>
+<td>Low</td>
+<td>Medium-High</td>
+<td>Low (GUI)</td>
+<td>Medium</td>
+<td>Very low</td>
+</tr>
+</tbody></table>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Rendering speed</strong></td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Best</td>
+<td>Good</td>
+<td>Good</td>
+<td>Poor</td>
+<td>Adequate</td>
+</tr>
+<tr>
+<td><strong>Input latency</strong></td>
+<td>Very low</td>
+<td>Low</td>
+<td>Very low</td>
+<td>Lowest</td>
+<td>Low</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Memory baseline</strong></td>
+<td>~30 MB</td>
+<td>~80-120 MB</td>
+<td>~30 MB</td>
+<td>~20 MB</td>
+<td>~80-150 MB</td>
+<td>~150 MB</td>
+<td>~200 MB</td>
+<td>~40 MB</td>
+</tr>
+<tr>
+<td><strong>Startup time</strong></td>
+<td>Fast</td>
+<td>Moderate</td>
+<td>Fast</td>
+<td>Fastest</td>
+<td>Moderate</td>
+<td>Slow</td>
+<td>Slow</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td><strong>Heavy output (<code>cat</code> large file)</strong></td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Good</td>
+<td>Poor</td>
+<td>Slow</td>
+</tr>
+</tbody></table>
+<div class="note info"><p><strong>Memory numbers are approximate</strong> and vary by OS, tab count, scrollback size, and configuration. Measured with a single tab, default scrollback, on macOS.</p>
+</div>
+
+<h3 id="Platform-support"><a href="#Platform-support" class="headerlink" title="Platform support"></a>Platform support</h3><table>
+<thead>
+<tr>
+<th>Platform</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>macOS</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Windows</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No (WSL)</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Native feel (macOS)</strong></td>
+<td align="center">Excellent</td>
+<td align="center">Excellent</td>
+<td align="center">Native chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Native</td>
+</tr>
+</tbody></table>
+<p>Alacritty and Kitty also support BSD.</p>
+<h3 id="Appearance-and-theming"><a href="#Appearance-and-theming" class="headerlink" title="Appearance and theming"></a>Appearance and theming</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Bundled themes</strong></td>
+<td>300+</td>
+<td>~10 (200+ community)</td>
+<td>Community (<code>kitten themes</code>)</td>
+<td>Community (TOML)</td>
+<td>700+</td>
+<td>Built-in</td>
+<td>Community (npm)</td>
+<td>~10</td>
+</tr>
+<tr>
+<td><strong>Background image</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes (Lua)</td>
+<td>No</td>
+<td>Yes (CSS)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Tab bar customization</strong></td>
+<td>Native macOS</td>
+<td>Extensive</td>
+<td>Extensive</td>
+<td>–</td>
+<td>Extensive</td>
+<td>Custom</td>
+<td>CSS</td>
+<td>Native macOS</td>
+</tr>
+</tbody></table>
+<p>All terminals support background opacity, font fallback chains, colored bold, and block&#x2F;beam&#x2F;underline cursor styles.</p>
+<h3 id="Developer-facing-features"><a href="#Developer-facing-features" class="headerlink" title="Developer-facing features"></a>Developer-facing features</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Vi mode (scrollback)</strong></td>
+<td align="center">No</td>
+<td align="center">Yes (copy mode)</td>
+<td align="center">Pager-based</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Regex triggers</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes (hints)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Broadcast to panes</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Paste history</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>SSH multiplexing</strong></td>
+<td align="center">No</td>
+<td align="center">Yes (tmux)</td>
+<td align="center">SSH kitten</td>
+<td align="center">No</td>
+<td align="center">Built-in</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Command palette</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>AI integration</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes (built-in)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Block-based output</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+<h3 id="Project-info"><a href="#Project-info" class="headerlink" title="Project info"></a>Project info</h3><table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Language</strong></td>
+<td>Zig + Swift</td>
+<td>Obj-C&#x2F;Swift</td>
+<td>C + Python</td>
+<td>Rust</td>
+<td>Rust</td>
+<td>Rust</td>
+<td>Electron (JS)</td>
+<td>Obj-C (Apple)</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>MIT</td>
+<td>GPLv2</td>
+<td>GPLv3</td>
+<td>Apache 2.0</td>
+<td>MIT</td>
+<td>Proprietary</td>
+<td>MIT</td>
+<td>Proprietary</td>
+</tr>
+<tr>
+<td><strong>First release</strong></td>
+<td>2024</td>
+<td>2010</td>
+<td>2017</td>
+<td>2017</td>
+<td>2018</td>
+<td>2022</td>
+<td>2016</td>
+<td>2001</td>
+</tr>
+<tr>
+<td><strong>Account required</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Telemetry</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes (Apple)</td>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Homebrew &#x2F; installer</td>
+<td>Homebrew &#x2F; cargo</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>.dmg</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Pre-installed</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Detailed-breakdown"><a href="#Detailed-breakdown" class="headerlink" title="Detailed breakdown"></a>Detailed breakdown</h2><h3 id="Ghostty"><a href="#Ghostty" class="headerlink" title="Ghostty"></a>Ghostty</h3><p>Created by Mitchell Hashimoto (HashiCorp co-founder). Written in Zig (with Swift&#x2F;AppKit for macOS GUI), GPU-accelerated via Metal (macOS) and OpenGL (Linux).</p>
+<p><strong>What makes it different</strong>: Ghostty is the only GPU-native terminal that uses real platform UI. On macOS, it renders with AppKit – native title bar, native tabs, native menus. It doesn’t look like a cross-platform app pretending to be a Mac app. It looks like a Mac app.</p>
+<p>The config format is the simplest of any terminal in this list – flat key&#x3D;value pairs, no nesting:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font-family = FiraCode Nerd Font</span><br><span class="line">font-size = 14</span><br><span class="line">theme = catppuccin-mocha</span><br><span class="line">window-padding-x = 8</span><br><span class="line">window-padding-y = 4</span><br><span class="line">keybind = super+d=new_split:right</span><br><span class="line">keybind = super+shift+d=new_split:down</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Exceptional rendering performance on par with Alacritty</li>
+<li>Native macOS experience (AppKit, not custom chrome)</li>
+<li>Simplest config format – easy to learn, easy to share</li>
+<li>Built-in splits without tmux</li>
+<li>Large bundled theme collection</li>
+<li>Active, rapid development</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>No Windows support</li>
+<li>No profiles (one global config)</li>
+<li>Younger than alternatives – some edge cases may not be handled yet</li>
+</ul>
+<p><strong>Best for</strong>: macOS developers who want speed without sacrificing native UX. If you care about your terminal feeling like a “real Mac app” and want sub-millisecond rendering, this is the one.</p>
+<hr>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><p>The long-standing default upgrade from Terminal.app. Built by George Nachman, maintained for over 15 years.</p>
+<p><strong>What makes it different</strong>: Feature density. iTerm2 has more features than any other terminal, period. The tmux integration alone (where remote tmux sessions render as native iTerm2 tabs and splits) is unique across all terminals. The Python scripting API lets you automate anything.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># iTerm2 Python API example: auto-switch profile by hostname</span></span><br><span class="line"><span class="keyword">import</span> iterm2</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">connection</span>):</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> iterm2.SessionTerminationMonitor(connection) <span class="keyword">as</span> mon:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            session = <span class="keyword">await</span> mon.async_get()</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;production&quot;</span> <span class="keyword">in</span> session.name:</span><br><span class="line">                <span class="keyword">await</span> session.async_set_profile(<span class="string">&quot;Production&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Most feature-complete terminal on any platform</li>
+<li>tmux control mode – remote tmux sessions as native tabs</li>
+<li>Python scripting API for automation</li>
+<li>Instant replay (rewind terminal output like a DVR)</li>
+<li>Triggers (regex-based actions on output)</li>
+<li>Paste history, autocomplete, smart selection</li>
+<li>GUI preferences – no config file needed</li>
+<li>Inline images (imgcat)</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Heavier resource usage than GPU-native terminals</li>
+<li>macOS only</li>
+<li>Startup is slower than lightweight alternatives</li>
+<li>Can feel bloated if you only need basics</li>
+</ul>
+<p><strong>Best for</strong>: Power users who want everything in one terminal. If you SSH into servers frequently, use tmux, need per-host profiles, or want a scripting API, iTerm2 is hard to beat.</p>
+<hr>
+<h3 id="Kitty"><a href="#Kitty" class="headerlink" title="Kitty"></a>Kitty</h3><p>Written in C and Python by Kovid Goyal. GPU-rendered from the ground up.</p>
+<p><strong>What makes it different</strong>: Kittens. Kitty’s extension system lets you write Python scripts that run inside the terminal process, with access to screen content, terminal state, and input. Built-in kittens include <code>icat</code> (inline images), <code>diff</code> (side-by-side diffs), <code>hints</code> (clickable URLs&#x2F;paths), and <code>ssh</code> (auto-copy terminfo to remote hosts). The Kitty graphics protocol is becoming a de facto standard adopted by other tools.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Display an image inline</span></span><br><span class="line">kitty +kitten icat photo.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Side-by-side diff</span></span><br><span class="line">kitty +kitten diff file1.py file2.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy terminfo + shell integration to a remote host</span></span><br><span class="line">kitty +kitten ssh user@host</span><br></pre></td></tr></table></figure>
+
+<p>Kitty’s built-in layouts replace basic tmux usage:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># kitty.conf -- tiling layouts</span><br><span class="line">enabled_layouts tall:bias=70,fat,grid,splits,stack</span><br><span class="line">map ctrl+shift+l next_layout</span><br><span class="line">map ctrl+shift+enter new_window</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Kittens extension system – deeply programmable</li>
+<li>Graphics protocol becoming an industry standard</li>
+<li>Excellent tiling layouts without tmux</li>
+<li>SSH kitten (auto-copies terminfo, shell integration)</li>
+<li>Scrollback via configurable pager (vim, less, etc.)</li>
+<li>Broadcast input to all panes</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Requires configuration to feel native on macOS</li>
+<li>Community friction (author has strong opinions in issue tracker)</li>
+<li>No GUI settings</li>
+<li>Kitten API has a learning curve</li>
+</ul>
+<p><strong>Best for</strong>: Developers who want a programmable terminal. If you write custom tools, display images&#x2F;charts in the terminal, or want deep control without tmux, Kitty’s extensibility is unmatched.</p>
+<hr>
+<h3 id="Alacritty"><a href="#Alacritty" class="headerlink" title="Alacritty"></a>Alacritty</h3><p>Famously billed as the “fastest terminal emulator in existence.” Written in Rust, GPU-accelerated.</p>
+<p><strong>What makes it different</strong>: Radical minimalism. Alacritty deliberately omits tabs, splits, ligatures, and inline images. The philosophy: the terminal should render text fast and nothing else. Use tmux or your window manager for multiplexing. This means less code, fewer bugs, and the absolute best performance.</p>
+<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># alacritty.toml -- that&#x27;s really all you need</span></span><br><span class="line"><span class="section">[font]</span></span><br><span class="line"><span class="attr">normal.family</span> = <span class="string">&quot;FiraCode Nerd Font&quot;</span></span><br><span class="line"><span class="attr">size</span> = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="section">[window]</span></span><br><span class="line"><span class="attr">opacity</span> = <span class="number">0.95</span></span><br><span class="line"><span class="attr">padding</span> = &#123; x = <span class="number">8</span>, y = <span class="number">4</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[colors.primary]</span></span><br><span class="line"><span class="attr">background</span> = <span class="string">&quot;#1e1e2e&quot;</span></span><br><span class="line"><span class="attr">foreground</span> = <span class="string">&quot;#cdd6f4&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Fastest and lightest terminal available – the performance benchmark</li>
+<li>Rock solid stability – minimal code means minimal bugs</li>
+<li>Broadest platform support (macOS, Linux, Windows, BSD)</li>
+<li>TOML config – clean, well-documented</li>
+<li>Vi mode for scrollback navigation</li>
+<li>Consistent behavior across all platforms</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>No tabs or splits (by design – use tmux)</li>
+<li>No ligature support (long-standing, intentional decision)</li>
+<li>No inline images</li>
+<li>No scripting or plugins</li>
+</ul>
+<p><strong>Best for</strong>: tmux users who want the fastest possible rendering layer. If tmux is already your multiplexer and you don’t need ligatures or inline images, Alacritty is pure speed with zero bloat.</p>
+<hr>
+<h3 id="WezTerm"><a href="#WezTerm" class="headerlink" title="WezTerm"></a>WezTerm</h3><p>Written in Rust by Wez Furlong. GPU-accelerated with a Lua configuration engine.</p>
+<p><strong>What makes it different</strong>: Lua. Your config isn’t a static file – it’s a program. You can write conditionals, functions, import modules, and react to events. WezTerm also has the best built-in multiplexer of any terminal: tabs, splits, and workspaces that can genuinely replace tmux. The built-in SSH client with multiplexing means you get your full WezTerm experience on remote servers without installing anything.</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- wezterm.lua -- conditional config based on hostname</span></span><br><span class="line"><span class="keyword">local</span> wezterm = <span class="built_in">require</span> <span class="string">&#x27;wezterm&#x27;</span></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = wezterm.config_builder()</span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span>.font = wezterm.font(<span class="string">&#x27;FiraCode Nerd Font&#x27;</span>)</span><br><span class="line"><span class="built_in">config</span>.font_size = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Different theme on work vs personal machine</span></span><br><span class="line"><span class="keyword">if</span> wezterm.hostname() == <span class="string">&#x27;work-laptop&#x27;</span> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Latte&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Mocha&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Custom status bar</span></span><br><span class="line">wezterm.on(<span class="string">&#x27;update-status&#x27;</span>, <span class="function"><span class="keyword">function</span><span class="params">(window)</span></span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">date</span> = wezterm.strftime(<span class="string">&#x27;%H:%M&#x27;</span>)</span><br><span class="line">  window:set_right_status(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Lua config – full programming language, not just key&#x3D;value</li>
+<li>Best built-in multiplexer (can genuinely replace tmux)</li>
+<li>SSH multiplexing (remote tabs&#x2F;splits without tmux on server)</li>
+<li>Supports all three inline image protocols (iTerm2, Kitty, Sixel)</li>
+<li>Excellent native Windows support</li>
+<li>Serial port support (embedded development)</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Lua config is overkill for simple setups</li>
+<li>Heavier than Alacritty&#x2F;Ghostty</li>
+<li>Non-native window chrome on macOS</li>
+<li>Documentation can be hard to navigate</li>
+<li>Development pace has slowed in 2025-2026</li>
+</ul>
+<p><strong>Best for</strong>: Power users who want maximum programmability and cross-platform consistency. If you work on macOS + Linux + Windows, or want to replace tmux entirely, WezTerm is the most capable all-in-one option.</p>
+<hr>
+<h3 id="Warp"><a href="#Warp" class="headerlink" title="Warp"></a>Warp</h3><p>Rust-based, GPU-accelerated, with a fundamentally different UX model.</p>
+<p><strong>What makes it different</strong>: Warp treats the terminal like an IDE. Output is grouped into collapsible blocks per command. There’s a persistent input area at the bottom (like a text editor, with cursor navigation). AI is built in – describe what you want in natural language, and Warp suggests the command. Workflows (saved command templates with parameters) let you share complex commands with your team.</p>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>AI command suggestions – natural language to shell</li>
+<li>Block-based output – collapse, copy, or share individual commands</li>
+<li>Modern text editing in the input area (multi-cursor, select, undo)</li>
+<li>Workflows – parameterized command templates</li>
+<li>Team features (shared workflows, team themes)</li>
+<li>Polished, approachable UI</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li><strong>Account required</strong> – you must sign up to use a terminal (controversial)</li>
+<li><strong>Proprietary</strong> – closed source</li>
+<li><strong>Telemetry</strong> – sends usage data</li>
+<li>macOS and Linux only (no Windows)</li>
+<li>Heavier memory footprint (~150 MB)</li>
+<li>Non-standard UX can clash with existing muscle memory</li>
+</ul>
+<p><strong>Best for</strong>: Developers new to the terminal who want guidance, or teams that benefit from shared workflows. If the account requirement and closed source don’t bother you, the UX is genuinely innovative.</p>
+<hr>
+<h3 id="Hyper"><a href="#Hyper" class="headerlink" title="Hyper"></a>Hyper</h3><p>Built on Electron by Vercel (the Next.js company). HTML, CSS, and JavaScript all the way down. Themes are CSS, plugins are npm packages. Beautiful out of the box, but Electron means significantly slower rendering (~200 MB memory, noticeable input latency). Development has slowed considerably. <strong>Best for</strong> web developers who want CSS&#x2F;JS customization and don’t mind the performance trade-off. Not recommended for heavy CLI workloads.</p>
+<hr>
+<h2 id="Decision-guide"><a href="#Decision-guide" class="headerlink" title="Decision guide"></a>Decision guide</h2><table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Best pick</th>
+<th>Runner-up</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Raw speed</strong></td>
+<td><strong>Alacritty</strong> – minimal code, maximum performance</td>
+<td>Ghostty</td>
+</tr>
+<tr>
+<td><strong>macOS native feel</strong></td>
+<td><strong>Ghostty</strong> – real AppKit UI, not custom chrome</td>
+<td>iTerm2</td>
+</tr>
+<tr>
+<td><strong>Most features</strong></td>
+<td><strong>iTerm2</strong> – 15 years of feature accumulation</td>
+<td>WezTerm</td>
+</tr>
+<tr>
+<td><strong>Drop tmux entirely</strong></td>
+<td><strong>WezTerm</strong> – best built-in multiplexer</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td><strong>tmux power user</strong></td>
+<td><strong>Alacritty</strong> – fastest rendering layer</td>
+<td>Ghostty</td>
+</tr>
+<tr>
+<td><strong>SSH to many servers</strong></td>
+<td><strong>iTerm2</strong> – native tmux control mode</td>
+<td>WezTerm (SSH mux)</td>
+</tr>
+<tr>
+<td><strong>Extensibility</strong></td>
+<td><strong>Kitty</strong> (Python kittens) or <strong>WezTerm</strong> (Lua)</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Cross-platform (incl. Windows)</strong></td>
+<td><strong>WezTerm</strong> or <strong>Alacritty</strong></td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Simplest config</strong></td>
+<td><strong>Ghostty</strong> – flat key&#x3D;value, no nesting</td>
+<td>Alacritty (TOML)</td>
+</tr>
+<tr>
+<td><strong>New to the terminal</strong></td>
+<td><strong>Warp</strong> – AI guidance, IDE-like UX</td>
+<td>iTerm2 (GUI)</td>
+</tr>
+<tr>
+<td><strong>Privacy &#x2F; no telemetry</strong></td>
+<td><strong>Alacritty</strong>, <strong>Ghostty</strong>, or <strong>Kitty</strong></td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Team collaboration</strong></td>
+<td><strong>Warp</strong> – shared workflows</td>
+<td>–</td>
+</tr>
+</tbody></table>
+<h3 id="Migration-path-from-Terminal-app"><a href="#Migration-path-from-Terminal-app" class="headerlink" title="Migration path from Terminal.app"></a>Migration path from Terminal.app</h3><p>Most macOS developers follow this progression:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Terminal.app → iTerm2 → (split here)</span><br><span class="line">                          ├→ Ghostty (want native + fast)</span><br><span class="line">                          ├→ Alacritty + tmux (want minimal + fast)</span><br><span class="line">                          ├→ Kitty (want extensible)</span><br><span class="line">                          └→ WezTerm (want all-in-one)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><p>All terminals are available via Homebrew:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask ghostty</span><br><span class="line">brew install --cask iterm2</span><br><span class="line">brew install --cask kitty</span><br><span class="line">brew install --cask alacritty</span><br><span class="line">brew install --cask wezterm</span><br><span class="line">brew install --cask warp</span><br><span class="line">brew install --cask hyper</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Verdict"><a href="#Verdict" class="headerlink" title="Verdict"></a>Verdict</h2><p>There’s no single “best” terminal – it depends on what you value. But here’s how I’d summarize the landscape in 2026:</p>
+<ul>
+<li><strong>Ghostty</strong> is the new default recommendation for macOS. Native feel, excellent performance, simple config. It’s what Terminal.app would be if Apple rebuilt it today.</li>
+<li><strong>iTerm2</strong> remains king for feature completeness. If you need a specific capability, iTerm2 probably has it.</li>
+<li><strong>Kitty</strong> is the hacker’s terminal. Kittens and the graphics protocol give you capabilities no other terminal offers.</li>
+<li><strong>Alacritty</strong> is the purist’s choice. Fastest, lightest, most stable – if you’re already married to tmux.</li>
+<li><strong>WezTerm</strong> is the Swiss Army knife. Does everything, runs everywhere, configured with a real programming language.</li>
+<li><strong>Warp</strong> is genuinely innovative but the account requirement and closed source are dealbreakers for many developers.</li>
+</ul>
+<p>Pick one, configure it, and move on. The best terminal is the one you stop thinking about.</p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Terminal</tag>
+        <tag>Ghostty</tag>
+        <tag>iTerm2</tag>
+        <tag>Kitty</tag>
+        <tag>Alacritty</tag>
+        <tag>WezTerm</tag>
+        <tag>Warp</tag>
+        <tag>CLI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zsh Usage</title>
+    <url>/Zsh-Usage/</url>
+    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
+<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS Development Resources From Scratch to App Store</title>
+    <url>/iOS-App-From-Scratch-to-App-Store/</url>
+    <content><![CDATA[<p>Resources for iOS development from setup to App Store distribution.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
+<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
+<blockquote>
+<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
+</blockquote>
+<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
+<blockquote>
+<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
+</blockquote>
+<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
+<blockquote>
+<p>Reactive Programming in Swift</p>
+</blockquote>
+<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
+<blockquote>
+<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
+</blockquote>
+<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
+<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
+<blockquote>
+<p>An iOS library to natively render After Effects vector animations</p>
+</blockquote>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
+<blockquote>
+<p>A Swift command line tool for generating your Xcode project</p>
+</blockquote>
+<p><a href="https://github.com/luminoid/Monolith">Monolith</a></p>
+<blockquote>
+<p>Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.</p>
+</blockquote>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
+<blockquote>
+<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
+</blockquote>
+<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
+<blockquote>
+<p>A tool to enforce Swift style and conventions.</p>
+</blockquote>
+<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
+<blockquote>
+<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
+</blockquote>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
+<blockquote>
+<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
+</blockquote>
+<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
+<blockquote>
+<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="Xcode-Command-Line"><a href="#Xcode-Command-Line" class="headerlink" title="Xcode Command Line"></a>Xcode Command Line</h2><h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
+
+<h3 id="LLDB-Debugger"><a href="#LLDB-Debugger" class="headerlink" title="LLDB (Debugger)"></a>LLDB (Debugger)</h3><p>Common commands in the Xcode debug console:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bt</code></td>
+<td>Backtrace — print the call stack of the current thread</td>
+</tr>
+<tr>
+<td><code>bt all</code></td>
+<td>Backtrace all threads</td>
+</tr>
+<tr>
+<td><code>po &lt;expr&gt;</code></td>
+<td>Print object — evaluate and print a Swift&#x2F;ObjC expression</td>
+</tr>
+<tr>
+<td><code>p &lt;expr&gt;</code></td>
+<td>Print — evaluate expression with type info</td>
+</tr>
+<tr>
+<td><code>frame variable</code></td>
+<td>Show all local variables in the current frame</td>
+</tr>
+<tr>
+<td><code>thread list</code></td>
+<td>List all threads</td>
+</tr>
+<tr>
+<td><code>thread return</code></td>
+<td>Force return from the current function</td>
+</tr>
+<tr>
+<td><code>breakpoint list</code></td>
+<td>List all breakpoints</td>
+</tr>
+<tr>
+<td><code>watchpoint set variable &lt;var&gt;</code></td>
+<td>Break when a variable changes</td>
+</tr>
+<tr>
+<td><code>expr &lt;code&gt;</code></td>
+<td>Execute code at runtime (e.g., <code>expr view.backgroundColor = .red</code>)</td>
+</tr>
+<tr>
+<td><code>continue</code> &#x2F; <code>c</code></td>
+<td>Resume execution</td>
+</tr>
+<tr>
+<td><code>step</code> &#x2F; <code>s</code></td>
+<td>Step into</td>
+</tr>
+<tr>
+<td><code>next</code> &#x2F; <code>n</code></td>
+<td>Step over</td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td>Step out of current function</td>
+</tr>
+</tbody></table>
+<h3 id="simctl"><a href="#simctl" class="headerlink" title="simctl"></a>simctl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List available simulators</span></span><br><span class="line">xcrun simctl list devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># Boot a simulator</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open URL in simulator</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Take screenshot</span></span><br><span class="line">xcrun simctl io booted screenshot output.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># Erase simulator data</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
+<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
+<p>Add tags to build</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.2.0  <span class="comment"># Version 1.2.0</span></span><br><span class="line">git tag b10     <span class="comment"># Build 10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
+<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
+<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
+</ul>
+<p>Change version code, then <code>fastlane beta</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
+
+<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastlane update_fastlane</span><br></pre></td></tr></table></figure>
+
+<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
+<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
+<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
+</ul>
+<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
+<li><a href="https://developer.apple.com/design/resources/#product-bezels">Apple Product Bezels</a></li>
+<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
+<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
+</ul>
+<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a>Claude Code</h3><p>Claude Skill: <a href="https://github.com/CharlesWiltgen/Axiom">https://github.com/CharlesWiltgen/Axiom</a></p>
+<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>fastlane</tag>
       </tags>
   </entry>
   <entry>
@@ -3995,171 +4999,6 @@
         <tag>Eleventy</tag>
         <tag>Vercel</tag>
         <tag>Netlify</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS Development Resources From Scratch to App Store</title>
-    <url>/iOS-App-From-Scratch-to-App-Store/</url>
-    <content><![CDATA[<p>Resources for iOS development from setup to App Store distribution.</p>
-<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
-<blockquote>
-<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
-</blockquote>
-<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
-<blockquote>
-<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
-</blockquote>
-<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
-<blockquote>
-<p>Reactive Programming in Swift</p>
-</blockquote>
-<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
-<blockquote>
-<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
-</blockquote>
-<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
-<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
-<blockquote>
-<p>An iOS library to natively render After Effects vector animations</p>
-</blockquote>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
-<blockquote>
-<p>A Swift command line tool for generating your Xcode project</p>
-</blockquote>
-<p><a href="https://github.com/luminoid/Monolith">Monolith</a></p>
-<blockquote>
-<p>Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.</p>
-</blockquote>
-<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
-<blockquote>
-<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
-</blockquote>
-<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
-<blockquote>
-<p>A tool to enforce Swift style and conventions.</p>
-</blockquote>
-<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
-<blockquote>
-<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
-</blockquote>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
-<blockquote>
-<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
-</blockquote>
-<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
-<blockquote>
-<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="Xcode-Command-Line"><a href="#Xcode-Command-Line" class="headerlink" title="Xcode Command Line"></a>Xcode Command Line</h2><h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
-
-<h3 id="LLDB-Debugger"><a href="#LLDB-Debugger" class="headerlink" title="LLDB (Debugger)"></a>LLDB (Debugger)</h3><p>Common commands in the Xcode debug console:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>bt</code></td>
-<td>Backtrace — print the call stack of the current thread</td>
-</tr>
-<tr>
-<td><code>bt all</code></td>
-<td>Backtrace all threads</td>
-</tr>
-<tr>
-<td><code>po &lt;expr&gt;</code></td>
-<td>Print object — evaluate and print a Swift&#x2F;ObjC expression</td>
-</tr>
-<tr>
-<td><code>p &lt;expr&gt;</code></td>
-<td>Print — evaluate expression with type info</td>
-</tr>
-<tr>
-<td><code>frame variable</code></td>
-<td>Show all local variables in the current frame</td>
-</tr>
-<tr>
-<td><code>thread list</code></td>
-<td>List all threads</td>
-</tr>
-<tr>
-<td><code>thread return</code></td>
-<td>Force return from the current function</td>
-</tr>
-<tr>
-<td><code>breakpoint list</code></td>
-<td>List all breakpoints</td>
-</tr>
-<tr>
-<td><code>watchpoint set variable &lt;var&gt;</code></td>
-<td>Break when a variable changes</td>
-</tr>
-<tr>
-<td><code>expr &lt;code&gt;</code></td>
-<td>Execute code at runtime (e.g., <code>expr view.backgroundColor = .red</code>)</td>
-</tr>
-<tr>
-<td><code>continue</code> &#x2F; <code>c</code></td>
-<td>Resume execution</td>
-</tr>
-<tr>
-<td><code>step</code> &#x2F; <code>s</code></td>
-<td>Step into</td>
-</tr>
-<tr>
-<td><code>next</code> &#x2F; <code>n</code></td>
-<td>Step over</td>
-</tr>
-<tr>
-<td><code>finish</code></td>
-<td>Step out of current function</td>
-</tr>
-</tbody></table>
-<h3 id="simctl"><a href="#simctl" class="headerlink" title="simctl"></a>simctl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List available simulators</span></span><br><span class="line">xcrun simctl list devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># Boot a simulator</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open URL in simulator</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Take screenshot</span></span><br><span class="line">xcrun simctl io booted screenshot output.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># Erase simulator data</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
-<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
-<p>Add tags to build</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.2.0  <span class="comment"># Version 1.2.0</span></span><br><span class="line">git tag b10     <span class="comment"># Build 10</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
-<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
-<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
-</ul>
-<p>Change version code, then <code>fastlane beta</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
-
-<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastlane update_fastlane</span><br></pre></td></tr></table></figure>
-
-<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
-<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
-<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
-</ul>
-<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
-<li><a href="https://developer.apple.com/design/resources/#product-bezels">Apple Product Bezels</a></li>
-<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
-<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
-</ul>
-<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a>Claude Code</h3><p>Claude Skill: <a href="https://github.com/CharlesWiltgen/Axiom">https://github.com/CharlesWiltgen/Axiom</a></p>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
-<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>fastlane</tag>
       </tags>
   </entry>
 </search>

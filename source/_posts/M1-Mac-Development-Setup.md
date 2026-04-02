@@ -64,6 +64,9 @@ sudo gem install cocoapods
 <!-- more -->
 
 ## Terminal
+
+For a detailed comparison of all major terminal emulators (Ghostty, iTerm2, Kitty, Alacritty, WezTerm, and more), see {% post_link Terminal-Emulator-Comparison-2026 %}.
+
 ### [iTerm2](https://iterm2.com)
 #### Installation
 ``` bash
