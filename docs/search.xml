@@ -148,41 +148,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git Solutions Collection</title>
-    <url>/Git-Solutions-Collection/</url>
-    <content><![CDATA[<p>Reference commands for common Git situations.</p>
-<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
-</div>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<p>Remove a folder recursively</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
-<p>First, use <code>gitk</code> to find the corresponding hash value</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
-<p>Then, run <code>git stash</code> to apply the stash entry</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Apple Audio Frameworks: A Complete Guide to iOS and macOS Audio</title>
     <url>/Apple-Audio-Frameworks-Complete-Guide/</url>
     <content><![CDATA[<p>Apple provides six layers of audio frameworks – from raw hardware access to one-line playback. This guide covers every layer, what it does, when to use it, and how the pieces fit together.</p>
@@ -1698,6 +1663,270 @@
         <tag>JavaScript</tag>
         <tag>Scala</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>M1 Mac Development Setup</title>
+    <url>/M1-Mac-Development-Setup/</url>
+    <content><![CDATA[<p>Setup guide for development on M1 Mac.</p>
+<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/Mac-Usage/" title="Mac Usage">Mac Usage</a>
+<p><a href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
+
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install &lt;formula&gt;      <span class="comment"># Install formula.</span></span><br><span class="line">brew install --cask &lt;cask&gt;  <span class="comment"># Install cask.</span></span><br><span class="line">brew update                 <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span></span><br><span class="line">brew upgrade                <span class="comment"># Upgrade outdated casks and outdated, unpinned formulae.</span></span><br><span class="line">brew leaves                 <span class="comment"># List installed formulae that are not dependencies of another installed formula.</span></span><br><span class="line">brew tap                    <span class="comment"># Tap a formula repository.</span></span><br><span class="line">brew doctor                 <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup                <span class="comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List installed leaf packages by size</span></span><br><span class="line">brew leaves | <span class="keyword">while</span> <span class="built_in">read</span> pkg; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">du</span> -sh <span class="string">&quot;<span class="subst">$(brew --cellar)</span>/<span class="variable">$pkg</span>&quot;</span> 2&gt;/dev/null | sed <span class="string">&quot;s|<span class="subst">$(brew --cellar)</span>/||&quot;</span></span><br><span class="line"><span class="keyword">done</span> | <span class="built_in">sort</span> -hr</span><br></pre></td></tr></table></figure>
+
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> gem install cocoapods</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><p>For a detailed comparison of all major terminal emulators (Ghostty, iTerm2, Kitty, Alacritty, WezTerm, and more), see <a href="/Terminal-Emulator-Comparison-2026/" title="Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm">Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</a>.</p>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
+
+<h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><a href="/Git-Solutions-Collection/" title="Git Solutions Collection">Git Solutions Collection</a> — common commands and solutions
+
+<h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
+<h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com/">SourceTree</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask sourcetree</span><br></pre></td></tr></table></figure>
+
+<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a href="https://www.python.org/">Python3</a></h3><h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><a href="/Node-js-Usage/" title="Node.js Usage">Node.js Usage</a>
+
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a><a href="https://www.oracle.com/java/">Java</a></h3><h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><p><a href="https://www.oracle.com/java/technologies/downloads/">Java SE Development Kit</a><br><a href="https://www.oracle.com/java/technologies/downloads/#java8">Java SE Development Kit 8</a></p>
+<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a><a href="https://developer.apple.com/documentation/swift/">Swift</a></h3><h4 id="Package-Manager-1"><a href="#Package-Manager-1" class="headerlink" title="Package Manager"></a>Package Manager</h4><p><a href="https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
+<h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a><a href="https://www.ruby-lang.org/en/">Ruby</a></h3><h4 id="Version-Manager"><a href="#Version-Manager" class="headerlink" title="Version Manager"></a>Version Manager</h4><p><a href="https://github.com/postmodern/chruby">chruby</a> and <a href="https://github.com/postmodern/ruby-install">ruby-install</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install chruby ruby-install</span><br></pre></td></tr></table></figure>
+
+<h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby-install ruby   <span class="comment"># Install the current stable version of Ruby</span></span><br><span class="line">chruby 3.2.0        <span class="comment"># Change the current Ruby.</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Package-Manager-2"><a href="#Package-Manager-2" class="headerlink" title="Package Manager"></a>Package Manager</h4><p><a href="https://github.com/rubygems/rubygems">RubyGems</a></p>
+<h4 id="Dependency-Manager"><a href="#Dependency-Manager" class="headerlink" title="Dependency Manager"></a>Dependency Manager</h4><p><a href="https://bundler.io/">Bundler</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gem install bundler</span><br></pre></td></tr></table></figure>
+
+<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a><a href="https://racket-lang.org/">Scheme</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask racket</span><br></pre></td></tr></table></figure>
+
+<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install smlnj</span><br></pre></td></tr></table></figure>
+
+<h2 id="AI-Tools"><a href="#AI-Tools" class="headerlink" title="AI Tools"></a>AI Tools</h2><h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="https://cursor.com/home">Cursor</a></h3><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a><a href="https://code.claude.com/">Claude Code</a></h3><h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h3><p><a href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
+<h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h2><h3 id="Insomnia"><a href="#Insomnia" class="headerlink" title="Insomnia"></a><a href="https://insomnia.rest/">Insomnia</a></h3><blockquote>
+<p>The open-source, cross-platform API client for GraphQL, REST, and gRPC.</p>
+</blockquote>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
+<p>List of useful Quick Look plugins for developers</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install apparency betterzip provisionql qlcolorcode qlmarkdown qlstephen qlvideo quicklookase quicklook-json quicklook-pat suspicious-package webpquicklook</span><br></pre></td></tr></table></figure>
+<p>Restart the QuickLook manager</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qlmanage -r</span><br></pre></td></tr></table></figure>
+
+<h4 id="OpenInTerminal"><a href="#OpenInTerminal" class="headerlink" title="OpenInTerminal"></a><a href="https://github.com/Ji4n1ng/OpenInTerminal/">OpenInTerminal</a></h4><blockquote>
+<p>Finder Toolbar app for macOS to open the current directory in Terminal, iTerm, Hyper or Alacritty.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask openinterminal</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Config.md">Configurations</a></p>
+<h3 id="Menu-Bar-Tools"><a href="#Menu-Bar-Tools" class="headerlink" title="Menu Bar Tools"></a>Menu Bar Tools</h3><h4 id="Itsycal"><a href="#Itsycal" class="headerlink" title="Itsycal"></a><a href="https://www.mowglii.com/itsycal/">Itsycal</a></h4><blockquote>
+<p>Itsycal is a tiny menu bar calendar.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask itsycal</span><br></pre></td></tr></table></figure>
+
+<h4 id="MenubarX"><a href="#MenubarX" class="headerlink" title="MenubarX"></a><a href="https://menubarx.app/">MenubarX</a></h4><blockquote>
+<p>A powerful menu bar browser</p>
+</blockquote>
+<h4 id="Dozer"><a href="#Dozer" class="headerlink" title="Dozer"></a><a href="https://github.com/Mortennn/Dozer">Dozer</a></h4><blockquote>
+<p>Hide status bar icons on macOS.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask dozer</span><br></pre></td></tr></table></figure>
+
+<h4 id="xbar"><a href="#xbar" class="headerlink" title="xbar"></a><a href="https://github.com/matryer/xbar">xbar</a></h4><blockquote>
+<p>Put the output from any script or program into your macOS Menu Bar (the BitBar reboot)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask xbar</span><br></pre></td></tr></table></figure>
+
+<h3 id="Screen-Saver"><a href="#Screen-Saver" class="headerlink" title="Screen Saver"></a>Screen Saver</h3><ul>
+<li><a href="https://aerialscreensaver.github.io/">Aerial</a></li>
+<li><a href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
+</ul>
+<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><blockquote>
+<p>AppCleaner is a small application which allows you to thoroughly uninstall unwanted apps.</p>
+</blockquote>
+<h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><blockquote>
+<p>Lightweight clipboard manager for macOS</p>
+</blockquote>
+<h4 id="Installation-11"><a href="#Installation-11" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask maccy</span><br></pre></td></tr></table></figure>
+
+<h3 id="OpenEmu"><a href="#OpenEmu" class="headerlink" title="OpenEmu"></a><a href="http://openemu.org/">OpenEmu</a></h3><blockquote>
+<p>Retro video game emulation for macOS</p>
+</blockquote>
+<h2 id="Command-Line-Tools"><a href="#Command-Line-Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a><a href="https://github.com/sharkdp/bat">bat</a></h3><blockquote>
+<p>A cat(1) clone with syntax highlighting and Git integration.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bat &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="btop"><a href="#btop" class="headerlink" title="btop"></a><a href="https://github.com/aristocratos/btop">btop</a></h3><blockquote>
+<p>Resource monitor that shows usage and stats for processor, memory, disks, network and processes.</p>
+</blockquote>
+<h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
+<p>Good-lookin’ diffs with diff-highlight and more.</p>
+</blockquote>
+<h3 id="eza"><a href="#eza" class="headerlink" title="eza"></a><a href="https://github.com/eza-community/eza">eza</a></h3><blockquote>
+<p>A modern alternative to ls</p>
+</blockquote>
+<h3 id="fd"><a href="#fd" class="headerlink" title="fd"></a><a href="https://github.com/sharkdp/fd">fd</a></h3><blockquote>
+<p>A simple, fast and user-friendly alternative to <code>find</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fd &lt;pattern&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a><a href="https://www.ffmpeg.org/">ffmpeg</a></h3><blockquote>
+<p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
+</blockquote>
+<h3 id="fzf"><a href="#fzf" class="headerlink" title="fzf"></a><a href="https://github.com/junegunn/fzf">fzf</a></h3><blockquote>
+<p>A command-line fuzzy finder</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fzf</span><br></pre></td></tr></table></figure>
+
+<h3 id="gh"><a href="#gh" class="headerlink" title="gh"></a><a href="https://cli.github.com/">gh</a></h3><blockquote>
+<p>Work seamlessly with GitHub from the command line.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gh release create [&lt;tag&gt;] [&lt;filename&gt;... | &lt;pattern&gt;...]</span><br></pre></td></tr></table></figure>
+
+<h3 id="graphicsmagick"><a href="#graphicsmagick" class="headerlink" title="graphicsmagick"></a><a href="http://www.graphicsmagick.org/">graphicsmagick</a></h3><blockquote>
+<p>Image processing tools collection.</p>
+</blockquote>
+<h3 id="htop"><a href="#htop" class="headerlink" title="htop"></a><a href="https://htop.dev/">htop</a></h3><blockquote>
+<p>A cross-platform interactive process viewer.</p>
+</blockquote>
+<h3 id="httrack"><a href="#httrack" class="headerlink" title="httrack"></a><a href="https://www.httrack.com/">httrack</a></h3><blockquote>
+<p>Website copier&#x2F;offline browser.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">httrack &lt;URLs&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="mtr"><a href="#mtr" class="headerlink" title="mtr"></a><a href="https://www.bitwizard.nl/mtr/">mtr</a></h3><blockquote>
+<p>mtr combines the functionality of the <code>traceroute</code> and <code>ping</code> programs in a single network diagnostic tool.</p>
+</blockquote>
+<h3 id="navi"><a href="#navi" class="headerlink" title="navi"></a><a href="https://github.com/denisidoro/navi">navi</a></h3><blockquote>
+<p>An interactive cheatsheet tool for the command-line</p>
+</blockquote>
+<h3 id="ncdu"><a href="#ncdu" class="headerlink" title="ncdu"></a><a href="https://dev.yorhel.nl/ncdu">ncdu</a></h3><blockquote>
+<p>NCurses Disk Usage.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncdu &lt;<span class="built_in">dir</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a><a href="https://pandoc.org/">pandoc</a></h3><blockquote>
+<p>General markup converter.</p>
+</blockquote>
+<h3 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org/">pngquant</a></h3><blockquote>
+<p>Lossy PNG compressor</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pngquant --ext .png --force 256 *.png */*.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="jpegoptim"><a href="#jpegoptim" class="headerlink" title="jpegoptim"></a><a href="https://github.com/tjko/jpegoptim">jpegoptim</a></h3><blockquote>
+<p>JPEG optimizer — lossless or lossy compression with quality control</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jpegoptim --max=95 *.jpg *.jpeg</span><br></pre></td></tr></table></figure>
+
+<h3 id="prettyping"><a href="#prettyping" class="headerlink" title="prettyping"></a><a href="https://denilsonsa.github.io/prettyping/">prettyping</a></h3><blockquote>
+<p><code>prettyping</code> is a wrapper around the standard <code>ping</code> tool, making the output prettier, more colorful, more compact, and easier to read.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">prettyping</span><br></pre></td></tr></table></figure>
+
+<h3 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap">rlwrap</a></h3><blockquote>
+<p><code>rlwrap</code> is a ‘readline wrapper’, a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rlwrap &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="the-silver-searcher"><a href="#the-silver-searcher" class="headerlink" title="the_silver_searcher"></a><a href="https://github.com/ggreer/the_silver_searcher">the_silver_searcher</a></h3><blockquote>
+<p>A code searching tool similar to <code>ack</code>, with a focus on speed.</p>
+</blockquote>
+<h3 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/">tig</a></h3><blockquote>
+<p>Tig is an ncurses-based text-mode interface for git.</p>
+</blockquote>
+<h3 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a><a href="https://tldr.sh/">tldr</a></h3><blockquote>
+<p>Simplified and community-driven man pages</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tldr &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><a href="http://mama.indstate.edu/users/ice/tree/">tree</a></h3><blockquote>
+<p>List contents of directories in a tree-like format.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tree -L &lt;num&gt; -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="unrar"><a href="#unrar" class="headerlink" title="unrar"></a><a href="https://theunarchiver.com/command-line">unrar</a></h3><blockquote>
+<p>Command-line unarchiving tools supporting multiple formats</p>
+</blockquote>
+<h3 id="xxh"><a href="#xxh" class="headerlink" title="xxh"></a><a href="https://github.com/xxh/xxh">xxh</a></h3><blockquote>
+<p>Bring your favorite shell wherever you go through the ssh.</p>
+</blockquote>
+<h3 id="z"><a href="#z" class="headerlink" title="z"></a><a href="https://github.com/rupa/z">z</a></h3><blockquote>
+<p>Tracks your most used directories, based on ‘frecency’.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">z &lt;<span class="built_in">dir</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Virtual-Machines"><a href="#Virtual-Machines" class="headerlink" title="Virtual Machines"></a>Virtual Machines</h2><h3 id="Multipass"><a href="#Multipass" class="headerlink" title="Multipass"></a><a href="https://canonical.com/multipass">Multipass</a></h3><blockquote>
+<p>Get an instant Ubuntu VM with a single command. Multipass can launch and run virtual machines and configure them with cloud-init like a public cloud.</p>
+</blockquote>
+<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br></pre></td></tr></table></figure>
+<h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fira-code</span><br></pre></td></tr></table></figure>
+
+<h3 id="Nerd-Fonts"><a href="#Nerd-Fonts" class="headerlink" title="Nerd Fonts"></a><a href="https://github.com/ryanoasis/nerd-fonts">Nerd Fonts</a></h3><p><a href="https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode">Fira Code Nerd Font</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fira-code-nerd-font</span><br></pre></td></tr></table></figure>
+
+<h3 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a><a href="https://fontawesome.com/">Font Awesome</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fontawesome</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Git-Config"><a href="#Git-Config" class="headerlink" title="Git Config"></a>Git Config</h3><p><a href="https://github.com/so-fancy/diff-so-fancy#with-git">diff-so-fancy</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.pager <span class="string">&quot;diff-so-fancy | less --tabs=4 -RFX&quot;</span></span><br><span class="line">git config --global interactive.diffFilter <span class="string">&quot;diff-so-fancy --patch&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff-highlight.oldNormal    <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.oldHighlight <span class="string">&quot;red bold 52&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newNormal    <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newHighlight <span class="string">&quot;green bold 22&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff.meta       <span class="string">&quot;11&quot;</span></span><br><span class="line">git config --global color.diff.frag       <span class="string">&quot;magenta bold&quot;</span></span><br><span class="line">git config --global color.diff.func       <span class="string">&quot;146 bold&quot;</span></span><br><span class="line">git config --global color.diff.commit     <span class="string">&quot;yellow bold&quot;</span></span><br><span class="line">git config --global color.diff.old        <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff.new        <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff.whitespace <span class="string">&quot;red reverse&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Package Manager</tag>
+        <tag>Homebrew</tag>
+        <tag>Git</tag>
+        <tag>Ruby</tag>
+        <tag>Font</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Solutions Collection</title>
+    <url>/Git-Solutions-Collection/</url>
+    <content><![CDATA[<p>Reference commands for common Git situations.</p>
+<h2 id="Amend-a-commit"><a href="#Amend-a-commit" class="headerlink" title="Amend a commit"></a>Amend a commit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-pull-till-a-particular-commit"><a href="#Git-pull-till-a-particular-commit" class="headerlink" title="Git pull till a particular commit"></a><a href="https://stackoverflow.com/questions/31462683/git-pull-till-a-particular-commit">Git pull till a particular commit</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch remote &lt;branch_name&gt;</span><br><span class="line">git merge &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Your-branch-and-‘origin-master’-have-diverged"><a href="#Your-branch-and-‘origin-master’-have-diverged" class="headerlink" title="Your branch and ‘origin&#x2F;master’ have diverged"></a><a href="https://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com">Your branch and ‘origin&#x2F;master’ have diverged</a></h2><p>Use <code>origin/main</code> if your default branch is <code>main</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master   <span class="comment"># or origin/main</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-all-unreachable-objects"><a href="#Remove-all-unreachable-objects" class="headerlink" title="Remove all unreachable objects"></a><a href="https://stackoverflow.com/questions/3765234/listing-and-deleting-git-commits-that-are-under-no-branch-dangling/4528593#4528593">Remove all unreachable objects</a></h2><div class="note warning"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h3><p>This command will remove all stashed objects.</p>
+</div>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog expire --expire-unreachable=now --all</span><br><span class="line">git gc --prune=now</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Commit-case-sensitive-only-filename-changes"><a href="#Commit-case-sensitive-only-filename-changes" class="headerlink" title="Commit case sensitive only filename changes"></a><a href="https://www.geeksforgeeks.org/git/how-to-commit-case-sensitive-only-filename-changes-in-git/">Commit case sensitive only filename changes</a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git <span class="built_in">mv</span> filename.txt Filename.txt</span><br><span class="line">git commit -m <span class="string">&quot;Case sensitive file rename&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-tracked-files-in-gitignore"><a href="#Remove-tracked-files-in-gitignore" class="headerlink" title="Remove tracked files in .gitignore"></a><a href="https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore">Remove tracked files in <code>.gitignore</code></a></h2><p>Remove a file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>Remove a folder recursively</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Recover-a-dropped-stash-entry"><a href="#Recover-a-dropped-stash-entry" class="headerlink" title="Recover a dropped stash entry"></a><a href="https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git">Recover a dropped stash entry</a></h2><p>If you run the following by mistake</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash pop</span><br><span class="line">git checkout -- .</span><br></pre></td></tr></table></figure>
+<p>First, use <code>gitk</code> to find the corresponding hash value</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk --all $( git fsck --no-reflog | awk <span class="string">&#x27;/dangling commit/ &#123;print $3&#125;&#x27;</span> )</span><br></pre></td></tr></table></figure>
+<p>Then, run <code>git stash</code> to apply the stash entry</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply &lt;stash_hash&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
   </entry>
   <entry>
     <title>AI services guide: subscriptions, free tiers, and APIs (March 2026)</title>
@@ -3658,235 +3887,6 @@
       </tags>
   </entry>
   <entry>
-    <title>M1 Mac Development Setup</title>
-    <url>/M1-Mac-Development-Setup/</url>
-    <content><![CDATA[<p>Setup guide for development on M1 Mac.</p>
-<h2 id="Mac-Usage"><a href="#Mac-Usage" class="headerlink" title="Mac Usage"></a>Mac Usage</h2><a href="/Mac-Usage/" title="Mac Usage">Mac Usage</a>
-<p><a href="https://github.com/jaywcjlove/awesome-mac">Awesome Mac</a></p>
-<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><a href="/Zsh-Usage/" title="Zsh Usage">Zsh Usage</a>
-
-<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/">Homebrew</a></h3><h4 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install &lt;formula&gt;      <span class="comment"># Install formula.</span></span><br><span class="line">brew install --cask &lt;cask&gt;  <span class="comment"># Install cask.</span></span><br><span class="line">brew update                 <span class="comment"># Fetch the newest version of Homebrew and all formulae from GitHub.</span></span><br><span class="line">brew upgrade                <span class="comment"># Upgrade outdated casks and outdated, unpinned formulae.</span></span><br><span class="line">brew leaves                 <span class="comment"># List installed formulae that are not dependencies of another installed formula.</span></span><br><span class="line">brew tap                    <span class="comment"># Tap a formula repository.</span></span><br><span class="line">brew doctor                 <span class="comment"># Check your system for potential problems.</span></span><br><span class="line">brew cleanup                <span class="comment"># Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List installed leaf packages by size</span></span><br><span class="line">brew leaves | <span class="keyword">while</span> <span class="built_in">read</span> pkg; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">du</span> -sh <span class="string">&quot;<span class="subst">$(brew --cellar)</span>/<span class="variable">$pkg</span>&quot;</span> 2&gt;/dev/null | sed <span class="string">&quot;s|<span class="subst">$(brew --cellar)</span>/||&quot;</span></span><br><span class="line"><span class="keyword">done</span> | <span class="built_in">sort</span> -hr</span><br></pre></td></tr></table></figure>
-
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a><a href="https://www.npmjs.com/">npm</a></h3><h4 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-
-<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/">Yarn</a></h3><h4 id="Installation-2"><a href="#Installation-2" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install yarn</span><br></pre></td></tr></table></figure>
-
-<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a><a href="https://cocoapods.org/">CocoaPods</a></h3><h4 id="Installation-3"><a href="#Installation-3" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> gem install cocoapods</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h2><p>For a detailed comparison of all major terminal emulators (Ghostty, iTerm2, Kitty, Alacritty, WezTerm, and more), see <a href="/Terminal-Emulator-Comparison-2026/" title="Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm">Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</a>.</p>
-<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://iterm2.com/">iTerm2</a></h3><h4 id="Installation-4"><a href="#Installation-4" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
-
-<h4 id="iTerm-Color-Schemes"><a href="#iTerm-Color-Schemes" class="headerlink" title="iTerm Color Schemes"></a><a href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm Color Schemes</a></h4><h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><a href="/Git-Solutions-Collection/" title="Git Solutions Collection">Git Solutions Collection</a> — common commands and solutions
-
-<h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a></p>
-<h4 id="Git-GUI"><a href="#Git-GUI" class="headerlink" title="Git GUI"></a>Git GUI</h4><p><a href="https://www.sourcetreeapp.com/">SourceTree</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask sourcetree</span><br></pre></td></tr></table></figure>
-
-<h2 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h2><h3 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a><a href="https://www.python.org/">Python3</a></h3><h4 id="Installation-5"><a href="#Installation-5" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install python3</span><br></pre></td></tr></table></figure>
-
-<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><a href="/Node-js-Usage/" title="Node.js Usage">Node.js Usage</a>
-
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a><a href="https://www.oracle.com/java/">Java</a></h3><h4 id="Installation-6"><a href="#Installation-6" class="headerlink" title="Installation"></a>Installation</h4><p><a href="https://www.oracle.com/java/technologies/downloads/">Java SE Development Kit</a><br><a href="https://www.oracle.com/java/technologies/downloads/#java8">Java SE Development Kit 8</a></p>
-<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a><a href="https://developer.apple.com/documentation/swift/">Swift</a></h3><h4 id="Package-Manager-1"><a href="#Package-Manager-1" class="headerlink" title="Package Manager"></a>Package Manager</h4><p><a href="https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a><a href="https://www.ruby-lang.org/en/">Ruby</a></h3><h4 id="Version-Manager"><a href="#Version-Manager" class="headerlink" title="Version Manager"></a>Version Manager</h4><p><a href="https://github.com/postmodern/chruby">chruby</a> and <a href="https://github.com/postmodern/ruby-install">ruby-install</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install chruby ruby-install</span><br></pre></td></tr></table></figure>
-
-<h4 id="Installation-7"><a href="#Installation-7" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby-install ruby   <span class="comment"># Install the current stable version of Ruby</span></span><br><span class="line">chruby 3.2.0        <span class="comment"># Change the current Ruby.</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Package-Manager-2"><a href="#Package-Manager-2" class="headerlink" title="Package Manager"></a>Package Manager</h4><p><a href="https://github.com/rubygems/rubygems">RubyGems</a></p>
-<h4 id="Dependency-Manager"><a href="#Dependency-Manager" class="headerlink" title="Dependency Manager"></a>Dependency Manager</h4><p><a href="https://bundler.io/">Bundler</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gem install bundler</span><br></pre></td></tr></table></figure>
-
-<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a><a href="https://racket-lang.org/">Scheme</a></h3><h4 id="Installation-8"><a href="#Installation-8" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask racket</span><br></pre></td></tr></table></figure>
-
-<h3 id="SML"><a href="#SML" class="headerlink" title="SML"></a><a href="http://www.smlnj.org/">SML</a></h3><h4 id="Installation-9"><a href="#Installation-9" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install smlnj</span><br></pre></td></tr></table></figure>
-
-<h2 id="AI-Tools"><a href="#AI-Tools" class="headerlink" title="AI Tools"></a>AI Tools</h2><h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="https://cursor.com/home">Cursor</a></h3><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a><a href="https://code.claude.com/">Claude Code</a></h3><h2 id="Text-Editors"><a href="#Text-Editors" class="headerlink" title="Text Editors"></a>Text Editors</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a><a href="https://code.visualstudio.com/">VSCode</a></h3><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><a href="https://www.vim.org/">Vim</a></h3><h4 id="Installation-10"><a href="#Installation-10" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><h3 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h3><p><a href="https://www.jetbrains.com/toolbox-app/">Toolbox</a></p>
-<h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a href="https://developer.apple.com/xcode/">Xcode</a></h3><h2 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h2><h3 id="Insomnia"><a href="#Insomnia" class="headerlink" title="Insomnia"></a><a href="https://insomnia.rest/">Insomnia</a></h3><blockquote>
-<p>The open-source, cross-platform API client for GraphQL, REST, and gRPC.</p>
-</blockquote>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Finder-Tools"><a href="#Finder-Tools" class="headerlink" title="Finder Tools"></a>Finder Tools</h3><h4 id="quick-look-plugins"><a href="#quick-look-plugins" class="headerlink" title="quick-look-plugins"></a><a href="https://github.com/sindresorhus/quick-look-plugins">quick-look-plugins</a></h4><blockquote>
-<p>List of useful Quick Look plugins for developers</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install apparency betterzip provisionql qlcolorcode qlmarkdown qlstephen qlvideo quicklookase quicklook-json quicklook-pat suspicious-package webpquicklook</span><br></pre></td></tr></table></figure>
-<p>Restart the QuickLook manager</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qlmanage -r</span><br></pre></td></tr></table></figure>
-
-<h4 id="OpenInTerminal"><a href="#OpenInTerminal" class="headerlink" title="OpenInTerminal"></a><a href="https://github.com/Ji4n1ng/OpenInTerminal/">OpenInTerminal</a></h4><blockquote>
-<p>Finder Toolbar app for macOS to open the current directory in Terminal, iTerm, Hyper or Alacritty.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask openinterminal</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Config.md">Configurations</a></p>
-<h3 id="Menu-Bar-Tools"><a href="#Menu-Bar-Tools" class="headerlink" title="Menu Bar Tools"></a>Menu Bar Tools</h3><h4 id="Itsycal"><a href="#Itsycal" class="headerlink" title="Itsycal"></a><a href="https://www.mowglii.com/itsycal/">Itsycal</a></h4><blockquote>
-<p>Itsycal is a tiny menu bar calendar.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask itsycal</span><br></pre></td></tr></table></figure>
-
-<h4 id="MenubarX"><a href="#MenubarX" class="headerlink" title="MenubarX"></a><a href="https://menubarx.app/">MenubarX</a></h4><blockquote>
-<p>A powerful menu bar browser</p>
-</blockquote>
-<h4 id="Dozer"><a href="#Dozer" class="headerlink" title="Dozer"></a><a href="https://github.com/Mortennn/Dozer">Dozer</a></h4><blockquote>
-<p>Hide status bar icons on macOS.</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask dozer</span><br></pre></td></tr></table></figure>
-
-<h4 id="xbar"><a href="#xbar" class="headerlink" title="xbar"></a><a href="https://github.com/matryer/xbar">xbar</a></h4><blockquote>
-<p>Put the output from any script or program into your macOS Menu Bar (the BitBar reboot)</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask xbar</span><br></pre></td></tr></table></figure>
-
-<h3 id="Screen-Saver"><a href="#Screen-Saver" class="headerlink" title="Screen Saver"></a>Screen Saver</h3><ul>
-<li><a href="https://aerialscreensaver.github.io/">Aerial</a></li>
-<li><a href="https://github.com/pedrommcarrasco/Brooklyn">Brooklyn</a></li>
-</ul>
-<h3 id="AppCleaner"><a href="#AppCleaner" class="headerlink" title="AppCleaner"></a><a href="https://freemacsoft.net/appcleaner/">AppCleaner</a></h3><blockquote>
-<p>AppCleaner is a small application which allows you to thoroughly uninstall unwanted apps.</p>
-</blockquote>
-<h3 id="Maccy"><a href="#Maccy" class="headerlink" title="Maccy"></a><a href="https://github.com/p0deje/Maccy">Maccy</a></h3><blockquote>
-<p>Lightweight clipboard manager for macOS</p>
-</blockquote>
-<h4 id="Installation-11"><a href="#Installation-11" class="headerlink" title="Installation"></a>Installation</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask maccy</span><br></pre></td></tr></table></figure>
-
-<h3 id="OpenEmu"><a href="#OpenEmu" class="headerlink" title="OpenEmu"></a><a href="http://openemu.org/">OpenEmu</a></h3><blockquote>
-<p>Retro video game emulation for macOS</p>
-</blockquote>
-<h2 id="Command-Line-Tools"><a href="#Command-Line-Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="bat"><a href="#bat" class="headerlink" title="bat"></a><a href="https://github.com/sharkdp/bat">bat</a></h3><blockquote>
-<p>A cat(1) clone with syntax highlighting and Git integration.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bat &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="btop"><a href="#btop" class="headerlink" title="btop"></a><a href="https://github.com/aristocratos/btop">btop</a></h3><blockquote>
-<p>Resource monitor that shows usage and stats for processor, memory, disks, network and processes.</p>
-</blockquote>
-<h3 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a><a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></h3><blockquote>
-<p>Good-lookin’ diffs with diff-highlight and more.</p>
-</blockquote>
-<h3 id="eza"><a href="#eza" class="headerlink" title="eza"></a><a href="https://github.com/eza-community/eza">eza</a></h3><blockquote>
-<p>A modern alternative to ls</p>
-</blockquote>
-<h3 id="fd"><a href="#fd" class="headerlink" title="fd"></a><a href="https://github.com/sharkdp/fd">fd</a></h3><blockquote>
-<p>A simple, fast and user-friendly alternative to <code>find</code></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fd &lt;pattern&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a><a href="https://www.ffmpeg.org/">ffmpeg</a></h3><blockquote>
-<p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
-</blockquote>
-<h3 id="fzf"><a href="#fzf" class="headerlink" title="fzf"></a><a href="https://github.com/junegunn/fzf">fzf</a></h3><blockquote>
-<p>A command-line fuzzy finder</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fzf</span><br></pre></td></tr></table></figure>
-
-<h3 id="gh"><a href="#gh" class="headerlink" title="gh"></a><a href="https://cli.github.com/">gh</a></h3><blockquote>
-<p>Work seamlessly with GitHub from the command line.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gh release create [&lt;tag&gt;] [&lt;filename&gt;... | &lt;pattern&gt;...]</span><br></pre></td></tr></table></figure>
-
-<h3 id="graphicsmagick"><a href="#graphicsmagick" class="headerlink" title="graphicsmagick"></a><a href="http://www.graphicsmagick.org/">graphicsmagick</a></h3><blockquote>
-<p>Image processing tools collection.</p>
-</blockquote>
-<h3 id="htop"><a href="#htop" class="headerlink" title="htop"></a><a href="https://htop.dev/">htop</a></h3><blockquote>
-<p>A cross-platform interactive process viewer.</p>
-</blockquote>
-<h3 id="httrack"><a href="#httrack" class="headerlink" title="httrack"></a><a href="https://www.httrack.com/">httrack</a></h3><blockquote>
-<p>Website copier&#x2F;offline browser.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">httrack &lt;URLs&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="mtr"><a href="#mtr" class="headerlink" title="mtr"></a><a href="https://www.bitwizard.nl/mtr/">mtr</a></h3><blockquote>
-<p>mtr combines the functionality of the <code>traceroute</code> and <code>ping</code> programs in a single network diagnostic tool.</p>
-</blockquote>
-<h3 id="navi"><a href="#navi" class="headerlink" title="navi"></a><a href="https://github.com/denisidoro/navi">navi</a></h3><blockquote>
-<p>An interactive cheatsheet tool for the command-line</p>
-</blockquote>
-<h3 id="ncdu"><a href="#ncdu" class="headerlink" title="ncdu"></a><a href="https://dev.yorhel.nl/ncdu">ncdu</a></h3><blockquote>
-<p>NCurses Disk Usage.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncdu &lt;<span class="built_in">dir</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a><a href="https://pandoc.org/">pandoc</a></h3><blockquote>
-<p>General markup converter.</p>
-</blockquote>
-<h3 id="pngquant"><a href="#pngquant" class="headerlink" title="pngquant"></a><a href="https://pngquant.org/">pngquant</a></h3><blockquote>
-<p>Lossy PNG compressor</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pngquant --ext .png --force 256 *.png */*.png</span><br></pre></td></tr></table></figure>
-
-<h3 id="jpegoptim"><a href="#jpegoptim" class="headerlink" title="jpegoptim"></a><a href="https://github.com/tjko/jpegoptim">jpegoptim</a></h3><blockquote>
-<p>JPEG optimizer — lossless or lossy compression with quality control</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jpegoptim --max=95 *.jpg *.jpeg</span><br></pre></td></tr></table></figure>
-
-<h3 id="prettyping"><a href="#prettyping" class="headerlink" title="prettyping"></a><a href="https://denilsonsa.github.io/prettyping/">prettyping</a></h3><blockquote>
-<p><code>prettyping</code> is a wrapper around the standard <code>ping</code> tool, making the output prettier, more colorful, more compact, and easier to read.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">prettyping</span><br></pre></td></tr></table></figure>
-
-<h3 id="rlwrap"><a href="#rlwrap" class="headerlink" title="rlwrap"></a><a href="https://github.com/hanslub42/rlwrap">rlwrap</a></h3><blockquote>
-<p><code>rlwrap</code> is a ‘readline wrapper’, a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rlwrap &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="the-silver-searcher"><a href="#the-silver-searcher" class="headerlink" title="the_silver_searcher"></a><a href="https://github.com/ggreer/the_silver_searcher">the_silver_searcher</a></h3><blockquote>
-<p>A code searching tool similar to <code>ack</code>, with a focus on speed.</p>
-</blockquote>
-<h3 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://jonas.github.io/tig/">tig</a></h3><blockquote>
-<p>Tig is an ncurses-based text-mode interface for git.</p>
-</blockquote>
-<h3 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a><a href="https://tldr.sh/">tldr</a></h3><blockquote>
-<p>Simplified and community-driven man pages</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tldr &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><a href="http://mama.indstate.edu/users/ice/tree/">tree</a></h3><blockquote>
-<p>List contents of directories in a tree-like format.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tree -L &lt;num&gt; -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="unrar"><a href="#unrar" class="headerlink" title="unrar"></a><a href="https://theunarchiver.com/command-line">unrar</a></h3><blockquote>
-<p>Command-line unarchiving tools supporting multiple formats</p>
-</blockquote>
-<h3 id="xxh"><a href="#xxh" class="headerlink" title="xxh"></a><a href="https://github.com/xxh/xxh">xxh</a></h3><blockquote>
-<p>Bring your favorite shell wherever you go through the ssh.</p>
-</blockquote>
-<h3 id="z"><a href="#z" class="headerlink" title="z"></a><a href="https://github.com/rupa/z">z</a></h3><blockquote>
-<p>Tracks your most used directories, based on ‘frecency’.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">z &lt;<span class="built_in">dir</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Virtual-Machines"><a href="#Virtual-Machines" class="headerlink" title="Virtual Machines"></a>Virtual Machines</h2><h3 id="Multipass"><a href="#Multipass" class="headerlink" title="Multipass"></a><a href="https://canonical.com/multipass">Multipass</a></h3><blockquote>
-<p>Get an instant Ubuntu VM with a single command. Multipass can launch and run virtual machines and configure them with cloud-init like a public cloud.</p>
-</blockquote>
-<h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br></pre></td></tr></table></figure>
-<h3 id="Fira-Code"><a href="#Fira-Code" class="headerlink" title="Fira Code"></a><a href="https://github.com/tonsky/FiraCode">Fira Code</a></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fira-code</span><br></pre></td></tr></table></figure>
-
-<h3 id="Nerd-Fonts"><a href="#Nerd-Fonts" class="headerlink" title="Nerd Fonts"></a><a href="https://github.com/ryanoasis/nerd-fonts">Nerd Fonts</a></h3><p><a href="https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode">Fira Code Nerd Font</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fira-code-nerd-font</span><br></pre></td></tr></table></figure>
-
-<h3 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a><a href="https://fontawesome.com/">Font Awesome</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask font-fontawesome</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Git-Config"><a href="#Git-Config" class="headerlink" title="Git Config"></a>Git Config</h3><p><a href="https://github.com/so-fancy/diff-so-fancy#with-git">diff-so-fancy</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global core.pager <span class="string">&quot;diff-so-fancy | less --tabs=4 -RFX&quot;</span></span><br><span class="line">git config --global interactive.diffFilter <span class="string">&quot;diff-so-fancy --patch&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff-highlight.oldNormal    <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.oldHighlight <span class="string">&quot;red bold 52&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newNormal    <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff-highlight.newHighlight <span class="string">&quot;green bold 22&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global color.diff.meta       <span class="string">&quot;11&quot;</span></span><br><span class="line">git config --global color.diff.frag       <span class="string">&quot;magenta bold&quot;</span></span><br><span class="line">git config --global color.diff.func       <span class="string">&quot;146 bold&quot;</span></span><br><span class="line">git config --global color.diff.commit     <span class="string">&quot;yellow bold&quot;</span></span><br><span class="line">git config --global color.diff.old        <span class="string">&quot;red bold&quot;</span></span><br><span class="line">git config --global color.diff.new        <span class="string">&quot;green bold&quot;</span></span><br><span class="line">git config --global color.diff.whitespace <span class="string">&quot;red reverse&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Mac</category>
-      </categories>
-      <tags>
-        <tag>Package Manager</tag>
-        <tag>Homebrew</tag>
-        <tag>Git</tag>
-        <tag>Ruby</tag>
-        <tag>Font</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Node.js Usage</title>
     <url>/Node-js-Usage/</url>
     <content><![CDATA[<p>Quick reference for Node.js version management and usage.</p>
@@ -3912,863 +3912,187 @@
       </tags>
   </entry>
   <entry>
-    <title>Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</title>
-    <url>/Terminal-Emulator-Comparison-2026/</url>
-    <content><![CDATA[<p>A detailed comparison of every major terminal emulator in 2026 – performance, features, configuration, platform support, and which one fits your workflow.</p>
-<span id="more"></span>
+    <title>Mac Usage</title>
+    <url>/Mac-Usage/</url>
+    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
+<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
 
-<h2 id="Why-your-terminal-matters"><a href="#Why-your-terminal-matters" class="headerlink" title="Why your terminal matters"></a>Why your terminal matters</h2><p>Developers spend hours a day in a terminal. The difference between a slow, limited terminal and a fast, well-configured one compounds over time. Modern terminals offer GPU-accelerated rendering, built-in multiplexing, scriptable configuration, inline images, and more – features that were unthinkable a decade ago.</p>
-<p>This guide covers 8 terminals across 3 categories:</p>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Options</th>
-<th>Best for</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>GPU-native, feature-rich</strong></td>
-<td>Ghostty, iTerm2, Kitty, WezTerm</td>
-<td>Developers who want speed + features</td>
-</tr>
-<tr>
-<td><strong>GPU-native, minimal</strong></td>
-<td>Alacritty</td>
-<td>Developers who use tmux and want raw speed</td>
-</tr>
-<tr>
-<td><strong>Alternative approaches</strong></td>
-<td>Warp, Hyper</td>
-<td>AI-assisted or web-based workflows</td>
-</tr>
-</tbody></table>
-<p>Terminal.app (macOS built-in) is included in tables as a baseline but doesn’t get its own section – it works, but every option above is a meaningful upgrade.</p>
-<hr>
-<h2 id="Quick-comparison"><a href="#Quick-comparison" class="headerlink" title="Quick comparison"></a>Quick comparison</h2><h3 id="Core-features"><a href="#Core-features" class="headerlink" title="Core features"></a>Core features</h3><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th align="center">Ghostty</th>
-<th align="center">iTerm2</th>
-<th align="center">Kitty</th>
-<th align="center">Alacritty</th>
-<th align="center">WezTerm</th>
-<th align="center">Warp</th>
-<th align="center">Hyper</th>
-<th align="center">Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>GPU accelerated</strong></td>
-<td align="center">Metal</td>
-<td align="center">Metal (opt-in)</td>
-<td align="center">OpenGL</td>
-<td align="center">OpenGL&#x2F;Metal</td>
-<td align="center">OpenGL&#x2F;Metal</td>
-<td align="center">Metal</td>
-<td align="center">No (Electron)</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Tabs</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-</tr>
-<tr>
-<td><strong>Splits&#x2F;panes</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes (layouts)</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Ligatures</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Inline images</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes (imgcat)</td>
-<td align="center">Yes (protocol)</td>
-<td align="center">No</td>
-<td align="center">Yes (multi)</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>tmux integration</strong></td>
-<td align="center">No</td>
-<td align="center">Native control mode</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Shell integration</strong></td>
-<td align="center">Deep</td>
-<td align="center">Deep</td>
-<td align="center">Basic</td>
-<td align="center">No</td>
-<td align="center">Basic</td>
-<td align="center">Deep</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Session save&#x2F;restore</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Session files</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes (window groups)</td>
-</tr>
-<tr>
-<td><strong>Undo close tab</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">–</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-</tbody></table>
-<h3 id="Configuration-and-extensibility"><a href="#Configuration-and-extensibility" class="headerlink" title="Configuration and extensibility"></a>Configuration and extensibility</h3><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Ghostty</th>
-<th>iTerm2</th>
-<th>Kitty</th>
-<th>Alacritty</th>
-<th>WezTerm</th>
-<th>Warp</th>
-<th>Hyper</th>
-<th>Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Config format</strong></td>
-<td>key&#x3D;value</td>
-<td>GUI</td>
-<td>key&#x3D;value</td>
-<td>TOML</td>
-<td>Lua</td>
-<td>GUI + YAML</td>
-<td>JS</td>
-<td>GUI</td>
-</tr>
-<tr>
-<td><strong>Config location</strong></td>
-<td><code>~/.config/ghostty/config</code></td>
-<td>Preferences UI</td>
-<td><code>~/.config/kitty/kitty.conf</code></td>
-<td><code>~/.config/alacritty/alacritty.toml</code></td>
-<td><code>~/.config/wezterm/wezterm.lua</code></td>
-<td><code>~/.warp/</code></td>
-<td><code>~/.hyper.js</code></td>
-<td>Preferences UI</td>
-</tr>
-<tr>
-<td><strong>Live reload</strong></td>
-<td>Keybind</td>
-<td>N&#x2F;A (GUI)</td>
-<td><code>ctrl+shift+f5</code></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>N&#x2F;A</td>
-<td>Yes</td>
-<td>N&#x2F;A</td>
-</tr>
-<tr>
-<td><strong>Scripting</strong></td>
-<td>AppleScript (macOS)</td>
-<td>Python API</td>
-<td>Python (kittens)</td>
-<td>No</td>
-<td>Lua (full)</td>
-<td>No</td>
-<td>JS plugins (npm)</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Profiles</strong></td>
-<td>No</td>
-<td>Yes (extensive)</td>
-<td>No</td>
-<td>No</td>
-<td>Domains</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><strong>Config complexity</strong></td>
-<td>Very low</td>
-<td>Low (GUI)</td>
-<td>Low</td>
-<td>Low</td>
-<td>Medium-High</td>
-<td>Low (GUI)</td>
-<td>Medium</td>
-<td>Very low</td>
-</tr>
-</tbody></table>
-<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Ghostty</th>
-<th>iTerm2</th>
-<th>Kitty</th>
-<th>Alacritty</th>
-<th>WezTerm</th>
-<th>Warp</th>
-<th>Hyper</th>
-<th>Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Rendering speed</strong></td>
-<td>Excellent</td>
-<td>Good</td>
-<td>Excellent</td>
-<td>Best</td>
-<td>Good</td>
-<td>Good</td>
-<td>Poor</td>
-<td>Adequate</td>
-</tr>
-<tr>
-<td><strong>Input latency</strong></td>
-<td>Very low</td>
-<td>Low</td>
-<td>Very low</td>
-<td>Lowest</td>
-<td>Low</td>
-<td>Low</td>
-<td>High</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Memory baseline</strong></td>
-<td>~30 MB</td>
-<td>~80-120 MB</td>
-<td>~30 MB</td>
-<td>~20 MB</td>
-<td>~80-150 MB</td>
-<td>~150 MB</td>
-<td>~200 MB</td>
-<td>~40 MB</td>
-</tr>
-<tr>
-<td><strong>Startup time</strong></td>
-<td>Fast</td>
-<td>Moderate</td>
-<td>Fast</td>
-<td>Fastest</td>
-<td>Moderate</td>
-<td>Slow</td>
-<td>Slow</td>
-<td>Instant</td>
-</tr>
-<tr>
-<td><strong>Heavy output (<code>cat</code> large file)</strong></td>
-<td>Excellent</td>
-<td>Good</td>
-<td>Excellent</td>
-<td>Excellent</td>
-<td>Good</td>
-<td>Good</td>
-<td>Poor</td>
-<td>Slow</td>
-</tr>
-</tbody></table>
-<div class="note info"><p><strong>Memory numbers are approximate</strong> and vary by OS, tab count, scrollback size, and configuration. Measured with a single tab, default scrollback, on macOS.</p>
-</div>
-
-<h3 id="Platform-support"><a href="#Platform-support" class="headerlink" title="Platform support"></a>Platform support</h3><table>
-<thead>
-<tr>
-<th>Platform</th>
-<th align="center">Ghostty</th>
-<th align="center">iTerm2</th>
-<th align="center">Kitty</th>
-<th align="center">Alacritty</th>
-<th align="center">WezTerm</th>
-<th align="center">Warp</th>
-<th align="center">Hyper</th>
-<th align="center">Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>macOS</strong></td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-</tr>
-<tr>
-<td><strong>Linux</strong></td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Windows</strong></td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No (WSL)</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Native feel (macOS)</strong></td>
-<td align="center">Excellent</td>
-<td align="center">Excellent</td>
-<td align="center">Native chrome</td>
-<td align="center">Custom chrome</td>
-<td align="center">Custom chrome</td>
-<td align="center">Custom chrome</td>
-<td align="center">Custom chrome</td>
-<td align="center">Native</td>
-</tr>
-</tbody></table>
-<p>Alacritty and Kitty also support BSD.</p>
-<h3 id="Appearance-and-theming"><a href="#Appearance-and-theming" class="headerlink" title="Appearance and theming"></a>Appearance and theming</h3><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Ghostty</th>
-<th>iTerm2</th>
-<th>Kitty</th>
-<th>Alacritty</th>
-<th>WezTerm</th>
-<th>Warp</th>
-<th>Hyper</th>
-<th>Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Bundled themes</strong></td>
-<td>300+</td>
-<td>~10 (200+ community)</td>
-<td>Community (<code>kitten themes</code>)</td>
-<td>Community (TOML)</td>
-<td>700+</td>
-<td>Built-in</td>
-<td>Community (npm)</td>
-<td>~10</td>
-</tr>
-<tr>
-<td><strong>Background image</strong></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes (Lua)</td>
-<td>No</td>
-<td>Yes (CSS)</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Tab bar customization</strong></td>
-<td>Native macOS</td>
-<td>Extensive</td>
-<td>Extensive</td>
-<td>–</td>
-<td>Extensive</td>
-<td>Custom</td>
-<td>CSS</td>
-<td>Native macOS</td>
-</tr>
-</tbody></table>
-<p>All terminals support background opacity, font fallback chains, colored bold, and block&#x2F;beam&#x2F;underline cursor styles.</p>
-<h3 id="Developer-facing-features"><a href="#Developer-facing-features" class="headerlink" title="Developer-facing features"></a>Developer-facing features</h3><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th align="center">Ghostty</th>
-<th align="center">iTerm2</th>
-<th align="center">Kitty</th>
-<th align="center">Alacritty</th>
-<th align="center">WezTerm</th>
-<th align="center">Warp</th>
-<th align="center">Hyper</th>
-<th align="center">Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Vi mode (scrollback)</strong></td>
-<td align="center">No</td>
-<td align="center">Yes (copy mode)</td>
-<td align="center">Pager-based</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Regex triggers</strong></td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">Yes (hints)</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Broadcast to panes</strong></td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Paste history</strong></td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>SSH multiplexing</strong></td>
-<td align="center">No</td>
-<td align="center">Yes (tmux)</td>
-<td align="center">SSH kitten</td>
-<td align="center">No</td>
-<td align="center">Built-in</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Command palette</strong></td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>AI integration</strong></td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">Yes (built-in)</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td><strong>Block-based output</strong></td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-</tbody></table>
-<h3 id="Project-info"><a href="#Project-info" class="headerlink" title="Project info"></a>Project info</h3><table>
-<thead>
-<tr>
-<th>Detail</th>
-<th>Ghostty</th>
-<th>iTerm2</th>
-<th>Kitty</th>
-<th>Alacritty</th>
-<th>WezTerm</th>
-<th>Warp</th>
-<th>Hyper</th>
-<th>Terminal.app</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Language</strong></td>
-<td>Zig + Swift</td>
-<td>Obj-C&#x2F;Swift</td>
-<td>C + Python</td>
-<td>Rust</td>
-<td>Rust</td>
-<td>Rust</td>
-<td>Electron (JS)</td>
-<td>Obj-C (Apple)</td>
-</tr>
-<tr>
-<td><strong>License</strong></td>
-<td>MIT</td>
-<td>GPLv2</td>
-<td>GPLv3</td>
-<td>Apache 2.0</td>
-<td>MIT</td>
-<td>Proprietary</td>
-<td>MIT</td>
-<td>Proprietary</td>
-</tr>
-<tr>
-<td><strong>First release</strong></td>
-<td>2024</td>
-<td>2010</td>
-<td>2017</td>
-<td>2017</td>
-<td>2018</td>
-<td>2022</td>
-<td>2016</td>
-<td>2001</td>
-</tr>
-<tr>
-<td><strong>Account required</strong></td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Telemetry</strong></td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes (Apple)</td>
-</tr>
-<tr>
-<td><strong>Install</strong></td>
-<td>Homebrew &#x2F; .dmg</td>
-<td>Homebrew &#x2F; .dmg</td>
-<td>Homebrew &#x2F; installer</td>
-<td>Homebrew &#x2F; cargo</td>
-<td>Homebrew &#x2F; .dmg</td>
-<td>.dmg</td>
-<td>Homebrew &#x2F; .dmg</td>
-<td>Pre-installed</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="Detailed-breakdown"><a href="#Detailed-breakdown" class="headerlink" title="Detailed breakdown"></a>Detailed breakdown</h2><h3 id="Ghostty"><a href="#Ghostty" class="headerlink" title="Ghostty"></a>Ghostty</h3><p>Created by Mitchell Hashimoto (HashiCorp co-founder). Written in Zig (with Swift&#x2F;AppKit for macOS GUI), GPU-accelerated via Metal (macOS) and OpenGL (Linux).</p>
-<p><strong>What makes it different</strong>: Ghostty is the only GPU-native terminal that uses real platform UI. On macOS, it renders with AppKit – native title bar, native tabs, native menus. It doesn’t look like a cross-platform app pretending to be a Mac app. It looks like a Mac app.</p>
-<p>The config format is the simplest of any terminal in this list – flat key&#x3D;value pairs, no nesting:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font-family = FiraCode Nerd Font</span><br><span class="line">font-size = 14</span><br><span class="line">theme = catppuccin-mocha</span><br><span class="line">window-padding-x = 8</span><br><span class="line">window-padding-y = 4</span><br><span class="line">keybind = super+d=new_split:right</span><br><span class="line">keybind = super+shift+d=new_split:down</span><br></pre></td></tr></table></figure>
-
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>Exceptional rendering performance on par with Alacritty</li>
-<li>Native macOS experience (AppKit, not custom chrome)</li>
-<li>Simplest config format – easy to learn, easy to share</li>
-<li>Built-in splits without tmux</li>
-<li>Large bundled theme collection</li>
-<li>Active, rapid development</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li>No Windows support</li>
-<li>No profiles (one global config)</li>
-<li>Younger than alternatives – some edge cases may not be handled yet</li>
-</ul>
-<p><strong>Best for</strong>: macOS developers who want speed without sacrificing native UX. If you care about your terminal feeling like a “real Mac app” and want sub-millisecond rendering, this is the one.</p>
-<hr>
-<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><p>The long-standing default upgrade from Terminal.app. Built by George Nachman, maintained for over 15 years.</p>
-<p><strong>What makes it different</strong>: Feature density. iTerm2 has more features than any other terminal, period. The tmux integration alone (where remote tmux sessions render as native iTerm2 tabs and splits) is unique across all terminals. The Python scripting API lets you automate anything.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># iTerm2 Python API example: auto-switch profile by hostname</span></span><br><span class="line"><span class="keyword">import</span> iterm2</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">connection</span>):</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> iterm2.SessionTerminationMonitor(connection) <span class="keyword">as</span> mon:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            session = <span class="keyword">await</span> mon.async_get()</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;production&quot;</span> <span class="keyword">in</span> session.name:</span><br><span class="line">                <span class="keyword">await</span> session.async_set_profile(<span class="string">&quot;Production&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>Most feature-complete terminal on any platform</li>
-<li>tmux control mode – remote tmux sessions as native tabs</li>
-<li>Python scripting API for automation</li>
-<li>Instant replay (rewind terminal output like a DVR)</li>
-<li>Triggers (regex-based actions on output)</li>
-<li>Paste history, autocomplete, smart selection</li>
-<li>GUI preferences – no config file needed</li>
-<li>Inline images (imgcat)</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li>Heavier resource usage than GPU-native terminals</li>
-<li>macOS only</li>
-<li>Startup is slower than lightweight alternatives</li>
-<li>Can feel bloated if you only need basics</li>
-</ul>
-<p><strong>Best for</strong>: Power users who want everything in one terminal. If you SSH into servers frequently, use tmux, need per-host profiles, or want a scripting API, iTerm2 is hard to beat.</p>
-<hr>
-<h3 id="Kitty"><a href="#Kitty" class="headerlink" title="Kitty"></a>Kitty</h3><p>Written in C and Python by Kovid Goyal. GPU-rendered from the ground up.</p>
-<p><strong>What makes it different</strong>: Kittens. Kitty’s extension system lets you write Python scripts that run inside the terminal process, with access to screen content, terminal state, and input. Built-in kittens include <code>icat</code> (inline images), <code>diff</code> (side-by-side diffs), <code>hints</code> (clickable URLs&#x2F;paths), and <code>ssh</code> (auto-copy terminfo to remote hosts). The Kitty graphics protocol is becoming a de facto standard adopted by other tools.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Display an image inline</span></span><br><span class="line">kitty +kitten icat photo.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Side-by-side diff</span></span><br><span class="line">kitty +kitten diff file1.py file2.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy terminfo + shell integration to a remote host</span></span><br><span class="line">kitty +kitten ssh user@host</span><br></pre></td></tr></table></figure>
-
-<p>Kitty’s built-in layouts replace basic tmux usage:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># kitty.conf -- tiling layouts</span><br><span class="line">enabled_layouts tall:bias=70,fat,grid,splits,stack</span><br><span class="line">map ctrl+shift+l next_layout</span><br><span class="line">map ctrl+shift+enter new_window</span><br></pre></td></tr></table></figure>
-
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>Kittens extension system – deeply programmable</li>
-<li>Graphics protocol becoming an industry standard</li>
-<li>Excellent tiling layouts without tmux</li>
-<li>SSH kitten (auto-copies terminfo, shell integration)</li>
-<li>Scrollback via configurable pager (vim, less, etc.)</li>
-<li>Broadcast input to all panes</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li>Requires configuration to feel native on macOS</li>
-<li>Community friction (author has strong opinions in issue tracker)</li>
-<li>No GUI settings</li>
-<li>Kitten API has a learning curve</li>
-</ul>
-<p><strong>Best for</strong>: Developers who want a programmable terminal. If you write custom tools, display images&#x2F;charts in the terminal, or want deep control without tmux, Kitty’s extensibility is unmatched.</p>
-<hr>
-<h3 id="Alacritty"><a href="#Alacritty" class="headerlink" title="Alacritty"></a>Alacritty</h3><p>Famously billed as the “fastest terminal emulator in existence.” Written in Rust, GPU-accelerated.</p>
-<p><strong>What makes it different</strong>: Radical minimalism. Alacritty deliberately omits tabs, splits, ligatures, and inline images. The philosophy: the terminal should render text fast and nothing else. Use tmux or your window manager for multiplexing. This means less code, fewer bugs, and the absolute best performance.</p>
-<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># alacritty.toml -- that&#x27;s really all you need</span></span><br><span class="line"><span class="section">[font]</span></span><br><span class="line"><span class="attr">normal.family</span> = <span class="string">&quot;FiraCode Nerd Font&quot;</span></span><br><span class="line"><span class="attr">size</span> = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="section">[window]</span></span><br><span class="line"><span class="attr">opacity</span> = <span class="number">0.95</span></span><br><span class="line"><span class="attr">padding</span> = &#123; x = <span class="number">8</span>, y = <span class="number">4</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[colors.primary]</span></span><br><span class="line"><span class="attr">background</span> = <span class="string">&quot;#1e1e2e&quot;</span></span><br><span class="line"><span class="attr">foreground</span> = <span class="string">&quot;#cdd6f4&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>Fastest and lightest terminal available – the performance benchmark</li>
-<li>Rock solid stability – minimal code means minimal bugs</li>
-<li>Broadest platform support (macOS, Linux, Windows, BSD)</li>
-<li>TOML config – clean, well-documented</li>
-<li>Vi mode for scrollback navigation</li>
-<li>Consistent behavior across all platforms</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li>No tabs or splits (by design – use tmux)</li>
-<li>No ligature support (long-standing, intentional decision)</li>
-<li>No inline images</li>
-<li>No scripting or plugins</li>
-</ul>
-<p><strong>Best for</strong>: tmux users who want the fastest possible rendering layer. If tmux is already your multiplexer and you don’t need ligatures or inline images, Alacritty is pure speed with zero bloat.</p>
-<hr>
-<h3 id="WezTerm"><a href="#WezTerm" class="headerlink" title="WezTerm"></a>WezTerm</h3><p>Written in Rust by Wez Furlong. GPU-accelerated with a Lua configuration engine.</p>
-<p><strong>What makes it different</strong>: Lua. Your config isn’t a static file – it’s a program. You can write conditionals, functions, import modules, and react to events. WezTerm also has the best built-in multiplexer of any terminal: tabs, splits, and workspaces that can genuinely replace tmux. The built-in SSH client with multiplexing means you get your full WezTerm experience on remote servers without installing anything.</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- wezterm.lua -- conditional config based on hostname</span></span><br><span class="line"><span class="keyword">local</span> wezterm = <span class="built_in">require</span> <span class="string">&#x27;wezterm&#x27;</span></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = wezterm.config_builder()</span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span>.font = wezterm.font(<span class="string">&#x27;FiraCode Nerd Font&#x27;</span>)</span><br><span class="line"><span class="built_in">config</span>.font_size = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Different theme on work vs personal machine</span></span><br><span class="line"><span class="keyword">if</span> wezterm.hostname() == <span class="string">&#x27;work-laptop&#x27;</span> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Latte&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Mocha&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Custom status bar</span></span><br><span class="line">wezterm.on(<span class="string">&#x27;update-status&#x27;</span>, <span class="function"><span class="keyword">function</span><span class="params">(window)</span></span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">date</span> = wezterm.strftime(<span class="string">&#x27;%H:%M&#x27;</span>)</span><br><span class="line">  window:set_right_status(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>Lua config – full programming language, not just key&#x3D;value</li>
-<li>Best built-in multiplexer (can genuinely replace tmux)</li>
-<li>SSH multiplexing (remote tabs&#x2F;splits without tmux on server)</li>
-<li>Supports all three inline image protocols (iTerm2, Kitty, Sixel)</li>
-<li>Excellent native Windows support</li>
-<li>Serial port support (embedded development)</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li>Lua config is overkill for simple setups</li>
-<li>Heavier than Alacritty&#x2F;Ghostty</li>
-<li>Non-native window chrome on macOS</li>
-<li>Documentation can be hard to navigate</li>
-<li>Development pace has slowed in 2025-2026</li>
-</ul>
-<p><strong>Best for</strong>: Power users who want maximum programmability and cross-platform consistency. If you work on macOS + Linux + Windows, or want to replace tmux entirely, WezTerm is the most capable all-in-one option.</p>
-<hr>
-<h3 id="Warp"><a href="#Warp" class="headerlink" title="Warp"></a>Warp</h3><p>Rust-based, GPU-accelerated, with a fundamentally different UX model.</p>
-<p><strong>What makes it different</strong>: Warp treats the terminal like an IDE. Output is grouped into collapsible blocks per command. There’s a persistent input area at the bottom (like a text editor, with cursor navigation). AI is built in – describe what you want in natural language, and Warp suggests the command. Workflows (saved command templates with parameters) let you share complex commands with your team.</p>
-<p><strong>Strengths:</strong></p>
-<ul>
-<li>AI command suggestions – natural language to shell</li>
-<li>Block-based output – collapse, copy, or share individual commands</li>
-<li>Modern text editing in the input area (multi-cursor, select, undo)</li>
-<li>Workflows – parameterized command templates</li>
-<li>Team features (shared workflows, team themes)</li>
-<li>Polished, approachable UI</li>
-</ul>
-<p><strong>Weaknesses:</strong></p>
-<ul>
-<li><strong>Account required</strong> – you must sign up to use a terminal (controversial)</li>
-<li><strong>Proprietary</strong> – closed source</li>
-<li><strong>Telemetry</strong> – sends usage data</li>
-<li>macOS and Linux only (no Windows)</li>
-<li>Heavier memory footprint (~150 MB)</li>
-<li>Non-standard UX can clash with existing muscle memory</li>
-</ul>
-<p><strong>Best for</strong>: Developers new to the terminal who want guidance, or teams that benefit from shared workflows. If the account requirement and closed source don’t bother you, the UX is genuinely innovative.</p>
-<hr>
-<h3 id="Hyper"><a href="#Hyper" class="headerlink" title="Hyper"></a>Hyper</h3><p>Built on Electron by Vercel (the Next.js company). HTML, CSS, and JavaScript all the way down. Themes are CSS, plugins are npm packages. Beautiful out of the box, but Electron means significantly slower rendering (~200 MB memory, noticeable input latency). Development has slowed considerably. <strong>Best for</strong> web developers who want CSS&#x2F;JS customization and don’t mind the performance trade-off. Not recommended for heavy CLI workloads.</p>
-<hr>
-<h2 id="Decision-guide"><a href="#Decision-guide" class="headerlink" title="Decision guide"></a>Decision guide</h2><table>
-<thead>
-<tr>
-<th>What you want</th>
-<th>Best pick</th>
-<th>Runner-up</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Raw speed</strong></td>
-<td><strong>Alacritty</strong> – minimal code, maximum performance</td>
-<td>Ghostty</td>
-</tr>
-<tr>
-<td><strong>macOS native feel</strong></td>
-<td><strong>Ghostty</strong> – real AppKit UI, not custom chrome</td>
-<td>iTerm2</td>
-</tr>
-<tr>
-<td><strong>Most features</strong></td>
-<td><strong>iTerm2</strong> – 15 years of feature accumulation</td>
-<td>WezTerm</td>
-</tr>
-<tr>
-<td><strong>Drop tmux entirely</strong></td>
-<td><strong>WezTerm</strong> – best built-in multiplexer</td>
-<td>Kitty</td>
-</tr>
-<tr>
-<td><strong>tmux power user</strong></td>
-<td><strong>Alacritty</strong> – fastest rendering layer</td>
-<td>Ghostty</td>
-</tr>
-<tr>
-<td><strong>SSH to many servers</strong></td>
-<td><strong>iTerm2</strong> – native tmux control mode</td>
-<td>WezTerm (SSH mux)</td>
-</tr>
-<tr>
-<td><strong>Extensibility</strong></td>
-<td><strong>Kitty</strong> (Python kittens) or <strong>WezTerm</strong> (Lua)</td>
-<td>–</td>
-</tr>
-<tr>
-<td><strong>Cross-platform (incl. Windows)</strong></td>
-<td><strong>WezTerm</strong> or <strong>Alacritty</strong></td>
-<td>–</td>
-</tr>
-<tr>
-<td><strong>Simplest config</strong></td>
-<td><strong>Ghostty</strong> – flat key&#x3D;value, no nesting</td>
-<td>Alacritty (TOML)</td>
-</tr>
-<tr>
-<td><strong>New to the terminal</strong></td>
-<td><strong>Warp</strong> – AI guidance, IDE-like UX</td>
-<td>iTerm2 (GUI)</td>
-</tr>
-<tr>
-<td><strong>Privacy &#x2F; no telemetry</strong></td>
-<td><strong>Alacritty</strong>, <strong>Ghostty</strong>, or <strong>Kitty</strong></td>
-<td>–</td>
-</tr>
-<tr>
-<td><strong>Team collaboration</strong></td>
-<td><strong>Warp</strong> – shared workflows</td>
-<td>–</td>
-</tr>
-</tbody></table>
-<h3 id="Migration-path-from-Terminal-app"><a href="#Migration-path-from-Terminal-app" class="headerlink" title="Migration path from Terminal.app"></a>Migration path from Terminal.app</h3><p>Most macOS developers follow this progression:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Terminal.app → iTerm2 → (split here)</span><br><span class="line">                          ├→ Ghostty (want native + fast)</span><br><span class="line">                          ├→ Alacritty + tmux (want minimal + fast)</span><br><span class="line">                          ├→ Kitty (want extensible)</span><br><span class="line">                          └→ WezTerm (want all-in-one)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><p>All terminals are available via Homebrew:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask ghostty</span><br><span class="line">brew install --cask iterm2</span><br><span class="line">brew install --cask kitty</span><br><span class="line">brew install --cask alacritty</span><br><span class="line">brew install --cask wezterm</span><br><span class="line">brew install --cask warp</span><br><span class="line">brew install --cask hyper</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Verdict"><a href="#Verdict" class="headerlink" title="Verdict"></a>Verdict</h2><p>There’s no single “best” terminal – it depends on what you value. But here’s how I’d summarize the landscape in 2026:</p>
-<ul>
-<li><strong>Ghostty</strong> is the new default recommendation for macOS. Native feel, excellent performance, simple config. It’s what Terminal.app would be if Apple rebuilt it today.</li>
-<li><strong>iTerm2</strong> remains king for feature completeness. If you need a specific capability, iTerm2 probably has it.</li>
-<li><strong>Kitty</strong> is the hacker’s terminal. Kittens and the graphics protocol give you capabilities no other terminal offers.</li>
-<li><strong>Alacritty</strong> is the purist’s choice. Fastest, lightest, most stable – if you’re already married to tmux.</li>
-<li><strong>WezTerm</strong> is the Swiss Army knife. Does everything, runs everywhere, configured with a real programming language.</li>
-<li><strong>Warp</strong> is genuinely innovative but the account requirement and closed source are dealbreakers for many developers.</li>
-</ul>
-<p>Pick one, configure it, and move on. The best terminal is the one you stop thinking about.</p>
+<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
+<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
+<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
+<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
+<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
 ]]></content>
       <categories>
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Terminal</tag>
-        <tag>Ghostty</tag>
-        <tag>iTerm2</tag>
-        <tag>Kitty</tag>
-        <tag>Alacritty</tag>
-        <tag>WezTerm</tag>
-        <tag>Warp</tag>
-        <tag>CLI</tag>
+        <tag>Finder</tag>
       </tags>
   </entry>
   <entry>
-    <title>Zsh Usage</title>
-    <url>/Zsh-Usage/</url>
-    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
-<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>iOS Development Resources From Scratch to App Store</title>
+    <url>/iOS-App-From-Scratch-to-App-Store/</url>
+    <content><![CDATA[<p>Resources for iOS development from setup to App Store distribution.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
+<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
+<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
+<blockquote>
+<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
+</blockquote>
+<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
+<blockquote>
+<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
+</blockquote>
+<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
+<blockquote>
+<p>Reactive Programming in Swift</p>
+</blockquote>
+<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
+<blockquote>
+<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
+</blockquote>
+<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
+<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
+<blockquote>
+<p>An iOS library to natively render After Effects vector animations</p>
+</blockquote>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
+<blockquote>
+<p>A Swift command line tool for generating your Xcode project</p>
+</blockquote>
+<p><a href="https://github.com/luminoid/Monolith">Monolith</a></p>
+<blockquote>
+<p>Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.</p>
+</blockquote>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
+<blockquote>
+<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
+</blockquote>
+<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
+<blockquote>
+<p>A tool to enforce Swift style and conventions.</p>
+</blockquote>
+<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
+<blockquote>
+<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
+</blockquote>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
+<blockquote>
+<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
+</blockquote>
+<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
+<blockquote>
+<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
+</blockquote>
+<span id="more"></span>
 
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
-<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
-<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
+<h2 id="Xcode-Command-Line"><a href="#Xcode-Command-Line" class="headerlink" title="Xcode Command Line"></a>Xcode Command Line</h2><h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
 
-<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="LLDB-Debugger"><a href="#LLDB-Debugger" class="headerlink" title="LLDB (Debugger)"></a>LLDB (Debugger)</h3><p>Common commands in the Xcode debug console:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bt</code></td>
+<td>Backtrace — print the call stack of the current thread</td>
+</tr>
+<tr>
+<td><code>bt all</code></td>
+<td>Backtrace all threads</td>
+</tr>
+<tr>
+<td><code>po &lt;expr&gt;</code></td>
+<td>Print object — evaluate and print a Swift&#x2F;ObjC expression</td>
+</tr>
+<tr>
+<td><code>p &lt;expr&gt;</code></td>
+<td>Print — evaluate expression with type info</td>
+</tr>
+<tr>
+<td><code>frame variable</code></td>
+<td>Show all local variables in the current frame</td>
+</tr>
+<tr>
+<td><code>thread list</code></td>
+<td>List all threads</td>
+</tr>
+<tr>
+<td><code>thread return</code></td>
+<td>Force return from the current function</td>
+</tr>
+<tr>
+<td><code>breakpoint list</code></td>
+<td>List all breakpoints</td>
+</tr>
+<tr>
+<td><code>watchpoint set variable &lt;var&gt;</code></td>
+<td>Break when a variable changes</td>
+</tr>
+<tr>
+<td><code>expr &lt;code&gt;</code></td>
+<td>Execute code at runtime (e.g., <code>expr view.backgroundColor = .red</code>)</td>
+</tr>
+<tr>
+<td><code>continue</code> &#x2F; <code>c</code></td>
+<td>Resume execution</td>
+</tr>
+<tr>
+<td><code>step</code> &#x2F; <code>s</code></td>
+<td>Step into</td>
+</tr>
+<tr>
+<td><code>next</code> &#x2F; <code>n</code></td>
+<td>Step over</td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td>Step out of current function</td>
+</tr>
+</tbody></table>
+<h3 id="simctl"><a href="#simctl" class="headerlink" title="simctl"></a>simctl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List available simulators</span></span><br><span class="line">xcrun simctl list devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># Boot a simulator</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open URL in simulator</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Take screenshot</span></span><br><span class="line">xcrun simctl io booted screenshot output.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># Erase simulator data</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
+<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
+<p>Add tags to build</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.2.0  <span class="comment"># Version 1.2.0</span></span><br><span class="line">git tag b10     <span class="comment"># Build 10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
+<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
+<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
+</ul>
+<p>Change version code, then <code>fastlane beta</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
+
+<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastlane update_fastlane</span><br></pre></td></tr></table></figure>
+
+<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
+<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
+<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
+</ul>
+<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
+<li><a href="https://developer.apple.com/design/resources/#product-bezels">Apple Product Bezels</a></li>
+<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
+<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
+</ul>
+<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a>Claude Code</h3><p>Claude Skill: <a href="https://github.com/CharlesWiltgen/Axiom">https://github.com/CharlesWiltgen/Axiom</a></p>
+<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
+<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
 ]]></content>
       <categories>
-        <category>Shell</category>
+        <category>iOS</category>
       </categories>
       <tags>
-        <tag>zsh</tag>
-        <tag>oh-my-zsh</tag>
-        <tag>powerlevel10k</tag>
-        <tag>antigen</tag>
+        <tag>fastlane</tag>
       </tags>
   </entry>
   <entry>
@@ -6204,187 +5528,863 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac Usage</title>
-    <url>/Mac-Usage/</url>
-    <content><![CDATA[<p>Shortcuts and commands for daily Mac use.</p>
-<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+    <title>Choosing a terminal emulator in 2026: Ghostty, iTerm2, Kitty, Alacritty, WezTerm</title>
+    <url>/Terminal-Emulator-Comparison-2026/</url>
+    <content><![CDATA[<p>A detailed comparison of every major terminal emulator in 2026 – performance, features, configuration, platform support, and which one fits your workflow.</p>
+<span id="more"></span>
 
-<h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
-<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
-<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
-<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+<h2 id="Why-your-terminal-matters"><a href="#Why-your-terminal-matters" class="headerlink" title="Why your terminal matters"></a>Why your terminal matters</h2><p>Developers spend hours a day in a terminal. The difference between a slow, limited terminal and a fast, well-configured one compounds over time. Modern terminals offer GPU-accelerated rendering, built-in multiplexing, scriptable configuration, inline images, and more – features that were unthinkable a decade ago.</p>
+<p>This guide covers 8 terminals across 3 categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Options</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GPU-native, feature-rich</strong></td>
+<td>Ghostty, iTerm2, Kitty, WezTerm</td>
+<td>Developers who want speed + features</td>
+</tr>
+<tr>
+<td><strong>GPU-native, minimal</strong></td>
+<td>Alacritty</td>
+<td>Developers who use tmux and want raw speed</td>
+</tr>
+<tr>
+<td><strong>Alternative approaches</strong></td>
+<td>Warp, Hyper</td>
+<td>AI-assisted or web-based workflows</td>
+</tr>
+</tbody></table>
+<p>Terminal.app (macOS built-in) is included in tables as a baseline but doesn’t get its own section – it works, but every option above is a meaningful upgrade.</p>
+<hr>
+<h2 id="Quick-comparison"><a href="#Quick-comparison" class="headerlink" title="Quick comparison"></a>Quick comparison</h2><h3 id="Core-features"><a href="#Core-features" class="headerlink" title="Core features"></a>Core features</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GPU accelerated</strong></td>
+<td align="center">Metal</td>
+<td align="center">Metal (opt-in)</td>
+<td align="center">OpenGL</td>
+<td align="center">OpenGL&#x2F;Metal</td>
+<td align="center">OpenGL&#x2F;Metal</td>
+<td align="center">Metal</td>
+<td align="center">No (Electron)</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Tabs</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td><strong>Splits&#x2F;panes</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes (layouts)</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Ligatures</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Inline images</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes (imgcat)</td>
+<td align="center">Yes (protocol)</td>
+<td align="center">No</td>
+<td align="center">Yes (multi)</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>tmux integration</strong></td>
+<td align="center">No</td>
+<td align="center">Native control mode</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Shell integration</strong></td>
+<td align="center">Deep</td>
+<td align="center">Deep</td>
+<td align="center">Basic</td>
+<td align="center">No</td>
+<td align="center">Basic</td>
+<td align="center">Deep</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Session save&#x2F;restore</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Session files</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes (window groups)</td>
+</tr>
+<tr>
+<td><strong>Undo close tab</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">–</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+<h3 id="Configuration-and-extensibility"><a href="#Configuration-and-extensibility" class="headerlink" title="Configuration and extensibility"></a>Configuration and extensibility</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Config format</strong></td>
+<td>key&#x3D;value</td>
+<td>GUI</td>
+<td>key&#x3D;value</td>
+<td>TOML</td>
+<td>Lua</td>
+<td>GUI + YAML</td>
+<td>JS</td>
+<td>GUI</td>
+</tr>
+<tr>
+<td><strong>Config location</strong></td>
+<td><code>~/.config/ghostty/config</code></td>
+<td>Preferences UI</td>
+<td><code>~/.config/kitty/kitty.conf</code></td>
+<td><code>~/.config/alacritty/alacritty.toml</code></td>
+<td><code>~/.config/wezterm/wezterm.lua</code></td>
+<td><code>~/.warp/</code></td>
+<td><code>~/.hyper.js</code></td>
+<td>Preferences UI</td>
+</tr>
+<tr>
+<td><strong>Live reload</strong></td>
+<td>Keybind</td>
+<td>N&#x2F;A (GUI)</td>
+<td><code>ctrl+shift+f5</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N&#x2F;A</td>
+<td>Yes</td>
+<td>N&#x2F;A</td>
+</tr>
+<tr>
+<td><strong>Scripting</strong></td>
+<td>AppleScript (macOS)</td>
+<td>Python API</td>
+<td>Python (kittens)</td>
+<td>No</td>
+<td>Lua (full)</td>
+<td>No</td>
+<td>JS plugins (npm)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Profiles</strong></td>
+<td>No</td>
+<td>Yes (extensive)</td>
+<td>No</td>
+<td>No</td>
+<td>Domains</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Config complexity</strong></td>
+<td>Very low</td>
+<td>Low (GUI)</td>
+<td>Low</td>
+<td>Low</td>
+<td>Medium-High</td>
+<td>Low (GUI)</td>
+<td>Medium</td>
+<td>Very low</td>
+</tr>
+</tbody></table>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Rendering speed</strong></td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Best</td>
+<td>Good</td>
+<td>Good</td>
+<td>Poor</td>
+<td>Adequate</td>
+</tr>
+<tr>
+<td><strong>Input latency</strong></td>
+<td>Very low</td>
+<td>Low</td>
+<td>Very low</td>
+<td>Lowest</td>
+<td>Low</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Memory baseline</strong></td>
+<td>~30 MB</td>
+<td>~80-120 MB</td>
+<td>~30 MB</td>
+<td>~20 MB</td>
+<td>~80-150 MB</td>
+<td>~150 MB</td>
+<td>~200 MB</td>
+<td>~40 MB</td>
+</tr>
+<tr>
+<td><strong>Startup time</strong></td>
+<td>Fast</td>
+<td>Moderate</td>
+<td>Fast</td>
+<td>Fastest</td>
+<td>Moderate</td>
+<td>Slow</td>
+<td>Slow</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td><strong>Heavy output (<code>cat</code> large file)</strong></td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Good</td>
+<td>Poor</td>
+<td>Slow</td>
+</tr>
+</tbody></table>
+<div class="note info"><p><strong>Memory numbers are approximate</strong> and vary by OS, tab count, scrollback size, and configuration. Measured with a single tab, default scrollback, on macOS.</p>
+</div>
+
+<h3 id="Platform-support"><a href="#Platform-support" class="headerlink" title="Platform support"></a>Platform support</h3><table>
+<thead>
+<tr>
+<th>Platform</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>macOS</strong></td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Windows</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No (WSL)</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Native feel (macOS)</strong></td>
+<td align="center">Excellent</td>
+<td align="center">Excellent</td>
+<td align="center">Native chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Custom chrome</td>
+<td align="center">Native</td>
+</tr>
+</tbody></table>
+<p>Alacritty and Kitty also support BSD.</p>
+<h3 id="Appearance-and-theming"><a href="#Appearance-and-theming" class="headerlink" title="Appearance and theming"></a>Appearance and theming</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Bundled themes</strong></td>
+<td>300+</td>
+<td>~10 (200+ community)</td>
+<td>Community (<code>kitten themes</code>)</td>
+<td>Community (TOML)</td>
+<td>700+</td>
+<td>Built-in</td>
+<td>Community (npm)</td>
+<td>~10</td>
+</tr>
+<tr>
+<td><strong>Background image</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes (Lua)</td>
+<td>No</td>
+<td>Yes (CSS)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Tab bar customization</strong></td>
+<td>Native macOS</td>
+<td>Extensive</td>
+<td>Extensive</td>
+<td>–</td>
+<td>Extensive</td>
+<td>Custom</td>
+<td>CSS</td>
+<td>Native macOS</td>
+</tr>
+</tbody></table>
+<p>All terminals support background opacity, font fallback chains, colored bold, and block&#x2F;beam&#x2F;underline cursor styles.</p>
+<h3 id="Developer-facing-features"><a href="#Developer-facing-features" class="headerlink" title="Developer-facing features"></a>Developer-facing features</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Ghostty</th>
+<th align="center">iTerm2</th>
+<th align="center">Kitty</th>
+<th align="center">Alacritty</th>
+<th align="center">WezTerm</th>
+<th align="center">Warp</th>
+<th align="center">Hyper</th>
+<th align="center">Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Vi mode (scrollback)</strong></td>
+<td align="center">No</td>
+<td align="center">Yes (copy mode)</td>
+<td align="center">Pager-based</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Regex triggers</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes (hints)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Broadcast to panes</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Paste history</strong></td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>SSH multiplexing</strong></td>
+<td align="center">No</td>
+<td align="center">Yes (tmux)</td>
+<td align="center">SSH kitten</td>
+<td align="center">No</td>
+<td align="center">Built-in</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Command palette</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>AI integration</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes (built-in)</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Block-based output</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+<h3 id="Project-info"><a href="#Project-info" class="headerlink" title="Project info"></a>Project info</h3><table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Ghostty</th>
+<th>iTerm2</th>
+<th>Kitty</th>
+<th>Alacritty</th>
+<th>WezTerm</th>
+<th>Warp</th>
+<th>Hyper</th>
+<th>Terminal.app</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Language</strong></td>
+<td>Zig + Swift</td>
+<td>Obj-C&#x2F;Swift</td>
+<td>C + Python</td>
+<td>Rust</td>
+<td>Rust</td>
+<td>Rust</td>
+<td>Electron (JS)</td>
+<td>Obj-C (Apple)</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>MIT</td>
+<td>GPLv2</td>
+<td>GPLv3</td>
+<td>Apache 2.0</td>
+<td>MIT</td>
+<td>Proprietary</td>
+<td>MIT</td>
+<td>Proprietary</td>
+</tr>
+<tr>
+<td><strong>First release</strong></td>
+<td>2024</td>
+<td>2010</td>
+<td>2017</td>
+<td>2017</td>
+<td>2018</td>
+<td>2022</td>
+<td>2016</td>
+<td>2001</td>
+</tr>
+<tr>
+<td><strong>Account required</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Telemetry</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes (Apple)</td>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Homebrew &#x2F; installer</td>
+<td>Homebrew &#x2F; cargo</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>.dmg</td>
+<td>Homebrew &#x2F; .dmg</td>
+<td>Pre-installed</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Detailed-breakdown"><a href="#Detailed-breakdown" class="headerlink" title="Detailed breakdown"></a>Detailed breakdown</h2><h3 id="Ghostty"><a href="#Ghostty" class="headerlink" title="Ghostty"></a>Ghostty</h3><p>Created by Mitchell Hashimoto (HashiCorp co-founder). Written in Zig (with Swift&#x2F;AppKit for macOS GUI), GPU-accelerated via Metal (macOS) and OpenGL (Linux).</p>
+<p><strong>What makes it different</strong>: Ghostty is the only GPU-native terminal that uses real platform UI. On macOS, it renders with AppKit – native title bar, native tabs, native menus. It doesn’t look like a cross-platform app pretending to be a Mac app. It looks like a Mac app.</p>
+<p>The config format is the simplest of any terminal in this list – flat key&#x3D;value pairs, no nesting:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font-family = FiraCode Nerd Font</span><br><span class="line">font-size = 14</span><br><span class="line">theme = catppuccin-mocha</span><br><span class="line">window-padding-x = 8</span><br><span class="line">window-padding-y = 4</span><br><span class="line">keybind = super+d=new_split:right</span><br><span class="line">keybind = super+shift+d=new_split:down</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Exceptional rendering performance on par with Alacritty</li>
+<li>Native macOS experience (AppKit, not custom chrome)</li>
+<li>Simplest config format – easy to learn, easy to share</li>
+<li>Built-in splits without tmux</li>
+<li>Large bundled theme collection</li>
+<li>Active, rapid development</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>No Windows support</li>
+<li>No profiles (one global config)</li>
+<li>Younger than alternatives – some edge cases may not be handled yet</li>
+</ul>
+<p><strong>Best for</strong>: macOS developers who want speed without sacrificing native UX. If you care about your terminal feeling like a “real Mac app” and want sub-millisecond rendering, this is the one.</p>
+<hr>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><p>The long-standing default upgrade from Terminal.app. Built by George Nachman, maintained for over 15 years.</p>
+<p><strong>What makes it different</strong>: Feature density. iTerm2 has more features than any other terminal, period. The tmux integration alone (where remote tmux sessions render as native iTerm2 tabs and splits) is unique across all terminals. The Python scripting API lets you automate anything.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># iTerm2 Python API example: auto-switch profile by hostname</span></span><br><span class="line"><span class="keyword">import</span> iterm2</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">connection</span>):</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> iterm2.SessionTerminationMonitor(connection) <span class="keyword">as</span> mon:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            session = <span class="keyword">await</span> mon.async_get()</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;production&quot;</span> <span class="keyword">in</span> session.name:</span><br><span class="line">                <span class="keyword">await</span> session.async_set_profile(<span class="string">&quot;Production&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Most feature-complete terminal on any platform</li>
+<li>tmux control mode – remote tmux sessions as native tabs</li>
+<li>Python scripting API for automation</li>
+<li>Instant replay (rewind terminal output like a DVR)</li>
+<li>Triggers (regex-based actions on output)</li>
+<li>Paste history, autocomplete, smart selection</li>
+<li>GUI preferences – no config file needed</li>
+<li>Inline images (imgcat)</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Heavier resource usage than GPU-native terminals</li>
+<li>macOS only</li>
+<li>Startup is slower than lightweight alternatives</li>
+<li>Can feel bloated if you only need basics</li>
+</ul>
+<p><strong>Best for</strong>: Power users who want everything in one terminal. If you SSH into servers frequently, use tmux, need per-host profiles, or want a scripting API, iTerm2 is hard to beat.</p>
+<hr>
+<h3 id="Kitty"><a href="#Kitty" class="headerlink" title="Kitty"></a>Kitty</h3><p>Written in C and Python by Kovid Goyal. GPU-rendered from the ground up.</p>
+<p><strong>What makes it different</strong>: Kittens. Kitty’s extension system lets you write Python scripts that run inside the terminal process, with access to screen content, terminal state, and input. Built-in kittens include <code>icat</code> (inline images), <code>diff</code> (side-by-side diffs), <code>hints</code> (clickable URLs&#x2F;paths), and <code>ssh</code> (auto-copy terminfo to remote hosts). The Kitty graphics protocol is becoming a de facto standard adopted by other tools.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Display an image inline</span></span><br><span class="line">kitty +kitten icat photo.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Side-by-side diff</span></span><br><span class="line">kitty +kitten diff file1.py file2.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy terminfo + shell integration to a remote host</span></span><br><span class="line">kitty +kitten ssh user@host</span><br></pre></td></tr></table></figure>
+
+<p>Kitty’s built-in layouts replace basic tmux usage:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># kitty.conf -- tiling layouts</span><br><span class="line">enabled_layouts tall:bias=70,fat,grid,splits,stack</span><br><span class="line">map ctrl+shift+l next_layout</span><br><span class="line">map ctrl+shift+enter new_window</span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Kittens extension system – deeply programmable</li>
+<li>Graphics protocol becoming an industry standard</li>
+<li>Excellent tiling layouts without tmux</li>
+<li>SSH kitten (auto-copies terminfo, shell integration)</li>
+<li>Scrollback via configurable pager (vim, less, etc.)</li>
+<li>Broadcast input to all panes</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Requires configuration to feel native on macOS</li>
+<li>Community friction (author has strong opinions in issue tracker)</li>
+<li>No GUI settings</li>
+<li>Kitten API has a learning curve</li>
+</ul>
+<p><strong>Best for</strong>: Developers who want a programmable terminal. If you write custom tools, display images&#x2F;charts in the terminal, or want deep control without tmux, Kitty’s extensibility is unmatched.</p>
+<hr>
+<h3 id="Alacritty"><a href="#Alacritty" class="headerlink" title="Alacritty"></a>Alacritty</h3><p>Famously billed as the “fastest terminal emulator in existence.” Written in Rust, GPU-accelerated.</p>
+<p><strong>What makes it different</strong>: Radical minimalism. Alacritty deliberately omits tabs, splits, ligatures, and inline images. The philosophy: the terminal should render text fast and nothing else. Use tmux or your window manager for multiplexing. This means less code, fewer bugs, and the absolute best performance.</p>
+<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># alacritty.toml -- that&#x27;s really all you need</span></span><br><span class="line"><span class="section">[font]</span></span><br><span class="line"><span class="attr">normal.family</span> = <span class="string">&quot;FiraCode Nerd Font&quot;</span></span><br><span class="line"><span class="attr">size</span> = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="section">[window]</span></span><br><span class="line"><span class="attr">opacity</span> = <span class="number">0.95</span></span><br><span class="line"><span class="attr">padding</span> = &#123; x = <span class="number">8</span>, y = <span class="number">4</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[colors.primary]</span></span><br><span class="line"><span class="attr">background</span> = <span class="string">&quot;#1e1e2e&quot;</span></span><br><span class="line"><span class="attr">foreground</span> = <span class="string">&quot;#cdd6f4&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Fastest and lightest terminal available – the performance benchmark</li>
+<li>Rock solid stability – minimal code means minimal bugs</li>
+<li>Broadest platform support (macOS, Linux, Windows, BSD)</li>
+<li>TOML config – clean, well-documented</li>
+<li>Vi mode for scrollback navigation</li>
+<li>Consistent behavior across all platforms</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>No tabs or splits (by design – use tmux)</li>
+<li>No ligature support (long-standing, intentional decision)</li>
+<li>No inline images</li>
+<li>No scripting or plugins</li>
+</ul>
+<p><strong>Best for</strong>: tmux users who want the fastest possible rendering layer. If tmux is already your multiplexer and you don’t need ligatures or inline images, Alacritty is pure speed with zero bloat.</p>
+<hr>
+<h3 id="WezTerm"><a href="#WezTerm" class="headerlink" title="WezTerm"></a>WezTerm</h3><p>Written in Rust by Wez Furlong. GPU-accelerated with a Lua configuration engine.</p>
+<p><strong>What makes it different</strong>: Lua. Your config isn’t a static file – it’s a program. You can write conditionals, functions, import modules, and react to events. WezTerm also has the best built-in multiplexer of any terminal: tabs, splits, and workspaces that can genuinely replace tmux. The built-in SSH client with multiplexing means you get your full WezTerm experience on remote servers without installing anything.</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- wezterm.lua -- conditional config based on hostname</span></span><br><span class="line"><span class="keyword">local</span> wezterm = <span class="built_in">require</span> <span class="string">&#x27;wezterm&#x27;</span></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = wezterm.config_builder()</span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span>.font = wezterm.font(<span class="string">&#x27;FiraCode Nerd Font&#x27;</span>)</span><br><span class="line"><span class="built_in">config</span>.font_size = <span class="number">14.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Different theme on work vs personal machine</span></span><br><span class="line"><span class="keyword">if</span> wezterm.hostname() == <span class="string">&#x27;work-laptop&#x27;</span> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Latte&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">config</span>.color_scheme = <span class="string">&#x27;Catppuccin Mocha&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Custom status bar</span></span><br><span class="line">wezterm.on(<span class="string">&#x27;update-status&#x27;</span>, <span class="function"><span class="keyword">function</span><span class="params">(window)</span></span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">date</span> = wezterm.strftime(<span class="string">&#x27;%H:%M&#x27;</span>)</span><br><span class="line">  window:set_right_status(<span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Lua config – full programming language, not just key&#x3D;value</li>
+<li>Best built-in multiplexer (can genuinely replace tmux)</li>
+<li>SSH multiplexing (remote tabs&#x2F;splits without tmux on server)</li>
+<li>Supports all three inline image protocols (iTerm2, Kitty, Sixel)</li>
+<li>Excellent native Windows support</li>
+<li>Serial port support (embedded development)</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li>Lua config is overkill for simple setups</li>
+<li>Heavier than Alacritty&#x2F;Ghostty</li>
+<li>Non-native window chrome on macOS</li>
+<li>Documentation can be hard to navigate</li>
+<li>Development pace has slowed in 2025-2026</li>
+</ul>
+<p><strong>Best for</strong>: Power users who want maximum programmability and cross-platform consistency. If you work on macOS + Linux + Windows, or want to replace tmux entirely, WezTerm is the most capable all-in-one option.</p>
+<hr>
+<h3 id="Warp"><a href="#Warp" class="headerlink" title="Warp"></a>Warp</h3><p>Rust-based, GPU-accelerated, with a fundamentally different UX model.</p>
+<p><strong>What makes it different</strong>: Warp treats the terminal like an IDE. Output is grouped into collapsible blocks per command. There’s a persistent input area at the bottom (like a text editor, with cursor navigation). AI is built in – describe what you want in natural language, and Warp suggests the command. Workflows (saved command templates with parameters) let you share complex commands with your team.</p>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>AI command suggestions – natural language to shell</li>
+<li>Block-based output – collapse, copy, or share individual commands</li>
+<li>Modern text editing in the input area (multi-cursor, select, undo)</li>
+<li>Workflows – parameterized command templates</li>
+<li>Team features (shared workflows, team themes)</li>
+<li>Polished, approachable UI</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li><strong>Account required</strong> – you must sign up to use a terminal (controversial)</li>
+<li><strong>Proprietary</strong> – closed source</li>
+<li><strong>Telemetry</strong> – sends usage data</li>
+<li>macOS and Linux only (no Windows)</li>
+<li>Heavier memory footprint (~150 MB)</li>
+<li>Non-standard UX can clash with existing muscle memory</li>
+</ul>
+<p><strong>Best for</strong>: Developers new to the terminal who want guidance, or teams that benefit from shared workflows. If the account requirement and closed source don’t bother you, the UX is genuinely innovative.</p>
+<hr>
+<h3 id="Hyper"><a href="#Hyper" class="headerlink" title="Hyper"></a>Hyper</h3><p>Built on Electron by Vercel (the Next.js company). HTML, CSS, and JavaScript all the way down. Themes are CSS, plugins are npm packages. Beautiful out of the box, but Electron means significantly slower rendering (~200 MB memory, noticeable input latency). Development has slowed considerably. <strong>Best for</strong> web developers who want CSS&#x2F;JS customization and don’t mind the performance trade-off. Not recommended for heavy CLI workloads.</p>
+<hr>
+<h2 id="Decision-guide"><a href="#Decision-guide" class="headerlink" title="Decision guide"></a>Decision guide</h2><table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Best pick</th>
+<th>Runner-up</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Raw speed</strong></td>
+<td><strong>Alacritty</strong> – minimal code, maximum performance</td>
+<td>Ghostty</td>
+</tr>
+<tr>
+<td><strong>macOS native feel</strong></td>
+<td><strong>Ghostty</strong> – real AppKit UI, not custom chrome</td>
+<td>iTerm2</td>
+</tr>
+<tr>
+<td><strong>Most features</strong></td>
+<td><strong>iTerm2</strong> – 15 years of feature accumulation</td>
+<td>WezTerm</td>
+</tr>
+<tr>
+<td><strong>Drop tmux entirely</strong></td>
+<td><strong>WezTerm</strong> – best built-in multiplexer</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td><strong>tmux power user</strong></td>
+<td><strong>Alacritty</strong> – fastest rendering layer</td>
+<td>Ghostty</td>
+</tr>
+<tr>
+<td><strong>SSH to many servers</strong></td>
+<td><strong>iTerm2</strong> – native tmux control mode</td>
+<td>WezTerm (SSH mux)</td>
+</tr>
+<tr>
+<td><strong>Extensibility</strong></td>
+<td><strong>Kitty</strong> (Python kittens) or <strong>WezTerm</strong> (Lua)</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Cross-platform (incl. Windows)</strong></td>
+<td><strong>WezTerm</strong> or <strong>Alacritty</strong></td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Simplest config</strong></td>
+<td><strong>Ghostty</strong> – flat key&#x3D;value, no nesting</td>
+<td>Alacritty (TOML)</td>
+</tr>
+<tr>
+<td><strong>New to the terminal</strong></td>
+<td><strong>Warp</strong> – AI guidance, IDE-like UX</td>
+<td>iTerm2 (GUI)</td>
+</tr>
+<tr>
+<td><strong>Privacy &#x2F; no telemetry</strong></td>
+<td><strong>Alacritty</strong>, <strong>Ghostty</strong>, or <strong>Kitty</strong></td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Team collaboration</strong></td>
+<td><strong>Warp</strong> – shared workflows</td>
+<td>–</td>
+</tr>
+</tbody></table>
+<h3 id="Migration-path-from-Terminal-app"><a href="#Migration-path-from-Terminal-app" class="headerlink" title="Migration path from Terminal.app"></a>Migration path from Terminal.app</h3><p>Most macOS developers follow this progression:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Terminal.app → iTerm2 → (split here)</span><br><span class="line">                          ├→ Ghostty (want native + fast)</span><br><span class="line">                          ├→ Alacritty + tmux (want minimal + fast)</span><br><span class="line">                          ├→ Kitty (want extensible)</span><br><span class="line">                          └→ WezTerm (want all-in-one)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><p>All terminals are available via Homebrew:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install --cask ghostty</span><br><span class="line">brew install --cask iterm2</span><br><span class="line">brew install --cask kitty</span><br><span class="line">brew install --cask alacritty</span><br><span class="line">brew install --cask wezterm</span><br><span class="line">brew install --cask warp</span><br><span class="line">brew install --cask hyper</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Verdict"><a href="#Verdict" class="headerlink" title="Verdict"></a>Verdict</h2><p>There’s no single “best” terminal – it depends on what you value. But here’s how I’d summarize the landscape in 2026:</p>
+<ul>
+<li><strong>Ghostty</strong> is the new default recommendation for macOS. Native feel, excellent performance, simple config. It’s what Terminal.app would be if Apple rebuilt it today.</li>
+<li><strong>iTerm2</strong> remains king for feature completeness. If you need a specific capability, iTerm2 probably has it.</li>
+<li><strong>Kitty</strong> is the hacker’s terminal. Kittens and the graphics protocol give you capabilities no other terminal offers.</li>
+<li><strong>Alacritty</strong> is the purist’s choice. Fastest, lightest, most stable – if you’re already married to tmux.</li>
+<li><strong>WezTerm</strong> is the Swiss Army knife. Does everything, runs everywhere, configured with a real programming language.</li>
+<li><strong>Warp</strong> is genuinely innovative but the account requirement and closed source are dealbreakers for many developers.</li>
+</ul>
+<p>Pick one, configure it, and move on. The best terminal is the one you stop thinking about.</p>
 ]]></content>
       <categories>
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Finder</tag>
+        <tag>Terminal</tag>
+        <tag>Ghostty</tag>
+        <tag>iTerm2</tag>
+        <tag>Kitty</tag>
+        <tag>Alacritty</tag>
+        <tag>WezTerm</tag>
+        <tag>Warp</tag>
+        <tag>CLI</tag>
       </tags>
   </entry>
   <entry>
-    <title>iOS Development Resources From Scratch to App Store</title>
-    <url>/iOS-App-From-Scratch-to-App-Store/</url>
-    <content><![CDATA[<p>Resources for iOS development from setup to App Store distribution.</p>
-<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
-<blockquote>
-<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
-</blockquote>
-<p><a href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
-<blockquote>
-<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
-</blockquote>
-<p><a href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
-<blockquote>
-<p>Reactive Programming in Swift</p>
-</blockquote>
-<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
-<blockquote>
-<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
-</blockquote>
-<p>Issue: <a href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
-<p><a href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
-<blockquote>
-<p>An iOS library to natively render After Effects vector animations</p>
-</blockquote>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
-<blockquote>
-<p>A Swift command line tool for generating your Xcode project</p>
-</blockquote>
-<p><a href="https://github.com/luminoid/Monolith">Monolith</a></p>
-<blockquote>
-<p>Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.</p>
-</blockquote>
-<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
-<blockquote>
-<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
-</blockquote>
-<p><a href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
-<blockquote>
-<p>A tool to enforce Swift style and conventions.</p>
-</blockquote>
-<p><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
-<blockquote>
-<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
-</blockquote>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
-<blockquote>
-<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
-</blockquote>
-<p><a href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
-<blockquote>
-<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
-</blockquote>
-<span id="more"></span>
+    <title>Zsh Usage</title>
+    <url>/Zsh-Usage/</url>
+    <content><![CDATA[<p>Configuration for oh-my-zsh with powerlevel10k and antigen.</p>
+<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="https://ohmyz.sh/">oh-my-zsh</a></h2><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Xcode-Command-Line"><a href="#Xcode-Command-Line" class="headerlink" title="Xcode Command Line"></a>Xcode Command Line</h2><h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a></p>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview">Oh My Zsh Plugins</a></p>
+<h2 id="Plugin-Manager"><a href="#Plugin-Manager" class="headerlink" title="Plugin Manager"></a>Plugin Manager</h2><h3 id="antigen"><a href="#antigen" class="headerlink" title="antigen"></a><a href="https://github.com/zsh-users/antigen">antigen</a></h3><span id="more"></span>
 
-<h3 id="LLDB-Debugger"><a href="#LLDB-Debugger" class="headerlink" title="LLDB (Debugger)"></a>LLDB (Debugger)</h3><p>Common commands in the Xcode debug console:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>bt</code></td>
-<td>Backtrace — print the call stack of the current thread</td>
-</tr>
-<tr>
-<td><code>bt all</code></td>
-<td>Backtrace all threads</td>
-</tr>
-<tr>
-<td><code>po &lt;expr&gt;</code></td>
-<td>Print object — evaluate and print a Swift&#x2F;ObjC expression</td>
-</tr>
-<tr>
-<td><code>p &lt;expr&gt;</code></td>
-<td>Print — evaluate expression with type info</td>
-</tr>
-<tr>
-<td><code>frame variable</code></td>
-<td>Show all local variables in the current frame</td>
-</tr>
-<tr>
-<td><code>thread list</code></td>
-<td>List all threads</td>
-</tr>
-<tr>
-<td><code>thread return</code></td>
-<td>Force return from the current function</td>
-</tr>
-<tr>
-<td><code>breakpoint list</code></td>
-<td>List all breakpoints</td>
-</tr>
-<tr>
-<td><code>watchpoint set variable &lt;var&gt;</code></td>
-<td>Break when a variable changes</td>
-</tr>
-<tr>
-<td><code>expr &lt;code&gt;</code></td>
-<td>Execute code at runtime (e.g., <code>expr view.backgroundColor = .red</code>)</td>
-</tr>
-<tr>
-<td><code>continue</code> &#x2F; <code>c</code></td>
-<td>Resume execution</td>
-</tr>
-<tr>
-<td><code>step</code> &#x2F; <code>s</code></td>
-<td>Step into</td>
-</tr>
-<tr>
-<td><code>next</code> &#x2F; <code>n</code></td>
-<td>Step over</td>
-</tr>
-<tr>
-<td><code>finish</code></td>
-<td>Step out of current function</td>
-</tr>
-</tbody></table>
-<h3 id="simctl"><a href="#simctl" class="headerlink" title="simctl"></a>simctl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List available simulators</span></span><br><span class="line">xcrun simctl list devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># Boot a simulator</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open URL in simulator</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Take screenshot</span></span><br><span class="line">xcrun simctl io booted screenshot output.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># Erase simulator data</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
-<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
-<p>Add tags to build</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.2.0  <span class="comment"># Version 1.2.0</span></span><br><span class="line">git tag b10     <span class="comment"># Build 10</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
-<li><a href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
-<li><a href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
-</ul>
-<p>Change version code, then <code>fastlane beta</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
-
-<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastlane update_fastlane</span><br></pre></td></tr></table></figure>
-
-<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
-<li><a href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
-<li><a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
-</ul>
-<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
-<li><a href="https://developer.apple.com/design/resources/#product-bezels">Apple Product Bezels</a></li>
-<li><a href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
-<li><a href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
-</ul>
-<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a>Claude Code</h3><p>Claude Skill: <a href="https://github.com/CharlesWiltgen/Axiom">https://github.com/CharlesWiltgen/Axiom</a></p>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
-<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
+<h2 id="zshrc"><a href="#zshrc" class="headerlink" title=".zshrc"></a>.zshrc</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">######################## Powerlevel10k ########################</span></span><br><span class="line"><span class="comment"># Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.</span></span><br><span class="line"><span class="comment"># Initialization code that may require console input (password prompts, [y/n]</span></span><br><span class="line"><span class="comment"># confirmations, etc.) must go above this block; everything else may go below.</span></span><br><span class="line"><span class="keyword">if</span> [[ -r <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">source</span> <span class="string">&quot;<span class="variable">$&#123;XDG_CACHE_HOME:-<span class="variable">$HOME</span>/.cache&#125;</span>/p10k-instant-prompt-<span class="variable">$&#123;(%):-%n&#125;</span>.zsh&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || <span class="built_in">source</span> ~/.p10k.zsh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">######################## Antigen ########################</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /opt/homebrew/share/antigen/antigen.zsh</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$HOMEBREW_PREFIX</span>/opt/chruby/share/chruby/chruby.sh</span><br><span class="line">chruby ruby-3.4.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the oh-my-zsh&#x27;s library.</span></span><br><span class="line">antigen use oh-my-zsh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bundles from the default repo (robbyrussell&#x27;s oh-my-zsh)</span></span><br><span class="line">antigen bundle colored-man-pages</span><br><span class="line">antigen bundle extract</span><br><span class="line">antigen bundle <span class="built_in">history</span></span><br><span class="line">antigen bundle z</span><br><span class="line">antigen bundle git</span><br><span class="line">antigen bundle npm</span><br><span class="line">antigen bundle gem</span><br><span class="line">antigen bundle python</span><br><span class="line">antigen bundle brew</span><br><span class="line">antigen bundle osx</span><br><span class="line">antigen bundle pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish shell like syntax highlighting for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fish-like autosuggestions for zsh</span></span><br><span class="line">antigen bundle zsh-users/zsh-autosuggestions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Additional completion definitions for Zsh.</span></span><br><span class="line">antigen bundle zsh-users/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the theme.</span></span><br><span class="line">antigen theme romkatv/powerlevel10k</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Antigen that you&#x27;re done.</span></span><br><span class="line">antigen apply</span><br><span class="line"></span><br><span class="line"><span class="comment">######################## User Configuration ########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls -hFG&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">&#x27;tree -C -I node_modules&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">&#x27;eza -aghlF --git --icons&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ltree=<span class="string">&#x27;eza -ghlTF --git -I=node_modules&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ncdu</span></span><br><span class="line"><span class="built_in">alias</span> ncdu=<span class="string">&quot;ncdu --color dark -r -x&quot;</span></span><br><span class="line"><span class="built_in">alias</span> ncdu-exclude=<span class="string">&quot;ncdu --color dark -r -x --exclude .git --exclude node_modules&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>iOS</category>
+        <category>Shell</category>
       </categories>
       <tags>
-        <tag>fastlane</tag>
+        <tag>zsh</tag>
+        <tag>oh-my-zsh</tag>
+        <tag>powerlevel10k</tag>
+        <tag>antigen</tag>
       </tags>
   </entry>
 </search>
