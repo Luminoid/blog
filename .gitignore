@@ -13,3 +13,4 @@ docs/
 *.class
 *.ali
 *.o
+source/downloads/code/**/Ada/fibonacci

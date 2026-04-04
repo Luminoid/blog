@@ -20,7 +20,7 @@ Mediocre engineer.
 
 ### Projects
 
-[Plantfolio](https://luminoid.github.io/plantfolio-site) — Plant care & growth records app. [App Store](https://apps.apple.com/us/app/plantfolio-plus/id6757148663)
+[Plantfolio](https://plantfolio.luminoid.dev) — Plant care & growth records app. [App Store](https://apps.apple.com/us/app/plantfolio-plus/id6757148663)
 
 Development: iOS / Front-end
 Interests: film / photography / plant

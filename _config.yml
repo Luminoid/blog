@@ -1,4 +1,4 @@
-# Hexo Configuration(Version 6.3.0)
+# Hexo Configuration (Version 8.1.1)
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -114,6 +114,14 @@ search:
   field: post
   content: true
   format: html
+
+# Feed (RSS/Atom)
+## Docs: https://github.com/hexojs/hexo-generator-feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Post Wordcount
 ## Docs: https://github.com/next-theme/hexo-word-counter
