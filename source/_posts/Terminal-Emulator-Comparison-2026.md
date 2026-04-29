@@ -30,7 +30,7 @@ This guide covers 8 terminals across 3 categories:
 | **GPU-native, minimal** | Alacritty | Developers who use tmux and want raw speed |
 | **Alternative approaches** | Warp, Hyper | AI-assisted or web-based workflows |
 
-Terminal.app (macOS built-in) is included in tables as a baseline but doesn't get its own section -- it works, but every option above is a meaningful upgrade.
+[Terminal.app](https://support.apple.com/guide/terminal/welcome/mac) (macOS built-in) is included in tables as a baseline but doesn't get its own section -- it works, but every option above is a meaningful upgrade.
 
 ---
 
@@ -42,7 +42,7 @@ Terminal.app (macOS built-in) is included in tables as a baseline but doesn't ge
 |---------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **GPU accelerated** | Metal | Metal (opt-in) | OpenGL | OpenGL/Metal | OpenGL/Metal | Metal | No (Electron) | No |
 | **Tabs** | Yes | Yes | Yes | No | Yes | Yes | Yes | Yes |
-| **Splits/panes** | Yes | Yes | Yes (layouts) | No | Yes | Yes | Yes | No |
+| **Splits/panes** | Yes | Yes | Yes (layouts) | No | Yes | Yes | Yes | Yes (horizontal only) |
 | **Ligatures** | Yes | Yes | Yes | No | Yes | Yes | Yes | No |
 | **Inline images** | Yes | Yes (imgcat) | Yes (protocol) | No | Yes (multi) | Yes | No | No |
 | **tmux integration** | No | Native control mode | No | No | No | No | No | No |
@@ -124,7 +124,7 @@ All terminals support background opacity, font fallback chains, colored bold, an
 
 ## Detailed breakdown
 
-### Ghostty
+### [Ghostty](https://ghostty.org/)
 
 Created by Mitchell Hashimoto (HashiCorp co-founder). Written in Zig (with Swift/AppKit for macOS GUI), GPU-accelerated via Metal (macOS) and OpenGL (Linux).
 
@@ -159,7 +159,7 @@ keybind = super+shift+d=new_split:down
 
 ---
 
-### iTerm2
+### [iTerm2](https://iterm2.com/)
 
 The long-standing default upgrade from Terminal.app. Built by George Nachman, maintained for over 15 years.
 
@@ -197,7 +197,7 @@ async def main(connection):
 
 ---
 
-### Kitty
+### [Kitty](https://sw.kovidgoyal.net/kitty/)
 
 Written in C and Python by Kovid Goyal. GPU-rendered from the ground up.
 
@@ -241,7 +241,7 @@ map ctrl+shift+enter new_window
 
 ---
 
-### Alacritty
+### [Alacritty](https://alacritty.org/)
 
 Famously billed as the "fastest terminal emulator in existence." Written in Rust, GPU-accelerated.
 
@@ -280,7 +280,7 @@ foreground = "#cdd6f4"
 
 ---
 
-### WezTerm
+### [WezTerm](https://wezterm.org/)
 
 Written in Rust by Wez Furlong. GPU-accelerated with a Lua configuration engine.
 
@@ -329,7 +329,7 @@ return config
 
 ---
 
-### Warp
+### [Warp](https://www.warp.dev/)
 
 Rust-based, GPU-accelerated, with a fundamentally different UX model.
 
@@ -355,7 +355,7 @@ Rust-based, GPU-accelerated, with a fundamentally different UX model.
 
 ---
 
-### Hyper
+### [Hyper](https://hyper.is/)
 
 Built on Electron by Vercel (the Next.js company). HTML, CSS, and JavaScript all the way down. Themes are CSS, plugins are npm packages. Beautiful out of the box, but Electron means significantly slower rendering (~200 MB memory, noticeable input latency). Development has slowed considerably. **Best for** web developers who want CSS/JS customization and don't mind the performance trade-off. Not recommended for heavy CLI workloads.
 

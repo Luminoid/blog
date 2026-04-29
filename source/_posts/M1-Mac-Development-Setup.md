@@ -19,6 +19,16 @@ Setup guide for development on M1 Mac.
 ## Shell
 {% post_link Zsh-Usage %}
 
+### [Starship](https://starship.rs/)
+> The minimal, blazing-fast, and infinitely customizable prompt for any shell.
+``` bash
+brew install starship
+```
+Add to `~/.zshrc`:
+``` bash
+eval "$(starship init zsh)"
+```
+
 ## Package Manager
 ### [Homebrew](https://brew.sh)
 #### Installation
