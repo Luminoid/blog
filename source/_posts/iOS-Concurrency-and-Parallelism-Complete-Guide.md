@@ -1,6 +1,7 @@
 ---
 title: "iOS Concurrency and Parallelism Comprehensive Guide"
 date: 2026-04-03 12:00:00
+updated: 2026-04-30 12:00:00
 categories:
 - iOS
 tags:
@@ -37,6 +38,47 @@ Swift Concurrency (`async`/`await`, actors, `AsyncSequence`) shipped natively wi
 
 ---
 
+## Mental model
+
+Four ideas hold the rest of the chapter together. Worth carrying in your head before reading any specific API — most of the rules below are corollaries of these.
+
+### Forward-progress contract
+
+Swift Concurrency's runtime owns a small pool of threads, and its contract is that **every thread is always making progress**. A `Task` that calls `Thread.sleep`, `DispatchSemaphore.wait`, blocks on a `pthread_mutex` held by a peer, or makes a synchronous I/O call into a C library *parks the thread*. The runtime can't reclaim it, can't reassign it, and can't apologise — the cooperative pool just stalls.
+
+This is the single biggest mental shift from GCD. Under GCD, blocking a worker was fine: the system spun up another worker. Under Swift Concurrency, blocking is a bug, and the rest of the design exists to make non-blocking ergonomic.
+
+### The cooperative thread pool
+
+GCD's failure mode was thread explosion. A queue with ready work and no available worker would create one — easy to push past the kernel's thread limit on I/O-bound workloads. Swift Concurrency intentionally caps the cooperative pool at roughly **one thread per CPU core, per QoS class**. Adding more threads doesn't help if everyone is parked, so the runtime forces you to *suspend* (release the thread) instead of *block* (occupy it).
+
+This is also why creating millions of tasks is fine — they share that handful of threads via cheap suspensions, not by spawning kernel threads.
+
+### `async` is a state machine, not a thread
+
+The compiler splits each `async` function at every `await` into partial functions. Locals that survive a suspension live in a heap-allocated context; the function "returns" at `await` and the runtime invokes the next partial function when the awaited result is ready.
+
+Two things follow:
+
+- **Suspension is roughly a function call** — no kernel transition, no stack copy, no thread context switch. `await` is closer to `return` than to `Thread.sleep`.
+- **Stack traces are split.** A debugger paused inside an async function shows the current partial function, not the whole logical call chain. Xcode's Async Backtrace view stitches the chain back together.
+
+### Executors decide where work runs
+
+Every `async` function runs on an *executor*. The ones you actually meet:
+
+- The **global concurrent executor** — the cooperative pool above. The default for `Task { }` and `Task.detached { }`.
+- Each **actor's serial executor** — every actor owns one, and it serializes incoming calls so actor state is data-race-free by construction.
+- **`MainActor`'s executor** — the main run loop. `MainActor` is a global actor whose executor happens to be the main thread.
+
+`await` is the place where the runtime can *change executors*. When you call an actor method from outside, the `await` is where you get enqueued on that actor's serial executor. Most of the design choices later in this chapter — actor reentrancy, `Sendable`, region-based isolation, priority escalation — are answers to the same question: *what guarantees do we need to switch executors safely?*
+
+### Three eras, one workspace
+
+GCD (2009) is C-friendly with no structured cancellation and no typed return values. `Operation` (2007, rebuilt on GCD in 2009) adds KVO state and dependency graphs but still no typed returns. Swift Concurrency (2021) replaces both with typed values, structured lifetime, and compile-time isolation. New code should default to Swift Concurrency; the older systems survive because they predate it and Apple frameworks still hand them out.
+
+---
+
 ## 1. POSIX Threads (`pthread`)
 
 The lowest-level threading API available on Apple platforms. You almost never need this directly, but understanding it helps reason about everything built on top.
@@ -60,7 +102,7 @@ func posixThreadExample() {
 
 **When to use**: Almost never. Only for C interop or extreme low-level control (custom thread attributes, real-time scheduling).
 
-**Synchronization primitives**:
+**Synchronization primitives** (rarely needed directly — Foundation and the standard library wrap them):
 
 ```swift
 // Mutex
@@ -70,22 +112,9 @@ pthread_mutex_lock(&mutex)
 // critical section
 pthread_mutex_unlock(&mutex)
 pthread_mutex_destroy(&mutex)
-
-// Read-write lock
-var rwlock = pthread_rwlock_t()
-pthread_rwlock_init(&rwlock, nil)
-pthread_rwlock_rdlock(&rwlock)   // Multiple readers OK
-pthread_rwlock_wrlock(&rwlock)   // Exclusive writer
-pthread_rwlock_unlock(&rwlock)
-pthread_rwlock_destroy(&rwlock)
-
-// Condition variable
-var cond = pthread_cond_t()
-pthread_cond_init(&cond, nil)
-pthread_cond_wait(&cond, &mutex) // Wait for signal
-pthread_cond_signal(&cond)       // Wake one waiter
-pthread_cond_broadcast(&cond)    // Wake all waiters
 ```
+
+`pthread` also offers `pthread_rwlock_*` (reader-writer locks) and `pthread_cond_*` (condition variables). For new code use `OSAllocatedUnfairLock`, `NSCondition`, or an `actor` instead — they wrap the same kernel primitives with safe Swift semantics.
 
 ---
 
@@ -117,22 +146,15 @@ Thread.detachNewThread {
 // myObject.performSelector(onMainThread: #selector(updateUI), with: nil, waitUntilDone: false)
 ```
 
-**Thread-local storage**:
-
-```swift
-// Each thread gets its own copy
-let key = "com.app.requestID"
-Thread.current.threadDictionary[key] = UUID().uuidString
-let requestID = Thread.current.threadDictionary[key] as? String
-```
-
-**When to use**: Legacy code, run loops that need a dedicated thread (e.g., streaming network connections). Prefer GCD or async/await for new code.
+**When to use**: Legacy code, run loops that need a dedicated thread (e.g., streaming network connections). Prefer GCD or async/await for new code. For per-thread context, Swift Concurrency's `@TaskLocal` (§7) is the modern replacement for `Thread.current.threadDictionary`.
 
 ---
 
 ## 3. Grand Central Dispatch (GCD)
 
 Apple's C-based concurrency library, introduced at WWDC 2009 (iOS 4.0 / macOS 10.6 Snow Leopard). Manages a pool of threads automatically — you submit work to queues, GCD decides which thread runs it.
+
+GCD lives in an awkward middle layer today: too low-level for new code (no structured cancellation, no typed return values), too useful to retire (Apple frameworks pass dispatch queues everywhere). Worth knowing in detail because everything around it — Combine schedulers, `OperationQueue`, the Swift Concurrency interop layer — speaks dispatch.
 
 ### Serial vs concurrent queues
 
@@ -351,11 +373,17 @@ queue.async {
 }
 ```
 
+{% note info %}
+**Design note: thread explosion.** GCD's worker model creates a new thread whenever a queue has ready work and no available worker. Under I/O-bound load this can exceed the kernel's thread limit and crash the process. Swift Concurrency's cooperative pool (§Mental model) exists primarily to fix this — the same workload becomes thousands of suspended tasks sharing a small pool of threads, not thousands of parked threads.
+{% endnote %}
+
 ---
 
 ## 4. `OperationQueue` and `Operation`
 
 Object-oriented task abstraction (iOS 2.0 / macOS 10.5, 2007). Originally built on threads, reimplemented on top of GCD in iOS 4.0 / macOS 10.6 (2009) when `BlockOperation` was also added. Adds dependency graphs, priorities, KVO-observable state, and built-in cancellation.
+
+**Why this still exists:** GCD added blocks but dropped Operation's structured cancellation, KVO state, and dependency graphs. Swift Concurrency replaces both with typed return values, structured cancellation, and compile-time isolation — and is the right answer for new code. `OperationQueue` survives because Apple frameworks still hand them out, and because explicit dependency graphs (rare) remain easier to read here than in a `TaskGroup`.
 
 ### Basic usage
 
@@ -413,57 +441,9 @@ let queue = OperationQueue()
 queue.addOperations([downloadOp, filterOp], waitUntilFinished: false)
 ```
 
-### Async operations (custom state management)
+### Async operations
 
-For operations that wrap async APIs (network requests, etc.), you must manage `isExecuting` and `isFinished` manually via KVO.
-
-```swift
-class AsyncOperation: Operation {
-    private var _isExecuting = false
-    private var _isFinished = false
-
-    override var isExecuting: Bool { _isExecuting }
-    override var isFinished: Bool { _isFinished }
-    override var isAsynchronous: Bool { true }
-
-    override func start() {
-        guard !isCancelled else {
-            finish()
-            return
-        }
-        willChangeValue(forKey: "isExecuting")
-        _isExecuting = true
-        didChangeValue(forKey: "isExecuting")
-        main()
-    }
-
-    func finish() {
-        willChangeValue(forKey: "isExecuting")
-        willChangeValue(forKey: "isFinished")
-        _isExecuting = false
-        _isFinished = true
-        didChangeValue(forKey: "isExecuting")
-        didChangeValue(forKey: "isFinished")
-    }
-}
-
-final class NetworkFetchOperation: AsyncOperation {
-    let url: URL
-    private(set) var responseData: Data?
-
-    init(url: URL) {
-        self.url = url
-    }
-
-    override func main() {
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-            self?.responseData = data
-            self?.finish()
-        }
-        task.resume()
-    }
-}
-```
+Wrapping a callback-based API (network, file I/O) inside an `Operation` requires overriding `isAsynchronous`, manually toggling `isExecuting`/`isFinished`, and emitting KVO notifications around each change. The pattern is well-documented but obsolete: Swift Concurrency's `withCheckedContinuation` (§10) does the same job in three lines and is structured. If you're hitting this in legacy code, the migration is mechanical — wrap the callback API with a continuation, kick the work off from a `Task`, and delete the `AsyncOperation` subclass.
 
 ### Cancellation propagation
 
@@ -573,28 +553,6 @@ print("Got data: \(sharedData)")
 condition.unlock()
 ```
 
-### `NSConditionLock`
-
-A lock with an integer-based state machine.
-
-```swift
-let conditionLock = NSConditionLock(condition: 0)
-
-// Phase 1 — runs when condition == 0, sets to 1
-Thread.detachNewThread {
-    conditionLock.lock(whenCondition: 0)
-    print("Phase 1 running")
-    conditionLock.unlock(withCondition: 1)
-}
-
-// Phase 2 — runs when condition == 1, sets to 2
-Thread.detachNewThread {
-    conditionLock.lock(whenCondition: 1)
-    print("Phase 2 running")
-    conditionLock.unlock(withCondition: 2)
-}
-```
-
 ### Atomics (Swift Atomics package)
 
 For lock-free concurrent programming.
@@ -633,6 +591,10 @@ let (exchanged, original) = counter.compareExchange(
 ## 6. Combine
 
 Apple's reactive framework, introduced at WWDC 2019 (iOS 13 / macOS 10.15, Swift 5.1). Declarative chains of publishers and subscribers that handle async events over time.
+
+{% note info %}
+For new code, prefer `AsyncSequence` + the [Swift Async Algorithms](https://github.com/apple/swift-async-algorithms) package (§9). Combine remains the right tool for SwiftUI bindings (`@Published`, `ObservableObject`) and existing pipelines, but most use cases that aren't UIKit-bound now have native async equivalents.
+{% endnote %}
 
 ### Basics
 
@@ -767,6 +729,8 @@ fetchUser(id: 42)
 ## 7. `async`/`await` (Swift Concurrency)
 
 Introduced in Swift 5.5 at WWDC 2021 (iOS 15 native, back-deployed to iOS 13+ with Xcode 13.2). The modern, recommended approach for all new code.
+
+**The shape: lifetime ⊆ lexical scope.** `async let` and `TaskGroup` guarantee child tasks complete (or are cancelled) before the enclosing scope exits. Errors propagate **up** the task tree, cancellation propagates **down**, and the compiler refuses code that would leak a child past its parent. `Task { }` is the deliberate exception — it returns a handle that outlives the surrounding scope, which is also why unstructured tasks are the most common source of "why is this still running?" bugs.
 
 ### Basic async functions
 
@@ -904,6 +868,10 @@ func processItems(_ items: [Item]) async throws {
 }
 ```
 
+{% note info %}
+**Design intent: cancellation is cooperative.** `task.cancel()` only sets a flag. The runtime never kills a task — it relies on the task itself to call `Task.checkCancellation()` or check `Task.isCancelled` at safe points. This is the same model as `Operation.cancel()` and the opposite of `pthread_cancel` (preemptive at cancellation points). The upside: no broken invariants from a task killed mid-update. The downside: a long synchronous loop with no cancellation check ignores `cancel()` until it ends — every long loop needs a check.
+{% endnote %}
+
 ### Task priority and priority escalation
 
 ```swift
@@ -921,6 +889,10 @@ Task(priority: .high) {
     let result = await lowTask.value // lowTask gets escalated to .high
 }
 ```
+
+{% note info %}
+**Design: escalation, not inversion.** Classic priority inversion (a high-priority task blocked behind a low-priority lock holder) is solved at the OS level by **priority donation** — the lock holder runs at the waiter's priority for as long as it holds the lock. Swift Concurrency generalises this through `await`: when a high-priority task awaits a low-priority task, or an actor with pending low-priority callers, Swift escalates the awaited chain to the higher priority for the duration. You won't usually see "priority inversion" in profilers because the runtime resolves it before it surfaces.
+{% endnote %}
 
 ### Task-local values
 
@@ -1035,8 +1007,8 @@ actor ImageCache {
 }
 ```
 
-{% note warning %}
-Never assume actor state is unchanged across an `await`. Always re-check conditions after suspension points.
+{% note info %}
+**Design intent: reentrancy avoids deadlock.** A non-reentrant actor would deadlock in any A→B→A call chain — a classic mutex pattern that's nearly impossible to avoid in practice. Swift's actors are reentrant by deliberate choice: the runtime can interleave other callers on the actor across each `await`. The trade is that **invariants don't survive a suspension** — any state you read before `await` may have been mutated by another caller by the time you resume. Always re-check conditions after suspension points (the `cache[url]` re-check above is the canonical pattern).
 {% endnote %}
 
 ### `@MainActor`
@@ -1118,6 +1090,10 @@ final class ThreadSafeCounter: @unchecked Sendable {
     }
 }
 ```
+
+{% note info %}
+**Design: `Sendable` is a typing discipline, not a runtime check.** It's a marker protocol — the compiler reasons about it at compile time and emits zero runtime overhead. A class is implicitly `Sendable` only if it's `final` *and* every stored property is immutable and Sendable, because that's the only structural form Swift can verify safe without help. `@unchecked Sendable` is the explicit "I've taken a lock, trust me" escape hatch. The discipline was deliberately strict at first, then loosened in Swift 6 by region-based isolation (see §11) when the strictness turned out to make a lot of plainly-safe code uncompilable.
+{% endnote %}
 
 ---
 
@@ -1366,7 +1342,9 @@ func transform<T: Sendable>(_ items: [T], using block: @Sendable (T) -> T) -> [T
 
 ### Region-based isolation (Swift 6.0)
 
-The compiler tracks which "region" a value belongs to. Values in disconnected regions can be sent across isolation boundaries even if not `Sendable`.
+**Why it exists:** before SE-0414, you couldn't pass a freshly-built non-Sendable value across an actor boundary, even when no other code could reach it. A `[User]` you just constructed and never aliased was *plainly safe* to transfer, but the compiler had no way to know — `Sendable` is a per-type discipline, but aliasing is a per-value question.
+
+Region-based isolation tracks **isolation regions**: a value with no aliases is in its own region and can be transferred. `sending` declares "this parameter (or return) is in a disconnected region — the callee/caller may take ownership." The compiler tracks which "region" a value belongs to, and values in disconnected regions can be sent across isolation boundaries even if not `Sendable`.
 
 ```swift
 // This works in Swift 6 because `array` is in a disconnected region
@@ -1427,28 +1405,62 @@ Suppress warnings from pre-concurrency modules you don't control.
 // Warnings are suppressed at the import boundary
 ```
 
-### Default actor isolation (Swift 6.2)
+### Swift 6.1 (Xcode 16.3, Mar 2025)
 
-Swift 6.2 (Xcode 26, Jun 2025) introduces the ability to set a default isolation for an entire module (SE-0466).
+Smaller cycle, two notable additions:
+
+- **Isolated synchronous deinits** (`isolated deinit`) — a deinit can run on a specific actor, fixing a long-standing "deinit can't safely touch isolated state" gap.
+- **`isolated(any)` parameters** — a parameter that says "I run on whichever actor I was given," without making the surrounding function isolated. Useful for higher-order async APIs that need to call a callback on the user's actor.
+
+### Swift 6.2: approachable concurrency (Xcode 26, Sept 2025)
+
+Swift 6.2 reframes the defaults around a different mental model: **start on the main thread, opt into background work**. The 6.0 model was "every async function may hop to the global pool, every closure must prove it's `Sendable`." That produced a mountain of `Sendable` warnings on code that ran nowhere except the main thread. Three pieces, one philosophy.
+
+**`nonisolated(nonsending)` — async stays on the caller's executor.** A `nonisolated async` function used to implicitly hop to the global executor on entry. Now you can ask it to stay where it was called from:
 
 ```swift
-// Package.swift — default MainActor isolation for a UI module
+@MainActor final class ProfileViewModel {
+    func loadHeader() async {
+        // No hop, no Sendable check at the boundary, no main-thread reschedule on return
+        let title = await formatTitle(for: user)
+        self.title = title
+    }
+}
+
+nonisolated(nonsending) func formatTitle(for user: User) async -> String {
+    "\(user.name)'s profile"
+}
+```
+
+**`@concurrent` — opt in to the old behaviour.** When you actually want background execution (heavy CPU work, JSON decoding, image processing), mark the function explicitly:
+
+```swift
+@concurrent func decode(_ data: Data) async throws -> [User] {
+    try JSONDecoder().decode([User].self, from: data) // Runs on the global pool
+}
+```
+
+`@concurrent` reads as "I will hop to the global pool"; `nonisolated(nonsending)` reads as "I stay where you called me." The 6.0 default was the former implicitly; the 6.2 default (with the upcoming-feature flag below) is the latter.
+
+**`NonisolatedNonsendingByDefault` upcoming-feature flag** — flips the default. Any unannotated `nonisolated async` declaration behaves as `nonisolated(nonsending)`; functions that need background execution must say `@concurrent` explicitly.
+
+```swift
 .target(
-    name: "MyUIModule",
+    name: "MyTarget",
     swiftSettings: [
         .swiftLanguageMode(.v6),
-        .defaultIsolation(MainActor.self),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
     ]
 )
 ```
 
-With default MainActor isolation:
+**Default actor isolation (SE-0466)** — set a default isolation for an entire module:
 
 ```swift
-// Every declaration is implicitly @MainActor
+// Every top-level declaration is implicitly @MainActor
 class ProfileViewModel {         // Implicitly @MainActor
     var name = ""                // Isolated to MainActor
-    func load() async { }       // Isolated to MainActor
+    func load() async { }        // Isolated to MainActor
 }
 
 // Opt out explicitly
@@ -1456,6 +1468,21 @@ nonisolated func pureComputation(_ x: Int) -> Int {
     x * 2
 }
 ```
+
+**Approachable Concurrency** — a package-level setting that bundles 6.2's new defaults: MainActor isolation by default, async-stays-on-caller, fewer Sendable checks at hot boundaries. The recommended starting point for new app and UI modules:
+
+```swift
+.target(
+    name: "MyUIModule",
+    swiftSettings: [
+        .swiftLanguageMode(.v6),
+        .defaultIsolation(MainActor.self),                            // SE-0466
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),     // SE-0461
+    ]
+)
+```
+
+With both on, a UI module looks closer to single-threaded code with explicit `@concurrent` doors into the background pool — the inverse of the 6.0 default, and a much shorter path through Sendable warnings for app code.
 
 ### Concurrency migration checklist
 
@@ -1471,6 +1498,8 @@ nonisolated func pureComputation(_ x: Int) -> Int {
 | GCD barrier queue | `actor` |
 | `@objc` callback closure | `withCheckedContinuation` |
 | `Thread.sleep()` | `try await Task.sleep(for:)` |
+
+Under Swift 6.2 with `.defaultIsolation(MainActor.self)`, most `@MainActor` annotations in the right column become implicit — UI code is on `MainActor` by default and only background work needs explicit annotation (`@concurrent`).
 
 ---
 
@@ -1560,9 +1589,15 @@ Enable warnings before fully migrating:
 - [SE-0304 Structured concurrency](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0304-structured-concurrency.md) — task groups and child tasks
 - [SE-0306 Actors](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0306-actors.md) — actor model for Swift
 - [SE-0337 Sendable](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0337-support-incremental-migration-to-concurrency-checking.md) — incremental Sendable adoption
+- [SE-0414 Region-based isolation](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0414-region-based-isolation.md) — the typing rules behind `sending`
 - [SE-0430 sending parameter](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0430-transferring-parameters-and-results.md) — region-based isolation
+- [SE-0461 Run nonisolated async functions on the caller's actor](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0461-async-function-isolation.md) — `nonisolated(nonsending)` and `@concurrent`
 - [SE-0466 Default isolation](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0466-control-default-actor-isolation.md) — module-level default actor isolation
 - [Swift Async Algorithms](https://github.com/apple/swift-async-algorithms) — merge, debounce, throttle, combineLatest
 - [Swift Atomics](https://github.com/apple/swift-atomics) — lock-free atomic operations
+- [WWDC21: Swift concurrency: Behind the scenes](https://developer.apple.com/videos/play/wwdc2021/10254/) — cooperative pool, hop counts, runtime contract
 - [WWDC22: Eliminate data races using Swift Concurrency](https://developer.apple.com/videos/play/wwdc2022/110351/)
 - [WWDC23: Beyond the basics of structured concurrency](https://developer.apple.com/videos/play/wwdc2023/10170/)
+- [Donny Wals — Exploring concurrency changes in Swift 6.2](https://www.donnywals.com/exploring-concurrency-changes-in-swift-6-2/)
+- [Donny Wals — What is @concurrent in Swift 6.2?](https://www.donnywals.com/what-is-concurrent-in-swift-6-2/)
+- [How is the Cooperative Thread Pool integrated in Swift? — Swift Forums](https://forums.swift.org/t/how-is-the-cooperative-thread-pool-integrated-in-swift/67466)
