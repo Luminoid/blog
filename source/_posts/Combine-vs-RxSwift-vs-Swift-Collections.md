@@ -1,7 +1,6 @@
 ---
 title: "Combine vs RxSwift vs Swift collection chains"
 date: 2026-05-07 12:00:00
-updated: 2026-05-07 12:00:00
 categories:
 - iOS
 tags:
@@ -14,7 +13,7 @@ tags:
 
 `map`, `filter`, `flatMap`, `reduce`. Swift has them on `Array`. RxSwift has them on `Observable`. Combine has them on `Publisher`. The names line up, the chains *look* the same, and that surface similarity is exactly what makes mixing the three confusing. They are not the same thing.
 
-This post pulls them apart along the axes that actually matter when you write code: sync vs async, eager vs lazy, push vs pull, the time dimension, error handling, cancellation, threading, and testing. Then it does the same task in all three to show where the semantics diverge.
+Three things separate them: sync vs async, eager vs lazy, and whether values arrive over time. Errors, cancellation, threading, and testing all fall out of those.
 
 <!-- more -->
 
@@ -65,7 +64,7 @@ In the collection pipeline the entire dataset is known up front; the chain runs 
 Take a tiny task: "Given a list of numbers, keep the evens, double them, and sum the result."
 
 ```swift
-// Swift collections — eager, synchronous
+// Swift collections: eager, synchronous
 let result = [1, 2, 3, 4, 5, 6]
     .filter { $0.isMultiple(of: 2) }
     .map { $0 * 2 }
@@ -74,7 +73,7 @@ let result = [1, 2, 3, 4, 5, 6]
 ```
 
 ```swift
-// Combine — lazy, push-based
+// Combine: lazy, push-based
 import Combine
 
 var bag = Set<AnyCancellable>()
@@ -87,7 +86,7 @@ var bag = Set<AnyCancellable>()
 ```
 
 ```swift
-// RxSwift — lazy, push-based
+// RxSwift: lazy, push-based
 import RxSwift
 
 let disposeBag = DisposeBag()
@@ -113,7 +112,7 @@ let pipeline = (1...).lazy
 let firstThree = Array(pipeline.prefix(3)) // [4, 16, 36]
 ```
 
-`LazySequence` is pull-based (the consumer iterates), reactive streams are push-based (the producer emits), but the laziness is the same idea: nothing happens until somebody asks. The big remaining gap is **time** — `LazySequence` cannot represent "a value will arrive in 200 ms," only "a value will be computed when iterated."
+`LazySequence` is pull-based (the consumer iterates), reactive streams are push-based (the producer emits), but the laziness is the same idea: nothing happens until somebody asks. The remaining gap is **time**. `LazySequence` cannot represent "a value will arrive in 200 ms," only "a value will be computed when iterated."
 
 ## Eager vs lazy execution
 
@@ -160,11 +159,11 @@ Subscription chains *upstream* (the subscriber is at the bottom and asks the sou
 
 `flatMap` is the canonical example. Three different things:
 
-- **`Array.flatMap`** — flatten one level: `[[1,2],[3]].flatMap { $0 } == [1,2,3]`. Synchronous.
-- **`Publisher.flatMap`** — for each value, subscribe to a returned publisher and merge their outputs. Concurrency-bounded by `maxPublishers`.
-- **`Observable.flatMap`** — same idea: project each value into an `Observable` and merge. RxSwift also has `flatMapLatest` (cancels the previous inner) and `concatMap` (queues serially). Combine has `switchToLatest` for the same purpose, applied differently.
+- **`Array.flatMap`**: flatten one level. `[[1,2],[3]].flatMap { $0 } == [1,2,3]`. Synchronous.
+- **`Publisher.flatMap`**: for each value, subscribe to a returned publisher and merge their outputs. Concurrency-bounded by `maxPublishers`.
+- **`Observable.flatMap`**: project each value into an `Observable` and merge. RxSwift also has `flatMapLatest` (cancels the previous inner) and `concatMap` (queues serially). Combine has `switchToLatest` for the same purpose, applied differently.
 
-Knowing what `flatMap` returns isn't enough; you also need to know which *flavor* you want — merge, switch-to-latest, or concat. Reach for the wrong one and you get either lost values or stale ones.
+Knowing what `flatMap` returns isn't enough; you also need to know which *flavor* you want: merge, switch-to-latest, or concat. Reach for the wrong one and you get either lost values or stale ones.
 
 ## Errors
 
@@ -180,7 +179,7 @@ do {
 ```
 
 ```swift
-// Combine — typed errors
+// Combine: typed errors
 let p: AnyPublisher<String, MyError> = ...
 p.tryMap { try parse($0) }      // erases failure to Error
  .mapError { MyError.wrap($0) } // back to typed
@@ -188,19 +187,19 @@ p.tryMap { try parse($0) }      // erases failure to Error
 ```
 
 ```swift
-// RxSwift — Error (untyped)
+// RxSwift: Error (untyped)
 let o: Observable<String> = ...
 o.map { try parse($0) }
  .catch { _ in .just(0) }
 ```
 
-The biggest practical difference: Combine's typed `Failure` lets the compiler tell you when an upstream can or can't fail. `Publisher<Output, Never>` is a strong guarantee — `sink(receiveValue:)` (no completion handler) is only available when failure is `Never`. RxSwift erases all errors to `Error`, so the compiler can't help you.
+The practical difference: Combine's typed `Failure` lets the compiler tell you when an upstream can or can't fail. `Publisher<Output, Never>` is a strong guarantee, and `sink(receiveValue:)` (no completion handler) is only available when failure is `Never`. RxSwift erases all errors to `Error`, so the compiler can't help you.
 
-A reactive stream also **terminates on error** — once it errors, it's done forever. Most beginners write code that assumes the stream keeps going. Use `catch` / `retry` / `replaceError` to keep the pipeline alive.
+A reactive stream also **terminates on error**: once it errors, it's done forever. I've shipped this bug more than once: catch a transient failure during dev, see one retry succeed, ship, then watch the pipeline silently die in production after the first real error. Use `catch` / `retry` / `replaceError` to keep it alive.
 
 ## Cancellation
 
-Collections don't cancel — they're synchronous, you either let them finish or never call them. Reactive pipelines own real resources (timers, network requests, KVO observers) and must be torn down explicitly.
+Collections don't cancel: they're synchronous, you either let them finish or never call them. Reactive pipelines own real resources (timers, network requests, KVO observers) and must be torn down explicitly.
 
 ```swift
 // Combine
@@ -266,7 +265,7 @@ In practice most app-level reactive code is event-rate-limited (taps, network re
 ## Testing
 
 ```swift
-// Combine — synchronous via Just / Fail / scheduler injection
+// Combine: synchronous via Just / Fail / scheduler injection
 func testParse() {
     let cancellable = Just("42")
         .tryMap { try Int($0, strict: true) }
@@ -276,7 +275,7 @@ func testParse() {
 ```
 
 ```swift
-// RxSwift — RxTest with TestScheduler and virtual time
+// RxSwift: RxTest with TestScheduler and virtual time
 func testParse() {
     let scheduler = TestScheduler(initialClock: 0)
     let source = scheduler.createHotObservable([
@@ -290,7 +289,7 @@ func testParse() {
 }
 ```
 
-RxSwift's `RxTest` virtual-time scheduler is genuinely excellent for time-based tests (debounce, throttle, retry intervals). Combine's official testing story is weaker; the community settled on [`combine-schedulers`](https://github.com/pointfreeco/combine-schedulers) for the equivalent.
+RxSwift's `RxTest` virtual-time scheduler is genuinely excellent for time-based tests (debounce, throttle, retry intervals). Combine's official testing story is weaker; the community settled on [`combine-schedulers`](https://github.com/pointfreeco/combine-schedulers) for the Combine equivalent, and [`swift-clocks`](https://github.com/pointfreeco/swift-clocks) for the `async`/`await` side.
 
 ## Other "values over time" structures in the Swift ecosystem
 
@@ -364,7 +363,7 @@ Not a pipeline, but worth flagging because it's often confused with reactive str
 }
 ```
 
-SwiftUI views auto-track *exactly* the properties they read — no `@Published`, no `objectWillChange`, no Combine subscription. It's not a stream you can `map` over; it's a fine-grained dependency tracker. If you tried to model "give me a stream of `count` changes" you'd reach for `withObservationTracking` (a low-level escape hatch) or wrap the property in `AsyncStream`. For normal SwiftUI work, you don't need a stream at all.
+SwiftUI views auto-track *exactly* the properties they read: no `@Published`, no `objectWillChange`, no Combine subscription. It's not a stream you can `map` over; it's a fine-grained dependency tracker. If you tried to model "give me a stream of `count` changes" you'd reach for `withObservationTracking` (a low-level escape hatch) or wrap the property in `AsyncStream`. For normal SwiftUI work, you don't need a stream at all.
 
 ### `@Published` (the bridge in the middle)
 
@@ -382,11 +381,11 @@ The `$count` projection is a `Publisher<Int, Never>`. SwiftUI uses it via `Obser
 
 ### TCA `Effect`, `EffectPublisher`
 
-If you use [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture), `Effect` is a wrapper that started life as a Combine `Publisher` and migrated to async/await. Same pipeline shape, narrower role: it represents work a reducer kicks off, with cancellation by ID baked in. Mention it because TCA codebases blur "Combine vs async" — the framework lets you write either inside an `Effect`.
+If you use [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture), `Effect` is a wrapper that started life as a Combine `Publisher` and migrated to async/await. Same pipeline shape, narrower role: it represents work a reducer kicks off, with cancellation by ID baked in. Mention it because TCA codebases blur "Combine vs async": the framework lets you write either inside an `Effect`.
 
-### `Result`, `Optional` — also chainable, also not streams
+### `Result`, `Optional`: also chainable, also not streams
 
-`Optional.map` and `Result.flatMap` use the same vocabulary, but each represents a *single* value (present-or-not, success-or-failure). They're functor/monad cousins of the others, not stream cousins. Worth knowing because the operator-name overlap can mislead — `flatMap` on `Result<Int, E>` doesn't merge anything, it just chains a fallible step.
+`Optional.map` and `Result.flatMap` use the same vocabulary, but each represents a *single* value (present-or-not, success-or-failure). They're functor/monad cousins of the others, not stream cousins. Worth knowing because the operator-name overlap can mislead: `flatMap` on `Result<Int, E>` doesn't merge anything, it just chains a fallible step.
 
 ## Putting them on one axis
 
@@ -411,7 +410,7 @@ flowchart LR
     Comb -.cross-platform variant.-> Rx
 {% endmermaid %}
 
-Read it left-to-right as a feature ladder: each step adds one capability — multiple values, then laziness, then time/suspension, then push semantics + multicast. The operator names (`map`, `filter`, `flatMap`) carry across because the underlying algebra is the same; what changes is the runtime behaviour around them.
+Read it left-to-right as a feature ladder: each step adds one capability. Multiple values, then laziness, then time/suspension, then push semantics + multicast. The operator names (`map`, `filter`, `flatMap`) carry across because the underlying algebra is the same; what changes is the runtime behaviour around them.
 
 ## When to pick what
 
@@ -453,8 +452,6 @@ The same mental operation in all three:
 | Throttle/debounce | n/a | `throttle` / `debounce` | `throttle` / `debounce` |
 | Side effect | `forEach` | `handleEvents` | `do(onNext:)` |
 
-## What I'd take away
+## What I reach for
 
-- The operator names are seductive. They hide a fundamental split: **collections operate on values, reactive streams operate on values *and* the times they arrive**. Once you internalise that the rest is bookkeeping.
-- For new code today, reach for `async`/`await` and `AsyncSequence` first; pick Combine only when you need its specific affordances; use RxSwift only when the codebase already does.
-- The bugs that bite hardest are the structural ones, not the operator-misuse ones: forgetting to retain cancellables, subscribing to cold publishers twice, scheduling on the wrong side of the chain, and treating reactive streams like collections that always finish successfully.
+For new code I default to `async`/`await` + `AsyncSequence`. Combine when I actually need multicast, hot subjects, or `@Published` for SwiftUI. RxSwift only when the codebase already runs on it.

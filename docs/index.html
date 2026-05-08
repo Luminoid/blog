@@ -287,6 +287,13 @@
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-05-08 11:36:58" itemprop="dateModified" datetime="2026-05-08T11:36:58-07:00">2026-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
@@ -309,7 +316,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>14 mins.</span>
+      <span>13 mins.</span>
     </span>
 </div>
 
@@ -321,7 +328,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><code>map</code>, <code>filter</code>, <code>flatMap</code>, <code>reduce</code>. Swift has them on <code>Array</code>. RxSwift has them on <code>Observable</code>. Combine has them on <code>Publisher</code>. The names line up, the chains <em>look</em> the same, and that surface similarity is exactly what makes mixing the three confusing. They are not the same thing.</p>
-<p>This post pulls them apart along the axes that actually matter when you write code: sync vs async, eager vs lazy, push vs pull, the time dimension, error handling, cancellation, threading, and testing. Then it does the same task in all three to show where the semantics diverge.</p>
+<p>Three things separate them: sync vs async, eager vs lazy, and whether values arrive over time. Errors, cancellation, threading, and testing all fall out of those.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Combine-vs-RxSwift-vs-Swift-Collections/#more" rel="contents">
