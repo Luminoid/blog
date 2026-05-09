@@ -14,23 +14,19 @@ tags:
 - CLI
 ---
 
-A detailed comparison of every major terminal emulator in 2026 -- performance, features, configuration, platform support, and which one fits your workflow.
+Eight terminals on macOS in 2026 compared. Pick by what you actually need.
 
 <!-- more -->
 
-## Why your terminal matters
-
-Developers spend hours a day in a terminal. The difference between a slow, limited terminal and a fast, well-configured one compounds over time. Modern terminals offer GPU-accelerated rendering, built-in multiplexing, scriptable configuration, inline images, and more -- features that were unthinkable a decade ago.
-
-This guide covers 8 terminals across 3 categories:
+## The contenders
 
 | Category | Options | Best for |
 |----------|---------|----------|
 | **GPU-native, feature-rich** | Ghostty, iTerm2, Kitty, WezTerm | Developers who want speed + features |
-| **GPU-native, minimal** | Alacritty | Developers who use tmux and want raw speed |
+| **GPU-native, minimal** | Alacritty | tmux users who want raw speed |
 | **Alternative approaches** | Warp, Hyper | AI-assisted or web-based workflows |
 
-[Terminal.app](https://support.apple.com/guide/terminal/welcome/mac) (macOS built-in) is included in tables as a baseline but doesn't get its own section -- it works, but every option above is a meaningful upgrade.
+[Terminal.app](https://support.apple.com/guide/terminal/welcome/mac) (macOS built-in) appears in the comparison tables as a baseline but doesn't get its own section. macOS Tahoe (26) finally gave it 24-bit color and Powerline-font support, but every option above is still a meaningful upgrade.
 
 ---
 
@@ -101,6 +97,7 @@ All terminals support background opacity, font fallback chains, colored bold, an
 | Feature | Ghostty | iTerm2 | Kitty | Alacritty | WezTerm | Warp | Hyper | Terminal.app |
 |---------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Vi mode (scrollback)** | No | Yes (copy mode) | Pager-based | Yes | Yes | No | No | No |
+| **Scrollback search** | Yes (1.3+, ⌘F) | Yes | Pager-based | Yes (vi mode) | Yes | Yes | No | Yes |
 | **Regex triggers** | No | Yes | No | Yes (hints) | No | No | No | No |
 | **Broadcast to panes** | No | Yes | Yes | No | No | No | No | No |
 | **Paste history** | No | Yes | No | No | No | No | No | No |
@@ -144,16 +141,19 @@ keybind = super+shift+d=new_split:down
 
 **Strengths:**
 - Exceptional rendering performance on par with Alacritty
-- Native macOS experience (AppKit, not custom chrome)
+- Native macOS experience (AppKit, not custom chrome), including system-aware native scrollbars (1.3)
 - Simplest config format -- easy to learn, easy to share
-- Built-in splits without tmux
+- Built-in splits without tmux, with drag handles to tear them into tabs/windows (1.3)
+- Scrollback search with `⌘F` (1.3) and OSC 133 click-to-position prompt (1.3)
 - Large bundled theme collection
-- Active, rapid development
+- Active, rapid development; "Set as Default Terminal App" landed in 1.3
 
 **Weaknesses:**
 - No Windows support
 - No profiles (one global config)
 - Younger than alternatives -- some edge cases may not be handled yet
+
+**Linux:** in addition to Homebrew, Ghostty is now in the Ubuntu 26.04 official repos (`apt install ghostty`).
 
 **Best for**: macOS developers who want speed without sacrificing native UX. If you care about your terminal feeling like a "real Mac app" and want sub-millisecond rendering, this is the one.
 
@@ -350,6 +350,8 @@ Rust-based, GPU-accelerated, with a fundamentally different UX model.
 - macOS and Linux only (no Windows)
 - Heavier memory footprint (~150 MB)
 - Non-standard UX can clash with existing muscle memory
+
+**Pricing (2026):** terminal features are free across all platforms; only AI is metered. The free tier ships 75-150 monthly credits. Build is $20/mo (1,500 credits), Business $50/user/mo, with batched/flex/priority queueing on top. So if you only want the block-based UX, never pay.
 
 **Best for**: Developers new to the terminal who want guidance, or teams that benefit from shared workflows. If the account requirement and closed source don't bother you, the UX is genuinely innovative.
 
