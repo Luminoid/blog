@@ -25,7 +25,7 @@ tags:
 - static-site
 ---
 
-A detailed comparison of every major way to build a website in 2026 -- from no framework at all, through SPAs and full-stack frameworks, to traditional static site generators, plus where to deploy them.
+Every major way to build a website in 2026, from a single HTML file to a full-stack React app, plus where to deploy them.
 
 <!-- more -->
 
@@ -52,7 +52,7 @@ Before diving in, here are the acronyms you'll see throughout this post:
 
 ## The landscape
 
-The frontend ecosystem has matured significantly. Frameworks have specialized: some optimize for **web applications** (dashboards, SaaS), others for **content sites** (blogs, portfolios, docs), and a few try to do both. Picking the right one depends on what you're building.
+Frameworks have split into two camps: ones tuned for **web applications** (dashboards, SaaS) and ones tuned for **content sites** (blogs, portfolios, docs). A few try to do both. Pick by what you're building.
 
 This guide covers 15 options across 5 categories:
 
@@ -148,7 +148,7 @@ my-site/
 - Hot Module Replacement (HMR) -- instant feedback during development
 - TypeScript out of the box
 - CSS modules, PostCSS, Sass/Less support (just `npm install`)
-- Asset optimization on build (minification, hashing, tree-shaking)
+- Asset optimization on build (minification, hashing, tree-shaking); Vite 8 (Mar 2026) replaced Rollup with Rolldown 1.0 (Rust) for 10-30x faster builds
 - Multi-page support via `build.rollupOptions.input`
 - Still just HTML files -- no framework abstraction
 
@@ -183,7 +183,7 @@ These render entirely in the browser. Great for apps behind a login where SEO do
 
 The industry default. React itself is a UI library, not a framework -- you assemble the stack yourself.
 
-**Stack**: React 19 + Vite 6 + React Router + your choice of state management
+**Stack**: React 19.2 + Vite 8 (Rolldown 1.0 bundler) + React Router + your choice of state management
 
 ```bash
 npm create vite@latest my-app -- --template react-ts
@@ -288,7 +288,7 @@ ng new my-app
 
 These add SSR, SSG, API routes, and deployment adapters on top of a UI library.
 
-### Next.js 15
+### Next.js 16
 
 The dominant React meta-framework. Vercel-backed, used by a huge portion of the React ecosystem.
 
@@ -302,15 +302,17 @@ npx create-next-app@latest
 - App Router with nested layouts and parallel routes
 - Excellent Vercel deployment (but works on any Node host, Cloudflare, etc.)
 - Massive community, tutorials, and third-party integrations
+- **Turbopack is the default in v16** for `next dev` and `next build`; React Compiler 1.0 is stable opt-in; React 19.2 View Transitions and Cache Components are production-ready.
 
 **Weaknesses:**
 - High complexity: App Router vs Pages Router, server vs client components, caching layers
 - Vercel-centric defaults (some features work best on Vercel)
 - Bundle size can balloon if you're not careful about `"use client"` boundaries
 - Frequent breaking changes between major versions
-- Caching behavior has been controversial and was reworked in v15
+- Caching behavior has been controversial and was reworked again in v16 (Cache Components)
+- RSC payload validation has been a real attack surface: CVE-2025-55182 ("React2Shell", Dec 2025) was an unauthenticated RCE through Flight serialization. Stay on React 19.2.4+ / Next.js 15.5.10+ / 16.0.11+.
 
-**Best for**: Production web apps that need SEO + interactivity -- e-commerce, SaaS marketing + dashboard, content platforms.
+**Best for**: Production web apps that need SEO + interactivity, e-commerce, SaaS marketing + dashboard, content platforms.
 
 **Avoid for**: Simple static sites (overkill), projects where you want minimal vendor influence.
 
@@ -335,7 +337,7 @@ npx nuxi@latest init my-app
 - "Magic" auto-imports can confuse TypeScript tooling and new developers
 - Smaller community than Next.js
 - Performance overhead from the module/plugin system
-- Breaking changes between Nuxt 2 → 3 → 4 were significant
+- Breaking changes between Nuxt 2 → 3 → 4 were significant; **Nuxt v3 reaches EOL on 31 July 2026**, so any v3 codebase should be planning its v4 migration now.
 
 **Best for**: Vue developers who want a full-stack framework with conventions and deployment flexibility.
 
@@ -343,7 +345,7 @@ npx nuxi@latest init my-app
 
 ### SvelteKit
 
-The official Svelte meta-framework. Handles routing, SSR, SSG, and API endpoints.
+The official Svelte meta-framework. Handles routing, SSR, SSG, and API endpoints. Currently on the 2.5x line (2.50 in Feb 2026, 2.55 in Apr); Svelte 5's runes system is now the default reactivity model.
 
 ```bash
 npx sv create my-app
@@ -393,9 +395,9 @@ npx create-remix@latest
 
 ## Content-first framework
 
-### Astro 5
+### Astro 6
 
-Astro's core idea: ship **zero JavaScript** by default. Interactive components (React, Vue, Svelte, Solid) load only where needed via "islands."
+Astro's core idea: ship **zero JavaScript** by default. Interactive components (React, Vue, Svelte, Solid) load only where needed via "islands." Astro 6 (Feb 2026) added component-level caching and tightened runtime fidelity.
 
 ```bash
 npm create astro@latest
@@ -414,6 +416,7 @@ npm create astro@latest
 - Mixing multiple UI frameworks in one project can get confusing
 - Younger ecosystem than React/Next.js
 - SSR mode is less mature than Next.js
+- **Cloudflare acquired Astro in January 2026.** The team is independent so far, but the long-term governance question is now real; expect tighter Cloudflare integration over time.
 
 **Best for**: Blogs, portfolios, documentation, marketing sites, landing pages -- any content-heavy site where performance matters.
 
