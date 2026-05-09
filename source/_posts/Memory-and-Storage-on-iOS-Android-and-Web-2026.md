@@ -1,9 +1,8 @@
 ---
 title: "Storage everywhere: comparing on-device and cloud storage on iOS, Android, and Web in 2026"
 date: 2026-04-28 12:00:00
-updated: 2026-04-28 12:00:00
 categories:
-- Programming Languages
+- iOS
 tags:
 - iOS
 - Android
@@ -12,21 +11,17 @@ tags:
 - Core Data
 - CloudKit
 - Room
-- DataStore
 - IndexedDB
 - OPFS
 - SQLite
 - Firebase
 - Supabase
-- Convex
 - PowerSync
 - Triplit
-- Replicache
 - local-first
-- storage
 ---
 
-A practical comparison of every meaningful way to store data in 2026 -- across iOS, Android, and the Web -- covering on-device system APIs, popular third-party libraries, and the cloud backends and sync engines that tie them together.
+Every meaningful way to store data in 2026 across iOS, Android, and Web. On-device APIs, popular third-party libraries, and the cloud backends and sync engines that tie them together.
 
 <!-- more -->
 
@@ -62,7 +57,7 @@ Storage is not one decision -- it's at least four, often layered:
 | **Structured data** | Where does the app's domain model live? | Core Data, Room, IndexedDB, SQLite |
 | **Cloud / sync** | How does it move between devices? | CloudKit, Firestore, Supabase, Replicache |
 
-The big shift in 2026 is that the structured-data and cloud-sync layers are merging. Local-first sync engines (PowerSync, Triplit, Replicache, ElectricSQL) treat the on-device DB as the source of truth and let the network catch up. SQLite -- compiled to WASM, mirrored to the edge, or embedded everywhere -- is the substrate underneath most of them.
+The structured-data and cloud-sync layers are merging. Local-first sync engines (PowerSync, Triplit, Replicache, ElectricSQL) treat the on-device DB as the source of truth and let the network catch up. SQLite (compiled to WASM, mirrored to the edge, or embedded everywhere) is the substrate underneath most of them.
 
 ## iOS
 
@@ -177,10 +172,11 @@ The big shift in 2026 is that the structured-data and cloud-sync layers are merg
 
 | Engine | What it is | Trade-offs |
 |--------|------------|------------|
-| **Replicache / Reflect** | Push-pull mutator protocol; you bring the backend | Battle-tested, commercial license, free under $200K ARR |
-| **ElectricSQL** | Postgres <-> local SQLite. **Pivoted 2024** to read-only "Electric Next" sync; writes are app-owned now | OSS Apache-2.0 |
+| **Replicache** | Push-pull mutator protocol; you bring the backend | GA in 2024; battle-tested, commercial license, free under $200K ARR. Reflect (the multiplayer cousin) shut down Nov 2024 |
+| **Zero** (Rocicorp) | Replicache successor: client-server with local cache, sync queries, custom mutators | Alpha through 2025, beta target late-2025/early-2026. Not local-first (no offline writes), but instant reads/writes against the cache |
+| **ElectricSQL** | Postgres -> local SQLite read-path sync; writes are app-owned. Hosted "Electric Cloud" Durable Streams launched Jan 2026 | OSS Apache-2.0; explicitly does not do write-path sync |
 | **PowerSync** | Postgres/MongoDB/MySQL/SQL Server (alpha) <-> on-device SQLite | Production-grade, strong mobile SDKs, commercial with free tier |
-| **Triplit** | TS-first sync engine + relational DB | Momentum among indie web devs; OSS AGPL/commercial |
+| **Triplit** | TS-first sync engine + relational DB; 1.0 GA | Momentum among indie web devs; OSS AGPL/commercial |
 | **InstantDB** | Firebase-shaped client-side reactive DB | Triple-store model; web/RN |
 | **Liveblocks** | Presence + collab document primitives | Per-MAU pricing |
 | **Yjs + Hocuspocus** | CRDT + production-grade server | Open-source collab stack |
