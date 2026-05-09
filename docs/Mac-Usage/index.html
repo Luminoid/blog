@@ -21,18 +21,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.luminoid.dev","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/darcula","dark":"base16/darcula"},"prism":{"light":"prism-tomorrow","dark":"prism-tomorrow"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Shortcuts and commands for daily Mac use. Upgrading and Checking Packages12345678$ bubu          # brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup$ brew doctor$ nc">
+    <meta name="description" content="Shortcuts and commands that earn their keep on a daily-driver Mac.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac Usage">
 <meta property="og:url" content="https://blog.luminoid.dev/Mac-Usage/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Shortcuts and commands for daily Mac use. Upgrading and Checking Packages12345678$ bubu          # brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup$ brew doctor$ nc">
+<meta property="og:description" content="Shortcuts and commands that earn their keep on a daily-driver Mac.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.luminoid.dev/images/og-image.png">
 <meta property="article:published_time" content="2022-02-28T22:19:45.000Z">
-<meta property="article:modified_time" content="2026-02-08T09:35:47.457Z">
+<meta property="article:modified_time" content="2026-05-09T23:04:29.591Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Finder">
+<meta property="article:tag" content="Homebrew">
+<meta property="article:tag" content="shortcuts">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://blog.luminoid.dev/images/og-image.png">
 
@@ -117,7 +119,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">95</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">96</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -168,7 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Upgrading-and-Checking-Packages"><span class="nav-number">1.</span> <span class="nav-text">Upgrading and Checking Packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keyboard-Shortcuts"><span class="nav-number">2.</span> <span class="nav-text">Keyboard Shortcuts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Shortcuts"><span class="nav-number">2.1.</span> <span class="nav-text">Common Shortcuts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder-Shortcuts"><span class="nav-number">2.2.</span> <span class="nav-text">Finder Shortcuts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Shortcuts"><span class="nav-number">2.3.</span> <span class="nav-text">System Shortcuts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-Shortcuts"><span class="nav-number">2.4.</span> <span class="nav-text">Document Shortcuts</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Upgrading-and-Checking-Packages"><span class="nav-number">1.</span> <span class="nav-text">Upgrading and Checking Packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLI-Utilities"><span class="nav-number">2.</span> <span class="nav-text">CLI Utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keyboard-Shortcuts"><span class="nav-number">3.</span> <span class="nav-text">Keyboard Shortcuts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Shortcuts"><span class="nav-number">3.1.</span> <span class="nav-text">Common Shortcuts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder"><span class="nav-number">3.2.</span> <span class="nav-text">Finder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Sliders-open-the-right-pane-fast"><span class="nav-number">3.3.</span> <span class="nav-text">System Sliders (open the right pane fast)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Editing"><span class="nav-number">3.4.</span> <span class="nav-text">Text Editing</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,7 +196,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">96</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -295,7 +297,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-02-08 01:35:47" itemprop="dateModified" datetime="2026-02-08T01:35:47-08:00">2026-02-08</time>
+      <time title="Modified: 2026-05-09 16:04:29" itemprop="dateModified" datetime="2026-05-09T16:04:29-07:00">2026-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +323,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>192</span>
+      <span>292</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -338,14 +340,137 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Shortcuts and commands for daily Mac use.</p>
-<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ bubu          <span class="comment"># brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">$ brew doctor</span><br><span class="line"></span><br><span class="line">$ ncu -g</span><br><span class="line">$ npm doctor</span><br><span class="line"></span><br><span class="line">$ gem update</span><br><span class="line">$ gem cleanup</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><p>Shortcuts and commands that earn their keep on a daily-driver Mac.</p>
+<span id="more"></span>
+
+<h2 id="Upgrading-and-Checking-Packages"><a href="#Upgrading-and-Checking-Packages" class="headerlink" title="Upgrading and Checking Packages"></a>Upgrading and Checking Packages</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `bubu` is a personal alias: brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cleanup</span></span><br><span class="line">bubu</span><br><span class="line">brew doctor</span><br><span class="line"></span><br><span class="line">ncu -g       <span class="comment"># check global npm packages for newer versions</span></span><br><span class="line">npm doctor</span><br><span class="line"></span><br><span class="line">gem update</span><br><span class="line">gem cleanup</span><br></pre></td></tr></table></figure>
+
+<p>For machine reproducibility (declarative install list), see Brewfile in <a href="/M1-Mac-Development-Setup/" title="Mac development setup">Mac development setup</a>.</p>
+<h2 id="CLI-Utilities"><a href="#CLI-Utilities" class="headerlink" title="CLI Utilities"></a>CLI Utilities</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pbcopy &lt; file.txt              <span class="comment"># pipe stdin to clipboard</span></span><br><span class="line">pbpaste &gt; file.txt             <span class="comment"># pipe clipboard to stdout</span></span><br><span class="line">say <span class="string">&quot;build finished&quot;</span>           <span class="comment"># speak text aloud</span></span><br><span class="line">caffeinate -i make release     <span class="comment"># keep Mac awake while a command runs</span></span><br><span class="line">screencapture -i clip.png      <span class="comment"># interactive region capture</span></span><br><span class="line">sips -Z 1024 in.png --out out.png  <span class="comment"># resize, keeping aspect ratio</span></span><br><span class="line">mdls -name kMDItemKind file    <span class="comment"># Spotlight metadata for any file</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h2><p><a target="_blank" rel="noopener" href="https://support.apple.com/en-us/HT201236">Mac keyboard shortcuts</a></p>
-<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><p><code>Command-,</code>: Open preferences for the front app<br><code>Shift-Command-T</code>: Reopen the last closed tab<br><code>Shift-Command-[</code>: Switch to previous tab<br><code>Shift-Command-]</code>: Switch to next tab</p>
-<h3 id="Finder-Shortcuts"><a href="#Finder-Shortcuts" class="headerlink" title="Finder Shortcuts"></a>Finder Shortcuts</h3><p><code>Shift-Command-.</code>: Toggle show hidden files</p>
-<h3 id="System-Shortcuts"><a href="#System-Shortcuts" class="headerlink" title="System Shortcuts"></a>System Shortcuts</h3><p><code>Option–Volume Up</code> &#x2F; <code>Option–Volume Down</code>: Open Sound preferences.<br><code>Option–Shift–Volume Up</code> &#x2F; <code>Option–Shift–Volume Down</code>: Adjust the sound volume in smaller steps.<br><code>Option–Brightness Up</code> &#x2F; <code>Option–Brightness Down</code>: Open Displays preferences.<br><code>Option–Shift–Brightness Up</code> &#x2F; <code>Option–Shift–Brightness Down</code>: Adjust the display brightness in smaller steps.<br><code>Control-Command-Q</code>: Immediately lock your screen.</p>
-<h3 id="Document-Shortcuts"><a href="#Document-Shortcuts" class="headerlink" title="Document Shortcuts"></a>Document Shortcuts</h3><p><code>Option–Left</code>: Move the insertion point to the beginning of the previous word<br><code>Option–Right</code>: Move the insertion point to the end of the next word<br><code>Option-Delete</code>: Delete the word to the left of the insertion point<br><code>Control-A</code>: Move to the beginning of the line or paragraph<br><code>Control-E</code>: Move to the end of the line or paragraph</p>
+<h3 id="Common-Shortcuts"><a href="#Common-Shortcuts" class="headerlink" title="Common Shortcuts"></a>Common Shortcuts</h3><table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>⌘,</code></td>
+<td>Open preferences for the front app</td>
+</tr>
+<tr>
+<td><code>⇧⌘T</code></td>
+<td>Reopen the last closed tab</td>
+</tr>
+<tr>
+<td><code>⇧⌘[</code> &#x2F; <code>⇧⌘]</code></td>
+<td>Previous &#x2F; next tab</td>
+</tr>
+<tr>
+<td><code>⌃⌘F</code></td>
+<td>Toggle full screen</td>
+</tr>
+<tr>
+<td><code>⌘W</code> &#x2F; <code>⌥⌘W</code></td>
+<td>Close window &#x2F; close all windows</td>
+</tr>
+<tr>
+<td><code>⌃⌘Q</code></td>
+<td>Lock screen immediately</td>
+</tr>
+<tr>
+<td><code>⌘⇧3</code> &#x2F; <code>⌘⇧4</code> &#x2F; <code>⌘⇧5</code></td>
+<td>Full &#x2F; region &#x2F; capture overlay</td>
+</tr>
+</tbody></table>
+<h3 id="Finder"><a href="#Finder" class="headerlink" title="Finder"></a>Finder</h3><table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>⇧⌘.</code></td>
+<td>Toggle show hidden files</td>
+</tr>
+<tr>
+<td><code>⌘↑</code> &#x2F; <code>⌘↓</code></td>
+<td>Parent folder &#x2F; open selection</td>
+</tr>
+<tr>
+<td><code>⌘⇧G</code></td>
+<td>Go to folder by path</td>
+</tr>
+<tr>
+<td><code>⌘⌥V</code></td>
+<td>Move (cut&#x2F;paste) after <code>⌘C</code></td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Quick Look preview</td>
+</tr>
+</tbody></table>
+<h3 id="System-Sliders-open-the-right-pane-fast"><a href="#System-Sliders-open-the-right-pane-fast" class="headerlink" title="System Sliders (open the right pane fast)"></a>System Sliders (open the right pane fast)</h3><p><code>⌥</code> plus any media key opens the matching System Settings pane. Add <code>⇧</code> to step in finer increments:</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>⌥</code>-Volume</td>
+<td>Open Sound settings</td>
+</tr>
+<tr>
+<td><code>⌥⇧</code>-Volume</td>
+<td>Adjust volume in smaller steps</td>
+</tr>
+<tr>
+<td><code>⌥</code>-Brightness</td>
+<td>Open Displays settings</td>
+</tr>
+<tr>
+<td><code>⌥⇧</code>-Brightness</td>
+<td>Adjust brightness in smaller steps</td>
+</tr>
+</tbody></table>
+<h3 id="Text-Editing"><a href="#Text-Editing" class="headerlink" title="Text Editing"></a>Text Editing</h3><p><code>⌃A</code>, <code>⌃E</code>, <code>⌃K</code>, <code>⌃Y</code> work in any standard text field, since AppKit borrows Emacs bindings.</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>⌥←</code> &#x2F; <code>⌥→</code></td>
+<td>Jump by word</td>
+</tr>
+<tr>
+<td><code>⌥⌫</code></td>
+<td>Delete previous word</td>
+</tr>
+<tr>
+<td><code>⌃A</code> &#x2F; <code>⌃E</code></td>
+<td>Start &#x2F; end of line</td>
+</tr>
+<tr>
+<td><code>⌃K</code></td>
+<td>Kill from cursor to end of line</td>
+</tr>
+<tr>
+<td><code>⌃Y</code></td>
+<td>Yank (paste killed text)</td>
+</tr>
+<tr>
+<td><code>fn fn</code></td>
+<td>Dictation (toggle in Keyboard settings)</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -372,7 +497,9 @@
 </div>
 
           <div class="post-tags">
+              <a href="/tags/Homebrew/" rel="tag"><i class="fa fa-tag"></i> Homebrew</a>
               <a href="/tags/Finder/" rel="tag"><i class="fa fa-tag"></i> Finder</a>
+              <a href="/tags/shortcuts/" rel="tag"><i class="fa fa-tag"></i> shortcuts</a>
           </div>
 
         
@@ -422,13 +549,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">37k</span>
+    <span title="Word count total">38k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:07</span>
+    <span title="Reading time total">3:08</span>
   </span>
 </div>
 <div class="busuanzi-count">

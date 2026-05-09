@@ -1,47 +1,91 @@
 ---
 title: Mac Usage
 date: 2022-02-28 14:19:45
-categories: Mac
+categories:
+  - Mac
 tags:
-- Finder
+  - Finder
+  - Homebrew
+  - shortcuts
 ---
 
-Shortcuts and commands for daily Mac use.
+Shortcuts and commands that earn their keep on a daily-driver Mac.
+
+<!-- more -->
 
 ## Upgrading and Checking Packages
-``` bash
-$ bubu          # brew update && brew outdated && brew upgrade && brew cleanup
-$ brew doctor
 
-$ ncu -g
-$ npm doctor
+```bash
+# `bubu` is a personal alias: brew update && brew outdated && brew upgrade && brew cleanup
+bubu
+brew doctor
 
-$ gem update
-$ gem cleanup
+ncu -g       # check global npm packages for newer versions
+npm doctor
+
+gem update
+gem cleanup
+```
+
+For machine reproducibility (declarative install list), see Brewfile in {% post_link M1-Mac-Development-Setup "Mac development setup" %}.
+
+## CLI Utilities
+
+```bash
+pbcopy < file.txt              # pipe stdin to clipboard
+pbpaste > file.txt             # pipe clipboard to stdout
+say "build finished"           # speak text aloud
+caffeinate -i make release     # keep Mac awake while a command runs
+screencapture -i clip.png      # interactive region capture
+sips -Z 1024 in.png --out out.png  # resize, keeping aspect ratio
+mdls -name kMDItemKind file    # Spotlight metadata for any file
 ```
 
 ## Keyboard Shortcuts
 [Mac keyboard shortcuts](https://support.apple.com/en-us/HT201236)
 
 ### Common Shortcuts
-`Command-,`: Open preferences for the front app
-`Shift-Command-T`: Reopen the last closed tab
-`Shift-Command-[`: Switch to previous tab
-`Shift-Command-]`: Switch to next tab
 
-### Finder Shortcuts
-`Shift-Command-.`: Toggle show hidden files
+| Shortcut | Action |
+|---|---|
+| `⌘,` | Open preferences for the front app |
+| `⇧⌘T` | Reopen the last closed tab |
+| `⇧⌘[` / `⇧⌘]` | Previous / next tab |
+| `⌃⌘F` | Toggle full screen |
+| `⌘W` / `⌥⌘W` | Close window / close all windows |
+| `⌃⌘Q` | Lock screen immediately |
+| `⌘⇧3` / `⌘⇧4` / `⌘⇧5` | Full / region / capture overlay |
 
-### System Shortcuts
-`Option–Volume Up` / `Option–Volume Down`: Open Sound preferences.
-`Option–Shift–Volume Up` / `Option–Shift–Volume Down`: Adjust the sound volume in smaller steps.
-`Option–Brightness Up` / `Option–Brightness Down`: Open Displays preferences.
-`Option–Shift–Brightness Up` / `Option–Shift–Brightness Down`: Adjust the display brightness in smaller steps.
-`Control-Command-Q`: Immediately lock your screen.
+### Finder
 
-### Document Shortcuts
-`Option–Left`: Move the insertion point to the beginning of the previous word
-`Option–Right`: Move the insertion point to the end of the next word
-`Option-Delete`: Delete the word to the left of the insertion point
-`Control-A`: Move to the beginning of the line or paragraph
-`Control-E`: Move to the end of the line or paragraph
+| Shortcut | Action |
+|---|---|
+| `⇧⌘.` | Toggle show hidden files |
+| `⌘↑` / `⌘↓` | Parent folder / open selection |
+| `⌘⇧G` | Go to folder by path |
+| `⌘⌥V` | Move (cut/paste) after `⌘C` |
+| Space | Quick Look preview |
+
+### System Sliders (open the right pane fast)
+
+`⌥` plus any media key opens the matching System Settings pane. Add `⇧` to step in finer increments:
+
+| Shortcut | Action |
+|---|---|
+| `⌥`-Volume | Open Sound settings |
+| `⌥⇧`-Volume | Adjust volume in smaller steps |
+| `⌥`-Brightness | Open Displays settings |
+| `⌥⇧`-Brightness | Adjust brightness in smaller steps |
+
+### Text Editing
+
+`⌃A`, `⌃E`, `⌃K`, `⌃Y` work in any standard text field, since AppKit borrows Emacs bindings.
+
+| Shortcut | Action |
+|---|---|
+| `⌥←` / `⌥→` | Jump by word |
+| `⌥⌫` | Delete previous word |
+| `⌃A` / `⌃E` | Start / end of line |
+| `⌃K` | Kill from cursor to end of line |
+| `⌃Y` | Yank (paste killed text) |
+| `fn fn` | Dictation (toggle in Keyboard settings) |
