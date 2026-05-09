@@ -140,7 +140,7 @@ Most iOS apps end up depending on a small, predictable set. Pin them via [Swift 
 | [SnapKit](https://github.com/SnapKit/SnapKit) | UIKit programmatic Auto Layout DSL. Still the cleanest way to write constraints in code. |
 | [Kingfisher](https://github.com/onevcat/Kingfisher) | Async image loading + caching for `UIImageView`. Solves a problem Apple still hasn't given you a stdlib answer to. |
 | [Lottie](https://github.com/airbnb/lottie-ios) | Renders After Effects vector animations natively. The [Lottie JSON Editor](https://lottiefiles.github.io/lottie-docs/playground/json_editor/) is invaluable for hand-tweaking files. |
-| [RxSwift](https://github.com/ReactiveX/RxSwift) | Cross-platform reactive. Legacy in pure-Swift Apple work in 2026; reach for `async`/`await` + `AsyncSequence` first, Combine if you need multicast or `@Published`. See [Combine vs RxSwift vs Swift collection chains]({% post_link Combine-vs-RxSwift-vs-Swift-Collections %}) for the full split. |
+| [RxSwift](https://github.com/ReactiveX/RxSwift) | Cross-platform reactive. Legacy in pure-Swift Apple work in 2026; reach for `async`/`await` + `AsyncSequence` first, Combine if you need multicast or `@Published`. See {% post_link Combine-vs-RxSwift-vs-Swift-Collections "Combine vs RxSwift vs Swift collection chains" %} for the full split. |
 
 For inspecting a running app's view hierarchy: [Lookin](https://github.com/QMUI/LookinServer/) is the open-source Reveal alternative.
 
