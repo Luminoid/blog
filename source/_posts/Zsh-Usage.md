@@ -1,34 +1,42 @@
 ---
 title: Zsh Usage
 date: 2021-11-08 01:08:52
-categories: Shell
+categories:
+  - Shell
 tags:
-- zsh
-- oh-my-zsh
-- powerlevel10k
-- antigen
+  - zsh
+  - oh-my-zsh
+  - powerlevel10k
+  - antigen
+  - zinit
+  - starship
 ---
 
-Configuration for oh-my-zsh with powerlevel10k and antigen.
-
-## [oh-my-zsh](https://ohmyz.sh)
-### Installation
-``` bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-## Theme
-[powerlevel10k](https://github.com/romkatv/powerlevel10k)
-
-## Plugins
-[Oh My Zsh Plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview)
-
-## Plugin Manager
-### [antigen](https://github.com/zsh-users/antigen)
+A working zsh config from 2021 plus the swap-ins worth making for a 2026 setup.
 
 <!-- more -->
 
-## .zshrc
+## What's current (2026)
+
+The plugin manager and prompt below still work, but they are no longer the modern default:
+
+- **Plugin manager**: [antigen](https://github.com/zsh-users/antigen) has had no real maintenance since 2018. New setups use [zinit](https://github.com/zdharma-continuum/zinit) (fast, lazy-load, hooks for everything), [znap](https://github.com/marlonrichert/zsh-snap) (smaller surface, faster startup), or oh-my-zsh's built-in plugin loader (no third-party manager needed for the common case).
+- **Prompt**: [Powerlevel10k](https://github.com/romkatv/powerlevel10k) still works, but its maintainer paused most active development in 2024. [Starship](https://starship.rs) is the current cross-shell default: one Rust binary, one TOML config, identical prompt under zsh, bash, fish, nu. Old `~/.p10k.zsh` is not portable, so allow some time to recreate the segments worth keeping.
+- **CLI replacements**: `bat` for `cat`, `fd` for `find`, `ripgrep` for `grep`, `dust` for `du`, `procs` for `ps`, `zoxide` for `z`/`autojump`. See {% post_link M1-Mac-Development-Setup "Mac development setup" %} for the full list.
+
+Migrate the prompt first; plugins rarely need rewriting when only the manager changes.
+
+## Install oh-my-zsh
+
+[oh-my-zsh](https://ohmyz.sh) is still the easiest base, even if you skip antigen:
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+[Plugins overview](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview).
+
+## Reference `.zshrc` (2021 setup, oh-my-zsh + antigen + Powerlevel10k)
 ``` bash
 ######################## Powerlevel10k ########################
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
