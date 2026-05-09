@@ -14,7 +14,7 @@ tags:
 - AVAudioEngine
 ---
 
-Apple provides six layers of audio frameworks -- from raw hardware access to one-line playback. This guide covers every layer, what it does, when to use it, and how the pieces fit together.
+Six layers of Apple audio framework, from `AudioObject` (raw hardware) up to `AVPlayer` (one-line playback). What each layer is for, and when to drop down.
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ Apple's audio architecture is a layered system. Each layer adds convenience at t
 └──────────────────────────────────────────────────┘
 ```
 
-The sections below are ordered bottom-up -- starting from the lowest-level foundation types and working up to the highest-level APIs.
+The sections below are ordered bottom-up: foundation types first, highest-level APIs last.
 
 **Rule of thumb**: Start at the highest level that meets your needs. Drop down only when you need more control.
 
@@ -851,6 +851,14 @@ try file.read(into: buffer, frameCount: 44100)  // Read 1 second
 
 AVFoundation's audio capabilities focus on media playback, editing, and export.
 
+### iOS 26 additions
+
+Three things the post-2025 reader should know:
+
+- **Spatial Audio recording.** `AVAssetWriter` can now record Spatial Audio directly. Audio-only apps can save to the new QuickTime audio format `.qta`, which carries multiple alternate-track groups (the same shape Spatial Audio files already use).
+- **Input list / source switching in AVKit.** New AVKit API surfaces the system's available audio inputs and lets the user switch sources from inside your app, replacing the manual `AVAudioSession.availableInputs` + custom-picker dance.
+- **Personalized Spatial Audio profile.** The `com.apple.developer.spatial-audio.profile-access` entitlement lets your app render against the user's personalized HRTF (set up in Settings via the TrueDepth camera). PHASE remains the framework for geometry-aware spatialization; the entitlement is the missing piece that lets it sound personalized.
+
 ### AVPlayer
 
 The primary player for URL-based audio and video:
@@ -1324,7 +1332,10 @@ pitchTap.start()
 | Host third-party audio plug-ins | AudioUnit | `AVAudioUnitComponentManager`, `AVAudioUnit.instantiate` |
 | Synthesis / complex DSP / music apps | AudioKit | `AudioEngine`, SoundpipeAudioKit nodes |
 | Background audio playback | AVFAudio + UIKit | `AVAudioSession.setCategory(.playback)` + `UIBackgroundModes: audio` |
-| Spatial / 3D audio | AVFAudio | `AVAudioEnvironmentNode` |
+| Spatial / 3D audio (basic) | AVFAudio | `AVAudioEnvironmentNode` |
+| Spatial audio (geometry-aware) | PHASE | `PHASEEngine`, `PHASESoundEvent`, occlusion / reverb-zone modeling |
+| Personalized Spatial Audio (iOS 26) | PHASE / AVFAudio | `com.apple.developer.spatial-audio.profile-access` entitlement |
+| Record Spatial Audio (iOS 26) | AVFoundation | `AVAssetWriter` + `.qta` container |
 | Offline audio rendering | AVFAudio | `AVAudioEngine.enableManualRenderingMode` |
 | Low-level hardware access (macOS) | Core Audio | `AudioHardware`, `AudioDevice` |
 
