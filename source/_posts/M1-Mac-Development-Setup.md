@@ -1,5 +1,5 @@
 ---
-title: M1 Mac Development Setup
+title: "Mac development setup"
 date: 2021-11-07 15:15:40
 categories: Mac
 tags:
@@ -10,7 +10,9 @@ tags:
 - Font
 ---
 
-Setup guide for development on M1 Mac.
+What to install on a fresh Mac for development, organized by the job each tool does. Skip whichever layer you don't need; nothing here is mandatory.
+
+<!-- more -->
 
 ## Mac Usage
 {% post_link Mac-Usage %}
@@ -53,6 +55,15 @@ brew leaves | while read pkg; do
 done | sort -hr
 ```
 
+#### Brewfile
+
+Snapshot every cask and formula on the current machine into a `Brewfile`, then reinstall everything on a fresh Mac with one command:
+
+``` bash
+brew bundle dump --file=~/Brewfile     # snapshot the current install
+brew bundle --file=~/Brewfile          # restore on a new machine
+```
+
 ### [npm](https://www.npmjs.com)
 #### Installation
 ``` bash
@@ -71,8 +82,6 @@ brew install yarn
 sudo gem install cocoapods
 ```
 
-<!-- more -->
-
 ## Terminal
 
 For a detailed comparison of all major terminal emulators (Ghostty, iTerm2, Kitty, Alacritty, WezTerm, and more), see {% post_link Terminal-Emulator-Comparison-2026 %}.
@@ -88,7 +97,7 @@ brew install --cask iterm2
 ## Version Control
 ### Git
 
-{% post_link Git-Solutions-Collection %} — common commands and solutions
+{% post_link Git-Solutions-Collection %}: common commands and solutions
 
 #### SSH
 [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
@@ -99,6 +108,21 @@ brew install --cask sourcetree
 ```
 
 ## Languages
+
+### [mise](https://mise.jdx.dev/) (multi-language version manager)
+
+`mise` (the asdf successor) handles per-project versions of Node, Python, Ruby, Go, Java, and ~100 other tools from a single config. Replaces `nvm`/`n`, `pyenv`, `chruby`/`rbenv`, and similar with one binary. Trade-off: opinionated install paths; not always wanted in CI environments.
+
+``` bash
+brew install mise
+echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+
+mise use --global node@22 python@3.13 ruby@3.4   # set global versions
+mise use node@20                                 # pin per-project (writes .mise.toml)
+```
+
+If you'd rather use per-language tools, the sections below cover the standalone options.
+
 ### [Python3](https://www.python.org)
 #### Installation
 ``` bash
@@ -108,10 +132,19 @@ brew install python3
 ### JavaScript
 {% post_link Node-js-Usage %}
 
-### [Java](https://www.oracle.com/java/)
+### [Java](https://adoptium.net/)
 #### Installation
-[Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
-[Java SE Development Kit 8](https://www.oracle.com/java/technologies/downloads/#java8)
+
+[Eclipse Temurin (Adoptium)](https://adoptium.net/) is the standard open JDK distribution since Oracle's 2019 licensing change. Brew:
+
+``` bash
+brew install --cask temurin       # latest LTS
+brew install --cask temurin@21    # specific LTS line (e.g. JDK 21)
+brew install --cask temurin@17    # JDK 17 (still LTS for legacy projects)
+brew install --cask temurin@8     # JDK 8 (only for projects that genuinely need it)
+```
+
+Apple's [Oracle JDK download](https://www.oracle.com/java/technologies/downloads/) is still around if you specifically need Oracle's commercial distribution.
 
 ### [Swift](https://developer.apple.com/documentation/swift/)
 #### Package Manager
@@ -179,6 +212,15 @@ brew install vim
 ## Developer Tools
 ### [Insomnia](https://insomnia.rest/)
 > The open-source, cross-platform API client for GraphQL, REST, and gRPC.
+
+### [OrbStack](https://orbstack.dev/)
+> Fast, lightweight Docker Desktop and Linux VM replacement for macOS. Free for personal use.
+
+``` bash
+brew install --cask orbstack
+```
+
+Works as a drop-in for the `docker` CLI, with much lower memory and battery cost than Docker Desktop. Also runs lightweight Linux VMs.
 
 ## Tools
 ### Finder Tools
@@ -310,7 +352,7 @@ pngquant --ext .png --force 256 *.png */*.png
 ```
 
 ### [jpegoptim](https://github.com/tjko/jpegoptim)
-> JPEG optimizer — lossless or lossy compression with quality control
+> JPEG optimizer: lossless or lossy compression with quality control
 ``` bash
 jpegoptim --max=95 *.jpg *.jpeg
 ```
@@ -325,6 +367,14 @@ prettyping
 > `rlwrap` is a 'readline wrapper', a small utility that uses the GNU Readline library to allow the editing of keyboard input for any command.
 ``` bash 
 rlwrap <command>
+```
+
+### [ripgrep (`rg`)](https://github.com/BurntSushi/ripgrep)
+> Recursively search for a regex pattern. Faster than `grep`, `ag`, and `ack`. Respects `.gitignore` by default.
+``` bash
+rg <pattern>
+rg -t swift "TODO"        # restrict to Swift files
+rg -g '!*.test.ts' bug    # exclude a glob
 ```
 
 ### [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
@@ -351,10 +401,37 @@ tree -L <num> -a
 ### [xxh](https://github.com/xxh/xxh)
 > Bring your favorite shell wherever you go through the ssh.
 
-### [z](https://github.com/rupa/z)
-> Tracks your most used directories, based on 'frecency'.
+### [zoxide](https://github.com/ajeetdsouza/zoxide)
+> Smarter `cd` that learns from your history. Modern, faster successor to `z` and `autojump`.
 ``` bash
-z <dir>
+brew install zoxide
+echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+
+z foo            # jump to a recent directory matching "foo"
+zi               # interactive picker (requires fzf)
+```
+
+#### `autojump` vs `z` vs `zoxide`
+
+| | autojump | z (rupa/z) | zoxide |
+|---|---|---|---|
+| **First release** | 2008 | 2009 | 2020 |
+| **Language** | Python | Bash/Zsh script | Rust (single binary) |
+| **Install footprint** | Python runtime + module | One shell script | One static binary (~5 MB) |
+| **Default command** | `j foo` | `z foo` | `z foo`, plus `zi` for fzf-picker mode |
+| **Ranking model** | Frecency (frequency + recency) | Frecency | Frecency, refined |
+| **Database** | Plain text | Plain text (`~/.z`) | Binary, written atomically |
+| **Shells** | bash, zsh, fish (via plugin) | bash, zsh | bash, zsh, fish, PowerShell, nushell, xonsh, elvish |
+| **Speed** | Slow (Python startup per call) | Fast | **Faster**: 10-20x autojump |
+| **Interactive picker** | No | No | Yes, `zi` with fzf |
+| **Maintenance** | Effectively stale (last release 2022) | Slow | **Active** |
+| **`cd` replacement** | Separate `j` command | Separate `z` command | Optional `cd=z` alias covers everything |
+
+**Verdict**: zoxide. Faster, single binary, works on every shell, and the `zi` interactive picker is a real productivity win the other two don't have. Keep `z` if you want zero binary dependencies; keep `autojump` only if you already have a long-standing setup. zoxide imports either database in one shot:
+
+``` bash
+zoxide import --from autojump ~/.local/share/autojump/autojump.txt
+zoxide import --from z ~/.z
 ```
 
 ## Virtual Machines
