@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.luminoid.dev/images/og-image.png">
 <meta property="article:published_time" content="2026-03-08T06:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-08T01:40:23.098Z">
+<meta property="article:modified_time" content="2026-05-09T19:51:29.731Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Cloudflare">
 <meta property="article:tag" content="GitHub">
@@ -170,7 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-You-Need"><span class="nav-number">1.</span> <span class="nav-text">What You Need</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Push-Your-Site-to-GitHub"><span class="nav-number">2.</span> <span class="nav-text">1. Push Your Site to GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Create-a-Cloudflare-Pages-Project"><span class="nav-number">3.</span> <span class="nav-text">2. Create a Cloudflare Pages Project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-Settings"><span class="nav-number">3.1.</span> <span class="nav-text">Build Settings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Add-a-Custom-Domain"><span class="nav-number">4.</span> <span class="nav-text">3. Add a Custom Domain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Daily-Workflow"><span class="nav-number">5.</span> <span class="nav-text">4. Daily Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alternative-Manual-Deploy-with-Wrangler"><span class="nav-number">6.</span> <span class="nav-text">Alternative: Manual Deploy with Wrangler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">7.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">8.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Cloudflare-Pages"><span class="nav-number">1.</span> <span class="nav-text">Why Cloudflare Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-You-Need"><span class="nav-number">2.</span> <span class="nav-text">What You Need</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Push-Your-Site-to-GitHub"><span class="nav-number">3.</span> <span class="nav-text">1. Push Your Site to GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Create-a-Cloudflare-Pages-Project"><span class="nav-number">4.</span> <span class="nav-text">2. Create a Cloudflare Pages Project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-Settings"><span class="nav-number">4.1.</span> <span class="nav-text">Build Settings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Add-a-Custom-Domain"><span class="nav-number">5.</span> <span class="nav-text">3. Add a Custom Domain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Daily-Workflow"><span class="nav-number">6.</span> <span class="nav-text">4. Daily Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alternative-Manual-Deploy-with-Wrangler"><span class="nav-number">7.</span> <span class="nav-text">Alternative: Manual Deploy with Wrangler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">8.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">9.</span> <span class="nav-text">Summary</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -289,9 +289,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2026-03-07 22:00:00 / Modified: 17:40:23" itemprop="dateCreated datePublished" datetime="2026-03-07T22:00:00-08:00">2026-03-07</time>
+      <time title="Created: 2026-03-07 22:00:00" itemprop="dateCreated datePublished" datetime="2026-03-07T22:00:00-08:00">2026-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-05-09 12:51:29" itemprop="dateModified" datetime="2026-05-09T12:51:29-07:00">2026-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -317,7 +323,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>507</span>
+      <span>677</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -337,6 +343,54 @@
     <div class="post-body" itemprop="articleBody"><p>How to set up a zero-config deployment pipeline: push to GitHub, site updates automatically on Cloudflare Pages with a custom domain.</p>
 <span id="more"></span>
 
+<h2 id="Why-Cloudflare-Pages"><a href="#Why-Cloudflare-Pages" class="headerlink" title="Why Cloudflare Pages"></a>Why Cloudflare Pages</h2><p>The three big static hosts in 2026 are Cloudflare Pages, Netlify, and Vercel. They all do auto-deploy from Git, custom domains, automatic SSL, and PR previews. The honest comparison:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Cloudflare Pages</th>
+<th>Netlify</th>
+<th>Vercel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free tier bandwidth</td>
+<td><strong>Unlimited</strong></td>
+<td>100 GB &#x2F; mo</td>
+<td>100 GB &#x2F; mo</td>
+</tr>
+<tr>
+<td>Free tier builds</td>
+<td>500 &#x2F; mo</td>
+<td>300 build min &#x2F; mo</td>
+<td>6,000 build min &#x2F; mo</td>
+</tr>
+<tr>
+<td>Overage charges</td>
+<td><strong>None on Free; bandwidth still free on paid</strong></td>
+<td>Bandwidth $55&#x2F;100 GB</td>
+<td>Bandwidth $40&#x2F;100 GB</td>
+</tr>
+<tr>
+<td>Cold-build speed</td>
+<td>Slower (minute-class)</td>
+<td>Fast</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>Edge network</td>
+<td>300+ POPs</td>
+<td>~6 regions + global edge</td>
+<td>~30 regions</td>
+</tr>
+<tr>
+<td>Best at</td>
+<td>Cheap fan-out, surprise traffic</td>
+<td>Form&#x2F;auth integrations</td>
+<td>Next.js</td>
+</tr>
+</tbody></table>
+<p>If a single post catches fire on Hacker News, Pages charges $0; Netlify or Vercel can charge real money. The tradeoff is slower cold builds and fewer one-click integrations. For static sites and small SSGs, Pages is the safe default.</p>
 <h2 id="What-You-Need"><a href="#What-You-Need" class="headerlink" title="What You Need"></a>What You Need</h2><ul>
 <li>A GitHub account</li>
 <li>A Cloudflare account (free plan works)</li>
@@ -392,8 +446,23 @@
 <td><code>public</code></td>
 </tr>
 <tr>
-<td>Next.js (static)</td>
-<td><code>next build &amp;&amp; next export</code></td>
+<td>Astro</td>
+<td><code>npm run build</code></td>
+<td><code>dist</code></td>
+</tr>
+<tr>
+<td>SvelteKit (static adapter)</td>
+<td><code>npm run build</code></td>
+<td><code>build</code></td>
+</tr>
+<tr>
+<td>Eleventy</td>
+<td><code>npx eleventy</code></td>
+<td><code>_site</code></td>
+</tr>
+<tr>
+<td>Next.js (static export, Next 14+)</td>
+<td><code>next build</code> (with <code>output: &#39;export&#39;</code> in <code>next.config.js</code>)</td>
 <td><code>out</code></td>
 </tr>
 <tr>
@@ -432,7 +501,7 @@
 <h2 id="Alternative-Manual-Deploy-with-Wrangler"><a href="#Alternative-Manual-Deploy-with-Wrangler" class="headerlink" title="Alternative: Manual Deploy with Wrangler"></a>Alternative: Manual Deploy with Wrangler</h2><p>If you prefer not to connect GitHub (or need to deploy from a different source), you can use the Wrangler CLI:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install wrangler (one-time)</span></span><br><span class="line">npm install -g wrangler</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the project (one-time)</span></span><br><span class="line">npx wrangler pages project create my-site --production-branch main</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deploy (every time)</span></span><br><span class="line">npx wrangler pages deploy . --project-name my-site</span><br></pre></td></tr></table></figure>
 
-<p>This uploads the current directory directly. No Git integration — you run the command manually each time.</p>
+<p>This uploads the current directory directly. No Git integration: you run the command manually each time.</p>
 <p><strong>Note:</strong> Projects created via <code>wrangler</code> cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.</p>
 <h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>For a static site deployed to Cloudflare Pages:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">*.swp</span><br><span class="line">*.swo</span><br><span class="line">*~</span><br><span class="line">.wrangler/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure>
@@ -552,7 +621,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:59</span>
+    <span title="Reading time total">3:01</span>
   </span>
 </div>
 <div class="busuanzi-count">

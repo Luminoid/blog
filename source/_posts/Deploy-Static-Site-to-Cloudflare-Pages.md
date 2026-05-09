@@ -13,6 +13,21 @@ How to set up a zero-config deployment pipeline: push to GitHub, site updates au
 
 <!-- more -->
 
+## Why Cloudflare Pages
+
+The three big static hosts in 2026 are Cloudflare Pages, Netlify, and Vercel. They all do auto-deploy from Git, custom domains, automatic SSL, and PR previews. The honest comparison:
+
+| | Cloudflare Pages | Netlify | Vercel |
+|---|---|---|---|
+| Free tier bandwidth | **Unlimited** | 100 GB / mo | 100 GB / mo |
+| Free tier builds | 500 / mo | 300 build min / mo | 6,000 build min / mo |
+| Overage charges | **None on Free; bandwidth still free on paid** | Bandwidth $55/100 GB | Bandwidth $40/100 GB |
+| Cold-build speed | Slower (minute-class) | Fast | Fast |
+| Edge network | 300+ POPs | ~6 regions + global edge | ~30 regions |
+| Best at | Cheap fan-out, surprise traffic | Form/auth integrations | Next.js |
+
+If a single post catches fire on Hacker News, Pages charges $0; Netlify or Vercel can charge real money. The tradeoff is slower cold builds and fewer one-click integrations. For static sites and small SSGs, Pages is the safe default.
+
 ## What You Need
 
 - A GitHub account
@@ -61,7 +76,10 @@ If your site uses a framework:
 |-----------|--------------|-----------------|
 | Hugo | `hugo` | `public` |
 | Hexo | `hexo generate` | `public` |
-| Next.js (static) | `next build && next export` | `out` |
+| Astro | `npm run build` | `dist` |
+| SvelteKit (static adapter) | `npm run build` | `build` |
+| Eleventy | `npx eleventy` | `_site` |
+| Next.js (static export, Next 14+) | `next build` (with `output: 'export'` in `next.config.js`) | `out` |
 | Vite | `npm run build` | `dist` |
 
 Click **Save and Deploy**. Cloudflare builds and deploys immediately.
@@ -114,7 +132,7 @@ npx wrangler pages project create my-site --production-branch main
 npx wrangler pages deploy . --project-name my-site
 ```
 
-This uploads the current directory directly. No Git integration — you run the command manually each time.
+This uploads the current directory directly. No Git integration: you run the command manually each time.
 
 **Note:** Projects created via `wrangler` cannot be connected to GitHub after the fact. If you want auto-deploy, delete the project in the dashboard and recreate it through the UI with Git connected.
 
