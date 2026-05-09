@@ -1504,7 +1504,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffffd7;
+    background: #f4c846;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3139,4 +3139,16 @@ pre[class*="language-"] {
   line-height: 1.4;
   font-size: 1em;
   padding: 0 5px;
+}
+.post-body table td,
+.post-body table th {
+  text-align: left;
+}
+.post-body table td[align="center"],
+.post-body table th[align="center"] {
+  text-align: center;
+}
+.post-body table td[align="right"],
+.post-body table th[align="right"] {
+  text-align: right;
 }

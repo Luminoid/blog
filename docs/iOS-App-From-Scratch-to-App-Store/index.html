@@ -21,18 +21,24 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.luminoid.dev","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/darcula","dark":"base16/darcula"},"prism":{"light":"prism-tomorrow","dark":"prism-tomorrow"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Resources for iOS development from setup to App Store distribution. SetupRemove storyboard: Linkgitignore PackagePackage ManagerSPMOrganize, manage, and edit Swift packages. MintA package manager that">
+    <meta name="description" content="Building an iOS app in 2026 means assembling six layers: project scaffolding, code, build, common packages, distribution, and AI assist. Each layer answers a different question. The same project might">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS Development Resources From Scratch to App Store">
+<meta property="og:title" content="iOS toolchain in 2026: what each layer of your stack is for">
 <meta property="og:url" content="https://blog.luminoid.dev/iOS-App-From-Scratch-to-App-Store/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Resources for iOS development from setup to App Store distribution. SetupRemove storyboard: Linkgitignore PackagePackage ManagerSPMOrganize, manage, and edit Swift packages. MintA package manager that">
+<meta property="og:description" content="Building an iOS app in 2026 means assembling six layers: project scaffolding, code, build, common packages, distribution, and AI assist. Each layer answers a different question. The same project might">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.luminoid.dev/images/og-image.png">
 <meta property="article:published_time" content="2026-01-16T07:46:41.000Z">
-<meta property="article:modified_time" content="2026-03-08T01:53:30.222Z">
+<meta property="article:modified_time" content="2026-05-09T21:59:22.571Z">
 <meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Claude Code">
+<meta property="article:tag" content="SwiftFormat">
+<meta property="article:tag" content="SwiftLint">
+<meta property="article:tag" content="Xcode">
 <meta property="article:tag" content="fastlane">
+<meta property="article:tag" content="toolchain">
+<meta property="article:tag" content="xcodebuild">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://blog.luminoid.dev/images/og-image.png">
 
@@ -40,10 +46,10 @@
 <link rel="canonical" href="https://blog.luminoid.dev/iOS-App-From-Scratch-to-App-Store/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://blog.luminoid.dev/iOS-App-From-Scratch-to-App-Store/","path":"iOS-App-From-Scratch-to-App-Store/","title":"iOS Development Resources From Scratch to App Store"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://blog.luminoid.dev/iOS-App-From-Scratch-to-App-Store/","path":"iOS-App-From-Scratch-to-App-Store/","title":"iOS toolchain in 2026: what each layer of your stack is for"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>iOS Development Resources From Scratch to App Store | Luminoid's Site</title>
+<title>iOS toolchain in 2026: what each layer of your stack is for | Luminoid's Site</title>
   
 
 
@@ -117,7 +123,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">89</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">95</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -168,7 +174,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Setup"><span class="nav-number">1.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Package"><span class="nav-number">2.</span> <span class="nav-text">Package</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Package-Manager"><span class="nav-number">2.1.</span> <span class="nav-text">Package Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Packages"><span class="nav-number">2.2.</span> <span class="nav-text">Common Packages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Project"><span class="nav-number">3.1.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI"><span class="nav-number">3.2.</span> <span class="nav-text">UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">3.3.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build"><span class="nav-number">3.4.</span> <span class="nav-text">Build</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Xcode-Command-Line"><span class="nav-number">4.</span> <span class="nav-text">Xcode Command Line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xcodebuild"><span class="nav-number">4.1.</span> <span class="nav-text">xcodebuild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LLDB-Debugger"><span class="nav-number">4.2.</span> <span class="nav-text">LLDB (Debugger)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#simctl"><span class="nav-number">4.3.</span> <span class="nav-text">simctl</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design"><span class="nav-number">5.</span> <span class="nav-text">Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding-Style"><span class="nav-number">6.</span> <span class="nav-text">Coding Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">7.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution"><span class="nav-number">8.</span> <span class="nav-text">Distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fastlane"><span class="nav-number">8.1.</span> <span class="nav-text">fastlane</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Update"><span class="nav-number">8.1.1.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fastfile"><span class="nav-number">8.1.2.</span> <span class="nav-text">Fastfile</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apple"><span class="nav-number">8.2.</span> <span class="nav-text">Apple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App-Store-Preview-Images"><span class="nav-number">8.3.</span> <span class="nav-text">App Store Preview Images</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI"><span class="nav-number">9.</span> <span class="nav-text">AI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Claude-Code"><span class="nav-number">9.1.</span> <span class="nav-text">Claude Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Useful-Links"><span class="nav-number">10.</span> <span class="nav-text">Useful Links</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apple-1"><span class="nav-number">10.1.</span> <span class="nav-text">Apple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Articles"><span class="nav-number">10.2.</span> <span class="nav-text">Articles</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-six-layers-at-a-glance"><span class="nav-number">1.</span> <span class="nav-text">The six layers, at a glance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Project-scaffolding"><span class="nav-number">2.</span> <span class="nav-text">1. Project scaffolding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Code-style-and-type-safe-resources"><span class="nav-number">3.</span> <span class="nav-text">2. Code: style and type-safe resources</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-SwiftLint-SwiftFormat"><span class="nav-number">3.1.</span> <span class="nav-text">Style: SwiftLint + SwiftFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-safe-resources-Xcode-native-then-R-swift-only-if-you-must"><span class="nav-number">3.2.</span> <span class="nav-text">Type-safe resources: Xcode native, then R.swift only if you must</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Build-driving-Xcode-from-the-terminal"><span class="nav-number">4.</span> <span class="nav-text">3. Build: driving Xcode from the terminal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xcodebuild"><span class="nav-number">4.1.</span> <span class="nav-text">xcodebuild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Editor-output-helpers"><span class="nav-number">4.2.</span> <span class="nav-text">Editor &#x2F; output helpers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LLDB-cheat-sheet"><span class="nav-number">4.3.</span> <span class="nav-text">LLDB cheat sheet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#simctl-for-the-simulator"><span class="nav-number">4.4.</span> <span class="nav-text">simctl for the simulator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Common-packages"><span class="nav-number">5.</span> <span class="nav-text">4. Common packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Distribution-shipping-to-TestFlight-App-Store-Connect"><span class="nav-number">6.</span> <span class="nav-text">5. Distribution: shipping to TestFlight &#x2F; App Store Connect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Modern-a-Makefile-around-xcodebuild-notarytool"><span class="nav-number">6.1.</span> <span class="nav-text">Modern: a Makefile around xcodebuild + notarytool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Legacy-Fastlane"><span class="nav-number">6.2.</span> <span class="nav-text">Legacy: Fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apple%E2%80%99s-official-references"><span class="nav-number">6.3.</span> <span class="nav-text">Apple’s official references</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Versioning-convention"><span class="nav-number">6.4.</span> <span class="nav-text">Versioning convention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App-Store-screenshots"><span class="nav-number">6.5.</span> <span class="nav-text">App Store screenshots</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-AI-assist"><span class="nav-number">7.</span> <span class="nav-text">6. AI assist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Useful-links"><span class="nav-number">8.</span> <span class="nav-text">Useful links</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,7 +200,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -272,12 +278,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="iOS Development Resources From Scratch to App Store | Luminoid's Site">
+      <meta itemprop="name" content="iOS toolchain in 2026: what each layer of your stack is for | Luminoid's Site">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          iOS Development Resources From Scratch to App Store
+          iOS toolchain in 2026: what each layer of your stack is for
         </h1>
 
         <div class="post-meta-container">
@@ -295,7 +301,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-07 17:53:30" itemprop="dateModified" datetime="2026-03-07T17:53:30-08:00">2026-03-07</time>
+      <time title="Modified: 2026-05-09 14:59:22" itemprop="dateModified" datetime="2026-05-09T14:59:22-07:00">2026-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,14 +327,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>819</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
+      <span>9 mins.</span>
     </span>
 </div>
 
@@ -338,65 +344,80 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Resources for iOS development from setup to App Store distribution.</p>
-<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>Remove storyboard: <a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">Link</a><br><a target="_blank" rel="noopener" href="https://github.com/github/gitignore/blob/main/Swift.gitignore">gitignore</a></p>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><h3 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h3><p><a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">SPM</a><br>Organize, manage, and edit Swift packages.</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/Mint">Mint</a><br>A package manager that installs and runs Swift command line tool packages.</p>
-<h3 id="Common-Packages"><a href="#Common-Packages" class="headerlink" title="Common Packages"></a>Common Packages</h3><p><a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a></p>
-<blockquote>
-<p>A Swift Autolayout DSL for iOS &amp; OS X</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/onevcat/Kingfisher">Kingfisher</a></p>
-<blockquote>
-<p>A lightweight, pure-Swift library for downloading and caching images from the web.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxSwift">RxSwift</a></p>
-<blockquote>
-<p>Reactive Programming in Swift</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift">R.swift</a></p>
-<blockquote>
-<p>Strong typed, autocompleted resources like images, fonts and segues in Swift projects</p>
-</blockquote>
-<p>Issue: <a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift/issues/815">https://github.com/mac-cain13/R.swift/issues/815</a><br>Solution: Use Run Script + Mint, instead of plugin product (RswiftGenerateInternalResources) for generating code.</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/airbnb/lottie-ios">Lottie</a></p>
-<blockquote>
-<p>An iOS library to natively render After Effects vector animations</p>
-</blockquote>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></p>
-<blockquote>
-<p>A Swift command line tool for generating your Xcode project</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/luminoid/Monolith">Monolith</a></p>
-<blockquote>
-<p>Swift CLI that scaffolds iOS apps, Swift Packages, and Swift CLIs — 15 optional features, interactive wizard, theme generation from a single hex color.</p>
-</blockquote>
-<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p><a target="_blank" rel="noopener" href="https://github.com/QMUI/LookinServer/">Lookin</a></p>
-<blockquote>
-<p>You can inspect and modify views in iOS app via Lookin, just like UI Inspector in Xcode, or another app called Reveal.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a><br>Lottie edit and preview</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><a target="_blank" rel="noopener" href="https://github.com/realm/SwiftLint">SwiftLint</a></p>
-<blockquote>
-<p>A tool to enforce Swift style and conventions.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></p>
-<blockquote>
-<p>SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.</p>
-</blockquote>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p><a target="_blank" rel="noopener" href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></p>
-<blockquote>
-<p>This repo aims to integrate xcode with sourcekit-lsp and support all the languages (swift, c, cpp, objc, objcpp) xcode supports, so I can develop iOS with my favorate editor.</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></p>
-<blockquote>
-<p><code>xcbeautify</code> is a little beautifier tool for <code>xcodebuild</code>.</p>
-</blockquote>
+    <div class="post-body" itemprop="articleBody"><p>Building an iOS app in 2026 means assembling six layers: <strong>project scaffolding, code, build, common packages, distribution, and AI assist</strong>. Each layer answers a different question. The same project might use Xcode’s defaults at one layer and a third-party tool at another. The trick is knowing which question each tool actually answers, so you only reach for one when the default stops paying its rent.</p>
 <span id="more"></span>
 
-<h2 id="Xcode-Command-Line"><a href="#Xcode-Command-Line" class="headerlink" title="Xcode Command Line"></a>Xcode Command Line</h2><h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a>xcodebuild</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
+<h2 id="The-six-layers-at-a-glance"><a href="#The-six-layers-at-a-glance" class="headerlink" title="The six layers, at a glance"></a>The six layers, at a glance</h2><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Question it answers</th>
+<th>Default</th>
+<th>Reach for instead</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Project scaffolding</td>
+<td>What generates my <code>.xcodeproj</code>?</td>
+<td>Xcode templates</td>
+<td>XcodeGen, Monolith</td>
+</tr>
+<tr>
+<td>2. Code</td>
+<td>How do I keep style consistent and resources type-safe?</td>
+<td>SwiftLint + SwiftFormat + Xcode native typed resources</td>
+<td>R.swift (legacy)</td>
+</tr>
+<tr>
+<td>3. Build</td>
+<td>How do I drive Xcode from the terminal?</td>
+<td><code>xcodebuild</code> + <code>xcbeautify</code></td>
+<td>Xcode-Build-Server (for editor LSP)</td>
+</tr>
+<tr>
+<td>4. Common packages</td>
+<td>What libraries do most apps end up using?</td>
+<td>SwiftPM + a small standard kit</td>
+<td>(varies by app)</td>
+</tr>
+<tr>
+<td>5. Distribution</td>
+<td>How do I ship a build to TestFlight &#x2F; App Store Connect?</td>
+<td><code>xcodebuild archive</code> + <code>notarytool</code> + a Makefile</td>
+<td>Fastlane (legacy but still works)</td>
+</tr>
+<tr>
+<td>6. AI assist</td>
+<td>What’s writing code with you?</td>
+<td>Xcode 26 Predictive Code Completion</td>
+<td>Claude Code, Cursor</td>
+</tr>
+</tbody></table>
+<p>The rest of the post walks each layer top to bottom: what the default does, why people drop to an alternative, and how to actually invoke it.</p>
+<hr>
+<h2 id="1-Project-scaffolding"><a href="#1-Project-scaffolding" class="headerlink" title="1. Project scaffolding"></a>1. Project scaffolding</h2><p>The question is mundane: how do you get a working <code>.xcodeproj</code> and folder structure to start typing into?</p>
+<p><strong>Default: Xcode templates.</strong> File &gt; New &gt; Project still works for one-off apps and learning projects. The output is fine; the cost is the noisy <code>.xcodeproj</code> file format that merges badly under team work. Two defaults worth toggling on the way out: untick “Use Storyboard” if you’re going code-first (<a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-create-new-xcode-project-without-storyboard/#xcode-11">how-to</a>), and start from a known-good Swift <code>.gitignore</code> (<a target="_blank" rel="noopener" href="https://github.com/github/gitignore/blob/main/Swift.gitignore">github&#x2F;gitignore Swift template</a>).</p>
+<p><strong>Reach for <a target="_blank" rel="noopener" href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a></strong> when the project file becomes the bottleneck: regenerated from a <code>project.yml</code>, so you stop merging <code>.pbxproj</code> conflicts. The cost is the regeneration step in your dev loop and the YAML to maintain.</p>
+<p><strong>Reach for <a target="_blank" rel="noopener" href="https://github.com/luminoid/Monolith">Monolith</a></strong> when you’re starting a new project from scratch and want more than what Xcode’s wizard offers: it scaffolds iOS apps, Swift Packages, and Swift CLIs with 15 optional features (tabs, Mac Catalyst, dark mode, theme generation from a single hex colour, etc.) via an interactive wizard. Trade-off: opinionated, one-time bootstrap rather than a long-term project file generator.</p>
+<hr>
+<h2 id="2-Code-style-and-type-safe-resources"><a href="#2-Code-style-and-type-safe-resources" class="headerlink" title="2. Code: style and type-safe resources"></a>2. Code: style and type-safe resources</h2><p>Two distinct sub-questions: keep the source consistent across people, and stop dragging strings around to find images and localized text.</p>
+<h3 id="Style-SwiftLint-SwiftFormat"><a href="#Style-SwiftLint-SwiftFormat" class="headerlink" title="Style: SwiftLint + SwiftFormat"></a>Style: SwiftLint + SwiftFormat</h3><p><a target="_blank" rel="noopener" href="https://github.com/realm/SwiftLint">SwiftLint</a> (rule enforcement) and <a target="_blank" rel="noopener" href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a> (automatic formatting) both still set the standard in 2026. They don’t compete; they’re complementary. SwiftLint catches anti-patterns; SwiftFormat reformats. Run them on commit and CI alike.</p>
+<h3 id="Type-safe-resources-Xcode-native-then-R-swift-only-if-you-must"><a href="#Type-safe-resources-Xcode-native-then-R-swift-only-if-you-must" class="headerlink" title="Type-safe resources: Xcode native, then R.swift only if you must"></a>Type-safe resources: Xcode native, then R.swift only if you must</h3><p>Until Xcode 15, <a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift">R.swift</a> was the answer to <em>“why am I writing <code>UIImage(named: &quot;ic_check&quot;)</code> and crashing at runtime when someone renames the asset?”</em>. Xcode 15+ generates typed accessors from the asset catalogue natively:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> icon <span class="operator">=</span> <span class="type">UIImage</span>(resource: .icCheck)         <span class="comment">// typed; rename = compile error</span></span><br><span class="line"><span class="keyword">let</span> title <span class="operator">=</span> <span class="type">String</span>(localized: <span class="string">&quot;settings.title&quot;</span>) <span class="comment">// typed against the string catalogue</span></span><br><span class="line"><span class="keyword">let</span> color <span class="operator">=</span> <span class="type">Color</span>(.brandPrimary)</span><br></pre></td></tr></table></figure>
 
-<h3 id="LLDB-Debugger"><a href="#LLDB-Debugger" class="headerlink" title="LLDB (Debugger)"></a>LLDB (Debugger)</h3><p>Common commands in the Xcode debug console:</p>
+<p>That covers most of what R.swift used to do, with zero build-phase overhead. <strong>Recommendation</strong>: skip R.swift on new projects; only adopt it on legacy codebases that need its specific outputs (segues, fonts, R.image with custom rendering modes). If you do use R.swift, the <a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift/issues/815">run-script-via-Mint</a> approach is the workaround for the broken plugin product.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yonaskolb/Mint">Mint</a> itself is the package manager for Swift CLI tools (R.swift, SwiftLint, etc.); useful when you want pinned versions across machines without committing binaries.</p>
+<hr>
+<h2 id="3-Build-driving-Xcode-from-the-terminal"><a href="#3-Build-driving-Xcode-from-the-terminal" class="headerlink" title="3. Build: driving Xcode from the terminal"></a>3. Build: driving Xcode from the terminal</h2><p>The shell-driven build path matters whenever you want CI, repeatable local builds, or to run tests without launching the IDE.</p>
+<h3 id="xcodebuild"><a href="#xcodebuild" class="headerlink" title="xcodebuild"></a><code>xcodebuild</code></h3><p>The cornerstone command. Worth memorising the four invocations:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Build</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean build (verify zero warnings; incremental builds hide them)</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator clean build</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run tests</span></span><br><span class="line">xcodebuild -scheme MyApp -sdk iphonesimulator \</span><br><span class="line">    -destination <span class="string">&#x27;platform=iOS Simulator,name=iPhone 17,OS=26.2&#x27;</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List schemes</span></span><br><span class="line">xcodebuild -list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archive (for distribution)</span></span><br><span class="line">xcodebuild -scheme MyApp -archivePath build/MyApp.xcarchive archive</span><br></pre></td></tr></table></figure>
+
+<p>Always specify <code>OS=</code> in the destination string. Without it, Xcode picks a different runtime across machines, which means CI flakes that don’t reproduce locally.</p>
+<h3 id="Editor-output-helpers"><a href="#Editor-output-helpers" class="headerlink" title="Editor &#x2F; output helpers"></a>Editor &#x2F; output helpers</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/cpisciotta/xcbeautify">xcbeautify</a></strong>: pipes <code>xcodebuild</code>‘s firehose into something readable. Standard on every CI script.</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a></strong>: bridges Xcode’s build settings into SourceKit-LSP so VS Code, Cursor, or Neovim can offer Swift completion against a real Xcode project.</li>
+</ul>
+<h3 id="LLDB-cheat-sheet"><a href="#LLDB-cheat-sheet" class="headerlink" title="LLDB cheat sheet"></a>LLDB cheat sheet</h3><p>When the debugger pauses, the same dozen commands cover most of what you need:</p>
 <table>
 <thead>
 <tr>
@@ -406,23 +427,23 @@
 </thead>
 <tbody><tr>
 <td><code>bt</code></td>
-<td>Backtrace — print the call stack of the current thread</td>
+<td>Backtrace, current thread</td>
 </tr>
 <tr>
 <td><code>bt all</code></td>
-<td>Backtrace all threads</td>
+<td>Backtrace, all threads</td>
 </tr>
 <tr>
 <td><code>po &lt;expr&gt;</code></td>
-<td>Print object — evaluate and print a Swift&#x2F;ObjC expression</td>
+<td>Print object: evaluate and print a Swift&#x2F;Obj-C expression</td>
 </tr>
 <tr>
 <td><code>p &lt;expr&gt;</code></td>
-<td>Print — evaluate expression with type info</td>
+<td>Print: evaluate with type info</td>
 </tr>
 <tr>
 <td><code>frame variable</code></td>
-<td>Show all local variables in the current frame</td>
+<td>All locals in the current frame</td>
 </tr>
 <tr>
 <td><code>thread list</code></td>
@@ -442,56 +463,108 @@
 </tr>
 <tr>
 <td><code>expr &lt;code&gt;</code></td>
-<td>Execute code at runtime (e.g., <code>expr view.backgroundColor = .red</code>)</td>
+<td>Execute code at runtime (e.g. <code>expr view.backgroundColor = .red</code>)</td>
 </tr>
 <tr>
-<td><code>continue</code> &#x2F; <code>c</code></td>
-<td>Resume execution</td>
-</tr>
-<tr>
-<td><code>step</code> &#x2F; <code>s</code></td>
-<td>Step into</td>
-</tr>
-<tr>
-<td><code>next</code> &#x2F; <code>n</code></td>
-<td>Step over</td>
-</tr>
-<tr>
-<td><code>finish</code></td>
-<td>Step out of current function</td>
+<td><code>c</code> &#x2F; <code>s</code> &#x2F; <code>n</code> &#x2F; <code>finish</code></td>
+<td>Continue &#x2F; step in &#x2F; step over &#x2F; step out</td>
 </tr>
 </tbody></table>
-<h3 id="simctl"><a href="#simctl" class="headerlink" title="simctl"></a>simctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List available simulators</span></span><br><span class="line">xcrun simctl list devices</span><br><span class="line"></span><br><span class="line"><span class="comment"># Boot a simulator</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open URL in simulator</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Take screenshot</span></span><br><span class="line">xcrun simctl io booted screenshot output.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># Erase simulator data</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="simctl-for-the-simulator"><a href="#simctl-for-the-simulator" class="headerlink" title="simctl for the simulator"></a><code>simctl</code> for the simulator</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xcrun simctl list devices                                 <span class="comment"># what&#x27;s installed</span></span><br><span class="line">xcrun simctl boot <span class="string">&quot;iPhone 17&quot;</span>                             <span class="comment"># boot</span></span><br><span class="line">xcrun simctl openurl booted <span class="string">&quot;myapp://deeplink&quot;</span>            <span class="comment"># test deeplinks</span></span><br><span class="line">xcrun simctl io booted screenshot output.png              <span class="comment"># screenshots</span></span><br><span class="line">xcrun simctl erase <span class="string">&quot;iPhone 17&quot;</span>                            <span class="comment"># reset state</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Human Interface Guidelines</a></p>
-<h2 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing spaces in Xcode</a></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/en/v1.0.0/">Commit messages convention</a></p>
-<p>Add tags to build</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.2.0  <span class="comment"># Version 1.2.0</span></span><br><span class="line">git tag b10     <span class="comment"># Build 10</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-Common-packages"><a href="#4-Common-packages" class="headerlink" title="4. Common packages"></a>4. Common packages</h2><p>Most iOS apps end up depending on a small, predictable set. Pin them via <a target="_blank" rel="noopener" href="https://www.swift.org/package-manager/">Swift Package Manager</a>, not CocoaPods, on new projects.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Why you’d reach for it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/SnapKit/SnapKit">SnapKit</a></td>
+<td>UIKit programmatic Auto Layout DSL. Still the cleanest way to write constraints in code.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/onevcat/Kingfisher">Kingfisher</a></td>
+<td>Async image loading + caching for <code>UIImageView</code>. Solves a problem Apple still hasn’t given you a stdlib answer to.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/airbnb/lottie-ios">Lottie</a></td>
+<td>Renders After Effects vector animations natively. The <a target="_blank" rel="noopener" href="https://lottiefiles.github.io/lottie-docs/playground/json_editor/">Lottie JSON Editor</a> is invaluable for hand-tweaking files.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxSwift">RxSwift</a></td>
+<td>Cross-platform reactive. Legacy in pure-Swift Apple work in 2026; reach for <code>async</code>&#x2F;<code>await</code> + <code>AsyncSequence</code> first, Combine if you need multicast or <code>@Published</code>. See <a href="!--swig%EF%BF%BC11--">Combine vs RxSwift vs Swift collection chains</a> for the full split.</td>
+</tr>
+</tbody></table>
+<p>For inspecting a running app’s view hierarchy: <a target="_blank" rel="noopener" href="https://github.com/QMUI/LookinServer/">Lookin</a> is the open-source Reveal alternative.</p>
+<hr>
+<h2 id="5-Distribution-shipping-to-TestFlight-App-Store-Connect"><a href="#5-Distribution-shipping-to-TestFlight-App-Store-Connect" class="headerlink" title="5. Distribution: shipping to TestFlight &#x2F; App Store Connect"></a>5. Distribution: shipping to TestFlight &#x2F; App Store Connect</h2><p>Two competing answers in 2026.</p>
+<h3 id="Modern-a-Makefile-around-xcodebuild-notarytool"><a href="#Modern-a-Makefile-around-xcodebuild-notarytool" class="headerlink" title="Modern: a Makefile around xcodebuild + notarytool"></a>Modern: a Makefile around <code>xcodebuild</code> + <code>notarytool</code></h3><p>The path most new projects should pick. No Ruby, no gem management, no “what version of fastlane is on the CI runner” drift. A minimal <code>Makefile</code>:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">SCHEME := MyApp</span><br><span class="line">DESTINATION := platform=iOS Simulator,name=iPhone 17,OS=26.2</span><br><span class="line">ARCHIVE := build/MyApp.xcarchive</span><br><span class="line">EXPORT := build/Export</span><br><span class="line">EXPORT_OPTIONS := ExportOptions.plist</span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="keyword">.PHONY</span>: test archive ipa upload</span></span><br><span class="line"></span><br><span class="line"><span class="section">test:</span></span><br><span class="line">	xcodebuild test -scheme <span class="variable">$(SCHEME)</span> -destination &#x27;<span class="variable">$(DESTINATION)</span>&#x27; -quiet</span><br><span class="line"></span><br><span class="line"><span class="section">archive:</span></span><br><span class="line">	xcodebuild archive -scheme <span class="variable">$(SCHEME)</span> -archivePath <span class="variable">$(ARCHIVE)</span> \</span><br><span class="line">	  -destination &#x27;generic/platform=iOS&#x27; -quiet</span><br><span class="line"></span><br><span class="line"><span class="section">ipa: archive</span></span><br><span class="line">	xcodebuild -exportArchive -archivePath <span class="variable">$(ARCHIVE)</span> \</span><br><span class="line">	  -exportOptionsPlist <span class="variable">$(EXPORT_OPTIONS)</span> -exportPath <span class="variable">$(EXPORT)</span> -quiet</span><br><span class="line"></span><br><span class="line"><span class="section">upload: ipa</span></span><br><span class="line">	xcrun altool --upload-app -f <span class="variable">$(EXPORT)</span>/<span class="variable">$(SCHEME)</span>.ipa \</span><br><span class="line">	  --type ios --apiKey <span class="variable">$(ASC_KEY_ID)</span> --apiIssuer <span class="variable">$(ASC_ISSUER_ID)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Distribution"><a href="#Distribution" class="headerlink" title="Distribution"></a>Distribution</h2><h3 id="fastlane"><a href="#fastlane" class="headerlink" title="fastlane"></a><a target="_blank" rel="noopener" href="https://docs.fastlane.tools/">fastlane</a></h3><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/fastlane-community/fastlane-plugin-appicon">App iconset generation</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.fastlane.tools/actions/swiftlint/">fastlane with SwiftLint</a></li>
-</ul>
-<p>Change version code, then <code>fastlane beta</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon</span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate</span><br></pre></td></tr></table></figure>
+<p>That’s the whole pipeline: <code>make test</code> runs the suite, <code>make upload</code> ships to App Store Connect (you need an <a target="_blank" rel="noopener" href="https://appstoreconnect.apple.com/access/api">App Store Connect API key</a> and an <code>ExportOptions.plist</code>). Add a script to bump build numbers and you’re done.</p>
+<h3 id="Legacy-Fastlane"><a href="#Legacy-Fastlane" class="headerlink" title="Legacy: Fastlane"></a>Legacy: <a target="_blank" rel="noopener" href="https://docs.fastlane.tools/">Fastlane</a></h3><p>Fastlane has carried iOS distribution for ~10 years and still works fine. The trade is a heavy Ruby dependency tree, slower CI, and an abstraction layer between you and <code>xcodebuild</code> whenever something breaks. The day-to-day commands you’ll actually run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bundle <span class="built_in">exec</span> fastlane beta              <span class="comment"># build + upload to TestFlight</span></span><br><span class="line">bundle <span class="built_in">exec</span> fastlane generate_icon     <span class="comment"># regenerate icon set from one source image</span></span><br><span class="line">bundle <span class="built_in">exec</span> fastlane validate          <span class="comment"># pre-build sanity checks (e.g. localization)</span></span><br><span class="line">fastlane update_fastlane               <span class="comment"># keep gems current</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane update_fastlane</span><br></pre></td></tr></table></figure>
+<p>A Fastfile worth keeping around (covers iOS + Mac Catalyst from the same repo, and a pre-build validation hook):</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst is a separate platform target, not an iOS lane.</span></span><br><span class="line"><span class="comment"># Keep it at the top-level so you can run `fastlane catalyst` directly.</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;MyApp&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Pre-build hook: any Python check, localization audit, etc.</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode picks the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># automatically. You must have opened the project in Xcode at least once</span></span><br><span class="line">    <span class="comment"># so it could download the App Store distribution provisioning profile</span></span><br><span class="line">    <span class="comment"># from your Apple Developer account.</span></span><br><span class="line">    build_app(<span class="symbol">scheme:</span> <span class="string">&quot;MyApp&quot;</span>, <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>)</span><br><span class="line">    upload_to_testflight</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon set from one source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;MyApp/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations only&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="Fastfile"><a href="#Fastfile" class="headerlink" title="Fastfile"></a>Fastfile</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Catalyst lanes (root-level: same app, macOS variant)</span></span><br><span class="line">desc <span class="string">&quot;Build Mac Catalyst version of the app&quot;</span></span><br><span class="line">lane <span class="symbol">:catalyst</span> <span class="keyword">do</span></span><br><span class="line">  <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">    sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  build_app(</span><br><span class="line">    <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">    <span class="symbol">clean:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">destination:</span> <span class="string">&quot;generic/platform=macOS&quot;</span>,</span><br><span class="line">    <span class="symbol">skip_package_ipa:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span>,</span><br><span class="line">    <span class="symbol">catalyst_platform:</span> <span class="string">&quot;macos&quot;</span>,</span><br><span class="line">    <span class="symbol">output_directory:</span> <span class="string">&quot;./build/Catalyst&quot;</span>,</span><br><span class="line">    <span class="symbol">xcargs:</span> <span class="string">&quot;ONLY_ACTIVE_ARCH=YES -skipPackagePluginValidation&quot;</span></span><br><span class="line">  )</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">&quot;Push a new beta build to TestFlight&quot;</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      <span class="comment"># Check localization completeness</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Increment build number</span></span><br><span class="line">    <span class="comment"># increment_build_number(xcodeproj: &quot;ProjectName.xcodeproj&quot;)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Build and upload</span></span><br><span class="line">    <span class="comment"># Use export_method: &quot;app-store&quot; for TestFlight</span></span><br><span class="line">    <span class="comment"># With automatic signing, Xcode will automatically use/create the App Store distribution profile</span></span><br><span class="line">    <span class="comment"># Note: Make sure you&#x27;ve opened the project in Xcode at least once so it can download</span></span><br><span class="line">    <span class="comment"># the App Store distribution provisioning profile from your Apple Developer account</span></span><br><span class="line">    build_app(</span><br><span class="line">      <span class="symbol">scheme:</span> <span class="string">&quot;ProjectName&quot;</span>,</span><br><span class="line">      <span class="symbol">export_method:</span> <span class="string">&quot;app-store&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># upload_to_testflight</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Generate app icon from source image&quot;</span></span><br><span class="line">  lane <span class="symbol">:generate_icon</span> <span class="keyword">do</span></span><br><span class="line">    appicon(</span><br><span class="line">      <span class="symbol">appicon_image_file:</span> <span class="string">&#x27;fastlane/metadata/app_icon.png&#x27;</span>,</span><br><span class="line">      <span class="symbol">appicon_devices:</span> %i[ipad iphone ios_marketing],</span><br><span class="line">      <span class="symbol">appicon_path:</span> <span class="string">&#x27;ProjectName/Assets.xcassets&#x27;</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">&quot;Run pre-build validations&quot;</span></span><br><span class="line">  lane <span class="symbol">:validate</span> <span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Change to project root for scripts</span></span><br><span class="line">    <span class="title class_">Dir</span>.chdir(<span class="string">&quot;..&quot;</span>) <span class="keyword">do</span></span><br><span class="line">      sh(<span class="string">&quot;python3 Scripts/analyze_localization.py&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Apple"><a href="#Apple" class="headerlink" title="Apple"></a>Apple</h3><ul>
+<p>Useful Fastlane plugins that don’t have a clean Make equivalent: <a target="_blank" rel="noopener" href="https://github.com/fastlane-community/fastlane-plugin-appicon">appicon</a> (icon set generation from one source image) and <a target="_blank" rel="noopener" href="https://docs.fastlane.tools/actions/swiftlint/">the SwiftLint action</a>. If you’re already on Fastlane, no need to migrate; if you’re starting fresh, the Makefile path is shorter.</p>
+<h3 id="Apple’s-official-references"><a href="#Apple’s-official-references" class="headerlink" title="Apple’s official references"></a>Apple’s official references</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution">Preparing your app for distribution</a></li>
 <li><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">Distributing your app for beta testing and releases</a></li>
 </ul>
-<h3 id="App-Store-Preview-Images"><a href="#App-Store-Preview-Images" class="headerlink" title="App Store Preview Images"></a>App Store Preview Images</h3><ul>
+<h3 id="Versioning-convention"><a href="#Versioning-convention" class="headerlink" title="Versioning convention"></a>Versioning convention</h3><p>Tag both marketing version and build number so CI can derive both:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.2.0   <span class="comment"># marketing version</span></span><br><span class="line">git tag b10      <span class="comment"># build number</span></span><br></pre></td></tr></table></figure>
+
+<p>Pair this with <a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> for changelogs that practically write themselves.</p>
+<h3 id="App-Store-screenshots"><a href="#App-Store-screenshots" class="headerlink" title="App Store screenshots"></a>App Store screenshots</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://developer.apple.com/design/resources/#product-bezels">Apple Product Bezels</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.figma.com/community/device-mockups/iphone">https://www.figma.com/community/device-mockups/iphone</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.figma.com/community/file/1227376606592772837">https://www.figma.com/community/file/1227376606592772837</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.figma.com/community/device-mockups/iphone">Figma device mockups</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.figma.com/community/file/1227376606592772837">iPhone screenshot template</a></li>
 </ul>
-<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h3 id="Claude-Code"><a href="#Claude-Code" class="headerlink" title="Claude Code"></a>Claude Code</h3><p>Claude Skill: <a target="_blank" rel="noopener" href="https://github.com/CharlesWiltgen/Axiom">https://github.com/CharlesWiltgen/Axiom</a></p>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><h3 id="Apple-1"><a href="#Apple-1" class="headerlink" title="Apple"></a>Apple</h3><p>App Store Connect: <a target="_blank" rel="noopener" href="https://appstoreconnect.apple.com/">https://appstoreconnect.apple.com/</a><br>Developer Account: <a target="_blank" rel="noopener" href="https://developer.apple.com/account">https://developer.apple.com/account</a><br>iCloud Dashboard: <a target="_blank" rel="noopener" href="https://developer.apple.com/icloud/dashboards/">https://developer.apple.com/icloud/dashboards/</a></p>
-<h3 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h3><p>View App data: <a target="_blank" rel="noopener" href="https://developer.apple.com/forums/thread/21660">https://developer.apple.com/forums/thread/21660</a><br>Disable dark mode: <a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/</a><br>Hit-Testing: <a target="_blank" rel="noopener" href="https://smnh.me/hit-testing-in-ios">https://smnh.me/hit-testing-in-ios</a><br>Use Cursor for iOS development: <a target="_blank" rel="noopener" href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941</a></p>
+<hr>
+<h2 id="6-AI-assist"><a href="#6-AI-assist" class="headerlink" title="6. AI assist"></a>6. AI assist</h2><p>This layer didn’t exist as a category two years ago. In 2026, it’s a real choice with three credible options.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Where it lives</th>
+<th>Best at</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Xcode 26 Predictive Code Completion</strong></td>
+<td>Built into Xcode</td>
+<td>Quick line-level completions, no setup, no extra context window cost</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://claude.com/product/claude-code">Claude Code</a></strong></td>
+<td>Terminal CLI, can edit files in any project</td>
+<td>Multi-file changes, refactors, structured tasks (the <a target="_blank" rel="noopener" href="https://github.com/CharlesWiltgen/Axiom">Axiom</a> skill is a good iOS-flavored starting point)</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://cursor.com/home">Cursor</a></strong></td>
+<td>VS Code fork</td>
+<td>Inline AI edits while you’re already in a non-Xcode editor; pairs well with <a target="_blank" rel="noopener" href="https://github.com/SolaWing/xcode-build-server">Xcode-Build-Server</a> so completions know your scheme. <a target="_blank" rel="noopener" href="https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941">How-to write iOS in Cursor</a>.</td>
+</tr>
+</tbody></table>
+<p>Pick one terminal&#x2F;CLI agent and one editor; running both fights for the same context window without much benefit.</p>
+<hr>
+<h2 id="Useful-links"><a href="#Useful-links" class="headerlink" title="Useful links"></a>Useful links</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/">Apple’s Human Interface Guidelines</a></li>
+<li><a target="_blank" rel="noopener" href="https://appstoreconnect.apple.com/">App Store Connect</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/account">Apple Developer account</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/icloud/dashboards/">iCloud Dashboard</a> (CloudKit schema deploys, see also: silent push delivery in development vs production)</li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1390329/trim-trailing-spaces-in-xcode">Trim trailing whitespace in Xcode</a></li>
+<li><a target="_blank" rel="noopener" href="https://smnh.me/hit-testing-in-ios">How hit-testing actually works</a></li>
+<li><a target="_blank" rel="noopener" href="https://sarunw.com/posts/how-to-disable-dark-mode-in-ios/">Disable dark mode for a single screen</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/forums/thread/21660">Inspecting App data on disk</a></li>
+</ul>
+<hr>
+<p>The temptation with iOS tooling is to adopt the whole stack on day one because someone’s blog post said so. Don’t. Start with Xcode + SwiftPM + a <code>.gitignore</code>, ship something to TestFlight via <code>xcodebuild archive</code>, then add tools as the friction at each layer becomes the thing actually slowing you down.</p>
 
     </div>
 
@@ -518,7 +591,13 @@
 </div>
 
           <div class="post-tags">
+              <a href="/tags/Xcode/" rel="tag"><i class="fa fa-tag"></i> Xcode</a>
+              <a href="/tags/toolchain/" rel="tag"><i class="fa fa-tag"></i> toolchain</a>
+              <a href="/tags/SwiftLint/" rel="tag"><i class="fa fa-tag"></i> SwiftLint</a>
+              <a href="/tags/SwiftFormat/" rel="tag"><i class="fa fa-tag"></i> SwiftFormat</a>
+              <a href="/tags/xcodebuild/" rel="tag"><i class="fa fa-tag"></i> xcodebuild</a>
               <a href="/tags/fastlane/" rel="tag"><i class="fa fa-tag"></i> fastlane</a>
+              <a href="/tags/Claude-Code/" rel="tag"><i class="fa fa-tag"></i> Claude Code</a>
           </div>
 
         
@@ -568,13 +647,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">36k</span>
+    <span title="Word count total">37k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:01</span>
+    <span title="Reading time total">3:05</span>
   </span>
 </div>
 <div class="busuanzi-count">

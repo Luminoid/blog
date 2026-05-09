@@ -22,3 +22,21 @@ code[class*="language-"], pre[class*="language-"] {
   font-size: 1em;
   padding: 0 5px;
 }
+
+// Table cells: left-align multiline content instead of inheriting `justify` from .post-body.
+// Markdown column alignment (`|:---:|`, `|---:|`) emits an HTML `align` attribute, which has
+// lower specificity than author CSS, so we restore those alignments explicitly.
+.post-body table td,
+.post-body table th {
+  text-align: left;
+}
+
+.post-body table td[align="center"],
+.post-body table th[align="center"] {
+  text-align: center;
+}
+
+.post-body table td[align="right"],
+.post-body table th[align="right"] {
+  text-align: right;
+}
