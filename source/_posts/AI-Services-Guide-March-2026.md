@@ -11,13 +11,13 @@ tags:
 - agent
 ---
 
-A detailed breakdown of every major AI provider in March 2026 -- free tiers, chat subscriptions, API pricing, coding agents, model capabilities, mobile SDKs, and open source status.
+A March 2026 snapshot of every major AI provider: chat subscriptions, API pricing, and coding agents.
 
 <!-- more -->
 
 ## Two ways to use AI models
 
-Every provider offers two access layers. They are almost always billed separately:
+Two layers, two bills:
 
 1. **Chat product** -- the app you talk to (ChatGPT, Claude, Gemini, Grok, Le Chat, Qwen, Copilot, Perplexity, Nova). Every provider has a free tier with limited usage, and paid subscriptions ($8-300/mo) that unlock premium models, higher limits, and features like image gen, voice, and video.
 2. **API** -- pay-per-token programmatic access for building apps. Separate billing, separate account, separate pricing.
