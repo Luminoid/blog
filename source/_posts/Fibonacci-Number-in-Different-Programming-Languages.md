@@ -1,5 +1,5 @@
 ---
-title: "Fibonacci across ten languages: what each one insists on"
+title: "Fibonacci across ten languages"
 date: 2022-02-22 15:36:50
 categories:
   - Programming Languages
