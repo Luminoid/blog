@@ -595,6 +595,8 @@ Apple's reactive framework, introduced at WWDC 2019 (iOS 13 / macOS 10.15, Swift
 For new code, prefer `AsyncSequence` + the [Swift Async Algorithms](https://github.com/apple/swift-async-algorithms) package (§9). Combine remains the right tool for SwiftUI bindings (`@Published`, `ObservableObject`) and existing pipelines, but most use cases that aren't UIKit-bound now have native async equivalents.
 {% endnote %}
 
+For a closer side-by-side of Combine, RxSwift, and synchronous Swift collection chains, see {% post_link Combine-vs-RxSwift-vs-Swift-Collections "Combine vs RxSwift vs Swift collection chains" %}.
+
 ### Basics
 
 ```swift

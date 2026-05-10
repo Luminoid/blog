@@ -4,7 +4,7 @@ date: 2023-01-22 15:58:03
 categories:
   - Git
 tags:
-  - cli
+  - CLI
 ---
 
 Recipes for the Git situations that come up often enough to forget the exact incantation.
