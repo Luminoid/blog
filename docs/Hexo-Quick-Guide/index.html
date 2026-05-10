@@ -21,17 +21,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.luminoid.dev","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/darcula","dark":"base16/darcula"},"prism":{"light":"prism-tomorrow","dark":"prism-tomorrow"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Short reference for my Hexo&#x2F;NexT workflow. Official Site: https:&#x2F;&#x2F;hexo.io&#x2F;Version: 8.1.0 WorkflowWith Git deployment 1234567$ hexo new &quot;My New Article&quot;# Edit source&#x2F;_posts&#x2F;My-New-Articl">
+    <meta name="description" content="A short working reference for the Hexo + NexT setup that powers this blog.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Quick Guide">
 <meta property="og:url" content="https://blog.luminoid.dev/Hexo-Quick-Guide/index.html">
 <meta property="og:site_name" content="Luminoid&#39;s Site">
-<meta property="og:description" content="Short reference for my Hexo&#x2F;NexT workflow. Official Site: https:&#x2F;&#x2F;hexo.io&#x2F;Version: 8.1.0 WorkflowWith Git deployment 1234567$ hexo new &quot;My New Article&quot;# Edit source&#x2F;_posts&#x2F;My-New-Articl">
+<meta property="og:description" content="A short working reference for the Hexo + NexT setup that powers this blog.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.luminoid.dev/images/og-image.png">
 <meta property="article:published_time" content="2022-02-22T07:36:21.000Z">
-<meta property="article:modified_time" content="2026-02-08T09:35:45.608Z">
+<meta property="article:modified_time" content="2026-05-10T04:22:59.931Z">
 <meta property="article:author" content="Luminoid">
+<meta property="article:tag" content="Cloudflare Pages">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT">
 <meta property="article:tag" content="hexo-theme-next">
@@ -119,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">105</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">8</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">106</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -170,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Workflow"><span class="nav-number">1.</span> <span class="nav-text">Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintenance"><span class="nav-number">2.</span> <span class="nav-text">Maintenance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">3.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme"><span class="nav-number">4.</span> <span class="nav-text">Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration-1"><span class="nav-number">4.1.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT"><span class="nav-number">4.2.</span> <span class="nav-text">NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Configuration-2"><span class="nav-number">4.2.1.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-Highlight-Theme"><span class="nav-number">4.2.2.</span> <span class="nav-text">Code Highlight Theme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Legacy-Repositories"><span class="nav-number">4.2.3.</span> <span class="nav-text">Legacy Repositories</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">5.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag-Plugins"><span class="nav-number">5.1.</span> <span class="nav-text">Tag Plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Code"><span class="nav-number">5.1.1.</span> <span class="nav-text">Include Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Warning"><span class="nav-number">5.1.2.</span> <span class="nav-text">Warning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Posts"><span class="nav-number">5.1.3.</span> <span class="nav-text">Include Posts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Assets"><span class="nav-number">5.1.4.</span> <span class="nav-text">Include Assets</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Workflow"><span class="nav-number">1.</span> <span class="nav-text">Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintenance"><span class="nav-number">2.</span> <span class="nav-text">Maintenance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">3.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme-NexT"><span class="nav-number">4.</span> <span class="nav-text">Theme: NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Config-priority-high-to-low"><span class="nav-number">4.1.</span> <span class="nav-text">Config priority (high to low)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Highlight-previews"><span class="nav-number">4.2.</span> <span class="nav-text">Highlight previews</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Legacy-repos-do-not-use"><span class="nav-number">4.3.</span> <span class="nav-text">Legacy repos (do not use)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag-plugins"><span class="nav-number">5.</span> <span class="nav-text">Tag plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-link-another-post"><span class="nav-number">5.1.</span> <span class="nav-text">Cross-link another post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Include-source-code"><span class="nav-number">5.2.</span> <span class="nav-text">Include source code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference-assets"><span class="nav-number">5.3.</span> <span class="nav-text">Reference assets</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +197,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">106</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -297,7 +298,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-02-08 01:35:45" itemprop="dateModified" datetime="2026-02-08T01:35:45-08:00">2026-02-08</time>
+      <time title="Modified: 2026-05-09 21:22:59" itemprop="dateModified" datetime="2026-05-09T21:22:59-07:00">2026-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -327,14 +328,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>228</span>
+      <span>327</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -344,40 +345,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Short reference for my Hexo&#x2F;NexT workflow.</p>
-<p>Official Site: <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a><br>Version: 8.1.0</p>
-<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>With Git deployment</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Article&quot;</span></span><br><span class="line"><span class="comment"># Edit source/_posts/My-New-Article.md</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit -m &lt;msg&gt;</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><p>Update outdated npm packages. With <code>npm-check-updates</code>, run the following under the blog directory (<code>./</code>):</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ncu -u</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config is stored in <code>./_config.yml</code></p>
+    <div class="post-body" itemprop="articleBody"><p>A short working reference for the Hexo + NexT setup that powers this blog.</p>
 <span id="more"></span>
 
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><h3 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h3><p>Configuration priority (from high to low):</p>
 <ul>
-<li><code>theme_config</code> in site’s primary configuration file</li>
-<li><code>_config.[theme].yml</code> file</li>
-<li><code>_config.yml</code> file under the theme directory</li>
+<li><strong>Hexo</strong>: 8.1.1 (<a target="_blank" rel="noopener" href="https://hexo.io/">hexo.io</a>)</li>
+<li><strong>Theme</strong>: <a target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT</a> 8.27.0 (<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">GitHub</a>)</li>
 </ul>
-<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a><a target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT</a></h3><p><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">GitHub</a><br><a target="_blank" rel="noopener" href="https://theme-next.js.org/">Documentation</a><br>Version: 8.27.0</p>
-<h4 id="Configuration-2"><a href="#Configuration-2" class="headerlink" title="Configuration"></a>Configuration</h4><p>NexT theme config is stored in <code>./_config.next.yml</code> &amp; <code>node_modules/hexo-theme-next/_config.yml</code></p>
-<h4 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h4><p><a target="_blank" rel="noopener" href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
-<h4 id="Legacy-Repositories"><a href="#Legacy-Repositories" class="headerlink" title="Legacy Repositories"></a>Legacy Repositories</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Article&quot;</span>     <span class="comment"># scaffold source/_posts/My-New-Article.md</span></span><br><span class="line"><span class="comment"># Edit the post</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>For pushing to Cloudflare Pages with Git auto-deploy, see <a href="/Deploy-Static-Site-to-Cloudflare-Pages/" title="Deploy a Static Site to Cloudflare Pages with GitHub Auto-Deploy">Deploy a Static Site to Cloudflare Pages</a>. Local generate + manual <code>wrangler pages deploy</code> works the same way against the <code>public/</code> (or <code>docs/</code>) output.</p>
+<h2 id="Maintenance"><a href="#Maintenance" class="headerlink" title="Maintenance"></a>Maintenance</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ncu -u            <span class="comment"># bump versions in package.json</span></span><br><span class="line">npm install       <span class="comment"># resolve</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Site config lives in <code>_config.yml</code>. The values worth knowing:</p>
+<ul>
+<li><code>permalink: :title/</code>: clean URLs without dates</li>
+<li><code>index_generator.order_by: -updated</code>: sort the home feed by updated time, descending</li>
+<li><code>updated_option: &#39;mtime&#39;</code>: when <code>updated:</code> is empty in front matter, fall back to file mtime, so a rewrite floats to the top without manually timestamping</li>
 </ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins"></a><a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Tag Plugins</a></h3><blockquote>
-<p>Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.</p>
-</blockquote>
-<h4 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h4><div class="note warning"><h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><p><code>include_code</code> only works with <code>.js</code> files in Hexo 8.1.0, seems like a bug</p>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Theme-NexT"><a href="#Theme-NexT" class="headerlink" title="Theme: NexT"></a>Theme: NexT</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://theme-next.js.org/">Site</a> &#x2F; <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">GitHub</a> &#x2F; <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/">Docs</a></li>
+<li>Theme config: <code>./_config.next.yml</code> (overrides <code>node_modules/hexo-theme-next/_config.yml</code>)</li>
+</ul>
+<h3 id="Config-priority-high-to-low"><a href="#Config-priority-high-to-low" class="headerlink" title="Config priority (high to low)"></a>Config priority (high to low)</h3><ol>
+<li><code>theme_config</code> block in <code>_config.yml</code></li>
+<li><code>_config.[theme].yml</code> (e.g. <code>_config.next.yml</code>)</li>
+<li><code>_config.yml</code> inside the theme directory</li>
+</ol>
+<h3 id="Highlight-previews"><a href="#Highlight-previews" class="headerlink" title="Highlight previews"></a>Highlight previews</h3><p><a target="_blank" rel="noopener" href="https://theme-next.js.org/highlight/">NexT highlight theme picker</a>.</p>
+<h3 id="Legacy-repos-do-not-use"><a href="#Legacy-repos-do-not-use" class="headerlink" title="Legacy repos (do not use)"></a>Legacy repos (do not use)</h3><ul>
+<li><code>iissnan/hexo-theme-next</code> (original, abandoned)</li>
+<li><code>theme-next/hexo-theme-next</code> (intermediate fork, abandoned)</li>
+</ul>
+<h2 id="Tag-plugins"><a href="#Tag-plugins" class="headerlink" title="Tag plugins"></a>Tag plugins</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Hexo’s tag plugins</a> handle the parts plain markdown can’t.</p>
+<h3 id="Cross-link-another-post"><a href="#Cross-link-another-post" class="headerlink" title="Cross-link another post"></a>Cross-link another post</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link filename &quot;Display text&quot; %&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Include-Posts"><a href="#Include-Posts" class="headerlink" title="Include Posts"></a>Include Posts</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Don’t</strong> wrap a <code>post_link</code> tag in a markdown link: <code>[label](&#123;% post_link filename %&#125;)</code> does not work, because <code>post_link</code> outputs a full <code>&lt;a&gt;</code> element rather than a URL. Use the standalone form above with display text.</p>
+<h3 id="Include-source-code"><a href="#Include-source-code" class="headerlink" title="Include source code"></a>Include source code</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Include-Assets"><a href="#Include-Assets" class="headerlink" title="Include Assets"></a>Include Assets</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p>Note: in Hexo 8.1.x <code>include_code</code> has historically been finicky outside <code>.js</code> files; verify against the post output before relying on it.</p>
+<h3 id="Reference-assets"><a href="#Reference-assets" class="headerlink" title="Reference assets"></a>Reference assets</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class] slug [width] [height] [title] [alt] %&#125;</span><br><span class="line">&#123;% asset_link filename &quot;title&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Asset folders live alongside the post: a same-name folder under <code>source/_posts/</code> is auto-discovered when <code>post_asset_folder: true</code> is set in <code>_config.yml</code>.</p>
 
     </div>
 
@@ -407,6 +416,7 @@
               <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
               <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
               <a href="/tags/hexo-theme-next/" rel="tag"><i class="fa fa-tag"></i> hexo-theme-next</a>
+              <a href="/tags/Cloudflare-Pages/" rel="tag"><i class="fa fa-tag"></i> Cloudflare Pages</a>
           </div>
 
         

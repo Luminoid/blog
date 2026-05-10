@@ -2,86 +2,94 @@
 title: Hexo Quick Guide
 date: 2022-02-21 23:36:21
 categories:
-- Web
-- Static Site Generator
+  - Web
+  - Static Site Generator
 tags:
-- Hexo
-- NexT
-- hexo-theme-next
+  - Hexo
+  - NexT
+  - hexo-theme-next
+  - Cloudflare Pages
 ---
 
-Short reference for my Hexo/NexT workflow.
-
-Official Site: https://hexo.io/
-Version: 8.1.0
-
-## Workflow
-With Git deployment
-``` bash
-$ hexo new "My New Article"
-# Edit source/_posts/My-New-Article.md
-$ hexo clean
-$ hexo generate
-$ git add -A
-$ git commit -m <msg>
-$ git push
-```
-
-## Maintenance
-Update outdated npm packages. With `npm-check-updates`, run the following under the blog directory (`./`):
-``` shell
-$ ncu -u
-$ npm install
-```
-
-## Configuration
-Site config is stored in `./_config.yml`
+A short working reference for the Hexo + NexT setup that powers this blog.
 
 <!-- more -->
 
-## Theme
-### Configuration
-Configuration priority (from high to low):
-- `theme_config` in site's primary configuration file
-- `_config.[theme].yml` file
-- `_config.yml` file under the theme directory
+- **Hexo**: 8.1.1 ([hexo.io](https://hexo.io/))
+- **Theme**: [NexT](https://theme-next.js.org/) 8.27.0 ([GitHub](https://github.com/next-theme/hexo-theme-next))
 
-### [NexT](https://theme-next.js.org/)
-[GitHub](https://github.com/next-theme/hexo-theme-next)
-[Documentation](https://theme-next.js.org/)
-Version: 8.27.0
+## Workflow
 
-#### Configuration
-NexT theme config is stored in `./_config.next.yml` & `node_modules/hexo-theme-next/_config.yml`
+```bash
+hexo new "My New Article"     # scaffold source/_posts/My-New-Article.md
+# Edit the post
+hexo clean
+hexo generate
+```
 
-#### Code Highlight Theme
-[NexT Highlight Theme Preview](https://theme-next.js.org/highlight/)
+For pushing to Cloudflare Pages with Git auto-deploy, see {% post_link Deploy-Static-Site-to-Cloudflare-Pages "Deploy a Static Site to Cloudflare Pages" %}. Local generate + manual `wrangler pages deploy` works the same way against the `public/` (or `docs/`) output.
 
-#### Legacy Repositories
-- https://github.com/iissnan/hexo-theme-next
-- https://github.com/theme-next/hexo-theme-next
+## Maintenance
 
-## Usage
-### [Tag Plugins](https://hexo.io/docs/tag-plugins)
-> Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2.
+```bash
+ncu -u            # bump versions in package.json
+npm install       # resolve
+```
 
-#### Include Code
-{% note warning %}
-#### Warning
-`include_code` only works with `.js` files in Hexo 8.1.0, seems like a bug
-{% endnote %}
-``` liquid
+## Configuration
+
+Site config lives in `_config.yml`. The values worth knowing:
+
+- `permalink: :title/`: clean URLs without dates
+- `index_generator.order_by: -updated`: sort the home feed by updated time, descending
+- `updated_option: 'mtime'`: when `updated:` is empty in front matter, fall back to file mtime, so a rewrite floats to the top without manually timestamping
+
+## Theme: NexT
+
+- [Site](https://theme-next.js.org/) / [GitHub](https://github.com/next-theme/hexo-theme-next) / [Docs](https://theme-next.js.org/docs/)
+- Theme config: `./_config.next.yml` (overrides `node_modules/hexo-theme-next/_config.yml`)
+
+### Config priority (high to low)
+
+1. `theme_config` block in `_config.yml`
+2. `_config.[theme].yml` (e.g. `_config.next.yml`)
+3. `_config.yml` inside the theme directory
+
+### Highlight previews
+
+[NexT highlight theme picker](https://theme-next.js.org/highlight/).
+
+### Legacy repos (do not use)
+
+- `iissnan/hexo-theme-next` (original, abandoned)
+- `theme-next/hexo-theme-next` (intermediate fork, abandoned)
+
+## Tag plugins
+
+[Hexo's tag plugins](https://hexo.io/docs/tag-plugins) handle the parts plain markdown can't.
+
+### Cross-link another post
+
+```liquid
+{% post_link filename "Display text" %}
+```
+
+**Don't** wrap a `post_link` tag in a markdown link: `[label]({% post_link filename %})` does not work, because `post_link` outputs a full `<a>` element rather than a URL. Use the standalone form above with display text.
+
+### Include source code
+
+```liquid
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
 
-#### Include Posts
-``` liquid
-{% post_link filename [title] [escape] %}
+Note: in Hexo 8.1.x `include_code` has historically been finicky outside `.js` files; verify against the post output before relying on it.
+
+### Reference assets
+
+```liquid
+{% asset_path filename %}
+{% asset_img [class] slug [width] [height] [title] [alt] %}
+{% asset_link filename "title" %}
 ```
 
-#### Include Assets
-``` liquid
-{% asset_path filename %}
-{% asset_img [class names] slug [width] [height] [title text [alt text]] %}
-{% asset_link filename [title] [escape] %}
-```
+Asset folders live alongside the post: a same-name folder under `source/_posts/` is auto-discovered when `post_asset_folder: true` is set in `_config.yml`.
