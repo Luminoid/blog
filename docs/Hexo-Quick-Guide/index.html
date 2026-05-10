@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.luminoid.dev/images/og-image.png">
 <meta property="article:published_time" content="2022-02-22T07:36:21.000Z">
-<meta property="article:modified_time" content="2026-05-10T04:22:59.931Z">
+<meta property="article:modified_time" content="2026-05-10T05:06:16.742Z">
 <meta property="article:author" content="Luminoid">
 <meta property="article:tag" content="Cloudflare Pages">
 <meta property="article:tag" content="Hexo">
@@ -298,7 +298,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-05-09 21:22:59" itemprop="dateModified" datetime="2026-05-09T21:22:59-07:00">2026-05-09</time>
+      <time title="Modified: 2026-05-09 22:06:16" itemprop="dateModified" datetime="2026-05-09T22:06:16-07:00">2026-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -328,7 +328,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>327</span>
+      <span>425</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -381,9 +381,11 @@
 <h3 id="Cross-link-another-post"><a href="#Cross-link-another-post" class="headerlink" title="Cross-link another post"></a>Cross-link another post</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link filename &quot;Display text&quot; %&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Don’t</strong> wrap a <code>post_link</code> tag in a markdown link: <code>[label](&#123;% post_link filename %&#125;)</code> does not work, because <code>post_link</code> outputs a full <code>&lt;a&gt;</code> element rather than a URL. Use the standalone form above with display text.</p>
-<h3 id="Include-source-code"><a href="#Include-source-code" class="headerlink" title="Include source code"></a>Include source code</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Include-source-code"><a href="#Include-source-code" class="headerlink" title="Include source code"></a>Include source code</h3><p>Reads from <code>code_dir</code> (default <code>source/downloads/code/</code>):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Note: in Hexo 8.1.x <code>include_code</code> has historically been finicky outside <code>.js</code> files; verify against the post output before relying on it.</p>
+<p>Broken in Hexo 7.2.0 onward (8.1.1 still affected). The path-traversal hardening in <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/pull/5251">PR #5251</a> replaced the direct filesystem read with a <code>Page.findOne(&#123; source &#125;)</code> lookup, which only resolves files Hexo has registered as pages. Files that Hexo treats as static assets (any extension without a registered renderer, e.g. <code>.c</code>, <code>.swift</code>, <code>.cpp</code>, <code>.scala</code>) are never in the Page model, so the tag silently returns nothing for them. <code>.js</code> happens to render because Hexo classifies it as a renderable page. Tracking issue: <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/5486">hexojs&#x2F;hexo#5486</a>. Proposed fix introducing a separate Code model: <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/pull/5633">hexojs&#x2F;hexo#5633</a>, open since Feb 2025.</p>
+<p>Until that lands, fall back to a plain fenced code block for everything that isn’t <code>.js</code>.</p>
 <h3 id="Reference-assets"><a href="#Reference-assets" class="headerlink" title="Reference assets"></a>Reference assets</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class] slug [width] [height] [title] [alt] %&#125;</span><br><span class="line">&#123;% asset_link filename &quot;title&quot; %&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Asset folders live alongside the post: a same-name folder under <code>source/_posts/</code> is auto-discovered when <code>post_asset_folder: true</code> is set in <code>_config.yml</code>.</p>
@@ -433,8 +435,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Fibonacci-Number-in-Different-Programming-Languages/" rel="next" title="Fibonacci Number in Different Programming Languages">
-                  Fibonacci Number in Different Programming Languages <i class="fa fa-angle-right"></i>
+                <a href="/Fibonacci-Number-in-Different-Programming-Languages/" rel="next" title="Fibonacci across ten languages: what each one insists on">
+                  Fibonacci across ten languages: what each one insists on <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -472,7 +474,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:14</span>
+    <span title="Reading time total">3:16</span>
   </span>
 </div>
 <div class="busuanzi-count">

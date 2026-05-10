@@ -78,11 +78,15 @@ Site config lives in `_config.yml`. The values worth knowing:
 
 ### Include source code
 
+Reads from `code_dir` (default `source/downloads/code/`):
+
 ```liquid
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
 
-Note: in Hexo 8.1.x `include_code` has historically been finicky outside `.js` files; verify against the post output before relying on it.
+Broken in Hexo 7.2.0 onward (8.1.1 still affected). The path-traversal hardening in [PR #5251](https://github.com/hexojs/hexo/pull/5251) replaced the direct filesystem read with a `Page.findOne({ source })` lookup, which only resolves files Hexo has registered as pages. Files that Hexo treats as static assets (any extension without a registered renderer, e.g. `.c`, `.swift`, `.cpp`, `.scala`) are never in the Page model, so the tag silently returns nothing for them. `.js` happens to render because Hexo classifies it as a renderable page. Tracking issue: [hexojs/hexo#5486](https://github.com/hexojs/hexo/issues/5486). Proposed fix introducing a separate Code model: [hexojs/hexo#5633](https://github.com/hexojs/hexo/pull/5633), open since Feb 2025.
+
+Until that lands, fall back to a plain fenced code block for everything that isn't `.js`.
 
 ### Reference assets
 
