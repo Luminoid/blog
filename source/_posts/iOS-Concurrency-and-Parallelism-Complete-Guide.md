@@ -39,19 +39,29 @@ Swift Concurrency (`async`/`await`, actors, `AsyncSequence`) shipped natively wi
 
 ## Mental model
 
-Four ideas hold the rest of the chapter together. Worth carrying in your head before reading any specific API: most of the rules below are corollaries of these.
+A handful of ideas hold the rest of the chapter together. Worth carrying in your head before reading any specific API: most of the rules below are corollaries of these.
 
-### Forward-progress contract
+### Process vs thread vs task
 
-Swift Concurrency's runtime owns a small pool of threads, and its contract is that **every thread is always making progress**. A `Task` that calls `Thread.sleep`, `DispatchSemaphore.wait`, blocks on a `pthread_mutex` held by a peer, or makes a synchronous I/O call into a C library *parks the thread*. The runtime can't reclaim it, can't reassign it, and can't apologise: the cooperative pool just stalls.
+A process is the OS container: own address space, own file descriptors. Your iOS app is one process; an app extension is a separate process. When the app crashes, iOS restarts it from scratch.
 
-This is the single biggest mental shift from GCD. Under GCD, blocking a worker was fine: the system spun up another worker. Under Swift Concurrency, blocking is a bug, and the rest of the design exists to make non-blocking ergonomic.
+A thread is a unit of execution inside a process. Threads share their process's memory, and the kernel schedules them onto cores. Creating one costs ~512 KB of stack by default plus a syscall, so you don't want millions. `pthread`, `NSThread`, and GCD workers are all kernel threads dressed in different APIs.
 
-### The cooperative thread pool
+A `Task` is a Swift Concurrency unit: a heap-allocated state machine the runtime schedules onto threads from the cooperative pool. Cheap (hundreds of bytes), cancellation-aware. Millions of tasks share roughly one-thread-per-core because most are suspended at any instant.
 
-GCD's failure mode was thread explosion. A queue with ready work and no available worker would create one: easy to push past the kernel's thread limit on I/O-bound workloads. Swift Concurrency intentionally caps the cooperative pool at roughly **one thread per CPU core, per QoS class**. Adding more threads doesn't help if everyone is parked, so the runtime forces you to *suspend* (release the thread) instead of *block* (occupy it).
+Why the distinction matters when something goes wrong:
 
-This is also why creating millions of tasks is fine: they share that handful of threads via cheap suspensions, not by spawning kernel threads.
+- A crash inside a thread tears down the whole process; iOS relaunches the app cold.
+- An uncaught error inside a `Task` ends the task. The actor it called into keeps running, and other tasks on the cooperative pool keep going.
+- Across processes, nothing is shared. iOS uses XPC for app-to-extension calls, and the App Group container for shared files.
+
+The hierarchy also explains the most common Swift Concurrency bug: blocking a thread from inside a task. The task can't suspend, so it parks the cooperative thread it borrowed. Two of those parked threads are half of a 4-core pool. The runtime can't tell you anything is wrong; from its view, the worker is busy.
+
+### Cooperative pool, no blocking
+
+Swift Concurrency's runtime owns a small pool of threads, capped at roughly **one thread per CPU core, per QoS class**, and its contract is that **every thread is always making progress**. A `Task` that calls `Thread.sleep`, `DispatchSemaphore.wait`, blocks on a `pthread_mutex` held by a peer, or makes a synchronous I/O call into a C library *parks the thread* it borrowed: the runtime can't reclaim it, can't reassign it, and can't apologise.
+
+The cap is what makes the contract load-bearing. GCD's failure mode was thread explosion: a queue with ready work and no available worker would create one, easy to push past the kernel's thread limit on I/O-bound workloads. Adding more threads doesn't help if everyone is parked, so the runtime forces you to *suspend* (release the thread) instead of *block* (occupy it). This is also why creating millions of tasks is fine: they share that handful of threads via cheap suspensions, not by spawning kernel threads.
 
 ### `async` is a state machine, not a thread
 
@@ -61,6 +71,31 @@ Two things follow:
 
 - **Suspension is roughly a function call**: no kernel transition, no stack copy, no thread context switch. `await` is closer to `return` than to `Thread.sleep`.
 - **Stack traces are split.** A debugger paused inside an async function shows the current partial function, not the whole logical call chain. Xcode's Async Backtrace view stitches the chain back together.
+
+### Tasks are coroutines
+
+If you've written `async function` in JavaScript or `suspend fun` in Kotlin, Swift's `Task` is the same construct those languages call a coroutine. The compiler-split state machine from the previous section is the standard implementation: every `await` is a continuation point, locals live in a heap-allocated frame, and the function "returns" at suspension while the runtime invokes the next part when the result is ready.
+
+Where Swift sits among coroutine languages:
+
+- **Stackless, like Kotlin or JavaScript.** Go's goroutines are stackful instead: each owns a small growable stack, and any function can yield without the compiler instrumenting call sites. Stackless gives a cheaper per-task footprint and a predictable cost model. Stackful makes calling into C from inside async free.
+- **Coloured functions.** `async` is contagious: only callable from another `async` context. Kotlin's `suspend` makes the same choice. Go and Lua avoid colour by being stackful. Colour is the price for not switching stacks on every call.
+- **Structured by default.** A `withTaskGroup { }` block can't return until its children finish, and cancellation flows down the tree. Kotlin's `coroutineScope { }` is the direct equivalent. `go f()` in Go is unstructured: you get a goroutine and a hope.
+
+The piece still missing, four years in: a real `yield`. `Task.yield()` is a *hint* the runtime is allowed to ignore, and on a busy actor it routinely does. Kotlin's `yield()` reliably hands control to the next ready coroutine. Python uses `await asyncio.sleep(0)`. JavaScript uses `await new Promise(setTimeout)`. Swift has no equivalent contract, so making a long-running task share the pool fairly with UI work means dropping a `try? await Task.sleep(for: .nanoseconds(1))` mid-loop.
+
+When you read `Task` in Swift, mentally substitute "coroutine." Most concurrency literature outside Swift uses that vocabulary.
+
+### Structured concurrency
+
+Every task belongs to a parent. A top-level `Task { }` is owned by the calling context; children created inside `withTaskGroup` or via `async let` are owned by the surrounding function, and the parent can't return until they finish. That ownership chain is the single design choice the rest of the system spends its complexity on.
+
+Two consequences worth holding onto:
+
+- **Cancellation flows down the tree.** Cancel a parent and every descendant sees `Task.isCancelled == true` at the next cooperative check: `try Task.checkCancellation()`, an `await` on a cancellation-aware API, or the next iteration of an `AsyncSequence`. You almost never need a manual cancellation flag.
+- **Errors abort siblings.** When one child of a `withThrowingTaskGroup` throws, the group cancels its other children before re-throwing. The function returns or throws but never strands a worker.
+
+`Task.detached { }` is the deliberate escape hatch: no parent, no cancellation propagation, no priority inheritance. Use it when you genuinely want the task to outlive its caller (a fire-and-forget log flush, a background refresh kicked off from a `deinit`). Most of the time you don't, and a structured `Task { }` is the right default.
 
 ### Executors decide where work runs
 
@@ -72,11 +107,9 @@ Every `async` function runs on an *executor*. The ones you actually meet:
 
 `await` is the place where the runtime can *change executors*. When you call an actor method from outside, the `await` is where you get enqueued on that actor's serial executor. Most of the design choices later in this chapter (actor reentrancy, `Sendable`, region-based isolation, priority escalation) are answers to the same question: *what guarantees do we need to switch executors safely?*
 
-### Three eras, one workspace
-
-GCD (2009) is C-friendly with no structured cancellation and no typed return values. `Operation` (2007, rebuilt on GCD in 2009) adds KVO state and dependency graphs but still no typed returns. Swift Concurrency (2021) replaces both with typed values, structured lifetime, and compile-time isolation. New code should default to Swift Concurrency; the older systems survive because they predate it and Apple frameworks still hand them out.
-
 ---
+
+The rest of this chapter walks each API in roughly the order it shipped. Default to Swift Concurrency in new code; the older systems survive because they predate it and Apple frameworks still hand them out.
 
 ## 1. POSIX Threads (`pthread`)
 
