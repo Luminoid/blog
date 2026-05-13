@@ -3,8 +3,8 @@ title: "WWDC 2009 revisited: iPhone OS 3.0 in June, Snow Leopard in August"
 date: 2026-05-14 12:00:00
 categories:
 - iOS
-tags:
 - WWDC
+tags:
 - GCD
 - Core Data
 - StoreKit

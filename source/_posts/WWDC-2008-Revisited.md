@@ -3,8 +3,8 @@ title: "WWDC 2008 revisited: the four sessions still shaping iOS"
 date: 2026-05-11 12:00:00
 categories:
 - iOS
-tags:
 - WWDC
+tags:
 - UIKit
 - Cocoa
 - Objective-C
