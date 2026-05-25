@@ -1,6 +1,6 @@
 ---
 title: "Agent: an LLM, in a loop, with tools"
-date: 2026-05-27 12:00:00
+date: 2026-05-25 00:42:29
 categories:
 - AI
 tags:
