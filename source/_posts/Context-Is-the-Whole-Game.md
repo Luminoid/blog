@@ -177,7 +177,7 @@ Where caching changes the design:
 - **The prefix must be byte-identical for the cache to hit.** Even a one-token change anywhere in the cached prefix invalidates everything after it. Put the volatile parts (the user's current message, fresh tool outputs) at the *end*, never in the middle of stable content.
 - **Cache-aware ordering is now part of prompt design.** System prompt → tool defs → retrieved docs (stable for this session) → conversation history → current turn. The stable stuff goes first.
 
-The 2026 "we cut our LLM costs by 60% with prompt caching" blog posts are real. It's not a micro-optimization, it's a 10x reduction on the largest line item. I'd been running Claude Code daily for months before I actually read the caching docs, and the moment I traced through where the cache hits and misses were happening, the difference between a $40 day and a $4 day stopped being mysterious. The cache wasn't doing anything, because every tool result was getting threaded into the middle of a stable prefix, invalidating the whole prefix behind it.
+The 2026 "we cut our LLM costs by 60% with prompt caching" blog posts are real. It's not a micro-optimization, it's a 10x reduction on the largest line item. The trap that makes the savings invisible: every tool result gets threaded into the middle of a stable prefix instead of appended at the end, invalidating the whole prefix behind it. The cache hit rate goes to zero and nobody notices until someone graphs spend per request and finds the cache isn't actually doing anything. Order matters more than people expect; "put the volatile bits last" is the rule that turns a $40 day into a $4 day.
 
 ### Memory: what survives between conversations
 
