@@ -260,6 +260,214 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.luminoid.dev/Context-Is-the-Whole-Game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+      <meta itemprop="description" content="Dispatches from the terminal">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Luminoid's Site">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Context-Is-the-Whole-Game/" class="post-title-link" itemprop="url">Context is the whole game: how LLM apps actually work</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2026-05-25 12:00:00 / Modified: 00:58:17" itemprop="dateCreated datePublished" datetime="2026-05-25T12:00:00-07:00">2026-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>4.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>22 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>The companion to <a href="/What-Is-an-LLM/" title="What is an LLM">What is an LLM</a>, written for people who use Claude &#x2F; ChatGPT &#x2F; Cursor &#x2F; Claude Code and want to know what’s going on behind the chat window. That post explained what the model is. This one explains what running one in production actually looks like, and it turns out almost every interesting decision is about the same thing: what tokens you put in front of the model on any given call. The model has no memory between calls. Whatever the model knows about your user, your codebase, your conversation, your tools, is in the prompt or it isn’t there at all. The post explains why Claude “remembers” your project (it doesn’t, the harness re-injects it), why ChatGPT degrades mid-conversation on long threads, why your $40 day on Claude Code happens, why “ignore previous instructions” still works on some agents in 2026. The technical detail (vector DBs, HNSW, chunking algorithms) is in sections you can skip if you’re not building one of these.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Context-Is-the-Whole-Game/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.luminoid.dev/What-Is-an-LLM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpeg">
+      <meta itemprop="name" content="Luminoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luminoid's Site">
+      <meta itemprop="description" content="Dispatches from the terminal">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Luminoid's Site">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/What-Is-an-LLM/" class="post-title-link" itemprop="url">What is an LLM</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-05-24 12:00:00" itemprop="dateCreated datePublished" datetime="2026-05-24T12:00:00-07:00">2026-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-05-25 00:57:56" itemprop="dateModified" datetime="2026-05-25T00:57:56-07:00">2026-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>35 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>A working mental model of large language models, written for people who use Claude &#x2F; ChatGPT &#x2F; Gemini &#x2F; Claude Code daily and want to understand what’s actually running under the hood. The post is layered: the first stretch is the whole thing in plain language, explaining behaviours you’ve already noticed (hallucination, the “let’s think step by step” trick, why Claude can’t count <code>r</code>s in “strawberry”); the middle goes into the architecture with every symbol defined for anyone who wants the math; the last part covers training, inference economics, and what’s actually new at the frontier in 2026. Stop reading whenever you have enough; the architecture section is opt-in.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/What-Is-an-LLM/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.luminoid.dev/Agent-LLM-In-A-Loop-With-Tools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,214 +545,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Agent-LLM-In-A-Loop-With-Tools/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.luminoid.dev/Context-Is-the-Whole-Game/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpeg">
-      <meta itemprop="name" content="Luminoid">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-      <meta itemprop="description" content="Dispatches from the terminal">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Luminoid's Site">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Context-Is-the-Whole-Game/" class="post-title-link" itemprop="url">Context is the whole game: how LLM apps actually work</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-05-25 12:00:00" itemprop="dateCreated datePublished" datetime="2026-05-25T12:00:00-07:00">2026-05-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-05-24 23:24:12" itemprop="dateModified" datetime="2026-05-24T23:24:12-07:00">2026-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>4k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>20 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>The companion to <a href="/What-Is-an-LLM/" title="What is an LLM">What is an LLM</a>, written for an engineer who has called the Anthropic, OpenAI, or Gemini API and now wants to build something larger than a single chat completion. That post explained what an LLM is. This one explains what running one in production actually looks like, and it turns out almost every interesting decision is about the same thing: what tokens you put in front of the model on any given call. The model has no memory between calls. Whatever the model knows about your user, your codebase, your conversation, your tools, is in the prompt or it isn’t there at all. Everything below is about making that prompt good.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Context-Is-the-Whole-Game/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.luminoid.dev/What-Is-an-LLM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpeg">
-      <meta itemprop="name" content="Luminoid">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Luminoid's Site">
-      <meta itemprop="description" content="Dispatches from the terminal">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Luminoid's Site">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/What-Is-an-LLM/" class="post-title-link" itemprop="url">What is an LLM</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2026-05-24 12:00:00 / Modified: 20:14:51" itemprop="dateCreated datePublished" datetime="2026-05-24T12:00:00-07:00">2026-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>6.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>34 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>A working mental model of large language models, written for an engineer who has shipped real software but never trained a neural network. The post is layered: the first stretch is the whole thing in plain language with one or two grounded formulas; the middle goes into the architecture with every symbol defined; the last part covers training, inference economics, and what’s actually new at the frontier in 2026. Stop reading whenever you have enough.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/What-Is-an-LLM/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1353,7 +1353,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">6:45</span>
+    <span title="Reading time total">6:47</span>
   </span>
 </div>
 <div class="busuanzi-count">

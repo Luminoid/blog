@@ -15,7 +15,7 @@ tags:
 - inference
 ---
 
-A working mental model of large language models, written for an engineer who has shipped real software but never trained a neural network. The post is layered: the first stretch is the whole thing in plain language with one or two grounded formulas; the middle goes into the architecture with every symbol defined; the last part covers training, inference economics, and what's actually new at the frontier in 2026. Stop reading whenever you have enough.
+A working mental model of large language models, written for people who use Claude / ChatGPT / Gemini / Claude Code daily and want to understand what's actually running under the hood. The post is layered: the first stretch is the whole thing in plain language, explaining behaviours you've already noticed (hallucination, the "let's think step by step" trick, why Claude can't count `r`s in "strawberry"); the middle goes into the architecture with every symbol defined for anyone who wants the math; the last part covers training, inference economics, and what's actually new at the frontier in 2026. Stop reading whenever you have enough; the architecture section is opt-in.
 
 <!-- more -->
 
@@ -94,7 +94,7 @@ If you stop reading here, you have a correct, complete mental model. The archite
 
 ## The architecture, with every symbol defined
 
-This section assumes you're comfortable with the six ideas above and want to see the inside of one transformer layer. The math is real but every symbol gets a one-line gloss the first time it appears.
+If you only use the models and never touch the math, you can stop reading here; the section above is the mental model that matters. Continue if you want to know what's inside a single transformer layer; the math is real but every symbol gets a one-line gloss the first time it appears.
 
 ### Tokenization, in more detail
 
@@ -265,7 +265,7 @@ Llama, Mistral, Gemma, Qwen, DeepSeek all use RoPE. It is the single biggest "sm
 
 ## Training, inference, and what's actually new
 
-This section is for someone who's ingested the architecture above and now wants the operational story: how the weights got there, what they cost to compute against, how the post-training stack works, what's actually new in 2026.
+The operational story behind the models you use: how the weights got there, what they cost to compute against (relevant when your bill spikes), how the post-training stack works (relevant to why GPT-5 feels different from Claude 4.7 even on the same prompt), and what changed at the frontier in 2026. You don't need to have read the architecture section above; the explanations here stand alone.
 
 ### Scaling laws, and what changed after Chinchilla
 
@@ -482,4 +482,4 @@ If you want the formal foundation, in roughly this order:
 
 And one thing not on arXiv but worth your time: Karpathy's [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY) video. Three hours from scratch to a working tiny transformer. After watching it once, the math above stops being abstract.
 
-The next post, {% post_link Context-Is-the-Whole-Game %}, walks through **context**: the substrate everything in this post operates on, and what changes when you move from a one-shot prompt to RAG to long-running agents that manage their own memory. Most of the practical engineering of working with LLMs lives there.
+The next post, {% post_link Context-Is-the-Whole-Game %}, walks through **context**: the substrate everything in this post operates on, and what changes when you move from a one-shot prompt to RAG to long-running agents that manage their own memory. The one after that, {% post_link Agent-LLM-In-A-Loop-With-Tools %}, covers what happens when the model can act, not just respond: the tools, the loop, the failure modes. Most of the practical engineering of working with LLMs lives across those two.

@@ -19,7 +19,7 @@ tags:
 - agent
 ---
 
-The companion to {% post_link What-Is-an-LLM %}, written for an engineer who has called the Anthropic, OpenAI, or Gemini API and now wants to build something larger than a single chat completion. That post explained what an LLM is. This one explains what running one in production actually looks like, and it turns out almost every interesting decision is about the same thing: what tokens you put in front of the model on any given call. The model has no memory between calls. Whatever the model knows about your user, your codebase, your conversation, your tools, is in the prompt or it isn't there at all. Everything below is about making that prompt good.
+The companion to {% post_link What-Is-an-LLM %}, written for people who use Claude / ChatGPT / Cursor / Claude Code and want to know what's going on behind the chat window. That post explained what the model is. This one explains what running one in production actually looks like, and it turns out almost every interesting decision is about the same thing: what tokens you put in front of the model on any given call. The model has no memory between calls. Whatever the model knows about your user, your codebase, your conversation, your tools, is in the prompt or it isn't there at all. The post explains why Claude "remembers" your project (it doesn't, the harness re-injects it), why ChatGPT degrades mid-conversation on long threads, why your $40 day on Claude Code happens, why "ignore previous instructions" still works on some agents in 2026. The technical detail (vector DBs, HNSW, chunking algorithms) is in sections you can skip if you're not building one of these.
 
 <!-- more -->
 
@@ -42,11 +42,11 @@ Before any tactics, look at what's actually in the prompt on a typical call. For
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ System prompt           (you wrote this, 100% trusted)   │
+│ System prompt           (the harness wrote this, trust)  │
 ├──────────────────────────────────────────────────────────┤
-│ Tool definitions        (you wrote these, trusted)       │
+│ Tool definitions        (the harness wrote these, trust) │
 ├──────────────────────────────────────────────────────────┤
-│ Memory / scratchpad     (you wrote, mostly trusted)      │
+│ Memory / scratchpad     (CLAUDE.md, .cursorrules, etc.)  │
 ├──────────────────────────────────────────────────────────┤
 │ Conversation history    (user + assistant, mixed trust)  │
 ├──────────────────────────────────────────────────────────┤
@@ -65,6 +65,8 @@ Before any tactics, look at what's actually in the prompt on a typical call. For
 The model treats all of this as just tokens. It does not natively distinguish your instructions from a web page's instructions, which is where most of the problems in section 3 come from. Sections 1 and 2 are about getting the right things into this stack. Section 3 is about the fact that some of those things are trying to subvert it.
 
 ## 1. Making more fit: retrieval
+
+You see retrieval every time Cursor pulls in "relevant codebase context" for your question, every time ChatGPT cites web results, every time Notion AI answers from your workspace. It's also what's happening behind chat-with-your-PDF features and Claude Code's project search. The mechanics below explain why retrieval sometimes feels uncanny (it nails the right doc) and sometimes infuriating (it confidently quotes the wrong section); the implementation details (embeddings, vector DBs, HNSW, chunking) are opt-in for anyone building one.
 
 ### Why not just stuff the window
 
@@ -144,7 +146,7 @@ If your "corpus" is one PDF, skip RAG. If it's a million PDFs, you have no choic
 
 ## 2. Keeping context useful: caching, memory, engineering
 
-You have the right tokens. Now they have to stay useful across calls, and you don't want to pay full price for them every time.
+You have the right tokens. Now they have to stay useful across calls, and you don't want to pay full price for them every time. This section covers three things you actually see as a user: why your Claude Code bill is whatever it is (caching), why ChatGPT and Claude "remember" you between sessions (memory), and the discipline of how harnesses keep long conversations coherent (compaction, scratchpad files).
 
 ### Prompt caching: the economics of long contexts
 
@@ -207,7 +209,7 @@ The shift from prompt engineering to context engineering is the shift from "make
 
 ## 3. Keeping context safe: prompt injection
 
-Everything above assumed the content in your context was on your side. It often isn't.
+Everything above assumed the content in your context was on your side. It often isn't. If you've ever asked Claude to summarize a webpage and worried about what's in the page, or used an agent that browses, fetches files, or reads PRs, this is the threat model. It's not theoretical: the attacks below work today, on production agents, including the ones you use.
 
 ### The attack
 
@@ -252,7 +254,7 @@ The mental model: assume any content you didn't author yourself can contain inst
 
 ## Putting it together: what a 2026 LLM app actually looks like
 
-The dumb mental model from 2023 was: prompt in, completion out, maybe with a system message. The accurate 2026 mental model is much messier.
+The dumb mental model from 2023 was: prompt in, completion out, maybe with a system message. The accurate 2026 mental model is much messier. The pseudocode below is what's running on a server somewhere when you type a message into Claude or send a request to Cursor. You don't see any of it; you see the response. But every step is real, costs money, and changes what the next response will be.
 
 ```python
 # rough shape of a real agent turn
@@ -292,7 +294,9 @@ def handle_user_turn(user_msg, session):
     session.history.append((user_msg, response))
 ```
 
-Half a dozen LLM calls per user turn is normal. Most of the lines have a cost number attached. None of this is in the model. All of it is the engineering work.
+Half a dozen LLM calls per user turn is normal. Most of the lines have a cost number attached. None of this is in the model itself; it's all in the harness around it. The same Opus 4.7 you call directly with a one-line prompt is the same Opus 4.7 inside Claude Code, but the experience is wildly different because the harness around it does all of the above. That gap is what context engineering buys you, and what you're noticing when one AI product feels sharp and another feels dim on the same task.
+
+The next post in this series, {% post_link Agent-LLM-In-A-Loop-With-Tools %}, picks up from the `while True` loop near the end of the pseudocode above and follows what happens when the model can act, not just respond.
 
 ## Reading list
 
