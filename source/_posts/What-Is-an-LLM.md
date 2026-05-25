@@ -482,4 +482,4 @@ If you want the formal foundation, in roughly this order:
 
 And one thing not on arXiv but worth your time: Karpathy's [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY) video. Three hours from scratch to a working tiny transformer. After watching it once, the math above stops being abstract.
 
-The post after this one walks through **context**: the substrate everything in this post operates on, and what changes when you move from a one-shot prompt to RAG to long-running agents that manage their own memory. Most of the practical engineering of working with LLMs lives there.
+The next post, {% post_link Context-Is-the-Whole-Game %}, walks through **context**: the substrate everything in this post operates on, and what changes when you move from a one-shot prompt to RAG to long-running agents that manage their own memory. Most of the practical engineering of working with LLMs lives there.
