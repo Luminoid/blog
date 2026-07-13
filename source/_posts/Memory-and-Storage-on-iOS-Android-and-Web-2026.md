@@ -2,7 +2,7 @@
 title: "Storage everywhere: comparing on-device and cloud storage on iOS, Android, and Web in 2026"
 date: 2026-04-28 12:00:00
 categories:
-- iOS
+- Mobile
 tags:
 - iOS
 - Android
