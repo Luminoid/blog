@@ -47,6 +47,8 @@ blog/
 │   ├── images/              # Static images
 │   └── downloads/           # Downloadable code examples
 ├── scaffolds/               # Post templates
+├── scripts/
+│   └── mermaid-theme.js     # Injects the Mermaid house style (_config.yml mermaid_theme) into every {% mermaid %} block
 ├── tools/                   # OG image generator
 └── docs/                    # Generated output (DO NOT EDIT)
 ```

@@ -128,3 +128,34 @@ feed:
 symbols_count_time:
   awl: 5 # EN ≈ 5, CN ≈ 2
   wpm: 200 # Slow ≈ 200, Normal ≈ 275, Fast ≈ 350
+
+# Mermaid house style
+## Injected into every {% mermaid %} diagram at build time by scripts/mermaid-theme.js.
+## Everything except flowchart_classes becomes the diagram's %%{init}%% directive
+## (palette and font, matching the blog's figures). flowchart_classes are appended to
+## flowcharts as classDef lines, so a post can tag nodes with :::outline, :::accent,
+## or :::muted; untagged nodes get the light-blue primary look. A diagram that starts
+## with its own %%{init}%% directive is left alone.
+mermaid_theme:
+  theme: base
+  fontFamily: SF Pro Text, Helvetica Neue, Arial, sans-serif
+  themeVariables:
+    fontFamily: SF Pro Text, Helvetica Neue, Arial, sans-serif
+    primaryColor: '#CFDFF6'
+    primaryBorderColor: '#2E6FD6'
+    primaryTextColor: '#1F3F7A'
+    lineColor: '#2E6FD6'
+    textColor: '#333333'
+    edgeLabelBackground: '#FFFFFF'
+    clusterBkg: '#F7F9FD'
+    clusterBorder: '#BBBBBB'
+    noteBkgColor: '#F2F2F2'
+    noteBorderColor: '#777777'
+    noteTextColor: '#333333'
+    actorLineColor: '#BBBBBB'
+    signalColor: '#2E6FD6'
+    signalTextColor: '#333333'
+  flowchart_classes:
+    outline: fill:#FFFFFF,stroke:#2E6FD6,stroke-width:1.5px,color:#1F3F7A
+    accent: fill:#1F3F7A,stroke:#1F3F7A,stroke-width:1.5px,color:#FFFFFF
+    muted: fill:#FFFFFF,stroke:#777777,stroke-width:1.5px,stroke-dasharray:6 4,color:#555555
