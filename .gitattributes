@@ -1,0 +1,3 @@
+# The downloadable code samples are post attachments, not the site's source:
+# keep them out of GitHub's language statistics so the repo isn't labeled "Python".
+source/downloads/** linguist-documentation
