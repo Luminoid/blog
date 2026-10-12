@@ -2,5 +2,6 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://busuanzi.ibruce.info https://cdnjs.cloudflare.com https://static.addtoany.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://busuanzi.ibruce.info
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://busuanzi.ibruce.info https://cdnjs.cloudflare.com https://static.addtoany.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://busuanzi.ibruce.info; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'

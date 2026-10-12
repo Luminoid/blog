@@ -95,6 +95,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - _headers   # Hexo skips files that start with an underscore; Cloudflare Pages needs this one at the output root
 exclude:
   - .DS_Store
 ignore:
