@@ -25,3 +25,15 @@ Mediocre engineer.
 
 Development: iOS / Front-end
 Interests: film / photography / plant
+
+### Privacy
+
+This is a static site served by Cloudflare. To deliver and protect the pages, Cloudflare's infrastructure processes your IP address and standard request metadata in transit and in its security logs ([Cloudflare privacy policy](https://www.cloudflare.com/privacypolicy/)). The site has no accounts, no comment system and no analytics of its own, and it sets no cookies of its own.
+
+When a page loads, your browser also fetches resources from these third parties, which therefore receive your IP address and standard request headers under their own policies:
+
+- cdnjs.cloudflare.com (run by Cloudflare): the theme's scripts and stylesheets, such as Font Awesome, Animate.css, pace, the search helper and, on posts with diagrams, Mermaid.
+- busuanzi.ibruce.info: the visitor and page-view counters in the footer and post headers. Its script sends the page address to that service to count the visit.
+- static.addtoany.com: the share buttons under each post ([AddToAny privacy policy](https://www.addtoany.com/privacy)).
+
+Questions about this site: [diveintothefog@gmail.com](mailto:diveintothefog@gmail.com)
